@@ -92,15 +92,11 @@ namespace LFS_ServerBrowser
 			this.btnRefreshMain = new System.Windows.Forms.Button();
 			this.btnJoinMain = new System.Windows.Forms.Button();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.buttonAddFav = new System.Windows.Forms.Button();
-			this.label7 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.buttonRefreshFav = new System.Windows.Forms.Button();
 			this.buttonJoinFav = new System.Windows.Forms.Button();
 			this.lvFavourites = new System.Windows.Forms.ListView();
 			this.columnHeaderFavServerName = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderFavPing = new System.Windows.Forms.ColumnHeader();
-			this.columnHeaderFavPrivate = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderFavSlots = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderFavInfo = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderFavTrack = new System.Windows.Forms.ColumnHeader();
@@ -728,9 +724,6 @@ namespace LFS_ServerBrowser
 			// 
 			// tabPage3
 			// 
-			this.tabPage3.Controls.Add(this.buttonAddFav);
-			this.tabPage3.Controls.Add(this.label7);
-			this.tabPage3.Controls.Add(this.textBox1);
 			this.tabPage3.Controls.Add(this.buttonRefreshFav);
 			this.tabPage3.Controls.Add(this.buttonJoinFav);
 			this.tabPage3.Controls.Add(this.lvFavourites);
@@ -740,34 +733,6 @@ namespace LFS_ServerBrowser
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Favourites";
 			this.tabPage3.UseVisualStyleBackColor = true;
-			// 
-			// buttonAddFav
-			// 
-			this.buttonAddFav.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonAddFav.Location = new System.Drawing.Point(661, 473);
-			this.buttonAddFav.Name = "buttonAddFav";
-			this.buttonAddFav.Size = new System.Drawing.Size(115, 23);
-			this.buttonAddFav.TabIndex = 9;
-			this.buttonAddFav.Text = "&Add to Favourites";
-			this.buttonAddFav.UseVisualStyleBackColor = true;
-			this.buttonAddFav.Click += new System.EventHandler(this.ButtonAddFavClick);
-			// 
-			// label7
-			// 
-			this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.label7.Location = new System.Drawing.Point(379, 478);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(98, 23);
-			this.label7.TabIndex = 8;
-			this.label7.Text = "Server IP Address:";
-			// 
-			// textBox1
-			// 
-			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox1.Location = new System.Drawing.Point(483, 475);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(172, 21);
-			this.textBox1.TabIndex = 7;
 			// 
 			// buttonRefreshFav
 			// 
@@ -800,7 +765,6 @@ namespace LFS_ServerBrowser
 			this.lvFavourites.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
 									this.columnHeaderFavServerName,
 									this.columnHeaderFavPing,
-									this.columnHeaderFavPrivate,
 									this.columnHeaderFavSlots,
 									this.columnHeaderFavInfo,
 									this.columnHeaderFavTrack,
@@ -828,10 +792,6 @@ namespace LFS_ServerBrowser
 			// 
 			this.columnHeaderFavPing.Text = "Ping";
 			this.columnHeaderFavPing.Width = 50;
-			// 
-			// columnHeaderFavPrivate
-			// 
-			this.columnHeaderFavPrivate.Text = "Private";
 			// 
 			// columnHeaderFavSlots
 			// 
@@ -1040,7 +1000,6 @@ namespace LFS_ServerBrowser
 			this.groupBox2.ResumeLayout(false);
 			this.contextMenuBrowser.ResumeLayout(false);
 			this.tabPage3.ResumeLayout(false);
-			this.tabPage3.PerformLayout();
 			this.contextMenuFav.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
@@ -1064,7 +1023,6 @@ namespace LFS_ServerBrowser
 		private System.Windows.Forms.TextBox edtPasswordMain;
 		private System.Windows.Forms.TextBox edtFindUserMain;
 		private System.Windows.Forms.Button btnJoinMain;
-		private System.Windows.Forms.ColumnHeader columnHeaderFavPrivate;
 		private System.Windows.Forms.ColumnHeader columnPrivate;
 		private System.Windows.Forms.Button buttonCheckNewVersion;
 		private System.Windows.Forms.CheckBox cbNewVersion;
@@ -1114,9 +1072,6 @@ namespace LFS_ServerBrowser
 		private System.Windows.Forms.ContextMenuStrip contextMenuBrowser;
 		private System.Windows.Forms.Button buttonJoinFav;
 		private System.Windows.Forms.Button buttonRefreshFav;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Button buttonAddFav;
 		private System.Windows.Forms.TabPage tabPage3;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.ListBox pathList;

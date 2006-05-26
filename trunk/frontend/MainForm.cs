@@ -951,11 +951,6 @@ namespace LFS_ServerBrowser
 			
 		}
 		
-		void ButtonAddFavClick(object sender, System.EventArgs e)
-		{
-			
-		}
-		
 		void ViewServerInformationFavClick(object sender, System.EventArgs e)
 		{
 			ListView.SelectedListViewItemCollection coll = lvFavourites.SelectedItems;
