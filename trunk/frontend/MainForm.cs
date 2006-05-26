@@ -854,9 +854,16 @@ namespace LFS_ServerBrowser
 		
 		void ViewServerInformationToolStripMenuItemClick(object sender, System.EventArgs e)
 		{
-			ListView.SelectedListViewItemCollection coll = lvMain.SelectedItems;
+			ToolStripMenuItem l = (ToolStripMenuItem)sender;			
+			ListView.SelectedListViewItemCollection coll;
+			if (l.Name == "viewServerInformationMain") {
+				coll = lvMain.SelectedItems;
+			} else {
+				coll = lvFavourites.SelectedItems;
+			}
 			if (coll.Count < 1) return;
-			foreach (ServerInformation info in serverList){
+			s.SetInfo(null);
+			foreach (ServerInformation info in (l.Name == "viewServerInformationMain") ? serverList : favServerList){
 				if (info.hostname == coll[0].Text){
 					s.SetInfo(info);
 					break;
@@ -955,22 +962,6 @@ namespace LFS_ServerBrowser
 					lvFavourites.Items.Remove((ListViewItem)coll[0]);
 					break;
 				}
-			}
-			
-		}
-		
-		void ViewServerInformationFavClick(object sender, System.EventArgs e)
-		{
-			ListView.SelectedListViewItemCollection coll = lvFavourites.SelectedItems;
-			if (coll.Count < 1) return;
-			foreach (ServerInformation info in favServerList){
-				if (info.hostname == coll[0].Text){
-					s.SetInfo(info);
-					break;
-				}
-			}
-			if (s.ShowDialog(this) == DialogResult.OK){
-				LoadLFS(s.GetInfo().hostname, "S2", edtPasswordMain.Text);
 			}
 			
 		}
