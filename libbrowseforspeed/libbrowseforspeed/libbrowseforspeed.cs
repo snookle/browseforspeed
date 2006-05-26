@@ -28,7 +28,7 @@ using ICSharpCode.SharpZipLib.GZip;
 using System.Text.RegularExpressions;
 
 
-namespace liblfsbrowser {
+namespace libbrowseforspeed {
 	public class serverInformation : EventArgs {
 		public bool success;
 		public bool connectFailed;
