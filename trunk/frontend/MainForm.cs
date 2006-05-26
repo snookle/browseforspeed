@@ -378,64 +378,67 @@ namespace LFS_ServerBrowser
 		{
 			if (this.exiting) return;
 			try{
-			// Make sure we're on the right thread
-			if(this.InvokeRequired == false) {
-				if (totalServers == 0){
-					totalServers = info.totalServers;
-					numQueried = 0;
-					numServersDone = 0;
-					numServersRefused = 0;
-					numServersNoReply = 0;
-				}
-				numQueried++;
-				string filter;
-				if (isFavQuery)
-					filter = "";		
-				else
-					filter = GetTrackFilter(cbTracks.Text);
-					
-				if (info.success){
-					numServersDone++;
-					if (info.track.Contains(filter)){
-						string serverName;
-						info.hostname = serverName = LFSQuery.removeColourCodes(info.hostname);
-						string cars = CarsToString(info.cars);
-						ListViewItem lvi = l.Items.Add(info.host.ToString());
-						lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, serverName));
-						lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, info.ping.ToString()));
-						int columnOffset = 0;
-						if (isFavQuery){
-							columnOffset = 1;
-						} else
-							lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, info.passworded == true ? "Yes" : "No"));
-						lvi.SubItems.Insert(3 - columnOffset, new ListViewItem.ListViewSubItem(lvi, info.players.ToString() +"/" + info.slots.ToString()));
-						lvi.SubItems.Insert(4 - columnOffset, new ListViewItem.ListViewSubItem(lvi, RulesToString(info.rules)));
-						lvi.SubItems.Insert(5 - columnOffset, new ListViewItem.ListViewSubItem(lvi, info.track));
-						lvi.SubItems.Insert(6 - columnOffset, new ListViewItem.ListViewSubItem(lvi, cars));
+				// Make sure we're on the right thread
+				if(this.InvokeRequired == false) {
+					if (totalServers == 0){
+						totalServers = info.totalServers;
+						numQueried = 0;
+						numServersDone = 0;
+						numServersRefused = 0;
+						numServersNoReply = 0;
 					}
-			} else {
-					if (info.readFailed)
-						numServersNoReply++;
-					else if (info.connectFailed)
-						numServersNoReply++;
-			}
+					numQueried++;
+					string filter;
+					if (isFavQuery) {
+						filter = "";		
+					} else {
+						filter = GetTrackFilter(cbTracks.Text);
+					}
+					
+					if (info.success){
+						numServersDone++;
+						if (info.track.Contains(filter)){
+							string serverName;
+							info.hostname = serverName = LFSQuery.removeColourCodes(info.hostname);
+							string cars = CarsToString(info.cars);
+							ListViewItem lvi = l.Items.Add(info.host.ToString());
+							lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, serverName));
+							lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, info.ping.ToString()));
+							int columnOffset = 0;
+							if (isFavQuery){
+								columnOffset = 1;
+							} else {
+								lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, info.passworded == true ? "Yes" : "No"));
+							}
+							lvi.SubItems.Insert(3 - columnOffset, new ListViewItem.ListViewSubItem(lvi, info.players.ToString() +"/" + info.slots.ToString()));
+							lvi.SubItems.Insert(4 - columnOffset, new ListViewItem.ListViewSubItem(lvi, RulesToString(info.rules)));
+							lvi.SubItems.Insert(5 - columnOffset, new ListViewItem.ListViewSubItem(lvi, info.track));
+							lvi.SubItems.Insert(6 - columnOffset, new ListViewItem.ListViewSubItem(lvi, cars));
+						}
+					} else {
+						if (info.readFailed) {
+							numServersNoReply++;
+						} else {
+							numServersRefused++;
+						}
+					}
 
-				if (!isFavQuery && info.success){
-					serverList.Add(info);
-				}
-				
-				if (isFavQuery && info.success){
-					favServerList.Add(info);
-				}
+					if (!isFavQuery && info.success){
+						if (!isFavQuery) {
+							serverList.Add(info);
+						} else {
+							favServerList.Add(info);
+						}
+					}
 					statusTotal.Text = String.Format("Checking host {0} of {1}", numQueried, totalServers);
 					statusNoReply.Text = String.Format("No Reply: {0}", numServersNoReply);
 					statusRefused.Text = String.Format("Refused Connection: {0}", numServersRefused);
 
-			} else {
-			    //add the server asynchonously
-			    AddServerDelegate addServer = new AddServerDelegate(addServerToList);
-			    this.BeginInvoke(addServer, new object[] {info, l, isFavQuery});
-			}
+				} else {
+			    	//add the server asynchonously
+			    	AddServerDelegate addServer = new AddServerDelegate(addServerToList);
+			    	this.BeginInvoke(addServer, new object[] {info, l, isFavQuery});
+				}
 			} catch(Exception e){}
   		}
 		
@@ -859,10 +862,9 @@ namespace LFS_ServerBrowser
 					break;
 				}
 			}
-			if (s.ShowDialog(this) == DialogResult.OK){
+			if (s.ShowDialog(this) == DialogResult.OK) {
 				LoadLFS(s.GetInfo().hostname, "S2", edtPasswordMain.Text);
-			}
-			
+			}			
 		}
 		
 		void MainFormFormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
