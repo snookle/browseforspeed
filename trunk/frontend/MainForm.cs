@@ -341,7 +341,7 @@ namespace LFS_ServerBrowser
 			CodeCars(out compulsory, out illegal);
 			try{
 				q = new LFSQuery();
-				q.query(compulsory, illegal, "browseforspeed");
+				q.query(compulsory, illegal, "browseforspeed", 0);
 			} catch(Exception e) {
 				MessageBox.Show(e.Message + " - " + e.StackTrace, "", MessageBoxButtons.OK);
 			}
@@ -374,7 +374,7 @@ namespace LFS_ServerBrowser
 			}
 		}
 
-		public void addServerToList(serverInformation info, ListView l, bool isFavQuery)
+		public void addServerToList(ServerInformation info, ListView l, bool isFavQuery)
 		{
 			if (this.exiting) return;
 			try{
@@ -439,15 +439,17 @@ namespace LFS_ServerBrowser
 			} catch(Exception e){}
   		}
 		
-		delegate void AddServerDelegate(serverInformation info, ListView l, bool isFavQuery);
+		delegate void AddServerDelegate(ServerInformation info, ListView l, bool isFavQuery);
 
-		public void queryMainEventListener(object o, serverInformation info) {
+		public void queryMainEventListener(object o, ServerInformation info, object cbObj) {
+			if ((int)cbObj != 0) return;
 			if (info != null) {
 				addServerToList(info, lvMain, false);
 			}
 		}
 		
-		public void queryFavEventListener(object o, serverInformation info) {
+		public void queryFavEventListener(object o, ServerInformation info, object cbObj) {
+			if ((int)cbObj != 0) return;
 			if (info != null) {
 				addServerToList(info, lvFavourites, true);
 			}
@@ -702,7 +704,7 @@ namespace LFS_ServerBrowser
 			if (coll.Count < 1) return;
 			lvFavourites.Items.Add((ListViewItem)coll[0].Clone());
 			//write the host:ip out to file.
-			foreach(serverInformation info in serverList){
+			foreach(ServerInformation info in serverList){
 				if (info.hostname == coll[0].Text){
 					favServerList.Add(info);
 					WriteFav();
@@ -723,7 +725,7 @@ namespace LFS_ServerBrowser
 					if (server != ""){
 						String[] favInfoTmp = server.Split(new Char[]{' '}, 2);
 						String[] ipAddress = favInfoTmp[0].Split(':');						
-						serverInformation info = new serverInformation();
+						ServerInformation info = new ServerInformation();
 						info.hostname = favInfoTmp[1].Trim();
 						info.host = new IPEndPoint(IPAddress.Parse(ipAddress[0]), Convert.ToInt32(ipAddress[1]));
 						favServerList.Add(info);
@@ -741,7 +743,7 @@ namespace LFS_ServerBrowser
 		{
 			try {
 				StreamWriter sw = new StreamWriter(favFilename);
-				foreach (serverInformation info in favServerList){
+				foreach (ServerInformation info in favServerList){
 					sw.Write(info.host.ToString() + " ");
 					sw.WriteLine(info.hostname.Trim());
 				}
@@ -768,11 +770,11 @@ namespace LFS_ServerBrowser
 			{
 				IPEndPoint[] stupidArray = new IPEndPoint[favServerList.Count];
 				for (int i = 0; i < favServerList.Count; i++){
-					stupidArray[i] = ((serverInformation)favServerList[i]).host;
+					stupidArray[i] = ((ServerInformation)favServerList[i]).host;
 				}
 				q = new LFSQuery();
 				favServerList.Clear();
-				q.query(0, 0, "browseforspeed", stupidArray);
+				q.query(0, 0, "browseforspeed", stupidArray, 0);
 			}
 			} catch (Exception ex) {
 				MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);
@@ -851,7 +853,7 @@ namespace LFS_ServerBrowser
 		{
 			ListView.SelectedListViewItemCollection coll = lvMain.SelectedItems;
 			if (coll.Count < 1) return;
-			foreach (serverInformation info in serverList){
+			foreach (ServerInformation info in serverList){
 				if (info.hostname == coll[0].Text){
 					s.SetInfo(info);
 					break;
@@ -896,7 +898,7 @@ namespace LFS_ServerBrowser
 			string filter = GetTrackFilter(cbTracks.Text);
 			lvMain.Items.Clear();
 			try{
-			foreach (serverInformation info in serverList){
+			foreach (ServerInformation info in serverList){
 				if (info.track.Contains(filter)){
 					string serverName;
 					info.hostname = serverName = LFSQuery.removeColourCodes(info.hostname);
@@ -944,7 +946,7 @@ namespace LFS_ServerBrowser
 		{
 			ListView.SelectedListViewItemCollection coll = lvFavourites.SelectedItems;
 			if (coll.Count < 1) return;
-			foreach(serverInformation info in favServerList){
+			foreach(ServerInformation info in favServerList){
 				if (info.hostname == coll[0].Text){
 					favServerList.Remove(info);
 					WriteFav();
@@ -959,7 +961,7 @@ namespace LFS_ServerBrowser
 		{
 			ListView.SelectedListViewItemCollection coll = lvFavourites.SelectedItems;
 			if (coll.Count < 1) return;
-			foreach (serverInformation info in favServerList){
+			foreach (ServerInformation info in favServerList){
 				if (info.hostname == coll[0].Text){
 					s.SetInfo(info);
 					break;
