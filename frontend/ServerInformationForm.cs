@@ -1,11 +1,18 @@
-/*
- * Created by SharpDevelop.
- * User: Ben
- * Date: 23/05/2006
- * Time: 10:51 AM
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
+// Copyright (C) 2006 Richard Nelson, Ben Kenny, Philip Nelson
+//
+// This program is free software; you can redistribute it and/or
+// modify it under the terms of the GNU General Public License
+// as published by the Free Software Foundation; either version 2
+// of the License, or (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 using System;
 using System.Drawing;
@@ -15,7 +22,7 @@ using System.Threading;
 using System.Net;
 using Microsoft.Win32;
 using System.Text.RegularExpressions;
-using liblfsbrowser;
+using libbrowseforspeed;
 
 namespace LFS_ServerBrowser
 {
@@ -24,25 +31,31 @@ namespace LFS_ServerBrowser
 	/// </summary>
 	public partial class ServerInformationForm
 	{
-		private serverInformation info;
+		private ServerInformation info;
 		
 		public void RefreshPlayerList()
-		{
-			//if (!info.success) return;
+		{						
 			SetControlProperty(buttonInfoJoin, "Enabled", false);
-			ArrayList players = LFSQuery.getPlayers(LFSQuery.removeColourCodes(info.hostname));
+			SetControlProperty(buttonInfoRefresh, "Enabled", false);
 			listPlayers.Items.Clear();
-			if (players.Count == 0) {
-				listPlayers.Items.Add("No players currently on the server.");
-			} else {
-				foreach(String player in players){
-					listPlayers.Items.Add(player);
+			if (LFSQuery.getPubStatInfo(ref info)) {
+				labelPrivate.Text = info.passworded ? "Yes" : "No";
+				if (info.players > 0) {
+					foreach (string player in info.racerNames) {
+						listPlayers.Items.Add(player);
+					}
+				} else {
+					listPlayers.Items.Add("No players currently on the server.");
 				}
+			} else {
+				labelPrivate.Text = "N/A";
+				listPlayers.Items.Add("Error querying server.");
 			}
+			SetControlProperty(buttonInfoRefresh, "Enabled", true);
 			SetControlProperty(buttonInfoJoin, "Enabled", true);
 			SetControlProperty(buttonInfoRefresh, "Text", "&Refresh");
 		}
-		public void SetInfo(serverInformation info)
+		public void SetInfo(ServerInformation info)
 		{
 			if (info == null) return;
 			this.info = info;
@@ -54,7 +67,7 @@ namespace LFS_ServerBrowser
 			listPlayers.Items.Clear();
 		}
 		
-		public serverInformation GetInfo()
+		public ServerInformation GetInfo()
 		{
 			return info;
 		}
@@ -105,7 +118,7 @@ namespace LFS_ServerBrowser
 				IPEndPoint[] server = new IPEndPoint[1];
 				server[0] = this.info.host;
 				//MessageBox.Show(this.info.host.ToString(), "", MessageBoxButtons.OK);
-				q.query(0, 0, "browseforspeed", server);				
+				q.query(0, 0, "browseforspeed", server, 3);
 				Thread t = new Thread(new ThreadStart(RefreshPlayerList));
 				t.Start();
 			} catch(Exception e) {
@@ -113,7 +126,10 @@ namespace LFS_ServerBrowser
 			}
 		}
 		
-		public void queryCallback(object o, serverInformation info) {
+		public void queryCallback(object o, ServerInformation info, Object cbObj) {
+			if ((int)cbObj != 3) { //not for us
+				return;
+			}
 			if (info != null) {
 				//MessageBox.Show("queryCallback firing", "", MessageBoxButtons.OK);
 				refreshServer(info);
@@ -123,9 +139,8 @@ namespace LFS_ServerBrowser
 		void RefreshButtonClick(object sender, System.EventArgs e)
 		{
 			if (buttonInfoRefresh.Text == "&Refresh"){				
-				LFSQuery.queried -= new ServerQueried(main.queryMainEventListener);
-				LFSQuery.queried -= new ServerQueried(main.queryFavEventListener);
-				LFSQuery.queried -= new ServerQueried(queryCallback);
+				//LFSQuery.queried -= new ServerQueried(main.queryMainEventListener);
+				//LFSQuery.queried -= new ServerQueried(main.queryFavEventListener);				
 				LFSQuery.queried += new ServerQueried(queryCallback);
 				t = new Thread(new ThreadStart(MakeMainQuery));
 	  			t.Start();
@@ -134,9 +149,9 @@ namespace LFS_ServerBrowser
 			}
 		}
 		
-		delegate void RefreshServerDelegate(serverInformation info);
+		delegate void RefreshServerDelegate(ServerInformation info);
 
-		public void refreshServer(serverInformation info)
+		public void refreshServer(ServerInformation info)
 		{
 			try{
 			// Make sure we're on the right thread
@@ -147,6 +162,7 @@ namespace LFS_ServerBrowser
 			if (info.success){
 					SetInfo(info);
 			} else {
+				listPlayers.Items.Clear();
 				labelServerName.Text = "Not Responding";
 				labelPing.Text = "9999";
 				labelCars.Text = "N/A";

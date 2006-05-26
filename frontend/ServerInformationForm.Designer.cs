@@ -53,13 +53,15 @@ namespace LFS_ServerBrowser
 			this.labelCars = new System.Windows.Forms.Label();
 			this.labelPing = new System.Windows.Forms.Label();
 			this.labelTrack = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.labelPrivate = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// buttonInfoJoin
 			// 
 			this.buttonInfoJoin.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.buttonInfoJoin.Location = new System.Drawing.Point(12, 266);
+			this.buttonInfoJoin.Location = new System.Drawing.Point(12, 338);
 			this.buttonInfoJoin.Name = "buttonInfoJoin";
 			this.buttonInfoJoin.Size = new System.Drawing.Size(75, 23);
 			this.buttonInfoJoin.TabIndex = 0;
@@ -69,7 +71,7 @@ namespace LFS_ServerBrowser
 			// buttonInfoClose
 			// 
 			this.buttonInfoClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.buttonInfoClose.Location = new System.Drawing.Point(349, 266);
+			this.buttonInfoClose.Location = new System.Drawing.Point(349, 338);
 			this.buttonInfoClose.Name = "buttonInfoClose";
 			this.buttonInfoClose.Size = new System.Drawing.Size(75, 23);
 			this.buttonInfoClose.TabIndex = 1;
@@ -79,7 +81,7 @@ namespace LFS_ServerBrowser
 			// 
 			// buttonInfoRefresh
 			// 
-			this.buttonInfoRefresh.Location = new System.Drawing.Point(268, 266);
+			this.buttonInfoRefresh.Location = new System.Drawing.Point(268, 338);
 			this.buttonInfoRefresh.Name = "buttonInfoRefresh";
 			this.buttonInfoRefresh.Size = new System.Drawing.Size(75, 23);
 			this.buttonInfoRefresh.TabIndex = 2;
@@ -125,7 +127,7 @@ namespace LFS_ServerBrowser
 			// 
 			// label5
 			// 
-			this.label5.Location = new System.Drawing.Point(93, 271);
+			this.label5.Location = new System.Drawing.Point(93, 343);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(100, 23);
 			this.label5.TabIndex = 8;
@@ -133,7 +135,7 @@ namespace LFS_ServerBrowser
 			// 
 			// textInfoPassword
 			// 
-			this.textInfoPassword.Location = new System.Drawing.Point(153, 268);
+			this.textInfoPassword.Location = new System.Drawing.Point(153, 340);
 			this.textInfoPassword.Name = "textInfoPassword";
 			this.textInfoPassword.PasswordChar = '*';
 			this.textInfoPassword.Size = new System.Drawing.Size(109, 21);
@@ -142,9 +144,9 @@ namespace LFS_ServerBrowser
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.listPlayers);
-			this.groupBox1.Location = new System.Drawing.Point(12, 81);
+			this.groupBox1.Location = new System.Drawing.Point(12, 103);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(412, 179);
+			this.groupBox1.Size = new System.Drawing.Size(412, 233);
 			this.groupBox1.TabIndex = 10;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Players";
@@ -154,15 +156,15 @@ namespace LFS_ServerBrowser
 			this.listPlayers.FormattingEnabled = true;
 			this.listPlayers.Items.AddRange(new object[] {
 									"Retrieving...."});
-			this.listPlayers.Location = new System.Drawing.Point(6, 20);
+			this.listPlayers.Location = new System.Drawing.Point(6, 15);
 			this.listPlayers.Name = "listPlayers";
-			this.listPlayers.Size = new System.Drawing.Size(400, 147);
+			this.listPlayers.Size = new System.Drawing.Size(400, 212);
 			this.listPlayers.TabIndex = 0;
 			// 
 			// label6
 			// 
 			this.label6.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-			this.label6.Location = new System.Drawing.Point(12, 55);
+			this.label6.Location = new System.Drawing.Point(12, 77);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(100, 23);
 			this.label6.TabIndex = 11;
@@ -186,7 +188,7 @@ namespace LFS_ServerBrowser
 			// 
 			// labelCars
 			// 
-			this.labelCars.Location = new System.Drawing.Point(45, 55);
+			this.labelCars.Location = new System.Drawing.Point(45, 77);
 			this.labelCars.Name = "labelCars";
 			this.labelCars.Size = new System.Drawing.Size(379, 23);
 			this.labelCars.TabIndex = 14;
@@ -208,12 +210,31 @@ namespace LFS_ServerBrowser
 			this.labelTrack.TabIndex = 16;
 			this.labelTrack.Text = "label3";
 			// 
+			// label3
+			// 
+			this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Location = new System.Drawing.Point(12, 55);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(60, 23);
+			this.label3.TabIndex = 17;
+			this.label3.Text = "Private:";
+			// 
+			// labelPrivate
+			// 
+			this.labelPrivate.Location = new System.Drawing.Point(105, 55);
+			this.labelPrivate.Name = "labelPrivate";
+			this.labelPrivate.Size = new System.Drawing.Size(100, 23);
+			this.labelPrivate.TabIndex = 18;
+			this.labelPrivate.Text = "Dunno yet, LOL";
+			// 
 			// ServerInformationForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(436, 301);
+			this.ClientSize = new System.Drawing.Size(436, 373);
 			this.ControlBox = false;
+			this.Controls.Add(this.labelPrivate);
+			this.Controls.Add(this.label3);
 			this.Controls.Add(this.labelTrack);
 			this.Controls.Add(this.labelPing);
 			this.Controls.Add(this.labelCars);
@@ -241,6 +262,8 @@ namespace LFS_ServerBrowser
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Label labelPrivate;
+		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.ListBox listPlayers;
 		private System.Windows.Forms.Label labelTrack;
 		private System.Windows.Forms.Label labelPing;
