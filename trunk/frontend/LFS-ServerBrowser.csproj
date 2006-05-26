@@ -38,28 +38,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="liblfsbrowser">
-      <HintPath>bin\Debug\liblfsbrowser.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="liblfsbrowser">
-      <HintPath>bin\Debug\liblfsbrowser.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="liblfsbrowser">
-      <HintPath>bin\Debug\liblfsbrowser.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="liblfsbrowser">
-      <HintPath>liblfsbrowser.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="liblfsbrowser">
-      <HintPath>bin\Debug\liblfsbrowser.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="liblfsbrowser">
-      <HintPath>bin\Debug\liblfsbrowser.dll</HintPath>
+     <Reference Include="libbrowseforspeed">
+      <HintPath>bin\Debug\libbrowseforspeed.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
   </ItemGroup>
