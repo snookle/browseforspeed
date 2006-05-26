@@ -8,8 +8,8 @@ public class faq {
 		ArrayList answers = new ArrayList();
 		questions.add("What can I do with Browse for Speed?");
 		answers.add("Browse for Speed is a server browser for the popular online racing game <a href='http://www.liveforspeed.net'>Live for Speed</a>");
-		questions.add("Why does it not tell me if my favourite servers are passworded?");
-		answers.add("For reasons unknown to us, the rules information returned by each server does not include if the server is passworded. The master server lets you know which servers are passworded when returning a list of hosts, therefore it is not technically possible for us to do this. Sorry.");
+		questions.add("Why does it not tell me if my favourite servers are passworded until I get the detailed information?");
+		answers.add("For reasons unknown to us, the rules information returned by each server does not include if the server is passworded. The master server lets you know which servers are passworded when returning a list of hosts, therefore it is not technically possible for us to do this, until you view the server's detailed information.");
 		questions.add("Who developed it? Is it part of LFS?");
 		answers.add("Three developers, who have absolutely no connection with the development of LFS. Richard Nelson wrote the majority of liblfsbrowser, Ben Kenny did the frontend, and Philip Nelson yelled abuse and helped with some of the development.");
 		questions.add("Where is the server query protocol documented?");
