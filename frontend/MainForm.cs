@@ -406,7 +406,7 @@ namespace LFS_ServerBrowser
 						ListViewItem lvi = l.Items.Add(info.host.ToString());
 						lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, serverName));
 						lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, info.ping.ToString()));
-						lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, info.passworded.ToString()));
+						lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, info.passworded == true ? "Yes" : "No"));
 						lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, info.players.ToString() +"/" + info.slots.ToString()));
 						lvi.SubItems.Insert(4, new ListViewItem.ListViewSubItem(lvi, RulesToString(info.rules)));
 						lvi.SubItems.Insert(5, new ListViewItem.ListViewSubItem(lvi, info.track));
@@ -917,7 +917,7 @@ namespace LFS_ServerBrowser
 					ListViewItem lvi = listView1.Items.Add(info.host.ToString());
 					lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, serverName));
 					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, info.ping.ToString()));
-					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, info.passworded.ToString()));
+					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, info.passworded == true ? "Yes" : "No"));
 					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, info.players.ToString() +"/" + info.slots.ToString()));
 					lvi.SubItems.Insert(4, new ListViewItem.ListViewSubItem(lvi, RulesToString(info.rules)));
 					lvi.SubItems.Insert(5, new ListViewItem.ListViewSubItem(lvi, info.track));
