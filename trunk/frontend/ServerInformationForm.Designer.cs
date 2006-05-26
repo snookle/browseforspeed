@@ -255,8 +255,7 @@ namespace LFS_ServerBrowser
 			this.MinimizeBox = false;
 			this.Name = "ServerInformationForm";
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-			this.Text = "Server Information";
-			this.Activated += new System.EventHandler(this.ServerInformationFormActivated);
+			this.Text = "Server Information";			
 			this.Load += new System.EventHandler(this.ServerInformationFormLoad);
 			this.groupBox1.ResumeLayout(false);
 			this.ResumeLayout(false);
