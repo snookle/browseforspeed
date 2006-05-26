@@ -25,7 +25,7 @@ using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 using Microsoft.Win32;
-using liblfsbrowser;
+using libbrowseforspeed;
 using System.Threading;
 
 namespace LFS_ServerBrowser
@@ -112,6 +112,8 @@ namespace LFS_ServerBrowser
 		
 		bool exiting;
 		
+		Thread t;
+		
 		
 		[STAThread]
 		public static void Main(string[] args)
@@ -129,10 +131,10 @@ namespace LFS_ServerBrowser
 			lvwColumnSorter = new ListViewColumnSorter();
 			lvwColumnSorter.SortColumn = 1;
 			lvwColumnSorter.Order = SortOrder.Ascending;
-			listView1.ListViewItemSorter = lvwColumnSorter;
-			listView1.Sort();
-			listViewFav.ListViewItemSorter = lvwColumnSorter;
-			listViewFav.Sort();
+			lvMain.ListViewItemSorter = lvwColumnSorter;
+			lvMain.Sort();
+			lvFavourites.ListViewItemSorter = lvwColumnSorter;
+			lvFavourites.Sort();
 			s = new ServerInformationForm(this);
 			q = new LFSQuery();
 			//search for LFS.exe
@@ -175,11 +177,10 @@ namespace LFS_ServerBrowser
 					pathList.SelectedIndex = 0;
 			}
 			
-			comboBoxTracks.SelectedIndex = 0;
+			cbTracks.SelectedIndex = 0;
 			
 		}
-		
-		//
+
 		void CodeCars(out ulong compulsory, out ulong illegal)
 		{
 			compulsory = 0;
@@ -330,11 +331,10 @@ namespace LFS_ServerBrowser
       		ctrl.Invoke(dgtSetValue, new Object[3] { ctrl, val, /*index*/null });
 		}
 		
-		//Purpose: Sets up the UI and
 		void MakeMainQuery()
 		{
 			SetControlProperty(buttonRefreshFav, "Text", "&Stop Refresh");
-			SetControlProperty(refreshButton, "Text", "&Stop Refresh");
+			SetControlProperty(btnRefreshMain, "Text", "&Stop Refresh");
 			
 			ulong compulsory;
 			ulong illegal;
@@ -348,29 +348,28 @@ namespace LFS_ServerBrowser
 			if (exiting) return;
 		
 		
-			//listView1.Sort();
-			SetControlProperty(refreshButton, "Enabled", true);
+			//lvMain.Sort();
+			SetControlProperty(btnRefreshMain, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Text", "&Refresh All");
-			SetControlProperty(refreshButton, "Text", "&Refresh");
+			SetControlProperty(btnRefreshMain, "Text", "&Refresh");
 		}
 		
-		Thread t;
 		void RefreshButtonClick(object sender, System.EventArgs e)
 		{
-			if (refreshButton.Text == "&Refresh"){
+			if (btnRefreshMain.Text == "&Refresh"){
 				LFSQuery.queried -= new ServerQueried(queryMainEventListener);
 				LFSQuery.queried -= new ServerQueried(queryFavEventListener);
 				LFSQuery.queried += new ServerQueried(queryMainEventListener);
 				totalServers = 0;
-				listView1.Items.Clear();
+				lvMain.Items.Clear();
 				serverList.Clear();
-				joinButton.Enabled = false;
+				btnJoinMain.Enabled = false;
 				t = new Thread(new ThreadStart(MakeMainQuery));
 	  			t.Start();
 			} else {
 				LFSQuery.stopQuerying();
-				refreshButton.Enabled = false;
+				btnRefreshMain.Enabled = false;
 				buttonRefreshFav.Enabled = false;
 			}
 		}
@@ -393,15 +392,13 @@ namespace LFS_ServerBrowser
 				if (isFavQuery)
 					filter = "";		
 				else
-					filter = GetTrackFilter(comboBoxTracks.Text);
+					filter = GetTrackFilter(cbTracks.Text);
 					
 				if (info.success){
 					numServersDone++;
 					if (info.track.Contains(filter)){
-						string serverName = info.hostname;
-						serverName = Regex.Replace(serverName, "\\^\\d", "");
-						serverName = Regex.Replace(serverName, "\\^\\^", "^").Trim();
-						info.hostname = serverName;
+						string serverName;
+						info.hostname = serverName = LFSQuery.removeColourCodes(info.hostname);
 						string cars = CarsToString(info.cars);
 						ListViewItem lvi = l.Items.Add(info.host.ToString());
 						lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, serverName));
@@ -442,13 +439,13 @@ namespace LFS_ServerBrowser
 
 		public void queryMainEventListener(object o, serverInformation info) {
 			if (info != null) {
-				addServerToList(info, listView1, false);
+				addServerToList(info, lvMain, false);
 			}
 		}
 		
 		public void queryFavEventListener(object o, serverInformation info) {
 			if (info != null) {
-				addServerToList(info, listViewFav, true);
+				addServerToList(info, lvFavourites, true);
 			}
 		}
 
@@ -458,7 +455,7 @@ namespace LFS_ServerBrowser
 			Close();
 		}
 		
-		void ListView1ColumnClick(object sender, System.Windows.Forms.ColumnClickEventArgs e)
+		void lvMainColumnClick(object sender, System.Windows.Forms.ColumnClickEventArgs e)
 		{			
 			// Determine if clicked column is already the column that is being sorted.
 			if ( e.Column == lvwColumnSorter.SortColumn ) {
@@ -476,12 +473,11 @@ namespace LFS_ServerBrowser
 
 			// Perform the sort with these new sort options.
 			((ListView)sender).Sort();
-			//listView1.Sort();
 		}
 		
-		 void LoadLFS(String hostName, String mode, String password)
+		void LoadLFS(String hostName, String mode, String password)
 		{
-			String path = pathList.Items[pathList.SelectedIndex].ToString();
+			String path = config.lfsPath;
 			FormWindowState ws = this.WindowState;
 			LFSQuery.stopQuerying();
 			try{
@@ -493,9 +489,9 @@ namespace LFS_ServerBrowser
 				p.Start();
 				p.WaitForExit();
 			} catch (Exception ex) {
-				this.WindowState = ws;
 				MessageBox.Show("Error executing: "+path+"\n"+ex.Message+"\nRecheck your configuration.", appTitle, MessageBoxButtons.OK);
 			}
+			this.WindowState = ws;
 		}
 		
 		void Button1Click(object sender, System.EventArgs e)
@@ -506,18 +502,18 @@ namespace LFS_ServerBrowser
 			pathList.SelectedIndex = pathList.Items.Count - 1;
 		}
 		
-		void JoinButtonClick(object sender, System.EventArgs e)
+		void btnJoinClick(object sender, System.EventArgs e)
 		{
-			ListView.SelectedListViewItemCollection coll = listView1.SelectedItems;
+			ListView.SelectedListViewItemCollection coll = lvMain.SelectedItems;
 			if (coll.Count < 1) return;
 			String serverName = coll[0].Text;
 
-			LoadLFS(serverName, "S2", passwordText.Text);
+			LoadLFS(serverName, "S2", edtPasswordMain.Text);
 		}
 		
-		void ListView1SelectedIndexChanged(object sender, System.EventArgs e)
+		void lvMainSelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			joinButton.Enabled = (listView1.SelectedItems.Count > 0);
+			btnJoinMain.Enabled = (lvMain.SelectedItems.Count > 0);
 		}
 		
 		void AllCarsButtonClick(object sender, System.EventArgs e)
@@ -692,15 +688,15 @@ namespace LFS_ServerBrowser
 		
 		void ContextMenuBrowserOpening(object sender, System.ComponentModel.CancelEventArgs e)
 		{
-			ListView.SelectedListViewItemCollection coll = listView1.SelectedItems;
+			ListView.SelectedListViewItemCollection coll = lvMain.SelectedItems;
 			contextMenuBrowser.Enabled = (coll.Count > 0);
 		}
 		
 		void ToolStripMenuItem1Click(object sender, System.EventArgs e)
 		{
-			ListView.SelectedListViewItemCollection coll = listView1.SelectedItems;
+			ListView.SelectedListViewItemCollection coll = lvMain.SelectedItems;
 			if (coll.Count < 1) return;
-			listViewFav.Items.Add((ListViewItem)coll[0].Clone());
+			lvFavourites.Items.Add((ListViewItem)coll[0].Clone());
 			//write the host:ip out to file.
 			foreach(serverInformation info in serverList){
 				if (info.hostname == coll[0].Text){
@@ -716,7 +712,7 @@ namespace LFS_ServerBrowser
 			try {
 				TextReader tr = new StreamReader(favFilename);
 				favServerList.Clear();
-				listViewFav.Items.Clear();
+				lvFavourites.Items.Clear();
 				string s = tr.ReadToEnd();
 				foreach(String server in s.Split(new Char[]{'\n'}))
 				{
@@ -727,7 +723,7 @@ namespace LFS_ServerBrowser
 						info.hostname = favInfoTmp[1].Trim();
 						info.host = new IPEndPoint(IPAddress.Parse(ipAddress[0]), Convert.ToInt32(ipAddress[1]));
 						favServerList.Add(info);
-						listViewFav.Items.Add(info.hostname);
+						lvFavourites.Items.Add(info.hostname);
 					}
 				}
 				tr.Close();
@@ -755,14 +751,14 @@ namespace LFS_ServerBrowser
 		
 		void ContextMenuFavOpening(object sender, System.ComponentModel.CancelEventArgs e)
 		{
-			ListView.SelectedListViewItemCollection coll = listViewFav.SelectedItems;
+			ListView.SelectedListViewItemCollection coll = lvFavourites.SelectedItems;
 			contextMenuFav.Enabled = (coll.Count > 0);
 		}
 
 		void MakeFavQuery()
 		{
 			SetControlProperty(buttonRefreshFav, "Text", "&Stop Refresh");
-			SetControlProperty(refreshButton, "Text", "&Stop Refresh");
+			SetControlProperty(btnRefreshMain, "Text", "&Stop Refresh");
 			try {
 			if (favServerList.Count > 0)
 			{
@@ -778,11 +774,11 @@ namespace LFS_ServerBrowser
 				MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);
 			}
 			if (exiting) return;
-			SetControlProperty(refreshButton, "Enabled", true);
+			SetControlProperty(btnRefreshMain, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Enabled", true);
 			
 			SetControlProperty(buttonRefreshFav, "Text", "&Refresh All");
-			SetControlProperty(refreshButton, "Text", "&Refresh");
+			SetControlProperty(btnRefreshMain, "Text", "&Refresh");
 		}
 				
 		void ButtonRefreshFavClick(object sender, System.EventArgs e)
@@ -792,12 +788,12 @@ namespace LFS_ServerBrowser
 				LFSQuery.queried -= new ServerQueried(queryFavEventListener);
 				LFSQuery.queried += new ServerQueried(queryFavEventListener);
 				totalServers = 0;
-				listViewFav.Items.Clear();
+				lvFavourites.Items.Clear();
 				t = new Thread(new ThreadStart(MakeFavQuery));
   				t.Start();
 			} else {
 				LFSQuery.stopQuerying();
-				refreshButton.Enabled = false;
+				btnRefreshMain.Enabled = false;
 				buttonRefreshFav.Enabled = false;
 			}
 		}
@@ -833,23 +829,23 @@ namespace LFS_ServerBrowser
 			
 		}
 		
-		void ListViewFavSelectedIndexChanged(object sender, System.EventArgs e)
+		void lvFavouritesSelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			//MessageBox.Show(listViewFav.Items[0].SubItems.Count.ToString(), "", MessageBoxButtons.OK);
-			buttonJoinFav.Enabled = (listViewFav.SelectedItems.Count > 0 && listViewFav.Items[0].SubItems.Count > 1);
+			//MessageBox.Show(lvFavourites.Items[0].SubItems.Count.ToString(), "", MessageBoxButtons.OK);
+			buttonJoinFav.Enabled = (lvFavourites.SelectedItems.Count > 0 && lvFavourites.Items[0].SubItems.Count > 1);
 		}
 		
 		void ButtonJoinFavClick(object sender, System.EventArgs e)
 		{
-			ListView.SelectedListViewItemCollection coll = listViewFav.SelectedItems;
+			ListView.SelectedListViewItemCollection coll = lvFavourites.SelectedItems;
 			if (coll.Count < 1) return;
 			String serverName = coll[0].Text;
-			LoadLFS(serverName, "S2", passwordText.Text);
+			LoadLFS(serverName, "S2", edtPasswordMain.Text);
 		}
 		
 		void ViewServerInformationToolStripMenuItemClick(object sender, System.EventArgs e)
 		{
-			ListView.SelectedListViewItemCollection coll = listView1.SelectedItems;
+			ListView.SelectedListViewItemCollection coll = lvMain.SelectedItems;
 			if (coll.Count < 1) return;
 			foreach (serverInformation info in serverList){
 				if (info.hostname == coll[0].Text){
@@ -858,19 +854,8 @@ namespace LFS_ServerBrowser
 				}
 			}
 			if (s.ShowDialog(this) == DialogResult.OK){
-				LoadLFS(s.GetInfo().hostname, "S2", passwordText.Text);
+				LoadLFS(s.GetInfo().hostname, "S2", edtPasswordMain.Text);
 			}
-			
-		}
-		
-		
-		void ListView1KeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
-		{
-			
-		}
-		
-		void ListView1KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
-		{
 			
 		}
 		
@@ -904,17 +889,15 @@ namespace LFS_ServerBrowser
 		
 		void ComboBoxTracksSelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			string filter = GetTrackFilter(comboBoxTracks.Text);
-			listView1.Items.Clear();
+			string filter = GetTrackFilter(cbTracks.Text);
+			lvMain.Items.Clear();
 			try{
 			foreach (serverInformation info in serverList){
 				if (info.track.Contains(filter)){
-					string serverName = info.hostname;
-					serverName = Regex.Replace(serverName, "\\^\\d", "");
-					serverName = Regex.Replace(serverName, "\\^\\^", "^");
-					info.hostname = serverName;
-					string cars = info.cars.ToString();//CarsToString(info.cars);
-					ListViewItem lvi = listView1.Items.Add(info.host.ToString());
+					string serverName;
+					info.hostname = serverName = LFSQuery.removeColourCodes(info.hostname);
+					string cars = info.cars.ToString();
+					ListViewItem lvi = lvMain.Items.Add(info.host.ToString());
 					lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, serverName));
 					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, info.ping.ToString()));
 					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, info.passworded == true ? "Yes" : "No"));
@@ -926,13 +909,12 @@ namespace LFS_ServerBrowser
 				} } catch (Exception ex) { MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);}
 		}
 
-		void FindUserbuttonClick(object sender, System.EventArgs e)
+		void btnFindUserClick(object sender, System.EventArgs e)
 		{
-			string hostname = q.findUser("wabz", textFindUser.Text);
+			string hostname = q.findUser("wabz", edtFindUserMain.Text);
 			if (hostname != null){
-					hostname = Regex.Replace(hostname, "\\^\\d", "");
-					hostname = Regex.Replace(hostname, "\\^\\^", "^");
-				if (MessageBox.Show("Join " + textFindUser.Text + " at this host?\n" + hostname, "", MessageBoxButtons.YesNo) == DialogResult.Yes){
+				hostname = LFSQuery.removeColourCodes(hostname);
+				if (MessageBox.Show("Join " + edtFindUserMain.Text + " at this host?\n" + hostname, appTitle, MessageBoxButtons.YesNo) == DialogResult.Yes){
 					LoadLFS(hostname, "S2", "");
 				}
 				
@@ -950,21 +932,19 @@ namespace LFS_ServerBrowser
 				config.checkNewVersion = cbNewVersion.Checked;
 				LFSQuery.xpsp2_wait = !config.disableWait;
 				config.Save();
-				
-				
 			}
 			this.lastTabSelected = tabControl.SelectedIndex;
 		}
 		
 		void RemoveFromFavouritesToolStripMenuItemClick(object sender, System.EventArgs e)
 		{
-			ListView.SelectedListViewItemCollection coll = listViewFav.SelectedItems;
+			ListView.SelectedListViewItemCollection coll = lvFavourites.SelectedItems;
 			if (coll.Count < 1) return;
 			foreach(serverInformation info in favServerList){
 				if (info.hostname == coll[0].Text){
 					favServerList.Remove(info);
 					WriteFav();
-					listViewFav.Items.Remove((ListViewItem)coll[0]);
+					lvFavourites.Items.Remove((ListViewItem)coll[0]);
 					break;
 				}
 			}
@@ -978,7 +958,7 @@ namespace LFS_ServerBrowser
 		
 		void ViewServerInformationFavClick(object sender, System.EventArgs e)
 		{
-			ListView.SelectedListViewItemCollection coll = listViewFav.SelectedItems;
+			ListView.SelectedListViewItemCollection coll = lvFavourites.SelectedItems;
 			if (coll.Count < 1) return;
 			foreach (serverInformation info in favServerList){
 				if (info.hostname == coll[0].Text){
@@ -987,7 +967,7 @@ namespace LFS_ServerBrowser
 				}
 			}
 			if (s.ShowDialog(this) == DialogResult.OK){
-				LoadLFS(s.GetInfo().hostname, "S2", passwordText.Text);
+				LoadLFS(s.GetInfo().hostname, "S2", edtPasswordMain.Text);
 			}
 			
 		}
@@ -1026,72 +1006,36 @@ namespace LFS_ServerBrowser
 			MainForm.versionCheck(true);
 		}
 	}
-/// <summary>
-/// Horray for code copied from the MSDN!
-/// This class is an implementation of the 'IComparer' interface.
-/// </summary>
+/// Horray for code nicked from the MSDN!
 public class ListViewColumnSorter : IComparer
 {
-	/// <summary>
-	/// Specifies the column to be sorted
-	/// </summary>
 	private int ColumnToSort;
-	/// <summary>
-	/// Specifies the order in which to sort (i.e. 'Ascending').
-	/// </summary>
 	private SortOrder OrderOfSort;
-	/// <summary>
-	/// Case insensitive comparer object
-	/// </summary>
 	private CaseInsensitiveComparer ObjectCompare;
-
-	/// <summary>
-	/// Class constructor.  Initializes various elements
-	/// </summary>
+	
 	public ListViewColumnSorter()
 	{
-		// Initialize the column to '0'
 		ColumnToSort = 0;
-
-		// Initialize the sort order to 'none'
 		OrderOfSort = SortOrder.None;
-
-		// Initialize the CaseInsensitiveComparer object
 		ObjectCompare = new CaseInsensitiveComparer();
 	}
 
-	/// <summary>
-	/// This method is inherited from the IComparer interface.  It compares the two objects passed using a case insensitive comparison.
-	/// </summary>
-	/// <param name="x">First object to be compared</param>
-	/// <param name="y">Second object to be compared</param>
-	/// <returns>The result of the comparison. "0" if equal, negative if 'x' is less than 'y' and positive if 'x' is greater than 'y'</returns>
 	public int Compare(object x, object y)
 	{
 		int compareResult;
 		ListViewItem listviewX, listviewY;
-
-		// Cast the objects to be compared to ListViewItem objects
 		listviewX = (ListViewItem)x;
 		listviewY = (ListViewItem)y;
-
-		// Compare the two items
-		try{
+		try {
 		if (ColumnToSort == 1) { //if we're sorting the ping column
 			compareResult = ObjectCompare.Compare(Convert.ToInt32(listviewX.SubItems[ColumnToSort].Text), Convert.ToInt32(listviewY.SubItems[ColumnToSort].Text));
 		} else {
 			compareResult = ObjectCompare.Compare(listviewX.SubItems[ColumnToSort].Text, listviewY.SubItems[ColumnToSort].Text);
 		}
-			
-		// Calculate correct return value based on object comparison
-		if (OrderOfSort == SortOrder.Ascending)
-		{
-			// Ascending sort is selected, return normal result of compare operation
+		if (OrderOfSort == SortOrder.Ascending) {
 			return compareResult;
 		}
-		else if (OrderOfSort == SortOrder.Descending)
-		{
-			// Descending sort is selected, return negative result of compare operation
+		else if (OrderOfSort == SortOrder.Descending) {
 			return (-compareResult);
 		}
 
@@ -1100,33 +1044,23 @@ public class ListViewColumnSorter : IComparer
 		}
 		return 0;
 	}
-    
-	/// <summary>
-	/// Gets or sets the number of the column to which to apply the sorting operation (Defaults to '0').
-	/// </summary>
+
 	public int SortColumn
 	{
-		set
-		{
+		set	{
 			ColumnToSort = value;
 		}
-		get
-		{
+		get	{
 			return ColumnToSort;
 		}
 	}
 
-	/// <summary>
-	/// Gets or sets the order of sorting to apply (for example, 'Ascending' or 'Descending').
-	/// </summary>
 	public SortOrder Order
 	{
-		set
-		{
+		set	{
 			OrderOfSort = value;
 		}
-		get
-		{
+		get	{
 			return OrderOfSort;
 		}
 	}

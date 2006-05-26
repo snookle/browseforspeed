@@ -44,11 +44,11 @@ namespace LFS_ServerBrowser
 			this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.textFindUser = new System.Windows.Forms.TextBox();
+			this.edtFindUserMain = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.passwordText = new System.Windows.Forms.TextBox();
+			this.edtPasswordMain = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.findUserbutton = new System.Windows.Forms.Button();
+			this.btnFindUserMain = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.cbRAC = new System.Windows.Forms.CheckBox();
 			this.cbFZR = new System.Windows.Forms.CheckBox();
@@ -60,7 +60,7 @@ namespace LFS_ServerBrowser
 			this.cbMRT = new System.Windows.Forms.CheckBox();
 			this.cbXFR = new System.Windows.Forms.CheckBox();
 			this.cbUFR = new System.Windows.Forms.CheckBox();
-			this.allCarsButton = new System.Windows.Forms.Button();
+			this.btnCarsALL = new System.Windows.Forms.Button();
 			this.cbFZ5 = new System.Windows.Forms.CheckBox();
 			this.cbLX6 = new System.Windows.Forms.CheckBox();
 			this.cbXRT = new System.Windows.Forms.CheckBox();
@@ -70,14 +70,14 @@ namespace LFS_ServerBrowser
 			this.cbXRG = new System.Windows.Forms.CheckBox();
 			this.cbXFG = new System.Windows.Forms.CheckBox();
 			this.cbUF1 = new System.Windows.Forms.CheckBox();
-			this.comboBoxTracks = new System.Windows.Forms.ComboBox();
-			this.ssCarsbutton = new System.Windows.Forms.Button();
-			this.gtrCarsButton = new System.Windows.Forms.Button();
-			this.fwdCarsButton = new System.Windows.Forms.Button();
-			this.lrfCarsButton = new System.Windows.Forms.Button();
-			this.tboCarsButton = new System.Windows.Forms.Button();
-			this.stdCarsButton = new System.Windows.Forms.Button();
-			this.listView1 = new System.Windows.Forms.ListView();
+			this.cbTracks = new System.Windows.Forms.ComboBox();
+			this.btnCarsSS = new System.Windows.Forms.Button();
+			this.btnCarsGTR = new System.Windows.Forms.Button();
+			this.btnCarsFWD = new System.Windows.Forms.Button();
+			this.btnCarsLRF = new System.Windows.Forms.Button();
+			this.btnCarsTBO = new System.Windows.Forms.Button();
+			this.btnCarsSTD = new System.Windows.Forms.Button();
+			this.lvMain = new System.Windows.Forms.ListView();
 			this.columnHeaderName = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderPing = new System.Windows.Forms.ColumnHeader();
 			this.columnPrivate = new System.Windows.Forms.ColumnHeader();
@@ -89,15 +89,15 @@ namespace LFS_ServerBrowser
 			this.joinServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewServerInformationMain = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.refreshButton = new System.Windows.Forms.Button();
-			this.joinButton = new System.Windows.Forms.Button();
+			this.btnRefreshMain = new System.Windows.Forms.Button();
+			this.btnJoinMain = new System.Windows.Forms.Button();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.buttonAddFav = new System.Windows.Forms.Button();
 			this.label7 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.buttonRefreshFav = new System.Windows.Forms.Button();
 			this.buttonJoinFav = new System.Windows.Forms.Button();
-			this.listViewFav = new System.Windows.Forms.ListView();
+			this.lvFavourites = new System.Windows.Forms.ListView();
 			this.columnHeaderFavServerName = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderFavPing = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderFavPrivate = new System.Windows.Forms.ColumnHeader();
@@ -120,7 +120,6 @@ namespace LFS_ServerBrowser
 			this.label2 = new System.Windows.Forms.Label();
 			this.browseForButton = new System.Windows.Forms.Button();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.timerThread = new System.Windows.Forms.Timer(this.components);
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.statusTotal = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusRefused = new System.Windows.Forms.ToolStripStatusLabel();
@@ -194,15 +193,15 @@ namespace LFS_ServerBrowser
 			// 
 			// tabPage1
 			// 
-			this.tabPage1.Controls.Add(this.textFindUser);
+			this.tabPage1.Controls.Add(this.edtFindUserMain);
 			this.tabPage1.Controls.Add(this.label1);
-			this.tabPage1.Controls.Add(this.passwordText);
+			this.tabPage1.Controls.Add(this.edtPasswordMain);
 			this.tabPage1.Controls.Add(this.label6);
-			this.tabPage1.Controls.Add(this.findUserbutton);
+			this.tabPage1.Controls.Add(this.btnFindUserMain);
 			this.tabPage1.Controls.Add(this.groupBox2);
-			this.tabPage1.Controls.Add(this.listView1);
-			this.tabPage1.Controls.Add(this.refreshButton);
-			this.tabPage1.Controls.Add(this.joinButton);
+			this.tabPage1.Controls.Add(this.lvMain);
+			this.tabPage1.Controls.Add(this.btnRefreshMain);
+			this.tabPage1.Controls.Add(this.btnJoinMain);
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -211,13 +210,13 @@ namespace LFS_ServerBrowser
 			this.tabPage1.Text = "Server Browser";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
-			// textFindUser
+			// edtFindUserMain
 			// 
-			this.textFindUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.textFindUser.Location = new System.Drawing.Point(497, 472);
-			this.textFindUser.Name = "textFindUser";
-			this.textFindUser.Size = new System.Drawing.Size(158, 21);
-			this.textFindUser.TabIndex = 9;
+			this.edtFindUserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.edtFindUserMain.Location = new System.Drawing.Point(497, 472);
+			this.edtFindUserMain.Name = "edtFindUserMain";
+			this.edtFindUserMain.Size = new System.Drawing.Size(158, 21);
+			this.edtFindUserMain.TabIndex = 9;
 			// 
 			// label1
 			// 
@@ -228,14 +227,14 @@ namespace LFS_ServerBrowser
 			this.label1.TabIndex = 8;
 			this.label1.Text = "Find User:";
 			// 
-			// passwordText
+			// edtPasswordMain
 			// 
-			this.passwordText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.passwordText.Location = new System.Drawing.Point(262, 474);
-			this.passwordText.Name = "passwordText";
-			this.passwordText.PasswordChar = '*';
-			this.passwordText.Size = new System.Drawing.Size(173, 21);
-			this.passwordText.TabIndex = 7;
+			this.edtPasswordMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.edtPasswordMain.Location = new System.Drawing.Point(262, 474);
+			this.edtPasswordMain.Name = "edtPasswordMain";
+			this.edtPasswordMain.PasswordChar = '*';
+			this.edtPasswordMain.Size = new System.Drawing.Size(173, 21);
+			this.edtPasswordMain.TabIndex = 7;
 			// 
 			// label6
 			// 
@@ -246,16 +245,16 @@ namespace LFS_ServerBrowser
 			this.label6.TabIndex = 6;
 			this.label6.Text = "Server Password:";
 			// 
-			// findUserbutton
+			// btnFindUserMain
 			// 
-			this.findUserbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.findUserbutton.Location = new System.Drawing.Point(661, 472);
-			this.findUserbutton.Name = "findUserbutton";
-			this.findUserbutton.Size = new System.Drawing.Size(115, 23);
-			this.findUserbutton.TabIndex = 5;
-			this.findUserbutton.Text = "&Find User Online";
-			this.findUserbutton.UseVisualStyleBackColor = true;
-			this.findUserbutton.Click += new System.EventHandler(this.FindUserbuttonClick);
+			this.btnFindUserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnFindUserMain.Location = new System.Drawing.Point(661, 472);
+			this.btnFindUserMain.Name = "btnFindUserMain";
+			this.btnFindUserMain.Size = new System.Drawing.Size(115, 23);
+			this.btnFindUserMain.TabIndex = 5;
+			this.btnFindUserMain.Text = "&Find User Online";
+			this.btnFindUserMain.UseVisualStyleBackColor = true;
+			this.btnFindUserMain.Click += new System.EventHandler(this.btnFindUserClick);
 			// 
 			// groupBox2
 			// 
@@ -271,7 +270,7 @@ namespace LFS_ServerBrowser
 			this.groupBox2.Controls.Add(this.cbMRT);
 			this.groupBox2.Controls.Add(this.cbXFR);
 			this.groupBox2.Controls.Add(this.cbUFR);
-			this.groupBox2.Controls.Add(this.allCarsButton);
+			this.groupBox2.Controls.Add(this.btnCarsALL);
 			this.groupBox2.Controls.Add(this.cbFZ5);
 			this.groupBox2.Controls.Add(this.cbLX6);
 			this.groupBox2.Controls.Add(this.cbXRT);
@@ -281,13 +280,13 @@ namespace LFS_ServerBrowser
 			this.groupBox2.Controls.Add(this.cbXRG);
 			this.groupBox2.Controls.Add(this.cbXFG);
 			this.groupBox2.Controls.Add(this.cbUF1);
-			this.groupBox2.Controls.Add(this.comboBoxTracks);
-			this.groupBox2.Controls.Add(this.ssCarsbutton);
-			this.groupBox2.Controls.Add(this.gtrCarsButton);
-			this.groupBox2.Controls.Add(this.fwdCarsButton);
-			this.groupBox2.Controls.Add(this.lrfCarsButton);
-			this.groupBox2.Controls.Add(this.tboCarsButton);
-			this.groupBox2.Controls.Add(this.stdCarsButton);
+			this.groupBox2.Controls.Add(this.cbTracks);
+			this.groupBox2.Controls.Add(this.btnCarsSS);
+			this.groupBox2.Controls.Add(this.btnCarsGTR);
+			this.groupBox2.Controls.Add(this.btnCarsFWD);
+			this.groupBox2.Controls.Add(this.btnCarsLRF);
+			this.groupBox2.Controls.Add(this.btnCarsTBO);
+			this.groupBox2.Controls.Add(this.btnCarsSTD);
 			this.groupBox2.Location = new System.Drawing.Point(661, 6);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(115, 458);
@@ -415,15 +414,15 @@ namespace LFS_ServerBrowser
 			this.cbUFR.ThreeState = true;
 			this.cbUFR.UseVisualStyleBackColor = true;
 			// 
-			// allCarsButton
+			// btnCarsALL
 			// 
-			this.allCarsButton.Location = new System.Drawing.Point(6, 238);
-			this.allCarsButton.Name = "allCarsButton";
-			this.allCarsButton.Size = new System.Drawing.Size(42, 23);
-			this.allCarsButton.TabIndex = 0;
-			this.allCarsButton.Text = "ALL";
-			this.allCarsButton.UseVisualStyleBackColor = true;
-			this.allCarsButton.Click += new System.EventHandler(this.AllCarsButtonClick);
+			this.btnCarsALL.Location = new System.Drawing.Point(6, 238);
+			this.btnCarsALL.Name = "btnCarsALL";
+			this.btnCarsALL.Size = new System.Drawing.Size(42, 23);
+			this.btnCarsALL.TabIndex = 0;
+			this.btnCarsALL.Text = "ALL";
+			this.btnCarsALL.UseVisualStyleBackColor = true;
+			this.btnCarsALL.Click += new System.EventHandler(this.AllCarsButtonClick);
 			// 
 			// cbFZ5
 			// 
@@ -533,11 +532,11 @@ namespace LFS_ServerBrowser
 			this.cbUF1.ThreeState = true;
 			this.cbUF1.UseVisualStyleBackColor = true;
 			// 
-			// comboBoxTracks
+			// cbTracks
 			// 
-			this.comboBoxTracks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBoxTracks.FormattingEnabled = true;
-			this.comboBoxTracks.Items.AddRange(new object[] {
+			this.cbTracks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbTracks.FormattingEnabled = true;
+			this.cbTracks.Items.AddRange(new object[] {
 									"All Tracks",
 									"Blackwood",
 									"South City",
@@ -546,79 +545,79 @@ namespace LFS_ServerBrowser
 									"Kyoto Ring",
 									"Westhill",
 									"Aston"});
-			this.comboBoxTracks.Location = new System.Drawing.Point(6, 369);
-			this.comboBoxTracks.Name = "comboBoxTracks";
-			this.comboBoxTracks.Size = new System.Drawing.Size(103, 21);
-			this.comboBoxTracks.TabIndex = 10;
-			this.comboBoxTracks.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTracksSelectedIndexChanged);
+			this.cbTracks.Location = new System.Drawing.Point(6, 369);
+			this.cbTracks.Name = "cbTracks";
+			this.cbTracks.Size = new System.Drawing.Size(103, 21);
+			this.cbTracks.TabIndex = 10;
+			this.cbTracks.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTracksSelectedIndexChanged);
 			// 
-			// ssCarsbutton
+			// btnCarsSS
 			// 
-			this.ssCarsbutton.Location = new System.Drawing.Point(6, 325);
-			this.ssCarsbutton.Name = "ssCarsbutton";
-			this.ssCarsbutton.Size = new System.Drawing.Size(42, 23);
-			this.ssCarsbutton.TabIndex = 6;
-			this.ssCarsbutton.Text = "S-S";
-			this.ssCarsbutton.UseVisualStyleBackColor = true;
-			this.ssCarsbutton.Click += new System.EventHandler(this.SsCarsbuttonClick);
+			this.btnCarsSS.Location = new System.Drawing.Point(6, 325);
+			this.btnCarsSS.Name = "btnCarsSS";
+			this.btnCarsSS.Size = new System.Drawing.Size(42, 23);
+			this.btnCarsSS.TabIndex = 6;
+			this.btnCarsSS.Text = "S-S";
+			this.btnCarsSS.UseVisualStyleBackColor = true;
+			this.btnCarsSS.Click += new System.EventHandler(this.SsCarsbuttonClick);
 			// 
-			// gtrCarsButton
+			// btnCarsGTR
 			// 
-			this.gtrCarsButton.Location = new System.Drawing.Point(59, 296);
-			this.gtrCarsButton.Name = "gtrCarsButton";
-			this.gtrCarsButton.Size = new System.Drawing.Size(42, 23);
-			this.gtrCarsButton.TabIndex = 5;
-			this.gtrCarsButton.Text = "GTR";
-			this.gtrCarsButton.UseVisualStyleBackColor = true;
-			this.gtrCarsButton.Click += new System.EventHandler(this.GtrCarsButtonClick);
+			this.btnCarsGTR.Location = new System.Drawing.Point(59, 296);
+			this.btnCarsGTR.Name = "btnCarsGTR";
+			this.btnCarsGTR.Size = new System.Drawing.Size(42, 23);
+			this.btnCarsGTR.TabIndex = 5;
+			this.btnCarsGTR.Text = "GTR";
+			this.btnCarsGTR.UseVisualStyleBackColor = true;
+			this.btnCarsGTR.Click += new System.EventHandler(this.GtrCarsButtonClick);
 			// 
-			// fwdCarsButton
+			// btnCarsFWD
 			// 
-			this.fwdCarsButton.Location = new System.Drawing.Point(6, 296);
-			this.fwdCarsButton.Name = "fwdCarsButton";
-			this.fwdCarsButton.Size = new System.Drawing.Size(42, 23);
-			this.fwdCarsButton.TabIndex = 4;
-			this.fwdCarsButton.Text = "FWD";
-			this.fwdCarsButton.UseVisualStyleBackColor = true;
-			this.fwdCarsButton.Click += new System.EventHandler(this.FwdCarsButtonClick);
+			this.btnCarsFWD.Location = new System.Drawing.Point(6, 296);
+			this.btnCarsFWD.Name = "btnCarsFWD";
+			this.btnCarsFWD.Size = new System.Drawing.Size(42, 23);
+			this.btnCarsFWD.TabIndex = 4;
+			this.btnCarsFWD.Text = "FWD";
+			this.btnCarsFWD.UseVisualStyleBackColor = true;
+			this.btnCarsFWD.Click += new System.EventHandler(this.FwdCarsButtonClick);
 			// 
-			// lrfCarsButton
+			// btnCarsLRF
 			// 
-			this.lrfCarsButton.Location = new System.Drawing.Point(59, 267);
-			this.lrfCarsButton.Name = "lrfCarsButton";
-			this.lrfCarsButton.Size = new System.Drawing.Size(42, 23);
-			this.lrfCarsButton.TabIndex = 3;
-			this.lrfCarsButton.Text = "LRF";
-			this.lrfCarsButton.UseVisualStyleBackColor = true;
-			this.lrfCarsButton.Click += new System.EventHandler(this.LrfCarsButtonClick);
+			this.btnCarsLRF.Location = new System.Drawing.Point(59, 267);
+			this.btnCarsLRF.Name = "btnCarsLRF";
+			this.btnCarsLRF.Size = new System.Drawing.Size(42, 23);
+			this.btnCarsLRF.TabIndex = 3;
+			this.btnCarsLRF.Text = "LRF";
+			this.btnCarsLRF.UseVisualStyleBackColor = true;
+			this.btnCarsLRF.Click += new System.EventHandler(this.LrfCarsButtonClick);
 			// 
-			// tboCarsButton
+			// btnCarsTBO
 			// 
-			this.tboCarsButton.Location = new System.Drawing.Point(6, 267);
-			this.tboCarsButton.Name = "tboCarsButton";
-			this.tboCarsButton.Size = new System.Drawing.Size(42, 23);
-			this.tboCarsButton.TabIndex = 2;
-			this.tboCarsButton.Text = "TBO";
-			this.tboCarsButton.UseVisualStyleBackColor = true;
-			this.tboCarsButton.Click += new System.EventHandler(this.TboCarsButtonClick);
+			this.btnCarsTBO.Location = new System.Drawing.Point(6, 267);
+			this.btnCarsTBO.Name = "btnCarsTBO";
+			this.btnCarsTBO.Size = new System.Drawing.Size(42, 23);
+			this.btnCarsTBO.TabIndex = 2;
+			this.btnCarsTBO.Text = "TBO";
+			this.btnCarsTBO.UseVisualStyleBackColor = true;
+			this.btnCarsTBO.Click += new System.EventHandler(this.TboCarsButtonClick);
 			// 
-			// stdCarsButton
+			// btnCarsSTD
 			// 
-			this.stdCarsButton.Location = new System.Drawing.Point(59, 238);
-			this.stdCarsButton.Name = "stdCarsButton";
-			this.stdCarsButton.Size = new System.Drawing.Size(42, 23);
-			this.stdCarsButton.TabIndex = 1;
-			this.stdCarsButton.Text = "STD";
-			this.stdCarsButton.UseVisualStyleBackColor = true;
-			this.stdCarsButton.Click += new System.EventHandler(this.StdCarsButtonClick);
+			this.btnCarsSTD.Location = new System.Drawing.Point(59, 238);
+			this.btnCarsSTD.Name = "btnCarsSTD";
+			this.btnCarsSTD.Size = new System.Drawing.Size(42, 23);
+			this.btnCarsSTD.TabIndex = 1;
+			this.btnCarsSTD.Text = "STD";
+			this.btnCarsSTD.UseVisualStyleBackColor = true;
+			this.btnCarsSTD.Click += new System.EventHandler(this.StdCarsButtonClick);
 			// 
-			// listView1
+			// lvMain
 			// 
-			this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.lvMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
-			this.listView1.AutoArrange = false;
-			this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+			this.lvMain.AutoArrange = false;
+			this.lvMain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
 									this.columnHeaderName,
 									this.columnHeaderPing,
 									this.columnPrivate,
@@ -626,21 +625,19 @@ namespace LFS_ServerBrowser
 									this.columnHeaderInfo,
 									this.columnHeaderTrack,
 									this.columnHeaderCars});
-			this.listView1.ContextMenuStrip = this.contextMenuBrowser;
-			this.listView1.FullRowSelect = true;
-			this.listView1.GridLines = true;
-			this.listView1.Location = new System.Drawing.Point(8, 6);
-			this.listView1.MultiSelect = false;
-			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(647, 460);
-			this.listView1.TabIndex = 3;
-			this.listView1.UseCompatibleStateImageBehavior = false;
-			this.listView1.View = System.Windows.Forms.View.Details;
-			this.listView1.DoubleClick += new System.EventHandler(this.JoinButtonClick);
-			this.listView1.SelectedIndexChanged += new System.EventHandler(this.ListView1SelectedIndexChanged);
-			this.listView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ListView1KeyDown);
-			this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.ListView1ColumnClick);
-			this.listView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ListView1KeyPress);
+			this.lvMain.ContextMenuStrip = this.contextMenuBrowser;
+			this.lvMain.FullRowSelect = true;
+			this.lvMain.GridLines = true;
+			this.lvMain.Location = new System.Drawing.Point(8, 6);
+			this.lvMain.MultiSelect = false;
+			this.lvMain.Name = "lvMain";
+			this.lvMain.Size = new System.Drawing.Size(647, 460);
+			this.lvMain.TabIndex = 3;
+			this.lvMain.UseCompatibleStateImageBehavior = false;
+			this.lvMain.View = System.Windows.Forms.View.Details;
+			this.lvMain.DoubleClick += new System.EventHandler(this.btnJoinClick);
+			this.lvMain.SelectedIndexChanged += new System.EventHandler(this.lvMainSelectedIndexChanged);
+			this.lvMain.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
 			// 
 			// columnHeaderName
 			// 
@@ -690,7 +687,7 @@ namespace LFS_ServerBrowser
 			this.joinServerToolStripMenuItem.Name = "joinServerToolStripMenuItem";
 			this.joinServerToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
 			this.joinServerToolStripMenuItem.Text = "&Join Server";
-			this.joinServerToolStripMenuItem.Click += new System.EventHandler(this.JoinButtonClick);
+			this.joinServerToolStripMenuItem.Click += new System.EventHandler(this.btnJoinClick);
 			// 
 			// viewServerInformationMain
 			// 
@@ -706,28 +703,28 @@ namespace LFS_ServerBrowser
 			this.toolStripMenuItem1.Text = "&Add to Favourites";
 			this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1Click);
 			// 
-			// refreshButton
+			// btnRefreshMain
 			// 
-			this.refreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.refreshButton.Location = new System.Drawing.Point(89, 472);
-			this.refreshButton.Name = "refreshButton";
-			this.refreshButton.Size = new System.Drawing.Size(75, 23);
-			this.refreshButton.TabIndex = 2;
-			this.refreshButton.Text = "&Refresh";
-			this.refreshButton.UseVisualStyleBackColor = true;
-			this.refreshButton.Click += new System.EventHandler(this.RefreshButtonClick);
+			this.btnRefreshMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnRefreshMain.Location = new System.Drawing.Point(89, 472);
+			this.btnRefreshMain.Name = "btnRefreshMain";
+			this.btnRefreshMain.Size = new System.Drawing.Size(75, 23);
+			this.btnRefreshMain.TabIndex = 2;
+			this.btnRefreshMain.Text = "&Refresh";
+			this.btnRefreshMain.UseVisualStyleBackColor = true;
+			this.btnRefreshMain.Click += new System.EventHandler(this.RefreshButtonClick);
 			// 
-			// joinButton
+			// btnJoinMain
 			// 
-			this.joinButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.joinButton.Enabled = false;
-			this.joinButton.Location = new System.Drawing.Point(8, 472);
-			this.joinButton.Name = "joinButton";
-			this.joinButton.Size = new System.Drawing.Size(75, 23);
-			this.joinButton.TabIndex = 1;
-			this.joinButton.Text = "&Join";
-			this.joinButton.UseVisualStyleBackColor = true;
-			this.joinButton.Click += new System.EventHandler(this.JoinButtonClick);
+			this.btnJoinMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnJoinMain.Enabled = false;
+			this.btnJoinMain.Location = new System.Drawing.Point(8, 472);
+			this.btnJoinMain.Name = "btnJoinMain";
+			this.btnJoinMain.Size = new System.Drawing.Size(75, 23);
+			this.btnJoinMain.TabIndex = 1;
+			this.btnJoinMain.Text = "&Join";
+			this.btnJoinMain.UseVisualStyleBackColor = true;
+			this.btnJoinMain.Click += new System.EventHandler(this.btnJoinClick);
 			// 
 			// tabPage3
 			// 
@@ -736,7 +733,7 @@ namespace LFS_ServerBrowser
 			this.tabPage3.Controls.Add(this.textBox1);
 			this.tabPage3.Controls.Add(this.buttonRefreshFav);
 			this.tabPage3.Controls.Add(this.buttonJoinFav);
-			this.tabPage3.Controls.Add(this.listViewFav);
+			this.tabPage3.Controls.Add(this.lvFavourites);
 			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Size = new System.Drawing.Size(784, 501);
@@ -795,12 +792,12 @@ namespace LFS_ServerBrowser
 			this.buttonJoinFav.UseVisualStyleBackColor = true;
 			this.buttonJoinFav.Click += new System.EventHandler(this.ButtonJoinFavClick);
 			// 
-			// listViewFav
+			// lvFavourites
 			// 
-			this.listViewFav.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.lvFavourites.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
-			this.listViewFav.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+			this.lvFavourites.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
 									this.columnHeaderFavServerName,
 									this.columnHeaderFavPing,
 									this.columnHeaderFavPrivate,
@@ -808,19 +805,19 @@ namespace LFS_ServerBrowser
 									this.columnHeaderFavInfo,
 									this.columnHeaderFavTrack,
 									this.columnHeaderFavCars});
-			this.listViewFav.ContextMenuStrip = this.contextMenuFav;
-			this.listViewFav.FullRowSelect = true;
-			this.listViewFav.GridLines = true;
-			this.listViewFav.Location = new System.Drawing.Point(8, 6);
-			this.listViewFav.MultiSelect = false;
-			this.listViewFav.Name = "listViewFav";
-			this.listViewFav.Size = new System.Drawing.Size(768, 461);
-			this.listViewFav.TabIndex = 4;
-			this.listViewFav.UseCompatibleStateImageBehavior = false;
-			this.listViewFav.View = System.Windows.Forms.View.Details;
-			this.listViewFav.DoubleClick += new System.EventHandler(this.ButtonJoinFavClick);
-			this.listViewFav.SelectedIndexChanged += new System.EventHandler(this.ListViewFavSelectedIndexChanged);
-			this.listViewFav.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.ListView1ColumnClick);
+			this.lvFavourites.ContextMenuStrip = this.contextMenuFav;
+			this.lvFavourites.FullRowSelect = true;
+			this.lvFavourites.GridLines = true;
+			this.lvFavourites.Location = new System.Drawing.Point(8, 6);
+			this.lvFavourites.MultiSelect = false;
+			this.lvFavourites.Name = "lvFavourites";
+			this.lvFavourites.Size = new System.Drawing.Size(768, 461);
+			this.lvFavourites.TabIndex = 4;
+			this.lvFavourites.UseCompatibleStateImageBehavior = false;
+			this.lvFavourites.View = System.Windows.Forms.View.Details;
+			this.lvFavourites.DoubleClick += new System.EventHandler(this.ButtonJoinFavClick);
+			this.lvFavourites.SelectedIndexChanged += new System.EventHandler(this.lvFavouritesSelectedIndexChanged);
+			this.lvFavourites.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
 			// 
 			// columnHeaderFavServerName
 			// 
@@ -994,10 +991,6 @@ namespace LFS_ServerBrowser
 			this.openFileDialog1.Filter = "LFS Executable|LFS.exe";
 			this.openFileDialog1.SupportMultiDottedExtensions = true;
 			// 
-			// timerThread
-			// 
-			this.timerThread.Tick += new System.EventHandler(this.TimerThreadTick);
-			// 
 			// statusStrip
 			// 
 			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1056,6 +1049,21 @@ namespace LFS_ServerBrowser
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ListView lvFavourites;
+		private System.Windows.Forms.Button btnCarsALL;
+		private System.Windows.Forms.Button btnCarsSTD;
+		private System.Windows.Forms.Button btnCarsTBO;
+		private System.Windows.Forms.Button btnCarsLRF;
+		private System.Windows.Forms.Button btnCarsFWD;
+		private System.Windows.Forms.Button btnCarsGTR;
+		private System.Windows.Forms.Button btnCarsSS;
+		private System.Windows.Forms.ComboBox cbTracks;
+		private System.Windows.Forms.ListView lvMain;
+		private System.Windows.Forms.Button btnRefreshMain;
+		private System.Windows.Forms.Button btnFindUserMain;
+		private System.Windows.Forms.TextBox edtPasswordMain;
+		private System.Windows.Forms.TextBox edtFindUserMain;
+		private System.Windows.Forms.Button btnJoinMain;
 		private System.Windows.Forms.ColumnHeader columnHeaderFavPrivate;
 		private System.Windows.Forms.ColumnHeader columnPrivate;
 		private System.Windows.Forms.Button buttonCheckNewVersion;
@@ -1067,7 +1075,6 @@ namespace LFS_ServerBrowser
 		private System.Windows.Forms.ToolStripMenuItem viewServerInformationMain;
 		private System.Windows.Forms.ColumnHeader columnHeaderFavCars;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textFindUser;
 		private System.Windows.Forms.CheckBox cbFO8;
 		private System.Windows.Forms.CheckBox cbFZ5;
 		private System.Windows.Forms.CheckBox cbUFR;
@@ -1095,13 +1102,10 @@ namespace LFS_ServerBrowser
 		private System.Windows.Forms.ColumnHeader columnHeaderFavTrack;
 		private System.Windows.Forms.ColumnHeader columnHeaderTrack;
 		private System.Windows.Forms.ColumnHeader columnHeaderFavInfo;
-		private System.Windows.Forms.Timer timerThread;
 		private System.Windows.Forms.ColumnHeader columnHeaderInfo;
-		private System.Windows.Forms.ComboBox comboBoxTracks;
 		private System.Windows.Forms.ColumnHeader columnHeaderFavServerName;
 		private System.Windows.Forms.ColumnHeader columnHeaderFavPing;
 		private System.Windows.Forms.ColumnHeader columnHeaderFavSlots;
-		private System.Windows.Forms.ListView listViewFav;
 		private System.Windows.Forms.ToolStripMenuItem removeFromFavouritesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem joinServerToolStripMenuItem1;
 		private System.Windows.Forms.ContextMenuStrip contextMenuFav;
@@ -1114,29 +1118,17 @@ namespace LFS_ServerBrowser
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Button buttonAddFav;
 		private System.Windows.Forms.TabPage tabPage3;
-		private System.Windows.Forms.TextBox passwordText;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.ListBox pathList;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Button ssCarsbutton;
-		private System.Windows.Forms.Button gtrCarsButton;
-		private System.Windows.Forms.Button fwdCarsButton;
-		private System.Windows.Forms.Button lrfCarsButton;
-		private System.Windows.Forms.Button tboCarsButton;
-		private System.Windows.Forms.Button stdCarsButton;
-		private System.Windows.Forms.Button allCarsButton;
 		private System.Windows.Forms.Button browseForButton;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Button findUserbutton;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.ColumnHeader columnHeaderConnections;
 		private System.Windows.Forms.ColumnHeader columnHeaderPing;
 		private System.Windows.Forms.ColumnHeader columnHeaderName;
-		private System.Windows.Forms.ListView listView1;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.Button joinButton;
-		private System.Windows.Forms.Button refreshButton;
 		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.TabControl tabControl;
