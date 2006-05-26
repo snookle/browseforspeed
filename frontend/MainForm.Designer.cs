@@ -142,6 +142,7 @@ namespace LFS_ServerBrowser
 			this.menuStrip.Size = new System.Drawing.Size(792, 24);
 			this.menuStrip.TabIndex = 0;
 			this.menuStrip.Text = "menuStrip1";
+			//this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStripItemClicked);
 			// 
 			// fileToolStripMenuItem
 			// 
@@ -818,7 +819,7 @@ namespace LFS_ServerBrowser
 									this.viewServerInformationFav,
 									this.removeFromFavouritesToolStripMenuItem});
 			this.contextMenuFav.Name = "contextMenuFav";
-			this.contextMenuFav.Size = new System.Drawing.Size(214, 70);
+			this.contextMenuFav.Size = new System.Drawing.Size(214, 92);
 			this.contextMenuFav.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFavOpening);
 			// 
 			// joinServerToolStripMenuItem1
@@ -833,7 +834,7 @@ namespace LFS_ServerBrowser
 			this.viewServerInformationFav.Name = "viewServerInformationFav";
 			this.viewServerInformationFav.Size = new System.Drawing.Size(213, 22);
 			this.viewServerInformationFav.Text = "&View Server Information...";
-			this.viewServerInformationFav.Click += new System.EventHandler(this.ViewServerInformationFavClick);
+			this.viewServerInformationFav.Click += new System.EventHandler(this.ViewServerInformationToolStripMenuItemClick);
 			// 
 			// removeFromFavouritesToolStripMenuItem
 			// 
