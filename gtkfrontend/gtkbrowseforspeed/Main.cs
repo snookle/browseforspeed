@@ -27,20 +27,16 @@ namespace gtkbrowseforspeed {
 			LFSQuery q = new LFSQuery();
 			LFSQuery.queried += new ServerQueried(queryEventListener);
 			int start = System.Environment.TickCount;
-			q.query(4, 256, "browseforspeed", 8);
+			q.query(4, 256, "browseforspeed", 1);
 			int end = System.Environment.TickCount;
 			Console.Write("query took " + (end - start) + " secs\n");
 		}
 
 		public void queryEventListener(object o, ServerInformation info, object callbackObj) {
-			Console.Write("HUZZAH! " + (int)callbackObj + "\n");
 			if (info != null && info.success) {
-				//Console.Write("got host " + LFSQuery.removeColourCodes(info.hostname) + "\n");
-				
 				Gdk.Threads.Enter();
 				win.serverListStore.AppendValues(LFSQuery.removeColourCodes(info.hostname), info.ping, info.players + "/" + info.slots, info.track);
 				Gdk.Threads.Leave();
-				
 			}
 		}
 	}
