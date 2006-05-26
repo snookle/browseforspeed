@@ -29,7 +29,7 @@ using System.Text.RegularExpressions;
 
 
 namespace libbrowseforspeed {
-	public class serverInformation : EventArgs {
+	public class ServerInformation : EventArgs {
 		public bool success;
 		public bool connectFailed;
 		public bool readFailed;
@@ -43,14 +43,16 @@ namespace libbrowseforspeed {
 		public string track;		
 		public int ping;
 		public bool passworded;
+		public string[] racerNames;
 	}
 			
 	public struct hostInfo {
 		public IPEndPoint host;
 		public bool passworded;
+		public object callbackObj;
 	}	
 
-	public delegate void ServerQueried(object o, serverInformation info);
+	public delegate void ServerQueried(object o, ServerInformation info, object callbackObj);
 
 	public class LFSQuery {
 		
@@ -150,7 +152,7 @@ namespace libbrowseforspeed {
 					NetworkStream str = new NetworkStream(sock);					
 					//str.ReadTimeout = 500; //.NET 2.0 :(
 					str.Write(send_query1, 0, send_query1.Length);
-					serverInformation serverinfo = query1(ref str);
+					ServerInformation serverinfo = query1(ref str);
 					if (serverinfo.success) {
 						str.Write(send_query2, 0, send_query2.Length);
 						query2(ref str, ref serverinfo);
@@ -162,11 +164,11 @@ namespace libbrowseforspeed {
 						sock.Close();						
 					} catch (Exception e) { }
 					if (queried != null) {
-						queried(this, serverinfo);
+						queried(this, serverinfo, host.callbackObj);
 					}
 				} else {
 					//connect FAILED BOOHOO
-					serverInformation ret = new serverInformation();
+					ServerInformation ret = new ServerInformation();
 					ret.success = false;
 					ret.connectFailed = true;
 					ret.totalServers = LFSQuery.totalServers;
@@ -176,11 +178,11 @@ namespace libbrowseforspeed {
 							sock.Close();
 						} catch (Exception e) { }
 					}
-					queried(this, ret);
+					queried(this, ret, host.callbackObj);
 				}
 			}
 			
-			private serverInformation query1(ref NetworkStream str) {
+			private ServerInformation query1(ref NetworkStream str) {
 				readTimeoutEvent = new System.Threading.ManualResetEvent(false);
 				byte[] recbuf = new byte[37];				
 				//int rcn = 0;
@@ -191,7 +193,7 @@ namespace libbrowseforspeed {
 				if (readTimeoutEvent.WaitOne(1000, false)) {
 					//Console.Write("OKAY!\n");
 				} else {
-					serverInformation ret = new serverInformation();
+					ServerInformation ret = new ServerInformation();
 					ret.success = false;
 					ret.readFailed = true;
 					return ret;
@@ -216,7 +218,7 @@ namespace libbrowseforspeed {
 					return ret;
 				}*/
 				readTimeoutEvent.Close();
-				serverInformation serverinfo = new serverInformation();
+				ServerInformation serverinfo = new ServerInformation();
 				serverinfo.success = true;
 				serverinfo.ping = (int)((pingEnd - pingStart) / 10000);
 				serverinfo.rules = (ulong)(recbuf[4] * 256 + recbuf[3]);
@@ -228,7 +230,8 @@ namespace libbrowseforspeed {
 				serverinfo.hostname = getLFSString(recbuf, 5, 32);				
 				return serverinfo;
 			}
-			private void query2(ref NetworkStream str, ref serverInformation serverinfo) {
+
+			private void query2(ref NetworkStream str, ref ServerInformation serverinfo) {
 				readTimeoutEvent = new System.Threading.ManualResetEvent(false);
 				byte[] recbuf = new byte[13];
 				//int rcn = 0;
@@ -315,7 +318,7 @@ namespace libbrowseforspeed {
 
 		}
 
-		public void query(ulong cars_compulsory, ulong cars_illegal, string username) {
+		public void query(ulong cars_compulsory, ulong cars_illegal, string username, object callbackObj) {
 			LFSQuery.keepQuerying = true;
 			ArrayList allHosts = new ArrayList();
 			Query query = new Query(cars_compulsory, cars_illegal, username);			
@@ -345,6 +348,7 @@ namespace libbrowseforspeed {
 					hostInfo h;
 					h.host = ips[j];
 					h.passworded = (recbuf[5+j] == 0x09);
+					h.callbackObj = callbackObj;
 					allHosts.Add(h);
 					m.addHost(h);
 				}
@@ -359,7 +363,7 @@ namespace libbrowseforspeed {
 			LFSQuery.keepQuerying = false;
 		}
 	
-		public void query(ulong cars_compulsory, ulong cars_illegal, string username, IPEndPoint[] hosts) {
+		public void query(ulong cars_compulsory, ulong cars_illegal, string username, IPEndPoint[] hosts, object callbackObj) {
 			LFSQuery.keepQuerying = true;			
 			QueryThreadManager m = new QueryThreadManager();
 			totalServers = hosts.Length;
@@ -367,6 +371,7 @@ namespace libbrowseforspeed {
 				hostInfo h;
 				h.host = host;
 				h.passworded = false;
+				h.callbackObj = callbackObj;
 				m.addHost(h);
 			}
 			m.allDone();
@@ -470,7 +475,39 @@ namespace libbrowseforspeed {
 
 			public Thread getThread() { return myThread; }
 		}
-		
+
+		public static bool getPubStatInfo(ref ServerInformation serverInfo) {
+			try {
+				HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1");
+				HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+				Stream stream = response.GetResponseStream();
+				Stream s = new GZipInputStream(stream);
+				byte[] buf = getStreamBytes(s);
+				s.Close();
+				stream.Close();
+				int i = 0;
+				string[] racers = null;
+				while (i < buf.Length) {
+					string hostname = removeColourCodes(getLFSString(buf, i, 32));
+					int numRacers = (int)buf[i + 52];
+					if (hostname == serverInfo.hostname) {
+						racers = new string[numRacers];
+						for (int j = 0; j < numRacers; ++j) {
+							racers[j] = getLFSString(buf, i + 53 + (24 * j), 24);
+						}
+						serverInfo.players = numRacers;
+						serverInfo.racerNames = racers;
+						serverInfo.passworded = ((ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]) & 8) != 0;
+						return true;
+					}
+					i += (53 + (24 * numRacers));
+				}
+			} catch (Exception e) {
+				return false;
+			}
+			return false;
+		}
+		/*
 		public static ArrayList getPlayers(string hostname) {
 			HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1");
 			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -495,6 +532,7 @@ namespace libbrowseforspeed {
 			}
 			return racers;
 		}
+		*/
 
 		private static byte[] getStreamBytes(Stream stream) {
 			byte[] buf = new byte[32768];
