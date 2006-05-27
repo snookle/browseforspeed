@@ -113,9 +113,9 @@ namespace LFS_ServerBrowser
 		private Configuration config;
 		private ServerInformationForm s;
 		
-		bool exiting;
+		private bool exiting;
 		
-		Thread t;
+		private Thread t;
 		
 		
 		[STAThread]
@@ -318,7 +318,6 @@ namespace LFS_ServerBrowser
 					serverList.Clear();
 					btnJoinMain.Enabled = false;
 					t = new Thread(new ThreadStart(MainQuery));
-
 				} else
 					t = new Thread(new ThreadStart(FavQuery));
   				t.Start();
@@ -478,9 +477,9 @@ namespace LFS_ServerBrowser
 			int groupIndex = (int)((Button)sender).Tag;
 			ulong group = LFSQuery.CAR_GROUP_BITS[groupIndex];
 			for (int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) {
-				if ((LFSQuery.CAR_BITS[i] & group) != 0) {
+				if ((LFSQuery.CAR_BITS[i] & group) != 0 && (LFSQuery.CAR_BITS[i] & LFSQuery.CAR_GROUP_DONTCARE[groupIndex]) == 0) {
 					cars[i].CheckState = CheckState.Checked;
-				} else {
+				} else { 
 					cars[i].CheckState = CheckState.Indeterminate;
 					for (int j = 0; j < LFSQuery.CAR_GROUP_BITS.Length; ++j) {
 						if ((LFSQuery.CAR_BITS[i] & LFSQuery.CAR_GROUP_DISALLOW[groupIndex]) != 0) {
