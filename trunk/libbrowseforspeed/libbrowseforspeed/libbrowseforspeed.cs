@@ -64,7 +64,7 @@ namespace libbrowseforspeed {
 		public static ulong[] CAR_GROUP_DONTCARE = {524287, 280704, 14207, 12561, 319, 259, 291};
 		
 		private const int QTHREADS = 16;
-		private const int THREAD_WAIT = 150;
+		public static int THREAD_WAIT = 150;
 		public static bool xpsp2_wait = true;
 		
 		public const ulong CAR_XFG = 1;

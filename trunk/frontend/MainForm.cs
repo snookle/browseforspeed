@@ -40,6 +40,7 @@ namespace LFS_ServerBrowser
 		public bool disableWait;
 		public bool checkNewVersion;
 		public bool configValid;
+		public int queryWait;
 		
 		public Configuration(string filename)
 		{
@@ -56,6 +57,11 @@ namespace LFS_ServerBrowser
 				this.lfsPath = tr.ReadLine();
 				this.disableWait = (tr.ReadLine() == "True");
 				this.checkNewVersion = (tr.ReadLine() == "True");
+				try {
+					this.queryWait = Convert.ToInt32(tr.ReadLine());
+				} catch (Exception e) {
+					this.queryWait = 150;
+				}
 				tr.Close();
 				configValid = true;
 			} catch (FileNotFoundException fnfe) {
@@ -73,7 +79,7 @@ namespace LFS_ServerBrowser
 				tw.WriteLine(this.lfsPath);
 				tw.WriteLine(this.disableWait.ToString());
 				tw.WriteLine(this.checkNewVersion.ToString());
-				
+				tw.WriteLine(this.queryWait.ToString());
 				tw.Close();
 			}
 			catch (Exception ex) {
@@ -189,7 +195,9 @@ namespace LFS_ServerBrowser
 			//if we have previous config data
 			if (config.configValid){
 				cbQueryWait.Checked = config.disableWait;
+				queryWait.Enabled = !config.disableWait;
 				LFSQuery.xpsp2_wait = !config.disableWait;
+				LFSQuery.THREAD_WAIT = config.queryWait;
 				cbNewVersion.Checked = config.checkNewVersion;
 				if (config.checkNewVersion) {
 					versionCheck(false);
@@ -406,8 +414,7 @@ namespace LFS_ServerBrowser
 		}
 
 
-		void CloseToolStripMenuItemClick(object sender, System.EventArgs e)
-		{
+		void CloseToolStripMenuItemClick(object sender, System.EventArgs e) {
 			Close();
 		}
 		
@@ -491,8 +498,7 @@ namespace LFS_ServerBrowser
 			}
 		}
 		
-		void AboutToolStripMenuItem1Click(object sender, System.EventArgs e)
-		{
+		void AboutToolStripMenuItem1Click(object sender, System.EventArgs e) {
 			MessageBox.Show("Browse For Speed - http://browseforspeed.whatsbeef.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.\n\nIf you haven't already, go buy LFS S2 now - the LFS developers deserve your support!", "About", MessageBoxButtons.OK);
 		}
 		
@@ -673,7 +679,9 @@ namespace LFS_ServerBrowser
 				config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();
 				config.disableWait = cbQueryWait.Checked;
 				config.checkNewVersion = cbNewVersion.Checked;
+				config.queryWait = (int)queryWait.Value;
 				LFSQuery.xpsp2_wait = !config.disableWait;
+				LFSQuery.THREAD_WAIT = config.queryWait;
 				config.Save();
 			}
 			this.lastTabSelected = tabControl.SelectedIndex;
@@ -726,6 +734,10 @@ namespace LFS_ServerBrowser
 		void btnCheckNewVersionClick(object sender, System.EventArgs e)
 		{
 			MainForm.versionCheck(true);
+		}
+		
+		void CbQueryWaitCheckedChanged(object sender, System.EventArgs e) {
+			queryWait.Enabled = (cbQueryWait.CheckState != CheckState.Checked);
 		}
 	}
 /// Horray for code nicked from the MSDN!
