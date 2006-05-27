@@ -153,7 +153,7 @@ namespace LFS_ServerBrowser
 				groups[i].Parent = groupBox2;
 				if ((i % 2) == 0) {
 					groups[i].Left = 8;
-					groups[i].Top = (i/2 * 30) + 220;
+					groups[i].Top = (i/2 * 30) + 235;
 				} else {
 					groups[i].Top = groups[i-1].Top;
 					groups[i].Left = 62;
@@ -161,7 +161,7 @@ namespace LFS_ServerBrowser
 				groups[i].Text = LFSQuery.CAR_GROUP_NAMES[i];
 				groups[i].Width = 42;
 				groups[i].Height = 23;
-				groups[i].Tag = (ulong)LFSQuery.CAR_GROUP_BITS[i];
+				groups[i].Tag = i;
 				groups[i].Click += new EventHandler(CarsGroupButtonClick);
 			}
 			serverList = new ArrayList();
@@ -475,12 +475,19 @@ namespace LFS_ServerBrowser
 			
 		void CarsGroupButtonClick(object sender, System.EventArgs e)
 		{
-			ulong group = (ulong)((Button)sender).Tag;
+			int groupIndex = (int)((Button)sender).Tag;
+			ulong group = LFSQuery.CAR_GROUP_BITS[groupIndex];
 			for (int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) {
 				if ((LFSQuery.CAR_BITS[i] & group) != 0) {
 					cars[i].CheckState = CheckState.Checked;
 				} else {
-					cars[i].CheckState = CheckState.Unchecked;
+					cars[i].CheckState = CheckState.Indeterminate;
+					for (int j = 0; j < LFSQuery.CAR_GROUP_BITS.Length; ++j) {
+						if ((LFSQuery.CAR_BITS[i] & LFSQuery.CAR_GROUP_DISALLOW[groupIndex]) != 0) {
+							cars[i].CheckState = CheckState.Unchecked;
+							break;
+						}
+					}					
 				}
 			}
 		}
