@@ -696,7 +696,7 @@ namespace LFS_ServerBrowser
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "MainForm";
 			this.Text = "Browse For Speed";
-			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainFormFormClosed);
+			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainFormClosed);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			this.tabControl.ResumeLayout(false);
