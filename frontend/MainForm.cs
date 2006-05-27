@@ -198,6 +198,7 @@ namespace LFS_ServerBrowser
 				queryWait.Enabled = !config.disableWait;
 				LFSQuery.xpsp2_wait = !config.disableWait;
 				LFSQuery.THREAD_WAIT = config.queryWait;
+				queryWait.Value = config.queryWait;
 				cbNewVersion.Checked = config.checkNewVersion;
 				if (config.checkNewVersion) {
 					versionCheck(false);
@@ -619,10 +620,17 @@ namespace LFS_ServerBrowser
 			}			
 		}
 		
-		void MainFormFormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
+		void MainFormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
 		{
 			LFSQuery.stopQuerying();
 			this.exiting = true;
+			config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();
+			config.disableWait = cbQueryWait.Checked;
+			config.checkNewVersion = cbNewVersion.Checked;
+			config.queryWait = (int)queryWait.Value;
+			LFSQuery.xpsp2_wait = !config.disableWait;
+			LFSQuery.THREAD_WAIT = config.queryWait;
+			config.Save();
 			this.Hide();
 		}
 
