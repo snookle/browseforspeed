@@ -320,10 +320,9 @@ namespace LFS_ServerBrowser
 			return result.Remove(result.Length - 2, 2);
 		}
 		
-		
 		//nice helper method to set UI properties across threads.
 		delegate void SetValueDelegate(Object obj, Object val, Object[] index);
-
+		
 		public void SetControlProperty(Control ctrl, String propName, Object val)
 		{
 			System.Reflection.PropertyInfo propInfo = ctrl.GetType().GetProperty(propName);
@@ -346,9 +345,8 @@ namespace LFS_ServerBrowser
 				MessageBox.Show(e.Message + " - " + e.StackTrace, "", MessageBoxButtons.OK);
 			}
 			if (exiting) return;
-		
-		
-			//lvMain.Sort();
+			//invoke
+			this.Invoke(new MethodInvoker(lvMain.Sort));
 			SetControlProperty(btnRefreshMain, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Text", "&Refresh");
@@ -362,22 +360,21 @@ namespace LFS_ServerBrowser
 			try {
 			if (favServerList.Count > 0)
 			{
-				MessageBox.Show("lol", "", MessageBoxButtons.OK);
 				IPEndPoint[] stupidArray = new IPEndPoint[favServerList.Count];
 				for (int i = 0; i < favServerList.Count; i++){
 					stupidArray[i] = ((ServerInformation)favServerList[i]).host;
 				}
 				q = new LFSQuery();
-				//favServerList.Clear();
 				q.query(0, 0, "browseforspeed", stupidArray, 0);
 			}
 			} catch (Exception ex) {
 				MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);
 			}
 			if (exiting) return;
+
+			this.Invoke(new MethodInvoker(lvFavourites.Sort));
 			SetControlProperty(btnRefreshMain, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Enabled", true);
-			
 			SetControlProperty(buttonRefreshFav, "Text", "&Refresh");
 			SetControlProperty(btnRefreshMain, "Text", "&Refresh");
 		}
@@ -822,14 +819,8 @@ namespace LFS_ServerBrowser
 			return str;
 		}
 		
-		void TimerThreadTick(object sender, System.EventArgs e)
-		{
-			
-		}
-		
 		void lvFavouritesSelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			//MessageBox.Show(lvFavourites.Items[0].SubItems.Count.ToString(), "", MessageBoxButtons.OK);
 			btnJoinFav.Enabled = (lvFavourites.SelectedItems.Count > 0 && lvFavourites.Items[0].SubItems.Count > 1);
 		}
 		
@@ -865,12 +856,9 @@ namespace LFS_ServerBrowser
 		
 		void MainFormFormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
 		{
-			//LFSQuery.queried -= new ServerQueried(queryMainEventListener);
-			//LFSQuery.queried -= new ServerQueried(queryFavEventListener);
 			LFSQuery.stopQuerying();
 			this.exiting = true;
 			this.Hide();
-			
 		}
 
 		
