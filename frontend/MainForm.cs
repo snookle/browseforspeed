@@ -791,7 +791,7 @@ namespace LFS_ServerBrowser
 			SetControlProperty(btnRefreshMain, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Enabled", true);
 			
-			SetControlProperty(buttonRefreshFav, "Text", "&Refresh All");
+			SetControlProperty(buttonRefreshFav, "Text", "&Refresh");
 			SetControlProperty(btnRefreshMain, "Text", "&Refresh");
 		}
 				
