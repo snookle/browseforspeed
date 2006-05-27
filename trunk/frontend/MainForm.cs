@@ -151,6 +151,7 @@ namespace LFS_ServerBrowser
 			//if we have previous config data
 			if (config.configValid){
 				cbQueryWait.Checked = config.disableWait;
+				LFSQuery.xpsp2_wait = !config.disableWait;
 				cbNewVersion.Checked = config.checkNewVersion;
 				if (config.checkNewVersion) {
 					versionCheck(false);
@@ -330,53 +331,46 @@ namespace LFS_ServerBrowser
       		ctrl.Invoke(dgtSetValue, new Object[3] { ctrl, val, /*index*/null });
 		}
 		
-		void MakeMainQuery()
+		void MakeQuery(bool isFav)
 		{
 			SetControlProperty(buttonRefreshFav, "Text", "&Stop Refresh");
 			SetControlProperty(btnRefreshMain, "Text", "&Stop Refresh");
-			
-			ulong compulsory;
-			ulong illegal;
-			CodeCars(out compulsory, out illegal);
-			try{
-				q = new LFSQuery();
-				q.query(compulsory, illegal, "browseforspeed", 0);
+			try {
+				if (isFav) {
+					if (favServerList.Count > 0) {
+						IPEndPoint[] stupidArray = new IPEndPoint[favServerList.Count];
+						for (int i = 0; i < favServerList.Count; i++){
+							stupidArray[i] = ((ServerInformation)favServerList[i]).host;
+						}
+						q.query(0, 0, "browseforspeed", stupidArray, 0);
+					}
+				} else {
+					ulong compulsory;
+					ulong illegal;
+					CodeCars(out compulsory, out illegal);
+					q.query(compulsory, illegal, "browseforspeed", 0);
+				}
 			} catch(Exception e) {
-				MessageBox.Show(e.Message + " - " + e.StackTrace, "", MessageBoxButtons.OK);
-			}
+					MessageBox.Show(e.Message + " - " + e.StackTrace, "", MessageBoxButtons.OK);
+				}
+
 			if (exiting) return;
 			//invoke
-			this.Invoke(new MethodInvoker(lvMain.Sort));
+			this.Invoke(new MethodInvoker(((isFav == true ? lvFavourites : lvMain).Sort)));
 			SetControlProperty(btnRefreshMain, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Text", "&Refresh");
 			SetControlProperty(btnRefreshMain, "Text", "&Refresh");
 		}
 		
-		void MakeFavQuery()
+		void MainQuery()
 		{
-			SetControlProperty(buttonRefreshFav, "Text", "&Stop Refresh");
-			SetControlProperty(btnRefreshMain, "Text", "&Stop Refresh");
-			try {
-			if (favServerList.Count > 0)
-			{
-				IPEndPoint[] stupidArray = new IPEndPoint[favServerList.Count];
-				for (int i = 0; i < favServerList.Count; i++){
-					stupidArray[i] = ((ServerInformation)favServerList[i]).host;
-				}
-				q = new LFSQuery();
-				q.query(0, 0, "browseforspeed", stupidArray, 0);
-			}
-			} catch (Exception ex) {
-				MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);
-			}
-			if (exiting) return;
-
-			this.Invoke(new MethodInvoker(lvFavourites.Sort));
-			SetControlProperty(btnRefreshMain, "Enabled", true);
-			SetControlProperty(buttonRefreshFav, "Enabled", true);
-			SetControlProperty(buttonRefreshFav, "Text", "&Refresh");
-			SetControlProperty(btnRefreshMain, "Text", "&Refresh");
+			MakeQuery(false);
+		}
+		
+		void FavQuery()
+		{
+			MakeQuery(true);
 		}
 		
 		void RefreshButtonClick(object sender, System.EventArgs e)
@@ -391,10 +385,10 @@ namespace LFS_ServerBrowser
 				if (b.Name == "btnRefreshMain"){
 					serverList.Clear();
 					btnJoinMain.Enabled = false;
-					t = new Thread(new ThreadStart(MakeMainQuery));
-				} else {
-					t = new Thread(new ThreadStart(MakeFavQuery));
-				}
+					t = new Thread(new ThreadStart(MainQuery));
+
+				} else
+					t = new Thread(new ThreadStart(FavQuery));
   				t.Start();
 			} else {
 				LFSQuery.stopQuerying();
