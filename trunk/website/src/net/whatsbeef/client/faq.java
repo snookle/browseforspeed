@@ -7,8 +7,10 @@ public class faq {
 		ArrayList questions = new ArrayList();
 		ArrayList answers = new ArrayList();
 		questions.add("What can I do with Browse for Speed?");
-		answers.add("Browse for Speed is a server browser for the popular online racing game <a href='http://www.liveforspeed.net'>Live for Speed</a>");
+		answers.add("Browse for Speed is a server browser for the popular online racing game <a href='http://www.liveforspeed.net'>Live for Speed</a>. It is able get a list of servers from the LFS master server, show some extended information about a server (player currently in the server). It also lets you save your favourite servers.");
 		questions.add("Why does it not tell me if my favourite servers are passworded until I get the detailed information?");
+		questions.add("I've viewed server information for a few servers, and the player list stops working. Why?");
+		answers.add("Player information is retrieved using the pubstat system, which imposes a limit on how many queries you can do in a certain time period.");
 		answers.add("For reasons unknown to us, the rules information returned by each server does not include if the server is passworded. The master server lets you know which servers are passworded when returning a list of hosts, therefore it is not technically possible for us to do this, until you view the server's detailed information.");
 		questions.add("Who developed it? Is it part of LFS?");
 		answers.add("Three developers, who have absolutely no connection with the development of LFS. Richard Nelson wrote the majority of liblfsbrowser, Ben Kenny did the frontend, and Philip Nelson yelled abuse and helped with some of the development.");
@@ -21,7 +23,7 @@ public class faq {
 		questions.add("I want to use your library in my own application. Can I do so?");
 		answers.add("Of course, but remember it is GPL'd. Do not violate the GPL. If you have ideas for a better server browser though, we would much prefer that you sent suggestions, or even better, patches (diff format is preferred).");
 		questions.add("What advantage does it have over the in-game browser, or LFSWorld with Join2LFS?");
-		answers.add("It is currently a lot faster than the in-game browser, provides ping times (unlike LFSWorld/Join2LFS). It also has a number of extra features, such as a favourite server list (which means you do not have to get a list from the server every time), car and track filtering. It can also show you the players currently in a server.");
+		answers.add("It is currently a lot faster than the in-game browser, provides ping times (unlike LFSWorld/Join2LFS). It also has a number of extra features, such as a favourite server list (which means you do not have to get a list from the server every time), car and track filtering. It can also show you the players currently in a server. You can also query and join your favourite servers if the main master server is down.");
 		questions.add("What licence is the software and its source avaliable under?");
 		answers.add("We're currently licencing the software under version 2 of the GNU GPL. A copy of this licence can be found in the file called COPYING inside the Browse For Speed distribution. You can also view the licence online at <a href='http://www.gnu.org/licenses/gpl.txt'>http://www.gnu.org/licenses/gpl.txt</a>");
 		questions.add("This site layout looks awfully similar to some of Google's stuff. Why?");
