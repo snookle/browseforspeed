@@ -355,6 +355,33 @@ namespace LFS_ServerBrowser
 			SetControlProperty(btnRefreshMain, "Text", "&Refresh");
 		}
 		
+		void MakeFavQuery()
+		{
+			SetControlProperty(buttonRefreshFav, "Text", "&Stop Refresh");
+			SetControlProperty(btnRefreshMain, "Text", "&Stop Refresh");
+			try {
+			if (favServerList.Count > 0)
+			{
+				MessageBox.Show("lol", "", MessageBoxButtons.OK);
+				IPEndPoint[] stupidArray = new IPEndPoint[favServerList.Count];
+				for (int i = 0; i < favServerList.Count; i++){
+					stupidArray[i] = ((ServerInformation)favServerList[i]).host;
+				}
+				q = new LFSQuery();
+				//favServerList.Clear();
+				q.query(0, 0, "browseforspeed", stupidArray, 0);
+			}
+			} catch (Exception ex) {
+				MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);
+			}
+			if (exiting) return;
+			SetControlProperty(btnRefreshMain, "Enabled", true);
+			SetControlProperty(buttonRefreshFav, "Enabled", true);
+			
+			SetControlProperty(buttonRefreshFav, "Text", "&Refresh");
+			SetControlProperty(btnRefreshMain, "Text", "&Refresh");
+		}
+		
 		void RefreshButtonClick(object sender, System.EventArgs e)
 		{
 			Button b = (Button)sender;
@@ -767,32 +794,6 @@ namespace LFS_ServerBrowser
 		{
 			ListView.SelectedListViewItemCollection coll = lvFavourites.SelectedItems;
 			contextMenuFav.Enabled = (coll.Count > 0);
-		}
-
-		void MakeFavQuery()
-		{
-			SetControlProperty(buttonRefreshFav, "Text", "&Stop Refresh");
-			SetControlProperty(btnRefreshMain, "Text", "&Stop Refresh");
-			try {
-			if (favServerList.Count > 0)
-			{
-				IPEndPoint[] stupidArray = new IPEndPoint[favServerList.Count];
-				for (int i = 0; i < favServerList.Count; i++){
-					stupidArray[i] = ((ServerInformation)favServerList[i]).host;
-				}
-				q = new LFSQuery();
-				favServerList.Clear();
-				q.query(0, 0, "browseforspeed", stupidArray, 0);
-			}
-			} catch (Exception ex) {
-				MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);
-			}
-			if (exiting) return;
-			SetControlProperty(btnRefreshMain, "Enabled", true);
-			SetControlProperty(buttonRefreshFav, "Enabled", true);
-			
-			SetControlProperty(buttonRefreshFav, "Text", "&Refresh");
-			SetControlProperty(btnRefreshMain, "Text", "&Refresh");
 		}
 				
 		public static String RulesToString(ulong rules)
