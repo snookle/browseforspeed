@@ -283,7 +283,7 @@ namespace LFS_ServerBrowser
 					q.query(compulsory, illegal, "browseforspeed", 0);
 				}
 			} catch(Exception e) {
-					MessageBox.Show(e.Message + " - " + e.StackTrace, "", MessageBoxButtons.OK);
+					MessageBox.Show("Unable to contact the Master Server. Perhaps it is down, or your firewall is not configured properly." , "Unable to contact Master Server!", MessageBoxButtons.OK);
 				}
 
 			if (exiting) return;
