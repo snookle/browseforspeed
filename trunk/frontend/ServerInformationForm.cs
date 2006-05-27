@@ -34,7 +34,8 @@ namespace LFS_ServerBrowser {
 			SetControlProperty(buttonInfoJoin, "Enabled", false);
 			SetControlProperty(buttonInfoRefresh, "Enabled", false);
 			listPlayers.Items.Clear();			
-			if (LFSQuery.getPubStatInfo(ref info)) {
+			int i = LFSQuery.getPubStatInfo(ref info);			
+			if (i == 1) { //LFSQuery.getPubStatInfo(ref info)) {
 				labelPrivate.Text = info.passworded ? "Yes" : "No";
 				if (info.players > 0) {
 					foreach (string player in info.racerNames) {
@@ -44,8 +45,12 @@ namespace LFS_ServerBrowser {
 					listPlayers.Items.Add("No players currently on the server.");
 				}
 			} else {
-				labelPrivate.Text = "N/A";
-				listPlayers.Items.Add("Couldn't retrieve player information.");
+				if (i == 0) {
+					listPlayers.Items.Add("Couldn't find server on pubstat!");
+				} else if (i == -1) {
+					listPlayers.Items.Add("Error querying pubstat!");
+				}
+				labelPrivate.Text = "N/A";				
 			}
 			SetControlProperty(buttonInfoRefresh, "Enabled", true);
 			SetControlProperty(buttonInfoJoin, "Enabled", true);
@@ -126,7 +131,8 @@ namespace LFS_ServerBrowser {
 			try{
 			if (info.success){
 				this.info = info;
-				labelServerName.Text = LFSQuery.removeColourCodes(info.hostname);
+				info.hostname = LFSQuery.removeColourCodes(info.hostname);
+				labelServerName.Text = info.hostname;
 				labelCars.Text = MainForm.CarsToString(info.cars);
 				labelInfo.Text = MainForm.RulesToString(info.rules);
 				labelPing.Text = info.ping.ToString();
