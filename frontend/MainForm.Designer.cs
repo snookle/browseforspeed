@@ -81,10 +81,13 @@ namespace LFS_ServerBrowser
 			this.removeFromFavouritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.btnCheckNewVersion = new System.Windows.Forms.Button();
-			this.cbNewVersion = new System.Windows.Forms.CheckBox();
+			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.queryWait = new System.Windows.Forms.NumericUpDown();
 			this.cbQueryWait = new System.Windows.Forms.CheckBox();
 			this.label4 = new System.Windows.Forms.Label();
+			this.btnCheckNewVersion = new System.Windows.Forms.Button();
+			this.cbNewVersion = new System.Windows.Forms.CheckBox();
 			this.pathList = new System.Windows.Forms.ListBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
@@ -103,6 +106,8 @@ namespace LFS_ServerBrowser
 			this.contextMenuFav.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
+			this.groupBox3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.queryWait)).BeginInit();
 			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -505,10 +510,9 @@ namespace LFS_ServerBrowser
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.groupBox3);
 			this.groupBox1.Controls.Add(this.btnCheckNewVersion);
 			this.groupBox1.Controls.Add(this.cbNewVersion);
-			this.groupBox1.Controls.Add(this.cbQueryWait);
-			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.pathList);
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.label2);
@@ -521,9 +525,79 @@ namespace LFS_ServerBrowser
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Configuration";
 			// 
+			// groupBox3
+			// 
+			this.groupBox3.Controls.Add(this.label3);
+			this.groupBox3.Controls.Add(this.queryWait);
+			this.groupBox3.Controls.Add(this.cbQueryWait);
+			this.groupBox3.Controls.Add(this.label4);
+			this.groupBox3.Location = new System.Drawing.Point(127, 226);
+			this.groupBox3.Name = "groupBox3";
+			this.groupBox3.Size = new System.Drawing.Size(403, 196);
+			this.groupBox3.TabIndex = 14;
+			this.groupBox3.TabStop = false;
+			this.groupBox3.Text = "Advanced";
+			// 
+			// label3
+			// 
+			this.label3.Location = new System.Drawing.Point(85, 50);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(286, 57);
+			this.label3.TabIndex = 15;
+			this.label3.Text = "Query Wait value. This is the time to wait before adding another query to the con" +
+			"current queries. Increase this value if, when querying, all servers start giving" +
+			" \"Connection Refused\"";
+			// 
+			// queryWait
+			// 
+			this.queryWait.Increment = new decimal(new int[] {
+									10,
+									0,
+									0,
+									0});
+			this.queryWait.Location = new System.Drawing.Point(24, 62);
+			this.queryWait.Maximum = new decimal(new int[] {
+									1000,
+									0,
+									0,
+									0});
+			this.queryWait.Minimum = new decimal(new int[] {
+									100,
+									0,
+									0,
+									0});
+			this.queryWait.Name = "queryWait";
+			this.queryWait.Size = new System.Drawing.Size(52, 21);
+			this.queryWait.TabIndex = 14;
+			this.queryWait.Value = new decimal(new int[] {
+									150,
+									0,
+									0,
+									0});
+			// 
+			// cbQueryWait
+			// 
+			this.cbQueryWait.Location = new System.Drawing.Point(24, 20);
+			this.cbQueryWait.Name = "cbQueryWait";
+			this.cbQueryWait.Size = new System.Drawing.Size(139, 24);
+			this.cbQueryWait.TabIndex = 13;
+			this.cbQueryWait.Text = "Disable Query Wait";
+			this.cbQueryWait.UseVisualStyleBackColor = true;
+			this.cbQueryWait.CheckedChanged += new System.EventHandler(this.CbQueryWaitCheckedChanged);
+			// 
+			// label4
+			// 
+			this.label4.Location = new System.Drawing.Point(24, 116);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(357, 48);
+			this.label4.TabIndex = 12;
+			this.label4.Text = "Only disable Query Wait if you are certain your Operating System does not have a " +
+			"connection limit.  Please see the FAQ at http://browseforspeed.whatsbeef.net for" +
+			" more information.";
+			// 
 			// btnCheckNewVersion
 			// 
-			this.btnCheckNewVersion.Location = new System.Drawing.Point(455, 183);
+			this.btnCheckNewVersion.Location = new System.Drawing.Point(455, 170);
 			this.btnCheckNewVersion.Name = "btnCheckNewVersion";
 			this.btnCheckNewVersion.Size = new System.Drawing.Size(75, 23);
 			this.btnCheckNewVersion.TabIndex = 13;
@@ -533,31 +607,12 @@ namespace LFS_ServerBrowser
 			// 
 			// cbNewVersion
 			// 
-			this.cbNewVersion.Location = new System.Drawing.Point(127, 182);
+			this.cbNewVersion.Location = new System.Drawing.Point(127, 170);
 			this.cbNewVersion.Name = "cbNewVersion";
 			this.cbNewVersion.Size = new System.Drawing.Size(322, 24);
 			this.cbNewVersion.TabIndex = 12;
 			this.cbNewVersion.Text = "Check for a new version of Browse For Speed on start up";
 			this.cbNewVersion.UseVisualStyleBackColor = true;
-			// 
-			// cbQueryWait
-			// 
-			this.cbQueryWait.Location = new System.Drawing.Point(127, 240);
-			this.cbQueryWait.Name = "cbQueryWait";
-			this.cbQueryWait.Size = new System.Drawing.Size(139, 24);
-			this.cbQueryWait.TabIndex = 11;
-			this.cbQueryWait.Text = "Disable Query Wait";
-			this.cbQueryWait.UseVisualStyleBackColor = true;
-			// 
-			// label4
-			// 
-			this.label4.Location = new System.Drawing.Point(127, 263);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(403, 48);
-			this.label4.TabIndex = 10;
-			this.label4.Text = "Check this box if you are NOT using Windows XP SP2 or you are certain you have di" +
-			"sabled the 10 connection limit in SP2. Read the FAQ for more information. If in " +
-			"doubt, leave this option off.";
 			// 
 			// pathList
 			// 
@@ -653,11 +708,16 @@ namespace LFS_ServerBrowser
 			this.contextMenuFav.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
+			this.groupBox3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.queryWait)).EndInit();
 			this.statusStrip.ResumeLayout(false);
 			this.statusStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.NumericUpDown queryWait;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.Button btnCheckNewVersion;
 		private System.Windows.Forms.Button buttonBrowse;
 		private System.Windows.Forms.Button btnJoinFav;
