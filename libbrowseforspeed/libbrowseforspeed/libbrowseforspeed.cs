@@ -55,6 +55,10 @@ namespace libbrowseforspeed {
 	public delegate void ServerQueried(object o, ServerInformation info, object callbackObj);
 
 	public class LFSQuery {
+		public ulong[] CAR_BITS = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 4096, 8192, 16384, 32768, 65536, 131072, 262144};
+		public string[] CAR_NAMES = {"XFG", "XRG", "XRT", "RB4", "FXO", "LX4", "MRT", "UF1", "RAC", "FZ5", "FOX", "XFR", "UFR", "FO8", "FXR", "XRR", "FZR", "BF1"};
+		public ulong[] CAR_GROUP_BITS = {524287, 259, 28, 1600, 12561, 229376};
+		public string[] CAR_GROUP_NAMES = {"ALL", "STD", "TBO", "LRF", "FWD", "GTR", "SS"};
 		
 		private const int QTHREADS = 16;
 		private const int THREAD_WAIT = 150;
@@ -476,9 +480,10 @@ namespace libbrowseforspeed {
 			public Thread getThread() { return myThread; }
 		}
 
-		public static bool getPubStatInfo(ref ServerInformation serverInfo) {
+		public static int getPubStatInfo(ref ServerInformation serverInfo) {
 			try {
 				HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1");
+				request.Timeout = 4000;
 				HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 				Stream stream = response.GetResponseStream();
 				Stream s = new GZipInputStream(stream);
@@ -487,6 +492,7 @@ namespace libbrowseforspeed {
 				stream.Close();
 				int i = 0;
 				string[] racers = null;
+				
 				while (i < buf.Length) {
 					string hostname = removeColourCodes(getLFSString(buf, i, 32));
 					int numRacers = (int)buf[i + 52];
@@ -498,41 +504,15 @@ namespace libbrowseforspeed {
 						serverInfo.players = numRacers;
 						serverInfo.racerNames = racers;
 						serverInfo.passworded = ((ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]) & 8) != 0;
-						return true;
+						return 1;
 					}
 					i += (53 + (24 * numRacers));
 				}
 			} catch (Exception e) {
-				return false;
+				return -1;
 			}
-			return false;
+			return 0;
 		}
-		/*
-		public static ArrayList getPlayers(string hostname) {
-			HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1");
-			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-			Stream stream = response.GetResponseStream();
-			Stream s = new GZipInputStream(stream);
-			byte[] buf = getStreamBytes(s);
-			s.Close();
-			stream.Close();
-			int i = 0;
-			ArrayList racers = null;
-			while (i < buf.Length) {
-				string thishostname = removeColourCodes(getLFSString(buf, i, 32));
-				int numRacers = (int)buf[i + 52];
-				if (thishostname == hostname) {
-					racers = new ArrayList();
-					for (int j = 0; j < numRacers; ++j) {
-						string racerName = getLFSString(buf, i + 53 + (24 * j), 24);
-						racers.Add(racerName);
-					}
-				}
-			i += (53 + (24 * numRacers));
-			}
-			return racers;
-		}
-		*/
 
 		private static byte[] getStreamBytes(Stream stream) {
 			byte[] buf = new byte[32768];
