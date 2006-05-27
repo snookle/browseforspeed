@@ -61,6 +61,7 @@ namespace libbrowseforspeed {
 		public static ulong[] CAR_GROUP_BITS = {524287, 280704, 229376, 12561, 1600, 259, 28};
 		public static string[] CAR_GROUP_NAMES = {"ALL", "SS", "GTR", "FWD", "LRF", "STD", "TBO"};
 		public static ulong[] CAR_GROUP_DISALLOW = {0, 243583, 280704, 511726, 522368, 524028, 392896};
+		public static ulong[] CAR_GROUP_DONTCARE = {524287, 280704, 14207, 12561, 319, 259, 291};
 		
 		private const int QTHREADS = 16;
 		private const int THREAD_WAIT = 150;
