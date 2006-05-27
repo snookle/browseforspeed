@@ -193,7 +193,7 @@ namespace LFS_ServerBrowser
 			config = new Configuration(configFilename);
 			ReadFav();
 			//if we have previous config data
-			if (config.configValid){
+			if (config.configValid) {
 				cbQueryWait.Checked = config.disableWait;
 				queryWait.Enabled = !config.disableWait;
 				LFSQuery.xpsp2_wait = !config.disableWait;
@@ -229,14 +229,13 @@ namespace LFS_ServerBrowser
 			
 		}
 
-		void CodeCars(out ulong compulsory, out ulong illegal)
-		{
+		void CodeCars(out ulong compulsory, out ulong illegal) {
 			compulsory = 0;
 			illegal = 0;
 			for (int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) {
 				if (cars[i].CheckState == CheckState.Checked) {
 					compulsory ^= LFSQuery.CAR_BITS[i];
-				} else if (cars[i].CheckState == CheckState.Checked) {
+				} else if (cars[i].CheckState == CheckState.Unchecked) {
 					illegal ^= LFSQuery.CAR_BITS[i]; 
 				}
 			}
