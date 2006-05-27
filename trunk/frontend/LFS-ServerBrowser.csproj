@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>LFS_ServerBrowser</RootNamespace>
+    <RootNamespace>BrowseForSpeed</RootNamespace>
     <AssemblyName>BrowseForSpeed</AssemblyName>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -15,7 +15,7 @@
     <FileAlignment>4096</FileAlignment>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <NoWarn>0168</NoWarn>
+    <ApplicationIcon>bfs.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -40,7 +40,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="libbrowseforspeed">
-      <HintPath>bin\Debug\libbrowseforspeed.dll</HintPath>
+      <HintPath>..\..\release\libbrowseforspeed.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
   </ItemGroup>
