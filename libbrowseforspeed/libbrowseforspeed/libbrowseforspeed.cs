@@ -55,10 +55,11 @@ namespace libbrowseforspeed {
 	public delegate void ServerQueried(object o, ServerInformation info, object callbackObj);
 
 	public class LFSQuery {
-		public ulong[] CAR_BITS = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144};
-		public string[] CAR_NAMES = {"XFG", "XRG", "XRT", "RB4", "FXO", "LX4", "LX6", "MRT", "UF1", "RAC", "FZ5", "FOX", "XFR", "UFR", "FO8", "FXR", "XRR", "FZR", "BF1"};
-		public ulong[] CAR_GROUP_BITS = {524287, 259, 28, 1600, 12561, 229376};
-		public string[] CAR_GROUP_NAMES = {"ALL", "STD", "TBO", "LRF", "FWD", "GTR", "SS"};
+
+		public static ulong[] CAR_BITS = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144};
+		public static string[] CAR_NAMES = {"XFG", "XRG", "XRT", "RB4", "FXO", "LX4", "LX6", "MRT", "UF1", "RAC", "FZ5", "FOX", "XFR", "UFR", "FO8", "FXR", "XRR", "FZR", "BF1"};
+		public static ulong[] CAR_GROUP_BITS = {524287, 280704, 229376, 12561, 1600, 259, 28};
+		public static string[] CAR_GROUP_NAMES = {"ALL", "SS", "GTR", "FWD", "LRF", "STD", "TBO"};
 		
 		private const int QTHREADS = 16;
 		private const int THREAD_WAIT = 150;
