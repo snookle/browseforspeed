@@ -351,22 +351,27 @@ namespace LFS_ServerBrowser
 			//lvMain.Sort();
 			SetControlProperty(btnRefreshMain, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Enabled", true);
-			SetControlProperty(buttonRefreshFav, "Text", "&Refresh All");
+			SetControlProperty(buttonRefreshFav, "Text", "&Refresh");
 			SetControlProperty(btnRefreshMain, "Text", "&Refresh");
 		}
 		
 		void RefreshButtonClick(object sender, System.EventArgs e)
 		{
-			if (btnRefreshMain.Text == "&Refresh"){
+			Button b = (Button)sender;
+			if (b.Text == "&Refresh"){
 				LFSQuery.queried -= new ServerQueried(queryMainEventListener);
 				LFSQuery.queried -= new ServerQueried(queryFavEventListener);
-				LFSQuery.queried += new ServerQueried(queryMainEventListener);
+				LFSQuery.queried += (b.Name == "btnRefreshMain") ? new ServerQueried(queryMainEventListener) : new ServerQueried(queryFavEventListener);
 				totalServers = 0;
-				lvMain.Items.Clear();
-				serverList.Clear();
-				btnJoinMain.Enabled = false;
-				t = new Thread(new ThreadStart(MakeMainQuery));
-	  			t.Start();
+				(b.Name == "btnRefreshMain" ? lvMain : lvFavourites).Items.Clear();
+				if (b.Name == "btnRefreshMain"){
+					serverList.Clear();
+					btnJoinMain.Enabled = false;
+					t = new Thread(new ThreadStart(MakeMainQuery));
+				} else {
+					t = new Thread(new ThreadStart(MakeFavQuery));
+				}
+  				t.Start();
 			} else {
 				LFSQuery.stopQuerying();
 				btnRefreshMain.Enabled = false;
@@ -505,9 +510,9 @@ namespace LFS_ServerBrowser
 		
 		void Button1Click(object sender, System.EventArgs e)
 		{
-			if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+			if (openFileDialog.ShowDialog() == DialogResult.Cancel)
 				return;
-			pathList.Items.Add(openFileDialog1.FileName);
+			pathList.Items.Add(openFileDialog.FileName);
 			pathList.SelectedIndex = pathList.Items.Count - 1;
 		}
 		
@@ -790,23 +795,6 @@ namespace LFS_ServerBrowser
 			SetControlProperty(btnRefreshMain, "Text", "&Refresh");
 		}
 				
-		void ButtonRefreshFavClick(object sender, System.EventArgs e)
-		{
-			if (buttonRefreshFav.Text == "&Refresh All"){
-				LFSQuery.queried -= new ServerQueried(queryMainEventListener);
-				LFSQuery.queried -= new ServerQueried(queryFavEventListener);
-				LFSQuery.queried += new ServerQueried(queryFavEventListener);
-				totalServers = 0;
-				lvFavourites.Items.Clear();
-				t = new Thread(new ThreadStart(MakeFavQuery));
-  				t.Start();
-			} else {
-				LFSQuery.stopQuerying();
-				btnRefreshMain.Enabled = false;
-				buttonRefreshFav.Enabled = false;
-			}
-		}
-		
 		public static String RulesToString(ulong rules)
 		{
 			String str = "";
@@ -841,10 +829,10 @@ namespace LFS_ServerBrowser
 		void lvFavouritesSelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			//MessageBox.Show(lvFavourites.Items[0].SubItems.Count.ToString(), "", MessageBoxButtons.OK);
-			buttonJoinFav.Enabled = (lvFavourites.SelectedItems.Count > 0 && lvFavourites.Items[0].SubItems.Count > 1);
+			btnJoinFav.Enabled = (lvFavourites.SelectedItems.Count > 0 && lvFavourites.Items[0].SubItems.Count > 1);
 		}
 		
-		void ButtonJoinFavClick(object sender, System.EventArgs e)
+		void btnJoinFavClick(object sender, System.EventArgs e)
 		{
 			ListView.SelectedListViewItemCollection coll = lvFavourites.SelectedItems;
 			if (coll.Count < 1) return;

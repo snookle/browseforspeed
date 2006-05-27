@@ -93,7 +93,7 @@ namespace LFS_ServerBrowser
 			this.btnJoinMain = new System.Windows.Forms.Button();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.buttonRefreshFav = new System.Windows.Forms.Button();
-			this.buttonJoinFav = new System.Windows.Forms.Button();
+			this.btnJoinFav = new System.Windows.Forms.Button();
 			this.lvFavourites = new System.Windows.Forms.ListView();
 			this.columnHeaderFavServerName = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderFavPing = new System.Windows.Forms.ColumnHeader();
@@ -115,7 +115,7 @@ namespace LFS_ServerBrowser
 			this.label5 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.browseForButton = new System.Windows.Forms.Button();
-			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.statusTotal = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusRefused = new System.Windows.Forms.ToolStripStatusLabel();
@@ -142,7 +142,6 @@ namespace LFS_ServerBrowser
 			this.menuStrip.Size = new System.Drawing.Size(792, 24);
 			this.menuStrip.TabIndex = 0;
 			this.menuStrip.Text = "menuStrip1";
-			//this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStripItemClicked);
 			// 
 			// fileToolStripMenuItem
 			// 
@@ -726,7 +725,7 @@ namespace LFS_ServerBrowser
 			// tabPage3
 			// 
 			this.tabPage3.Controls.Add(this.buttonRefreshFav);
-			this.tabPage3.Controls.Add(this.buttonJoinFav);
+			this.tabPage3.Controls.Add(this.btnJoinFav);
 			this.tabPage3.Controls.Add(this.lvFavourites);
 			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
@@ -742,21 +741,21 @@ namespace LFS_ServerBrowser
 			this.buttonRefreshFav.Name = "buttonRefreshFav";
 			this.buttonRefreshFav.Size = new System.Drawing.Size(75, 23);
 			this.buttonRefreshFav.TabIndex = 6;
-			this.buttonRefreshFav.Text = "&Refresh All";
+			this.buttonRefreshFav.Text = "&Refresh";
 			this.buttonRefreshFav.UseVisualStyleBackColor = true;
-			this.buttonRefreshFav.Click += new System.EventHandler(this.ButtonRefreshFavClick);
+			this.buttonRefreshFav.Click += new System.EventHandler(this.RefreshButtonClick);
 			// 
-			// buttonJoinFav
+			// btnJoinFav
 			// 
-			this.buttonJoinFav.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.buttonJoinFav.Enabled = false;
-			this.buttonJoinFav.Location = new System.Drawing.Point(8, 475);
-			this.buttonJoinFav.Name = "buttonJoinFav";
-			this.buttonJoinFav.Size = new System.Drawing.Size(75, 23);
-			this.buttonJoinFav.TabIndex = 5;
-			this.buttonJoinFav.Text = "&Join";
-			this.buttonJoinFav.UseVisualStyleBackColor = true;
-			this.buttonJoinFav.Click += new System.EventHandler(this.ButtonJoinFavClick);
+			this.btnJoinFav.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnJoinFav.Enabled = false;
+			this.btnJoinFav.Location = new System.Drawing.Point(8, 475);
+			this.btnJoinFav.Name = "btnJoinFav";
+			this.btnJoinFav.Size = new System.Drawing.Size(75, 23);
+			this.btnJoinFav.TabIndex = 5;
+			this.btnJoinFav.Text = "&Join";
+			this.btnJoinFav.UseVisualStyleBackColor = true;
+			this.btnJoinFav.Click += new System.EventHandler(this.btnJoinFavClick);
 			// 
 			// lvFavourites
 			// 
@@ -773,14 +772,14 @@ namespace LFS_ServerBrowser
 			this.lvFavourites.ContextMenuStrip = this.contextMenuFav;
 			this.lvFavourites.FullRowSelect = true;
 			this.lvFavourites.GridLines = true;
-			this.lvFavourites.Location = new System.Drawing.Point(8, 6);
+			this.lvFavourites.Location = new System.Drawing.Point(8, 8);
 			this.lvFavourites.MultiSelect = false;
 			this.lvFavourites.Name = "lvFavourites";
 			this.lvFavourites.Size = new System.Drawing.Size(768, 461);
 			this.lvFavourites.TabIndex = 4;
 			this.lvFavourites.UseCompatibleStateImageBehavior = false;
 			this.lvFavourites.View = System.Windows.Forms.View.Details;
-			this.lvFavourites.DoubleClick += new System.EventHandler(this.ButtonJoinFavClick);
+			this.lvFavourites.DoubleClick += new System.EventHandler(this.btnJoinFavClick);
 			this.lvFavourites.SelectedIndexChanged += new System.EventHandler(this.lvFavouritesSelectedIndexChanged);
 			this.lvFavourites.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
 			// 
@@ -819,7 +818,7 @@ namespace LFS_ServerBrowser
 									this.viewServerInformationFav,
 									this.removeFromFavouritesToolStripMenuItem});
 			this.contextMenuFav.Name = "contextMenuFav";
-			this.contextMenuFav.Size = new System.Drawing.Size(214, 92);
+			this.contextMenuFav.Size = new System.Drawing.Size(214, 70);
 			this.contextMenuFav.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFavOpening);
 			// 
 			// joinServerToolStripMenuItem1
@@ -827,7 +826,7 @@ namespace LFS_ServerBrowser
 			this.joinServerToolStripMenuItem1.Name = "joinServerToolStripMenuItem1";
 			this.joinServerToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
 			this.joinServerToolStripMenuItem1.Text = "&Join Server";
-			this.joinServerToolStripMenuItem1.Click += new System.EventHandler(this.ButtonJoinFavClick);
+			this.joinServerToolStripMenuItem1.Click += new System.EventHandler(this.btnJoinFavClick);
 			// 
 			// viewServerInformationFav
 			// 
@@ -946,11 +945,11 @@ namespace LFS_ServerBrowser
 			this.browseForButton.UseVisualStyleBackColor = true;
 			this.browseForButton.Click += new System.EventHandler(this.Button1Click);
 			// 
-			// openFileDialog1
+			// openFileDialog
 			// 
-			this.openFileDialog1.FileName = "LFS.exe";
-			this.openFileDialog1.Filter = "LFS Executable|LFS.exe";
-			this.openFileDialog1.SupportMultiDottedExtensions = true;
+			this.openFileDialog.FileName = "LFS.exe";
+			this.openFileDialog.Filter = "LFS Executable|LFS.exe";
+			this.openFileDialog.SupportMultiDottedExtensions = true;
 			// 
 			// statusStrip
 			// 
@@ -1009,6 +1008,8 @@ namespace LFS_ServerBrowser
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button btnJoinFav;
+		private System.Windows.Forms.OpenFileDialog openFileDialog;
 		private System.Windows.Forms.ListView lvFavourites;
 		private System.Windows.Forms.Button btnCarsALL;
 		private System.Windows.Forms.Button btnCarsSTD;
@@ -1071,14 +1072,12 @@ namespace LFS_ServerBrowser
 		private System.Windows.Forms.ToolStripMenuItem joinServerToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
 		private System.Windows.Forms.ContextMenuStrip contextMenuBrowser;
-		private System.Windows.Forms.Button buttonJoinFav;
 		private System.Windows.Forms.Button buttonRefreshFav;
 		private System.Windows.Forms.TabPage tabPage3;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.ListBox pathList;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button browseForButton;
-		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.ColumnHeader columnHeaderConnections;
