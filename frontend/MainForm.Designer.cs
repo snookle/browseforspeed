@@ -107,14 +107,14 @@ namespace LFS_ServerBrowser
 			this.removeFromFavouritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.buttonCheckNewVersion = new System.Windows.Forms.Button();
+			this.btnCheckNewVersion = new System.Windows.Forms.Button();
 			this.cbNewVersion = new System.Windows.Forms.CheckBox();
 			this.cbQueryWait = new System.Windows.Forms.CheckBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.pathList = new System.Windows.Forms.ListBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.browseForButton = new System.Windows.Forms.Button();
+			this.buttonBrowse = new System.Windows.Forms.Button();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.statusTotal = new System.Windows.Forms.ToolStripStatusLabel();
@@ -855,14 +855,14 @@ namespace LFS_ServerBrowser
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.buttonCheckNewVersion);
+			this.groupBox1.Controls.Add(this.btnCheckNewVersion);
 			this.groupBox1.Controls.Add(this.cbNewVersion);
 			this.groupBox1.Controls.Add(this.cbQueryWait);
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.pathList);
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.label2);
-			this.groupBox1.Controls.Add(this.browseForButton);
+			this.groupBox1.Controls.Add(this.buttonBrowse);
 			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox1.Location = new System.Drawing.Point(3, 3);
 			this.groupBox1.Name = "groupBox1";
@@ -871,15 +871,15 @@ namespace LFS_ServerBrowser
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Configuration";
 			// 
-			// buttonCheckNewVersion
+			// btnCheckNewVersion
 			// 
-			this.buttonCheckNewVersion.Location = new System.Drawing.Point(455, 183);
-			this.buttonCheckNewVersion.Name = "buttonCheckNewVersion";
-			this.buttonCheckNewVersion.Size = new System.Drawing.Size(75, 23);
-			this.buttonCheckNewVersion.TabIndex = 13;
-			this.buttonCheckNewVersion.Text = "&Check Now";
-			this.buttonCheckNewVersion.UseVisualStyleBackColor = true;
-			this.buttonCheckNewVersion.Click += new System.EventHandler(this.ButtonCheckNewVersionClick);
+			this.btnCheckNewVersion.Location = new System.Drawing.Point(455, 183);
+			this.btnCheckNewVersion.Name = "btnCheckNewVersion";
+			this.btnCheckNewVersion.Size = new System.Drawing.Size(75, 23);
+			this.btnCheckNewVersion.TabIndex = 13;
+			this.btnCheckNewVersion.Text = "&Check Now";
+			this.btnCheckNewVersion.UseVisualStyleBackColor = true;
+			this.btnCheckNewVersion.Click += new System.EventHandler(this.btnCheckNewVersionClick);
 			// 
 			// cbNewVersion
 			// 
@@ -935,15 +935,15 @@ namespace LFS_ServerBrowser
 			this.label2.TabIndex = 5;
 			this.label2.Text = "LFS Executable Path:";
 			// 
-			// browseForButton
+			// buttonBrowse
 			// 
-			this.browseForButton.Location = new System.Drawing.Point(455, 40);
-			this.browseForButton.Name = "browseForButton";
-			this.browseForButton.Size = new System.Drawing.Size(75, 23);
-			this.browseForButton.TabIndex = 4;
-			this.browseForButton.Text = "&Browse...";
-			this.browseForButton.UseVisualStyleBackColor = true;
-			this.browseForButton.Click += new System.EventHandler(this.Button1Click);
+			this.buttonBrowse.Location = new System.Drawing.Point(455, 40);
+			this.buttonBrowse.Name = "buttonBrowse";
+			this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
+			this.buttonBrowse.TabIndex = 4;
+			this.buttonBrowse.Text = "&Browse...";
+			this.buttonBrowse.UseVisualStyleBackColor = true;
+			this.buttonBrowse.Click += new System.EventHandler(this.btnBrowseClick);
 			// 
 			// openFileDialog
 			// 
@@ -1008,6 +1008,8 @@ namespace LFS_ServerBrowser
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button btnCheckNewVersion;
+		private System.Windows.Forms.Button buttonBrowse;
 		private System.Windows.Forms.Button btnJoinFav;
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
 		private System.Windows.Forms.ListView lvFavourites;
@@ -1026,11 +1028,9 @@ namespace LFS_ServerBrowser
 		private System.Windows.Forms.TextBox edtFindUserMain;
 		private System.Windows.Forms.Button btnJoinMain;
 		private System.Windows.Forms.ColumnHeader columnPrivate;
-		private System.Windows.Forms.Button buttonCheckNewVersion;
 		private System.Windows.Forms.CheckBox cbNewVersion;
 		private System.Windows.Forms.CheckBox cbQueryWait;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.ToolStripMenuItem viewServerInformationFav;
 		private System.Windows.Forms.ToolStripMenuItem viewServerInformationMain;
 		private System.Windows.Forms.ColumnHeader columnHeaderFavCars;
@@ -1077,7 +1077,6 @@ namespace LFS_ServerBrowser
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.ListBox pathList;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Button browseForButton;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.ColumnHeader columnHeaderConnections;

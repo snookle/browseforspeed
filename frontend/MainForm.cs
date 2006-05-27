@@ -397,13 +397,34 @@ namespace LFS_ServerBrowser
 			}
 		}
 
+		public void DisplayServer(ServerInformation info, bool isFavQuery)
+		{
+			string serverName;
+			info.hostname = serverName = LFSQuery.removeColourCodes(info.hostname);
+			string cars = CarsToString(info.cars);
+			ListViewItem lvi = (isFavQuery == false ? lvMain : lvFavourites).Items.Add(info.host.ToString());
+			lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, serverName));
+			lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, info.ping.ToString()));
+			int columnOffset = 0;
+			if (isFavQuery){
+				columnOffset = 1;
+			} else {
+				lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, info.passworded == true ? "Yes" : "No"));
+			}
+			lvi.SubItems.Insert(3 - columnOffset, new ListViewItem.ListViewSubItem(lvi, info.players.ToString() +"/" + info.slots.ToString()));
+			lvi.SubItems.Insert(4 - columnOffset, new ListViewItem.ListViewSubItem(lvi, RulesToString(info.rules)));
+			lvi.SubItems.Insert(5 - columnOffset, new ListViewItem.ListViewSubItem(lvi, info.track));
+			lvi.SubItems.Insert(6 - columnOffset, new ListViewItem.ListViewSubItem(lvi, cars));
+			
+		}
+		
 		public void addServerToList(ServerInformation info, ListView l, bool isFavQuery)
 		{
 			if (this.exiting) return;
 			try{
 				// Make sure we're on the right thread
 				if(this.InvokeRequired == false) {
-					if (totalServers == 0){
+					if (totalServers == 0) {
 						totalServers = info.totalServers;
 						numQueried = 0;
 						numServersDone = 0;
@@ -411,46 +432,18 @@ namespace LFS_ServerBrowser
 						numServersNoReply = 0;
 					}
 					numQueried++;
-					string filter;
-					if (isFavQuery) {
-						filter = "";		
-					} else {
-						filter = GetTrackFilter(cbTracks.Text);
-					}
-					
+					string filter = isFavQuery ? "" : GetTrackFilter(cbTracks.Text);
 					if (info.success){
 						numServersDone++;
 						if (info.track.Contains(filter)){
-							string serverName;
-							info.hostname = serverName = LFSQuery.removeColourCodes(info.hostname);
-							string cars = CarsToString(info.cars);
-							ListViewItem lvi = l.Items.Add(info.host.ToString());
-							lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, serverName));
-							lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, info.ping.ToString()));
-							int columnOffset = 0;
-							if (isFavQuery){
-								columnOffset = 1;
-							} else {
-								lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, info.passworded == true ? "Yes" : "No"));
-							}
-							lvi.SubItems.Insert(3 - columnOffset, new ListViewItem.ListViewSubItem(lvi, info.players.ToString() +"/" + info.slots.ToString()));
-							lvi.SubItems.Insert(4 - columnOffset, new ListViewItem.ListViewSubItem(lvi, RulesToString(info.rules)));
-							lvi.SubItems.Insert(5 - columnOffset, new ListViewItem.ListViewSubItem(lvi, info.track));
-							lvi.SubItems.Insert(6 - columnOffset, new ListViewItem.ListViewSubItem(lvi, cars));
+							DisplayServer(info, isFavQuery);
 						}
+						if (!isFavQuery) serverList.Add(info);
 					} else {
 						if (info.readFailed) {
 							numServersNoReply++;
 						} else {
 							numServersRefused++;
-						}
-					}
-
-					if (!isFavQuery && info.success){
-						if (!isFavQuery) {
-							serverList.Add(info);
-						} else {
-							favServerList.Add(info);
 						}
 					}
 					statusTotal.Text = String.Format("Checking host {0} of {1}", numQueried, totalServers);
@@ -526,7 +519,7 @@ namespace LFS_ServerBrowser
 			this.WindowState = ws;
 		}
 		
-		void Button1Click(object sender, System.EventArgs e)
+		void btnBrowseClick(object sender, System.EventArgs e)
 		{
 			if (openFileDialog.ShowDialog() == DialogResult.Cancel)
 				return;
@@ -790,26 +783,13 @@ namespace LFS_ServerBrowser
 		public static String RulesToString(ulong rules)
 		{
 			String str = "";
-			if ((rules & 1) != 0)
-				str += "V"; //CAN_VOTE
-			
-			if ((rules & 2) != 0)
-				str += "S"; //CAN_SELECT
-			
-			if ((rules & 4) != 0)
-				str += "Q"; //QUALIFY
-			
-			if ((rules & 8) != 0)
-				str += "P"; //PRIVATE
-			
-			if ((rules & 16) != 0)
-				str += "m"; //MODIFIED (dunno what to put here!)
-			
-			if ((rules & 32) != 0)
-				str += "M"; //MIDRACEJOIN
-			
-			if ((rules & 64) != 0)
-				str += "p"; //MUSTPIT
+			if ((rules & 1) != 0) str += "V"; //CAN_VOTE
+			if ((rules & 2) != 0) str += "S"; //CAN_SELECT
+			if ((rules & 4) != 0) str += "Q"; //QUALIFY
+			if ((rules & 8) != 0) str += "P"; //PRIVATE - apparently this is wrong??
+			if ((rules & 16) != 0) str += "m"; //MODIFIED (dunno what to put here!)
+			if ((rules & 32) != 0) str += "M"; //MIDRACEJOIN
+			if ((rules & 64) != 0) str += "p"; //MUSTPIT
 			return str;
 		}
 		
@@ -878,21 +858,14 @@ namespace LFS_ServerBrowser
 			string filter = GetTrackFilter(cbTracks.Text);
 			lvMain.Items.Clear();
 			try{
-			foreach (ServerInformation info in serverList){
-				if (info.track.Contains(filter)){
-					string serverName;
-					info.hostname = serverName = LFSQuery.removeColourCodes(info.hostname);
-					string cars = info.cars.ToString();
-					ListViewItem lvi = lvMain.Items.Add(info.host.ToString());
-					lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, serverName));
-					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, info.ping.ToString()));
-					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, info.passworded == true ? "Yes" : "No"));
-					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, info.players.ToString() +"/" + info.slots.ToString()));
-					lvi.SubItems.Insert(4, new ListViewItem.ListViewSubItem(lvi, RulesToString(info.rules)));
-					lvi.SubItems.Insert(5, new ListViewItem.ListViewSubItem(lvi, info.track));
-					lvi.SubItems.Insert(6, new ListViewItem.ListViewSubItem(lvi, cars));
+				foreach (ServerInformation info in serverList){
+					if (info.track.Contains(filter)){
+						DisplayServer(info, false);
+					}
+				}
+			} catch (Exception ex) {
+				MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);
 			}
-				} } catch (Exception ex) { MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);}
 		}
 
 		void btnFindUserClick(object sender, System.EventArgs e)
@@ -903,7 +876,6 @@ namespace LFS_ServerBrowser
 				if (MessageBox.Show("Join " + edtFindUserMain.Text + " at this host?\n" + hostname, appTitle, MessageBoxButtons.YesNo) == DialogResult.Yes){
 					LoadLFS(hostname, "S2", "");
 				}
-				
 			} else {
 				MessageBox.Show("User was not found online", appTitle, MessageBoxButtons.OK);
 			}
@@ -966,7 +938,7 @@ namespace LFS_ServerBrowser
 			}
 		}
 		
-		void ButtonCheckNewVersionClick(object sender, System.EventArgs e)
+		void btnCheckNewVersionClick(object sender, System.EventArgs e)
 		{
 			MainForm.versionCheck(true);
 		}
