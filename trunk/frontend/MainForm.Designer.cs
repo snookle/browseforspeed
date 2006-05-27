@@ -50,33 +50,7 @@ namespace LFS_ServerBrowser
 			this.label6 = new System.Windows.Forms.Label();
 			this.btnFindUserMain = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.cbRAC = new System.Windows.Forms.CheckBox();
-			this.cbFZR = new System.Windows.Forms.CheckBox();
-			this.cbXRR = new System.Windows.Forms.CheckBox();
-			this.cbFXR = new System.Windows.Forms.CheckBox();
-			this.cbBF1 = new System.Windows.Forms.CheckBox();
-			this.cbFO8 = new System.Windows.Forms.CheckBox();
-			this.cbFOX = new System.Windows.Forms.CheckBox();
-			this.cbMRT = new System.Windows.Forms.CheckBox();
-			this.cbXFR = new System.Windows.Forms.CheckBox();
-			this.cbUFR = new System.Windows.Forms.CheckBox();
-			this.btnCarsALL = new System.Windows.Forms.Button();
-			this.cbFZ5 = new System.Windows.Forms.CheckBox();
-			this.cbLX6 = new System.Windows.Forms.CheckBox();
-			this.cbXRT = new System.Windows.Forms.CheckBox();
-			this.cbFXO = new System.Windows.Forms.CheckBox();
-			this.cbRB4 = new System.Windows.Forms.CheckBox();
-			this.cbLX4 = new System.Windows.Forms.CheckBox();
-			this.cbXRG = new System.Windows.Forms.CheckBox();
-			this.cbXFG = new System.Windows.Forms.CheckBox();
-			this.cbUF1 = new System.Windows.Forms.CheckBox();
 			this.cbTracks = new System.Windows.Forms.ComboBox();
-			this.btnCarsSS = new System.Windows.Forms.Button();
-			this.btnCarsGTR = new System.Windows.Forms.Button();
-			this.btnCarsFWD = new System.Windows.Forms.Button();
-			this.btnCarsLRF = new System.Windows.Forms.Button();
-			this.btnCarsTBO = new System.Windows.Forms.Button();
-			this.btnCarsSTD = new System.Windows.Forms.Button();
 			this.lvMain = new System.Windows.Forms.ListView();
 			this.columnHeaderName = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderPing = new System.Windows.Forms.ColumnHeader();
@@ -256,277 +230,13 @@ namespace LFS_ServerBrowser
 			// 
 			this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBox2.Controls.Add(this.cbRAC);
-			this.groupBox2.Controls.Add(this.cbFZR);
-			this.groupBox2.Controls.Add(this.cbXRR);
-			this.groupBox2.Controls.Add(this.cbFXR);
-			this.groupBox2.Controls.Add(this.cbBF1);
-			this.groupBox2.Controls.Add(this.cbFO8);
-			this.groupBox2.Controls.Add(this.cbFOX);
-			this.groupBox2.Controls.Add(this.cbMRT);
-			this.groupBox2.Controls.Add(this.cbXFR);
-			this.groupBox2.Controls.Add(this.cbUFR);
-			this.groupBox2.Controls.Add(this.btnCarsALL);
-			this.groupBox2.Controls.Add(this.cbFZ5);
-			this.groupBox2.Controls.Add(this.cbLX6);
-			this.groupBox2.Controls.Add(this.cbXRT);
-			this.groupBox2.Controls.Add(this.cbFXO);
-			this.groupBox2.Controls.Add(this.cbRB4);
-			this.groupBox2.Controls.Add(this.cbLX4);
-			this.groupBox2.Controls.Add(this.cbXRG);
-			this.groupBox2.Controls.Add(this.cbXFG);
-			this.groupBox2.Controls.Add(this.cbUF1);
 			this.groupBox2.Controls.Add(this.cbTracks);
-			this.groupBox2.Controls.Add(this.btnCarsSS);
-			this.groupBox2.Controls.Add(this.btnCarsGTR);
-			this.groupBox2.Controls.Add(this.btnCarsFWD);
-			this.groupBox2.Controls.Add(this.btnCarsLRF);
-			this.groupBox2.Controls.Add(this.btnCarsTBO);
-			this.groupBox2.Controls.Add(this.btnCarsSTD);
 			this.groupBox2.Location = new System.Drawing.Point(661, 6);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(115, 458);
 			this.groupBox2.TabIndex = 4;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Filters";
-			// 
-			// cbRAC
-			// 
-			this.cbRAC.Checked = true;
-			this.cbRAC.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbRAC.Location = new System.Drawing.Point(6, 175);
-			this.cbRAC.Name = "cbRAC";
-			this.cbRAC.Size = new System.Drawing.Size(50, 22);
-			this.cbRAC.TabIndex = 18;
-			this.cbRAC.Text = "RAC";
-			this.cbRAC.ThreeState = true;
-			this.cbRAC.UseVisualStyleBackColor = true;
-			// 
-			// cbFZR
-			// 
-			this.cbFZR.Checked = true;
-			this.cbFZR.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbFZR.Location = new System.Drawing.Point(59, 175);
-			this.cbFZR.Name = "cbFZR";
-			this.cbFZR.Size = new System.Drawing.Size(50, 22);
-			this.cbFZR.TabIndex = 28;
-			this.cbFZR.Text = "FZR";
-			this.cbFZR.ThreeState = true;
-			this.cbFZR.UseVisualStyleBackColor = true;
-			// 
-			// cbXRR
-			// 
-			this.cbXRR.Checked = true;
-			this.cbXRR.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbXRR.Location = new System.Drawing.Point(59, 156);
-			this.cbXRR.Name = "cbXRR";
-			this.cbXRR.Size = new System.Drawing.Size(50, 22);
-			this.cbXRR.TabIndex = 27;
-			this.cbXRR.Text = "XRR";
-			this.cbXRR.ThreeState = true;
-			this.cbXRR.UseVisualStyleBackColor = true;
-			// 
-			// cbFXR
-			// 
-			this.cbFXR.Checked = true;
-			this.cbFXR.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbFXR.Location = new System.Drawing.Point(59, 138);
-			this.cbFXR.Name = "cbFXR";
-			this.cbFXR.Size = new System.Drawing.Size(50, 22);
-			this.cbFXR.TabIndex = 26;
-			this.cbFXR.Text = "FXR";
-			this.cbFXR.ThreeState = true;
-			this.cbFXR.UseVisualStyleBackColor = true;
-			// 
-			// cbBF1
-			// 
-			this.cbBF1.Checked = true;
-			this.cbBF1.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbBF1.Location = new System.Drawing.Point(59, 118);
-			this.cbBF1.Name = "cbBF1";
-			this.cbBF1.Size = new System.Drawing.Size(50, 22);
-			this.cbBF1.TabIndex = 25;
-			this.cbBF1.Text = "BF1";
-			this.cbBF1.ThreeState = true;
-			this.cbBF1.UseVisualStyleBackColor = true;
-			// 
-			// cbFO8
-			// 
-			this.cbFO8.Checked = true;
-			this.cbFO8.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbFO8.Location = new System.Drawing.Point(59, 100);
-			this.cbFO8.Name = "cbFO8";
-			this.cbFO8.Size = new System.Drawing.Size(50, 22);
-			this.cbFO8.TabIndex = 24;
-			this.cbFO8.Text = "FO8";
-			this.cbFO8.ThreeState = true;
-			this.cbFO8.UseVisualStyleBackColor = true;
-			// 
-			// cbFOX
-			// 
-			this.cbFOX.Checked = true;
-			this.cbFOX.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbFOX.Location = new System.Drawing.Point(59, 81);
-			this.cbFOX.Name = "cbFOX";
-			this.cbFOX.Size = new System.Drawing.Size(50, 22);
-			this.cbFOX.TabIndex = 23;
-			this.cbFOX.Text = "FOX";
-			this.cbFOX.ThreeState = true;
-			this.cbFOX.UseVisualStyleBackColor = true;
-			// 
-			// cbMRT
-			// 
-			this.cbMRT.Checked = true;
-			this.cbMRT.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbMRT.Location = new System.Drawing.Point(59, 61);
-			this.cbMRT.Name = "cbMRT";
-			this.cbMRT.Size = new System.Drawing.Size(50, 22);
-			this.cbMRT.TabIndex = 22;
-			this.cbMRT.Text = "MRT";
-			this.cbMRT.ThreeState = true;
-			this.cbMRT.UseVisualStyleBackColor = true;
-			// 
-			// cbXFR
-			// 
-			this.cbXFR.Checked = true;
-			this.cbXFR.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbXFR.Location = new System.Drawing.Point(59, 42);
-			this.cbXFR.Name = "cbXFR";
-			this.cbXFR.Size = new System.Drawing.Size(50, 22);
-			this.cbXFR.TabIndex = 21;
-			this.cbXFR.Text = "XFR";
-			this.cbXFR.ThreeState = true;
-			this.cbXFR.UseVisualStyleBackColor = true;
-			// 
-			// cbUFR
-			// 
-			this.cbUFR.Checked = true;
-			this.cbUFR.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbUFR.Location = new System.Drawing.Point(59, 22);
-			this.cbUFR.Name = "cbUFR";
-			this.cbUFR.Size = new System.Drawing.Size(50, 22);
-			this.cbUFR.TabIndex = 20;
-			this.cbUFR.Text = "UFR";
-			this.cbUFR.ThreeState = true;
-			this.cbUFR.UseVisualStyleBackColor = true;
-			// 
-			// btnCarsALL
-			// 
-			this.btnCarsALL.Location = new System.Drawing.Point(6, 238);
-			this.btnCarsALL.Name = "btnCarsALL";
-			this.btnCarsALL.Size = new System.Drawing.Size(42, 23);
-			this.btnCarsALL.TabIndex = 0;
-			this.btnCarsALL.Text = "ALL";
-			this.btnCarsALL.UseVisualStyleBackColor = true;
-			this.btnCarsALL.Click += new System.EventHandler(this.AllCarsButtonClick);
-			// 
-			// cbFZ5
-			// 
-			this.cbFZ5.Checked = true;
-			this.cbFZ5.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbFZ5.Location = new System.Drawing.Point(6, 194);
-			this.cbFZ5.Name = "cbFZ5";
-			this.cbFZ5.Size = new System.Drawing.Size(50, 22);
-			this.cbFZ5.TabIndex = 19;
-			this.cbFZ5.Text = "FZ5";
-			this.cbFZ5.ThreeState = true;
-			this.cbFZ5.UseVisualStyleBackColor = true;
-			// 
-			// cbLX6
-			// 
-			this.cbLX6.Checked = true;
-			this.cbLX6.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbLX6.Location = new System.Drawing.Point(6, 157);
-			this.cbLX6.Name = "cbLX6";
-			this.cbLX6.Size = new System.Drawing.Size(50, 22);
-			this.cbLX6.TabIndex = 17;
-			this.cbLX6.Text = "LX6";
-			this.cbLX6.ThreeState = true;
-			this.cbLX6.UseVisualStyleBackColor = true;
-			// 
-			// cbXRT
-			// 
-			this.cbXRT.Checked = true;
-			this.cbXRT.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbXRT.Location = new System.Drawing.Point(6, 136);
-			this.cbXRT.Name = "cbXRT";
-			this.cbXRT.Size = new System.Drawing.Size(50, 24);
-			this.cbXRT.TabIndex = 16;
-			this.cbXRT.Text = "XRT";
-			this.cbXRT.ThreeState = true;
-			this.cbXRT.UseVisualStyleBackColor = true;
-			// 
-			// cbFXO
-			// 
-			this.cbFXO.Checked = true;
-			this.cbFXO.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbFXO.Location = new System.Drawing.Point(6, 118);
-			this.cbFXO.Name = "cbFXO";
-			this.cbFXO.Size = new System.Drawing.Size(50, 24);
-			this.cbFXO.TabIndex = 15;
-			this.cbFXO.Text = "FXO";
-			this.cbFXO.ThreeState = true;
-			this.cbFXO.UseVisualStyleBackColor = true;
-			// 
-			// cbRB4
-			// 
-			this.cbRB4.Checked = true;
-			this.cbRB4.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbRB4.Location = new System.Drawing.Point(6, 99);
-			this.cbRB4.Name = "cbRB4";
-			this.cbRB4.Size = new System.Drawing.Size(50, 24);
-			this.cbRB4.TabIndex = 14;
-			this.cbRB4.Text = "RB4";
-			this.cbRB4.ThreeState = true;
-			this.cbRB4.UseVisualStyleBackColor = true;
-			// 
-			// cbLX4
-			// 
-			this.cbLX4.Checked = true;
-			this.cbLX4.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbLX4.Location = new System.Drawing.Point(6, 79);
-			this.cbLX4.Name = "cbLX4";
-			this.cbLX4.Size = new System.Drawing.Size(50, 24);
-			this.cbLX4.TabIndex = 13;
-			this.cbLX4.Text = "LX4";
-			this.cbLX4.ThreeState = true;
-			this.cbLX4.UseVisualStyleBackColor = true;
-			// 
-			// cbXRG
-			// 
-			this.cbXRG.Checked = true;
-			this.cbXRG.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbXRG.Location = new System.Drawing.Point(6, 60);
-			this.cbXRG.Name = "cbXRG";
-			this.cbXRG.Size = new System.Drawing.Size(50, 24);
-			this.cbXRG.TabIndex = 12;
-			this.cbXRG.Text = "XRG";
-			this.cbXRG.ThreeState = true;
-			this.cbXRG.UseVisualStyleBackColor = true;
-			// 
-			// cbXFG
-			// 
-			this.cbXFG.Checked = true;
-			this.cbXFG.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbXFG.Location = new System.Drawing.Point(6, 41);
-			this.cbXFG.Name = "cbXFG";
-			this.cbXFG.Size = new System.Drawing.Size(50, 24);
-			this.cbXFG.TabIndex = 11;
-			this.cbXFG.Text = "XFG";
-			this.cbXFG.ThreeState = true;
-			this.cbXFG.UseVisualStyleBackColor = true;
-			// 
-			// cbUF1
-			// 
-			this.cbUF1.Checked = true;
-			this.cbUF1.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-			this.cbUF1.Location = new System.Drawing.Point(6, 21);
-			this.cbUF1.Name = "cbUF1";
-			this.cbUF1.Size = new System.Drawing.Size(50, 24);
-			this.cbUF1.TabIndex = 8;
-			this.cbUF1.Text = "UF1";
-			this.cbUF1.ThreeState = true;
-			this.cbUF1.UseVisualStyleBackColor = true;
 			// 
 			// cbTracks
 			// 
@@ -546,66 +256,6 @@ namespace LFS_ServerBrowser
 			this.cbTracks.Size = new System.Drawing.Size(103, 21);
 			this.cbTracks.TabIndex = 10;
 			this.cbTracks.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTracksSelectedIndexChanged);
-			// 
-			// btnCarsSS
-			// 
-			this.btnCarsSS.Location = new System.Drawing.Point(6, 325);
-			this.btnCarsSS.Name = "btnCarsSS";
-			this.btnCarsSS.Size = new System.Drawing.Size(42, 23);
-			this.btnCarsSS.TabIndex = 6;
-			this.btnCarsSS.Text = "S-S";
-			this.btnCarsSS.UseVisualStyleBackColor = true;
-			this.btnCarsSS.Click += new System.EventHandler(this.SsCarsbuttonClick);
-			// 
-			// btnCarsGTR
-			// 
-			this.btnCarsGTR.Location = new System.Drawing.Point(59, 296);
-			this.btnCarsGTR.Name = "btnCarsGTR";
-			this.btnCarsGTR.Size = new System.Drawing.Size(42, 23);
-			this.btnCarsGTR.TabIndex = 5;
-			this.btnCarsGTR.Text = "GTR";
-			this.btnCarsGTR.UseVisualStyleBackColor = true;
-			this.btnCarsGTR.Click += new System.EventHandler(this.GtrCarsButtonClick);
-			// 
-			// btnCarsFWD
-			// 
-			this.btnCarsFWD.Location = new System.Drawing.Point(6, 296);
-			this.btnCarsFWD.Name = "btnCarsFWD";
-			this.btnCarsFWD.Size = new System.Drawing.Size(42, 23);
-			this.btnCarsFWD.TabIndex = 4;
-			this.btnCarsFWD.Text = "FWD";
-			this.btnCarsFWD.UseVisualStyleBackColor = true;
-			this.btnCarsFWD.Click += new System.EventHandler(this.FwdCarsButtonClick);
-			// 
-			// btnCarsLRF
-			// 
-			this.btnCarsLRF.Location = new System.Drawing.Point(59, 267);
-			this.btnCarsLRF.Name = "btnCarsLRF";
-			this.btnCarsLRF.Size = new System.Drawing.Size(42, 23);
-			this.btnCarsLRF.TabIndex = 3;
-			this.btnCarsLRF.Text = "LRF";
-			this.btnCarsLRF.UseVisualStyleBackColor = true;
-			this.btnCarsLRF.Click += new System.EventHandler(this.LrfCarsButtonClick);
-			// 
-			// btnCarsTBO
-			// 
-			this.btnCarsTBO.Location = new System.Drawing.Point(6, 267);
-			this.btnCarsTBO.Name = "btnCarsTBO";
-			this.btnCarsTBO.Size = new System.Drawing.Size(42, 23);
-			this.btnCarsTBO.TabIndex = 2;
-			this.btnCarsTBO.Text = "TBO";
-			this.btnCarsTBO.UseVisualStyleBackColor = true;
-			this.btnCarsTBO.Click += new System.EventHandler(this.TboCarsButtonClick);
-			// 
-			// btnCarsSTD
-			// 
-			this.btnCarsSTD.Location = new System.Drawing.Point(59, 238);
-			this.btnCarsSTD.Name = "btnCarsSTD";
-			this.btnCarsSTD.Size = new System.Drawing.Size(42, 23);
-			this.btnCarsSTD.TabIndex = 1;
-			this.btnCarsSTD.Text = "STD";
-			this.btnCarsSTD.UseVisualStyleBackColor = true;
-			this.btnCarsSTD.Click += new System.EventHandler(this.StdCarsButtonClick);
 			// 
 			// lvMain
 			// 
@@ -1013,13 +663,6 @@ namespace LFS_ServerBrowser
 		private System.Windows.Forms.Button btnJoinFav;
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
 		private System.Windows.Forms.ListView lvFavourites;
-		private System.Windows.Forms.Button btnCarsALL;
-		private System.Windows.Forms.Button btnCarsSTD;
-		private System.Windows.Forms.Button btnCarsTBO;
-		private System.Windows.Forms.Button btnCarsLRF;
-		private System.Windows.Forms.Button btnCarsFWD;
-		private System.Windows.Forms.Button btnCarsGTR;
-		private System.Windows.Forms.Button btnCarsSS;
 		private System.Windows.Forms.ComboBox cbTracks;
 		private System.Windows.Forms.ListView lvMain;
 		private System.Windows.Forms.Button btnRefreshMain;
@@ -1035,29 +678,10 @@ namespace LFS_ServerBrowser
 		private System.Windows.Forms.ToolStripMenuItem viewServerInformationMain;
 		private System.Windows.Forms.ColumnHeader columnHeaderFavCars;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.CheckBox cbFO8;
-		private System.Windows.Forms.CheckBox cbFZ5;
-		private System.Windows.Forms.CheckBox cbUFR;
-		private System.Windows.Forms.CheckBox cbXFR;
-		private System.Windows.Forms.CheckBox cbFXR;
-		private System.Windows.Forms.CheckBox cbFZR;
-		private System.Windows.Forms.CheckBox cbLX6;
-		private System.Windows.Forms.CheckBox cbRAC;
-		private System.Windows.Forms.CheckBox cbXRG;
-		private System.Windows.Forms.CheckBox cbLX4;
-		private System.Windows.Forms.CheckBox cbRB4;
-		private System.Windows.Forms.CheckBox cbFXO;
-		private System.Windows.Forms.CheckBox cbXRT;
-		private System.Windows.Forms.CheckBox cbXRR;
-		private System.Windows.Forms.CheckBox cbMRT;
-		private System.Windows.Forms.CheckBox cbFOX;
-		private System.Windows.Forms.CheckBox cbBF1;
 		private System.Windows.Forms.StatusStrip statusStrip;
 		private System.Windows.Forms.ToolStripStatusLabel statusNoReply;
 		private System.Windows.Forms.ToolStripStatusLabel statusRefused;
 		private System.Windows.Forms.ToolStripStatusLabel statusTotal;
-		private System.Windows.Forms.CheckBox cbUF1;
-		private System.Windows.Forms.CheckBox cbXFG;
 		private System.Windows.Forms.ColumnHeader columnHeaderCars;
 		private System.Windows.Forms.ColumnHeader columnHeaderFavTrack;
 		private System.Windows.Forms.ColumnHeader columnHeaderTrack;

@@ -93,6 +93,9 @@ namespace LFS_ServerBrowser
 		static String configFilename = Application.StartupPath + "\\config.cfg";
 		static String favFilename = Application.StartupPath + "\\favourite.servers";
 		
+		private CheckBox[] cars;
+		private Button[] groups;
+		
 		private LFSQuery q;
 		private ListViewColumnSorter lvwColumnSorter;
 				
@@ -126,6 +129,41 @@ namespace LFS_ServerBrowser
 		public MainForm()
 		{
 			InitializeComponent();
+			cars = new CheckBox[LFSQuery.CAR_BITS.Length];
+			groups = new Button[LFSQuery.CAR_GROUP_BITS.Length];
+			for (int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) { //create car checkboxes
+				cars[i] = new CheckBox();
+				cars[i].Parent = groupBox2;
+				if ((i % 2) == 0) {
+					cars[i].Left = 8;
+					cars[i].Top = (i/2 * 20) + 20;
+				} else {
+					cars[i].Top = cars[i-1].Top;
+					cars[i].Left = 62;
+				}
+				cars[i].Text = LFSQuery.CAR_NAMES[i];
+				cars[i].Width = 50;
+				cars[i].Height = 22;
+				cars[i].ThreeState = true;
+				cars[i].CheckState = CheckState.Indeterminate;
+			}
+			
+			for (int i = 0; i < LFSQuery.CAR_GROUP_BITS.Length; ++i) { //create group buttons
+				groups[i] = new Button();
+				groups[i].Parent = groupBox2;
+				if ((i % 2) == 0) {
+					groups[i].Left = 8;
+					groups[i].Top = (i/2 * 30) + 220;
+				} else {
+					groups[i].Top = groups[i-1].Top;
+					groups[i].Left = 62;
+				}
+				groups[i].Text = LFSQuery.CAR_GROUP_NAMES[i];
+				groups[i].Width = 42;
+				groups[i].Height = 23;
+				groups[i].Tag = (ulong)LFSQuery.CAR_GROUP_BITS[i];
+				groups[i].Click += new EventHandler(CarsGroupButtonClick);
+			}
 			serverList = new ArrayList();
 			favServerList = new ArrayList();
 			lvwColumnSorter = new ListViewColumnSorter();
@@ -186,138 +224,32 @@ namespace LFS_ServerBrowser
 		{
 			compulsory = 0;
 			illegal = 0;
-			
-			if (cbXFG.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_XFG;
-			else if (cbXFG.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_XFG;
-			         
-			if (cbXRG.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_XRG;
-			else if (cbXRG.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_XRG;
-			
-			if (cbXRT.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_XRT;
-			else if(cbXRT.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_XRT;
-		
-			if (cbRB4.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_RB4;
-			else if(cbRB4.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_RB4;
-			
-			if (cbFXO.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_FXO;
-			else if(cbFXO.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_FXO;
-					
-			if (cbLX4.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_LX4;
-			else if(cbLX4.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_LX4;
-			
-			if (cbLX6.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_LX6;
-			else if(cbLX6.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_LX6;
-			
-			if (cbMRT.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_MRT;
-			else if(cbMRT.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_MRT;
-			
-			if (cbUF1.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_UF1;
-			else if(cbUF1.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_UF1;
-			
-			if (cbRAC.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_RAC;
-			else if(cbRAC.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_RAC;
-			
-			if (cbFZ5.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_FZ5;
-			else if(cbFZ5.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_FZ5;
-			
-			if (cbFOX.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_FOX;
-			else if(cbFOX.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_FOX;
-			
-			if (cbXFR.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_XFR;
-			else if(cbXFR.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_XFR;
-			
-			if (cbUFR.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_UFR;
-			else if(cbUFR.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_UFR;
-			
-			if (cbFO8.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_FO8;
-			else if(cbFO8.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_FO8;
-			
-			if (cbFXR.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_FXR;
-			else if(cbFXR.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_FXR;
-			
-			if (cbXRR.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_XRR;
-			else if(cbXRR.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_XRR;
-			
-			if (cbFZR.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_FZR;
-			else if(cbFZR.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_FZR;
-			
-			if (cbBF1.CheckState == CheckState.Checked)
-				compulsory ^= LFSQuery.CAR_BF1;
-			else if(cbBF1.CheckState == CheckState.Unchecked)
-				illegal ^= LFSQuery.CAR_BF1;
-						
+			for (int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) {
+				if (cars[i].CheckState == CheckState.Checked) {
+					compulsory ^= LFSQuery.CAR_BITS[i];
+				} else if (cars[i].CheckState == CheckState.Checked) {
+					illegal ^= LFSQuery.CAR_BITS[i]; 
+				}
+			}
 		}
 		
-		public static String CarsToString(ulong cars)
+		public static string CarsToString(ulong c)
 		{
 			String result = "";
-			if ((cars & LFSQuery.CARS_ALL) == LFSQuery.CARS_ALL){
-				result += "ALL";
+			for (int i = 0; i < LFSQuery.CAR_GROUP_BITS.Length; ++i) {
+				if (((c & LFSQuery.CAR_GROUP_BITS[i]) != 0) && c >= LFSQuery.CAR_GROUP_BITS[i]) { //is this right???
+					result += LFSQuery.CAR_GROUP_NAMES[i] + ", ";					
+					c -= LFSQuery.CAR_GROUP_BITS[i];
+				}
+			}			
+			for (int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) {
+				if ((c & LFSQuery.CAR_BITS[i]) != 0) {
+					result += LFSQuery.CAR_NAMES[i] + ", ";					
+					c -= LFSQuery.CAR_BITS[i];
+				}
+			}
+			if (result.Length == 0)
 				return result;
-			}
-			
-			if ((cars & (LFSQuery.CARS_ALL - LFSQuery.CAR_BF1)) == (LFSQuery.CARS_ALL - LFSQuery.CAR_BF1)){
-			     result += "ALL EXCEPT BF1";
-			     return result;
-			}
-
-			if ((cars & LFSQuery.CAR_XFG) != 0) result += "XFG, ";
-			if ((cars & LFSQuery.CAR_XRG) != 0) result += "XRG, ";
-			if ((cars & LFSQuery.CAR_XRT) != 0) result += "XRT, ";
-			if ((cars & LFSQuery.CAR_RB4) != 0) result += "RB4, ";
-			if ((cars & LFSQuery.CAR_FXO) != 0) result += "FXO, ";			
-			if ((cars & LFSQuery.CAR_LX4) != 0) result += "LX4, ";
-			if ((cars & LFSQuery.CAR_LX6) != 0) result += "LX6, ";
-			if ((cars & LFSQuery.CAR_MRT) != 0) result += "MRT, ";			
-			if ((cars & LFSQuery.CAR_UF1) != 0) result += "UF1, ";
-			if ((cars & LFSQuery.CAR_RAC) != 0) result += "RAC, ";
-			if ((cars & LFSQuery.CAR_FZ5) != 0) result += "FZ5, ";
-			if ((cars & LFSQuery.CAR_FOX) != 0) result += "FOX, ";
-			if ((cars & LFSQuery.CAR_XFR) != 0) result += "XFR, ";
-			if ((cars & LFSQuery.CAR_UFR) != 0) result += "UFR, ";
-			if ((cars & LFSQuery.CAR_FO8) != 0) result += "FO8, ";
-			if ((cars & LFSQuery.CAR_FXR) != 0) result += "FXR, ";
-			if ((cars & LFSQuery.CAR_XRR) != 0) result += "XRR, ";
-			if ((cars & LFSQuery.CAR_FZR) != 0) result += "XFG, ";
-			if ((cars & LFSQuery.CAR_BF1) != 0) result += "BF1, ";
-			if (result == "")
-				return "";			
 			return result.Remove(result.Length - 2, 2);
 		}
 		
@@ -455,7 +387,7 @@ namespace LFS_ServerBrowser
 			    	AddServerDelegate addServer = new AddServerDelegate(addServerToList);
 			    	this.BeginInvoke(addServer, new object[] {info, l, isFavQuery});
 				}
-			} catch(Exception e){}
+			} catch(Exception e){ }
   		}
 		
 		delegate void AddServerDelegate(ServerInformation info, ListView l, bool isFavQuery);
@@ -540,170 +472,17 @@ namespace LFS_ServerBrowser
 		{
 			btnJoinMain.Enabled = (lvMain.SelectedItems.Count > 0);
 		}
-		
-		void AllCarsButtonClick(object sender, System.EventArgs e)
-		{
-			cbXFG.CheckState = CheckState.Indeterminate;
-			cbXRG.CheckState = CheckState.Indeterminate;
-			cbXRT.CheckState = CheckState.Indeterminate;
-			cbRB4.CheckState = CheckState.Indeterminate;
-			cbFXO.CheckState = CheckState.Indeterminate;
-			cbLX4.CheckState = CheckState.Indeterminate;
-			cbLX6.CheckState = CheckState.Indeterminate;
-			cbMRT.CheckState = CheckState.Indeterminate;
-			cbUF1.CheckState = CheckState.Indeterminate;
-			cbRAC.CheckState = CheckState.Indeterminate;
-			cbFZ5.CheckState = CheckState.Indeterminate;
-			cbFOX.CheckState = CheckState.Indeterminate;
-			cbXFR.CheckState = CheckState.Indeterminate;
-			cbUFR.CheckState = CheckState.Indeterminate;
-			cbFO8.CheckState = CheckState.Indeterminate;
-			cbFXR.CheckState = CheckState.Indeterminate;
-			cbXRR.CheckState = CheckState.Indeterminate;
-			cbFZR.CheckState = CheckState.Indeterminate;
-			cbBF1.CheckState = CheckState.Indeterminate;
-		}
-
-		
-		void StdCarsButtonClick(object sender, System.EventArgs e)
-		{
-			cbXFG.CheckState = CheckState.Indeterminate;
-			cbXRG.CheckState = CheckState.Indeterminate;
-			cbXRT.CheckState = CheckState.Unchecked;
-			cbRB4.CheckState = CheckState.Unchecked;
-			cbFXO.CheckState = CheckState.Unchecked;
-			cbLX4.CheckState = CheckState.Unchecked;
-			cbLX6.CheckState = CheckState.Unchecked;
-			cbMRT.CheckState = CheckState.Unchecked;
-			cbUF1.CheckState = CheckState.Indeterminate;
-			cbRAC.CheckState = CheckState.Unchecked;
-			cbFZ5.CheckState = CheckState.Unchecked;
-			cbFOX.CheckState = CheckState.Unchecked;
-			cbXFR.CheckState = CheckState.Unchecked;
-			cbUFR.CheckState = CheckState.Unchecked;
-			cbFO8.CheckState = CheckState.Unchecked;
-			cbFXR.CheckState = CheckState.Unchecked;
-			cbXRR.CheckState = CheckState.Unchecked;
-			cbFZR.CheckState = CheckState.Unchecked;
-			cbBF1.CheckState = CheckState.Unchecked;
-		}
-		
-		void TboCarsButtonClick(object sender, System.EventArgs e)
-		{
-			cbXFG.CheckState = CheckState.Indeterminate;
-			cbXRG.CheckState = CheckState.Indeterminate;
-			cbXRT.CheckState = CheckState.Checked;
-			cbRB4.CheckState = CheckState.Checked;
-			cbFXO.CheckState = CheckState.Checked;
-			cbLX4.CheckState = CheckState.Indeterminate;
-			cbLX6.CheckState = CheckState.Unchecked;
-			cbMRT.CheckState = CheckState.Unchecked;
-			cbUF1.CheckState = CheckState.Indeterminate;
-			cbRAC.CheckState = CheckState.Unchecked;
-			cbFZ5.CheckState = CheckState.Unchecked;
-			cbFOX.CheckState = CheckState.Unchecked;
-			cbXFR.CheckState = CheckState.Unchecked;
-			cbUFR.CheckState = CheckState.Unchecked;
-			cbFO8.CheckState = CheckState.Unchecked;
-			cbFXR.CheckState = CheckState.Unchecked;
-			cbXRR.CheckState = CheckState.Unchecked;
-			cbFZR.CheckState = CheckState.Unchecked;
-			cbBF1.CheckState = CheckState.Unchecked;
-		}
-
-		
-		void LrfCarsButtonClick(object sender, System.EventArgs e)
-		{
-			cbXFG.CheckState = CheckState.Indeterminate;
-			cbXRG.CheckState = CheckState.Indeterminate;
-			cbXRT.CheckState = CheckState.Indeterminate;
-			cbRB4.CheckState = CheckState.Indeterminate;
-			cbFXO.CheckState = CheckState.Indeterminate;
-			cbLX4.CheckState = CheckState.Indeterminate;
-			cbLX6.CheckState = CheckState.Checked;
-			cbMRT.CheckState = CheckState.Unchecked;
-			cbUF1.CheckState = CheckState.Indeterminate;
-			cbRAC.CheckState = CheckState.Checked;
-			cbFZ5.CheckState = CheckState.Checked;
-			cbFOX.CheckState = CheckState.Unchecked;
-			cbXFR.CheckState = CheckState.Unchecked;
-			cbUFR.CheckState = CheckState.Unchecked;
-			cbFO8.CheckState = CheckState.Unchecked;
-			cbFXR.CheckState = CheckState.Unchecked;
-			cbXRR.CheckState = CheckState.Unchecked;
-			cbFZR.CheckState = CheckState.Unchecked;
-			cbBF1.CheckState = CheckState.Unchecked;
-		}
-		
-		void FwdCarsButtonClick(object sender, System.EventArgs e)
-		{
-			cbXFG.CheckState = CheckState.Indeterminate;
-			cbXRG.CheckState = CheckState.Unchecked;
-			cbXRT.CheckState = CheckState.Unchecked;
-			cbRB4.CheckState = CheckState.Unchecked;
-			cbFXO.CheckState = CheckState.Indeterminate;
-			cbLX4.CheckState = CheckState.Unchecked;
-			cbLX6.CheckState = CheckState.Unchecked;
-			cbMRT.CheckState = CheckState.Unchecked;
-			cbUF1.CheckState = CheckState.Indeterminate;
-			cbRAC.CheckState = CheckState.Unchecked;
-			cbFZ5.CheckState = CheckState.Unchecked;
-			cbFOX.CheckState = CheckState.Unchecked;
-			cbXFR.CheckState = CheckState.Indeterminate;
-			cbUFR.CheckState = CheckState.Indeterminate;
-			cbFO8.CheckState = CheckState.Unchecked;
-			cbFXR.CheckState = CheckState.Unchecked;
-			cbXRR.CheckState = CheckState.Unchecked;
-			cbFZR.CheckState = CheckState.Unchecked;
-			cbBF1.CheckState = CheckState.Unchecked;
-		}
-		
-		void GtrCarsButtonClick(object sender, System.EventArgs e)
-		{
-			cbXFG.CheckState = CheckState.Indeterminate;
-			cbXRG.CheckState = CheckState.Indeterminate;
-			cbXRT.CheckState = CheckState.Indeterminate;
-			cbRB4.CheckState = CheckState.Indeterminate;
-			cbFXO.CheckState = CheckState.Indeterminate;
-			cbLX4.CheckState = CheckState.Indeterminate;
-			cbLX6.CheckState = CheckState.Indeterminate;
-			cbMRT.CheckState = CheckState.Unchecked;
-			cbUF1.CheckState = CheckState.Indeterminate;
-			cbRAC.CheckState = CheckState.Indeterminate;
-			cbFZ5.CheckState = CheckState.Indeterminate;
-			cbFOX.CheckState = CheckState.Unchecked;
-			cbXFR.CheckState = CheckState.Indeterminate;
-			cbUFR.CheckState = CheckState.Indeterminate;
-			cbFO8.CheckState = CheckState.Unchecked;
-			cbFXR.CheckState = CheckState.Checked;
-			cbXRR.CheckState = CheckState.Checked;
-			cbFZR.CheckState = CheckState.Checked;
-			cbBF1.CheckState = CheckState.Unchecked;
 			
-		}
-		
-		void SsCarsbuttonClick(object sender, System.EventArgs e)
+		void CarsGroupButtonClick(object sender, System.EventArgs e)
 		{
-			cbXFG.CheckState = CheckState.Unchecked;
-			cbXRG.CheckState = CheckState.Unchecked;
-			cbXRT.CheckState = CheckState.Unchecked;
-			cbRB4.CheckState = CheckState.Unchecked;
-			cbFXO.CheckState = CheckState.Unchecked;
-			cbLX4.CheckState = CheckState.Unchecked;
-			cbLX6.CheckState = CheckState.Unchecked;
-			cbMRT.CheckState = CheckState.Indeterminate;
-			cbUF1.CheckState = CheckState.Unchecked;
-			cbRAC.CheckState = CheckState.Unchecked;
-			cbFZ5.CheckState = CheckState.Unchecked;
-			cbFOX.CheckState = CheckState.Indeterminate;
-			cbXFR.CheckState = CheckState.Unchecked;
-			cbUFR.CheckState = CheckState.Unchecked;
-			cbFO8.CheckState = CheckState.Indeterminate;
-			cbFXR.CheckState = CheckState.Unchecked;
-			cbXRR.CheckState = CheckState.Unchecked;
-			cbFZR.CheckState = CheckState.Unchecked;
-			cbBF1.CheckState = CheckState.Indeterminate;
-			
+			ulong group = (ulong)((Button)sender).Tag;
+			for (int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) {
+				if ((LFSQuery.CAR_BITS[i] & group) != 0) {
+					cars[i].CheckState = CheckState.Checked;
+				} else {
+					cars[i].CheckState = CheckState.Unchecked;
+				}
+			}
 		}
 		
 		void AboutToolStripMenuItem1Click(object sender, System.EventArgs e)
