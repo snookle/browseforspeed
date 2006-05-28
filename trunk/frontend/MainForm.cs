@@ -623,7 +623,11 @@ namespace LFS_ServerBrowser
 		{
 			LFSQuery.stopQuerying();
 			this.exiting = true;
-			config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();
+			if (pathList.SelectedIndex < 0)
+				config.lfsPath = "";
+			else
+				config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();
+
 			config.disableWait = cbQueryWait.Checked;
 			config.checkNewVersion = cbNewVersion.Checked;
 			config.queryWait = (int)queryWait.Value;
@@ -683,7 +687,10 @@ namespace LFS_ServerBrowser
 		{
 			//if we've just come from the configuration panel to another one
 			if (this.lastTabSelected == 2) {
-				config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();
+				if (pathList.SelectedIndex < 0)
+					config.lfsPath = "";
+				else
+					config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();
 				config.disableWait = cbQueryWait.Checked;
 				config.checkNewVersion = cbNewVersion.Checked;
 				config.queryWait = (int)queryWait.Value;
