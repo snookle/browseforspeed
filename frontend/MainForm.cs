@@ -41,6 +41,7 @@ namespace LFS_ServerBrowser
 		public bool checkNewVersion;
 		public bool configValid;
 		public int queryWait;
+		public bool joinOnClick;
 		
 		public Configuration(string filename)
 		{
@@ -62,6 +63,11 @@ namespace LFS_ServerBrowser
 				} catch (Exception e) {
 					this.queryWait = 150;
 				}
+				try {
+					this.joinOnClick = (tr.ReadLine() != "view");					
+				} catch (Exception e) {					
+					this.joinOnClick = true;
+				}
 				tr.Close();
 				configValid = true;
 			} catch (FileNotFoundException fnfe) {
@@ -80,6 +86,7 @@ namespace LFS_ServerBrowser
 				tw.WriteLine(this.disableWait.ToString());
 				tw.WriteLine(this.checkNewVersion.ToString());
 				tw.WriteLine(this.queryWait.ToString());
+				tw.WriteLine(this.joinOnClick ? "join" : "view");
 				tw.Close();
 			}
 			catch (Exception ex) {
@@ -95,6 +102,8 @@ namespace LFS_ServerBrowser
 	/// </summary>
 	public partial class MainForm
 	{
+		static string bfs_version = "3";
+		static string download_url = "http://browseforspeed.whatsbeef.net";
 		public static String appTitle = "Browse For Speed";
 		static String configFilename = Application.StartupPath + "\\config.cfg";
 		static String favFilename = Application.StartupPath + "\\favourite.servers";
@@ -200,6 +209,13 @@ namespace LFS_ServerBrowser
 				LFSQuery.THREAD_WAIT = config.queryWait;
 				queryWait.Value = config.queryWait;
 				cbNewVersion.Checked = config.checkNewVersion;
+				if (config.joinOnClick) {
+					rbJoin.Checked = true;
+					rbView.Checked = false;
+				} else {
+					rbJoin.Checked = false;
+					rbView.Checked = true;
+				}
 				if (config.checkNewVersion) {
 					versionCheck(false);
 				}
@@ -466,11 +482,27 @@ namespace LFS_ServerBrowser
 			pathList.SelectedIndex = pathList.Items.Count - 1;
 		}
 		
-		void btnJoinClick(object sender, System.EventArgs e)
-		{
-			ListView.SelectedListViewItemCollection coll = lvMain.SelectedItems;
-			if (coll.Count < 1) return;
-			String serverName = coll[0].Text;
+		void listDblClick(object sender, System.EventArgs e) {			
+			if (config.joinOnClick) {				
+				btnJoinClick(sender, e);
+			} else {
+				ViewServerInformationToolStripMenuItemClick(sender, e);
+			}
+		}
+		
+		void btnJoinClick(object sender, System.EventArgs e) {
+			ListView.SelectedListViewItemCollection sel;
+			if (sender is Button) {
+				if (((Button)sender).Name == "btnJoinMain") {
+					sel = lvMain.SelectedItems;
+				} else {
+					sel = lvFavourites.SelectedItems;
+				}
+			} else {
+				sel = ((ListView)sender).SelectedItems;
+			}
+			if (sel.Count < 1) { return; }
+			String serverName = sel[0].Text;
 
 			LoadLFS(serverName, "S2", edtPasswordMain.Text);
 		}
@@ -586,31 +618,29 @@ namespace LFS_ServerBrowser
 			return str;
 		}
 		
-		void lvFavouritesSelectedIndexChanged(object sender, System.EventArgs e)
-		{
+		void lvFavouritesSelectedIndexChanged(object sender, System.EventArgs e) {
 			btnJoinFav.Enabled = (lvFavourites.SelectedItems.Count > 0 && lvFavourites.Items[0].SubItems.Count > 1);
 		}
 		
-		void btnJoinFavClick(object sender, System.EventArgs e)
-		{
-			ListView.SelectedListViewItemCollection coll = lvFavourites.SelectedItems;
-			if (coll.Count < 1) return;
-			String serverName = coll[0].Text;
-			LoadLFS(serverName, "S2", edtPasswordMain.Text);
-		}
-		
-		void ViewServerInformationToolStripMenuItemClick(object sender, System.EventArgs e)
-		{
-			ToolStripMenuItem l = (ToolStripMenuItem)sender;			
+		void ViewServerInformationToolStripMenuItemClick(object sender, System.EventArgs e) {			
 			ListView.SelectedListViewItemCollection coll;
-			if (l.Name == "viewServerInformationMain") {
-				coll = lvMain.SelectedItems;
+			ArrayList myList;
+			if (sender is ListView) {
+				coll = ((ListView)sender).SelectedItems;
+				myList = (((ListView)sender).Name == "lvMain") ? serverList : favServerList;
 			} else {
-				coll = lvFavourites.SelectedItems;
+				ToolStripMenuItem l = (ToolStripMenuItem)sender;
+				if (l.Name == "viewServerInformationMain") {
+					coll = lvMain.SelectedItems;
+					myList = serverList;
+				} else {
+					coll = lvFavourites.SelectedItems;
+					myList = favServerList;
+				}
 			}
 			if (coll.Count < 1) return;
 			s.SetInfo(null);
-			foreach (ServerInformation info in (l.Name == "viewServerInformationMain") ? serverList : favServerList){
+			foreach (ServerInformation info in myList) {
 				if (info.hostname == coll[0].Text){
 					s.SetInfo(info);
 					break;
@@ -633,6 +663,7 @@ namespace LFS_ServerBrowser
 			config.disableWait = cbQueryWait.Checked;
 			config.checkNewVersion = cbNewVersion.Checked;
 			config.queryWait = (int)queryWait.Value;
+			config.joinOnClick = rbJoin.Checked;
 			LFSQuery.xpsp2_wait = !config.disableWait;
 			LFSQuery.THREAD_WAIT = config.queryWait;
 			config.Save();
@@ -696,6 +727,7 @@ namespace LFS_ServerBrowser
 				config.disableWait = cbQueryWait.Checked;
 				config.checkNewVersion = cbNewVersion.Checked;
 				config.queryWait = (int)queryWait.Value;
+				config.joinOnClick = rbJoin.Checked;
 				LFSQuery.xpsp2_wait = !config.disableWait;
 				LFSQuery.THREAD_WAIT = config.queryWait;
 				config.Save();
@@ -717,9 +749,6 @@ namespace LFS_ServerBrowser
 			}
 			
 		}
-		
-		static string bfs_version = "1";
-		static string download_url = "http://browseforspeed.whatsbeef.net";
 		
 		public static void versionCheck(bool botherUser) {
 			HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://browseforspeed.whatsbeef.net/versioncheck.pl");

@@ -82,6 +82,9 @@ namespace LFS_ServerBrowser
 			this.removeFromFavouritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.rbJoin = new System.Windows.Forms.RadioButton();
+			this.rbView = new System.Windows.Forms.RadioButton();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.queryWait = new System.Windows.Forms.NumericUpDown();
@@ -107,6 +110,7 @@ namespace LFS_ServerBrowser
 			this.contextMenuFav.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
+			this.groupBox4.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).BeginInit();
 			this.statusStrip.SuspendLayout();
@@ -298,7 +302,7 @@ namespace LFS_ServerBrowser
 			this.lvMain.TabIndex = 3;
 			this.lvMain.UseCompatibleStateImageBehavior = false;
 			this.lvMain.View = System.Windows.Forms.View.Details;
-			this.lvMain.DoubleClick += new System.EventHandler(this.btnJoinClick);
+			this.lvMain.DoubleClick += new System.EventHandler(this.listDblClick);
 			this.lvMain.SelectedIndexChanged += new System.EventHandler(this.lvMainSelectedIndexChanged);
 			this.lvMain.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
 			// 
@@ -422,7 +426,7 @@ namespace LFS_ServerBrowser
 			this.btnJoinFav.TabIndex = 5;
 			this.btnJoinFav.Text = "&Join";
 			this.btnJoinFav.UseVisualStyleBackColor = true;
-			this.btnJoinFav.Click += new System.EventHandler(this.btnJoinFavClick);
+			this.btnJoinFav.Click += new System.EventHandler(this.btnJoinClick);
 			// 
 			// lvFavourites
 			// 
@@ -446,7 +450,7 @@ namespace LFS_ServerBrowser
 			this.lvFavourites.TabIndex = 4;
 			this.lvFavourites.UseCompatibleStateImageBehavior = false;
 			this.lvFavourites.View = System.Windows.Forms.View.Details;
-			this.lvFavourites.DoubleClick += new System.EventHandler(this.btnJoinFavClick);
+			this.lvFavourites.DoubleClick += new System.EventHandler(this.listDblClick);
 			this.lvFavourites.SelectedIndexChanged += new System.EventHandler(this.lvFavouritesSelectedIndexChanged);
 			this.lvFavourites.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
 			// 
@@ -493,7 +497,7 @@ namespace LFS_ServerBrowser
 			this.joinServerToolStripMenuItem1.Name = "joinServerToolStripMenuItem1";
 			this.joinServerToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
 			this.joinServerToolStripMenuItem1.Text = "&Join Server";
-			this.joinServerToolStripMenuItem1.Click += new System.EventHandler(this.btnJoinFavClick);
+			this.joinServerToolStripMenuItem1.Click += new System.EventHandler(this.btnJoinClick);
 			// 
 			// viewServerInformationFav
 			// 
@@ -522,6 +526,7 @@ namespace LFS_ServerBrowser
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.groupBox4);
 			this.groupBox1.Controls.Add(this.groupBox3);
 			this.groupBox1.Controls.Add(this.btnCheckNewVersion);
 			this.groupBox1.Controls.Add(this.cbNewVersion);
@@ -537,13 +542,45 @@ namespace LFS_ServerBrowser
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Configuration";
 			// 
+			// groupBox4
+			// 
+			this.groupBox4.Controls.Add(this.rbJoin);
+			this.groupBox4.Controls.Add(this.rbView);
+			this.groupBox4.Location = new System.Drawing.Point(127, 191);
+			this.groupBox4.Name = "groupBox4";
+			this.groupBox4.Size = new System.Drawing.Size(397, 87);
+			this.groupBox4.TabIndex = 15;
+			this.groupBox4.TabStop = false;
+			this.groupBox4.Text = "Server double click behaviour";
+			// 
+			// rbJoin
+			// 
+			this.rbJoin.Checked = true;
+			this.rbJoin.Location = new System.Drawing.Point(37, 50);
+			this.rbJoin.Name = "rbJoin";
+			this.rbJoin.Size = new System.Drawing.Size(104, 24);
+			this.rbJoin.TabIndex = 1;
+			this.rbJoin.TabStop = true;
+			this.rbJoin.Text = "Join server";
+			this.rbJoin.UseVisualStyleBackColor = true;
+			// 
+			// rbView
+			// 
+			this.rbView.Location = new System.Drawing.Point(37, 22);
+			this.rbView.Name = "rbView";
+			this.rbView.Size = new System.Drawing.Size(142, 24);
+			this.rbView.TabIndex = 0;
+			this.rbView.TabStop = true;
+			this.rbView.Text = "View server information";
+			this.rbView.UseVisualStyleBackColor = true;
+			// 
 			// groupBox3
 			// 
 			this.groupBox3.Controls.Add(this.label3);
 			this.groupBox3.Controls.Add(this.queryWait);
 			this.groupBox3.Controls.Add(this.cbQueryWait);
 			this.groupBox3.Controls.Add(this.label4);
-			this.groupBox3.Location = new System.Drawing.Point(127, 226);
+			this.groupBox3.Location = new System.Drawing.Point(127, 284);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(403, 196);
 			this.groupBox3.TabIndex = 14;
@@ -609,7 +646,7 @@ namespace LFS_ServerBrowser
 			// 
 			// btnCheckNewVersion
 			// 
-			this.btnCheckNewVersion.Location = new System.Drawing.Point(455, 170);
+			this.btnCheckNewVersion.Location = new System.Drawing.Point(455, 160);
 			this.btnCheckNewVersion.Name = "btnCheckNewVersion";
 			this.btnCheckNewVersion.Size = new System.Drawing.Size(75, 23);
 			this.btnCheckNewVersion.TabIndex = 13;
@@ -619,7 +656,7 @@ namespace LFS_ServerBrowser
 			// 
 			// cbNewVersion
 			// 
-			this.cbNewVersion.Location = new System.Drawing.Point(127, 170);
+			this.cbNewVersion.Location = new System.Drawing.Point(127, 160);
 			this.cbNewVersion.Name = "cbNewVersion";
 			this.cbNewVersion.Size = new System.Drawing.Size(322, 24);
 			this.cbNewVersion.TabIndex = 12;
@@ -720,6 +757,7 @@ namespace LFS_ServerBrowser
 			this.contextMenuFav.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
+			this.groupBox4.ResumeLayout(false);
 			this.groupBox3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).EndInit();
 			this.statusStrip.ResumeLayout(false);
@@ -727,6 +765,9 @@ namespace LFS_ServerBrowser
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.RadioButton rbView;
+		private System.Windows.Forms.RadioButton rbJoin;
+		private System.Windows.Forms.GroupBox groupBox4;
 		private System.Windows.Forms.CheckBox cbEmpty;
 		private System.Windows.Forms.NumericUpDown queryWait;
 		private System.Windows.Forms.Label label3;
