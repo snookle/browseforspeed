@@ -355,7 +355,7 @@ namespace LFS_ServerBrowser
 		public void DisplayServer(ServerInformation info, string trackFilter, bool hideEmpty, bool isFavQuery)
 		{
 			if (!info.track.Contains(trackFilter)) return;
-			if (hideEmpty && info.players == 0) return;
+			if (hideEmpty && info.players == 0 && !isFavQuery) return;
 			string serverName;
 			info.hostname = serverName = LFSQuery.removeColourCodes(info.hostname);
 			string cars = CarsToString(info.cars);
