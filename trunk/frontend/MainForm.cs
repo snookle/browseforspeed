@@ -532,7 +532,7 @@ namespace LFS_ServerBrowser
 		}
 		
 		void AboutToolStripMenuItem1Click(object sender, System.EventArgs e) {
-			MessageBox.Show("Browse For Speed - http://browseforspeed.whatsbeef.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.\n\nIf you haven't already, go buy LFS S2 now - the LFS developers deserve your support!", "About", MessageBoxButtons.OK);
+			MessageBox.Show("Browse For Speed - http://browseforspeed.whatsbeef.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.", "About", MessageBoxButtons.OK);
 		}
 		
 		void ContextMenuBrowserOpening(object sender, System.ComponentModel.CancelEventArgs e)
@@ -764,7 +764,7 @@ namespace LFS_ServerBrowser
 							MessageBox.Show("Your version is up to date.", "", MessageBoxButtons.OK);
 						}
 					} else {
-						if (MessageBox.Show("There is a new version avaliable, do you wish to be taken to the download page?", "Browse For Speed", MessageBoxButtons.YesNo) == DialogResult.Yes){
+						if (MessageBox.Show("There is a new version available, do you wish to be taken to the download page?", "Browse For Speed", MessageBoxButtons.YesNo) == DialogResult.Yes){
 							System.Diagnostics.Process.Start(download_url);	
 						}
 					}
