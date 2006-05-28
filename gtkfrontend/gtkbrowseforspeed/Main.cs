@@ -4,6 +4,7 @@ using Gtk;
 using Gdk;
 using libbrowseforspeed;
 using System.Threading;
+using System.Text;
 
 namespace gtkbrowseforspeed {
 	class MainClass {
@@ -36,9 +37,21 @@ namespace gtkbrowseforspeed {
 		public void queryEventListener(object o, ServerInformation info, object callbackObj) {
 			if (info != null && info.success) {
 				Gdk.Threads.Enter();
-				win.serverListStore.AppendValues(LFSQuery.removeColourCodes(info.hostname), info.ping, info.players + "/" + info.slots, info.track);
+				win.serverListStore.AppendValues(LFSQuery.removeColourCodes(info.hostname), info.ping, info.players + "/" + info.slots, info.track, CarsToString(info.cars));
 				Gdk.Threads.Leave();
 			}
+		}
+
+		private string CarsToString(ulong c) {
+			StringBuilder carNames = new StringBuilder();
+			Array cars = LFSQuery.getCarNames(c);
+			foreach (string car in cars) {
+				carNames.Append(car + ", ");
+			}
+			if (carNames.Length == 0) {
+				return carNames.ToString();
+			}
+			return carNames.Remove(carNames.Length - 2, 2).ToString();
 		}
 	}
 }

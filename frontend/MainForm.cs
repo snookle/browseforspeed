@@ -257,24 +257,16 @@ namespace LFS_ServerBrowser
 			}
 		}
 		
-		public static string CarsToString(ulong c)
-		{
-			String result = "";
-			for (int i = 0; i < LFSQuery.CAR_GROUP_BITS.Length; ++i) {
-				if (((c & LFSQuery.CAR_GROUP_BITS[i]) != 0) && c >= LFSQuery.CAR_GROUP_BITS[i]) { //is this right???
-					result += LFSQuery.CAR_GROUP_NAMES[i] + ", ";					
-					c -= LFSQuery.CAR_GROUP_BITS[i];
-				}
-			}			
-			for (int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) {
-				if ((c & LFSQuery.CAR_BITS[i]) != 0) {
-					result += LFSQuery.CAR_NAMES[i] + ", ";					
-					c -= LFSQuery.CAR_BITS[i];
-				}
+		private string CarsToString(ulong c) {
+			StringBuilder carNames = new StringBuilder();
+			Array cars = LFSQuery.getCarNames(c);
+			foreach (string car in cars) {
+				carNames.Append(car + ", ");
 			}
-			if (result.Length == 0)
-				return result;
-			return result.Remove(result.Length - 2, 2);
+			if (carNames.Length == 0) {
+				return carNames.ToString();
+			}
+			return carNames.Remove(carNames.Length - 2, 2).ToString();
 		}
 		
 		//nice helper method to set UI properties across threads.
