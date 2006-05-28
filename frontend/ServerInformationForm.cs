@@ -28,13 +28,15 @@ namespace LFS_ServerBrowser {
 	public partial class ServerInformationForm
 	{
 		private ServerInformation info;
+		private bool exiting;
 		
 		public void RefreshPlayerList()
 		{
 			SetControlProperty(buttonInfoJoin, "Enabled", false);
 			SetControlProperty(buttonInfoRefresh, "Enabled", false);
 			listPlayers.Items.Clear();			
-			int i = LFSQuery.getPubStatInfo(ref info);			
+			int i = LFSQuery.getPubStatInfo(ref info);
+			if (this.exiting) return;
 			if (i == 1) { //LFSQuery.getPubStatInfo(ref info)) {
 				labelPrivate.Text = info.passworded ? "Yes" : "No";
 				if (info.players > 0) {
@@ -68,17 +70,23 @@ namespace LFS_ServerBrowser {
 		
 		public ServerInformationForm(MainForm m) {
 			this.main = m;
+			this.exiting = false;
 			InitializeComponent();
 		}		
 		
 		void ButtonInfoCloseClick(object sender, System.EventArgs e) {
 			LFSQuery.queried -= new ServerQueried(queryCallback);
 			labelPrivate.Text = "Dunno yet LOL";
+			this.exiting = true;
+			buttonInfoRefresh.Enabled = true;
+			buttonInfoJoin.Enabled = true;
+			buttonInfoRefresh.Text = "&Refresh";
 			this.Close();
 		}
 		
 		void ServerInformationFormLoad(object sender, System.EventArgs e) {
 			this.CenterToParent();
+			this.exiting = false;
 			RefreshButtonClick(sender, e);
 		}
 		
