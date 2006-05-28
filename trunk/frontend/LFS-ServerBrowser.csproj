@@ -42,6 +42,10 @@
       <HintPath>..\..\release\libbrowseforspeed.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="libbrowseforspeed">
+      <HintPath>libbrowseforspeed.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainForm.cs" />
