@@ -513,10 +513,11 @@ namespace LFS_ServerBrowser
 		{
 			ListView.SelectedListViewItemCollection coll = lvMain.SelectedItems;
 			if (coll.Count < 1) return;
-			lvFavourites.Items.Add((ListViewItem)coll[0].Clone());
+			//lvFavourites.Items.Add((ListViewItem)coll[0].Clone());
 			//write the host:ip out to file.
 			foreach(ServerInformation info in serverList){
 				if (info.hostname == coll[0].Text){
+					DisplayServer(info, true);
 					favServerList.Add(info);
 					WriteFav();
 					break;
