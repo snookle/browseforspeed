@@ -49,7 +49,8 @@ public class MainWindow: Gtk.Window {
 		if (selection.GetSelected(out model, out iter)) {
 			ServerInformation serverInfo = new ServerInformation();
 			serverInfo.hostname = (string)model.GetValue(iter, 0);
-			if (LFSQuery.getPubStatInfo(ref serverInfo)) {
+			int ret = LFSQuery.getPubStatInfo(ref serverInfo);
+			if (ret == 1) {
 				Console.Write("Players in " + serverInfo.hostname + ": ");
 				if (serverInfo.players > 0) {
 					foreach (string player in serverInfo.racerNames) {
