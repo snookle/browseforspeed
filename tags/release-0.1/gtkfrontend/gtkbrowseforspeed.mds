@@ -1,0 +1,16 @@
+<Combine name="gtkbrowseforspeed" fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="gtkbrowseforspeed" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="gtkbrowseforspeed" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="gtkbrowseforspeed" single="True">
+    <Execute type="None" entry="gtkbrowseforspeed" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./gtkbrowseforspeed/gtkbrowseforspeed.mdp" />
+  </Entries>
+</Combine>
