@@ -336,8 +336,10 @@ namespace LFS_ServerBrowser
 			}
 		}
 
-		public void DisplayServer(ServerInformation info, bool isFavQuery)
+		public void DisplayServer(ServerInformation info, string trackFilter, bool hideEmpty, bool isFavQuery)
 		{
+			if (!info.track.Contains(trackFilter)) return;
+			if (hideEmpty && info.players == 0) return;
 			string serverName;
 			info.hostname = serverName = LFSQuery.removeColourCodes(info.hostname);
 			string cars = CarsToString(info.cars);
@@ -374,9 +376,7 @@ namespace LFS_ServerBrowser
 					string filter = isFavQuery ? "" : GetTrackFilter(cbTracks.Text);
 					if (info.success){
 						numServersDone++;
-						if (info.track.Contains(filter)){
-							DisplayServer(info, isFavQuery);
-						}
+						DisplayServer(info, filter, cbEmpty.Checked, isFavQuery);
 						if (!isFavQuery) serverList.Add(info);
 					} else {
 						if (info.readFailed) {
@@ -517,7 +517,7 @@ namespace LFS_ServerBrowser
 			//write the host:ip out to file.
 			foreach(ServerInformation info in serverList){
 				if (info.hostname == coll[0].Text){
-					DisplayServer(info, true);
+					DisplayServer(info, "", false, true);
 					favServerList.Add(info);
 					WriteFav();
 					break;
@@ -664,7 +664,7 @@ namespace LFS_ServerBrowser
 			try{
 				foreach (ServerInformation info in serverList){
 					if (info.track.Contains(filter)){
-						DisplayServer(info, false);
+						DisplayServer(info, filter, cbEmpty.Checked, false);
 					}
 				}
 			} catch (Exception ex) {
@@ -755,6 +755,7 @@ namespace LFS_ServerBrowser
 		void CbQueryWaitCheckedChanged(object sender, System.EventArgs e) {
 			queryWait.Enabled = (cbQueryWait.CheckState != CheckState.Checked);
 		}
+		
 	}
 /// Horray for code nicked from the MSDN!
 public class ListViewColumnSorter : IComparer

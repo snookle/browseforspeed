@@ -50,6 +50,7 @@ namespace LFS_ServerBrowser
 			this.label6 = new System.Windows.Forms.Label();
 			this.btnFindUserMain = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.cbEmpty = new System.Windows.Forms.CheckBox();
 			this.cbTracks = new System.Windows.Forms.ComboBox();
 			this.lvMain = new System.Windows.Forms.ListView();
 			this.columnHeaderName = new System.Windows.Forms.ColumnHeader();
@@ -235,6 +236,7 @@ namespace LFS_ServerBrowser
 			// 
 			this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox2.Controls.Add(this.cbEmpty);
 			this.groupBox2.Controls.Add(this.cbTracks);
 			this.groupBox2.Location = new System.Drawing.Point(661, 6);
 			this.groupBox2.Name = "groupBox2";
@@ -242,6 +244,16 @@ namespace LFS_ServerBrowser
 			this.groupBox2.TabIndex = 4;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Filters";
+			// 
+			// cbEmpty
+			// 
+			this.cbEmpty.Location = new System.Drawing.Point(5, 396);
+			this.cbEmpty.Name = "cbEmpty";
+			this.cbEmpty.Size = new System.Drawing.Size(104, 31);
+			this.cbEmpty.TabIndex = 11;
+			this.cbEmpty.Text = "Hide Empty Servers";
+			this.cbEmpty.UseVisualStyleBackColor = true;
+			this.cbEmpty.CheckedChanged += new System.EventHandler(this.ComboBoxTracksSelectedIndexChanged);
 			// 
 			// cbTracks
 			// 
@@ -715,6 +727,7 @@ namespace LFS_ServerBrowser
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.CheckBox cbEmpty;
 		private System.Windows.Forms.NumericUpDown queryWait;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.GroupBox groupBox3;
