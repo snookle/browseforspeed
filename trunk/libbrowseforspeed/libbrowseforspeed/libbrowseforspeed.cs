@@ -482,6 +482,23 @@ namespace libbrowseforspeed {
 
 			public Thread getThread() { return myThread; }
 		}
+		
+		public static Array getCarNames(ulong c) {
+			ArrayList carNames = new ArrayList();
+			for (int i = 0; i < CAR_GROUP_BITS.Length; ++i) {
+				if (((c & CAR_GROUP_BITS[i]) != 0) && c >= CAR_GROUP_BITS[i]) {
+					carNames.Add(CAR_GROUP_NAMES[i]);					
+					c -= CAR_GROUP_BITS[i];
+				}
+			}			
+			for (int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) {
+				if ((c & CAR_BITS[i]) != 0) {
+					carNames.Add(CAR_NAMES[i]);					
+					c -= CAR_BITS[i];
+				}
+			}
+			return carNames.ToArray();
+		}
 
 		public static int getPubStatInfo(ref ServerInformation serverInfo) {
 			try {

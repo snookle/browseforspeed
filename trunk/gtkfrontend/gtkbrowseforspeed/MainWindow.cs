@@ -11,13 +11,14 @@ public class MainWindow: Gtk.Window {
 
 	public MainWindow (): base ("") {
 		Stetic.Gui.Build (this, typeof(MainWindow));
-		serverListStore = new ListStore(typeof(string), typeof(int), typeof(string), typeof(string));
+		serverListStore = new ListStore(typeof(string), typeof(int), typeof(string), typeof(string), typeof(string));
 		serverListStore.SetSortColumnId(1, Gtk.SortType.Ascending);
 		serverListTreeView = new TreeView(serverListStore);
 		serverListTreeView.AppendColumn("Host", new CellRendererText(), "text", 0);
 		serverListTreeView.AppendColumn("Ping", new CellRendererText(), "text", 1);
 		serverListTreeView.AppendColumn("Players", new CellRendererText(), "text", 2);
 		serverListTreeView.AppendColumn("Track", new CellRendererText(), "text", 3);
+		serverListTreeView.AppendColumn("Cars", new CellRendererText(), "text", 4);
 		//serverListTreeView.AppendColumn("Info", new Gtk.CellRendererText(), "text", 4);
 		serverListTreeView.EnableSearch = true;
 		serverListTreeView.HeadersClickable = true;
