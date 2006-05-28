@@ -452,6 +452,7 @@ namespace LFS_ServerBrowser
 				p.Start();
 				p.WaitForExit();
 			} catch (Exception ex) {
+				this.WindowState = ws;
 				MessageBox.Show("Error executing: "+path+"\n"+ex.Message+"\nRecheck your configuration.", appTitle, MessageBoxButtons.OK);
 			}
 			this.WindowState = ws;
