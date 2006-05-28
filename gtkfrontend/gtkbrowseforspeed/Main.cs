@@ -24,6 +24,7 @@ namespace gtkbrowseforspeed {
 		
 		public void go2() {
 			LFSQuery.xpsp2_wait = false;
+			LFSQuery.QTHREADS = 64;
 			LFSQuery q = new LFSQuery();
 			LFSQuery.queried += new ServerQueried(queryEventListener);
 			int start = System.Environment.TickCount;
