@@ -27,7 +27,7 @@ namespace gtkbrowseforspeed {
 			LFSQuery q = new LFSQuery();
 			LFSQuery.queried += new ServerQueried(queryEventListener);
 			int start = System.Environment.TickCount;
-			q.query(4, 256, "browseforspeed", 1);
+			q.query(0, 0, "browseforspeed", 1);
 			int end = System.Environment.TickCount;
 			Console.Write("query took " + (end - start) + " secs\n");
 		}
