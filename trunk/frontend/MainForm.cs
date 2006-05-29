@@ -864,7 +864,6 @@ public class ListViewColumnSorter : IComparer
 		ListViewItem listviewX, listviewY;
 		listviewX = (ListViewItem)x;
 		listviewY = (ListViewItem)y;
-		//MessageBox.Show(listviewX.ListView.C
 		string columnName = listviewX.ListView.Columns[ColumnToSort].Text;
 		try {
 		if (columnName == "Ping") { //if we're sorting the ping column
