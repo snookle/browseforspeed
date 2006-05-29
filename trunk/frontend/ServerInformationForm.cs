@@ -141,8 +141,8 @@ namespace LFS_ServerBrowser {
 				this.info = info;
 				info.hostname = LFSQuery.removeColourCodes(info.hostname);
 				labelServerName.Text = info.hostname;
-				labelCars.Text = MainForm.CarsToString(info.cars);
-				labelInfo.Text = MainForm.RulesToString(info.rules);
+				labelCars.Text = main.CarsToString(info.cars);
+				labelInfo.Text = main.RulesToString(info.rules);
 				labelPing.Text = info.ping.ToString();
 				labelTrack.Text = info.track;				
 			} else {				

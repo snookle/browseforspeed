@@ -85,6 +85,13 @@ namespace LFS_ServerBrowser
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.rbJoin = new System.Windows.Forms.RadioButton();
 			this.rbView = new System.Windows.Forms.RadioButton();
+			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.txtInsimPort = new System.Windows.Forms.TextBox();
+			this.label8 = new System.Windows.Forms.Label();
+			this.btnBrowsePS = new System.Windows.Forms.Button();
+			this.label7 = new System.Windows.Forms.Label();
+			this.txtPSPath = new System.Windows.Forms.TextBox();
+			this.cbUsePS = new System.Windows.Forms.CheckBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.queryWait = new System.Windows.Forms.NumericUpDown();
@@ -101,6 +108,7 @@ namespace LFS_ServerBrowser
 			this.statusTotal = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusRefused = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusNoReply = new System.Windows.Forms.ToolStripStatusLabel();
+			this.openFileDialogPS = new System.Windows.Forms.OpenFileDialog();
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -111,6 +119,7 @@ namespace LFS_ServerBrowser
 			this.tabPage2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.groupBox4.SuspendLayout();
+			this.groupBox5.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).BeginInit();
 			this.statusStrip.SuspendLayout();
@@ -527,6 +536,7 @@ namespace LFS_ServerBrowser
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.groupBox4);
+			this.groupBox1.Controls.Add(this.groupBox5);
 			this.groupBox1.Controls.Add(this.groupBox3);
 			this.groupBox1.Controls.Add(this.btnCheckNewVersion);
 			this.groupBox1.Controls.Add(this.cbNewVersion);
@@ -546,9 +556,9 @@ namespace LFS_ServerBrowser
 			// 
 			this.groupBox4.Controls.Add(this.rbJoin);
 			this.groupBox4.Controls.Add(this.rbView);
-			this.groupBox4.Location = new System.Drawing.Point(127, 191);
+			this.groupBox4.Location = new System.Drawing.Point(415, 17);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(397, 87);
+			this.groupBox4.Size = new System.Drawing.Size(236, 87);
 			this.groupBox4.TabIndex = 15;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Server double click behaviour";
@@ -556,7 +566,7 @@ namespace LFS_ServerBrowser
 			// rbJoin
 			// 
 			this.rbJoin.Checked = true;
-			this.rbJoin.Location = new System.Drawing.Point(37, 50);
+			this.rbJoin.Location = new System.Drawing.Point(21, 52);
 			this.rbJoin.Name = "rbJoin";
 			this.rbJoin.Size = new System.Drawing.Size(104, 24);
 			this.rbJoin.TabIndex = 1;
@@ -566,7 +576,7 @@ namespace LFS_ServerBrowser
 			// 
 			// rbView
 			// 
-			this.rbView.Location = new System.Drawing.Point(37, 22);
+			this.rbView.Location = new System.Drawing.Point(21, 22);
 			this.rbView.Name = "rbView";
 			this.rbView.Size = new System.Drawing.Size(142, 24);
 			this.rbView.TabIndex = 0;
@@ -574,15 +584,85 @@ namespace LFS_ServerBrowser
 			this.rbView.Text = "View server information";
 			this.rbView.UseVisualStyleBackColor = true;
 			// 
+			// groupBox5
+			// 
+			this.groupBox5.Controls.Add(this.txtInsimPort);
+			this.groupBox5.Controls.Add(this.label8);
+			this.groupBox5.Controls.Add(this.btnBrowsePS);
+			this.groupBox5.Controls.Add(this.label7);
+			this.groupBox5.Controls.Add(this.txtPSPath);
+			this.groupBox5.Controls.Add(this.cbUsePS);
+			this.groupBox5.Location = new System.Drawing.Point(6, 184);
+			this.groupBox5.Name = "groupBox5";
+			this.groupBox5.Size = new System.Drawing.Size(403, 124);
+			this.groupBox5.TabIndex = 16;
+			this.groupBox5.TabStop = false;
+			this.groupBox5.Text = "Pit Spotter";
+			// 
+			// txtInsimPort
+			// 
+			this.txtInsimPort.Enabled = false;
+			this.txtInsimPort.Location = new System.Drawing.Point(107, 92);
+			this.txtInsimPort.Name = "txtInsimPort";
+			this.txtInsimPort.Size = new System.Drawing.Size(67, 21);
+			this.txtInsimPort.TabIndex = 5;
+			this.txtInsimPort.Text = "29999";
+			this.txtInsimPort.Leave += new System.EventHandler(this.TxtInsimPortLeave);
+			// 
+			// label8
+			// 
+			this.label8.Location = new System.Drawing.Point(24, 95);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(90, 23);
+			this.label8.TabIndex = 4;
+			this.label8.Text = "LFS Insim Port:";
+			// 
+			// btnBrowsePS
+			// 
+			this.btnBrowsePS.Enabled = false;
+			this.btnBrowsePS.Location = new System.Drawing.Point(322, 63);
+			this.btnBrowsePS.Name = "btnBrowsePS";
+			this.btnBrowsePS.Size = new System.Drawing.Size(75, 23);
+			this.btnBrowsePS.TabIndex = 3;
+			this.btnBrowsePS.Text = "B&rowse...";
+			this.btnBrowsePS.UseVisualStyleBackColor = true;
+			this.btnBrowsePS.Click += new System.EventHandler(this.BtnBrowsePSClick);
+			// 
+			// label7
+			// 
+			this.label7.Location = new System.Drawing.Point(24, 47);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(256, 15);
+			this.label7.TabIndex = 2;
+			this.label7.Text = "Pit Spotter Executable Path:";
+			// 
+			// txtPSPath
+			// 
+			this.txtPSPath.Enabled = false;
+			this.txtPSPath.Location = new System.Drawing.Point(24, 65);
+			this.txtPSPath.Name = "txtPSPath";
+			this.txtPSPath.Size = new System.Drawing.Size(292, 21);
+			this.txtPSPath.TabIndex = 1;
+			// 
+			// cbUsePS
+			// 
+			this.cbUsePS.Location = new System.Drawing.Point(24, 20);
+			this.cbUsePS.Name = "cbUsePS";
+			this.cbUsePS.Size = new System.Drawing.Size(184, 24);
+			this.cbUsePS.TabIndex = 0;
+			this.cbUsePS.Text = "Start Pit Spotter before LFS";
+			this.cbUsePS.UseVisualStyleBackColor = true;
+			this.cbUsePS.CheckStateChanged += new System.EventHandler(this.CbUsePSCheckStateChanged);
+			// 
 			// groupBox3
 			// 
 			this.groupBox3.Controls.Add(this.label3);
 			this.groupBox3.Controls.Add(this.queryWait);
 			this.groupBox3.Controls.Add(this.cbQueryWait);
 			this.groupBox3.Controls.Add(this.label4);
-			this.groupBox3.Location = new System.Drawing.Point(127, 284);
+			this.groupBox3.Location = new System.Drawing.Point(6, 314);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(403, 196);
+			this.groupBox3.Size = new System.Drawing.Size(403, 174);
 			this.groupBox3.TabIndex = 14;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Advanced";
@@ -646,7 +726,7 @@ namespace LFS_ServerBrowser
 			// 
 			// btnCheckNewVersion
 			// 
-			this.btnCheckNewVersion.Location = new System.Drawing.Point(455, 160);
+			this.btnCheckNewVersion.Location = new System.Drawing.Point(334, 141);
 			this.btnCheckNewVersion.Name = "btnCheckNewVersion";
 			this.btnCheckNewVersion.Size = new System.Drawing.Size(75, 23);
 			this.btnCheckNewVersion.TabIndex = 13;
@@ -656,7 +736,7 @@ namespace LFS_ServerBrowser
 			// 
 			// cbNewVersion
 			// 
-			this.cbNewVersion.Location = new System.Drawing.Point(127, 160);
+			this.cbNewVersion.Location = new System.Drawing.Point(6, 141);
 			this.cbNewVersion.Name = "cbNewVersion";
 			this.cbNewVersion.Size = new System.Drawing.Size(322, 24);
 			this.cbNewVersion.TabIndex = 12;
@@ -666,16 +746,16 @@ namespace LFS_ServerBrowser
 			// pathList
 			// 
 			this.pathList.FormattingEnabled = true;
-			this.pathList.Location = new System.Drawing.Point(127, 40);
+			this.pathList.Location = new System.Drawing.Point(6, 38);
 			this.pathList.Name = "pathList";
 			this.pathList.Size = new System.Drawing.Size(322, 56);
 			this.pathList.TabIndex = 8;
 			// 
 			// label5
 			// 
-			this.label5.Location = new System.Drawing.Point(127, 99);
+			this.label5.Location = new System.Drawing.Point(6, 97);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(403, 44);
+			this.label5.Size = new System.Drawing.Size(403, 41);
 			this.label5.TabIndex = 7;
 			this.label5.Text = "If there is more than one entry in the box above, please select which one is the " +
 			"correct path for your LFS.exe. If there are no entries, please click the Browse " +
@@ -683,7 +763,7 @@ namespace LFS_ServerBrowser
 			// 
 			// label2
 			// 
-			this.label2.Location = new System.Drawing.Point(8, 40);
+			this.label2.Location = new System.Drawing.Point(6, 17);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(114, 18);
 			this.label2.TabIndex = 5;
@@ -691,7 +771,7 @@ namespace LFS_ServerBrowser
 			// 
 			// buttonBrowse
 			// 
-			this.buttonBrowse.Location = new System.Drawing.Point(455, 40);
+			this.buttonBrowse.Location = new System.Drawing.Point(334, 38);
 			this.buttonBrowse.Name = "buttonBrowse";
 			this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
 			this.buttonBrowse.TabIndex = 4;
@@ -733,6 +813,11 @@ namespace LFS_ServerBrowser
 			this.statusNoReply.Size = new System.Drawing.Size(0, 17);
 			this.statusNoReply.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
 			// 
+			// openFileDialogPS
+			// 
+			this.openFileDialogPS.FileName = "LFSspotter.exe";
+			this.openFileDialogPS.Filter = "LFS Spotter Executable|LFSspotter.exe";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -758,6 +843,8 @@ namespace LFS_ServerBrowser
 			this.tabPage2.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
+			this.groupBox5.ResumeLayout(false);
+			this.groupBox5.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).EndInit();
 			this.statusStrip.ResumeLayout(false);
@@ -765,6 +852,14 @@ namespace LFS_ServerBrowser
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.OpenFileDialog openFileDialogPS;
+		private System.Windows.Forms.CheckBox cbUsePS;
+		private System.Windows.Forms.TextBox txtPSPath;
+		private System.Windows.Forms.Button btnBrowsePS;
+		private System.Windows.Forms.TextBox txtInsimPort;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.RadioButton rbView;
 		private System.Windows.Forms.RadioButton rbJoin;
 		private System.Windows.Forms.GroupBox groupBox4;
