@@ -23,6 +23,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.Win32;
 using libbrowseforspeed;
@@ -42,6 +43,9 @@ namespace LFS_ServerBrowser
 		public bool configValid;
 		public int queryWait;
 		public bool joinOnClick;
+		public bool startPS;
+		public string psPath;
+		public int psInsimPort;
 		
 		public Configuration(string filename)
 		{
@@ -68,6 +72,13 @@ namespace LFS_ServerBrowser
 				} catch (Exception e) {					
 					this.joinOnClick = true;
 				}
+				try {
+					this.psInsimPort = Convert.ToInt32(tr.ReadLine());
+				} catch (Exception e) {
+					this.psInsimPort = 29999;
+				}
+				this.psPath = tr.ReadLine();
+				this.startPS = (tr.ReadLine() == "True");
 				tr.Close();
 				configValid = true;
 			} catch (FileNotFoundException fnfe) {
@@ -87,6 +98,9 @@ namespace LFS_ServerBrowser
 				tw.WriteLine(this.checkNewVersion.ToString());
 				tw.WriteLine(this.queryWait.ToString());
 				tw.WriteLine(this.joinOnClick ? "join" : "view");
+				tw.WriteLine(this.psInsimPort.ToString());
+				tw.WriteLine(this.psPath);
+				tw.WriteLine(this.startPS.ToString());
 				tw.Close();
 			}
 			catch (Exception ex) {
@@ -203,19 +217,22 @@ namespace LFS_ServerBrowser
 			ReadFav();
 			//if we have previous config data
 			if (config.configValid) {
+				//query wait
 				cbQueryWait.Checked = config.disableWait;
 				queryWait.Enabled = !config.disableWait;
 				LFSQuery.xpsp2_wait = !config.disableWait;
 				LFSQuery.THREAD_WAIT = config.queryWait;
 				queryWait.Value = config.queryWait;
+				//new version
 				cbNewVersion.Checked = config.checkNewVersion;
-				if (config.joinOnClick) {
-					rbJoin.Checked = true;
-					rbView.Checked = false;
-				} else {
-					rbJoin.Checked = false;
-					rbView.Checked = true;
-				}
+				//Pit spotter
+				cbUsePS.Checked = config.startPS;
+				txtPSPath.Text = config.psPath;
+				txtInsimPort.Text = config.psInsimPort != 0 ? config.psInsimPort.ToString() : "29999";
+				//join on click
+				rbJoin.Checked = config.joinOnClick;
+				rbView.Checked = !config.joinOnClick;
+
 				if (config.checkNewVersion) {
 					versionCheck(false);
 				}
@@ -257,7 +274,7 @@ namespace LFS_ServerBrowser
 			}
 		}
 		
-		private string CarsToString(ulong c) {
+		public string CarsToString(ulong c) {
 			StringBuilder carNames = new StringBuilder();
 			Array cars = LFSQuery.getCarNames(c);
 			foreach (string car in cars) {
@@ -448,20 +465,32 @@ namespace LFS_ServerBrowser
 		
 		void LoadLFS(String hostName, String mode, String password)
 		{
-			String path = config.lfsPath;
+			String lfsPath = config.lfsPath;
+			String psPath = config.psPath;
 			FormWindowState ws = this.WindowState;
 			LFSQuery.stopQuerying();
+			if (config.startPS){
+				try {
+					Process p = new Process();
+					p.StartInfo.FileName = psPath;
+					p.StartInfo.WorkingDirectory = Path.GetDirectoryName(psPath);
+					p.Start();
+				} catch (Exception ex) {
+					MessageBox.Show("Error executing Pit Spotter\n"+ex.Message+"\nRecheck your configuration.", appTitle, MessageBoxButtons.OK);
+					return;
+				}
+			}
 			try{
 				this.WindowState = FormWindowState.Minimized;
 				Process p = new Process();
-				p.StartInfo.FileName = path;
-				p.StartInfo.WorkingDirectory = Path.GetDirectoryName(path);
+				p.StartInfo.FileName = lfsPath;
+				p.StartInfo.WorkingDirectory = Path.GetDirectoryName(lfsPath);
 				p.StartInfo.Arguments = "/join=" + hostName + " /mode=" + mode + "/pass=" +password;
 				p.Start();
 				p.WaitForExit();
 			} catch (Exception ex) {
 				this.WindowState = ws;
-				MessageBox.Show("Error executing: "+path+"\n"+ex.Message+"\nRecheck your configuration.", appTitle, MessageBoxButtons.OK);
+				MessageBox.Show("Error executing LFS.exe\n"+ex.Message+"\nRecheck your configuration.", appTitle, MessageBoxButtons.OK);
 			}
 			this.WindowState = ws;
 		}
@@ -490,7 +519,7 @@ namespace LFS_ServerBrowser
 				} else {
 					sel = lvFavourites.SelectedItems;
 				}
-			} else {
+			}  else {
 				sel = ((ListView)sender).SelectedItems;
 			}
 			if (sel.Count < 1) { return; }
@@ -597,7 +626,7 @@ namespace LFS_ServerBrowser
 			contextMenuFav.Enabled = (coll.Count > 0);
 		}
 				
-		public static String RulesToString(ulong rules)
+		public String RulesToString(ulong rules)
 		{
 			String str = "";
 			if ((rules & 1) != 0) str += "V"; //CAN_VOTE
@@ -647,17 +676,7 @@ namespace LFS_ServerBrowser
 		{
 			LFSQuery.stopQuerying();
 			this.exiting = true;
-			if (pathList.SelectedIndex < 0)
-				config.lfsPath = "";
-			else
-				config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();
-
-			config.disableWait = cbQueryWait.Checked;
-			config.checkNewVersion = cbNewVersion.Checked;
-			config.queryWait = (int)queryWait.Value;
-			config.joinOnClick = rbJoin.Checked;
-			LFSQuery.xpsp2_wait = !config.disableWait;
-			LFSQuery.THREAD_WAIT = config.queryWait;
+			UpdateConfig();
 			config.Save();
 			this.Hide();
 		}
@@ -712,19 +731,31 @@ namespace LFS_ServerBrowser
 		{
 			//if we've just come from the configuration panel to another one
 			if (this.lastTabSelected == 2) {
-				if (pathList.SelectedIndex < 0)
-					config.lfsPath = "";
-				else
-					config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();
-				config.disableWait = cbQueryWait.Checked;
-				config.checkNewVersion = cbNewVersion.Checked;
-				config.queryWait = (int)queryWait.Value;
-				config.joinOnClick = rbJoin.Checked;
-				LFSQuery.xpsp2_wait = !config.disableWait;
-				LFSQuery.THREAD_WAIT = config.queryWait;
+				UpdateConfig();
 				config.Save();
 			}
 			this.lastTabSelected = tabControl.SelectedIndex;
+		}
+		
+		void UpdateConfig()
+		{
+			if (pathList.SelectedIndex < 0)
+				config.lfsPath = "";
+			else
+				config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();
+			config.disableWait = cbQueryWait.Checked;
+			config.checkNewVersion = cbNewVersion.Checked;
+			config.queryWait = (int)queryWait.Value;
+			config.joinOnClick = rbJoin.Checked;
+			LFSQuery.xpsp2_wait = !config.disableWait;
+			LFSQuery.THREAD_WAIT = config.queryWait;
+			config.startPS = cbUsePS.Checked;
+			config.psPath = txtPSPath.Text;
+			try {
+				config.psInsimPort = Convert.ToInt32(txtInsimPort.Text);
+			} catch (Exception ex) {
+				config.psInsimPort = 29999;
+			}
 		}
 		
 		void RemoveFromFavouritesToolStripMenuItemClick(object sender, System.EventArgs e)
@@ -777,6 +808,32 @@ namespace LFS_ServerBrowser
 			queryWait.Enabled = (cbQueryWait.CheckState != CheckState.Checked);
 		}
 		
+		
+		void BtnBrowsePSClick(object sender, System.EventArgs e)
+		{
+			if (openFileDialogPS.ShowDialog() == DialogResult)
+					return;
+			txtPSPath.Text = openFileDialogPS.FileName;
+		}
+		
+		void TxtInsimPortLeave(object sender, System.EventArgs e)
+		{
+			try {
+				int value = Convert.ToInt32(txtInsimPort.Text);
+				if (value > 65535) throw new Exception();
+			} catch (Exception ex) {
+				MessageBox.Show(txtInsimPort.Text + " is not a valid port number", "", MessageBoxButtons.OK);
+				txtInsimPort.Focus();
+			}
+			
+		}
+		
+		void CbUsePSCheckStateChanged(object sender, System.EventArgs e)
+		{
+			txtPSPath.Enabled = ((CheckBox)sender).Checked;
+			txtInsimPort.Enabled = ((CheckBox)sender).Checked;
+			btnBrowsePS.Enabled = ((CheckBox)sender).Checked;
+		}
 	}
 /// Horray for code nicked from the MSDN!
 public class ListViewColumnSorter : IComparer
