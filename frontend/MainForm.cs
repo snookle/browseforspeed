@@ -469,12 +469,12 @@ namespace LFS_ServerBrowser
 			String psPath = config.psPath;
 			FormWindowState ws = this.WindowState;
 			LFSQuery.stopQuerying();
+			Process ps = new Process();
 			if (config.startPS){
 				try {
-					Process p = new Process();
-					p.StartInfo.FileName = psPath;
-					p.StartInfo.WorkingDirectory = Path.GetDirectoryName(psPath);
-					p.Start();
+					ps.StartInfo.FileName = psPath;
+					ps.StartInfo.WorkingDirectory = Path.GetDirectoryName(psPath);
+					ps.Start();
 				} catch (Exception ex) {
 					MessageBox.Show("Error executing Pit Spotter\n"+ex.Message+"\nRecheck your configuration.", appTitle, MessageBoxButtons.OK);
 					return;
@@ -485,9 +485,12 @@ namespace LFS_ServerBrowser
 				Process p = new Process();
 				p.StartInfo.FileName = lfsPath;
 				p.StartInfo.WorkingDirectory = Path.GetDirectoryName(lfsPath);
-				p.StartInfo.Arguments = "/join=" + hostName + " /mode=" + mode + "/pass=" +password;
+				p.StartInfo.Arguments = "/join=" + hostName + " /mode=" + mode + "/pass=" + password + (config.startPS ? "/insim=" + config.psInsimPort.ToString() : "");
 				p.Start();
 				p.WaitForExit();
+				try {
+					if (config.startPS) ps.Kill();
+				} catch (Exception silly) {}
 			} catch (Exception ex) {
 				this.WindowState = ws;
 				MessageBox.Show("Error executing LFS.exe\n"+ex.Message+"\nRecheck your configuration.", appTitle, MessageBoxButtons.OK);
@@ -519,7 +522,13 @@ namespace LFS_ServerBrowser
 				} else {
 					sel = lvFavourites.SelectedItems;
 				}
-			}  else {
+			} else if (sender is ToolStripMenuItem) {
+				if (((ToolStripMenuItem)sender).Name == "joinServerToolStripMenuItem") {
+					sel = lvMain.SelectedItems;
+				} else {
+					sel = lvFavourites.SelectedItems;
+				}
+			}else {
 				sel = ((ListView)sender).SelectedItems;
 			}
 			if (sel.Count < 1) { return; }
