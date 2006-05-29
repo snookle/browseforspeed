@@ -864,9 +864,15 @@ public class ListViewColumnSorter : IComparer
 		ListViewItem listviewX, listviewY;
 		listviewX = (ListViewItem)x;
 		listviewY = (ListViewItem)y;
+		//MessageBox.Show(listviewX.ListView.C
+		string columnName = listviewX.ListView.Columns[ColumnToSort].Text;
 		try {
-		if (ColumnToSort == 1) { //if we're sorting the ping column
+		if (columnName == "Ping") { //if we're sorting the ping column
 			compareResult = ObjectCompare.Compare(Convert.ToInt32(listviewX.SubItems[ColumnToSort].Text), Convert.ToInt32(listviewY.SubItems[ColumnToSort].Text));
+		} else if (columnName == "Connections") { //sorting connection column
+				int playersX = Convert.ToInt32(listviewX.SubItems[ColumnToSort].Text.Split('/')[0]);
+				int playersY = Convert.ToInt32(listviewY.SubItems[ColumnToSort].Text.Split('/')[0]);
+				compareResult = ObjectCompare.Compare(playersX, playersY);
 		} else {
 			compareResult = ObjectCompare.Compare(listviewX.SubItems[ColumnToSort].Text, listviewY.SubItems[ColumnToSort].Text);
 		}
@@ -878,7 +884,7 @@ public class ListViewColumnSorter : IComparer
 		}
 
 		} catch (Exception ex) {
-			//suppress any exceptions relating to indexes out of range (stupid bug I dunno how to fix, or what's causing it) :)
+			//suppress any exceptions relating to indexes out of range when there's no items.
 		}
 		return 0;
 	}
