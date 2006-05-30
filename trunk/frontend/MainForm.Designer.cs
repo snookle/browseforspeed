@@ -82,6 +82,8 @@ namespace LFS_ServerBrowser
 			this.removeFromFavouritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.groupBox6 = new System.Windows.Forms.GroupBox();
+			this.btnListFont = new System.Windows.Forms.Button();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.rbJoin = new System.Windows.Forms.RadioButton();
 			this.rbView = new System.Windows.Forms.RadioButton();
@@ -109,6 +111,7 @@ namespace LFS_ServerBrowser
 			this.statusRefused = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusNoReply = new System.Windows.Forms.ToolStripStatusLabel();
 			this.openFileDialogPS = new System.Windows.Forms.OpenFileDialog();
+			this.listFontDialog = new System.Windows.Forms.FontDialog();
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -118,6 +121,7 @@ namespace LFS_ServerBrowser
 			this.contextMenuFav.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
+			this.groupBox6.SuspendLayout();
 			this.groupBox4.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -313,6 +317,7 @@ namespace LFS_ServerBrowser
 			this.lvMain.View = System.Windows.Forms.View.Details;
 			this.lvMain.DoubleClick += new System.EventHandler(this.listDblClick);
 			this.lvMain.SelectedIndexChanged += new System.EventHandler(this.lvMainSelectedIndexChanged);
+			this.lvMain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LvMainKeyDown);
 			this.lvMain.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
 			// 
 			// columnHeaderName
@@ -535,6 +540,7 @@ namespace LFS_ServerBrowser
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.groupBox6);
 			this.groupBox1.Controls.Add(this.groupBox4);
 			this.groupBox1.Controls.Add(this.groupBox5);
 			this.groupBox1.Controls.Add(this.groupBox3);
@@ -552,13 +558,33 @@ namespace LFS_ServerBrowser
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Configuration";
 			// 
+			// groupBox6
+			// 
+			this.groupBox6.Controls.Add(this.btnListFont);
+			this.groupBox6.Location = new System.Drawing.Point(454, 103);
+			this.groupBox6.Name = "groupBox6";
+			this.groupBox6.Size = new System.Drawing.Size(292, 100);
+			this.groupBox6.TabIndex = 18;
+			this.groupBox6.TabStop = false;
+			this.groupBox6.Text = "Display";
+			// 
+			// btnListFont
+			// 
+			this.btnListFont.Location = new System.Drawing.Point(21, 20);
+			this.btnListFont.Name = "btnListFont";
+			this.btnListFont.Size = new System.Drawing.Size(75, 23);
+			this.btnListFont.TabIndex = 18;
+			this.btnListFont.Text = "List Font...";
+			this.btnListFont.UseVisualStyleBackColor = true;
+			this.btnListFont.Click += new System.EventHandler(this.BtnListFontClick);
+			// 
 			// groupBox4
 			// 
 			this.groupBox4.Controls.Add(this.rbJoin);
 			this.groupBox4.Controls.Add(this.rbView);
-			this.groupBox4.Location = new System.Drawing.Point(415, 17);
+			this.groupBox4.Location = new System.Drawing.Point(454, 20);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(236, 87);
+			this.groupBox4.Size = new System.Drawing.Size(292, 77);
 			this.groupBox4.TabIndex = 15;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Server double click behaviour";
@@ -566,9 +592,9 @@ namespace LFS_ServerBrowser
 			// rbJoin
 			// 
 			this.rbJoin.Checked = true;
-			this.rbJoin.Location = new System.Drawing.Point(21, 52);
+			this.rbJoin.Location = new System.Drawing.Point(21, 48);
 			this.rbJoin.Name = "rbJoin";
-			this.rbJoin.Size = new System.Drawing.Size(104, 24);
+			this.rbJoin.Size = new System.Drawing.Size(104, 22);
 			this.rbJoin.TabIndex = 1;
 			this.rbJoin.TabStop = true;
 			this.rbJoin.Text = "Join server";
@@ -576,9 +602,9 @@ namespace LFS_ServerBrowser
 			// 
 			// rbView
 			// 
-			this.rbView.Location = new System.Drawing.Point(21, 22);
+			this.rbView.Location = new System.Drawing.Point(21, 20);
 			this.rbView.Name = "rbView";
-			this.rbView.Size = new System.Drawing.Size(142, 24);
+			this.rbView.Size = new System.Drawing.Size(142, 22);
 			this.rbView.TabIndex = 0;
 			this.rbView.TabStop = true;
 			this.rbView.Text = "View server information";
@@ -842,6 +868,7 @@ namespace LFS_ServerBrowser
 			this.contextMenuFav.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
+			this.groupBox6.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox5.ResumeLayout(false);
 			this.groupBox5.PerformLayout();
@@ -852,6 +879,9 @@ namespace LFS_ServerBrowser
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.GroupBox groupBox6;
+		private System.Windows.Forms.Button btnListFont;
+		private System.Windows.Forms.FontDialog listFontDialog;
 		private System.Windows.Forms.OpenFileDialog openFileDialogPS;
 		private System.Windows.Forms.CheckBox cbUsePS;
 		private System.Windows.Forms.TextBox txtPSPath;
