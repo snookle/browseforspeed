@@ -758,8 +758,7 @@ namespace LFS_ServerBrowser
 				}
 			}
 			if (s.ShowDialog(this) == DialogResult.OK) {
-				//TODO: put the password from the box in. serverinfoform needs to set it too.				
-				LoadLFS(s.GetInfo().hostname, "S2", edtPasswordMain.Text);
+				LoadLFS(s.GetInfo().hostname, "S2", s.GetInfo().password);
 			}
 		}
 

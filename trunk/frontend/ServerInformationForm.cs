@@ -153,5 +153,10 @@ namespace LFS_ServerBrowser {
 			}
 			} catch(Exception e){}
   		}
+		
+		void TextInfoPasswordLeave(object sender, System.EventArgs e)
+		{
+			this.info.password = textInfoPassword.Text;
+		}
 	}
 }
