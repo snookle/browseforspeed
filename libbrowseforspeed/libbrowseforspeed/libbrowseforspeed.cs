@@ -44,6 +44,7 @@ namespace libbrowseforspeed {
 		public int ping;
 		public bool passworded;
 		public string[] racerNames;
+		public string password;
 	}
 			
 	public struct hostInfo {
