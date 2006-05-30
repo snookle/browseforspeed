@@ -844,14 +844,17 @@ namespace LFS_ServerBrowser
 			btnBrowsePS.Enabled = ((CheckBox)sender).Checked;
 		}
 
-		void LvMainKeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+		void MainKeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
 		{
-			if (e.Control && sender is ListView) {
-				if (e.KeyCode == Keys.Add)
-					((ListView)sender).Font = new Font(((ListView)sender).Font.FontFamily.Name, ((ListView)sender).Font.Size + 1);
-				else
-					((ListView)sender).Font = new Font(((ListView)sender).Font.FontFamily.Name, ((ListView)sender).Font.Size - 1);
-				
+			if (e.Control) {
+				if (e.KeyCode == Keys.Add || e.KeyCode == Keys.Oemplus) {
+					lvMain.Font = new Font(lvMain.Font.FontFamily.Name, lvMain.Font.Size + 1);
+					lvFavourites.Font = new Font(lvFavourites.Font.FontFamily.Name, lvFavourites.Font.Size + 1);
+
+				} else if (lvMain.Font.Size > 1 && (e.KeyCode == Keys.Subtract || e.KeyCode == Keys.OemMinus)) {
+					lvMain.Font = new Font(lvMain.Font.FontFamily.Name, lvMain.Font.Size - 1);
+					lvFavourites.Font = new Font(lvFavourites.Font.FontFamily.Name, lvFavourites.Font.Size - 1);
+				}
 			}
 		}
 	}
