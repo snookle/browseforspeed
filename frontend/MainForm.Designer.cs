@@ -595,7 +595,7 @@ namespace LFS_ServerBrowser
 			this.groupBox5.Controls.Add(this.cbUsePS);
 			this.groupBox5.Location = new System.Drawing.Point(6, 184);
 			this.groupBox5.Name = "groupBox5";
-			this.groupBox5.Size = new System.Drawing.Size(403, 124);
+			this.groupBox5.Size = new System.Drawing.Size(419, 124);
 			this.groupBox5.TabIndex = 16;
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "Pit Spotter";
@@ -663,7 +663,7 @@ namespace LFS_ServerBrowser
 			this.groupBox3.Controls.Add(this.label4);
 			this.groupBox3.Location = new System.Drawing.Point(6, 314);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(403, 174);
+			this.groupBox3.Size = new System.Drawing.Size(419, 174);
 			this.groupBox3.TabIndex = 14;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Advanced";
@@ -727,7 +727,7 @@ namespace LFS_ServerBrowser
 			// 
 			// btnCheckNewVersion
 			// 
-			this.btnCheckNewVersion.Location = new System.Drawing.Point(334, 141);
+			this.btnCheckNewVersion.Location = new System.Drawing.Point(350, 141);
 			this.btnCheckNewVersion.Name = "btnCheckNewVersion";
 			this.btnCheckNewVersion.Size = new System.Drawing.Size(75, 23);
 			this.btnCheckNewVersion.TabIndex = 13;
@@ -772,7 +772,7 @@ namespace LFS_ServerBrowser
 			// 
 			// buttonBrowse
 			// 
-			this.buttonBrowse.Location = new System.Drawing.Point(334, 38);
+			this.buttonBrowse.Location = new System.Drawing.Point(350, 38);
 			this.buttonBrowse.Name = "buttonBrowse";
 			this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
 			this.buttonBrowse.TabIndex = 4;
