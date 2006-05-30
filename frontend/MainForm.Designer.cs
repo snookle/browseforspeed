@@ -109,7 +109,6 @@ namespace LFS_ServerBrowser
 			this.statusRefused = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusNoReply = new System.Windows.Forms.ToolStripStatusLabel();
 			this.openFileDialogPS = new System.Windows.Forms.OpenFileDialog();
-			this.listFontDialog = new System.Windows.Forms.FontDialog();
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -356,7 +355,7 @@ namespace LFS_ServerBrowser
 									this.viewServerInformationMain,
 									this.toolStripMenuItem1});
 			this.contextMenuBrowser.Name = "contextMenuBrowser";
-			this.contextMenuBrowser.Size = new System.Drawing.Size(214, 70);
+			this.contextMenuBrowser.Size = new System.Drawing.Size(214, 92);
 			this.contextMenuBrowser.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuBrowserOpening);
 			// 
 			// joinServerToolStripMenuItem
@@ -855,7 +854,6 @@ namespace LFS_ServerBrowser
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.FontDialog listFontDialog;
 		private System.Windows.Forms.OpenFileDialog openFileDialogPS;
 		private System.Windows.Forms.CheckBox cbUsePS;
 		private System.Windows.Forms.TextBox txtPSPath;

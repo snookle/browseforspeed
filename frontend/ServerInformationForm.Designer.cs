@@ -140,6 +140,7 @@ namespace LFS_ServerBrowser
 			this.textInfoPassword.PasswordChar = '*';
 			this.textInfoPassword.Size = new System.Drawing.Size(109, 21);
 			this.textInfoPassword.TabIndex = 9;
+			this.textInfoPassword.Leave += new System.EventHandler(this.TextInfoPasswordLeave);
 			// 
 			// groupBox1
 			// 
@@ -255,7 +256,7 @@ namespace LFS_ServerBrowser
 			this.MinimizeBox = false;
 			this.Name = "ServerInformationForm";
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-			this.Text = "Server Information";			
+			this.Text = "Server Information";
 			this.Load += new System.EventHandler(this.ServerInformationFormLoad);
 			this.groupBox1.ResumeLayout(false);
 			this.ResumeLayout(false);
