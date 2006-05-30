@@ -843,6 +843,17 @@ namespace LFS_ServerBrowser
 			txtInsimPort.Enabled = ((CheckBox)sender).Checked;
 			btnBrowsePS.Enabled = ((CheckBox)sender).Checked;
 		}
+
+		void LvMainKeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+		{
+			if (e.Control && sender is ListView) {
+				if (e.KeyCode == Keys.Add)
+					((ListView)sender).Font = new Font(((ListView)sender).Font.FontFamily.Name, ((ListView)sender).Font.Size + 1);
+				else
+					((ListView)sender).Font = new Font(((ListView)sender).Font.FontFamily.Name, ((ListView)sender).Font.Size - 1);
+				
+			}
+		}
 	}
 /// Horray for code nicked from the MSDN!
 public class ListViewColumnSorter : IComparer
