@@ -221,7 +221,6 @@ namespace LFS_ServerBrowser
 			this.edtPasswordMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.edtPasswordMain.Location = new System.Drawing.Point(262, 474);
 			this.edtPasswordMain.Name = "edtPasswordMain";
-			this.edtPasswordMain.PasswordChar = '*';
 			this.edtPasswordMain.Size = new System.Drawing.Size(173, 21);
 			this.edtPasswordMain.TabIndex = 7;
 			// 
