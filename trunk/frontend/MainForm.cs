@@ -160,7 +160,7 @@ namespace LFS_ServerBrowser
 	/// </summary>
 	public partial class MainForm
 	{
-		static string bfs_version = "3";
+		static string bfs_version = "4";
 		static string download_url = "http://browseforspeed.whatsbeef.net";
 		static string version_check_url = "http://browseforspeed.whatsbeef.net/versioncheck.pl";
 		
@@ -376,7 +376,7 @@ namespace LFS_ServerBrowser
 					ulong compulsory;
 					ulong illegal;
 					CodeCars(out compulsory, out illegal);
-					q.query(compulsory, illegal, "browseforspeed", 0);
+					q.query(compulsory, illegal, "browseforspeed", 0, cbEmpty.Checked);
 				}
 			} catch(Exception e) {
 					MessageBox.Show("Unable to contact the Master Server. Perhaps it is down, or your firewall is not configured properly." , "Unable to contact Master Server!", MessageBoxButtons.OK);
