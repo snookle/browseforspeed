@@ -996,8 +996,8 @@ public class ListViewColumnSorter : IComparer
 		ListViewItem listviewX, listviewY;
 		listviewX = (ListViewItem)x;
 		listviewY = (ListViewItem)y;
-		string columnName = listviewX.ListView.Columns[ColumnToSort].Text;
 		try {
+		string columnName = listviewX.ListView.Columns[ColumnToSort].Text;
 		if (columnName == "Ping") { //if we're sorting the ping column
 			compareResult = ObjectCompare.Compare(Convert.ToInt32(listviewX.SubItems[ColumnToSort].Text), Convert.ToInt32(listviewY.SubItems[ColumnToSort].Text));
 		} else if (columnName == "Connections") { //sorting connection column
@@ -1015,7 +1015,7 @@ public class ListViewColumnSorter : IComparer
 		}
 
 		} catch (Exception ex) {
-			//suppress any exceptions relating to indexes out of range when there's no items.
+			//suppress any exceptions relating to indexes out of range.
 		}
 		return 0;
 	}
