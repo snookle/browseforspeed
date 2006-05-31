@@ -285,6 +285,8 @@ namespace libbrowseforspeed {
 			public Query(ulong cars_compulsory, ulong cars_illegal, string user, bool hideEmpty) {
 				if (hideEmpty) {
 					client_version_info[3] = 0x12; //16 (!empty) + 2 (default)
+				} else {
+					client_version_info[3] = 0x02;
 				}
 				Query.cars_compulsory = cars_compulsory;
 				Query.cars_illegal = cars_illegal;
