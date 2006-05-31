@@ -161,8 +161,8 @@ namespace LFS_ServerBrowser
 	public partial class MainForm
 	{
 		static string bfs_version = "3";
-		static string download_url = "http://www.browseforspeed.net";
-		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
+		static string download_url = "http://browseforspeed.whatsbeef.net";
+		static string version_check_url = "http://browseforspeed.whatsbeef.net/versioncheck.pl";
 		
 		public static String appTitle = "Browse For Speed";
 		static String configFilename = Application.StartupPath + "\\config.cfg";
@@ -767,6 +767,7 @@ namespace LFS_ServerBrowser
 
 		void ViewServerInformationToolStripMenuItemClick(object sender, System.EventArgs e) {
 			ListView.SelectedListViewItemCollection coll;
+			ServerInformation i;
 			ArrayList myList;
 			if (sender is ListView) {
 				coll = ((ListView)sender).SelectedItems;
@@ -784,13 +785,15 @@ namespace LFS_ServerBrowser
 			if (coll.Count < 1) return;
 			s.SetInfo(null);
 			foreach (ServerInformation info in myList) {
-				if (info.hostname == coll[0].Text){
+				if (info.hostname == coll[0].Text) {
 					s.SetInfo(info);
+					if (s.ShowDialog(this) == DialogResult.OK) {
+						info.password = s.GetInfo().password;
+						WriteFav();
+						LoadLFS(s.GetInfo().hostname, "S2", s.GetInfo().password);
+					}
 					break;
 				}
-			}
-			if (s.ShowDialog(this) == DialogResult.OK) {
-				LoadLFS(s.GetInfo().hostname, "S2", s.GetInfo().password);
 			}
 		}
 

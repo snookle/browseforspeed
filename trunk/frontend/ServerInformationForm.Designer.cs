@@ -137,7 +137,6 @@ namespace LFS_ServerBrowser
 			// 
 			this.textInfoPassword.Location = new System.Drawing.Point(153, 340);
 			this.textInfoPassword.Name = "textInfoPassword";
-			this.textInfoPassword.PasswordChar = '*';
 			this.textInfoPassword.Size = new System.Drawing.Size(109, 21);
 			this.textInfoPassword.TabIndex = 9;
 			this.textInfoPassword.Leave += new System.EventHandler(this.TextInfoPasswordLeave);
