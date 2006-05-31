@@ -58,9 +58,10 @@ namespace LFS_ServerBrowser {
 			SetControlProperty(buttonInfoJoin, "Enabled", true);
 			SetControlProperty(buttonInfoRefresh, "Text", "&Refresh");
 		}
-		public void SetInfo(ServerInformation info) {			
+		public void SetInfo(ServerInformation info) {
 			if (info == null) return;
 			this.info = info;
+			textInfoPassword.Text = info.password;
 		}
 		
 		public ServerInformation GetInfo() {
@@ -139,7 +140,7 @@ namespace LFS_ServerBrowser {
 			try{
 			if (info.success){
 				this.info = info;
-				info.hostname = LFSQuery.removeColourCodes(info.hostname);
+				info.hostname = LFSQuery.removeColourCodes(info.hostname);				
 				labelServerName.Text = info.hostname;
 				labelCars.Text = main.CarsToString(info.cars);
 				labelInfo.Text = main.RulesToString(info.rules);
