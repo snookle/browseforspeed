@@ -355,7 +355,7 @@ namespace LFS_ServerBrowser
 									this.viewServerInformationMain,
 									this.toolStripMenuItem1});
 			this.contextMenuBrowser.Name = "contextMenuBrowser";
-			this.contextMenuBrowser.Size = new System.Drawing.Size(214, 92);
+			this.contextMenuBrowser.Size = new System.Drawing.Size(214, 70);
 			this.contextMenuBrowser.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuBrowserOpening);
 			// 
 			// joinServerToolStripMenuItem
@@ -452,7 +452,7 @@ namespace LFS_ServerBrowser
 			this.lvFavourites.ContextMenuStrip = this.contextMenuFav;
 			this.lvFavourites.FullRowSelect = true;
 			this.lvFavourites.GridLines = true;
-			this.lvFavourites.Location = new System.Drawing.Point(8, 8);
+			this.lvFavourites.Location = new System.Drawing.Point(8, 6);
 			this.lvFavourites.MultiSelect = false;
 			this.lvFavourites.Name = "lvFavourites";
 			this.lvFavourites.Size = new System.Drawing.Size(768, 461);

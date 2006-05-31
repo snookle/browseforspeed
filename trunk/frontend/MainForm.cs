@@ -51,23 +51,44 @@ namespace LFS_ServerBrowser
 		}
 
 		public bool LoadXML() {
-			try { //TODO: try catch default values
+			try {
 				XmlDocument doc = new XmlDocument();				
-				doc.Load(filename);				
+				doc.Load(filename);
 				XmlNodeList list = doc.GetElementsByTagName("bfsconfig");
-				lfsPath = ((XmlElement)list[0]).GetElementsByTagName("exepath")[0].FirstChild.Value;
-				disableWait = ((XmlElement)list[0]).GetElementsByTagName("qwait")[0].Attributes["enabled"].Value == "True";
-				queryWait = Convert.ToInt32(((XmlElement)list[0]).GetElementsByTagName("qwait")[0].FirstChild.Value);
-				checkNewVersion = ((XmlElement)list[0]).GetElementsByTagName("checkversion")[0].FirstChild.Value == "True";
-				XmlNode spot = ((XmlElement)list[0]).GetElementsByTagName("spotter")[0];
-				startPS = (spot.Attributes["enabled"].Value == "True");
-				psInsimPort = Convert.ToInt32(((XmlElement)spot).GetElementsByTagName("insimport")[0].FirstChild.Value);
 				try {
+					lfsPath = ((XmlElement)list[0]).GetElementsByTagName("exepath")[0].FirstChild.Value;
+				} catch (Exception e) { lfsPath = ""; }
+				try {
+					disableWait = ((XmlElement)list[0]).GetElementsByTagName("qwait")[0].Attributes["enabled"].Value == "True";
+				} catch (Exception e) { disableWait = false; }
+				try {
+					queryWait = Convert.ToInt32(((XmlElement)list[0]).GetElementsByTagName("qwait")[0].FirstChild.Value);
+				} catch (Exception e) { queryWait = 150; }
+				try {
+					checkNewVersion = ((XmlElement)list[0]).GetElementsByTagName("checkversion")[0].FirstChild.Value == "True";
+				} catch (Exception e) { checkNewVersion = false; }
+				try {
+					XmlNode spot = ((XmlElement)list[0]).GetElementsByTagName("spotter")[0];
+					startPS = (spot.Attributes["enabled"].Value == "True");
+					psInsimPort = Convert.ToInt32(((XmlElement)spot).GetElementsByTagName("insimport")[0].FirstChild.Value);
 					psPath = ((XmlElement)spot).GetElementsByTagName("path")[0].FirstChild.Value;
-				} catch (Exception e) { psPath = ""; }
-				joinOnClick = ((XmlElement)list[0]).GetElementsByTagName("listclick")[0].FirstChild.Value == "join";
+				} catch (Exception e) {
+					startPS = false;
+					psInsimPort = 29999;
+					psPath = "";
+				}
+				try {
+					joinOnClick = ((XmlElement)list[0]).GetElementsByTagName("listclick")[0].FirstChild.Value == "join";
+				} catch (Exception e) { joinOnClick = true; }
 				return true;
-			} catch (Exception e) { return false; }
+			} catch (FileNotFoundException fe) {
+				return false;
+			}
+			catch (Exception e) {
+				MessageBox.Show("Error loading configuration: " + e.Message + "\nA copy was saved as "+filename +".backup", "", MessageBoxButtons.OK);
+				File.Copy(filename, filename +".backup", true);
+				return false;
+			}
 		}
 
 
@@ -99,7 +120,6 @@ namespace LFS_ServerBrowser
 				tr.Close();
 				return true;
 			} catch (Exception e) {
-				MessageBox.Show(e.Message);
 				return false;
 			}
 		}
@@ -111,6 +131,7 @@ namespace LFS_ServerBrowser
 				tw.Formatting = Formatting.Indented;
 				tw.WriteStartDocument();
 				tw.WriteStartElement("bfsconfig");
+				tw.WriteAttributeString("version", "1");
 				tw.WriteElementString("exepath", lfsPath);
 				tw.WriteStartElement("qwait");
 				tw.WriteAttributeString("enabled", disableWait.ToString());
@@ -140,7 +161,9 @@ namespace LFS_ServerBrowser
 	public partial class MainForm
 	{
 		static string bfs_version = "3";
-		static string download_url = "http://browseforspeed.whatsbeef.net";
+		static string download_url = "http://www.browseforspeed.net";
+		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
+		
 		public static String appTitle = "Browse For Speed";
 		static String configFilename = Application.StartupPath + "\\config.cfg";
 		static String configXMLFilename = Application.StartupPath + "\\config.xml";
@@ -644,21 +667,29 @@ namespace LFS_ServerBrowser
 				XmlDocument doc = new XmlDocument();
 				doc.Load(filename);
 				XmlNodeList list = doc.GetElementsByTagName("favourites");
-				list = ((XmlElement)list[0]).GetElementsByTagName("favourite");				
+				list = ((XmlElement)list[0]).GetElementsByTagName("favourite");
 				foreach (XmlElement favourite in list) {
-					ServerInformation info = new ServerInformation();					
-					info.host = new IPEndPoint(IPAddress.Parse(favourite.GetElementsByTagName("ip")[0].FirstChild.Value), Convert.ToInt32(favourite.GetElementsByTagName("port")[0].FirstChild.Value));
-					info.hostname = favourite.GetElementsByTagName("name")[0].FirstChild.Value;					
 					try {
-						info.password = favourite.GetElementsByTagName("password")[0].FirstChild.Value;
-					} catch (Exception e) {
-						info.password = "";
-					}
-					favServerList.Add(info);
-					lvFavourites.Items.Add(info.hostname);
+						ServerInformation info = new ServerInformation();					
+						info.host = new IPEndPoint(IPAddress.Parse(favourite.GetElementsByTagName("ip")[0].FirstChild.Value), Convert.ToInt32(favourite.GetElementsByTagName("port")[0].FirstChild.Value));
+						info.hostname = favourite.GetElementsByTagName("name")[0].FirstChild.Value;					
+						try {
+							info.password = favourite.GetElementsByTagName("password")[0].FirstChild.Value;
+						} catch (Exception e) {
+							info.password = "";
+						}
+						favServerList.Add(info);
+						lvFavourites.Items.Add(info.hostname);
+					} catch (Exception e) { }
 				}
 				return true;
-			} catch (Exception e) { return false; }
+			} catch (FileNotFoundException fnfe) {
+				return false;	
+			} catch (Exception e) {
+				MessageBox.Show("Error loading favourites: " + e.Message + "\nA copy was saved as "+filename +".backup", "", MessageBoxButtons.OK);
+				File.Copy(filename, filename +".backup", true);
+				return false;
+			}
 		}
 
 		bool ReadFav(string filename)
@@ -692,7 +723,8 @@ namespace LFS_ServerBrowser
 				XmlTextWriter tw = new XmlTextWriter(favXMLFilename, null);
 				tw.Formatting = Formatting.Indented;
 				tw.WriteStartDocument();
-				tw.WriteStartElement("favourites");				
+				tw.WriteStartElement("favourites");
+				tw.WriteAttributeString("version", "1");
 				foreach (ServerInformation info in favServerList){
 					tw.WriteStartElement("favourite");
 					tw.WriteElementString("ip", info.host.Address.ToString());
@@ -770,6 +802,7 @@ namespace LFS_ServerBrowser
 			config.Save(configXMLFilename);
 			WriteFav();
 			this.Hide();
+			SortedList l = new SortedList();
 		}
 
 
@@ -865,7 +898,7 @@ namespace LFS_ServerBrowser
 		}
 
 		public static void versionCheck(bool botherUser) {
-			HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://browseforspeed.whatsbeef.net/versioncheck.pl");
+			HttpWebRequest request = (HttpWebRequest)WebRequest.Create(version_check_url);
 			request.Timeout = 3000;
 			try {
 				HttpWebResponse response = (HttpWebResponse)request.GetResponse();
