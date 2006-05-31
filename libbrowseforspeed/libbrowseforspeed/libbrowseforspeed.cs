@@ -282,7 +282,10 @@ namespace libbrowseforspeed {
 			public static byte[] unknown = {0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 			public static byte[] footer = { 0x2f, 0x4e }; // /N;
 
-			public Query(ulong cars_compulsory, ulong cars_illegal, string user) {
+			public Query(ulong cars_compulsory, ulong cars_illegal, string user, bool hideEmpty) {
+				if (hideEmpty) {
+					client_version_info[3] = 0x12; //16 (!empty) + 2 (default)
+				}
 				Query.cars_compulsory = cars_compulsory;
 				Query.cars_illegal = cars_illegal;
 				Encoding ascii = Encoding.ASCII;
@@ -326,10 +329,10 @@ namespace libbrowseforspeed {
 
 		}
 
-		public void query(ulong cars_compulsory, ulong cars_illegal, string username, object callbackObj) {
+		public void query(ulong cars_compulsory, ulong cars_illegal, string username, object callbackObj, bool hideEmpty) {
 			LFSQuery.keepQuerying = true;
 			ArrayList allHosts = new ArrayList();
-			Query query = new Query(cars_compulsory, cars_illegal, username);			
+			Query query = new Query(cars_compulsory, cars_illegal, username, hideEmpty);			
 			TcpClient client = new TcpClient("82.44.126.169", 29339);
 			Stream str = client.GetStream();
 			ulong hosts = 1;
