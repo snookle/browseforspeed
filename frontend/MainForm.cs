@@ -162,7 +162,7 @@ namespace LFS_ServerBrowser
 	public partial class MainForm
 	{
 		static string bfs_version = "0.3";
-		static string version_check = "4";
+		static string version_check = "5";
 		static string download_url = "http://www.browseforspeed.net";
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
 		
@@ -328,7 +328,9 @@ namespace LFS_ServerBrowser
 					pathList.SelectedIndex = 0;
 				}
 			}
-			ReadFriends();
+			Thread readFriends = new Thread(new ThreadStart(ReadFriends));
+			readFriends.Start();
+			//ReadFriends();
 			cbTracks.SelectedIndex = 0;
 
 		}
@@ -1097,11 +1099,6 @@ namespace LFS_ServerBrowser
 			if (MessageBox.Show("Do you want to join " + friend + " at " + hostname + "?", "Join Friend?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
 				LoadLFS(hostname, "S2", edtPasswordMain.Text);
 			}
-		}
-		
-		void EdtFriendNameKeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e) {
-
-			
 		}
 		
 		void EdtFriendNameKeyDown(object sender, System.Windows.Forms.KeyEventArgs e) {
