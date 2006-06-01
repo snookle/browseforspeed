@@ -286,12 +286,7 @@ namespace libbrowseforspeed {
 			public static byte[] unknown = {0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 			public static byte[] footer = { 0x2f, 0x4e }; // /N;
 
-			public Query(ulong cars_compulsory, ulong cars_illegal, string user, bool hideEmpty) {
-				if (hideEmpty) {
-					client_version_info[3] = 0x12; //16 (!empty) + 2 (default)
-				} else {
-					client_version_info[3] = 0x02;
-				}
+			public Query(ulong cars_compulsory, ulong cars_illegal, string user) {
 				Query.cars_compulsory = cars_compulsory;
 				Query.cars_illegal = cars_illegal;
 				Encoding ascii = Encoding.ASCII;
@@ -335,10 +330,10 @@ namespace libbrowseforspeed {
 
 		}
 
-		public void query(ulong cars_compulsory, ulong cars_illegal, string username, object callbackObj, bool hideEmpty) {
+		public void query(ulong cars_compulsory, ulong cars_illegal, string username, object callbackObj) {
 			LFSQuery.keepQuerying = true;
 			ArrayList allHosts = new ArrayList();
-			Query query = new Query(cars_compulsory, cars_illegal, username, hideEmpty);			
+			Query query = new Query(cars_compulsory, cars_illegal, username);			
 			TcpClient client = new TcpClient("82.44.126.169", 29339);
 			Stream str = client.GetStream();
 			ulong hosts = 1;
@@ -516,11 +511,12 @@ namespace libbrowseforspeed {
 
 		public static int getPubStatInfo(ref ServerInformation serverInfo) {
 			try {
-				if (pubstatStream == null || System.Environment.TickCount > (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
+				if (pubstatStream != null && System.Environment.TickCount > (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
 					HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1");
 					request.Timeout = 4000;
 					HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-					pubstatStream = response.GetResponseStream();					
+					pubstatStream = response.GetResponseStream();
+					pubstatLastUpdate = System.Environment.TickCount;
 				}
 				Stream s = new GZipInputStream(pubstatStream);
 				byte[] buf = getStreamBytes(s);
