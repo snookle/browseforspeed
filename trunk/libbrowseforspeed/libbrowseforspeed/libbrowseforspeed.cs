@@ -142,7 +142,7 @@ namespace libbrowseforspeed {
 			trackCodes.Add("AU2", "Skid Pan");
 			trackCodes.Add("AU3", "Drag Strip");
 			trackCodes.Add("AU4", "Drag Strip 8 plyr");
-			trackCodes.Add("KY1", "Kyoto Oval Rev");
+			trackCodes.Add("KY1", "Kyoto Oval");
 			trackCodes.Add("KY1R", "Kyoto Oval Rev");
 			trackCodes.Add("KY2", "Kyoto National");
 			trackCodes.Add("KY2R", "Kyoto National Rev");
