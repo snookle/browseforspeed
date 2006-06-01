@@ -100,7 +100,7 @@ namespace libbrowseforspeed {
 		private static bool keepQuerying;
 		private static int totalServers;
 		
-		private static Stream pubstatStream;
+		private static byte[] pubstatBuf;
 		private static int pubstatLastUpdate;
 		private const int PUBSTAT_CACHE_TIME = 1000 * 30; //30 second cache
 
@@ -286,7 +286,12 @@ namespace libbrowseforspeed {
 			public static byte[] unknown = {0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 			public static byte[] footer = { 0x2f, 0x4e }; // /N;
 
-			public Query(ulong cars_compulsory, ulong cars_illegal, string user) {
+			public Query(ulong cars_compulsory, ulong cars_illegal, string user, bool hideEmpty) { 
+				if (hideEmpty) { 
+					client_version_info[3] = 0x12; //16 (!empty) + 2 (default) 
+				} else {
+					client_version_info[3] = 0x02; 
+				} 
 				Query.cars_compulsory = cars_compulsory;
 				Query.cars_illegal = cars_illegal;
 				Encoding ascii = Encoding.ASCII;
@@ -330,10 +335,10 @@ namespace libbrowseforspeed {
 
 		}
 
-		public void query(ulong cars_compulsory, ulong cars_illegal, string username, object callbackObj) {
+		public void query(ulong cars_compulsory, ulong cars_illegal, string username, object callbackObj, bool hideEmpty) {
 			LFSQuery.keepQuerying = true;
 			ArrayList allHosts = new ArrayList();
-			Query query = new Query(cars_compulsory, cars_illegal, username);			
+			Query query = new Query(cars_compulsory, cars_illegal, username, hideEmpty);
 			TcpClient client = new TcpClient("82.44.126.169", 29339);
 			Stream str = client.GetStream();
 			ulong hosts = 1;
@@ -506,14 +511,12 @@ namespace libbrowseforspeed {
 		}
 		
 		public static void clearPubstatCache() {
-			pubstatStream = null;
+			pubstatBuf = null;
 		}
 		
-		public static ServerInformation getPubStatInfo(string playername) {
-			ServerInformation ret = new ServerInformation();
-			findHostOrPlayer(ref ret, playername);
-			if (ret.host == null) return null;
-			return ret;
+		public static int getPubStatInfo(string playername, out ServerInformation serverInfo) {
+			serverInfo = new ServerInformation();
+			return findHostOrPlayer(ref serverInfo, playername);			
 		}
 
 		public static int getPubStatInfo(ref ServerInformation serverInfo) {
@@ -521,26 +524,26 @@ namespace libbrowseforspeed {
 		}		
 		
 		private static int findHostOrPlayer(ref ServerInformation serverInfo, string racer) {
-			try {				
-				if (!getPubStatStream()) return -1;
-				Stream s = new GZipInputStream(pubstatStream);
-				byte[] buf = getStreamBytes(s);
+			try {
+				if (!getPubStatBuf()) return -1;
+				Stream s = new GZipInputStream(new MemoryStream(pubstatBuf));
+				byte[] buf = getStreamBytes(s);				
 				s.Close();
 				int i = 0;
 				string[] racers = null;
-				bool found = false;
-				while (i < buf.Length) {
+				bool found = false;				
+				while (i < buf.Length) {					
 					string hostname = removeColourCodes(getLFSString(buf, i, 32));
 					int numRacers = (int)buf[i + 52];
 					if ((racer == null && hostname == serverInfo.hostname) || racer != null) {
 						racers = new string[numRacers];
 						for (int j = 0; j < numRacers; ++j) {
 							racers[j] = getLFSString(buf, i + 53 + (24 * j), 24);
-							if (!found && (racers[j] == racer)) {
+							if (!found && (racers[j] == racer)) {								
 								found = true;
 							}
 						}
-						if (found || racer == null) {
+						if (found || racer == null) { //either we've found a player, or the hostname matched
 							if (found) serverInfo = new ServerInformation();
 							serverInfo.hostname = hostname;
 							serverInfo.players = numRacers;
@@ -551,20 +554,22 @@ namespace libbrowseforspeed {
 					}
 					i += (53 + (24 * numRacers));
 				}
-			} catch (Exception e) {
+			} catch (Exception e) {				
 				return -1;
 			}
 			return 0;
 		}
 		
-		private static bool getPubStatStream() {
+		private static bool getPubStatBuf() {
 			try {
-				if (pubstatStream == null || System.Environment.TickCount > (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
+				if (pubstatBuf == null || System.Environment.TickCount > (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
 					HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1");
 					request.Timeout = 4000;
 					HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-					pubstatStream = response.GetResponseStream();
-					pubstatLastUpdate = System.Environment.TickCount;					
+					Stream s = response.GetResponseStream();
+					pubstatBuf = getStreamBytes(s);
+					s.Close();
+					pubstatLastUpdate = System.Environment.TickCount;
 				}
 				return true;
 			} catch (Exception e) {
