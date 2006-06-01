@@ -105,7 +105,7 @@ namespace LFS_ServerBrowser
 			// labe3
 			// 
 			this.labe3.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-			this.labe3.Location = new System.Drawing.Point(291, 9);
+			this.labe3.Location = new System.Drawing.Point(283, 9);
 			this.labe3.Name = "labe3";
 			this.labe3.Size = new System.Drawing.Size(36, 23);
 			this.labe3.TabIndex = 5;
@@ -114,7 +114,7 @@ namespace LFS_ServerBrowser
 			// label1
 			// 
 			this.label1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-			this.label1.Location = new System.Drawing.Point(237, 32);
+			this.label1.Location = new System.Drawing.Point(229, 32);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(90, 23);
 			this.label1.TabIndex = 6;
@@ -171,7 +171,7 @@ namespace LFS_ServerBrowser
 			this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.btnAddFriend});
 			this.contextMenu.Name = "contextMenu";
-			this.contextMenu.Size = new System.Drawing.Size(156, 48);
+			this.contextMenu.Size = new System.Drawing.Size(156, 26);
 			this.contextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuOpening);
 			// 
 			// btnAddFriend
@@ -216,7 +216,7 @@ namespace LFS_ServerBrowser
 			// 
 			// labelPing
 			// 
-			this.labelPing.Location = new System.Drawing.Point(333, 9);
+			this.labelPing.Location = new System.Drawing.Point(319, 9);
 			this.labelPing.Name = "labelPing";
 			this.labelPing.Size = new System.Drawing.Size(91, 23);
 			this.labelPing.TabIndex = 15;
@@ -224,9 +224,9 @@ namespace LFS_ServerBrowser
 			// 
 			// labelTrack
 			// 
-			this.labelTrack.Location = new System.Drawing.Point(333, 32);
+			this.labelTrack.Location = new System.Drawing.Point(320, 32);
 			this.labelTrack.Name = "labelTrack";
-			this.labelTrack.Size = new System.Drawing.Size(91, 23);
+			this.labelTrack.Size = new System.Drawing.Size(115, 23);
 			this.labelTrack.TabIndex = 16;
 			this.labelTrack.Text = "label3";
 			// 
