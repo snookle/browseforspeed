@@ -511,7 +511,7 @@ namespace libbrowseforspeed {
 
 		public static int getPubStatInfo(ref ServerInformation serverInfo) {
 			try {
-				if (pubstatStream != null && System.Environment.TickCount > (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
+				if (pubstatStream == null || System.Environment.TickCount > (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
 					HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1");
 					request.Timeout = 4000;
 					HttpWebResponse response = (HttpWebResponse)request.GetResponse();
