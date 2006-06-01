@@ -1111,6 +1111,11 @@ namespace LFS_ServerBrowser
 			}
 			
 		}
+		
+		void RbJoinCheckedChanged(object sender, System.EventArgs e)
+		{
+			config.joinOnClick = rbJoin.Checked;
+		}
 	}
 /// Horray for code nicked from the MSDN!
 public class ListViewColumnSorter : IComparer

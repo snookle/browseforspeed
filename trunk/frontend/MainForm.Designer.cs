@@ -727,6 +727,7 @@ namespace LFS_ServerBrowser
 			this.rbJoin.TabStop = true;
 			this.rbJoin.Text = "Join server";
 			this.rbJoin.UseVisualStyleBackColor = true;
+			this.rbJoin.CheckedChanged += new System.EventHandler(this.RbJoinCheckedChanged);
 			// 
 			// rbView
 			// 
