@@ -82,6 +82,7 @@ namespace LFS_ServerBrowser
 				} catch (Exception e) { joinOnClick = true; }
 				return true;
 			} catch (FileNotFoundException fe) {
+				MessageBox.Show("No existing configuration data found.\nPlease set this up now.", "", MessageBoxButtons.OK);
 				return false;
 			}
 			catch (Exception e) {
@@ -161,14 +162,15 @@ namespace LFS_ServerBrowser
 	public partial class MainForm
 	{
 		static string bfs_version = "4";
-		static string download_url = "http://browseforspeed.whatsbeef.net";
-		static string version_check_url = "http://browseforspeed.whatsbeef.net/versioncheck.pl";
+		static string download_url = "http://www.browseforspeed.net";
+		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
 		
 		public static String appTitle = "Browse For Speed";
 		static String configFilename = Application.StartupPath + "\\config.cfg";
 		static String configXMLFilename = Application.StartupPath + "\\config.xml";
 		static String favFilename = Application.StartupPath + "\\favourite.servers";
 		static String favXMLFilename = Application.StartupPath + "\\favourites.xml";
+		static String friendFilename = Application.StartupPath + "\\friends.xml"; 
 
 		private CheckBox[] cars;
 		private Button[] groups;
@@ -178,6 +180,7 @@ namespace LFS_ServerBrowser
 
 		private ArrayList serverList;
 		private ArrayList favServerList;
+		private ArrayList friendList;
 
 		private int totalServers;
 		private int numQueried;
@@ -243,6 +246,7 @@ namespace LFS_ServerBrowser
 			}
 			serverList = new ArrayList();
 			favServerList = new ArrayList();
+			friendList = new ArrayList();
 			lvwColumnSorter = new ListViewColumnSorter();
 			lvwColumnSorter.SortColumn = 1;
 			lvwColumnSorter.Order = SortOrder.Ascending;
@@ -250,6 +254,9 @@ namespace LFS_ServerBrowser
 			lvMain.Sort();
 			lvFavourites.ListViewItemSorter = lvwColumnSorter;
 			lvFavourites.Sort();
+			lvFriends.ListViewItemSorter = lvwColumnSorter;
+			lvwColumnSorter.SortColumn = 1;
+			lvFriends.Sort();
 			s = new ServerInformationForm(this);
 			q = new LFSQuery();
 			//search for LFS.exe
@@ -267,7 +274,7 @@ namespace LFS_ServerBrowser
 				config = new Configuration(configFilename);
 				if (!config.Load()) {
 					//config not valid, take them to config screen
-					tabControl.SelectTab(2);
+					tabControl.SelectTab(tabControl.TabPages.IndexOf(tabConfig));
 					config.disableWait =  false;
 					config.checkNewVersion = false;
 					this.lastTabSelected = 2;
@@ -320,7 +327,7 @@ namespace LFS_ServerBrowser
 					pathList.SelectedIndex = 0;
 				}
 			}
-
+			ReadFriends();
 			cbTracks.SelectedIndex = 0;
 
 		}
@@ -637,7 +644,7 @@ namespace LFS_ServerBrowser
 		}
 
 		void AboutToolStripMenuItem1Click(object sender, System.EventArgs e) {
-			MessageBox.Show("Browse For Speed - http://browseforspeed.whatsbeef.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.", "About", MessageBoxButtons.OK);
+			MessageBox.Show("Browse For Speed 0."+bfs_version+" - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.", "About", MessageBoxButtons.OK);
 		}
 
 		void ContextMenuBrowserOpening(object sender, System.ComponentModel.CancelEventArgs e)
@@ -737,10 +744,79 @@ namespace LFS_ServerBrowser
     			tw.Close();
 			}
     		catch (Exception ex) {
-				MessageBox.Show("An error writing to the favourite server file occured: " +ex.Message, "Browsw For Speed", MessageBoxButtons.OK);
+				MessageBox.Show("An error writing to the favourite server file occured: " +ex.Message, "Browse For Speed", MessageBoxButtons.OK);
 			}
 
 		}
+
+		public void AddFriend(string name, bool writeToFile)
+		{
+			if (friendList.IndexOf(name) == -1)
+				friendList.Add(name);
+			if (lvFriends.Items.IndexOfKey(name) == -1) {
+				ServerInformation info;
+				int result = LFSQuery.getPubStatInfo(name, out info);
+				ListViewItem lvi;
+				if (result == 0 && !cbHideOffline.Checked) { //offline
+					lvi = lvFriends.Items.Add(name, name, "");
+					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, "Offline"));
+					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, "N/A"));
+					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "N/A"));
+				} else if (result == 1) {
+					lvi = lvFriends.Items.Add(name, name, "");
+					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi,info.hostname));
+					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, (info.passworded ? "Yes" : "No")));
+					String players = "";
+					foreach (string player in info.racerNames) {
+						players += player + ", ";
+					}
+					players = players.Remove(players.Length - 2, 2).ToString();	
+					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, players));
+				}
+			}
+			if (writeToFile)
+				WriteFriends();
+		}
+		
+		void WriteFriends()
+		{
+			try {
+				XmlTextWriter tw = new XmlTextWriter(friendFilename, null);
+				tw.Formatting = Formatting.Indented;
+				tw.WriteStartDocument();
+				tw.WriteStartElement("friends");
+				tw.WriteAttributeString("version", "1");
+				foreach (String friend in friendList) {
+					tw.WriteStartElement("friend");
+					tw.WriteAttributeString("name", friend);
+					tw.WriteEndElement();
+				}
+				tw.WriteFullEndElement();
+				tw.Close();
+			} catch (Exception ex) {
+				MessageBox.Show("An error writing to the friends file occured: " +ex.Message, "Browsw For Speed", MessageBoxButtons.OK);
+			}
+			
+		}
+		
+		void ReadFriends()
+		{
+			try{
+				XmlDocument doc = new XmlDocument();
+				doc.Load(friendFilename);
+				XmlNodeList list = doc.GetElementsByTagName("friends");
+				list = ((XmlElement)list[0]).GetElementsByTagName("friend");
+				foreach (XmlElement friend in list) {
+					AddFriend(friend.GetAttribute("name"), false);
+				}
+			} catch (FileNotFoundException fnfe){
+			} catch (Exception e) {
+				MessageBox.Show("Error loading friends: " + e.Message + "\nA copy was saved as " + friendFilename + ".backup", "", MessageBoxButtons.OK);
+				File.Copy(friendFilename, friendFilename +".backup", true);
+			}
+			lvFriends.Sort();
+		}
+
 
 		void ContextMenuFavOpening(object sender, System.ComponentModel.CancelEventArgs e)
 		{
@@ -804,6 +880,7 @@ namespace LFS_ServerBrowser
 			UpdateConfig();
 			config.Save(configXMLFilename);
 			WriteFav();
+			WriteFriends();
 			this.Hide();
 			SortedList l = new SortedList();
 		}
@@ -975,6 +1052,67 @@ namespace LFS_ServerBrowser
 				}
 			}
 		}
+		
+		void BtnRefreshFriendClick(object sender, System.EventArgs e)
+		{
+			lvFriends.Items.Clear();
+			foreach(string friend in friendList){
+				AddFriend(friend, false);
+			}
+			lvFriends.Sort();
+		}
+		
+		void CheckBox2CheckedChanged(object sender, System.EventArgs e)
+		{
+			BtnRefreshFriendClick(sender, e);
+		}
+		
+		void LvFriendsSelectedIndexChanged(object sender, System.EventArgs e)
+		{
+			btnJoinFriend.Enabled = (lvFriends.SelectedItems.Count > 0 && lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text != "Offline");
+		}
+		
+		void JoinFriendClick(object sender, System.EventArgs e)
+		{
+			if ((lvFriends.SelectedItems.Count > 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == "Offline"))
+				return;
+			string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
+			LoadLFS(hostname, "S2", edtPasswordMain.Text);
+		}
+		
+		void BtnAddFriendClick(object sender, System.EventArgs e)
+		{
+			AddFriend(edtFriendName.Text, true);
+			lvFriends.Sort();
+		}
+		
+		void RemoveFriendToolStripMenuItemClick(object sender, System.EventArgs e)
+		{
+			if (lvFriends.SelectedItems.Count == -1)
+				return;
+			string name =  lvFriends.Items[lvFriends.SelectedItems[0].Index].Text;
+			friendList.RemoveAt(friendList.IndexOf(name));
+			lvFriends.Items.RemoveByKey(name);
+			
+		}
+		
+		void ContextMenuFriendsOpening(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+			bool enabled = (lvFriends.SelectedItems.Count > 0);
+			removeFriendToolStripMenuItem.Enabled = enabled;
+			joinServerMenuFriends.Enabled = enabled && (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text != "Offline");
+		}
+		
+		void LvFriendsDoubleClick(object sender, System.EventArgs e)
+		{
+			if ((lvFriends.SelectedItems.Count < 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == "Offline"))
+				return;
+			string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
+			string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
+			if (MessageBox.Show("Do you want to join " + friend + " at " + hostname + "?", "Join Friend?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+				LoadLFS(hostname, "S2", edtPasswordMain.Text);
+			}
+		}
 	}
 /// Horray for code nicked from the MSDN!
 public class ListViewColumnSorter : IComparer
@@ -1004,6 +1142,8 @@ public class ListViewColumnSorter : IComparer
 				int playersX = Convert.ToInt32(listviewX.SubItems[ColumnToSort].Text.Split('/')[0]);
 				int playersY = Convert.ToInt32(listviewY.SubItems[ColumnToSort].Text.Split('/')[0]);
 				compareResult = ObjectCompare.Compare(playersX, playersY);
+		} else  if (columnName == "Server" && (listviewX.SubItems[ColumnToSort].Text == "Offline" || listviewY.SubItems[ColumnToSort].Text == "Offline")) {
+				compareResult = (listviewX.SubItems[ColumnToSort].Text == "Offline" ? listviewY.SubItems[ColumnToSort].Text == "Offline" ? 0 : 1 : -1);
 		} else {
 			compareResult = ObjectCompare.Compare(listviewX.SubItems[ColumnToSort].Text, listviewY.SubItems[ColumnToSort].Text);
 		}

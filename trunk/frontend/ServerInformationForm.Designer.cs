@@ -36,6 +36,7 @@ namespace LFS_ServerBrowser
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.buttonInfoJoin = new System.Windows.Forms.Button();
 			this.buttonInfoClose = new System.Windows.Forms.Button();
 			this.buttonInfoRefresh = new System.Windows.Forms.Button();
@@ -47,6 +48,8 @@ namespace LFS_ServerBrowser
 			this.textInfoPassword = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.listPlayers = new System.Windows.Forms.ListBox();
+			this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.btnAddFriend = new System.Windows.Forms.ToolStripMenuItem();
 			this.label6 = new System.Windows.Forms.Label();
 			this.labelServerName = new System.Windows.Forms.Label();
 			this.labelInfo = new System.Windows.Forms.Label();
@@ -56,6 +59,7 @@ namespace LFS_ServerBrowser
 			this.label3 = new System.Windows.Forms.Label();
 			this.labelPrivate = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
+			this.contextMenu.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// buttonInfoJoin
@@ -153,6 +157,7 @@ namespace LFS_ServerBrowser
 			// 
 			// listPlayers
 			// 
+			this.listPlayers.ContextMenuStrip = this.contextMenu;
 			this.listPlayers.FormattingEnabled = true;
 			this.listPlayers.Items.AddRange(new object[] {
 									"Retrieving...."});
@@ -160,6 +165,21 @@ namespace LFS_ServerBrowser
 			this.listPlayers.Name = "listPlayers";
 			this.listPlayers.Size = new System.Drawing.Size(400, 212);
 			this.listPlayers.TabIndex = 0;
+			// 
+			// contextMenu
+			// 
+			this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+									this.btnAddFriend});
+			this.contextMenu.Name = "contextMenu";
+			this.contextMenu.Size = new System.Drawing.Size(156, 48);
+			this.contextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuOpening);
+			// 
+			// btnAddFriend
+			// 
+			this.btnAddFriend.Name = "btnAddFriend";
+			this.btnAddFriend.Size = new System.Drawing.Size(155, 22);
+			this.btnAddFriend.Text = "&Add to Friends";
+			this.btnAddFriend.Click += new System.EventHandler(this.BtnAddFriendClick);
 			// 
 			// label6
 			// 
@@ -258,9 +278,12 @@ namespace LFS_ServerBrowser
 			this.Text = "Server Information";
 			this.Load += new System.EventHandler(this.ServerInformationFormLoad);
 			this.groupBox1.ResumeLayout(false);
+			this.contextMenu.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem btnAddFriend;
+		private System.Windows.Forms.ContextMenuStrip contextMenu;
 		private System.Windows.Forms.Label labelPrivate;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.ListBox listPlayers;

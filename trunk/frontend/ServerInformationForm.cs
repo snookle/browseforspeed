@@ -159,5 +159,17 @@ namespace LFS_ServerBrowser {
 		{
 			this.info.password = textInfoPassword.Text;
 		}
+		
+		void ContextMenuOpening(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+			btnAddFriend.Enabled = ((listPlayers.SelectedIndex != -1) && (listPlayers.Items[listPlayers.SelectedIndex].ToString() != "No players currently on the server."));
+		}
+		
+		void BtnAddFriendClick(object sender, System.EventArgs e)
+		{
+			if (listPlayers.SelectedIndex == -1)
+				return;
+			main.AddFriend(listPlayers.Items[listPlayers.SelectedIndex].ToString(), true);
+		}
 	}
 }
