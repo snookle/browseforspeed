@@ -61,6 +61,7 @@
     <EmbeddedResource Include="ServerInformationForm.resx">
       <DependentUpon>ServerInformationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ca3r.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>
