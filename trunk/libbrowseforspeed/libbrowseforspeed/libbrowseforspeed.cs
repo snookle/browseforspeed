@@ -64,6 +64,9 @@ namespace libbrowseforspeed {
 		public static ulong[] CAR_GROUP_DISALLOW = {0, 243583, 280704, 511726, 522368, 524028, 392896};
 		public static ulong[] CAR_GROUP_DONTCARE = {524287, 280704, 14207, 12561, 319, 259, 291};
 		
+		public static Hashtable trackCodes;
+
+		
 		public static int QTHREADS = 16;
 		public static int THREAD_WAIT = 150;
 		public static bool xpsp2_wait = true;
@@ -105,6 +108,62 @@ namespace libbrowseforspeed {
 		private const int PUBSTAT_CACHE_TIME = 1000 * 30; //30 second cache
 
 		public static event ServerQueried queried;
+
+		public LFSQuery() {
+			trackCodes = new Hashtable(52);
+			trackCodes.Add("BL1", "Blackwood");
+			trackCodes.Add("BL1R", "Blackwood Rev");
+			trackCodes.Add("BL2", "Blackwood Rallyx");
+			trackCodes.Add("BL2R", "Blackwood Rallyx Rev");
+			trackCodes.Add("BL3", "Blackwood Car Park");
+			trackCodes.Add("SO1", "South City Classic");
+			trackCodes.Add("SO1R", "South City Classic Rev");
+			trackCodes.Add("SO2", "South City Sprint 1");
+			trackCodes.Add("SO2R", "South City Sprint 1 Rev");
+			trackCodes.Add("SO3", "South City Sprint 2");
+			trackCodes.Add("SO3R", "South City Sprint 2 Rev");
+			trackCodes.Add("SO4", "South City Long");
+			trackCodes.Add("SO4R", "South City Long Rev");
+			trackCodes.Add("SO5", "South City Town");
+			trackCodes.Add("SO5R", "South City Town Rev");
+			trackCodes.Add("FE1", "Fern Bay Club");
+			trackCodes.Add("FE1R", "Fern Bay Club Rev");
+			trackCodes.Add("FE2", "Fern Bay Green");
+			trackCodes.Add("FE2R", "Fern Bay Green Rev");
+			trackCodes.Add("FE3", "Fern Bay Gold");
+			trackCodes.Add("FE3R", "Fern Bay Gold Rev");
+			trackCodes.Add("FE4", "Fern Bay Black");
+			trackCodes.Add("FE4R", "Fern Bay Black Rev");
+			trackCodes.Add("FE5", "Fern Bay Rally Cross");
+			trackCodes.Add("FE5R", "Fern Bay Rally Cross Rev");
+			trackCodes.Add("FE6", "Fern Bay Rallyx Green");
+			trackCodes.Add("FE6R", "Fern Bay Rallyx Green Rev");
+			trackCodes.Add("AU1", "Autocross");
+			trackCodes.Add("AU2", "Skid Pan");
+			trackCodes.Add("AU3", "Drag Strip");
+			trackCodes.Add("AU4", "Drag Strip 8 plyr");
+			trackCodes.Add("KY1R", "Kyoto Oval Rev");
+			trackCodes.Add("KY2", "Kyoto National");
+			trackCodes.Add("KY2R", "Kyoto National Rev");
+			trackCodes.Add("KY3", "Kyoto GP Long");
+			trackCodes.Add("KY3R", "Kyoto GP Long Rev");
+			trackCodes.Add("WE1", "Westhill International");
+			trackCodes.Add("WE2", "Westhill International Rev");
+			trackCodes.Add("AS1", "Aston Cadet");
+			trackCodes.Add("AS1R", "Aston Cadet Rev");
+			trackCodes.Add("AS2", "Aston Club");
+			trackCodes.Add("AS2R", "Aston Club Rev");
+			trackCodes.Add("AS3", "Aston National");
+			trackCodes.Add("AS3R", "Aston National Rev");
+			trackCodes.Add("AS4", "Aston Historic");
+			trackCodes.Add("AS4R", "Aston Historic Rev");
+			trackCodes.Add("AS5", "Aston Grand Prix");
+			trackCodes.Add("AS5R", "Aston Grand Prix Rev");
+			trackCodes.Add("AS6", "Aston Grand Touring");
+			trackCodes.Add("AS6", "Aston Grand Touring Rev");
+			trackCodes.Add("AS7", "Aston North");
+			trackCodes.Add("AS7R", "Aston North Rev");			
+		}
 	
 		public class ServerQuery {
 			private hostInfo host;
@@ -328,10 +387,6 @@ namespace libbrowseforspeed {
 				Array.Copy(footer, 0, ret, pos, footer.Length);
 				return ret;
 			}
-
-		}
-
-		public LFSQuery() {
 
 		}
 
