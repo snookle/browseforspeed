@@ -1021,6 +1021,7 @@ namespace LFS_ServerBrowser
 
 		void CbUsePSCheckStateChanged(object sender, System.EventArgs e)
 		{
+			config.startPS = ((CheckBox)sender).Checked;
 			txtPSPath.Enabled = ((CheckBox)sender).Checked;
 			txtInsimPort.Enabled = ((CheckBox)sender).Checked;
 			btnBrowsePS.Enabled = ((CheckBox)sender).Checked;
