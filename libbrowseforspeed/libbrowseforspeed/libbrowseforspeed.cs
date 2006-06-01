@@ -139,7 +139,7 @@ namespace libbrowseforspeed {
 			trackCodes.Add("FE6", "Fern Bay Rallyx Green");
 			trackCodes.Add("FE6R", "Fern Bay Rallyx Green Rev");
 			trackCodes.Add("AU1", "Autocross");
-			trackCodes.Add("AU2", "Skid Pan");
+			trackCodes.Add("AU2", "Skid Pad");
 			trackCodes.Add("AU3", "Drag Strip");
 			trackCodes.Add("AU4", "Drag Strip 8 plyr");
 			trackCodes.Add("KY1", "Kyoto Oval");
