@@ -99,6 +99,10 @@ namespace libbrowseforspeed {
 
 		private static bool keepQuerying;
 		private static int totalServers;
+		
+		private static Stream pubstatStream;
+		private static int pubstatLastUpdate;
+		private const int PUBSTAT_CACHE_TIME = 1000 * 30; //30 second cache
 
 		public static event ServerQueried queried;
 	
@@ -505,17 +509,23 @@ namespace libbrowseforspeed {
 			}
 			return carNames.ToArray();
 		}
+		
+		public static void clearPubstatCache() {
+			pubstatStream = null;
+		}
 
 		public static int getPubStatInfo(ref ServerInformation serverInfo) {
 			try {
-				HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1");
-				request.Timeout = 4000;
-				HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-				Stream stream = response.GetResponseStream();
-				Stream s = new GZipInputStream(stream);
+				if (pubstatStream == null || System.Environment.TickCount > (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
+					HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1");
+					request.Timeout = 4000;
+					HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+					pubstatStream = response.GetResponseStream();					
+				}
+				Stream s = new GZipInputStream(pubstatStream);
 				byte[] buf = getStreamBytes(s);
 				s.Close();
-				stream.Close();
+				//pubstream.Close();
 				int i = 0;
 				string[] racers = null;
 				
