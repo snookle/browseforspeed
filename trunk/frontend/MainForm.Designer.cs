@@ -558,7 +558,7 @@ namespace LFS_ServerBrowser
 			// edtFriendName
 			// 
 			this.edtFriendName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.edtFriendName.Location = new System.Drawing.Point(509, 538);
+			this.edtFriendName.Location = new System.Drawing.Point(583, 537);
 			this.edtFriendName.Name = "edtFriendName";
 			this.edtFriendName.Size = new System.Drawing.Size(182, 21);
 			this.edtFriendName.TabIndex = 6;
@@ -567,7 +567,7 @@ namespace LFS_ServerBrowser
 			// btnAddFriend
 			// 
 			this.btnAddFriend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnAddFriend.Location = new System.Drawing.Point(697, 538);
+			this.btnAddFriend.Location = new System.Drawing.Point(771, 536);
 			this.btnAddFriend.Name = "btnAddFriend";
 			this.btnAddFriend.Size = new System.Drawing.Size(75, 23);
 			this.btnAddFriend.TabIndex = 5;
@@ -625,7 +625,7 @@ namespace LFS_ServerBrowser
 			this.lvFriends.Location = new System.Drawing.Point(8, 6);
 			this.lvFriends.MultiSelect = false;
 			this.lvFriends.Name = "lvFriends";
-			this.lvFriends.Size = new System.Drawing.Size(838, 514);
+			this.lvFriends.Size = new System.Drawing.Size(838, 524);
 			this.lvFriends.TabIndex = 0;
 			this.lvFriends.UseCompatibleStateImageBehavior = false;
 			this.lvFriends.View = System.Windows.Forms.View.Details;
