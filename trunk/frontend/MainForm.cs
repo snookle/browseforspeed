@@ -921,7 +921,7 @@ namespace LFS_ServerBrowser
 		void TabControlSelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			//if we've just come from the configuration panel to another one
-			if (this.lastTabSelected == 2) {
+			if (tabControl.TabPages[this.lastTabSelected].Text  == "Configuration") {
 				UpdateConfig();
 				config.Save(configXMLFilename);
 			}
@@ -1021,7 +1021,6 @@ namespace LFS_ServerBrowser
 
 		void CbUsePSCheckStateChanged(object sender, System.EventArgs e)
 		{
-			config.startPS = ((CheckBox)sender).Checked;
 			txtPSPath.Enabled = ((CheckBox)sender).Checked;
 			txtInsimPort.Enabled = ((CheckBox)sender).Checked;
 			btnBrowsePS.Enabled = ((CheckBox)sender).Checked;
@@ -1110,11 +1109,6 @@ namespace LFS_ServerBrowser
 				edtFriendName.Text = "";
 			}
 			
-		}
-		
-		void RbJoinCheckedChanged(object sender, System.EventArgs e)
-		{
-			config.joinOnClick = rbJoin.Checked;
 		}
 	}
 /// Horray for code nicked from the MSDN!
