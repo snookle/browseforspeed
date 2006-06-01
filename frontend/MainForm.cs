@@ -210,6 +210,7 @@ namespace LFS_ServerBrowser
 		public MainForm()
 		{
 			InitializeComponent();
+			this.Icon = new Icon(GetType().Assembly.GetManifestResourceStream("BrowseForSpeed.ca3r.ico"));
 			cars = new CheckBox[LFSQuery.CAR_BITS.Length];
 			groups = new Button[LFSQuery.CAR_GROUP_BITS.Length];
 			for (int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) { //create car checkboxes
