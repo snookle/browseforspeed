@@ -148,7 +148,7 @@ namespace LFS_ServerBrowser
 									this.aboutToolStripMenuItem});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.Name = "menuStrip";
-			this.menuStrip.Size = new System.Drawing.Size(792, 24);
+			this.menuStrip.Size = new System.Drawing.Size(862, 24);
 			this.menuStrip.TabIndex = 0;
 			this.menuStrip.Text = "menuStrip1";
 			// 
@@ -193,7 +193,7 @@ namespace LFS_ServerBrowser
 			this.tabControl.Location = new System.Drawing.Point(0, 24);
 			this.tabControl.Name = "tabControl";
 			this.tabControl.SelectedIndex = 0;
-			this.tabControl.Size = new System.Drawing.Size(792, 527);
+			this.tabControl.Size = new System.Drawing.Size(862, 591);
 			this.tabControl.TabIndex = 1;
 			this.tabControl.SelectedIndexChanged += new System.EventHandler(this.TabControlSelectedIndexChanged);
 			// 
@@ -211,7 +211,7 @@ namespace LFS_ServerBrowser
 			this.tabMain.Location = new System.Drawing.Point(4, 22);
 			this.tabMain.Name = "tabMain";
 			this.tabMain.Padding = new System.Windows.Forms.Padding(3);
-			this.tabMain.Size = new System.Drawing.Size(784, 501);
+			this.tabMain.Size = new System.Drawing.Size(854, 565);
 			this.tabMain.TabIndex = 0;
 			this.tabMain.Text = "Server Browser";
 			this.tabMain.UseVisualStyleBackColor = true;
@@ -219,7 +219,7 @@ namespace LFS_ServerBrowser
 			// edtFindUserMain
 			// 
 			this.edtFindUserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.edtFindUserMain.Location = new System.Drawing.Point(497, 472);
+			this.edtFindUserMain.Location = new System.Drawing.Point(567, 536);
 			this.edtFindUserMain.Name = "edtFindUserMain";
 			this.edtFindUserMain.Size = new System.Drawing.Size(158, 21);
 			this.edtFindUserMain.TabIndex = 9;
@@ -227,7 +227,7 @@ namespace LFS_ServerBrowser
 			// label1
 			// 
 			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.label1.Location = new System.Drawing.Point(441, 477);
+			this.label1.Location = new System.Drawing.Point(511, 541);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(58, 21);
 			this.label1.TabIndex = 8;
@@ -236,7 +236,7 @@ namespace LFS_ServerBrowser
 			// edtPasswordMain
 			// 
 			this.edtPasswordMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.edtPasswordMain.Location = new System.Drawing.Point(262, 474);
+			this.edtPasswordMain.Location = new System.Drawing.Point(262, 538);
 			this.edtPasswordMain.Name = "edtPasswordMain";
 			this.edtPasswordMain.Size = new System.Drawing.Size(173, 21);
 			this.edtPasswordMain.TabIndex = 7;
@@ -244,7 +244,7 @@ namespace LFS_ServerBrowser
 			// label6
 			// 
 			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.label6.Location = new System.Drawing.Point(170, 477);
+			this.label6.Location = new System.Drawing.Point(170, 541);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(97, 16);
 			this.label6.TabIndex = 6;
@@ -253,7 +253,7 @@ namespace LFS_ServerBrowser
 			// btnFindUserMain
 			// 
 			this.btnFindUserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnFindUserMain.Location = new System.Drawing.Point(661, 472);
+			this.btnFindUserMain.Location = new System.Drawing.Point(731, 536);
 			this.btnFindUserMain.Name = "btnFindUserMain";
 			this.btnFindUserMain.Size = new System.Drawing.Size(115, 23);
 			this.btnFindUserMain.TabIndex = 5;
@@ -267,9 +267,9 @@ namespace LFS_ServerBrowser
 									| System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBox2.Controls.Add(this.cbEmpty);
 			this.groupBox2.Controls.Add(this.cbTracks);
-			this.groupBox2.Location = new System.Drawing.Point(661, 6);
+			this.groupBox2.Location = new System.Drawing.Point(731, 6);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(115, 458);
+			this.groupBox2.Size = new System.Drawing.Size(115, 522);
 			this.groupBox2.TabIndex = 4;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Filters";
@@ -294,7 +294,7 @@ namespace LFS_ServerBrowser
 									"South City",
 									"Fern Bay",
 									"Autocross",
-									"Kyoto Ring",
+									"Kyoto",
 									"Westhill",
 									"Aston"});
 			this.cbTracks.Location = new System.Drawing.Point(6, 369);
@@ -323,7 +323,7 @@ namespace LFS_ServerBrowser
 			this.lvMain.Location = new System.Drawing.Point(8, 6);
 			this.lvMain.MultiSelect = false;
 			this.lvMain.Name = "lvMain";
-			this.lvMain.Size = new System.Drawing.Size(647, 460);
+			this.lvMain.Size = new System.Drawing.Size(717, 524);
 			this.lvMain.TabIndex = 3;
 			this.lvMain.UseCompatibleStateImageBehavior = false;
 			this.lvMain.View = System.Windows.Forms.View.Details;
@@ -334,7 +334,7 @@ namespace LFS_ServerBrowser
 			// columnHeaderName
 			// 
 			this.columnHeaderName.Text = "Server Name";
-			this.columnHeaderName.Width = 200;
+			this.columnHeaderName.Width = 158;
 			// 
 			// columnHeaderPing
 			// 
@@ -358,6 +358,7 @@ namespace LFS_ServerBrowser
 			// columnHeaderTrack
 			// 
 			this.columnHeaderTrack.Text = "Track";
+			this.columnHeaderTrack.Width = 134;
 			// 
 			// columnHeaderCars
 			// 
@@ -398,7 +399,7 @@ namespace LFS_ServerBrowser
 			// btnRefreshMain
 			// 
 			this.btnRefreshMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.btnRefreshMain.Location = new System.Drawing.Point(89, 475);
+			this.btnRefreshMain.Location = new System.Drawing.Point(89, 539);
 			this.btnRefreshMain.Name = "btnRefreshMain";
 			this.btnRefreshMain.Size = new System.Drawing.Size(75, 23);
 			this.btnRefreshMain.TabIndex = 2;
@@ -410,7 +411,7 @@ namespace LFS_ServerBrowser
 			// 
 			this.btnJoinMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btnJoinMain.Enabled = false;
-			this.btnJoinMain.Location = new System.Drawing.Point(8, 475);
+			this.btnJoinMain.Location = new System.Drawing.Point(8, 539);
 			this.btnJoinMain.Name = "btnJoinMain";
 			this.btnJoinMain.Size = new System.Drawing.Size(75, 23);
 			this.btnJoinMain.TabIndex = 1;
@@ -425,7 +426,7 @@ namespace LFS_ServerBrowser
 			this.tabFavourites.Controls.Add(this.lvFavourites);
 			this.tabFavourites.Location = new System.Drawing.Point(4, 22);
 			this.tabFavourites.Name = "tabFavourites";
-			this.tabFavourites.Size = new System.Drawing.Size(784, 501);
+			this.tabFavourites.Size = new System.Drawing.Size(854, 565);
 			this.tabFavourites.TabIndex = 2;
 			this.tabFavourites.Text = "Favourites";
 			this.tabFavourites.UseVisualStyleBackColor = true;
@@ -433,7 +434,7 @@ namespace LFS_ServerBrowser
 			// buttonRefreshFav
 			// 
 			this.buttonRefreshFav.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.buttonRefreshFav.Location = new System.Drawing.Point(89, 475);
+			this.buttonRefreshFav.Location = new System.Drawing.Point(89, 539);
 			this.buttonRefreshFav.Name = "buttonRefreshFav";
 			this.buttonRefreshFav.Size = new System.Drawing.Size(75, 23);
 			this.buttonRefreshFav.TabIndex = 6;
@@ -445,7 +446,7 @@ namespace LFS_ServerBrowser
 			// 
 			this.btnJoinFav.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btnJoinFav.Enabled = false;
-			this.btnJoinFav.Location = new System.Drawing.Point(8, 475);
+			this.btnJoinFav.Location = new System.Drawing.Point(8, 539);
 			this.btnJoinFav.Name = "btnJoinFav";
 			this.btnJoinFav.Size = new System.Drawing.Size(75, 23);
 			this.btnJoinFav.TabIndex = 5;
@@ -471,7 +472,7 @@ namespace LFS_ServerBrowser
 			this.lvFavourites.Location = new System.Drawing.Point(8, 6);
 			this.lvFavourites.MultiSelect = false;
 			this.lvFavourites.Name = "lvFavourites";
-			this.lvFavourites.Size = new System.Drawing.Size(768, 461);
+			this.lvFavourites.Size = new System.Drawing.Size(838, 525);
 			this.lvFavourites.TabIndex = 4;
 			this.lvFavourites.UseCompatibleStateImageBehavior = false;
 			this.lvFavourites.View = System.Windows.Forms.View.Details;
@@ -501,6 +502,7 @@ namespace LFS_ServerBrowser
 			// columnHeaderFavTrack
 			// 
 			this.columnHeaderFavTrack.Text = "Track";
+			this.columnHeaderFavTrack.Width = 140;
 			// 
 			// columnHeaderFavCars
 			// 
@@ -548,21 +550,24 @@ namespace LFS_ServerBrowser
 			this.tabFriends.Controls.Add(this.lvFriends);
 			this.tabFriends.Location = new System.Drawing.Point(4, 22);
 			this.tabFriends.Name = "tabFriends";
-			this.tabFriends.Size = new System.Drawing.Size(784, 501);
+			this.tabFriends.Size = new System.Drawing.Size(854, 565);
 			this.tabFriends.TabIndex = 3;
 			this.tabFriends.Text = "Friends";
 			this.tabFriends.UseVisualStyleBackColor = true;
 			// 
 			// edtFriendName
 			// 
-			this.edtFriendName.Location = new System.Drawing.Point(513, 475);
+			this.edtFriendName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.edtFriendName.Location = new System.Drawing.Point(509, 538);
 			this.edtFriendName.Name = "edtFriendName";
 			this.edtFriendName.Size = new System.Drawing.Size(182, 21);
 			this.edtFriendName.TabIndex = 6;
+			this.edtFriendName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EdtFriendNameKeyDown);
 			// 
 			// btnAddFriend
 			// 
-			this.btnAddFriend.Location = new System.Drawing.Point(701, 475);
+			this.btnAddFriend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnAddFriend.Location = new System.Drawing.Point(697, 538);
 			this.btnAddFriend.Name = "btnAddFriend";
 			this.btnAddFriend.Size = new System.Drawing.Size(75, 23);
 			this.btnAddFriend.TabIndex = 5;
@@ -572,7 +577,8 @@ namespace LFS_ServerBrowser
 			// 
 			// cbHideOffline
 			// 
-			this.cbHideOffline.Location = new System.Drawing.Point(170, 475);
+			this.cbHideOffline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.cbHideOffline.Location = new System.Drawing.Point(166, 538);
 			this.cbHideOffline.Name = "cbHideOffline";
 			this.cbHideOffline.Size = new System.Drawing.Size(129, 24);
 			this.cbHideOffline.TabIndex = 4;
@@ -582,7 +588,8 @@ namespace LFS_ServerBrowser
 			// 
 			// btnRefreshFriend
 			// 
-			this.btnRefreshFriend.Location = new System.Drawing.Point(89, 475);
+			this.btnRefreshFriend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnRefreshFriend.Location = new System.Drawing.Point(85, 538);
 			this.btnRefreshFriend.Name = "btnRefreshFriend";
 			this.btnRefreshFriend.Size = new System.Drawing.Size(75, 23);
 			this.btnRefreshFriend.TabIndex = 2;
@@ -592,7 +599,9 @@ namespace LFS_ServerBrowser
 			// 
 			// btnJoinFriend
 			// 
-			this.btnJoinFriend.Location = new System.Drawing.Point(8, 475);
+			this.btnJoinFriend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnJoinFriend.Enabled = false;
+			this.btnJoinFriend.Location = new System.Drawing.Point(4, 538);
 			this.btnJoinFriend.Name = "btnJoinFriend";
 			this.btnJoinFriend.Size = new System.Drawing.Size(75, 23);
 			this.btnJoinFriend.TabIndex = 1;
@@ -602,6 +611,9 @@ namespace LFS_ServerBrowser
 			// 
 			// lvFriends
 			// 
+			this.lvFriends.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
 			this.lvFriends.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
 									this.columnFriendName,
 									this.columnFriendServer,
@@ -613,7 +625,7 @@ namespace LFS_ServerBrowser
 			this.lvFriends.Location = new System.Drawing.Point(8, 6);
 			this.lvFriends.MultiSelect = false;
 			this.lvFriends.Name = "lvFriends";
-			this.lvFriends.Size = new System.Drawing.Size(768, 463);
+			this.lvFriends.Size = new System.Drawing.Size(838, 514);
 			this.lvFriends.TabIndex = 0;
 			this.lvFriends.UseCompatibleStateImageBehavior = false;
 			this.lvFriends.View = System.Windows.Forms.View.Details;
@@ -670,7 +682,7 @@ namespace LFS_ServerBrowser
 			this.tabConfig.Location = new System.Drawing.Point(4, 22);
 			this.tabConfig.Name = "tabConfig";
 			this.tabConfig.Padding = new System.Windows.Forms.Padding(3);
-			this.tabConfig.Size = new System.Drawing.Size(784, 501);
+			this.tabConfig.Size = new System.Drawing.Size(854, 565);
 			this.tabConfig.TabIndex = 1;
 			this.tabConfig.Text = "Configuration";
 			this.tabConfig.UseVisualStyleBackColor = true;
@@ -689,7 +701,7 @@ namespace LFS_ServerBrowser
 			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox1.Location = new System.Drawing.Point(3, 3);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(778, 495);
+			this.groupBox1.Size = new System.Drawing.Size(848, 559);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Configuration";
@@ -734,7 +746,7 @@ namespace LFS_ServerBrowser
 			this.groupBox5.Controls.Add(this.label7);
 			this.groupBox5.Controls.Add(this.txtPSPath);
 			this.groupBox5.Controls.Add(this.cbUsePS);
-			this.groupBox5.Location = new System.Drawing.Point(6, 184);
+			this.groupBox5.Location = new System.Drawing.Point(11, 210);
 			this.groupBox5.Name = "groupBox5";
 			this.groupBox5.Size = new System.Drawing.Size(419, 124);
 			this.groupBox5.TabIndex = 16;
@@ -802,7 +814,7 @@ namespace LFS_ServerBrowser
 			this.groupBox3.Controls.Add(this.queryWait);
 			this.groupBox3.Controls.Add(this.cbQueryWait);
 			this.groupBox3.Controls.Add(this.label4);
-			this.groupBox3.Location = new System.Drawing.Point(6, 314);
+			this.groupBox3.Location = new System.Drawing.Point(11, 365);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(419, 174);
 			this.groupBox3.TabIndex = 14;
@@ -868,7 +880,7 @@ namespace LFS_ServerBrowser
 			// 
 			// btnCheckNewVersion
 			// 
-			this.btnCheckNewVersion.Location = new System.Drawing.Point(350, 141);
+			this.btnCheckNewVersion.Location = new System.Drawing.Point(355, 153);
 			this.btnCheckNewVersion.Name = "btnCheckNewVersion";
 			this.btnCheckNewVersion.Size = new System.Drawing.Size(75, 23);
 			this.btnCheckNewVersion.TabIndex = 13;
@@ -878,7 +890,7 @@ namespace LFS_ServerBrowser
 			// 
 			// cbNewVersion
 			// 
-			this.cbNewVersion.Location = new System.Drawing.Point(6, 141);
+			this.cbNewVersion.Location = new System.Drawing.Point(13, 151);
 			this.cbNewVersion.Name = "cbNewVersion";
 			this.cbNewVersion.Size = new System.Drawing.Size(322, 24);
 			this.cbNewVersion.TabIndex = 12;
@@ -888,14 +900,14 @@ namespace LFS_ServerBrowser
 			// pathList
 			// 
 			this.pathList.FormattingEnabled = true;
-			this.pathList.Location = new System.Drawing.Point(6, 38);
+			this.pathList.Location = new System.Drawing.Point(13, 41);
 			this.pathList.Name = "pathList";
 			this.pathList.Size = new System.Drawing.Size(322, 56);
 			this.pathList.TabIndex = 8;
 			// 
 			// label5
 			// 
-			this.label5.Location = new System.Drawing.Point(6, 97);
+			this.label5.Location = new System.Drawing.Point(11, 100);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(403, 41);
 			this.label5.TabIndex = 7;
@@ -905,7 +917,7 @@ namespace LFS_ServerBrowser
 			// 
 			// label2
 			// 
-			this.label2.Location = new System.Drawing.Point(6, 17);
+			this.label2.Location = new System.Drawing.Point(13, 20);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(114, 18);
 			this.label2.TabIndex = 5;
@@ -913,7 +925,7 @@ namespace LFS_ServerBrowser
 			// 
 			// buttonBrowse
 			// 
-			this.buttonBrowse.Location = new System.Drawing.Point(350, 38);
+			this.buttonBrowse.Location = new System.Drawing.Point(355, 41);
 			this.buttonBrowse.Name = "buttonBrowse";
 			this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
 			this.buttonBrowse.TabIndex = 4;
@@ -933,9 +945,9 @@ namespace LFS_ServerBrowser
 									this.statusTotal,
 									this.statusRefused,
 									this.statusNoReply});
-			this.statusStrip.Location = new System.Drawing.Point(0, 551);
+			this.statusStrip.Location = new System.Drawing.Point(0, 615);
 			this.statusStrip.Name = "statusStrip";
-			this.statusStrip.Size = new System.Drawing.Size(792, 22);
+			this.statusStrip.Size = new System.Drawing.Size(862, 22);
 			this.statusStrip.SizingGrip = false;
 			this.statusStrip.TabIndex = 2;
 			// 
@@ -964,7 +976,7 @@ namespace LFS_ServerBrowser
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(792, 573);
+			this.ClientSize = new System.Drawing.Size(862, 637);
 			this.Controls.Add(this.tabControl);
 			this.Controls.Add(this.menuStrip);
 			this.Controls.Add(this.statusStrip);

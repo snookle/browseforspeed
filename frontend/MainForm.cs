@@ -161,7 +161,8 @@ namespace LFS_ServerBrowser
 	/// </summary>
 	public partial class MainForm
 	{
-		static string bfs_version = "4";
+		static string bfs_version = "0.3";
+		static string version_check = "4";
 		static string download_url = "http://www.browseforspeed.net";
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
 		
@@ -449,7 +450,7 @@ namespace LFS_ServerBrowser
 			}
 			lvi.SubItems.Insert(3 - columnOffset, new ListViewItem.ListViewSubItem(lvi, info.players.ToString() +"/" + info.slots.ToString()));
 			lvi.SubItems.Insert(4 - columnOffset, new ListViewItem.ListViewSubItem(lvi, RulesToString(info.rules)));
-			lvi.SubItems.Insert(5 - columnOffset, new ListViewItem.ListViewSubItem(lvi, info.track));
+			lvi.SubItems.Insert(5 - columnOffset, new ListViewItem.ListViewSubItem(lvi, info.track));			
 			lvi.SubItems.Insert(6 - columnOffset, new ListViewItem.ListViewSubItem(lvi, cars));
 
 		}
@@ -468,7 +469,7 @@ namespace LFS_ServerBrowser
 						numServersNoReply = 0;
 					}
 					numQueried++;
-					string filter = isFavQuery ? "" : GetTrackFilter(cbTracks.Text);
+					string filter = cbTracks.Text == "All Tracks" ? "" : cbTracks.Text;					
 					if (info.success){
 						numServersDone++;
 						DisplayServer(info, filter, cbEmpty.Checked, isFavQuery);
@@ -644,7 +645,7 @@ namespace LFS_ServerBrowser
 		}
 
 		void AboutToolStripMenuItem1Click(object sender, System.EventArgs e) {
-			MessageBox.Show("Browse For Speed 0."+bfs_version+" - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.", "About", MessageBoxButtons.OK);
+			MessageBox.Show("Browse For Speed "+bfs_version+" - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.", "About", MessageBoxButtons.OK);
 		}
 
 		void ContextMenuBrowserOpening(object sender, System.ComponentModel.CancelEventArgs e)
@@ -886,26 +887,9 @@ namespace LFS_ServerBrowser
 		}
 
 
-		String GetTrackFilter(string track)
-		{
-			string filter = "";
-			switch (track){
-				case "All" : filter  = ""; break;
-				case "Blackwood" : filter = "BL"; break;
-				case "South City" : filter = "SO"; break;
-				case "Fern Bay" : filter = "FE"; break;
-				case "Autocross" : filter = "AU"; break;
-				case "Kyoto Ring" : filter = "KY"; break;
-				case "Westhill" : filter = "WE"; break;
-				case "Aston" : filter = "AS"; break;
-			}
-			return filter;
-
-		}
-
 		void ComboBoxTracksSelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			string filter = GetTrackFilter(cbTracks.Text);
+			string filter = (cbTracks.Text == "All Tracks" ? "" : cbTracks.Text);
 			lvMain.Items.Clear();
 			try{
 				foreach (ServerInformation info in serverList){
@@ -986,7 +970,7 @@ namespace LFS_ServerBrowser
 					Stream stream = response.GetResponseStream();
 					byte[] buf = new byte[1];
 					stream.Read(buf, 0, buf.Length);
-					if (buf[0] == bfs_version[0]) {
+					if (buf[0] == version_check[0]) {
 						if (botherUser) {
 							MessageBox.Show("Your version is up to date.", "", MessageBoxButtons.OK);
 						}
@@ -1081,9 +1065,10 @@ namespace LFS_ServerBrowser
 		}
 		
 		void BtnAddFriendClick(object sender, System.EventArgs e)
-		{
+		{			
 			AddFriend(edtFriendName.Text, true);
 			lvFriends.Sort();
+			edtFriendName.Text = "";
 		}
 		
 		void RemoveFriendToolStripMenuItemClick(object sender, System.EventArgs e)
@@ -1112,6 +1097,20 @@ namespace LFS_ServerBrowser
 			if (MessageBox.Show("Do you want to join " + friend + " at " + hostname + "?", "Join Friend?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
 				LoadLFS(hostname, "S2", edtPasswordMain.Text);
 			}
+		}
+		
+		void EdtFriendNameKeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e) {
+
+			
+		}
+		
+		void EdtFriendNameKeyDown(object sender, System.Windows.Forms.KeyEventArgs e) {
+			if (e.KeyCode == Keys.Enter) {
+				AddFriend(edtFriendName.Text, true);
+				lvFriends.Sort();
+				edtFriendName.Text = "";
+			}
+			
 		}
 	}
 /// Horray for code nicked from the MSDN!
