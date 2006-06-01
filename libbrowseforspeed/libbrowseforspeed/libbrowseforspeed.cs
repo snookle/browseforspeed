@@ -508,35 +508,46 @@ namespace libbrowseforspeed {
 		public static void clearPubstatCache() {
 			pubstatStream = null;
 		}
+		
+		public static ServerInformation getPubStatInfo(string playername) {
+			ServerInformation ret = new ServerInformation();
+			findHostOrPlayer(ref ret, playername);
+			if (ret.host == null) return null;
+			return ret;
+		}
 
 		public static int getPubStatInfo(ref ServerInformation serverInfo) {
-			try {
-				if (pubstatStream == null || System.Environment.TickCount > (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
-					HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1");
-					request.Timeout = 4000;
-					HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-					pubstatStream = response.GetResponseStream();
-					pubstatLastUpdate = System.Environment.TickCount;
-				}
+			return findHostOrPlayer(ref serverInfo, null);
+		}		
+		
+		private static int findHostOrPlayer(ref ServerInformation serverInfo, string racer) {
+			try {				
+				if (!getPubStatStream()) return -1;
 				Stream s = new GZipInputStream(pubstatStream);
 				byte[] buf = getStreamBytes(s);
 				s.Close();
-				//pubstream.Close();
 				int i = 0;
 				string[] racers = null;
-				
+				bool found = false;
 				while (i < buf.Length) {
 					string hostname = removeColourCodes(getLFSString(buf, i, 32));
 					int numRacers = (int)buf[i + 52];
-					if (hostname == serverInfo.hostname) {
+					if ((racer == null && hostname == serverInfo.hostname) || racer != null) {
 						racers = new string[numRacers];
 						for (int j = 0; j < numRacers; ++j) {
 							racers[j] = getLFSString(buf, i + 53 + (24 * j), 24);
+							if (!found && (racers[j] == racer)) {
+								found = true;
+							}
 						}
-						serverInfo.players = numRacers;
-						serverInfo.racerNames = racers;
-						serverInfo.passworded = ((ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]) & 8) != 0;
-						return 1;
+						if (found || racer == null) {
+							if (found) serverInfo = new ServerInformation();
+							serverInfo.hostname = hostname;
+							serverInfo.players = numRacers;
+							serverInfo.racerNames = racers;
+							serverInfo.passworded = ((ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]) & 8) != 0;
+							return 1;
+						}
 					}
 					i += (53 + (24 * numRacers));
 				}
@@ -544,6 +555,21 @@ namespace libbrowseforspeed {
 				return -1;
 			}
 			return 0;
+		}
+		
+		private static bool getPubStatStream() {
+			try {
+				if (pubstatStream == null || System.Environment.TickCount > (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
+					HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1");
+					request.Timeout = 4000;
+					HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+					pubstatStream = response.GetResponseStream();
+					pubstatLastUpdate = System.Environment.TickCount;					
+				}
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
 		}
 
 		private static byte[] getStreamBytes(Stream stream) {
