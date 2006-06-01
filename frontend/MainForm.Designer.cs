@@ -43,7 +43,7 @@ namespace LFS_ServerBrowser
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabControl = new System.Windows.Forms.TabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.tabMain = new System.Windows.Forms.TabPage();
 			this.edtFindUserMain = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.edtPasswordMain = new System.Windows.Forms.TextBox();
@@ -66,7 +66,7 @@ namespace LFS_ServerBrowser
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnRefreshMain = new System.Windows.Forms.Button();
 			this.btnJoinMain = new System.Windows.Forms.Button();
-			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.tabFavourites = new System.Windows.Forms.TabPage();
 			this.buttonRefreshFav = new System.Windows.Forms.Button();
 			this.btnJoinFav = new System.Windows.Forms.Button();
 			this.lvFavourites = new System.Windows.Forms.ListView();
@@ -80,7 +80,21 @@ namespace LFS_ServerBrowser
 			this.joinServerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewServerInformationFav = new System.Windows.Forms.ToolStripMenuItem();
 			this.removeFromFavouritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.tabFriends = new System.Windows.Forms.TabPage();
+			this.edtFriendName = new System.Windows.Forms.TextBox();
+			this.btnAddFriend = new System.Windows.Forms.Button();
+			this.cbHideOffline = new System.Windows.Forms.CheckBox();
+			this.btnRefreshFriend = new System.Windows.Forms.Button();
+			this.btnJoinFriend = new System.Windows.Forms.Button();
+			this.lvFriends = new System.Windows.Forms.ListView();
+			this.columnFriendName = new System.Windows.Forms.ColumnHeader();
+			this.columnFriendServer = new System.Windows.Forms.ColumnHeader();
+			this.columnFriendPrivate = new System.Windows.Forms.ColumnHeader();
+			this.columnFriendPlayers = new System.Windows.Forms.ColumnHeader();
+			this.contextMenuFriends = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.joinServerMenuFriends = new System.Windows.Forms.ToolStripMenuItem();
+			this.removeFriendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tabConfig = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.rbJoin = new System.Windows.Forms.RadioButton();
@@ -111,12 +125,14 @@ namespace LFS_ServerBrowser
 			this.openFileDialogPS = new System.Windows.Forms.OpenFileDialog();
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
-			this.tabPage1.SuspendLayout();
+			this.tabMain.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.contextMenuBrowser.SuspendLayout();
-			this.tabPage3.SuspendLayout();
+			this.tabFavourites.SuspendLayout();
 			this.contextMenuFav.SuspendLayout();
-			this.tabPage2.SuspendLayout();
+			this.tabFriends.SuspendLayout();
+			this.contextMenuFriends.SuspendLayout();
+			this.tabConfig.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.groupBox4.SuspendLayout();
 			this.groupBox5.SuspendLayout();
@@ -168,9 +184,10 @@ namespace LFS_ServerBrowser
 			// 
 			// tabControl
 			// 
-			this.tabControl.Controls.Add(this.tabPage1);
-			this.tabControl.Controls.Add(this.tabPage3);
-			this.tabControl.Controls.Add(this.tabPage2);
+			this.tabControl.Controls.Add(this.tabMain);
+			this.tabControl.Controls.Add(this.tabFavourites);
+			this.tabControl.Controls.Add(this.tabFriends);
+			this.tabControl.Controls.Add(this.tabConfig);
 			this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
 			this.tabControl.Location = new System.Drawing.Point(0, 24);
@@ -180,24 +197,24 @@ namespace LFS_ServerBrowser
 			this.tabControl.TabIndex = 1;
 			this.tabControl.SelectedIndexChanged += new System.EventHandler(this.TabControlSelectedIndexChanged);
 			// 
-			// tabPage1
+			// tabMain
 			// 
-			this.tabPage1.Controls.Add(this.edtFindUserMain);
-			this.tabPage1.Controls.Add(this.label1);
-			this.tabPage1.Controls.Add(this.edtPasswordMain);
-			this.tabPage1.Controls.Add(this.label6);
-			this.tabPage1.Controls.Add(this.btnFindUserMain);
-			this.tabPage1.Controls.Add(this.groupBox2);
-			this.tabPage1.Controls.Add(this.lvMain);
-			this.tabPage1.Controls.Add(this.btnRefreshMain);
-			this.tabPage1.Controls.Add(this.btnJoinMain);
-			this.tabPage1.Location = new System.Drawing.Point(4, 22);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(784, 501);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "Server Browser";
-			this.tabPage1.UseVisualStyleBackColor = true;
+			this.tabMain.Controls.Add(this.edtFindUserMain);
+			this.tabMain.Controls.Add(this.label1);
+			this.tabMain.Controls.Add(this.edtPasswordMain);
+			this.tabMain.Controls.Add(this.label6);
+			this.tabMain.Controls.Add(this.btnFindUserMain);
+			this.tabMain.Controls.Add(this.groupBox2);
+			this.tabMain.Controls.Add(this.lvMain);
+			this.tabMain.Controls.Add(this.btnRefreshMain);
+			this.tabMain.Controls.Add(this.btnJoinMain);
+			this.tabMain.Location = new System.Drawing.Point(4, 22);
+			this.tabMain.Name = "tabMain";
+			this.tabMain.Padding = new System.Windows.Forms.Padding(3);
+			this.tabMain.Size = new System.Drawing.Size(784, 501);
+			this.tabMain.TabIndex = 0;
+			this.tabMain.Text = "Server Browser";
+			this.tabMain.UseVisualStyleBackColor = true;
 			// 
 			// edtFindUserMain
 			// 
@@ -381,7 +398,7 @@ namespace LFS_ServerBrowser
 			// btnRefreshMain
 			// 
 			this.btnRefreshMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.btnRefreshMain.Location = new System.Drawing.Point(89, 472);
+			this.btnRefreshMain.Location = new System.Drawing.Point(89, 475);
 			this.btnRefreshMain.Name = "btnRefreshMain";
 			this.btnRefreshMain.Size = new System.Drawing.Size(75, 23);
 			this.btnRefreshMain.TabIndex = 2;
@@ -393,7 +410,7 @@ namespace LFS_ServerBrowser
 			// 
 			this.btnJoinMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btnJoinMain.Enabled = false;
-			this.btnJoinMain.Location = new System.Drawing.Point(8, 472);
+			this.btnJoinMain.Location = new System.Drawing.Point(8, 475);
 			this.btnJoinMain.Name = "btnJoinMain";
 			this.btnJoinMain.Size = new System.Drawing.Size(75, 23);
 			this.btnJoinMain.TabIndex = 1;
@@ -401,17 +418,17 @@ namespace LFS_ServerBrowser
 			this.btnJoinMain.UseVisualStyleBackColor = true;
 			this.btnJoinMain.Click += new System.EventHandler(this.btnJoinClick);
 			// 
-			// tabPage3
+			// tabFavourites
 			// 
-			this.tabPage3.Controls.Add(this.buttonRefreshFav);
-			this.tabPage3.Controls.Add(this.btnJoinFav);
-			this.tabPage3.Controls.Add(this.lvFavourites);
-			this.tabPage3.Location = new System.Drawing.Point(4, 22);
-			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Size = new System.Drawing.Size(784, 501);
-			this.tabPage3.TabIndex = 2;
-			this.tabPage3.Text = "Favourites";
-			this.tabPage3.UseVisualStyleBackColor = true;
+			this.tabFavourites.Controls.Add(this.buttonRefreshFav);
+			this.tabFavourites.Controls.Add(this.btnJoinFav);
+			this.tabFavourites.Controls.Add(this.lvFavourites);
+			this.tabFavourites.Location = new System.Drawing.Point(4, 22);
+			this.tabFavourites.Name = "tabFavourites";
+			this.tabFavourites.Size = new System.Drawing.Size(784, 501);
+			this.tabFavourites.TabIndex = 2;
+			this.tabFavourites.Text = "Favourites";
+			this.tabFavourites.UseVisualStyleBackColor = true;
 			// 
 			// buttonRefreshFav
 			// 
@@ -521,16 +538,142 @@ namespace LFS_ServerBrowser
 			this.removeFromFavouritesToolStripMenuItem.Text = "&Remove From Favourites";
 			this.removeFromFavouritesToolStripMenuItem.Click += new System.EventHandler(this.RemoveFromFavouritesToolStripMenuItemClick);
 			// 
-			// tabPage2
+			// tabFriends
 			// 
-			this.tabPage2.Controls.Add(this.groupBox1);
-			this.tabPage2.Location = new System.Drawing.Point(4, 22);
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(784, 501);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Configuration";
-			this.tabPage2.UseVisualStyleBackColor = true;
+			this.tabFriends.Controls.Add(this.edtFriendName);
+			this.tabFriends.Controls.Add(this.btnAddFriend);
+			this.tabFriends.Controls.Add(this.cbHideOffline);
+			this.tabFriends.Controls.Add(this.btnRefreshFriend);
+			this.tabFriends.Controls.Add(this.btnJoinFriend);
+			this.tabFriends.Controls.Add(this.lvFriends);
+			this.tabFriends.Location = new System.Drawing.Point(4, 22);
+			this.tabFriends.Name = "tabFriends";
+			this.tabFriends.Size = new System.Drawing.Size(784, 501);
+			this.tabFriends.TabIndex = 3;
+			this.tabFriends.Text = "Friends";
+			this.tabFriends.UseVisualStyleBackColor = true;
+			// 
+			// edtFriendName
+			// 
+			this.edtFriendName.Location = new System.Drawing.Point(513, 475);
+			this.edtFriendName.Name = "edtFriendName";
+			this.edtFriendName.Size = new System.Drawing.Size(182, 21);
+			this.edtFriendName.TabIndex = 6;
+			// 
+			// btnAddFriend
+			// 
+			this.btnAddFriend.Location = new System.Drawing.Point(701, 475);
+			this.btnAddFriend.Name = "btnAddFriend";
+			this.btnAddFriend.Size = new System.Drawing.Size(75, 23);
+			this.btnAddFriend.TabIndex = 5;
+			this.btnAddFriend.Text = "&Add Friend";
+			this.btnAddFriend.UseVisualStyleBackColor = true;
+			this.btnAddFriend.Click += new System.EventHandler(this.BtnAddFriendClick);
+			// 
+			// cbHideOffline
+			// 
+			this.cbHideOffline.Location = new System.Drawing.Point(170, 475);
+			this.cbHideOffline.Name = "cbHideOffline";
+			this.cbHideOffline.Size = new System.Drawing.Size(129, 24);
+			this.cbHideOffline.TabIndex = 4;
+			this.cbHideOffline.Text = "Hide Offline Friends";
+			this.cbHideOffline.UseVisualStyleBackColor = true;
+			this.cbHideOffline.CheckedChanged += new System.EventHandler(this.CheckBox2CheckedChanged);
+			// 
+			// btnRefreshFriend
+			// 
+			this.btnRefreshFriend.Location = new System.Drawing.Point(89, 475);
+			this.btnRefreshFriend.Name = "btnRefreshFriend";
+			this.btnRefreshFriend.Size = new System.Drawing.Size(75, 23);
+			this.btnRefreshFriend.TabIndex = 2;
+			this.btnRefreshFriend.Text = "&Refresh List";
+			this.btnRefreshFriend.UseVisualStyleBackColor = true;
+			this.btnRefreshFriend.Click += new System.EventHandler(this.BtnRefreshFriendClick);
+			// 
+			// btnJoinFriend
+			// 
+			this.btnJoinFriend.Location = new System.Drawing.Point(8, 475);
+			this.btnJoinFriend.Name = "btnJoinFriend";
+			this.btnJoinFriend.Size = new System.Drawing.Size(75, 23);
+			this.btnJoinFriend.TabIndex = 1;
+			this.btnJoinFriend.Text = "&Join Friend";
+			this.btnJoinFriend.UseVisualStyleBackColor = true;
+			this.btnJoinFriend.Click += new System.EventHandler(this.JoinFriendClick);
+			// 
+			// lvFriends
+			// 
+			this.lvFriends.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+									this.columnFriendName,
+									this.columnFriendServer,
+									this.columnFriendPrivate,
+									this.columnFriendPlayers});
+			this.lvFriends.ContextMenuStrip = this.contextMenuFriends;
+			this.lvFriends.FullRowSelect = true;
+			this.lvFriends.GridLines = true;
+			this.lvFriends.Location = new System.Drawing.Point(8, 6);
+			this.lvFriends.MultiSelect = false;
+			this.lvFriends.Name = "lvFriends";
+			this.lvFriends.Size = new System.Drawing.Size(768, 463);
+			this.lvFriends.TabIndex = 0;
+			this.lvFriends.UseCompatibleStateImageBehavior = false;
+			this.lvFriends.View = System.Windows.Forms.View.Details;
+			this.lvFriends.DoubleClick += new System.EventHandler(this.LvFriendsDoubleClick);
+			this.lvFriends.SelectedIndexChanged += new System.EventHandler(this.LvFriendsSelectedIndexChanged);
+			this.lvFriends.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
+			// 
+			// columnFriendName
+			// 
+			this.columnFriendName.Text = "Friend Name";
+			this.columnFriendName.Width = 138;
+			// 
+			// columnFriendServer
+			// 
+			this.columnFriendServer.Text = "Server";
+			this.columnFriendServer.Width = 173;
+			// 
+			// columnFriendPrivate
+			// 
+			this.columnFriendPrivate.Text = "Private";
+			this.columnFriendPrivate.Width = 51;
+			// 
+			// columnFriendPlayers
+			// 
+			this.columnFriendPlayers.Text = "Players";
+			this.columnFriendPlayers.Width = 391;
+			// 
+			// contextMenuFriends
+			// 
+			this.contextMenuFriends.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+									this.joinServerMenuFriends,
+									this.removeFriendToolStripMenuItem});
+			this.contextMenuFriends.Name = "contextMenuFriends";
+			this.contextMenuFriends.Size = new System.Drawing.Size(158, 48);
+			this.contextMenuFriends.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFriendsOpening);
+			// 
+			// joinServerMenuFriends
+			// 
+			this.joinServerMenuFriends.Name = "joinServerMenuFriends";
+			this.joinServerMenuFriends.Size = new System.Drawing.Size(157, 22);
+			this.joinServerMenuFriends.Text = "Join Server";
+			this.joinServerMenuFriends.Click += new System.EventHandler(this.JoinFriendClick);
+			// 
+			// removeFriendToolStripMenuItem
+			// 
+			this.removeFriendToolStripMenuItem.Name = "removeFriendToolStripMenuItem";
+			this.removeFriendToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+			this.removeFriendToolStripMenuItem.Text = "Remove Friend";
+			this.removeFriendToolStripMenuItem.Click += new System.EventHandler(this.RemoveFriendToolStripMenuItemClick);
+			// 
+			// tabConfig
+			// 
+			this.tabConfig.Controls.Add(this.groupBox1);
+			this.tabConfig.Location = new System.Drawing.Point(4, 22);
+			this.tabConfig.Name = "tabConfig";
+			this.tabConfig.Padding = new System.Windows.Forms.Padding(3);
+			this.tabConfig.Size = new System.Drawing.Size(784, 501);
+			this.tabConfig.TabIndex = 1;
+			this.tabConfig.Text = "Configuration";
+			this.tabConfig.UseVisualStyleBackColor = true;
 			// 
 			// groupBox1
 			// 
@@ -835,13 +978,16 @@ namespace LFS_ServerBrowser
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			this.tabControl.ResumeLayout(false);
-			this.tabPage1.ResumeLayout(false);
-			this.tabPage1.PerformLayout();
+			this.tabMain.ResumeLayout(false);
+			this.tabMain.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.contextMenuBrowser.ResumeLayout(false);
-			this.tabPage3.ResumeLayout(false);
+			this.tabFavourites.ResumeLayout(false);
 			this.contextMenuFav.ResumeLayout(false);
-			this.tabPage2.ResumeLayout(false);
+			this.tabFriends.ResumeLayout(false);
+			this.tabFriends.PerformLayout();
+			this.contextMenuFriends.ResumeLayout(false);
+			this.tabConfig.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox5.ResumeLayout(false);
@@ -853,6 +999,23 @@ namespace LFS_ServerBrowser
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem joinServerMenuFriends;
+		private System.Windows.Forms.ToolStripMenuItem removeFriendToolStripMenuItem;
+		private System.Windows.Forms.ContextMenuStrip contextMenuFriends;
+		private System.Windows.Forms.Button btnAddFriend;
+		private System.Windows.Forms.TextBox edtFriendName;
+		private System.Windows.Forms.CheckBox cbHideOffline;
+		private System.Windows.Forms.ListView lvFriends;
+		private System.Windows.Forms.Button btnRefreshFriend;
+		private System.Windows.Forms.Button btnJoinFriend;
+		private System.Windows.Forms.ColumnHeader columnFriendPlayers;
+		private System.Windows.Forms.ColumnHeader columnFriendPrivate;
+		private System.Windows.Forms.TabPage tabMain;
+		private System.Windows.Forms.TabPage tabConfig;
+		private System.Windows.Forms.TabPage tabFavourites;
+		private System.Windows.Forms.ColumnHeader columnFriendServer;
+		private System.Windows.Forms.ColumnHeader columnFriendName;
+		private System.Windows.Forms.TabPage tabFriends;
 		private System.Windows.Forms.OpenFileDialog openFileDialogPS;
 		private System.Windows.Forms.CheckBox cbUsePS;
 		private System.Windows.Forms.TextBox txtPSPath;
@@ -907,7 +1070,6 @@ namespace LFS_ServerBrowser
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
 		private System.Windows.Forms.ContextMenuStrip contextMenuBrowser;
 		private System.Windows.Forms.Button buttonRefreshFav;
-		private System.Windows.Forms.TabPage tabPage3;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.ListBox pathList;
 		private System.Windows.Forms.Label label5;
@@ -917,8 +1079,6 @@ namespace LFS_ServerBrowser
 		private System.Windows.Forms.ColumnHeader columnHeaderPing;
 		private System.Windows.Forms.ColumnHeader columnHeaderName;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.TabPage tabPage2;
-		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.TabControl tabControl;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
