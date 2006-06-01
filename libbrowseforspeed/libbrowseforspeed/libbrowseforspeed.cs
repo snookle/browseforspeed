@@ -142,6 +142,7 @@ namespace libbrowseforspeed {
 			trackCodes.Add("AU2", "Skid Pan");
 			trackCodes.Add("AU3", "Drag Strip");
 			trackCodes.Add("AU4", "Drag Strip 8 plyr");
+			trackCodes.Add("KY1", "Kyoto Oval Rev");
 			trackCodes.Add("KY1R", "Kyoto Oval Rev");
 			trackCodes.Add("KY2", "Kyoto National");
 			trackCodes.Add("KY2R", "Kyoto National Rev");
@@ -160,7 +161,7 @@ namespace libbrowseforspeed {
 			trackCodes.Add("AS5", "Aston Grand Prix");
 			trackCodes.Add("AS5R", "Aston Grand Prix Rev");
 			trackCodes.Add("AS6", "Aston Grand Touring");
-			trackCodes.Add("AS6", "Aston Grand Touring Rev");
+			trackCodes.Add("AS6R", "Aston Grand Touring Rev");
 			trackCodes.Add("AS7", "Aston North");
 			trackCodes.Add("AS7R", "Aston North Rev");			
 		}
@@ -327,11 +328,8 @@ namespace libbrowseforspeed {
 					return;
 				}*/
 				serverinfo.success = true;
-				serverinfo.cars = (ulong)(recbuf[12] * 16777216 + recbuf[11] * 65536 + recbuf[10] * 256 + recbuf[9]);
-				Decoder d = Encoding.ASCII.GetDecoder();
-				char[] track = new char[32];
-				d.GetChars(recbuf, 1, 4, track, 0);
-				serverinfo.track = new string(track);
+				serverinfo.cars = (ulong)(recbuf[12] * 16777216 + recbuf[11] * 65536 + recbuf[10] * 256 + recbuf[9]);				
+				serverinfo.track = (string)trackCodes[getLFSString(recbuf, 1, 4)];
 			}
 		}
 
@@ -652,6 +650,9 @@ namespace libbrowseforspeed {
 				if (buf[i + startpos] == 0x00) {
 					endpos = i;
 					break;
+				}
+				if (i + 1 == maxlen) {
+					endpos = i+1;
 				}
 			}
 			return Encoding.ASCII.GetString(buf, startpos, endpos);
