@@ -1,0 +1,39 @@
+body,td,a,div,.p{font-family:arial,sans-serif}
+div,td{color:#000000}
+a:link,.w,.w a:link{color:#0000cc}
+a:visited{color:#551a8b}
+a:active{color:#ff0000}
+
+.nav ul {
+	float:left;
+	width:100%;
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+.nav a {
+	float:left;
+	width:6em;
+	text-decoration:none;
+	color:black;
+	background-color:#C3D9FF;
+	padding:0.2em 0.6em;
+	border-right:1px solid white;
+	margin-bottom: 20px;
+}
+.nav a:hover {
+  background-color: #E8EEF7;
+}
+.nav li {
+	display:inline;
+	font-size: smaller;
+}
+
+div.faq-question {
+	font-weight: bold;
+}
+	
+div.faq-answer {
+	font-weight: normal;
+	margin-bottom: 10px;
+}
