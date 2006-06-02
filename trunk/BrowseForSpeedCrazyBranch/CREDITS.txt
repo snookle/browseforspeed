@@ -1,7 +1,0 @@
-Browse For Speed is Copyright 2006 - Richard Nelson, Ben Kenny, Philip Nelson
-Full source code available at http://browseforspeed.whatsbeef.net
-
-Thanks to:
-Trent Scholl - various code submissions
-Bernadette Sweeney - pretty logo and icon
-alco64 - testing
