@@ -1,0 +1,12 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\LFS.BrowseForSpeed.Windows.Forms.AboutBoxDialogForm.resources
+obj\Debug\LFS.BrowseForSpeed.Windows.Forms.MainForm.resources
+obj\Debug\LFS.BrowseForSpeed.Windows.Forms.ServerInformationForm.resources
+obj\Debug\LFS.BrowseForSpeed.csproj.GenerateResource.Cache
+bin\Debug\LFS.BrowseForSpeed.exe.config
+bin\Debug\LFS.BrowseForSpeed.exe
+bin\Debug\LFS.BrowseForSpeed.pdb
+bin\Debug\ICSharpCode.SharpZipLib.dll
+bin\Debug\log4net.dll
+obj\Debug\LFS.BrowseForSpeed.exe
+obj\Debug\LFS.BrowseForSpeed.pdb
