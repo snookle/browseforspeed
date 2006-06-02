@@ -1,0 +1,1585 @@
+2006-06-01 19:42:31,125 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:42:31,140 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 7:42:31 PM
+2006-06-01 19:42:31,140 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 19:42:31,140 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.33673
+2006-06-01 19:42:31,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 19:42:31,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 19:42:31,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 19:42:31,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 19:42:31,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17768448
+2006-06-01 19:42:31,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 19:42:31,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 19:42:31,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 19:42:31,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 19:42:31,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 19:42:31,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 19:42:31,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 19:42:31,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 19:42:31,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 19:42:31,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 19:42:31,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:42:31,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 19:42:31,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 19:42:31,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 19:42:31,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 19:42:31,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 19:42:31,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 19:42:31,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 19:42:31,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 19:42:31,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 19:42:31,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 19:42:31,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 19:42:31,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:42:31,203 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 19:46:57,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:46:57,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 7:46:57 PM
+2006-06-01 19:46:57,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 19:46:57,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.33805
+2006-06-01 19:46:57,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 19:46:57,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 19:46:57,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 19:46:57,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 19:46:57,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17805312
+2006-06-01 19:46:57,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 19:46:57,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 19:46:57,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 19:46:57,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 19:46:57,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 19:46:57,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 19:46:57,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 19:46:57,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 19:46:57,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 19:46:57,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 19:46:57,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:46:57,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 19:46:57,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 19:46:57,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 19:46:57,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 19:46:57,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 19:46:57,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 19:46:57,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 19:46:57,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 19:46:57,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 19:46:57,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 19:46:57,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 19:46:57,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:46:57,375 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 19:47:18,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:47:18,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 7:47:18 PM
+2006-06-01 19:47:18,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 19:47:18,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.33818
+2006-06-01 19:47:18,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 19:47:18,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 19:47:18,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 19:47:18,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 19:47:18,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17797120
+2006-06-01 19:47:18,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 19:47:18,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 19:47:18,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 19:47:18,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 19:47:18,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 19:47:18,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 19:47:18,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 19:47:18,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 19:47:18,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 19:47:18,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 19:47:18,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:47:18,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 19:47:18,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 19:47:18,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 19:47:18,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 19:47:18,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 19:47:18,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:47:18,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 19:47:18,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:47:18,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 19:47:18,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 19:47:18,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 19:47:18,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:47:18,453 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 19:47:37,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:47:37,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 7:47:37 PM
+2006-06-01 19:47:37,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 19:47:37,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.33828
+2006-06-01 19:47:37,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 19:47:37,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 19:47:37,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 19:47:37,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 19:47:37,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17776640
+2006-06-01 19:47:37,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 19:47:37,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 19:47:37,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 19:47:37,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 19:47:37,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 19:47:37,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 19:47:37,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 19:47:37,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 19:47:37,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 19:47:37,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 19:47:37,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:47:37,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 19:47:37,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 19:47:37,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 19:47:37,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 19:47:37,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 19:47:37,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:47:37,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 19:47:37,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:47:37,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 19:47:37,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 19:47:37,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 19:47:37,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:47:37,453 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 19:48:40,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:48:40,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 7:48:40 PM
+2006-06-01 19:48:40,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 19:48:40,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.33859
+2006-06-01 19:48:40,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 19:48:40,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 19:48:40,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 19:48:40,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 19:48:40,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17788928
+2006-06-01 19:48:40,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 19:48:40,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 19:48:40,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 19:48:40,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 19:48:40,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 19:48:40,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 19:48:40,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 19:48:40,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 19:48:40,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 19:48:40,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 19:48:40,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:48:40,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 19:48:40,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 19:48:40,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 19:48:40,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 19:48:40,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 19:48:40,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:48:40,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 19:48:40,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:48:40,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 19:48:40,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 19:48:40,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 19:48:40,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:48:40,859 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 19:49:13,937 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:49:13,953 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 7:49:13 PM
+2006-06-01 19:49:13,953 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 19:49:13,953 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.33876
+2006-06-01 19:49:13,953 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 19:49:13,953 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 19:49:13,953 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 19:49:13,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 19:49:13,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17772544
+2006-06-01 19:49:13,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 19:49:13,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 19:49:13,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 19:49:13,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 19:49:13,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 19:49:13,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 19:49:13,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 19:49:13,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 19:49:13,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 19:49:13,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 19:49:13,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:49:13,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 19:49:13,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 19:49:14,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 19:49:14,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 19:49:14,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 19:49:14,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:49:14,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 19:49:14,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:49:14,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 19:49:14,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 19:49:14,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 19:49:14,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:49:14,015 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 19:50:40,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:50:40,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 7:50:40 PM
+2006-06-01 19:50:40,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 19:50:40,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.33919
+2006-06-01 19:50:40,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 19:50:40,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 19:50:40,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 19:50:40,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 19:50:40,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17805312
+2006-06-01 19:50:40,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 19:50:40,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 19:50:40,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 19:50:40,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 19:50:40,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 19:50:40,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 19:50:40,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 19:50:40,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 19:50:40,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 19:50:40,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 19:50:40,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:50:40,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 19:50:40,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 19:50:40,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 19:50:40,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 19:50:40,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 19:50:40,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:50:40,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 19:50:40,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:50:40,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 19:50:40,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 19:50:40,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 19:50:40,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:50:40,765 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 19:50:53,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:50:53,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 7:50:53 PM
+2006-06-01 19:50:53,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 19:50:53,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.33919
+2006-06-01 19:50:53,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 19:50:53,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 19:50:53,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 19:50:53,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 19:50:53,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17784832
+2006-06-01 19:50:53,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 19:50:53,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 19:50:53,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 19:50:53,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 19:50:53,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 19:50:53,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 19:50:53,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 19:50:53,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 19:50:53,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 19:50:53,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 19:50:53,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:50:53,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 19:50:53,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 19:50:53,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 19:50:53,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 19:50:53,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 19:50:53,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:50:53,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 19:50:53,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:50:53,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 19:50:53,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 19:50:53,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 19:50:53,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:50:53,687 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 19:52:04,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:52:04,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 7:52:04 PM
+2006-06-01 19:52:04,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 19:52:04,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.33962
+2006-06-01 19:52:04,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 19:52:04,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 19:52:04,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 19:52:04,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 19:52:04,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17776640
+2006-06-01 19:52:04,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 19:52:04,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 19:52:04,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 19:52:04,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 19:52:04,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 19:52:04,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 19:52:04,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 19:52:04,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 19:52:04,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 19:52:04,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 19:52:04,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:52:04,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 19:52:04,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 19:52:04,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 19:52:04,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 19:52:04,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 19:52:04,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:52:04,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 19:52:04,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:52:04,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 19:52:04,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 19:52:04,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 19:52:04,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:52:04,718 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 19:53:11,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:53:11,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 7:53:11 PM
+2006-06-01 19:53:11,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 19:53:11,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.33995
+2006-06-01 19:53:11,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 19:53:11,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 19:53:11,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 19:53:11,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 19:53:11,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17780736
+2006-06-01 19:53:11,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 19:53:11,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 19:53:11,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 19:53:11,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 19:53:11,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 19:53:11,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 19:53:11,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 19:53:11,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 19:53:11,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 19:53:11,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 19:53:11,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:53:11,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 19:53:11,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 19:53:11,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 19:53:11,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 19:53:11,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 19:53:11,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:53:11,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 19:53:11,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:53:11,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 19:53:11,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 19:53:11,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 19:53:11,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:53:11,375 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 19:55:29,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:55:29,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 7:55:29 PM
+2006-06-01 19:55:29,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 19:55:29,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.34064
+2006-06-01 19:55:29,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 19:55:29,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 19:55:29,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 19:55:29,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 19:55:29,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17776640
+2006-06-01 19:55:29,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 19:55:29,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 19:55:29,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 19:55:29,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 19:55:29,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 19:55:29,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 19:55:29,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 19:55:29,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 19:55:29,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 19:55:29,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 19:55:29,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:55:29,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 19:55:29,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 19:55:29,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 19:55:29,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 19:55:29,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 19:55:29,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:55:29,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 19:55:29,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 19:55:29,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 19:55:29,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 19:55:29,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 19:55:29,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:55:29,781 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 19:59:56,937 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:59:56,953 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 7:59:56 PM
+2006-06-01 19:59:56,953 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 19:59:56,953 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.34196
+2006-06-01 19:59:56,953 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 19:59:56,953 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 19:59:56,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 19:59:56,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 19:59:56,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17752064
+2006-06-01 19:59:56,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 19:59:56,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 19:59:56,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 19:59:56,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 19:59:56,968 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 19:59:56,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 19:59:56,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 19:59:56,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 19:59:56,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 19:59:56,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 19:59:56,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:59:56,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 19:59:56,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 19:59:56,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 19:59:57,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 19:59:57,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 19:59:57,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 19:59:57,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 19:59:57,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 19:59:57,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 19:59:57,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 19:59:57,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 19:59:57,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 19:59:57,015 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 20:03:31,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:03:31,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:03:31 PM
+2006-06-01 20:03:31,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:03:31,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.34304
+2006-06-01 20:03:31,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 20:03:31,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 20:03:31,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:03:31,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 20:03:31,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17747968
+2006-06-01 20:03:31,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 20:03:31,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 20:03:31,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 20:03:31,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 20:03:31,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 20:03:31,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 20:03:31,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 20:03:31,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:03:31,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:03:31,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 20:03:31,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:03:31,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 20:03:31,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 20:03:31,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 20:03:31,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 20:03:31,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 20:03:31,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:03:31,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 20:03:31,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:03:31,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 20:03:31,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 20:03:31,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 20:03:31,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:03:31,765 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 20:11:16,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:11:16,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:11:16 PM
+2006-06-01 20:11:16,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:11:16,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.34536
+2006-06-01 20:11:16,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 20:11:16,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 20:11:16,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:11:16,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 20:11:16,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17727488
+2006-06-01 20:11:16,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 20:11:16,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 20:11:16,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 20:11:16,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 20:11:16,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 20:11:16,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 20:11:16,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 20:11:16,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:11:16,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:11:16,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 20:11:16,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:11:16,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 20:11:16,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 20:11:16,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 20:11:16,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 20:11:16,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 20:11:16,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:11:16,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 20:11:16,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:11:16,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 20:11:16,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 20:11:16,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 20:11:16,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:11:16,078 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 20:13:46,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:13:46,578 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:13:46 PM
+2006-06-01 20:13:46,578 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:13:46,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.34612
+2006-06-01 20:13:46,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 20:13:46,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 20:13:46,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:13:46,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 20:13:46,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17768448
+2006-06-01 20:13:46,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 20:13:46,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 20:13:46,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 20:13:46,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 20:13:46,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 20:13:46,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 20:13:46,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 20:13:46,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:13:46,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:13:46,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 20:13:46,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:13:46,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 20:13:46,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 20:13:46,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 20:13:46,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 20:13:46,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 20:13:46,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:13:46,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 20:13:46,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:13:46,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 20:13:46,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 20:13:46,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 20:13:46,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:13:46,656 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 20:24:54,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:24:54,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:24:54 PM
+2006-06-01 20:24:54,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:24:54,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.34946
+2006-06-01 20:24:54,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 20:24:54,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 20:24:54,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:24:54,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 20:24:54,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17735680
+2006-06-01 20:24:54,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 20:24:54,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 20:24:54,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 20:24:54,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 20:24:54,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 20:24:54,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 20:24:54,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 20:24:54,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:24:54,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:24:54,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 20:24:54,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:24:54,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 20:24:54,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 20:24:54,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 20:24:54,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 20:24:54,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 20:24:54,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:24:54,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 20:24:54,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:24:54,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 20:24:54,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 20:24:54,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 20:24:54,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:24:54,734 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 20:26:45,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:26:45,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:26:45 PM
+2006-06-01 20:26:45,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:26:45,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.35001
+2006-06-01 20:26:45,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 20:26:45,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 20:26:45,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:26:45,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 20:26:45,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17764352
+2006-06-01 20:26:45,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 20:26:45,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 20:26:45,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 20:26:45,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 20:26:45,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 20:26:45,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 20:26:45,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 20:26:45,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:26:45,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:26:45,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 20:26:45,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:26:45,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 20:26:45,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 20:26:45,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 20:26:45,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 20:26:45,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 20:26:45,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:26:45,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 20:26:45,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:26:45,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 20:26:45,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 20:26:45,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 20:26:45,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:26:45,500 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 20:29:53,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:29:53,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:29:53 PM
+2006-06-01 20:29:53,343 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:29:53,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.35096
+2006-06-01 20:29:53,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 20:29:53,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 20:29:53,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:29:53,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 20:29:53,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17780736
+2006-06-01 20:29:53,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 20:29:53,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 20:29:53,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 20:29:53,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 20:29:53,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 20:29:53,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 20:29:53,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 20:29:53,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:29:53,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:29:53,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 20:29:53,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:29:53,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 20:29:53,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 20:29:53,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 20:29:53,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 20:29:53,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 20:29:53,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:29:53,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 20:29:53,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:29:53,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 20:29:53,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 20:29:53,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 20:29:53,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:29:53,406 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 20:30:11,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:30:11,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:30:11 PM
+2006-06-01 20:30:11,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:30:11,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.35105
+2006-06-01 20:30:11,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 20:30:11,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 20:30:11,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:30:11,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 20:30:11,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17776640
+2006-06-01 20:30:11,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 20:30:11,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 20:30:11,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 20:30:11,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 20:30:11,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 20:30:11,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 20:30:11,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 20:30:11,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:30:11,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:30:11,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 20:30:11,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:30:11,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 20:30:11,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 20:30:11,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 20:30:11,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 20:30:11,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 20:30:11,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:30:11,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 20:30:11,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:30:11,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 20:30:11,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 20:30:11,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 20:30:11,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:30:11,281 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 20:31:34,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:31:34,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:31:34 PM
+2006-06-01 20:31:34,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:31:34,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.35146
+2006-06-01 20:31:34,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 20:31:34,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 20:31:34,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:31:34,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 20:31:34,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17776640
+2006-06-01 20:31:34,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 20:31:34,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 20:31:34,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 20:31:34,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 20:31:34,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 20:31:34,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 20:31:34,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 20:31:34,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:31:34,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:31:34,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 20:31:34,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:31:34,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 20:31:34,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 20:31:34,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 20:31:34,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 20:31:34,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 20:31:34,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:31:34,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 20:31:34,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:31:34,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 20:31:34,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 20:31:34,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 20:31:34,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:31:34,296 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 20:32:31,578 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:32:31,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:32:31 PM
+2006-06-01 20:32:31,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:32:31,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.35175
+2006-06-01 20:32:31,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 20:32:31,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 20:32:31,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:32:31,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 20:32:31,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17784832
+2006-06-01 20:32:31,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 20:32:31,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 20:32:31,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 20:32:31,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 20:32:31,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 20:32:31,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 20:32:31,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 20:32:31,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:32:31,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:32:31,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 20:32:31,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:32:31,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 20:32:31,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 20:32:31,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 20:32:31,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 20:32:31,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 20:32:31,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:32:31,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 20:32:31,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:32:31,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 20:32:31,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 20:32:31,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 20:32:31,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:32:31,656 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 20:32:49,125 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:32:49,140 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:32:49 PM
+2006-06-01 20:32:49,140 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:32:49,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.35184
+2006-06-01 20:32:49,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 20:32:49,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 20:32:49,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:32:49,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 20:32:49,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17780736
+2006-06-01 20:32:49,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 20:32:49,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 20:32:49,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 20:32:49,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 20:32:49,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 20:32:49,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 20:32:49,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 20:32:49,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:32:49,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:32:49,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 20:32:49,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:32:49,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 20:32:49,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 20:32:49,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 20:32:49,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 20:32:49,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 20:32:49,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:32:49,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 20:32:49,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:32:49,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 20:32:49,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 20:32:49,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 20:32:49,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:32:49,203 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 20:35:16,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:35:16,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:35:16 PM
+2006-06-01 20:35:16,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:35:16,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.35257
+2006-06-01 20:35:16,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 20:35:16,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 20:35:16,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:35:16,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 20:35:16,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17756160
+2006-06-01 20:35:16,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 20:35:16,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 20:35:16,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 20:35:16,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 20:35:16,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 20:35:16,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 20:35:16,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 20:35:16,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:35:16,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:35:16,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 20:35:16,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:35:16,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 20:35:16,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 20:35:16,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 20:35:16,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 20:35:16,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 20:35:16,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:35:16,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 20:35:16,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:35:16,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 20:35:16,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 20:35:16,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 20:35:16,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:35:16,765 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 20:37:30,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:37:30,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:37:30 PM
+2006-06-01 20:37:30,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:37:30,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.35324
+2006-06-01 20:37:30,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 20:37:30,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 20:37:30,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:37:30,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 20:37:30,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17776640
+2006-06-01 20:37:30,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 20:37:30,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 20:37:30,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 20:37:30,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 20:37:30,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 20:37:30,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 20:37:30,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 20:37:30,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:37:30,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:37:30,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 20:37:30,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:37:30,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 20:37:30,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 20:37:30,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 20:37:30,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 20:37:30,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 20:37:30,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:37:30,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 20:37:30,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:37:30,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 20:37:30,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 20:37:30,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 20:37:30,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:37:30,796 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 20:38:09,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:38:09,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:38:09 PM
+2006-06-01 20:38:09,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:38:09,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.35344
+2006-06-01 20:38:09,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 20:38:09,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 20:38:09,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:38:09,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 20:38:09,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17776640
+2006-06-01 20:38:09,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 20:38:09,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 20:38:09,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 20:38:09,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 20:38:09,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 20:38:09,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 20:38:09,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 20:38:09,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:38:09,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:38:09,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 20:38:09,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:38:09,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 20:38:09,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 20:38:09,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 20:38:09,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 20:38:09,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 20:38:09,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:38:09,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 20:38:09,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:38:09,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 20:38:09,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 20:38:09,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 20:38:09,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:38:09,515 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 20:38:17,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:38:17,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:38:17 PM
+2006-06-01 20:38:17,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:38:17,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.35348
+2006-06-01 20:38:17,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 20:38:17,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 20:38:17,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:38:17,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 20:38:17,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17743872
+2006-06-01 20:38:17,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 20:38:17,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 20:38:17,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 20:38:17,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 20:38:17,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 20:38:17,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 20:38:17,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 20:38:17,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:38:17,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:38:17,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 20:38:17,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:38:17,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 20:38:17,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 20:38:17,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 20:38:17,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 20:38:17,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 20:38:17,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:38:17,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 20:38:17,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:38:17,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 20:38:17,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 20:38:17,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 20:38:17,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:38:17,531 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 20:44:25,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:44:25,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:44:25 PM
+2006-06-01 20:44:25,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:44:25,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.35532
+2006-06-01 20:44:25,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 20:44:25,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 20:44:25,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:44:25,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 20:44:25,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17711104
+2006-06-01 20:44:25,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 20:44:25,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 20:44:25,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 20:44:25,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 20:44:25,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 20:44:25,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 20:44:25,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 20:44:25,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:44:25,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:44:25,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 20:44:25,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:44:25,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 20:44:25,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 20:44:25,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 20:44:25,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 20:44:25,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 20:44:25,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:44:25,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 20:44:25,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:44:25,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 20:44:25,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 20:44:25,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 20:44:25,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:44:25,250 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 20:47:53,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:47:53,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:47:53 PM
+2006-06-01 20:47:53,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:47:53,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.35636
+2006-06-01 20:47:53,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 20:47:53,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 20:47:53,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:47:53,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 20:47:53,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17715200
+2006-06-01 20:47:53,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 20:47:53,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 20:47:53,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 20:47:53,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 20:47:53,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 20:47:53,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 20:47:53,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 20:47:53,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:47:53,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:47:53,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 20:47:53,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:47:53,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 20:47:53,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 20:47:53,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 20:47:53,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 20:47:53,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 20:47:53,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:47:53,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 20:47:53,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:47:53,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 20:47:53,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 20:47:53,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 20:47:53,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:47:53,296 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 20:49:39,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:49:39,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:49:39 PM
+2006-06-01 20:49:39,718 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:49:39,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.35689
+2006-06-01 20:49:39,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 20:49:39,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 20:49:39,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:49:39,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 20:49:39,734 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17727488
+2006-06-01 20:49:39,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 20:49:39,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 20:49:39,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 20:49:39,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 20:49:39,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 20:49:39,750 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 20:49:39,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 20:49:39,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:49:39,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:49:39,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 20:49:39,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:49:39,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 20:49:39,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 20:49:39,765 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 20:49:39,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 20:49:39,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 20:49:39,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:49:39,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 20:49:39,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:49:39,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 20:49:39,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 20:49:39,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 20:49:39,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:49:39,796 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 20:50:56,156 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:50:56,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:50:56 PM
+2006-06-01 20:50:56,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:50:56,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.35727
+2006-06-01 20:50:56,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 20:50:56,171 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 20:50:56,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:50:56,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 20:50:56,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17756160
+2006-06-01 20:50:56,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 20:50:56,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 20:50:56,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 20:50:56,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 20:50:56,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 20:50:56,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 20:50:56,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 20:50:56,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:50:56,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:50:56,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 20:50:56,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:50:56,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 20:50:56,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 20:50:56,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 20:50:56,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 20:50:56,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 20:50:56,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:50:56,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 20:50:56,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:50:56,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 20:50:56,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 20:50:56,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 20:50:56,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:50:56,234 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 20:53:00,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:53:00,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:53:00 PM
+2006-06-01 20:53:00,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:53:00,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.35789
+2006-06-01 20:53:00,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 20:53:00,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 20:53:00,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:53:00,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 20:53:00,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17739776
+2006-06-01 20:53:00,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 20:53:00,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 20:53:00,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 20:53:00,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 20:53:00,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 20:53:00,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 20:53:00,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 20:53:00,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:53:00,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:53:00,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 20:53:00,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:53:00,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 20:53:00,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 20:53:00,671 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 20:53:00,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 20:53:00,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 20:53:00,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:53:00,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 20:53:00,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 20:53:00,687 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 20:53:00,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 20:53:00,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 20:53:00,703 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:53:00,703 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 20:54:33,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:54:33,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:54:33 PM
+2006-06-01 20:54:33,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:54:33,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.35836
+2006-06-01 20:54:33,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 20:54:33,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 20:54:33,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:54:33,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 20:54:33,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17850368
+2006-06-01 20:54:33,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 20:54:33,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 20:54:33,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 20:54:33,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 20:54:33,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 20:54:33,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 20:54:33,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 20:54:33,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:54:33,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:54:33,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 20:54:33,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:54:33,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 20:54:33,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 20:54:33,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 20:54:33,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 20:54:33,875 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 20:54:33,875 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:54:33,875 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 20:54:33,875 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:54:33,875 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 20:54:33,875 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 20:54:33,875 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 20:54:33,875 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:54:33,890 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 20:54:54,578 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:54:54,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 8:54:54 PM
+2006-06-01 20:54:54,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 20:54:54,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.35846
+2006-06-01 20:54:54,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 20:54:54,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 20:54:54,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 20:54:54,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 20:54:54,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17747968
+2006-06-01 20:54:54,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 20:54:54,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 20:54:54,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 20:54:54,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 20:54:54,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 20:54:54,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 20:54:54,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 20:54:54,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 20:54:54,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 20:54:54,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 20:54:54,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:54:54,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 20:54:54,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 20:54:54,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 20:54:54,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 20:54:54,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 20:54:54,640 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:54:54,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 20:54:54,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 20:54:54,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 20:54:54,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 20:54:54,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 20:54:54,656 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 20:54:54,656 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 21:01:24,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:01:24,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 9:01:24 PM
+2006-06-01 21:01:24,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 21:01:24,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.36041
+2006-06-01 21:01:24,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 21:01:24,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 21:01:24,578 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 21:01:24,578 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 21:01:24,578 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17731584
+2006-06-01 21:01:24,578 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 21:01:24,578 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 21:01:24,578 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 21:01:24,578 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 21:01:24,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 21:01:24,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 21:01:24,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 21:01:24,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 21:01:24,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 21:01:24,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 21:01:24,593 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:01:24,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 21:01:24,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 21:01:24,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 21:01:24,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 21:01:24,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 21:01:24,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 21:01:24,609 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 21:01:24,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 21:01:24,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 21:01:24,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 21:01:24,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 21:01:24,625 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:01:24,640 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 21:02:54,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:02:54,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 9:02:54 PM
+2006-06-01 21:02:54,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 21:02:54,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.36086
+2006-06-01 21:02:54,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 21:02:54,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 21:02:54,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 21:02:54,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 21:02:54,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17752064
+2006-06-01 21:02:54,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 21:02:54,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 21:02:54,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 21:02:54,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 21:02:54,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 21:02:54,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 21:02:54,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 21:02:54,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 21:02:54,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 21:02:54,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 21:02:54,296 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:02:54,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 21:02:54,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 21:02:54,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 21:02:54,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 21:02:54,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 21:02:54,312 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:02:54,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 21:02:54,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:02:54,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 21:02:54,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 21:02:54,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 21:02:54,328 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:02:54,328 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 21:03:45,187 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:03:45,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 9:03:45 PM
+2006-06-01 21:03:45,203 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 21:03:45,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.36112
+2006-06-01 21:03:45,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 21:03:45,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 21:03:45,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 21:03:45,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 21:03:45,218 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17760256
+2006-06-01 21:03:45,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 21:03:45,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 21:03:45,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 21:03:45,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 21:03:45,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 21:03:45,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 21:03:45,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 21:03:45,234 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 21:03:45,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 21:03:45,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 21:03:45,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:03:45,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 21:03:45,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 21:03:45,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 21:03:45,250 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 21:03:45,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 21:03:45,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:03:45,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 21:03:45,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:03:45,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 21:03:45,265 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 21:03:45,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 21:03:45,281 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:03:45,281 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 21:04:50,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:04:50,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 9:04:50 PM
+2006-06-01 21:04:50,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 21:04:50,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.36144
+2006-06-01 21:04:50,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 21:04:50,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 21:04:50,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 21:04:50,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 21:04:50,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17768448
+2006-06-01 21:04:50,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 21:04:50,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 21:04:50,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 21:04:50,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 21:04:50,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 21:04:50,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 21:04:50,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 21:04:50,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 21:04:50,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 21:04:50,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 21:04:50,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:04:50,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 21:04:50,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 21:04:50,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 21:04:50,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 21:04:50,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 21:04:50,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:04:50,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 21:04:50,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:04:50,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 21:04:50,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 21:04:50,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 21:04:50,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:04:50,078 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 21:09:15,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:09:15,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 9:09:15 PM
+2006-06-01 21:09:15,359 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 21:09:15,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.36277
+2006-06-01 21:09:15,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 21:09:15,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 21:09:15,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 21:09:15,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 21:09:15,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17739776
+2006-06-01 21:09:15,375 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 21:09:15,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 21:09:15,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 21:09:15,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 21:09:15,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 21:09:15,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 21:09:15,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 21:09:15,390 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 21:09:15,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 21:09:15,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 21:09:15,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:09:15,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 21:09:15,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 21:09:15,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 21:09:15,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 21:09:15,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 21:09:15,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:09:15,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 21:09:15,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:09:15,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 21:09:15,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 21:09:15,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 21:09:15,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:09:15,437 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 21:09:54,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:09:54,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 9:09:54 PM
+2006-06-01 21:09:54,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 21:09:54,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.36296
+2006-06-01 21:09:54,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 21:09:54,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 21:09:54,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 21:09:54,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 21:09:54,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17764352
+2006-06-01 21:09:54,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 21:09:54,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 21:09:54,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 21:09:54,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 21:09:54,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 21:09:54,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 21:09:54,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 21:09:54,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 21:09:54,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 21:09:54,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 21:09:54,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:09:54,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 21:09:54,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 21:09:54,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 21:09:54,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 21:09:54,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 21:09:54,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:09:54,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 21:09:54,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:09:54,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 21:09:54,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 21:09:54,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 21:09:54,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:09:54,875 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 21:10:10,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:10:10,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 9:10:10 PM
+2006-06-01 21:10:10,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 21:10:10,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.36304
+2006-06-01 21:10:10,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 21:10:10,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 21:10:10,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 21:10:10,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 21:10:10,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17752064
+2006-06-01 21:10:10,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 21:10:10,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 21:10:10,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 21:10:10,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 21:10:10,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 21:10:10,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 21:10:10,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 21:10:10,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 21:10:10,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 21:10:10,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 21:10:10,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:10:10,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 21:10:10,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 21:10:10,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 21:10:10,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 21:10:10,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 21:10:10,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:10:10,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 21:10:10,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:10:10,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 21:10:10,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 21:10:10,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 21:10:10,078 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:10:10,093 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 21:10:20,781 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:10:20,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 9:10:20 PM
+2006-06-01 21:10:20,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 21:10:20,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.36309
+2006-06-01 21:10:20,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 21:10:20,796 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 21:10:20,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 21:10:20,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 21:10:20,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17747968
+2006-06-01 21:10:20,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 21:10:20,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 21:10:20,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 21:10:20,812 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 21:10:20,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 21:10:20,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 21:10:20,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 21:10:20,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 21:10:20,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 21:10:20,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 21:10:20,828 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:10:20,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 21:10:20,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 21:10:20,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 21:10:20,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 21:10:20,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 21:10:20,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:10:20,843 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 21:10:20,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:10:20,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 21:10:20,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 21:10:20,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 21:10:20,859 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:10:20,859 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 21:10:29,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:10:29,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 9:10:29 PM
+2006-06-01 21:10:29,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 21:10:29,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.36314
+2006-06-01 21:10:29,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 21:10:29,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 21:10:29,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 21:10:29,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 21:10:29,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17727488
+2006-06-01 21:10:29,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 21:10:29,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 21:10:29,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 21:10:29,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 21:10:29,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 21:10:29,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 21:10:29,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 21:10:29,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 21:10:29,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 21:10:29,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 21:10:29,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:10:29,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 21:10:29,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 21:10:29,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 21:10:29,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 21:10:29,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 21:10:29,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 21:10:29,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 21:10:29,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 21:10:29,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 21:10:29,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 21:10:29,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 21:10:29,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:10:29,562 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 21:10:38,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:10:38,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 9:10:38 PM
+2006-06-01 21:10:38,406 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 21:10:38,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.36318
+2006-06-01 21:10:38,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 21:10:38,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 21:10:38,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 21:10:38,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 21:10:38,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17739776
+2006-06-01 21:10:38,421 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 21:10:38,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 21:10:38,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 21:10:38,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 21:10:38,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 21:10:38,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 21:10:38,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 21:10:38,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 21:10:38,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 21:10:38,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 21:10:38,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:10:38,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 21:10:38,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 21:10:38,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 21:10:38,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 21:10:38,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 21:10:38,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:10:38,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 21:10:38,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 21:10:38,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 21:10:38,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 21:10:38,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 21:10:38,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:10:38,468 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 21:50:08,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:50:08,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 9:50:08 PM
+2006-06-01 21:50:08,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 21:50:08,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.37503
+2006-06-01 21:50:08,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 21:50:08,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 21:50:08,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 21:50:08,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 21:50:08,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17866752
+2006-06-01 21:50:08,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 21:50:08,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 21:50:08,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 21:50:08,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 21:50:08,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 21:50:08,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 21:50:08,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 21:50:08,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 21:50:08,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 21:50:08,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 21:50:08,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:50:08,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 21:50:08,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 21:50:08,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 21:50:08,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 21:50:08,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 21:50:08,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 21:50:08,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 21:50:08,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 21:50:08,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 21:50:08,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 21:50:08,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 21:50:08,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 21:50:08,562 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 22:22:32,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 22:22:32,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 10:22:32 PM
+2006-06-01 22:22:32,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 22:22:32,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.38475
+2006-06-01 22:22:32,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 22:22:32,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 22:22:32,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 22:22:32,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 22:22:32,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17731584
+2006-06-01 22:22:32,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 22:22:32,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 22:22:32,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 22:22:32,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 22:22:32,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 22:22:32,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 22:22:32,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 22:22:32,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 22:22:32,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 22:22:32,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 22:22:32,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 22:22:32,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 22:22:32,531 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 22:22:32,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 22:22:32,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 22:22:32,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 22:22:32,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 22:22:32,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 22:22:32,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 22:22:32,546 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 22:22:32,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 22:22:32,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 22:22:32,562 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 22:22:32,562 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-01 22:22:59,437 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 22:22:59,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 10:22:59 PM
+2006-06-01 22:22:59,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 22:22:59,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Version: 0.5.3.38489
+2006-06-01 22:22:59,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 
+2006-06-01 22:22:59,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties Begin---------------
+2006-06-01 22:22:59,453 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 22:22:59,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: CLR: 2.0.50727.42
+2006-06-01 22:22:59,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Memory: 17768448
+2006-06-01 22:22:59,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Computer Name: DAEMON64
+2006-06-01 22:22:59,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Domain Name: DAEMON64
+2006-06-01 22:22:59,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: User Name: Chris
+2006-06-01 22:22:59,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Network: Enabled
+2006-06-01 22:22:59,468 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Printers: 
+2006-06-01 22:22:59,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	HP DeskJet 830C/832C
+2006-06-01 22:22:59,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Paths: 
+2006-06-01 22:22:59,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 22:22:59,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 22:22:59,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------System Properties End-----------------
+2006-06-01 22:22:59,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 22:22:59,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties Begin-----------------
+2006-06-01 22:22:59,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Current Windows Identity
+2006-06-01 22:22:59,484 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------
+2006-06-01 22:22:59,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Name: DAEMON64\Chris
+2006-06-01 22:22:59,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: AuthenticationType: NTLM
+2006-06-01 22:22:59,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 22:22:59,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAnonymous: False
+2006-06-01 22:22:59,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsAuthenticated: True
+2006-06-01 22:22:59,500 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsGuest: False
+2006-06-01 22:22:59,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: IsSystem: False
+2006-06-01 22:22:59,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: ---------------User Properties End-------------------
+2006-06-01 22:22:59,515 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 22:22:59,515 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 11: Started...
+2006-06-01 22:23:21,984 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 22:23:22,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Thursday, June 01, 2006 10:23:22 PM
+2006-06-01 22:23:22,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-01 22:23:22,000 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Version: 0.5.3.38500
+2006-06-01 22:23:22,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 
+2006-06-01 22:23:22,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties Begin---------------
+2006-06-01 22:23:22,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-01 22:23:22,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: CLR: 2.0.50727.42
+2006-06-01 22:23:22,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Memory: 17731584
+2006-06-01 22:23:22,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Computer Name: DAEMON64
+2006-06-01 22:23:22,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Domain Name: DAEMON64
+2006-06-01 22:23:22,015 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: User Name: Chris
+2006-06-01 22:23:22,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Network: Enabled
+2006-06-01 22:23:22,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Printers: 
+2006-06-01 22:23:22,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	HP DeskJet 830C/832C
+2006-06-01 22:23:22,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Paths: 
+2006-06-01 22:23:22,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Executable: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug\LFS.BrowseForSpeed.EXE
+2006-06-01 22:23:22,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: 	Startup: G:\Documents and Settings\chris\Desktop\browseforspeed-0.3-src\frontend\bin\Debug
+2006-06-01 22:23:22,031 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------System Properties End-----------------
+2006-06-01 22:23:22,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 22:23:22,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties Begin-----------------
+2006-06-01 22:23:22,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Current Windows Identity
+2006-06-01 22:23:22,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------
+2006-06-01 22:23:22,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Name: DAEMON64\Chris
+2006-06-01 22:23:22,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: AuthenticationType: NTLM
+2006-06-01 22:23:22,046 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 22:23:22,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAnonymous: False
+2006-06-01 22:23:22,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsAuthenticated: True
+2006-06-01 22:23:22,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsGuest: False
+2006-06-01 22:23:22,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: IsSystem: False
+2006-06-01 22:23:22,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: ---------------User Properties End-------------------
+2006-06-01 22:23:22,062 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-01 22:23:22,062 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 10: Started...
+2006-06-02 17:11:37,700 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-02 17:11:37,762 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: Starting LFS.BrowseForSpeed; .NET Framework 2.0 on Friday, 2 June 2006 5:11:37 PM
+2006-06-02 17:11:37,762 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: 	Application: LFS.BrowseForSpeed; .NET Framework 2.0
+2006-06-02 17:11:37,762 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: 	Version: 0.5.3.30948
+2006-06-02 17:11:37,762 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: 
+2006-06-02 17:11:37,762 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: ---------------System Properties Begin---------------
+2006-06-02 17:11:37,762 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: OS: Microsoft Windows NT 5.1.2600 Service Pack 2
+2006-06-02 17:11:37,762 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: CLR: 2.0.50727.42
+2006-06-02 17:11:37,778 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: Memory: 11247616
+2006-06-02 17:11:37,778 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: Computer Name: SNOOKLE
+2006-06-02 17:11:37,778 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: Domain Name: SNOOKLE
+2006-06-02 17:11:37,778 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: User Name: Ben
+2006-06-02 17:11:37,778 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: Network: Enabled
+2006-06-02 17:11:37,778 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: Printers: 
+2006-06-02 17:11:37,794 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: 	\\Earth\hp psc 1310 series
+2006-06-02 17:11:37,794 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: 	Auto hp psc 1310 series on Earth
+2006-06-02 17:11:37,794 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: Paths: 
+2006-06-02 17:11:37,794 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: 	Executable: E:\BrowseForSpeed.Branch1\bin\Debug\LFS.BrowseForSpeed.exe
+2006-06-02 17:11:37,794 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: 	Startup: E:\BrowseForSpeed.Branch1\bin\Debug
+2006-06-02 17:11:37,794 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: ---------------System Properties End-----------------
+2006-06-02 17:11:37,794 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-02 17:11:37,794 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: ---------------User Properties Begin-----------------
+2006-06-02 17:11:37,794 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: Current Windows Identity
+2006-06-02 17:11:37,794 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: ---------------
+2006-06-02 17:11:37,794 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: Name: SNOOKLE\Ben
+2006-06-02 17:11:37,809 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: AuthenticationType: NTLM
+2006-06-02 17:11:37,825 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: IsAuthenticated: True
+2006-06-02 17:11:37,825 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: IsAnonymous: False
+2006-06-02 17:11:37,825 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: IsAuthenticated: True
+2006-06-02 17:11:37,825 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: IsGuest: False
+2006-06-02 17:11:37,825 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: IsSystem: False
+2006-06-02 17:11:37,825 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: ---------------User Properties End-------------------
+2006-06-02 17:11:37,825 INFO  LFS.BrowseForSpeed.Windows.Forms.MainForm.
+2006-06-02 17:11:37,825 TRACE LFS.BrowseForSpeed.Windows.Forms.MainForm.Run, 1: Started...
