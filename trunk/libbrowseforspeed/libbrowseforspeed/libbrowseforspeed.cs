@@ -63,7 +63,11 @@ namespace libbrowseforspeed {
 		public static string[] CAR_GROUP_NAMES = {"ALL", "SS", "GTR", "FWD", "LRF", "STD", "TBO"};
 		public static ulong[] CAR_GROUP_DISALLOW = {0, 243583, 280704, 511726, 522368, 524028, 392896};
 		public static ulong[] CAR_GROUP_DONTCARE = {524287, 280704, 14207, 12561, 319, 259, 291};
+		public static byte DEMO = 0x00;
+		public static byte S1 = 0x01;
+		public static byte S2 = 0x02;
 		
+		public static Hashtable msFilters;
 		public static Hashtable trackCodes;
 
 		
@@ -163,7 +167,11 @@ namespace libbrowseforspeed {
 			trackCodes.Add("AS6", "Aston Grand Touring");
 			trackCodes.Add("AS6R", "Aston Grand Touring Rev");
 			trackCodes.Add("AS7", "Aston North");
-			trackCodes.Add("AS7R", "Aston North Rev");			
+			trackCodes.Add("AS7R", "Aston North Rev");
+			msFilters.Add("Private", 0x04);
+			msFilters.Add("Public", 0x08);
+			msFilters.Add("Empty", 0x16);
+			msFilters.Add("Full", 0x32);
 		}
 	
 		public class ServerQuery {
@@ -343,12 +351,10 @@ namespace libbrowseforspeed {
 			public static byte[] unknown = {0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 			public static byte[] footer = { 0x2f, 0x4e }; // /N;
 
-			public Query(ulong cars_compulsory, ulong cars_illegal, string user, bool hideEmpty) { 
-				if (hideEmpty) { 
-					client_version_info[3] = 0x12; //16 (!empty) + 2 (default) 
-				} else {
-					client_version_info[3] = 0x02; 
-				} 
+			public Query(ulong cars_compulsory, ulong cars_illegal, string user, byte filters, byte version) {
+				filters ^= 0x02; //not sure what 0x01 and 0x02 are. 0x02 seems to be set always?
+				client_version_info[3] = filters;				
+				client_version_info[4] = version;
 				Query.cars_compulsory = cars_compulsory;
 				Query.cars_illegal = cars_illegal;
 				Encoding ascii = Encoding.ASCII;
@@ -388,10 +394,10 @@ namespace libbrowseforspeed {
 
 		}
 
-		public void query(ulong cars_compulsory, ulong cars_illegal, string username, object callbackObj, bool hideEmpty) {
+		public void query(ulong cars_compulsory, ulong cars_illegal, string username, object callbackObj, byte filters, byte version) {
 			LFSQuery.keepQuerying = true;
 			ArrayList allHosts = new ArrayList();
-			Query query = new Query(cars_compulsory, cars_illegal, username, hideEmpty);
+			Query query = new Query(cars_compulsory, cars_illegal, username, filters, version);
 			TcpClient client = new TcpClient("82.44.126.169", 29339);
 			Stream str = client.GetStream();
 			ulong hosts = 1;
@@ -458,8 +464,8 @@ namespace libbrowseforspeed {
 				0x00, 0x53, 0x6e, 0x6f, 0x6f, 0x6b, 0x6c, 0x65, 
 				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
 				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-				0x00, 0x19, 0x00, 0xe4, 0xa3, 0xff, 0xbe, 0x59,
-				0xf2, 0x00, 0x00, 0x2f, 0x4e
+				0x00, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+				0x00, 0x00, 0x00, 0x2f, 0x4e
 			};
 			byte[] user = new byte[24];
 			byte[] finduser = new byte[24];
