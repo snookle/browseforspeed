@@ -6,7 +6,7 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-namespace LFS_ServerBrowser
+namespace BrowseForSpeed.Frontend
 {
 	partial class MainForm : System.Windows.Forms.Form
 	{
@@ -52,7 +52,7 @@ namespace LFS_ServerBrowser
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.cbEmpty = new System.Windows.Forms.CheckBox();
 			this.cbTracks = new System.Windows.Forms.ComboBox();
-			this.lvMain = new System.Windows.Forms.ListView();
+			this.lvMain = new BrowseForSpeed.Frontend.MainListView();
 			this.columnHeaderName = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderPing = new System.Windows.Forms.ColumnHeader();
 			this.columnPrivate = new System.Windows.Forms.ColumnHeader();
@@ -69,7 +69,7 @@ namespace LFS_ServerBrowser
 			this.tabFavourites = new System.Windows.Forms.TabPage();
 			this.buttonRefreshFav = new System.Windows.Forms.Button();
 			this.btnJoinFav = new System.Windows.Forms.Button();
-			this.lvFavourites = new System.Windows.Forms.ListView();
+			this.lvFavourites = new BrowseForSpeed.Frontend.FavouriteListView();
 			this.columnHeaderFavServerName = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderFavPing = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderFavSlots = new System.Windows.Forms.ColumnHeader();
@@ -987,6 +987,7 @@ namespace LFS_ServerBrowser
 			this.Text = "Browse For Speed";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainFormClosed);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainKeyDown);
+			this.Load += new System.EventHandler(this.MainFormLoad);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			this.tabControl.ResumeLayout(false);
@@ -1047,9 +1048,9 @@ namespace LFS_ServerBrowser
 		private System.Windows.Forms.Button buttonBrowse;
 		private System.Windows.Forms.Button btnJoinFav;
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
-		private System.Windows.Forms.ListView lvFavourites;
+		private FavouriteListView lvFavourites;
 		private System.Windows.Forms.ComboBox cbTracks;
-		private System.Windows.Forms.ListView lvMain;
+		private MainListView lvMain;
 		private System.Windows.Forms.Button btnRefreshMain;
 		private System.Windows.Forms.Button btnFindUserMain;
 		private System.Windows.Forms.TextBox edtPasswordMain;

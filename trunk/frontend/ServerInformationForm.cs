@@ -24,7 +24,8 @@ using Microsoft.Win32;
 using System.Text.RegularExpressions;
 using libbrowseforspeed;
 
-namespace LFS_ServerBrowser {
+namespace BrowseForSpeed.Frontend
+{
 	public partial class ServerInformationForm
 	{
 		private ServerInformation info;
@@ -142,8 +143,8 @@ namespace LFS_ServerBrowser {
 				this.info = info;
 				info.hostname = LFSQuery.removeColourCodes(info.hostname);				
 				labelServerName.Text = info.hostname;
-				labelCars.Text = main.CarsToString(info.cars);
-				labelInfo.Text = main.RulesToString(info.rules);
+				labelCars.Text = MainForm.CarsToString(LFSQuery.getCarNames(info.cars));
+				labelInfo.Text = MainForm.RulesToString(info.rules);
 				labelPing.Text = info.ping.ToString();
 				labelTrack.Text = info.track;				
 			} else {				

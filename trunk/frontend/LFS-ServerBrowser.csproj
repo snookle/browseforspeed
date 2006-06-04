@@ -62,6 +62,7 @@
       <DependentUpon>ServerInformationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ca3r.ico" />
+    <Compile Include="Configuration.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>
