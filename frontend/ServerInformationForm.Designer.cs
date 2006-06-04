@@ -6,7 +6,7 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-namespace LFS_ServerBrowser
+namespace BrowseForSpeed.Frontend
 {
 	partial class ServerInformationForm : System.Windows.Forms.Form
 	{
