@@ -114,7 +114,7 @@ namespace libbrowseforspeed {
 		public static event ServerQueried queried;
 
 		public LFSQuery() {
-			trackCodes = new Hashtable(52);
+			trackCodes = new Hashtable(53);
 			trackCodes.Add("BL1", "Blackwood");
 			trackCodes.Add("BL1R", "Blackwood Rev");
 			trackCodes.Add("BL2", "Blackwood Rallyx");
@@ -153,7 +153,7 @@ namespace libbrowseforspeed {
 			trackCodes.Add("KY3", "Kyoto GP Long");
 			trackCodes.Add("KY3R", "Kyoto GP Long Rev");
 			trackCodes.Add("WE1", "Westhill International");
-			trackCodes.Add("WE2", "Westhill International Rev");
+			trackCodes.Add("WE1R", "Westhill International Rev");
 			trackCodes.Add("AS1", "Aston Cadet");
 			trackCodes.Add("AS1R", "Aston Cadet Rev");
 			trackCodes.Add("AS2", "Aston Club");
@@ -169,10 +169,10 @@ namespace libbrowseforspeed {
 			trackCodes.Add("AS7", "Aston North");
 			trackCodes.Add("AS7R", "Aston North Rev");
 			msFilters = new Hashtable(4);
-			msFilters.Add("Private", 0x04);
-			msFilters.Add("Public", 0x08);
-			msFilters.Add("Empty", 0x10);
-			msFilters.Add("Full", 0x20);
+			msFilters.Add("Private", (byte)0x04);
+			msFilters.Add("Public", (byte)0x08);
+			msFilters.Add("Empty", (byte)0x10);
+			msFilters.Add("Full", (byte)0x20);
 		}
 	
 		public class ServerQuery {
@@ -337,7 +337,7 @@ namespace libbrowseforspeed {
 					return;
 				}*/
 				serverinfo.success = true;
-				serverinfo.cars = (ulong)(recbuf[12] * 16777216 + recbuf[11] * 65536 + recbuf[10] * 256 + recbuf[9]);				
+				serverinfo.cars = (ulong)(recbuf[12] * 16777216 + recbuf[11] * 65536 + recbuf[10] * 256 + recbuf[9]);
 				serverinfo.track = (string)trackCodes[getLFSString(recbuf, 1, 4)];
 			}
 		}
