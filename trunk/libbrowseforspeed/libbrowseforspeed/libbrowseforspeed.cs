@@ -171,8 +171,8 @@ namespace libbrowseforspeed {
 			msFilters = new Hashtable(4);
 			msFilters.Add("Private", 0x04);
 			msFilters.Add("Public", 0x08);
-			msFilters.Add("Empty", 0x16);
-			msFilters.Add("Full", 0x32);
+			msFilters.Add("Empty", 0x10);
+			msFilters.Add("Full", 0x20);
 		}
 	
 		public class ServerQuery {
@@ -353,7 +353,7 @@ namespace libbrowseforspeed {
 			public static byte[] footer = { 0x2f, 0x4e }; // /N;
 
 			public Query(ulong cars_compulsory, ulong cars_illegal, string user, byte filters, byte version) {
-				filters ^= 0x02; //not sure what 0x01 and 0x02 are. 0x02 seems to be set always?
+				filters |= 0x02; //not sure what 0x01 and 0x02 are. 0x02 seems to be set always?
 				client_version_info[3] = filters;				
 				client_version_info[4] = version;
 				Query.cars_compulsory = cars_compulsory;
