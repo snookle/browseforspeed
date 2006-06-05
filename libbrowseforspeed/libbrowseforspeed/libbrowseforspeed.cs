@@ -168,6 +168,7 @@ namespace libbrowseforspeed {
 			trackCodes.Add("AS6R", "Aston Grand Touring Rev");
 			trackCodes.Add("AS7", "Aston North");
 			trackCodes.Add("AS7R", "Aston North Rev");
+			msFilters = new Hashtable(4);
 			msFilters.Add("Private", 0x04);
 			msFilters.Add("Public", 0x08);
 			msFilters.Add("Empty", 0x16);
