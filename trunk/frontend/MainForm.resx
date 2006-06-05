@@ -120,25 +120,4126 @@
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuStrip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuStrip.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="menuStrip.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="menuStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="menuStrip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="fileToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fileToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="closeToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="closeToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="closeToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="closeToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="closeToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="closeToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="closeToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="closeToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="closeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 22</value>
+  </data>
+  <data name="closeToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="closeToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="closeToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="fileToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fileToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="fileToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="fileToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="fileToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="fileToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="fileToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="fileToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="aboutToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="aboutToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
+    <value>&amp;About...</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="aboutToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="aboutToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="aboutToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="aboutToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="aboutToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="aboutToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="aboutToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>862, 24</value>
+  </data>
+  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="menuStrip.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
+    <value>menuStrip</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabControl.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="tabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="tabControl.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
+    <value>Normal</value>
+  </data>
+  <data name="tabControl.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="tabMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="tabMain.AutoScroll" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tabMain.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="edtFindUserMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="edtFindUserMain.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="edtFindUserMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="edtFindUserMain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="edtFindUserMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>567, 536</value>
+  </data>
+  <data name="edtFindUserMain.MaxLength" type="System.Int32, mscorlib">
+    <value>32767</value>
+  </data>
+  <data name="edtFindUserMain.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="edtFindUserMain.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtFindUserMain.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="edtFindUserMain.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="edtFindUserMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 21</value>
+  </data>
+  <data name="edtFindUserMain.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="edtFindUserMain.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="edtFindUserMain.WordWrap" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;edtFindUserMain.Name" xml:space="preserve">
+    <value>edtFindUserMain</value>
+  </data>
+  <data name="&gt;&gt;edtFindUserMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;edtFindUserMain.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;edtFindUserMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="label1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label1.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="label1.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>511, 541</value>
+  </data>
+  <data name="label1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 21</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Find User:</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="edtPasswordMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="edtPasswordMain.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="edtPasswordMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="edtPasswordMain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="edtPasswordMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 538</value>
+  </data>
+  <data name="edtPasswordMain.MaxLength" type="System.Int32, mscorlib">
+    <value>32767</value>
+  </data>
+  <data name="edtPasswordMain.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="edtPasswordMain.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtPasswordMain.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="edtPasswordMain.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="edtPasswordMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 21</value>
+  </data>
+  <data name="edtPasswordMain.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="edtPasswordMain.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="edtPasswordMain.WordWrap" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;edtPasswordMain.Name" xml:space="preserve">
+    <value>edtPasswordMain</value>
+  </data>
+  <data name="&gt;&gt;edtPasswordMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;edtPasswordMain.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;edtPasswordMain.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label6.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="label6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="label6.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label6.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="label6.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 541</value>
+  </data>
+  <data name="label6.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 16</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Server Password:</value>
+  </data>
+  <data name="label6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnFindUserMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnFindUserMain.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnFindUserMain.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="btnFindUserMain.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="btnFindUserMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnFindUserMain.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="btnFindUserMain.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnFindUserMain.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="btnFindUserMain.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnFindUserMain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnFindUserMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>731, 536</value>
+  </data>
+  <data name="btnFindUserMain.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnFindUserMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 23</value>
+  </data>
+  <data name="btnFindUserMain.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnFindUserMain.Text" xml:space="preserve">
+    <value>&amp;Find User Online</value>
+  </data>
+  <data name="btnFindUserMain.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnFindUserMain.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;btnFindUserMain.Name" xml:space="preserve">
+    <value>btnFindUserMain</value>
+  </data>
+  <data name="&gt;&gt;btnFindUserMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFindUserMain.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;btnFindUserMain.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="groupBox2.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox2.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="groupBox2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="cbPublic.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="cbPublic.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Normal</value>
+  </data>
+  <data name="cbPublic.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cbPublic.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="cbPublic.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbPublic.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="cbPublic.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="cbPublic.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="cbPublic.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="cbPublic.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPublic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbPublic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 492</value>
+  </data>
+  <data name="cbPublic.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbPublic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 24</value>
+  </data>
+  <data name="cbPublic.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="cbPublic.Text" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="cbPublic.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbPublic.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;cbPublic.Name" xml:space="preserve">
+    <value>cbPublic</value>
+  </data>
+  <data name="&gt;&gt;cbPublic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPublic.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;cbPublic.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbPrivate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="cbPrivate.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Normal</value>
+  </data>
+  <data name="cbPrivate.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cbPrivate.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="cbPrivate.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbPrivate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="cbPrivate.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="cbPrivate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="cbPrivate.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="cbPrivate.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbPrivate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbPrivate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 472</value>
+  </data>
+  <data name="cbPrivate.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbPrivate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 16</value>
+  </data>
+  <data name="cbPrivate.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="cbPrivate.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="cbPrivate.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbPrivate.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;cbPrivate.Name" xml:space="preserve">
+    <value>cbPrivate</value>
+  </data>
+  <data name="&gt;&gt;cbPrivate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPrivate.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;cbPrivate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbFull.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="cbFull.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Normal</value>
+  </data>
+  <data name="cbFull.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cbFull.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="cbFull.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbFull.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="cbFull.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="cbFull.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="cbFull.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="cbFull.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbFull.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbFull.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 450</value>
+  </data>
+  <data name="cbFull.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbFull.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 16</value>
+  </data>
+  <data name="cbFull.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="cbFull.Text" xml:space="preserve">
+    <value>Full</value>
+  </data>
+  <data name="cbFull.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbFull.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;cbFull.Name" xml:space="preserve">
+    <value>cbFull</value>
+  </data>
+  <data name="&gt;&gt;cbFull.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFull.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;cbFull.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label9.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="label9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="label9.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label9.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="label9.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 380</value>
+  </data>
+  <data name="label9.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 15</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Ping Threshold:</value>
+  </data>
+  <data name="label9.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbPing.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="cbPing.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="cbPing.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="cbPing.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="cbPing.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbPing.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbPing.Items" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="cbPing.Items1" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="cbPing.Items2" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="cbPing.Items3" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="cbPing.Items4" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="cbPing.Items5" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="cbPing.Items6" xml:space="preserve">
+    <value>1000</value>
+  </data>
+  <data name="cbPing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 398</value>
+  </data>
+  <data name="cbPing.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="cbPing.MaxLength" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbPing.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbPing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 21</value>
+  </data>
+  <data name="cbPing.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;cbPing.Name" xml:space="preserve">
+    <value>cbPing</value>
+  </data>
+  <data name="&gt;&gt;cbPing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbPing.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;cbPing.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbEmpty.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="cbEmpty.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Normal</value>
+  </data>
+  <data name="cbEmpty.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cbEmpty.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="cbEmpty.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbEmpty.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="cbEmpty.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="cbEmpty.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="cbEmpty.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="cbEmpty.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbEmpty.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbEmpty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 425</value>
+  </data>
+  <data name="cbEmpty.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbEmpty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 19</value>
+  </data>
+  <data name="cbEmpty.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="cbEmpty.Text" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="cbEmpty.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbEmpty.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;cbEmpty.Name" xml:space="preserve">
+    <value>cbEmpty</value>
+  </data>
+  <data name="&gt;&gt;cbEmpty.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbEmpty.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;cbEmpty.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cbTracks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="cbTracks.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="cbTracks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="cbTracks.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="cbTracks.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbTracks.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbTracks.Items" xml:space="preserve">
+    <value>All Tracks</value>
+  </data>
+  <data name="cbTracks.Items1" xml:space="preserve">
+    <value>Blackwood</value>
+  </data>
+  <data name="cbTracks.Items2" xml:space="preserve">
+    <value>South City</value>
+  </data>
+  <data name="cbTracks.Items3" xml:space="preserve">
+    <value>Fern Bay</value>
+  </data>
+  <data name="cbTracks.Items4" xml:space="preserve">
+    <value>Kyoto</value>
+  </data>
+  <data name="cbTracks.Items5" xml:space="preserve">
+    <value>Westhill</value>
+  </data>
+  <data name="cbTracks.Items6" xml:space="preserve">
+    <value>Aston</value>
+  </data>
+  <data name="cbTracks.Items7" xml:space="preserve">
+    <value>Autocross</value>
+  </data>
+  <data name="cbTracks.Items8" xml:space="preserve">
+    <value>Drag</value>
+  </data>
+  <data name="cbTracks.Items9" xml:space="preserve">
+    <value>Skid Pan</value>
+  </data>
+  <data name="cbTracks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 356</value>
+  </data>
+  <data name="cbTracks.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="cbTracks.MaxLength" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbTracks.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbTracks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 21</value>
+  </data>
+  <data name="cbTracks.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;cbTracks.Name" xml:space="preserve">
+    <value>cbTracks</value>
+  </data>
+  <data name="&gt;&gt;cbTracks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTracks.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;cbTracks.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="groupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="groupBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>731, 6</value>
+  </data>
+  <data name="groupBox2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 522</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lvMain.Alignment" type="System.Windows.Forms.ListViewAlignment, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="lvMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lvMain.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="columnHeaderName.Text" xml:space="preserve">
+    <value>Server Name</value>
+  </data>
+  <data name="columnHeaderName.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnHeaderName.Width" type="System.Int32, mscorlib">
+    <value>158</value>
+  </data>
+  <data name="columnHeaderPing.Text" xml:space="preserve">
+    <value>Ping</value>
+  </data>
+  <data name="columnHeaderPing.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnHeaderPing.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="columnPrivate.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="columnPrivate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnPrivate.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="columnHeaderConnections.Text" xml:space="preserve">
+    <value>Connections</value>
+  </data>
+  <data name="columnHeaderConnections.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnHeaderConnections.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="columnHeaderInfo.Text" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="columnHeaderInfo.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnHeaderInfo.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="columnHeaderTrack.Text" xml:space="preserve">
+    <value>Track</value>
+  </data>
+  <data name="columnHeaderTrack.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnHeaderTrack.Width" type="System.Int32, mscorlib">
+    <value>134</value>
+  </data>
+  <data name="columnHeaderCars.Text" xml:space="preserve">
+    <value>Cars</value>
+  </data>
+  <data name="columnHeaderCars.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnHeaderCars.Width" type="System.Int32, mscorlib">
+    <value>180</value>
+  </data>
   <metadata name="contextMenuBrowser.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>253, 17</value>
   </metadata>
+  <data name="contextMenuBrowser.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="contextMenuBrowser.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="contextMenuBrowser.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="contextMenuBrowser.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="contextMenuBrowser.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="joinServerToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="joinServerToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="joinServerToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="joinServerToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="joinServerToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="joinServerToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="joinServerToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="joinServerToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="joinServerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 22</value>
+  </data>
+  <data name="joinServerToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Join Server</value>
+  </data>
+  <data name="joinServerToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="joinServerToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="viewServerInformationMain.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="viewServerInformationMain.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="viewServerInformationMain.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="viewServerInformationMain.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="viewServerInformationMain.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="viewServerInformationMain.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="viewServerInformationMain.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="viewServerInformationMain.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="viewServerInformationMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 22</value>
+  </data>
+  <data name="viewServerInformationMain.Text" xml:space="preserve">
+    <value>&amp;View Server Information...</value>
+  </data>
+  <data name="viewServerInformationMain.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="viewServerInformationMain.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="toolStripMenuItem1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="toolStripMenuItem1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="toolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="toolStripMenuItem1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="toolStripMenuItem1.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="toolStripMenuItem1.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="toolStripMenuItem1.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 22</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>&amp;Add to Favourites</value>
+  </data>
+  <data name="toolStripMenuItem1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="toolStripMenuItem1.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="contextMenuBrowser.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="contextMenuBrowser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 70</value>
+  </data>
+  <data name="&gt;&gt;contextMenuBrowser.Name" xml:space="preserve">
+    <value>contextMenuBrowser</value>
+  </data>
+  <data name="&gt;&gt;contextMenuBrowser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lvMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lvMain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="lvMain.LabelWrap" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lvMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 6</value>
+  </data>
+  <data name="lvMain.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="lvMain.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lvMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>717, 524</value>
+  </data>
+  <data name="lvMain.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lvMain.Name" xml:space="preserve">
+    <value>lvMain</value>
+  </data>
+  <data name="&gt;&gt;lvMain.Type" xml:space="preserve">
+    <value>BrowseForSpeed.Frontend.MainListView, BrowseForSpeed, Version=1.0.2347.32048, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvMain.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;lvMain.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnRefreshMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnRefreshMain.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnRefreshMain.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="btnRefreshMain.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="btnRefreshMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnRefreshMain.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="btnRefreshMain.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnRefreshMain.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="btnRefreshMain.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnRefreshMain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnRefreshMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 539</value>
+  </data>
+  <data name="btnRefreshMain.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnRefreshMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnRefreshMain.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnRefreshMain.Text" xml:space="preserve">
+    <value>&amp;Refresh</value>
+  </data>
+  <data name="btnRefreshMain.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnRefreshMain.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshMain.Name" xml:space="preserve">
+    <value>btnRefreshMain</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshMain.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshMain.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnJoinMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnJoinMain.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnJoinMain.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="btnJoinMain.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="btnJoinMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnJoinMain.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnJoinMain.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="btnJoinMain.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnJoinMain.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="btnJoinMain.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnJoinMain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnJoinMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 539</value>
+  </data>
+  <data name="btnJoinMain.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnJoinMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnJoinMain.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnJoinMain.Text" xml:space="preserve">
+    <value>&amp;Join</value>
+  </data>
+  <data name="btnJoinMain.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnJoinMain.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;btnJoinMain.Name" xml:space="preserve">
+    <value>btnJoinMain</value>
+  </data>
+  <data name="&gt;&gt;btnJoinMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnJoinMain.Parent" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;btnJoinMain.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tabMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="tabMain.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="tabMain.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabMain.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="tabMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabMain.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="tabMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>854, 565</value>
+  </data>
+  <data name="tabMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabMain.Text" xml:space="preserve">
+    <value>Server Browser</value>
+  </data>
+  <data name="tabMain.ToolTipText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;tabMain.Name" xml:space="preserve">
+    <value>tabMain</value>
+  </data>
+  <data name="&gt;&gt;tabMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabMain.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabFavourites.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="tabFavourites.AutoScroll" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tabFavourites.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="buttonRefreshFav.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="buttonRefreshFav.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonRefreshFav.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="buttonRefreshFav.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="buttonRefreshFav.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="buttonRefreshFav.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="buttonRefreshFav.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="buttonRefreshFav.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="buttonRefreshFav.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonRefreshFav.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="buttonRefreshFav.Location" type="System.Drawing.Point, System.Drawing">
+    <value>89, 539</value>
+  </data>
+  <data name="buttonRefreshFav.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="buttonRefreshFav.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="buttonRefreshFav.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="buttonRefreshFav.Text" xml:space="preserve">
+    <value>&amp;Refresh</value>
+  </data>
+  <data name="buttonRefreshFav.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="buttonRefreshFav.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;buttonRefreshFav.Name" xml:space="preserve">
+    <value>buttonRefreshFav</value>
+  </data>
+  <data name="&gt;&gt;buttonRefreshFav.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonRefreshFav.Parent" xml:space="preserve">
+    <value>tabFavourites</value>
+  </data>
+  <data name="&gt;&gt;buttonRefreshFav.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnJoinFav.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnJoinFav.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnJoinFav.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="btnJoinFav.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="btnJoinFav.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnJoinFav.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnJoinFav.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="btnJoinFav.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnJoinFav.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="btnJoinFav.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnJoinFav.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnJoinFav.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 539</value>
+  </data>
+  <data name="btnJoinFav.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnJoinFav.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnJoinFav.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnJoinFav.Text" xml:space="preserve">
+    <value>&amp;Join</value>
+  </data>
+  <data name="btnJoinFav.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnJoinFav.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;btnJoinFav.Name" xml:space="preserve">
+    <value>btnJoinFav</value>
+  </data>
+  <data name="&gt;&gt;btnJoinFav.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnJoinFav.Parent" xml:space="preserve">
+    <value>tabFavourites</value>
+  </data>
+  <data name="&gt;&gt;btnJoinFav.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lvFavourites.Alignment" type="System.Windows.Forms.ListViewAlignment, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="lvFavourites.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lvFavourites.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="columnHeaderFavServerName.Text" xml:space="preserve">
+    <value>Server Name</value>
+  </data>
+  <data name="columnHeaderFavServerName.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnHeaderFavServerName.Width" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
+  <data name="columnHeaderFavPing.Text" xml:space="preserve">
+    <value>Ping</value>
+  </data>
+  <data name="columnHeaderFavPing.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnHeaderFavPing.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="columnHeaderFavSlots.Text" xml:space="preserve">
+    <value>Connections</value>
+  </data>
+  <data name="columnHeaderFavSlots.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnHeaderFavSlots.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="columnHeaderFavInfo.Text" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="columnHeaderFavInfo.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnHeaderFavInfo.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="columnHeaderFavTrack.Text" xml:space="preserve">
+    <value>Track</value>
+  </data>
+  <data name="columnHeaderFavTrack.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnHeaderFavTrack.Width" type="System.Int32, mscorlib">
+    <value>140</value>
+  </data>
+  <data name="columnHeaderFavCars.Text" xml:space="preserve">
+    <value>Cars</value>
+  </data>
+  <data name="columnHeaderFavCars.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnHeaderFavCars.Width" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
   <metadata name="contextMenuFav.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>411, 17</value>
   </metadata>
+  <data name="contextMenuFav.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="contextMenuFav.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="contextMenuFav.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="contextMenuFav.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="contextMenuFav.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="joinServerToolStripMenuItem1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="joinServerToolStripMenuItem1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="joinServerToolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="joinServerToolStripMenuItem1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="joinServerToolStripMenuItem1.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="joinServerToolStripMenuItem1.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="joinServerToolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="joinServerToolStripMenuItem1.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="joinServerToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 22</value>
+  </data>
+  <data name="joinServerToolStripMenuItem1.Text" xml:space="preserve">
+    <value>&amp;Join Server</value>
+  </data>
+  <data name="joinServerToolStripMenuItem1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="joinServerToolStripMenuItem1.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="viewServerInformationFav.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="viewServerInformationFav.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="viewServerInformationFav.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="viewServerInformationFav.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="viewServerInformationFav.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="viewServerInformationFav.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="viewServerInformationFav.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="viewServerInformationFav.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="viewServerInformationFav.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 22</value>
+  </data>
+  <data name="viewServerInformationFav.Text" xml:space="preserve">
+    <value>&amp;View Server Information...</value>
+  </data>
+  <data name="viewServerInformationFav.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="viewServerInformationFav.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="removeFromFavouritesToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="removeFromFavouritesToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="removeFromFavouritesToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="removeFromFavouritesToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="removeFromFavouritesToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="removeFromFavouritesToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="removeFromFavouritesToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="removeFromFavouritesToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="removeFromFavouritesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 22</value>
+  </data>
+  <data name="removeFromFavouritesToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Remove From Favourites</value>
+  </data>
+  <data name="removeFromFavouritesToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="removeFromFavouritesToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="contextMenuFav.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="contextMenuFav.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 70</value>
+  </data>
+  <data name="&gt;&gt;contextMenuFav.Name" xml:space="preserve">
+    <value>contextMenuFav</value>
+  </data>
+  <data name="&gt;&gt;contextMenuFav.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lvFavourites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lvFavourites.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="lvFavourites.LabelWrap" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lvFavourites.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 6</value>
+  </data>
+  <data name="lvFavourites.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="lvFavourites.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lvFavourites.Size" type="System.Drawing.Size, System.Drawing">
+    <value>838, 525</value>
+  </data>
+  <data name="lvFavourites.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lvFavourites.Name" xml:space="preserve">
+    <value>lvFavourites</value>
+  </data>
+  <data name="&gt;&gt;lvFavourites.Type" xml:space="preserve">
+    <value>BrowseForSpeed.Frontend.FavouriteListView, BrowseForSpeed, Version=1.0.2347.32048, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lvFavourites.Parent" xml:space="preserve">
+    <value>tabFavourites</value>
+  </data>
+  <data name="&gt;&gt;lvFavourites.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabFavourites.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="tabFavourites.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="tabFavourites.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabFavourites.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="tabFavourites.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabFavourites.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="tabFavourites.Size" type="System.Drawing.Size, System.Drawing">
+    <value>854, 565</value>
+  </data>
+  <data name="tabFavourites.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabFavourites.Text" xml:space="preserve">
+    <value>Favourites</value>
+  </data>
+  <data name="tabFavourites.ToolTipText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;tabFavourites.Name" xml:space="preserve">
+    <value>tabFavourites</value>
+  </data>
+  <data name="&gt;&gt;tabFavourites.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabFavourites.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabFavourites.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabFriends.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="tabFriends.AutoScroll" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tabFriends.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="edtFriendName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="edtFriendName.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="edtFriendName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="edtFriendName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="edtFriendName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>583, 537</value>
+  </data>
+  <data name="edtFriendName.MaxLength" type="System.Int32, mscorlib">
+    <value>32767</value>
+  </data>
+  <data name="edtFriendName.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="edtFriendName.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value />
+  </data>
+  <data name="edtFriendName.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="edtFriendName.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="edtFriendName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 21</value>
+  </data>
+  <data name="edtFriendName.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="edtFriendName.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="edtFriendName.WordWrap" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;edtFriendName.Name" xml:space="preserve">
+    <value>edtFriendName</value>
+  </data>
+  <data name="&gt;&gt;edtFriendName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;edtFriendName.Parent" xml:space="preserve">
+    <value>tabFriends</value>
+  </data>
+  <data name="&gt;&gt;edtFriendName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnAddFriend.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnAddFriend.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnAddFriend.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="btnAddFriend.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="btnAddFriend.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnAddFriend.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="btnAddFriend.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnAddFriend.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="btnAddFriend.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnAddFriend.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnAddFriend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>771, 536</value>
+  </data>
+  <data name="btnAddFriend.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnAddFriend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnAddFriend.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnAddFriend.Text" xml:space="preserve">
+    <value>&amp;Add Friend</value>
+  </data>
+  <data name="btnAddFriend.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnAddFriend.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;btnAddFriend.Name" xml:space="preserve">
+    <value>btnAddFriend</value>
+  </data>
+  <data name="&gt;&gt;btnAddFriend.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddFriend.Parent" xml:space="preserve">
+    <value>tabFriends</value>
+  </data>
+  <data name="&gt;&gt;btnAddFriend.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbHideOffline.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="cbHideOffline.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Normal</value>
+  </data>
+  <data name="cbHideOffline.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cbHideOffline.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="cbHideOffline.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbHideOffline.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="cbHideOffline.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="cbHideOffline.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="cbHideOffline.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="cbHideOffline.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbHideOffline.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbHideOffline.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 538</value>
+  </data>
+  <data name="cbHideOffline.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbHideOffline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 24</value>
+  </data>
+  <data name="cbHideOffline.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbHideOffline.Text" xml:space="preserve">
+    <value>Hide Offline Friends</value>
+  </data>
+  <data name="cbHideOffline.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbHideOffline.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;cbHideOffline.Name" xml:space="preserve">
+    <value>cbHideOffline</value>
+  </data>
+  <data name="&gt;&gt;cbHideOffline.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbHideOffline.Parent" xml:space="preserve">
+    <value>tabFriends</value>
+  </data>
+  <data name="&gt;&gt;cbHideOffline.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnRefreshFriend.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnRefreshFriend.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnRefreshFriend.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="btnRefreshFriend.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="btnRefreshFriend.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnRefreshFriend.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="btnRefreshFriend.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnRefreshFriend.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="btnRefreshFriend.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnRefreshFriend.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnRefreshFriend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 538</value>
+  </data>
+  <data name="btnRefreshFriend.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnRefreshFriend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnRefreshFriend.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnRefreshFriend.Text" xml:space="preserve">
+    <value>&amp;Refresh List</value>
+  </data>
+  <data name="btnRefreshFriend.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnRefreshFriend.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshFriend.Name" xml:space="preserve">
+    <value>btnRefreshFriend</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshFriend.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshFriend.Parent" xml:space="preserve">
+    <value>tabFriends</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshFriend.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnJoinFriend.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="btnJoinFriend.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnJoinFriend.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="btnJoinFriend.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="btnJoinFriend.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnJoinFriend.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnJoinFriend.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="btnJoinFriend.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnJoinFriend.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="btnJoinFriend.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnJoinFriend.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnJoinFriend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 538</value>
+  </data>
+  <data name="btnJoinFriend.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnJoinFriend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnJoinFriend.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnJoinFriend.Text" xml:space="preserve">
+    <value>&amp;Join Friend</value>
+  </data>
+  <data name="btnJoinFriend.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnJoinFriend.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;btnJoinFriend.Name" xml:space="preserve">
+    <value>btnJoinFriend</value>
+  </data>
+  <data name="&gt;&gt;btnJoinFriend.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnJoinFriend.Parent" xml:space="preserve">
+    <value>tabFriends</value>
+  </data>
+  <data name="&gt;&gt;btnJoinFriend.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lvFriends.Alignment" type="System.Windows.Forms.ListViewAlignment, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="lvFriends.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lvFriends.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="columnFriendName.Text" xml:space="preserve">
+    <value>Friend Name</value>
+  </data>
+  <data name="columnFriendName.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnFriendName.Width" type="System.Int32, mscorlib">
+    <value>138</value>
+  </data>
+  <data name="columnFriendServer.Text" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="columnFriendServer.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnFriendServer.Width" type="System.Int32, mscorlib">
+    <value>173</value>
+  </data>
+  <data name="columnFriendPrivate.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="columnFriendPrivate.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnFriendPrivate.Width" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="columnFriendPlayers.Text" xml:space="preserve">
+    <value>Players</value>
+  </data>
+  <data name="columnFriendPlayers.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="columnFriendPlayers.Width" type="System.Int32, mscorlib">
+    <value>391</value>
+  </data>
   <metadata name="contextMenuFriends.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>153, 56</value>
   </metadata>
+  <data name="contextMenuFriends.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="contextMenuFriends.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="contextMenuFriends.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="contextMenuFriends.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="contextMenuFriends.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="joinServerMenuFriends.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="joinServerMenuFriends.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="joinServerMenuFriends.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="joinServerMenuFriends.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="joinServerMenuFriends.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="joinServerMenuFriends.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="joinServerMenuFriends.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="joinServerMenuFriends.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="joinServerMenuFriends.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
+  </data>
+  <data name="joinServerMenuFriends.Text" xml:space="preserve">
+    <value>Join Server</value>
+  </data>
+  <data name="joinServerMenuFriends.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="joinServerMenuFriends.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="removeFriendToolStripMenuItem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="removeFriendToolStripMenuItem.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="removeFriendToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="removeFriendToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="removeFriendToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="removeFriendToolStripMenuItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="removeFriendToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="removeFriendToolStripMenuItem.ShowShortcutKeys" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="removeFriendToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
+  </data>
+  <data name="removeFriendToolStripMenuItem.Text" xml:space="preserve">
+    <value>Remove Friend</value>
+  </data>
+  <data name="removeFriendToolStripMenuItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="removeFriendToolStripMenuItem.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="contextMenuFriends.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="contextMenuFriends.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 48</value>
+  </data>
+  <data name="&gt;&gt;contextMenuFriends.Name" xml:space="preserve">
+    <value>contextMenuFriends</value>
+  </data>
+  <data name="&gt;&gt;contextMenuFriends.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lvFriends.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lvFriends.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="lvFriends.LabelWrap" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lvFriends.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 6</value>
+  </data>
+  <data name="lvFriends.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="lvFriends.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lvFriends.Size" type="System.Drawing.Size, System.Drawing">
+    <value>838, 524</value>
+  </data>
+  <data name="lvFriends.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lvFriends.Name" xml:space="preserve">
+    <value>lvFriends</value>
+  </data>
+  <data name="&gt;&gt;lvFriends.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvFriends.Parent" xml:space="preserve">
+    <value>tabFriends</value>
+  </data>
+  <data name="&gt;&gt;lvFriends.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tabFriends.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="tabFriends.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="tabFriends.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabFriends.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="tabFriends.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabFriends.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="tabFriends.Size" type="System.Drawing.Size, System.Drawing">
+    <value>854, 565</value>
+  </data>
+  <data name="tabFriends.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabFriends.Text" xml:space="preserve">
+    <value>Friends</value>
+  </data>
+  <data name="tabFriends.ToolTipText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;tabFriends.Name" xml:space="preserve">
+    <value>tabFriends</value>
+  </data>
+  <data name="&gt;&gt;tabFriends.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabFriends.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabFriends.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabConfig.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="tabConfig.AutoScroll" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tabConfig.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="groupBox1.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="groupBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="groupBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="groupBox4.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox4.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="groupBox4.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="rbJoin.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="rbJoin.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Normal</value>
+  </data>
+  <data name="rbJoin.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rbJoin.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="rbJoin.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="rbJoin.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="rbJoin.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="rbJoin.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="rbJoin.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="rbJoin.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rbJoin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="rbJoin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 48</value>
+  </data>
+  <data name="rbJoin.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="rbJoin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 22</value>
+  </data>
+  <data name="rbJoin.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rbJoin.Text" xml:space="preserve">
+    <value>Join server</value>
+  </data>
+  <data name="rbJoin.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="rbJoin.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;rbJoin.Name" xml:space="preserve">
+    <value>rbJoin</value>
+  </data>
+  <data name="&gt;&gt;rbJoin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbJoin.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;rbJoin.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="rbView.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Normal</value>
+  </data>
+  <data name="rbView.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rbView.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="rbView.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="rbView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="rbView.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="rbView.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="rbView.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="rbView.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="rbView.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="rbView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 20</value>
+  </data>
+  <data name="rbView.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="rbView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
+  </data>
+  <data name="rbView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rbView.Text" xml:space="preserve">
+    <value>View server information</value>
+  </data>
+  <data name="rbView.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="rbView.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;rbView.Name" xml:space="preserve">
+    <value>rbView</value>
+  </data>
+  <data name="&gt;&gt;rbView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbView.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;rbView.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="groupBox4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>454, 20</value>
+  </data>
+  <data name="groupBox4.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 77</value>
+  </data>
+  <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Server double click behaviour</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="groupBox5.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox5.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="groupBox5.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="txtInsimPort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="txtInsimPort.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="txtInsimPort.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="txtInsimPort.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtInsimPort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="txtInsimPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 92</value>
+  </data>
+  <data name="txtInsimPort.MaxLength" type="System.Int32, mscorlib">
+    <value>32767</value>
+  </data>
+  <data name="txtInsimPort.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtInsimPort.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtInsimPort.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="txtInsimPort.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="txtInsimPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 21</value>
+  </data>
+  <data name="txtInsimPort.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="txtInsimPort.Text" xml:space="preserve">
+    <value>29999</value>
+  </data>
+  <data name="txtInsimPort.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="txtInsimPort.WordWrap" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtInsimPort.Name" xml:space="preserve">
+    <value>txtInsimPort</value>
+  </data>
+  <data name="&gt;&gt;txtInsimPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtInsimPort.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;txtInsimPort.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label8.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="label8.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="label8.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label8.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="label8.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 95</value>
+  </data>
+  <data name="label8.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>LFS Insim Port:</value>
+  </data>
+  <data name="label8.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnBrowsePS.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="btnBrowsePS.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnBrowsePS.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="btnBrowsePS.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="btnBrowsePS.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnBrowsePS.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnBrowsePS.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="btnBrowsePS.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnBrowsePS.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="btnBrowsePS.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnBrowsePS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnBrowsePS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>322, 63</value>
+  </data>
+  <data name="btnBrowsePS.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnBrowsePS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnBrowsePS.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnBrowsePS.Text" xml:space="preserve">
+    <value>B&amp;rowse...</value>
+  </data>
+  <data name="btnBrowsePS.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnBrowsePS.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;btnBrowsePS.Name" xml:space="preserve">
+    <value>btnBrowsePS</value>
+  </data>
+  <data name="&gt;&gt;btnBrowsePS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBrowsePS.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;btnBrowsePS.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label7.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="label7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="label7.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label7.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="label7.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 47</value>
+  </data>
+  <data name="label7.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 15</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Pit Spotter Executable Path:</value>
+  </data>
+  <data name="label7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtPSPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="txtPSPath.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="txtPSPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="txtPSPath.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtPSPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="txtPSPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 65</value>
+  </data>
+  <data name="txtPSPath.MaxLength" type="System.Int32, mscorlib">
+    <value>32767</value>
+  </data>
+  <data name="txtPSPath.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtPSPath.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPSPath.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="txtPSPath.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="txtPSPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 21</value>
+  </data>
+  <data name="txtPSPath.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="txtPSPath.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="txtPSPath.WordWrap" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtPSPath.Name" xml:space="preserve">
+    <value>txtPSPath</value>
+  </data>
+  <data name="&gt;&gt;txtPSPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPSPath.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;txtPSPath.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbUsePS.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="cbUsePS.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Normal</value>
+  </data>
+  <data name="cbUsePS.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cbUsePS.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="cbUsePS.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbUsePS.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="cbUsePS.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="cbUsePS.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="cbUsePS.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="cbUsePS.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbUsePS.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbUsePS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 20</value>
+  </data>
+  <data name="cbUsePS.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbUsePS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 24</value>
+  </data>
+  <data name="cbUsePS.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="cbUsePS.Text" xml:space="preserve">
+    <value>Start Pit Spotter before LFS</value>
+  </data>
+  <data name="cbUsePS.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbUsePS.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;cbUsePS.Name" xml:space="preserve">
+    <value>cbUsePS</value>
+  </data>
+  <data name="&gt;&gt;cbUsePS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbUsePS.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;cbUsePS.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupBox5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="groupBox5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 210</value>
+  </data>
+  <data name="groupBox5.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>419, 124</value>
+  </data>
+  <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Pit Spotter</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="groupBox3.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox3.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="groupBox3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="label3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="label3.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label3.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="label3.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 50</value>
+  </data>
+  <data name="label3.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 57</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Query Wait value. This is the time to wait before adding another query to the concurrent queries. Increase this value if, when querying, all servers start giving "Connection Refused"</value>
+  </data>
+  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="queryWait.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="queryWait.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="queryWait.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="queryWait.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="queryWait.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 62</value>
+  </data>
+  <data name="queryWait.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="queryWait.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 21</value>
+  </data>
+  <data name="queryWait.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="queryWait.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="queryWait.ThousandsSeparator" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="queryWait.UpDownAlign" type="System.Windows.Forms.LeftRightAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;queryWait.Name" xml:space="preserve">
+    <value>queryWait</value>
+  </data>
+  <data name="&gt;&gt;queryWait.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;queryWait.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;queryWait.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cbQueryWait.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="cbQueryWait.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Normal</value>
+  </data>
+  <data name="cbQueryWait.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cbQueryWait.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="cbQueryWait.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbQueryWait.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="cbQueryWait.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="cbQueryWait.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="cbQueryWait.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="cbQueryWait.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbQueryWait.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbQueryWait.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 20</value>
+  </data>
+  <data name="cbQueryWait.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbQueryWait.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 24</value>
+  </data>
+  <data name="cbQueryWait.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="cbQueryWait.Text" xml:space="preserve">
+    <value>Disable Query Wait</value>
+  </data>
+  <data name="cbQueryWait.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbQueryWait.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;cbQueryWait.Name" xml:space="preserve">
+    <value>cbQueryWait</value>
+  </data>
+  <data name="&gt;&gt;cbQueryWait.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbQueryWait.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;cbQueryWait.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label4.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="label4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="label4.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label4.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="label4.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 116</value>
+  </data>
+  <data name="label4.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>357, 48</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Only disable Query Wait if you are certain your Operating System does not have a connection limit.  Please see the FAQ at http://browseforspeed.whatsbeef.net for more information.</value>
+  </data>
+  <data name="label4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="groupBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 365</value>
+  </data>
+  <data name="groupBox3.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>419, 174</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnCheckNewVersion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="btnCheckNewVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnCheckNewVersion.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="btnCheckNewVersion.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="btnCheckNewVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnCheckNewVersion.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="btnCheckNewVersion.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnCheckNewVersion.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="btnCheckNewVersion.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCheckNewVersion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnCheckNewVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>355, 153</value>
+  </data>
+  <data name="btnCheckNewVersion.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="btnCheckNewVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnCheckNewVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnCheckNewVersion.Text" xml:space="preserve">
+    <value>&amp;Check Now</value>
+  </data>
+  <data name="btnCheckNewVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="btnCheckNewVersion.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;btnCheckNewVersion.Name" xml:space="preserve">
+    <value>btnCheckNewVersion</value>
+  </data>
+  <data name="&gt;&gt;btnCheckNewVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCheckNewVersion.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;btnCheckNewVersion.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbNewVersion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="cbNewVersion.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Normal</value>
+  </data>
+  <data name="cbNewVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="cbNewVersion.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="cbNewVersion.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbNewVersion.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="cbNewVersion.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="cbNewVersion.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="cbNewVersion.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="cbNewVersion.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbNewVersion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbNewVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 151</value>
+  </data>
+  <data name="cbNewVersion.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="cbNewVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>322, 24</value>
+  </data>
+  <data name="cbNewVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="cbNewVersion.Text" xml:space="preserve">
+    <value>Check for a new version of Browse For Speed on start up</value>
+  </data>
+  <data name="cbNewVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cbNewVersion.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;cbNewVersion.Name" xml:space="preserve">
+    <value>cbNewVersion</value>
+  </data>
+  <data name="&gt;&gt;cbNewVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbNewVersion.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;cbNewVersion.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="pathList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="pathList.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="pathList.ColumnWidth" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="pathList.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="pathList.HorizontalExtent" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="pathList.HorizontalScrollbar" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="pathList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="pathList.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pathList.ItemHeight" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="pathList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 41</value>
+  </data>
+  <data name="pathList.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="pathList.ScrollAlwaysVisible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="pathList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>322, 56</value>
+  </data>
+  <data name="pathList.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;pathList.Name" xml:space="preserve">
+    <value>pathList</value>
+  </data>
+  <data name="&gt;&gt;pathList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pathList.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;pathList.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label5.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="label5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="label5.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label5.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="label5.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 100</value>
+  </data>
+  <data name="label5.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>403, 41</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>If there is more than one entry in the box above, please select which one is the correct path for your LFS.exe. If there are no entries, please click the Browse button to manually locate it.</value>
+  </data>
+  <data name="label5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="label2.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="label2.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="label2.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 20</value>
+  </data>
+  <data name="label2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 18</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>LFS Executable Path:</value>
+  </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="buttonBrowse.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="buttonBrowse.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="buttonBrowse.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="buttonBrowse.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="buttonBrowse.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="buttonBrowse.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Standard</value>
+  </data>
+  <data name="buttonBrowse.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="buttonBrowse.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="buttonBrowse.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="buttonBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>355, 41</value>
+  </data>
+  <data name="buttonBrowse.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="buttonBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="buttonBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="buttonBrowse.Text" xml:space="preserve">
+    <value>&amp;Browse...</value>
+  </data>
+  <data name="buttonBrowse.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="buttonBrowse.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>Overlay</value>
+  </data>
+  <data name="&gt;&gt;buttonBrowse.Name" xml:space="preserve">
+    <value>buttonBrowse</value>
+  </data>
+  <data name="&gt;&gt;buttonBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonBrowse.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;buttonBrowse.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="groupBox1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>848, 559</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>tabConfig</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabConfig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="tabConfig.ImageIndex" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="tabConfig.ImageKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabConfig.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="tabConfig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabConfig.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabConfig.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="tabConfig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>854, 565</value>
+  </data>
+  <data name="tabConfig.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabConfig.Text" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="tabConfig.ToolTipText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;tabConfig.Name" xml:space="preserve">
+    <value>tabConfig</value>
+  </data>
+  <data name="&gt;&gt;tabConfig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabConfig.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabConfig.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 11world</value>
+  </data>
+  <data name="tabControl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="tabControl.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="tabControl.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tabControl.ShowToolTips" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>862, 591</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>120, 17</value>
   </metadata>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>LFS Executable|LFS.exe</value>
+  </data>
+  <data name="openFileDialog.Title" xml:space="preserve">
+    <value />
+  </data>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>542, 19</value>
   </metadata>
+  <data name="statusStrip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="statusStrip.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="statusStrip.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="statusStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="statusStrip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="statusTotal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="statusTotal.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="statusTotal.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="statusTotal.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="statusTotal.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="statusTotal.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="statusTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="statusTotal.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="statusTotal.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="statusTotal.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="statusRefused.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="statusRefused.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="statusRefused.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="statusRefused.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="statusRefused.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="statusRefused.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="statusRefused.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="statusRefused.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="statusRefused.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="statusRefused.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="statusNoReply.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="statusNoReply.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="statusNoReply.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="statusNoReply.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="statusNoReply.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>SizeToFit</value>
+  </data>
+  <data name="statusNoReply.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="statusNoReply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="statusNoReply.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="statusNoReply.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="statusNoReply.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 615</value>
+  </data>
+  <data name="statusStrip.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>862, 22</value>
+  </data>
+  <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
+    <value>statusStrip</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <metadata name="openFileDialogPS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
+  </metadata>
+  <data name="openFileDialogPS.Filter" xml:space="preserve">
+    <value>LFS Spotter Executable|LFSspotter.exe</value>
+  </data>
+  <data name="openFileDialogPS.Title" xml:space="preserve">
+    <value />
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>79</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowOnly</value>
+  </data>
+  <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Tile</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>862, 637</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+  <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>WindowsDefaultLocation</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Browse For Speed</value>
+  </data>
+  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
+    <value>fileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;fileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;closeToolStripMenuItem.Name" xml:space="preserve">
+    <value>closeToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;closeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aboutToolStripMenuItem.Name" xml:space="preserve">
+    <value>aboutToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aboutToolStripMenuItem1.Name" xml:space="preserve">
+    <value>aboutToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;aboutToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderName.Name" xml:space="preserve">
+    <value>columnHeaderName</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderPing.Name" xml:space="preserve">
+    <value>columnHeaderPing</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderPing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnPrivate.Name" xml:space="preserve">
+    <value>columnPrivate</value>
+  </data>
+  <data name="&gt;&gt;columnPrivate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderConnections.Name" xml:space="preserve">
+    <value>columnHeaderConnections</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderConnections.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderInfo.Name" xml:space="preserve">
+    <value>columnHeaderInfo</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderTrack.Name" xml:space="preserve">
+    <value>columnHeaderTrack</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderTrack.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderCars.Name" xml:space="preserve">
+    <value>columnHeaderCars</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderCars.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;joinServerToolStripMenuItem.Name" xml:space="preserve">
+    <value>joinServerToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;joinServerToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;viewServerInformationMain.Name" xml:space="preserve">
+    <value>viewServerInformationMain</value>
+  </data>
+  <data name="&gt;&gt;viewServerInformationMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFavServerName.Name" xml:space="preserve">
+    <value>columnHeaderFavServerName</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFavServerName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFavPing.Name" xml:space="preserve">
+    <value>columnHeaderFavPing</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFavPing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFavSlots.Name" xml:space="preserve">
+    <value>columnHeaderFavSlots</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFavSlots.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFavInfo.Name" xml:space="preserve">
+    <value>columnHeaderFavInfo</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFavInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFavTrack.Name" xml:space="preserve">
+    <value>columnHeaderFavTrack</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFavTrack.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFavCars.Name" xml:space="preserve">
+    <value>columnHeaderFavCars</value>
+  </data>
+  <data name="&gt;&gt;columnHeaderFavCars.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;joinServerToolStripMenuItem1.Name" xml:space="preserve">
+    <value>joinServerToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;joinServerToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;viewServerInformationFav.Name" xml:space="preserve">
+    <value>viewServerInformationFav</value>
+  </data>
+  <data name="&gt;&gt;viewServerInformationFav.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;removeFromFavouritesToolStripMenuItem.Name" xml:space="preserve">
+    <value>removeFromFavouritesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;removeFromFavouritesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnFriendName.Name" xml:space="preserve">
+    <value>columnFriendName</value>
+  </data>
+  <data name="&gt;&gt;columnFriendName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnFriendServer.Name" xml:space="preserve">
+    <value>columnFriendServer</value>
+  </data>
+  <data name="&gt;&gt;columnFriendServer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnFriendPrivate.Name" xml:space="preserve">
+    <value>columnFriendPrivate</value>
+  </data>
+  <data name="&gt;&gt;columnFriendPrivate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnFriendPlayers.Name" xml:space="preserve">
+    <value>columnFriendPlayers</value>
+  </data>
+  <data name="&gt;&gt;columnFriendPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;joinServerMenuFriends.Name" xml:space="preserve">
+    <value>joinServerMenuFriends</value>
+  </data>
+  <data name="&gt;&gt;joinServerMenuFriends.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;removeFriendToolStripMenuItem.Name" xml:space="preserve">
+    <value>removeFriendToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;removeFriendToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog.Name" xml:space="preserve">
+    <value>openFileDialog</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusTotal.Name" xml:space="preserve">
+    <value>statusTotal</value>
+  </data>
+  <data name="&gt;&gt;statusTotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusRefused.Name" xml:space="preserve">
+    <value>statusRefused</value>
+  </data>
+  <data name="&gt;&gt;statusRefused.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusNoReply.Name" xml:space="preserve">
+    <value>statusNoReply</value>
+  </data>
+  <data name="&gt;&gt;statusNoReply.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFileDialogPS.Name" xml:space="preserve">
+    <value>openFileDialogPS</value>
+  </data>
+  <data name="&gt;&gt;openFileDialogPS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

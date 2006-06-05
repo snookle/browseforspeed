@@ -50,6 +50,11 @@ namespace BrowseForSpeed.Frontend
 			this.label6 = new System.Windows.Forms.Label();
 			this.btnFindUserMain = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.cbPublic = new System.Windows.Forms.CheckBox();
+			this.cbPrivate = new System.Windows.Forms.CheckBox();
+			this.cbFull = new System.Windows.Forms.CheckBox();
+			this.label9 = new System.Windows.Forms.Label();
+			this.cbPing = new System.Windows.Forms.ComboBox();
 			this.cbEmpty = new System.Windows.Forms.CheckBox();
 			this.cbTracks = new System.Windows.Forms.ComboBox();
 			this.lvMain = new BrowseForSpeed.Frontend.MainListView();
@@ -227,6 +232,7 @@ namespace BrowseForSpeed.Frontend
 			// label1
 			// 
 			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.label1.Location = new System.Drawing.Point(511, 541);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(58, 21);
@@ -244,6 +250,7 @@ namespace BrowseForSpeed.Frontend
 			// label6
 			// 
 			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.label6.Location = new System.Drawing.Point(170, 541);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(97, 16);
@@ -253,6 +260,7 @@ namespace BrowseForSpeed.Frontend
 			// btnFindUserMain
 			// 
 			this.btnFindUserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnFindUserMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.btnFindUserMain.Location = new System.Drawing.Point(731, 536);
 			this.btnFindUserMain.Name = "btnFindUserMain";
 			this.btnFindUserMain.Size = new System.Drawing.Size(115, 23);
@@ -265,6 +273,11 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox2.Controls.Add(this.cbPublic);
+			this.groupBox2.Controls.Add(this.cbPrivate);
+			this.groupBox2.Controls.Add(this.cbFull);
+			this.groupBox2.Controls.Add(this.label9);
+			this.groupBox2.Controls.Add(this.cbPing);
 			this.groupBox2.Controls.Add(this.cbEmpty);
 			this.groupBox2.Controls.Add(this.cbTracks);
 			this.groupBox2.Location = new System.Drawing.Point(731, 6);
@@ -274,15 +287,76 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Filters";
 			// 
+			// cbPublic
+			// 
+			this.cbPublic.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.cbPublic.Location = new System.Drawing.Point(5, 492);
+			this.cbPublic.Name = "cbPublic";
+			this.cbPublic.Size = new System.Drawing.Size(104, 24);
+			this.cbPublic.TabIndex = 16;
+			this.cbPublic.Text = "Public";
+			this.cbPublic.UseVisualStyleBackColor = true;
+			this.cbPublic.CheckedChanged += new System.EventHandler(this.CbPublicCheckedChanged);
+			// 
+			// cbPrivate
+			// 
+			this.cbPrivate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.cbPrivate.Location = new System.Drawing.Point(5, 472);
+			this.cbPrivate.Name = "cbPrivate";
+			this.cbPrivate.Size = new System.Drawing.Size(104, 16);
+			this.cbPrivate.TabIndex = 15;
+			this.cbPrivate.Text = "Private";
+			this.cbPrivate.UseVisualStyleBackColor = true;
+			this.cbPrivate.CheckedChanged += new System.EventHandler(this.CbPrivateCheckedChanged);
+			// 
+			// cbFull
+			// 
+			this.cbFull.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.cbFull.Location = new System.Drawing.Point(5, 450);
+			this.cbFull.Name = "cbFull";
+			this.cbFull.Size = new System.Drawing.Size(104, 16);
+			this.cbFull.TabIndex = 14;
+			this.cbFull.Text = "Full";
+			this.cbFull.UseVisualStyleBackColor = true;
+			this.cbFull.CheckedChanged += new System.EventHandler(this.CbFullCheckedChanged);
+			// 
+			// label9
+			// 
+			this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.label9.Location = new System.Drawing.Point(6, 380);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(100, 15);
+			this.label9.TabIndex = 13;
+			this.label9.Text = "Ping Threshold:";
+			// 
+			// cbPing
+			// 
+			this.cbPing.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbPing.FormattingEnabled = true;
+			this.cbPing.Items.AddRange(new object[] {
+									"50",
+									"100",
+									"150",
+									"200",
+									"300",
+									"500",
+									"1000"});
+			this.cbPing.Location = new System.Drawing.Point(7, 398);
+			this.cbPing.Name = "cbPing";
+			this.cbPing.Size = new System.Drawing.Size(103, 21);
+			this.cbPing.TabIndex = 12;
+			this.cbPing.SelectedIndexChanged += new System.EventHandler(this.CbPingSelectedIndexChanged);
+			// 
 			// cbEmpty
 			// 
-			this.cbEmpty.Location = new System.Drawing.Point(5, 396);
+			this.cbEmpty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.cbEmpty.Location = new System.Drawing.Point(6, 425);
 			this.cbEmpty.Name = "cbEmpty";
-			this.cbEmpty.Size = new System.Drawing.Size(104, 31);
+			this.cbEmpty.Size = new System.Drawing.Size(104, 19);
 			this.cbEmpty.TabIndex = 11;
-			this.cbEmpty.Text = "Hide Empty Servers";
+			this.cbEmpty.Text = "Empty";
 			this.cbEmpty.UseVisualStyleBackColor = true;
-			this.cbEmpty.CheckedChanged += new System.EventHandler(this.ComboBoxTracksSelectedIndexChanged);
+			this.cbEmpty.CheckedChanged += new System.EventHandler(this.CbEmptyCheckedChanged);
 			// 
 			// cbTracks
 			// 
@@ -293,11 +367,13 @@ namespace BrowseForSpeed.Frontend
 									"Blackwood",
 									"South City",
 									"Fern Bay",
-									"Autocross",
 									"Kyoto",
 									"Westhill",
-									"Aston"});
-			this.cbTracks.Location = new System.Drawing.Point(6, 369);
+									"Aston",
+									"Autocross",
+									"Drag",
+									"Skid Pan"});
+			this.cbTracks.Location = new System.Drawing.Point(6, 356);
 			this.cbTracks.Name = "cbTracks";
 			this.cbTracks.Size = new System.Drawing.Size(103, 21);
 			this.cbTracks.TabIndex = 10;
@@ -399,6 +475,7 @@ namespace BrowseForSpeed.Frontend
 			// btnRefreshMain
 			// 
 			this.btnRefreshMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnRefreshMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.btnRefreshMain.Location = new System.Drawing.Point(89, 539);
 			this.btnRefreshMain.Name = "btnRefreshMain";
 			this.btnRefreshMain.Size = new System.Drawing.Size(75, 23);
@@ -411,6 +488,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.btnJoinMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btnJoinMain.Enabled = false;
+			this.btnJoinMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.btnJoinMain.Location = new System.Drawing.Point(8, 539);
 			this.btnJoinMain.Name = "btnJoinMain";
 			this.btnJoinMain.Size = new System.Drawing.Size(75, 23);
@@ -434,6 +512,7 @@ namespace BrowseForSpeed.Frontend
 			// buttonRefreshFav
 			// 
 			this.buttonRefreshFav.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.buttonRefreshFav.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.buttonRefreshFav.Location = new System.Drawing.Point(89, 539);
 			this.buttonRefreshFav.Name = "buttonRefreshFav";
 			this.buttonRefreshFav.Size = new System.Drawing.Size(75, 23);
@@ -446,6 +525,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.btnJoinFav.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btnJoinFav.Enabled = false;
+			this.btnJoinFav.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.btnJoinFav.Location = new System.Drawing.Point(8, 539);
 			this.btnJoinFav.Name = "btnJoinFav";
 			this.btnJoinFav.Size = new System.Drawing.Size(75, 23);
@@ -567,6 +647,7 @@ namespace BrowseForSpeed.Frontend
 			// btnAddFriend
 			// 
 			this.btnAddFriend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnAddFriend.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.btnAddFriend.Location = new System.Drawing.Point(771, 536);
 			this.btnAddFriend.Name = "btnAddFriend";
 			this.btnAddFriend.Size = new System.Drawing.Size(75, 23);
@@ -578,6 +659,7 @@ namespace BrowseForSpeed.Frontend
 			// cbHideOffline
 			// 
 			this.cbHideOffline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.cbHideOffline.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.cbHideOffline.Location = new System.Drawing.Point(166, 538);
 			this.cbHideOffline.Name = "cbHideOffline";
 			this.cbHideOffline.Size = new System.Drawing.Size(129, 24);
@@ -589,6 +671,7 @@ namespace BrowseForSpeed.Frontend
 			// btnRefreshFriend
 			// 
 			this.btnRefreshFriend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnRefreshFriend.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.btnRefreshFriend.Location = new System.Drawing.Point(85, 538);
 			this.btnRefreshFriend.Name = "btnRefreshFriend";
 			this.btnRefreshFriend.Size = new System.Drawing.Size(75, 23);
@@ -601,6 +684,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.btnJoinFriend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btnJoinFriend.Enabled = false;
+			this.btnJoinFriend.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.btnJoinFriend.Location = new System.Drawing.Point(4, 538);
 			this.btnJoinFriend.Name = "btnJoinFriend";
 			this.btnJoinFriend.Size = new System.Drawing.Size(75, 23);
@@ -720,6 +804,7 @@ namespace BrowseForSpeed.Frontend
 			// rbJoin
 			// 
 			this.rbJoin.Checked = true;
+			this.rbJoin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.rbJoin.Location = new System.Drawing.Point(21, 48);
 			this.rbJoin.Name = "rbJoin";
 			this.rbJoin.Size = new System.Drawing.Size(104, 22);
@@ -730,6 +815,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// rbView
 			// 
+			this.rbView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.rbView.Location = new System.Drawing.Point(21, 20);
 			this.rbView.Name = "rbView";
 			this.rbView.Size = new System.Drawing.Size(142, 22);
@@ -765,6 +851,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// label8
 			// 
+			this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.label8.Location = new System.Drawing.Point(24, 95);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(90, 23);
@@ -774,6 +861,7 @@ namespace BrowseForSpeed.Frontend
 			// btnBrowsePS
 			// 
 			this.btnBrowsePS.Enabled = false;
+			this.btnBrowsePS.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.btnBrowsePS.Location = new System.Drawing.Point(322, 63);
 			this.btnBrowsePS.Name = "btnBrowsePS";
 			this.btnBrowsePS.Size = new System.Drawing.Size(75, 23);
@@ -784,6 +872,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// label7
 			// 
+			this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.label7.Location = new System.Drawing.Point(24, 47);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(256, 15);
@@ -800,6 +889,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// cbUsePS
 			// 
+			this.cbUsePS.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.cbUsePS.Location = new System.Drawing.Point(24, 20);
 			this.cbUsePS.Name = "cbUsePS";
 			this.cbUsePS.Size = new System.Drawing.Size(184, 24);
@@ -823,6 +913,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// label3
 			// 
+			this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.label3.Location = new System.Drawing.Point(85, 50);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(286, 57);
@@ -860,6 +951,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// cbQueryWait
 			// 
+			this.cbQueryWait.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.cbQueryWait.Location = new System.Drawing.Point(24, 20);
 			this.cbQueryWait.Name = "cbQueryWait";
 			this.cbQueryWait.Size = new System.Drawing.Size(139, 24);
@@ -870,6 +962,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// label4
 			// 
+			this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.label4.Location = new System.Drawing.Point(24, 116);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(357, 48);
@@ -880,6 +973,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// btnCheckNewVersion
 			// 
+			this.btnCheckNewVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.btnCheckNewVersion.Location = new System.Drawing.Point(355, 153);
 			this.btnCheckNewVersion.Name = "btnCheckNewVersion";
 			this.btnCheckNewVersion.Size = new System.Drawing.Size(75, 23);
@@ -890,6 +984,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// cbNewVersion
 			// 
+			this.cbNewVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.cbNewVersion.Location = new System.Drawing.Point(13, 151);
 			this.cbNewVersion.Name = "cbNewVersion";
 			this.cbNewVersion.Size = new System.Drawing.Size(322, 24);
@@ -907,6 +1002,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// label5
 			// 
+			this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.label5.Location = new System.Drawing.Point(11, 100);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(403, 41);
@@ -917,6 +1013,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// label2
 			// 
+			this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.label2.Location = new System.Drawing.Point(13, 20);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(114, 18);
@@ -925,6 +1022,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// buttonBrowse
 			// 
+			this.buttonBrowse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.buttonBrowse.Location = new System.Drawing.Point(355, 41);
 			this.buttonBrowse.Name = "buttonBrowse";
 			this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
@@ -981,6 +1079,7 @@ namespace BrowseForSpeed.Frontend
 			this.Controls.Add(this.menuStrip);
 			this.Controls.Add(this.statusStrip);
 			this.DoubleBuffered = true;
+			this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.KeyPreview = true;
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "MainForm";
@@ -1012,6 +1111,11 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.CheckBox cbFull;
+		private System.Windows.Forms.CheckBox cbPrivate;
+		private System.Windows.Forms.CheckBox cbPublic;
+		private System.Windows.Forms.ComboBox cbPing;
+		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.ToolStripMenuItem joinServerMenuFriends;
 		private System.Windows.Forms.ToolStripMenuItem removeFriendToolStripMenuItem;
 		private System.Windows.Forms.ContextMenuStrip contextMenuFriends;

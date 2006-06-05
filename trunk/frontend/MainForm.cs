@@ -73,7 +73,15 @@ public class ListSorter: IComparer<ServerListItem>
 	
 	public enum QueryType{Main, Favorite, Friend}
 	public enum SortType{Hostname, Ping, Players, Track};
-	public enum FilterType{Track, Ping, HasCars, DoesNotHaveCars, Empty, Full, Private};
+	public enum FilterType{None, Track, Ping, HasCars, DoesNotHaveCars, Empty, Full, Private, Public};
+	public struct Filter {
+		public FilterType type;
+		public Object value;
+		public Filter(Object v){
+			type = FilterType.None;
+			value = null;
+		}
+	}
 	
 	public class ServerListView : ListView
 	{
@@ -90,14 +98,16 @@ public class ListSorter: IComparer<ServerListItem>
 					return;
 				}
 			}
+			item.filtered = false;
 			serverList.Add(item);
+			if (this is MainListView)
+				FilterServer(item);
 			Display(item).Tag = serverList.IndexOf(item);
 			this.Sort();
 		}
 		public ServerListItem GetSelectedServer()
 		{
-			if (SelectedItems.Count > 0)
-			{
+			if (SelectedItems.Count > 0) {
 				int index = (int)SelectedItems[0].Tag;
 				ServerListItem item = serverList[index];
 				item.index = SelectedItems[0].Index + 1;
@@ -120,15 +130,16 @@ public class ListSorter: IComparer<ServerListItem>
 		public void DisplayAll()
 		{
 			Items.Clear();
-			foreach(ServerListItem item in serverList.FindAll(ServerNotFiltered)){
+			foreach(ServerListItem item in serverList.FindAll(ServersNotFiltered)){
 				Display(item);
+				Sort();
 			}
 		}
 		public List<ServerListItem> AllServers()
 		{
 			return serverList;
 		}
-		private static bool ServerNotFiltered(ServerListItem info)
+		private static bool ServersNotFiltered(ServerListItem info)
 		{
 			return !info.filtered;
 		}
@@ -139,6 +150,8 @@ public class ListSorter: IComparer<ServerListItem>
 		}
 		public ListViewItem Display(ServerListItem item)
 		{
+			if (item.filtered)
+				return new ListViewItem();
 			ListViewItem lvi;
 			lvi = this.Items.Add(item.host.ToString());
 			item.hostname = LFSQuery.removeColourCodes(item.hostname);
@@ -158,13 +171,30 @@ public class ListSorter: IComparer<ServerListItem>
 			lvi.SubItems.Insert(6 - columnOffset, new ListViewItem.ListViewSubItem(lvi, cars));
 			return lvi;
 		}
-		
+		private Filter[] filters = new Filter[10];
 		public void Filter(FilterType filter, Object value)
 		{
-			switch (filter) {
-				case FilterType.Track :
-					//iterate through everything, and set ServerListItem.filtered to true if it's filtered out.
-					break;
+			filters[(int)filter].type = filter;
+			filters[(int)filter].value = value;
+			foreach(ServerListItem item in serverList){
+				FilterServer(item);
+			}
+		}
+		private void FilterServer(ServerListItem item)
+		{
+			item.filtered = false;
+			foreach (Filter f in filters){
+				if (f.type == FilterType.None)
+					continue;
+				switch (f.type){
+						case FilterType.Track: item.filtered = item.filtered || !(item.track.Contains((string)f.value)); break;
+						case FilterType.Empty: item.filtered = (item.filtered || ((item.players == 0) && !(bool)f.value)); break;
+						case FilterType.Full : item.filtered = (item.filtered || ((item.players == item.slots) && !(bool)f.value)); break;
+						case FilterType.Private : item.filtered = (item.filtered || ((item.passworded == true) && !(bool)f.value)); break;
+						case FilterType.Public : item.filtered = (item.filtered || ((item.passworded == false) && !(bool)f.value)); break;
+						case FilterType.Ping : item.filtered = item.filtered || (item.ping > (int)f.value); break;
+						//DO ZE CARS!
+				}
 			}
 		}
 	}
@@ -179,10 +209,10 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 			return hosts;
 		}
-		public void AddServer(ServerInformation info)
+		/*public void AddServer(ServerInformation info)
 		{
 
-		}
+		}*/
 	}
 	public class MainListView : ServerListView{}
 	
@@ -310,6 +340,16 @@ public class ListSorter: IComparer<ServerListItem>
       		ctrl.Invoke(dgtSetValue, new Object[3] { ctrl, val, /*index*/null });
 		}
 
+		byte CodeFilters()
+		{
+			byte filters = 0x00;
+			filters = (byte)(filters | (!cbPrivate.Checked ? (int)(LFSQuery.msFilters["Private"]) : (byte)0x00));
+			filters = (byte)(filters | (!cbPublic.Checked ? (int)(LFSQuery.msFilters["Public"]) : (byte)0x00));
+			filters = (byte)(filters | (!cbEmpty.Checked ? (int)(LFSQuery.msFilters["Empty"]) : (byte)0x00));
+            filters = (byte)(filters | (!cbFull.Checked ? (int)(LFSQuery.msFilters["Full"]) : (byte)0x00));
+			return filters;
+		}
+		
 		void MakeQuery(bool isFav)
 		{
 			SetControlProperty(buttonRefreshFav, "Text", "&Stop Refresh");
@@ -321,10 +361,10 @@ public class ListSorter: IComparer<ServerListItem>
 					ulong compulsory;
 					ulong illegal;
 					CodeCars(out compulsory, out illegal);
-					q.query(compulsory, illegal, "browseforspeed", 0, cbEmpty.Checked);
+					q.query(compulsory, illegal, "browseforspeed", 0, CodeFilters(), LFSQuery.S1);
 				}
 			} catch(Exception e) {
-					MessageBox.Show("Unable to contact the Master Server. Perhaps it is down, or your firewall is not configured properly." , "Unable to contact Master Server!", MessageBoxButtons.OK);
+					MessageBox.Show(e.Message + "Unable to contact the Master Server. Perhaps it is down, or your firewall is not configured properly." , "Unable to contact Master Server!", MessageBoxButtons.OK);
 				}
 
 			if (exiting) return;
@@ -756,14 +796,8 @@ public class ListSorter: IComparer<ServerListItem>
 		{
 			string filter = (cbTracks.Text == "All Tracks" ? "" : cbTracks.Text);
 			trackFilter = filter;
-			lvMain.Items.Clear();
-			try{
-			//	foreach (ServerInformation info in serverList.FindAll(FilterServerMatchesTrack)){
-						//DisplayServer(info, filter, cbEmpty.Checked, false);
-				//}
-			} catch (Exception ex) {
-				MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);
-			}
+			lvMain.Filter(FilterType.Track, filter);
+			lvMain.DisplayAll();
 		}
 		
 		static string trackFilter;
@@ -1099,6 +1133,41 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 			ReadFriends();
 			cbTracks.SelectedIndex = 0;
+			cbPing.SelectedIndex = 2;
+			lvMain.Filter(FilterType.Ping, 100);
+
+		}
+		
+		void CbEmptyCheckedChanged(object sender, System.EventArgs e)
+		{
+			lvMain.Filter(FilterType.Empty, cbEmpty.Checked);
+			lvMain.DisplayAll();
+			
+		}
+		
+		void CbPingSelectedIndexChanged(object sender, System.EventArgs e)
+		{
+			lvMain.Filter(FilterType.Ping, Convert.ToInt32(cbPing.Text));
+			lvMain.DisplayAll();
+			
+		}
+		
+		void CbFullCheckedChanged(object sender, System.EventArgs e)
+		{
+			lvMain.Filter(FilterType.Full, cbFull.Checked);
+			lvMain.DisplayAll();
+		}
+		
+		void CbPrivateCheckedChanged(object sender, System.EventArgs e)
+		{
+			lvMain.Filter(FilterType.Private, cbPrivate.Checked);
+			lvMain.DisplayAll();
+		}
+		
+		void CbPublicCheckedChanged(object sender, System.EventArgs e)
+		{
+			lvMain.Filter(FilterType.Public, cbPublic.Checked);
+			lvMain.DisplayAll();
 		}
 	}
 /// Horray for code nicked from the MSDN!
