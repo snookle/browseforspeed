@@ -364,7 +364,6 @@ public class ListSorter: IComparer<ServerListItem>
 					ulong compulsory;
 					ulong illegal;
 					CodeCars(out compulsory, out illegal);
-					MessageBox.Show(version.ToString());
 					q.query(compulsory, illegal, "browseforspeed", 0, CodeFilters(), version);
 				}
 			} catch(Exception e) {
