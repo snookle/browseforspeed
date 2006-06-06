@@ -363,7 +363,7 @@ public class ListSorter: IComparer<ServerListItem>
 					ulong compulsory;
 					ulong illegal;
 					CodeCars(out compulsory, out illegal);
-					q.query(compulsory, illegal, "browseforspeed", 0, CodeFilters(), LFSQuery.VERSION_S2);
+					q.query(compulsory, illegal, "browseforspeed", 0, CodeFilters(), version);
 				}
 			} catch(Exception e) {
 					MessageBox.Show(e.Message + "Unable to contact the Master Server. Perhaps it is down, or your firewall is not configured properly." , "Unable to contact Master Server!", MessageBoxButtons.OK);
@@ -428,6 +428,7 @@ public class ListSorter: IComparer<ServerListItem>
 					numQueried++;
 					if (info.success) {
 						numServersDone++;
+						info.version = this.version;
 						list.AddServer(info);
 					} else {
 						if (info.readFailed) {
@@ -497,7 +498,7 @@ public class ListSorter: IComparer<ServerListItem>
 				Process p = new Process();
 				p.StartInfo.FileName = lfsPath;
 				p.StartInfo.WorkingDirectory = Path.GetDirectoryName(lfsPath);
-				p.StartInfo.Arguments = "/join=" + hostName + " /mode=" + mode + "/pass=" + password + (config.startPS ? "/insim=" + config.psInsimPort.ToString() : "");
+				p.StartInfo.Arguments = "/join=" + hostName /*+ " /mode=" + mode*/ + " /pass=" + password + (config.startPS ? "/insim=" + config.psInsimPort.ToString() : "");
 				p.Start();
 				p.WaitForExit();
 				try {
@@ -603,7 +604,6 @@ public class ListSorter: IComparer<ServerListItem>
 				doc.Load(filename);
 				XmlNodeList list = doc.GetElementsByTagName("favourites");
 				String docVersion = ((XmlElement)list[0]).GetAttribute("version");
-				MessageBox.Show(docVersion, "", MessageBoxButtons.OK);
 				list = ((XmlElement)list[0]).GetElementsByTagName("favourite");
 				foreach (XmlElement favourite in list) {
 					try {
@@ -1164,8 +1164,8 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 			ReadFriends();
 			cbTracks.SelectedIndex = 0;
-			cbPing.SelectedIndex = 2;
-			lvMain.Filter(FilterType.Ping, 100);
+			cbPing.SelectedIndex = 7;
+			cbVersion.SelectedIndex = 2;
 
 		}
 		
@@ -1204,6 +1204,12 @@ public class ListSorter: IComparer<ServerListItem>
 		void carsChanged(object sender, System.EventArgs e) {
 			lvMain.Filter(FilterType.Cars, cars);
 			lvMain.DisplayAll();
+		}
+		
+		private byte version;
+		void CbVersionSelectedIndexChanged(object sender, System.EventArgs e)
+		{
+			this.version = StringToVersion(cbVersion.Text);
 		}
 	}
 /// Horray for code nicked from the MSDN!
