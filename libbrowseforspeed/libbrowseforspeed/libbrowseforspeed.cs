@@ -249,6 +249,7 @@ namespace libbrowseforspeed {
 						str.Write(send_query2, 0, send_query2.Length);
 						query2(ref str, ref serverinfo);
 					}
+					serverinfo.version = host.version;
 					//client.Close();
 					try {
 						str.Close();
@@ -319,7 +320,7 @@ namespace libbrowseforspeed {
 				serverinfo.host = host.host;
 				serverinfo.passworded = host.passworded;
 				serverinfo.totalServers = LFSQuery.totalServers;				
-				serverinfo.hostname = getLFSString(recbuf, 5, 32);				
+				serverinfo.hostname = getLFSString(recbuf, 5, 32);
 				return serverinfo;
 			}
 
