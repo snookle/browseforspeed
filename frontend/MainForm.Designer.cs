@@ -128,6 +128,7 @@ namespace BrowseForSpeed.Frontend
 			this.statusRefused = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusNoReply = new System.Windows.Forms.ToolStripStatusLabel();
 			this.openFileDialogPS = new System.Windows.Forms.OpenFileDialog();
+			this.cbVersion = new System.Windows.Forms.ComboBox();
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabMain.SuspendLayout();
@@ -153,7 +154,7 @@ namespace BrowseForSpeed.Frontend
 									this.aboutToolStripMenuItem});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.Name = "menuStrip";
-			this.menuStrip.Size = new System.Drawing.Size(862, 24);
+			this.menuStrip.Size = new System.Drawing.Size(890, 24);
 			this.menuStrip.TabIndex = 0;
 			this.menuStrip.Text = "menuStrip1";
 			// 
@@ -198,7 +199,7 @@ namespace BrowseForSpeed.Frontend
 			this.tabControl.Location = new System.Drawing.Point(0, 24);
 			this.tabControl.Name = "tabControl";
 			this.tabControl.SelectedIndex = 0;
-			this.tabControl.Size = new System.Drawing.Size(862, 591);
+			this.tabControl.Size = new System.Drawing.Size(890, 591);
 			this.tabControl.TabIndex = 1;
 			this.tabControl.SelectedIndexChanged += new System.EventHandler(this.TabControlSelectedIndexChanged);
 			// 
@@ -216,7 +217,7 @@ namespace BrowseForSpeed.Frontend
 			this.tabMain.Location = new System.Drawing.Point(4, 22);
 			this.tabMain.Name = "tabMain";
 			this.tabMain.Padding = new System.Windows.Forms.Padding(3);
-			this.tabMain.Size = new System.Drawing.Size(854, 565);
+			this.tabMain.Size = new System.Drawing.Size(882, 565);
 			this.tabMain.TabIndex = 0;
 			this.tabMain.Text = "Server Browser";
 			this.tabMain.UseVisualStyleBackColor = true;
@@ -224,7 +225,7 @@ namespace BrowseForSpeed.Frontend
 			// edtFindUserMain
 			// 
 			this.edtFindUserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.edtFindUserMain.Location = new System.Drawing.Point(567, 536);
+			this.edtFindUserMain.Location = new System.Drawing.Point(595, 536);
 			this.edtFindUserMain.Name = "edtFindUserMain";
 			this.edtFindUserMain.Size = new System.Drawing.Size(158, 21);
 			this.edtFindUserMain.TabIndex = 9;
@@ -233,7 +234,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label1.Location = new System.Drawing.Point(511, 541);
+			this.label1.Location = new System.Drawing.Point(539, 541);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(58, 21);
 			this.label1.TabIndex = 8;
@@ -261,7 +262,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.btnFindUserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnFindUserMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnFindUserMain.Location = new System.Drawing.Point(731, 536);
+			this.btnFindUserMain.Location = new System.Drawing.Point(759, 536);
 			this.btnFindUserMain.Name = "btnFindUserMain";
 			this.btnFindUserMain.Size = new System.Drawing.Size(115, 23);
 			this.btnFindUserMain.TabIndex = 5;
@@ -273,6 +274,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox2.Controls.Add(this.cbVersion);
 			this.groupBox2.Controls.Add(this.cbPublic);
 			this.groupBox2.Controls.Add(this.cbPrivate);
 			this.groupBox2.Controls.Add(this.cbFull);
@@ -280,9 +282,9 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox2.Controls.Add(this.cbPing);
 			this.groupBox2.Controls.Add(this.cbEmpty);
 			this.groupBox2.Controls.Add(this.cbTracks);
-			this.groupBox2.Location = new System.Drawing.Point(731, 6);
+			this.groupBox2.Location = new System.Drawing.Point(737, 6);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(115, 522);
+			this.groupBox2.Size = new System.Drawing.Size(137, 522);
 			this.groupBox2.TabIndex = 4;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Filters";
@@ -292,9 +294,9 @@ namespace BrowseForSpeed.Frontend
 			this.cbPublic.Checked = true;
 			this.cbPublic.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.cbPublic.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.cbPublic.Location = new System.Drawing.Point(5, 492);
+			this.cbPublic.Location = new System.Drawing.Point(75, 420);
 			this.cbPublic.Name = "cbPublic";
-			this.cbPublic.Size = new System.Drawing.Size(104, 24);
+			this.cbPublic.Size = new System.Drawing.Size(55, 24);
 			this.cbPublic.TabIndex = 16;
 			this.cbPublic.Text = "Public";
 			this.cbPublic.UseVisualStyleBackColor = true;
@@ -305,9 +307,9 @@ namespace BrowseForSpeed.Frontend
 			this.cbPrivate.Checked = true;
 			this.cbPrivate.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.cbPrivate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.cbPrivate.Location = new System.Drawing.Point(5, 472);
+			this.cbPrivate.Location = new System.Drawing.Point(6, 424);
 			this.cbPrivate.Name = "cbPrivate";
-			this.cbPrivate.Size = new System.Drawing.Size(104, 16);
+			this.cbPrivate.Size = new System.Drawing.Size(63, 16);
 			this.cbPrivate.TabIndex = 15;
 			this.cbPrivate.Text = "Private";
 			this.cbPrivate.UseVisualStyleBackColor = true;
@@ -318,9 +320,9 @@ namespace BrowseForSpeed.Frontend
 			this.cbFull.Checked = true;
 			this.cbFull.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.cbFull.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.cbFull.Location = new System.Drawing.Point(5, 450);
+			this.cbFull.Location = new System.Drawing.Point(75, 400);
 			this.cbFull.Name = "cbFull";
-			this.cbFull.Size = new System.Drawing.Size(104, 16);
+			this.cbFull.Size = new System.Drawing.Size(44, 16);
 			this.cbFull.TabIndex = 14;
 			this.cbFull.Text = "Full";
 			this.cbFull.UseVisualStyleBackColor = true;
@@ -329,7 +331,7 @@ namespace BrowseForSpeed.Frontend
 			// label9
 			// 
 			this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label9.Location = new System.Drawing.Point(6, 380);
+			this.label9.Location = new System.Drawing.Point(6, 450);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(100, 15);
 			this.label9.TabIndex = 13;
@@ -347,9 +349,9 @@ namespace BrowseForSpeed.Frontend
 									"300",
 									"500",
 									"1000"});
-			this.cbPing.Location = new System.Drawing.Point(7, 398);
+			this.cbPing.Location = new System.Drawing.Point(7, 468);
 			this.cbPing.Name = "cbPing";
-			this.cbPing.Size = new System.Drawing.Size(103, 21);
+			this.cbPing.Size = new System.Drawing.Size(123, 21);
 			this.cbPing.TabIndex = 12;
 			this.cbPing.SelectedIndexChanged += new System.EventHandler(this.CbPingSelectedIndexChanged);
 			// 
@@ -358,7 +360,7 @@ namespace BrowseForSpeed.Frontend
 			this.cbEmpty.Checked = true;
 			this.cbEmpty.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.cbEmpty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.cbEmpty.Location = new System.Drawing.Point(6, 425);
+			this.cbEmpty.Location = new System.Drawing.Point(6, 399);
 			this.cbEmpty.Name = "cbEmpty";
 			this.cbEmpty.Size = new System.Drawing.Size(104, 19);
 			this.cbEmpty.TabIndex = 11;
@@ -381,9 +383,9 @@ namespace BrowseForSpeed.Frontend
 									"Autocross",
 									"Drag",
 									"Skid Pan"});
-			this.cbTracks.Location = new System.Drawing.Point(6, 356);
+			this.cbTracks.Location = new System.Drawing.Point(7, 495);
 			this.cbTracks.Name = "cbTracks";
-			this.cbTracks.Size = new System.Drawing.Size(103, 21);
+			this.cbTracks.Size = new System.Drawing.Size(124, 21);
 			this.cbTracks.TabIndex = 10;
 			this.cbTracks.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTracksSelectedIndexChanged);
 			// 
@@ -407,7 +409,7 @@ namespace BrowseForSpeed.Frontend
 			this.lvMain.Location = new System.Drawing.Point(8, 6);
 			this.lvMain.MultiSelect = false;
 			this.lvMain.Name = "lvMain";
-			this.lvMain.Size = new System.Drawing.Size(717, 524);
+			this.lvMain.Size = new System.Drawing.Size(723, 524);
 			this.lvMain.TabIndex = 3;
 			this.lvMain.UseCompatibleStateImageBehavior = false;
 			this.lvMain.View = System.Windows.Forms.View.Details;
@@ -1053,7 +1055,7 @@ namespace BrowseForSpeed.Frontend
 									this.statusNoReply});
 			this.statusStrip.Location = new System.Drawing.Point(0, 615);
 			this.statusStrip.Name = "statusStrip";
-			this.statusStrip.Size = new System.Drawing.Size(862, 22);
+			this.statusStrip.Size = new System.Drawing.Size(890, 22);
 			this.statusStrip.SizingGrip = false;
 			this.statusStrip.TabIndex = 2;
 			// 
@@ -1078,11 +1080,24 @@ namespace BrowseForSpeed.Frontend
 			this.openFileDialogPS.FileName = "LFSspotter.exe";
 			this.openFileDialogPS.Filter = "LFS Spotter Executable|LFSspotter.exe";
 			// 
+			// cbVersion
+			// 
+			this.cbVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbVersion.FormattingEnabled = true;
+			this.cbVersion.Items.AddRange(new object[] {
+									"Demo",
+									"S1",
+									"S2"});
+			this.cbVersion.Location = new System.Drawing.Point(6, 372);
+			this.cbVersion.Name = "cbVersion";
+			this.cbVersion.Size = new System.Drawing.Size(124, 21);
+			this.cbVersion.TabIndex = 17;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(862, 637);
+			this.ClientSize = new System.Drawing.Size(890, 637);
 			this.Controls.Add(this.tabControl);
 			this.Controls.Add(this.menuStrip);
 			this.Controls.Add(this.statusStrip);
@@ -1118,6 +1133,7 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ComboBox cbVersion;
 		private System.Windows.Forms.CheckBox cbFull;
 		private System.Windows.Forms.CheckBox cbPrivate;
 		private System.Windows.Forms.CheckBox cbPublic;
