@@ -744,9 +744,14 @@ public class ListSorter: IComparer<ServerListItem>
 		
 		public void AddFriend(string name, bool writeToFile)
 		{
-			if (friendList.IndexOf(name) == -1)
+			ListViewItem lvi;
+			if (friendList.IndexOf(name) == -1){
+				lvi = lvFriends.Items.Add(name, name, "");
+				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, "Offline"));
+				lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, "N/A"));
+				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "N/A"));
 				friendList.Add(name);
-			lvFriends.Items.Add(name);
+			}
 			if (writeToFile)
 				WriteFriends();
 		}
