@@ -861,7 +861,7 @@ public class ListSorter: IComparer<ServerListItem>
 				MessageBox.Show("Player name must be less than 32 characters", appTitle);
 				return;
 			}
-			string hostname = q.findUser("browseforspeed", player);
+			string hostname = q.findUser("wabz", player);
 			if (hostname != null){
 				hostname = LFSQuery.removeColourCodes(hostname);
 				if (MessageBox.Show("Join " + player + " at this host?\n-" + hostname +"-", appTitle, MessageBoxButtons.YesNo) == DialogResult.Yes){
@@ -1023,11 +1023,13 @@ public class ListSorter: IComparer<ServerListItem>
 		}
 		
 		void BtnAddFriendClick(object sender, System.EventArgs e)
-		{			
-			AddFriend(edtFriendName.Text, true);
-			DisplayFriends();
-			lvFriends.Sort();
-			edtFriendName.Text = "";
+		{
+			if (edtFriendName.Text.Length > 0) {
+				AddFriend(edtFriendName.Text, true);
+				DisplayFriends();
+				lvFriends.Sort();
+				edtFriendName.Text = "";
+			}
 		}
 		
 		void RemoveFriendToolStripMenuItemClick(object sender, System.EventArgs e)
@@ -1059,7 +1061,7 @@ public class ListSorter: IComparer<ServerListItem>
 		}
 		
 		void EdtFriendNameKeyDown(object sender, System.Windows.Forms.KeyEventArgs e) {
-			if (e.KeyCode == Keys.Enter) {
+			if (e.KeyCode == Keys.Enter && edtFriendName.Text.Length > 0) {
 				AddFriend(edtFriendName.Text, true);
 				lvFriends.Sort();
 				edtFriendName.Text = "";
