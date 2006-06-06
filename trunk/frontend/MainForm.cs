@@ -614,7 +614,7 @@ public class ListSorter: IComparer<ServerListItem>
 					try {
 						ServerInformation info = new ServerInformation();
 						if (docVersion == "2") {
-							info.version = StringToVersion(favourite.GetElementsByTagName("name")[0].FirstChild.Value);
+							info.version = StringToVersion(favourite.GetElementsByTagName("version")[0].FirstChild.Value);
 						} else {
 							info.version = LFSQuery.VERSION_S2;
 						}
@@ -665,7 +665,7 @@ public class ListSorter: IComparer<ServerListItem>
 		{
 			if (version == LFSQuery.VERSION_S1)
 			    return "S1";
-			if (version == LFSQuery.VERSION_DEMO)
+			else if (version == LFSQuery.VERSION_DEMO)
 			    return "Demo";
 			else return "S2";
 		}
@@ -978,7 +978,15 @@ public class ListSorter: IComparer<ServerListItem>
 					lvMain.Font = new Font(lvMain.Font.FontFamily.Name, lvMain.Font.Size - 1);
 					lvFavourites.Font = new Font(lvFavourites.Font.FontFamily.Name, lvFavourites.Font.Size - 1);
 					lvFriends.Font = new Font(lvFriends.Font.FontFamily.Name, lvFriends.Font.Size - 1);
-				}
+				} /*else if (e.KeyCode == Keys.C){
+					if (tabControl.TabPages[tabControl.SelectedIndex].Text == "Server Browser"){
+						string name = lvMain.GetSelectedServer().hostname;
+						if (name != null)
+						Clipboard.SetText(name);
+					}
+					else if (tabControl.TabPages[tabControl.SelectedIndex].Text == "Favourites")
+						Clipboard.SetText(lvFavourites.GetSelectedServer().hostname);
+				}*/
 			}
 		}
 		
