@@ -102,7 +102,7 @@ public class ListSorter: IComparer<ServerListItem>
 			serverList.Add(item);
 			if (this is MainListView)
 				FilterServer(item);
-			Display(item).Tag = serverList.IndexOf(item);
+			Display(item);
 			this.Sort();
 		}
 		public ServerListItem GetSelectedServer()
@@ -154,6 +154,7 @@ public class ListSorter: IComparer<ServerListItem>
 				return new ListViewItem();
 			ListViewItem lvi;
 			lvi = this.Items.Add(item.host.ToString());
+			lvi.Tag = serverList.IndexOf(item);
 			item.hostname = LFSQuery.removeColourCodes(item.hostname);
 			lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, item.hostname));
 			string cars = MainForm.CarsToString(LFSQuery.getCarNames(item.cars));
@@ -200,19 +201,10 @@ public class ListSorter: IComparer<ServerListItem>
 	}
 	public class FavouriteListView : ServerListView
 	{
-		public IPEndPoint[] GetAllHosts()
+		public ServerInformation[] GetAllHosts()
 		{
-			IPEndPoint[] hosts = new IPEndPoint[serverList.Count];
-			int i = 0;
-			foreach (ServerListItem item in serverList){
-				hosts[i++] = item.host;
-			}
-			return hosts;
+			return serverList.ToArray();
 		}
-		/*public void AddServer(ServerInformation info)
-		{
-
-		}*/
 	}
 	public class MainListView : ServerListView{}
 	
@@ -239,6 +231,7 @@ public class ListSorter: IComparer<ServerListItem>
 			this.success = info.success;
 			this.totalServers = info.totalServers;
 			this.track = info.track;
+			this.version = info.version;
 		}
 	}
 	
@@ -343,12 +336,10 @@ public class ListSorter: IComparer<ServerListItem>
 		byte CodeFilters()
 		{
 			byte filters = 0x00;
-			MessageBox.Show(LFSQuery.msFilters["Private"].GetType().ToString(), "", MessageBoxButtons.OK);
-			/*
 			filters ^= (byte)(!cbPrivate.Checked ? (byte)(LFSQuery.msFilters["Private"]) : (byte)0x00);
 			filters ^= (byte)(!cbPublic.Checked ? (byte)(LFSQuery.msFilters["Public"]) : (byte)0x00);
 			filters ^= (byte)(!cbEmpty.Checked ? (byte)(LFSQuery.msFilters["Empty"]) : (byte)0x00);
-            filters ^= (byte)(!cbFull.Checked ? (byte)(LFSQuery.msFilters["Full"]) : (byte)0x00);*/
+            filters ^= (byte)(!cbFull.Checked ? (byte)(LFSQuery.msFilters["Full"]) : (byte)0x00);
 			return filters;
 		}
 		
@@ -363,7 +354,7 @@ public class ListSorter: IComparer<ServerListItem>
 					ulong compulsory;
 					ulong illegal;
 					CodeCars(out compulsory, out illegal);
-					q.query(compulsory, illegal, "browseforspeed", 0, CodeFilters(), LFSQuery.S1);
+					q.query(compulsory, illegal, "browseforspeed", 0, CodeFilters(), LFSQuery.VERSION_S2);
 				}
 			} catch(Exception e) {
 					MessageBox.Show(e.Message + "Unable to contact the Master Server. Perhaps it is down, or your firewall is not configured properly." , "Unable to contact Master Server!", MessageBoxButtons.OK);
@@ -426,7 +417,7 @@ public class ListSorter: IComparer<ServerListItem>
 						numServersNoReply = 0;
 					}
 					numQueried++;
-					if (info.success){
+					if (info.success) {
 						numServersDone++;
 						list.AddServer(info);
 					} else {
@@ -602,10 +593,17 @@ public class ListSorter: IComparer<ServerListItem>
 				XmlDocument doc = new XmlDocument();
 				doc.Load(filename);
 				XmlNodeList list = doc.GetElementsByTagName("favourites");
+				String docVersion = ((XmlElement)list[0]).GetAttribute("version");
+				MessageBox.Show(docVersion, "", MessageBoxButtons.OK);
 				list = ((XmlElement)list[0]).GetElementsByTagName("favourite");
 				foreach (XmlElement favourite in list) {
 					try {
-						ServerInformation info = new ServerInformation();					
+						ServerInformation info = new ServerInformation();
+						if (docVersion == "2") {
+							info.version = StringToVersion(favourite.GetElementsByTagName("name")[0].FirstChild.Value);
+						} else {
+							info.version = LFSQuery.VERSION_S2;
+						}
 						info.host = new IPEndPoint(IPAddress.Parse(favourite.GetElementsByTagName("ip")[0].FirstChild.Value), Convert.ToInt32(favourite.GetElementsByTagName("port")[0].FirstChild.Value));
 						info.hostname = favourite.GetElementsByTagName("name")[0].FirstChild.Value;					
 						try {
@@ -649,15 +647,34 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 		}
 
+		String VersionToString(byte version)
+		{
+			if (version == LFSQuery.VERSION_S1)
+			    return "S1";
+			if (version == LFSQuery.VERSION_DEMO)
+			    return "Demo";
+			else return "S2";
+		}
+		
+		byte StringToVersion(String version)
+		{
+			switch (version){
+				case "Demo" : return LFSQuery.VERSION_DEMO;
+				case "S1" : return LFSQuery.VERSION_S1;
+				case "S2" : default : return LFSQuery.VERSION_S2;
+			}
+		}
+		
 		void WriteFav() {
 			try {
 				XmlTextWriter tw = new XmlTextWriter(favXMLFilename, null);
 				tw.Formatting = Formatting.Indented;
 				tw.WriteStartDocument();
 				tw.WriteStartElement("favourites");
-				tw.WriteAttributeString("version", "1");
+				tw.WriteAttributeString("version", "2");
 				foreach (ServerListItem info in lvFavourites.AllServers()){
 					tw.WriteStartElement("favourite");
+					tw.WriteElementString("version", VersionToString(info.version));
 					tw.WriteElementString("ip", info.host.Address.ToString());
 					tw.WriteElementString("port", info.host.Port.ToString());
 					tw.WriteElementString("name", info.hostname);
@@ -820,7 +837,7 @@ public class ListSorter: IComparer<ServerListItem>
 			string hostname = q.findUser("browseforspeed", edtFindUserMain.Text);
 			if (hostname != null){
 				hostname = LFSQuery.removeColourCodes(hostname);
-				if (MessageBox.Show("Join " + edtFindUserMain.Text + " at this host?\n" + hostname, appTitle, MessageBoxButtons.YesNo) == DialogResult.Yes){
+				if (MessageBox.Show("Join " + edtFindUserMain.Text + " at this host?\n-" + hostname +"-", appTitle, MessageBoxButtons.YesNo) == DialogResult.Yes){
 					LoadLFS(hostname, "S2", "");
 				}
 			} else {

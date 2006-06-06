@@ -106,8 +106,8 @@ namespace BrowseForSpeed.Frontend
 			SetControlProperty(buttonInfoJoin, "Enabled", false);
 			try{
 				q = new LFSQuery();
-				IPEndPoint[] server = new IPEndPoint[1];
-				server[0] = this.info.host;
+				ServerInformation[] server = new ServerInformation[1];
+				server[0] = this.info;
 				q.query(0, 0, "browseforspeed", server, 3);
 				Thread t = new Thread(new ThreadStart(RefreshPlayerList));
 				t.Start();
