@@ -343,10 +343,12 @@ public class ListSorter: IComparer<ServerListItem>
 		byte CodeFilters()
 		{
 			byte filters = 0x00;
-			filters = (byte)(filters | (!cbPrivate.Checked ? (int)(LFSQuery.msFilters["Private"]) : (byte)0x00));
-			filters = (byte)(filters | (!cbPublic.Checked ? (int)(LFSQuery.msFilters["Public"]) : (byte)0x00));
-			filters = (byte)(filters | (!cbEmpty.Checked ? (int)(LFSQuery.msFilters["Empty"]) : (byte)0x00));
-            filters = (byte)(filters | (!cbFull.Checked ? (int)(LFSQuery.msFilters["Full"]) : (byte)0x00));
+			MessageBox.Show(LFSQuery.msFilters["Private"].GetType().ToString(), "", MessageBoxButtons.OK);
+			/*
+			filters ^= (byte)(!cbPrivate.Checked ? (byte)(LFSQuery.msFilters["Private"]) : (byte)0x00);
+			filters ^= (byte)(!cbPublic.Checked ? (byte)(LFSQuery.msFilters["Public"]) : (byte)0x00);
+			filters ^= (byte)(!cbEmpty.Checked ? (byte)(LFSQuery.msFilters["Empty"]) : (byte)0x00);
+            filters ^= (byte)(!cbFull.Checked ? (byte)(LFSQuery.msFilters["Full"]) : (byte)0x00);*/
 			return filters;
 		}
 		

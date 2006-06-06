@@ -289,6 +289,8 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// cbPublic
 			// 
+			this.cbPublic.Checked = true;
+			this.cbPublic.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.cbPublic.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.cbPublic.Location = new System.Drawing.Point(5, 492);
 			this.cbPublic.Name = "cbPublic";
@@ -300,6 +302,8 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// cbPrivate
 			// 
+			this.cbPrivate.Checked = true;
+			this.cbPrivate.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.cbPrivate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.cbPrivate.Location = new System.Drawing.Point(5, 472);
 			this.cbPrivate.Name = "cbPrivate";
@@ -311,6 +315,8 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// cbFull
 			// 
+			this.cbFull.Checked = true;
+			this.cbFull.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.cbFull.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.cbFull.Location = new System.Drawing.Point(5, 450);
 			this.cbFull.Name = "cbFull";
@@ -349,6 +355,8 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// cbEmpty
 			// 
+			this.cbEmpty.Checked = true;
+			this.cbEmpty.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.cbEmpty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.cbEmpty.Location = new System.Drawing.Point(6, 425);
 			this.cbEmpty.Name = "cbEmpty";
@@ -1079,7 +1087,6 @@ namespace BrowseForSpeed.Frontend
 			this.Controls.Add(this.menuStrip);
 			this.Controls.Add(this.statusStrip);
 			this.DoubleBuffered = true;
-			this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.KeyPreview = true;
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "MainForm";
