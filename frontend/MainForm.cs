@@ -433,7 +433,6 @@ public class ListSorter: IComparer<ServerListItem>
 					numQueried++;
 					if (info.success) {
 						numServersDone++;
-						info.version = this.version;
 						list.AddServer(info);
 					} else {
 						if (info.readFailed) {
@@ -503,7 +502,7 @@ public class ListSorter: IComparer<ServerListItem>
 				Process p = new Process();
 				p.StartInfo.FileName = lfsPath;
 				p.StartInfo.WorkingDirectory = Path.GetDirectoryName(lfsPath);
-				p.StartInfo.Arguments = "/join=" + hostName /*+ " /mode=" + mode*/ + " /pass=" + password + (config.startPS ? "/insim=" + config.psInsimPort.ToString() : "");
+				p.StartInfo.Arguments = "/join=" + hostName + " /mode=" + mode + " /pass=" + password + (config.startPS ? "/insim=" + config.psInsimPort.ToString() : "");
 				p.Start();
 				p.WaitForExit();
 				try {
@@ -558,7 +557,7 @@ public class ListSorter: IComparer<ServerListItem>
 				lvFavourites.GetSelectedServer().password = edtPasswordMain.Text;
 				WriteFav();
 			}
-			LoadLFS(item.hostname, "S2", edtPasswordMain.Text);			
+			LoadLFS(item.hostname, VersionToString(item.version), edtPasswordMain.Text);
 		}
 
 		void lvMainSelectedIndexChanged(object sender, System.EventArgs e)
@@ -821,7 +820,7 @@ public class ListSorter: IComparer<ServerListItem>
 			if (s.ShowDialog(this) == DialogResult.OK) {
 				info.password = s.GetInfo().password;
 				WriteFav();
-				LoadLFS(s.GetInfo().hostname, "S2", s.GetInfo().password);
+				LoadLFS(s.GetInfo().hostname, VersionToString(s.GetInfo().version), s.GetInfo().password);
 			}
 		}
 
