@@ -102,7 +102,7 @@ public class ListSorter: IComparer<ServerListItem>
 			serverList.Add(item);
 			if (this is MainListView)
 				FilterServer(item);
-			Display(item).Tag = serverList.IndexOf(item);
+			Display(item);
 			this.Sort();
 		}
 		public ServerListItem GetSelectedServer()
@@ -156,6 +156,7 @@ public class ListSorter: IComparer<ServerListItem>
 				return new ListViewItem();
 			ListViewItem lvi;
 			lvi = this.Items.Add(item.host.ToString());
+			lvi.Tag = serverList.IndexOf(item);
 			item.hostname = LFSQuery.removeColourCodes(item.hostname);
 			lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, item.hostname));
 			string cars = MainForm.CarsToString(LFSQuery.getCarNames(item.cars));
