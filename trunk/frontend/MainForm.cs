@@ -341,7 +341,7 @@ public class ListSorter: IComparer<ServerListItem>
 			Delegate dgtSetValue = new SetValueDelegate(propInfo.SetValue);
       		ctrl.Invoke(dgtSetValue, new Object[3] { ctrl, val, /*index*/null });
 		}
-
+		
 		byte CodeFilters()
 		{
 			byte filters = 0x00;
@@ -370,6 +370,9 @@ public class ListSorter: IComparer<ServerListItem>
 				}
 
 			if (exiting) return;
+			if (totalServers == 0) {
+				statusTotal.Text = "No servers returned. Check your filters.";				
+			}
 			SetControlProperty(btnRefreshMain, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Text", "&Refresh");
