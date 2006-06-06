@@ -372,7 +372,7 @@ public class ListSorter: IComparer<ServerListItem>
 
 			if (exiting) return;
 			if (totalServers == 0) {
-				statusTotal.Text = "No servers returned. Check your filters.";				
+				statusTotal.Text = "No servers returned. Check your filters.";
 			}
 			SetControlProperty(btnRefreshMain, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Enabled", true);
@@ -702,12 +702,16 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 
 		}
-		public void DisplayFriends()
-		{
+		public void DisplayFriends() {
+			Thread t = new Thread(new ThreadStart(DisplayFriendsT));
+			t.Start();
+		}
+		
+		public void DisplayFriendsT() {
 			lvFriends.Items.Clear();
 			foreach (string name in friendList) {
 				ServerInformation info;
-				int result = LFSQuery.getPubStatInfo(name, out info);
+				int result = LFSQuery.getPubStatInfo(name, out info);				
 				ListViewItem lvi;
 				if (result == 0 && !cbHideOffline.Checked) { //offline
 					lvi = lvFriends.Items.Add(name, name, "");
@@ -1180,6 +1184,7 @@ public class ListSorter: IComparer<ServerListItem>
 				}
 			}
 			ReadFriends();
+			DisplayFriends();
 			cbTracks.SelectedIndex = 0;
 			cbPing.SelectedIndex = 7;
 			cbVersion.SelectedIndex = 2;

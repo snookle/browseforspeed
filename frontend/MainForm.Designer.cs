@@ -169,7 +169,7 @@ namespace BrowseForSpeed.Frontend
 			// closeToolStripMenuItem
 			// 
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-			this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
 			this.closeToolStripMenuItem.Text = "&Exit";
 			this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItemClick);
 			// 
@@ -397,7 +397,7 @@ namespace BrowseForSpeed.Frontend
 									"Aston",
 									"Autocross",
 									"Drag",
-									"Skid Pan"});
+									"Skid Pad"});
 			this.cbTracks.Location = new System.Drawing.Point(7, 495);
 			this.cbTracks.Name = "cbTracks";
 			this.cbTracks.Size = new System.Drawing.Size(124, 21);
