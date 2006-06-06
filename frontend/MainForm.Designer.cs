@@ -50,6 +50,7 @@ namespace BrowseForSpeed.Frontend
 			this.label6 = new System.Windows.Forms.Label();
 			this.btnFindUserMain = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.cbVersion = new System.Windows.Forms.ComboBox();
 			this.cbPublic = new System.Windows.Forms.CheckBox();
 			this.cbPrivate = new System.Windows.Forms.CheckBox();
 			this.cbFull = new System.Windows.Forms.CheckBox();
@@ -128,7 +129,6 @@ namespace BrowseForSpeed.Frontend
 			this.statusRefused = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusNoReply = new System.Windows.Forms.ToolStripStatusLabel();
 			this.openFileDialogPS = new System.Windows.Forms.OpenFileDialog();
-			this.cbVersion = new System.Windows.Forms.ComboBox();
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabMain.SuspendLayout();
@@ -289,6 +289,20 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Filters";
 			// 
+			// cbVersion
+			// 
+			this.cbVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbVersion.FormattingEnabled = true;
+			this.cbVersion.Items.AddRange(new object[] {
+									"Demo",
+									"S1",
+									"S2"});
+			this.cbVersion.Location = new System.Drawing.Point(6, 372);
+			this.cbVersion.Name = "cbVersion";
+			this.cbVersion.Size = new System.Drawing.Size(124, 21);
+			this.cbVersion.TabIndex = 17;
+			this.cbVersion.SelectedIndexChanged += new System.EventHandler(this.CbVersionSelectedIndexChanged);
+			// 
 			// cbPublic
 			// 
 			this.cbPublic.Checked = true;
@@ -348,7 +362,8 @@ namespace BrowseForSpeed.Frontend
 									"200",
 									"300",
 									"500",
-									"1000"});
+									"1000",
+									"5000"});
 			this.cbPing.Location = new System.Drawing.Point(7, 468);
 			this.cbPing.Name = "cbPing";
 			this.cbPing.Size = new System.Drawing.Size(123, 21);
@@ -514,7 +529,7 @@ namespace BrowseForSpeed.Frontend
 			this.tabFavourites.Controls.Add(this.lvFavourites);
 			this.tabFavourites.Location = new System.Drawing.Point(4, 22);
 			this.tabFavourites.Name = "tabFavourites";
-			this.tabFavourites.Size = new System.Drawing.Size(854, 565);
+			this.tabFavourites.Size = new System.Drawing.Size(882, 565);
 			this.tabFavourites.TabIndex = 2;
 			this.tabFavourites.Text = "Favourites";
 			this.tabFavourites.UseVisualStyleBackColor = true;
@@ -640,7 +655,7 @@ namespace BrowseForSpeed.Frontend
 			this.tabFriends.Controls.Add(this.lvFriends);
 			this.tabFriends.Location = new System.Drawing.Point(4, 22);
 			this.tabFriends.Name = "tabFriends";
-			this.tabFriends.Size = new System.Drawing.Size(854, 565);
+			this.tabFriends.Size = new System.Drawing.Size(882, 565);
 			this.tabFriends.TabIndex = 3;
 			this.tabFriends.Text = "Friends";
 			this.tabFriends.UseVisualStyleBackColor = true;
@@ -776,7 +791,7 @@ namespace BrowseForSpeed.Frontend
 			this.tabConfig.Location = new System.Drawing.Point(4, 22);
 			this.tabConfig.Name = "tabConfig";
 			this.tabConfig.Padding = new System.Windows.Forms.Padding(3);
-			this.tabConfig.Size = new System.Drawing.Size(854, 565);
+			this.tabConfig.Size = new System.Drawing.Size(882, 565);
 			this.tabConfig.TabIndex = 1;
 			this.tabConfig.Text = "Configuration";
 			this.tabConfig.UseVisualStyleBackColor = true;
@@ -795,7 +810,7 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox1.Location = new System.Drawing.Point(3, 3);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(848, 559);
+			this.groupBox1.Size = new System.Drawing.Size(876, 559);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Configuration";
@@ -1079,19 +1094,6 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.openFileDialogPS.FileName = "LFSspotter.exe";
 			this.openFileDialogPS.Filter = "LFS Spotter Executable|LFSspotter.exe";
-			// 
-			// cbVersion
-			// 
-			this.cbVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cbVersion.FormattingEnabled = true;
-			this.cbVersion.Items.AddRange(new object[] {
-									"Demo",
-									"S1",
-									"S2"});
-			this.cbVersion.Location = new System.Drawing.Point(6, 372);
-			this.cbVersion.Name = "cbVersion";
-			this.cbVersion.Size = new System.Drawing.Size(124, 21);
-			this.cbVersion.TabIndex = 17;
 			// 
 			// MainForm
 			// 
