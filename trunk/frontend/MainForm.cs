@@ -1051,7 +1051,7 @@ public class ListSorter: IComparer<ServerListItem>
 		
 		void LvFriendsDoubleClick(object sender, System.EventArgs e)
 		{
-			if ((lvFriends.SelectedItems.Count < 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == "Offline"))
+			if ((lvFriends.SelectedItems.Count <= 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == "Offline"))
 				return;
 			string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
 			string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
