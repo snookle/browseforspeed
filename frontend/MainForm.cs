@@ -95,6 +95,7 @@ public class ListSorter: IComparer<ServerListItem>
 				if (serverList[i].host == item.host) {
 					serverList[i] = item;
 					Display(item).Tag = i;
+					MessageBox.Show(i.ToString(), "", MessageBoxButtons.OK);
 					return;
 				}
 			}
@@ -102,15 +103,17 @@ public class ListSorter: IComparer<ServerListItem>
 			serverList.Add(item);
 			if (this is MainListView)
 				FilterServer(item);
-			Display(item);
+			Display(item).Tag = serverList.IndexOf(item);
 			this.Sort();
 		}
 		public ServerListItem GetSelectedServer()
 		{
 			if (SelectedItems.Count > 0) {
 				int index = (int)SelectedItems[0].Tag;
+				if (index == -1 || index > Items.Count)
+					return null;
 				ServerListItem item = serverList[index];
-				item.index = SelectedItems[0].Index + 1;
+				item.index = SelectedItems[0].Index;
 				return item;
 			}
 			else
@@ -154,7 +157,6 @@ public class ListSorter: IComparer<ServerListItem>
 				return new ListViewItem();
 			ListViewItem lvi;
 			lvi = this.Items.Add(item.host.ToString());
-			lvi.Tag = serverList.IndexOf(item);
 			item.hostname = LFSQuery.removeColourCodes(item.hostname);
 			lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, item.hostname));
 			string cars = MainForm.CarsToString(LFSQuery.getCarNames(item.cars));
@@ -846,10 +848,15 @@ public class ListSorter: IComparer<ServerListItem>
 
 		void btnFindUserClick(object sender, System.EventArgs e)
 		{
-			string hostname = q.findUser("browseforspeed", edtFindUserMain.Text);
+			string player = edtFindUserMain.Text;
+			if (player.Length > 32) {
+				MessageBox.Show("Player name must be less than 32 characters", appTitle);
+				return;
+			}
+			string hostname = q.findUser("browseforspeed", player);
 			if (hostname != null){
 				hostname = LFSQuery.removeColourCodes(hostname);
-				if (MessageBox.Show("Join " + edtFindUserMain.Text + " at this host?\n-" + hostname +"-", appTitle, MessageBoxButtons.YesNo) == DialogResult.Yes){
+				if (MessageBox.Show("Join " + player + " at this host?\n-" + hostname +"-", appTitle, MessageBoxButtons.YesNo) == DialogResult.Yes){
 					LoadLFS(hostname, "S2", "");
 				}
 			} else {
