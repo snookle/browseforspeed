@@ -45,12 +45,14 @@ namespace libbrowseforspeed {
 		public bool passworded;
 		public string[] racerNames;
 		public string password;
+		public byte version;
 	}
 			
 	public struct hostInfo {
 		public IPEndPoint host;
 		public bool passworded;
 		public object callbackObj;
+		public byte version;
 	}	
 
 	public delegate void ServerQueried(object o, ServerInformation info, object callbackObj);
@@ -63,9 +65,9 @@ namespace libbrowseforspeed {
 		public static string[] CAR_GROUP_NAMES = {"ALL", "SS", "GTR", "FWD", "LRF", "STD", "TBO"};
 		public static ulong[] CAR_GROUP_DISALLOW = {0, 243583, 280704, 511726, 522368, 524028, 392896};
 		public static ulong[] CAR_GROUP_DONTCARE = {524287, 280704, 14207, 12561, 319, 259, 291};
-		public static byte DEMO = 0x00;
-		public static byte S1 = 0x01;
-		public static byte S2 = 0x02;
+		public static byte VERSION_DEMO = (byte)0x00;
+		public static byte VERSION_S1 = (byte)0x01;
+		public static byte VERSION_S2 = (byte)0x02;
 		
 		public static Hashtable msFilters;
 		public static Hashtable trackCodes;
@@ -228,6 +230,15 @@ namespace libbrowseforspeed {
 				Socket sock = new Socket(endpoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 				timeoutEvent = new System.Threading.ManualResetEvent(false);				
 				sock.BeginConnect(endpoint, new AsyncCallback(connectCallback), sock);
+				if (this.host.version == VERSION_DEMO) {
+					send_query1[1] = send_query2[1] = 0x00;
+					send_query1[7] = send_query2[7] = 0x0f;
+					send_query1[8] = send_query2[8] = 0x00;
+				} else if (this.host.version == VERSION_S1) {
+					send_query1[1] = send_query2[1] = 0x01;
+					send_query1[7] = send_query2[7] = 0x1f;
+					send_query1[8] = send_query2[8] = 0x27;
+				}
 				if (timeoutEvent.WaitOne(1000, false)) {
 					//connected aok!
 					NetworkStream str = new NetworkStream(sock);					
@@ -336,6 +347,10 @@ namespace libbrowseforspeed {
 					serverinfo.readFailed = true;					
 					return;
 				}*/
+				if (recbuf[0] == 0x00) {
+					serverinfo.success = false;
+					return;
+				}
 				serverinfo.success = true;
 				serverinfo.cars = (ulong)(recbuf[12] * 16777216 + recbuf[11] * 65536 + recbuf[10] * 256 + recbuf[9]);
 				serverinfo.track = (string)trackCodes[getLFSString(recbuf, 1, 4)];
@@ -353,9 +368,16 @@ namespace libbrowseforspeed {
 			public static byte[] footer = { 0x2f, 0x4e }; // /N;
 
 			public Query(ulong cars_compulsory, ulong cars_illegal, string user, byte filters, byte version) {
-				filters |= 0x02; //not sure what 0x01 and 0x02 are. 0x02 seems to be set always?
-				client_version_info[3] = filters;				
+				filters ^= 0x02; //not sure what 0x01 and 0x02 are. 0x02 seems to be set always?
+				client_version_info[3] = filters;
 				client_version_info[4] = version;
+				if (version == VERSION_DEMO) {
+					footer[0] = 0x0f;
+					footer[1] = 0x00;
+				} else if (version == VERSION_S1) {
+					footer[0] = 0x1f;
+					footer[1] = 0x27;
+				}
 				Query.cars_compulsory = cars_compulsory;
 				Query.cars_illegal = cars_illegal;
 				Encoding ascii = Encoding.ASCII;
@@ -426,6 +448,7 @@ namespace libbrowseforspeed {
 					h.host = ips[j];
 					h.passworded = (recbuf[5+j] == 0x09);
 					h.callbackObj = callbackObj;
+					h.version = version;
 					allHosts.Add(h);
 					m.addHost(h);
 				}
@@ -440,15 +463,16 @@ namespace libbrowseforspeed {
 			LFSQuery.keepQuerying = false;
 		}
 	
-		public void query(ulong cars_compulsory, ulong cars_illegal, string username, IPEndPoint[] hosts, object callbackObj) {
+		public void query(ulong cars_compulsory, ulong cars_illegal, string username, ServerInformation[] hosts, object callbackObj) {
 			LFSQuery.keepQuerying = true;			
 			QueryThreadManager m = new QueryThreadManager();
 			totalServers = hosts.Length;
-			foreach (IPEndPoint host in hosts) {
-				hostInfo h;
-				h.host = host;
+			foreach (ServerInformation host in hosts) {
+				hostInfo h = new hostInfo();
+				h.host = host.host;
 				h.passworded = false;
 				h.callbackObj = callbackObj;
+				h.version = host.version;
 				m.addHost(h);
 			}
 			m.allDone();
@@ -465,8 +489,8 @@ namespace libbrowseforspeed {
 				0x00, 0x53, 0x6e, 0x6f, 0x6f, 0x6b, 0x6c, 0x65, 
 				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
 				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-				0x00, 0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-				0x00, 0x00, 0x00, 0x2f, 0x4e
+				0x00, 0x19, 0x00, 0xe4, 0xa3, 0xff, 0xbe, 0x59,
+				0xf2, 0x00, 0x00, 0x2f, 0x4e
 			};
 			byte[] user = new byte[24];
 			byte[] finduser = new byte[24];
