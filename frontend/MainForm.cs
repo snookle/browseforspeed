@@ -704,6 +704,8 @@ public class ListSorter: IComparer<ServerListItem>
 
 		}
 		public void DisplayFriends() {
+			btnRefreshFriend.Enabled = false;
+			btnAddFriend.Enabled = false;
 			Thread t = new Thread(new ThreadStart(DisplayFriendsT));
 			t.Start();
 		}
@@ -736,6 +738,8 @@ public class ListSorter: IComparer<ServerListItem>
 					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "Error"));
 				}
 			}
+			btnRefreshFriend.Enabled = true;
+			btnAddFriend.Enabled = true;
 		}
 		
 		public void AddFriend(string name, bool writeToFile)
