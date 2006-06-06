@@ -238,7 +238,12 @@ namespace libbrowseforspeed {
 					send_query1[1] = send_query2[1] = 0x01;
 					send_query1[7] = send_query2[7] = 0x1f;
 					send_query1[8] = send_query2[8] = 0x27;
+				} else {
+					send_query1[1] = send_query2[1] = 0x02;
+					send_query1[7] = send_query2[7] = 0x2f;
+					send_query1[8] = send_query2[8] = 0x4e;
 				}
+					
 				if (timeoutEvent.WaitOne(1000, false)) {
 					//connected aok!
 					NetworkStream str = new NetworkStream(sock);					
@@ -378,6 +383,9 @@ namespace libbrowseforspeed {
 				} else if (version == VERSION_S1) {
 					footer[0] = 0x1f;
 					footer[1] = 0x27;
+				} else {
+					footer[0] = 0x2f;
+					footer[1] = 0x4e;
 				}
 				Query.cars_compulsory = cars_compulsory;
 				Query.cars_illegal = cars_illegal;
