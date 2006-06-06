@@ -95,7 +95,6 @@ public class ListSorter: IComparer<ServerListItem>
 				if (serverList[i].host == item.host) {
 					serverList[i] = item;
 					Display(item).Tag = i;
-					MessageBox.Show(i.ToString(), "", MessageBoxButtons.OK);
 					return;
 				}
 			}
@@ -248,7 +247,7 @@ public class ListSorter: IComparer<ServerListItem>
 	
 	public partial class MainForm
 	{
-		static string bfs_version = "0.3";
+		static string bfs_version = "0.4";
 		static string version_check = "5";
 		static string download_url = "http://www.browseforspeed.net";
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
@@ -365,6 +364,7 @@ public class ListSorter: IComparer<ServerListItem>
 					ulong compulsory;
 					ulong illegal;
 					CodeCars(out compulsory, out illegal);
+					MessageBox.Show(version.ToString());
 					q.query(compulsory, illegal, "browseforspeed", 0, CodeFilters(), version);
 				}
 			} catch(Exception e) {
