@@ -73,7 +73,7 @@ public class ListSorter: IComparer<ServerListItem>
 	
 	public enum QueryType{Main, Favorite, Friend}
 	public enum SortType{Hostname, Ping, Players, Track};
-	public enum FilterType{None, Track, Ping, HasCars, DoesNotHaveCars, Empty, Full, Private, Public};
+	public enum FilterType{None, Track, Ping, Cars, Empty, Full, Private, Public};
 	public struct Filter {
 		public FilterType type;
 		public Object value;
@@ -194,7 +194,16 @@ public class ListSorter: IComparer<ServerListItem>
 						case FilterType.Private : item.filtered = (item.filtered || ((item.passworded == true) && !(bool)f.value)); break;
 						case FilterType.Public : item.filtered = (item.filtered || ((item.passworded == false) && !(bool)f.value)); break;
 						case FilterType.Ping : item.filtered = item.filtered || (item.ping > (int)f.value); break;
-						//DO ZE CARS!
+						case FilterType.Cars :
+							if (item.filtered) break;
+							foreach (CheckBox car in (CheckBox[])(f.value)) {
+								ulong i = LFSQuery.CAR_BITS[(int)car.Tag] & item.cars;
+								if ((i != 0 && car.CheckState == CheckState.Unchecked) ||
+								    (i == 0 && car.CheckState == CheckState.Checked)) {
+									item.filtered = true;
+								}
+							}
+							break;
 				}
 			}
 		}
@@ -1051,6 +1060,8 @@ public class ListSorter: IComparer<ServerListItem>
 				cars[i].Height = 22;
 				cars[i].ThreeState = true;
 				cars[i].CheckState = CheckState.Indeterminate;
+				cars[i].Tag = i;
+				cars[i].Click +=  new EventHandler(carsChanged);
 			}
 
 			for (int i = 0; i < LFSQuery.CAR_GROUP_BITS.Length; ++i) { //create group buttons
@@ -1068,6 +1079,7 @@ public class ListSorter: IComparer<ServerListItem>
 				groups[i].Height = 23;
 				groups[i].Tag = i;
 				groups[i].Click += new EventHandler(CarsGroupButtonClick);
+				groups[i].Click +=  new EventHandler(carsChanged);
 			}
             friendList = new List<string>();
 			lvwColumnSorter = new ListViewColumnSorter();
@@ -1186,6 +1198,11 @@ public class ListSorter: IComparer<ServerListItem>
 		void CbPublicCheckedChanged(object sender, System.EventArgs e)
 		{
 			lvMain.Filter(FilterType.Public, cbPublic.Checked);
+			lvMain.DisplayAll();
+		}
+		
+		void carsChanged(object sender, System.EventArgs e) {
+			lvMain.Filter(FilterType.Cars, cars);
 			lvMain.DisplayAll();
 		}
 	}
