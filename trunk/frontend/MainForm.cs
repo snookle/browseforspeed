@@ -998,6 +998,10 @@ public class ListSorter: IComparer<ServerListItem>
 						SetClipboard(lvFavourites);
 					}
 				}
+			} else {
+				if (e.KeyCode == Keys.Delete) {
+					RemoveFromFavouritesToolStripMenuItemClick(sender, e);
+				}
 			}
 		}
 		
