@@ -70,6 +70,7 @@ namespace BrowseForSpeed.Frontend
 			this.joinServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewServerInformationMain = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.copyServerToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnRefreshMain = new System.Windows.Forms.Button();
 			this.btnJoinMain = new System.Windows.Forms.Button();
 			this.tabFavourites = new System.Windows.Forms.TabPage();
@@ -86,6 +87,7 @@ namespace BrowseForSpeed.Frontend
 			this.joinServerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewServerInformationFav = new System.Windows.Forms.ToolStripMenuItem();
 			this.removeFromFavouritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.copyServerToClipboardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabFriends = new System.Windows.Forms.TabPage();
 			this.edtFriendName = new System.Windows.Forms.TextBox();
 			this.btnAddFriend = new System.Windows.Forms.Button();
@@ -471,9 +473,10 @@ namespace BrowseForSpeed.Frontend
 			this.contextMenuBrowser.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.joinServerToolStripMenuItem,
 									this.viewServerInformationMain,
-									this.toolStripMenuItem1});
+									this.toolStripMenuItem1,
+									this.copyServerToClipboardToolStripMenuItem});
 			this.contextMenuBrowser.Name = "contextMenuBrowser";
-			this.contextMenuBrowser.Size = new System.Drawing.Size(214, 70);
+			this.contextMenuBrowser.Size = new System.Drawing.Size(214, 114);
 			this.contextMenuBrowser.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuBrowserOpening);
 			// 
 			// joinServerToolStripMenuItem
@@ -496,6 +499,13 @@ namespace BrowseForSpeed.Frontend
 			this.toolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
 			this.toolStripMenuItem1.Text = "&Add to Favourites";
 			this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1Click);
+			// 
+			// copyServerToClipboardToolStripMenuItem
+			// 
+			this.copyServerToClipboardToolStripMenuItem.Name = "copyServerToClipboardToolStripMenuItem";
+			this.copyServerToClipboardToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.copyServerToClipboardToolStripMenuItem.Text = "&Copy Server to Clipboard";
+			this.copyServerToClipboardToolStripMenuItem.Click += new System.EventHandler(this.CopyServerToClipboardToolStripMenuItemClick);
 			// 
 			// btnRefreshMain
 			// 
@@ -619,9 +629,10 @@ namespace BrowseForSpeed.Frontend
 			this.contextMenuFav.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.joinServerToolStripMenuItem1,
 									this.viewServerInformationFav,
-									this.removeFromFavouritesToolStripMenuItem});
+									this.removeFromFavouritesToolStripMenuItem,
+									this.copyServerToClipboardToolStripMenuItem1});
 			this.contextMenuFav.Name = "contextMenuFav";
-			this.contextMenuFav.Size = new System.Drawing.Size(214, 70);
+			this.contextMenuFav.Size = new System.Drawing.Size(214, 92);
 			this.contextMenuFav.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFavOpening);
 			// 
 			// joinServerToolStripMenuItem1
@@ -644,6 +655,13 @@ namespace BrowseForSpeed.Frontend
 			this.removeFromFavouritesToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
 			this.removeFromFavouritesToolStripMenuItem.Text = "&Remove From Favourites";
 			this.removeFromFavouritesToolStripMenuItem.Click += new System.EventHandler(this.RemoveFromFavouritesToolStripMenuItemClick);
+			// 
+			// copyServerToClipboardToolStripMenuItem1
+			// 
+			this.copyServerToClipboardToolStripMenuItem1.Name = "copyServerToClipboardToolStripMenuItem1";
+			this.copyServerToClipboardToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
+			this.copyServerToClipboardToolStripMenuItem1.Text = "&Copy Server to Clipboard";
+			this.copyServerToClipboardToolStripMenuItem1.Click += new System.EventHandler(this.CopyServerToClipboardToolStripMenuItemClick);
 			// 
 			// tabFriends
 			// 
@@ -1135,6 +1153,8 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem copyServerToClipboardToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem copyServerToClipboardToolStripMenuItem;
 		private System.Windows.Forms.ComboBox cbVersion;
 		private System.Windows.Forms.CheckBox cbFull;
 		private System.Windows.Forms.CheckBox cbPrivate;

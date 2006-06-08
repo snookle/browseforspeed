@@ -990,15 +990,23 @@ public class ListSorter: IComparer<ServerListItem>
 					lvMain.Font = new Font(lvMain.Font.FontFamily.Name, lvMain.Font.Size - 1);
 					lvFavourites.Font = new Font(lvFavourites.Font.FontFamily.Name, lvFavourites.Font.Size - 1);
 					lvFriends.Font = new Font(lvFriends.Font.FontFamily.Name, lvFriends.Font.Size - 1);
-				} /*else if (e.KeyCode == Keys.C){
+				} else if (e.KeyCode == Keys.C){
 					if (tabControl.TabPages[tabControl.SelectedIndex].Text == "Server Browser"){
-						string name = lvMain.GetSelectedServer().hostname;
-						if (name != null)
-						Clipboard.SetText(name);
+						SetClipboard(lvMain);
 					}
-					else if (tabControl.TabPages[tabControl.SelectedIndex].Text == "Favourites")
-						Clipboard.SetText(lvFavourites.GetSelectedServer().hostname);
-				}*/
+					else if (tabControl.TabPages[tabControl.SelectedIndex].Text == "Favourites") {
+						SetClipboard(lvFavourites);
+					}
+				}
+			}
+		}
+		
+		void SetClipboard(ServerListView list)
+		{
+			ServerListItem item = null;
+			item = list.GetSelectedServer();
+			if (item != null && item.hostname != null) {
+				Clipboard.SetText(item.hostname);
 			}
 		}
 		
@@ -1243,6 +1251,15 @@ public class ListSorter: IComparer<ServerListItem>
 		void CbVersionSelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			this.version = StringToVersion(cbVersion.Text);
+		}
+		
+		void CopyServerToClipboardToolStripMenuItemClick(object sender, System.EventArgs e)
+		{
+			if (((ToolStripMenuItem)sender).Name == "copyServerToClipboardToolStripMenuItem") {
+				SetClipboard(lvMain);
+			} else {
+				SetClipboard(lvFavourites);
+			}
 		}
 	}
 /// Horray for code nicked from the MSDN!
