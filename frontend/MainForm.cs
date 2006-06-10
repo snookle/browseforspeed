@@ -154,25 +154,29 @@ public class ListSorter: IComparer<ServerListItem>
 		{
 			if (item.filtered)
 				return new ListViewItem();
-			ListViewItem lvi;
-			lvi = this.Items.Add(item.host.ToString());
-			lvi.Tag = serverList.IndexOf(item);
-			item.hostname = LFSQuery.removeColourCodes(item.hostname);
-			lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, item.hostname));
-			string cars = MainForm.CarsToString(LFSQuery.getCarNames(item.cars));
-			string rules = MainForm.RulesToString(item.rules);
-			lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, item.ping.ToString()));
-			int columnOffset = 0;
-			if (this is FavouriteListView){
-				columnOffset = 1;
-			} else {
-				lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, item.passworded == true ? "Yes" : "No"));
+			try {
+				ListViewItem lvi;
+				lvi = this.Items.Add(item.host.ToString());
+				lvi.Tag = serverList.IndexOf(item);
+				item.hostname = LFSQuery.removeColourCodes(item.hostname);
+				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, item.hostname));
+				string cars = MainForm.CarsToString(LFSQuery.getCarNames(item.cars));
+				string rules = MainForm.RulesToString(item.rules);
+				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, item.ping.ToString()));
+				int columnOffset = 0;
+				if (this is FavouriteListView){
+					columnOffset = 1;
+				} else {
+					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, item.passworded == true ? "Yes" : "No"));
+				}
+				lvi.SubItems.Insert(3 - columnOffset, new ListViewItem.ListViewSubItem(lvi, item.players.ToString() +"/" + item.slots.ToString()));
+				lvi.SubItems.Insert(4 - columnOffset, new ListViewItem.ListViewSubItem(lvi, rules));
+				lvi.SubItems.Insert(5 - columnOffset, new ListViewItem.ListViewSubItem(lvi, item.track));			
+				lvi.SubItems.Insert(6 - columnOffset, new ListViewItem.ListViewSubItem(lvi, cars));
+				return lvi;
+			}catch (Exception ex) {
+				return null;
 			}
-			lvi.SubItems.Insert(3 - columnOffset, new ListViewItem.ListViewSubItem(lvi, item.players.ToString() +"/" + item.slots.ToString()));
-			lvi.SubItems.Insert(4 - columnOffset, new ListViewItem.ListViewSubItem(lvi, rules));
-			lvi.SubItems.Insert(5 - columnOffset, new ListViewItem.ListViewSubItem(lvi, item.track));			
-			lvi.SubItems.Insert(6 - columnOffset, new ListViewItem.ListViewSubItem(lvi, cars));
-			return lvi;
 		}
 		private Filter[] filters = new Filter[10];
 		public void Filter(FilterType filter, Object value)
@@ -368,7 +372,7 @@ public class ListSorter: IComparer<ServerListItem>
 					q.query(compulsory, illegal, "browseforspeed", 0, CodeFilters(), version);
 				}
 			} catch(Exception e) {
-					MessageBox.Show(e.Message + "Unable to contact the Master Server. Perhaps it is down, or your firewall is not configured properly." , "Unable to contact Master Server!", MessageBoxButtons.OK);
+					MessageBox.Show("Unable to contact the LFS Master Server. Perhaps it is down, or your firewall is not configured properly." , appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 
 			if (exiting) return;
@@ -448,7 +452,7 @@ public class ListSorter: IComparer<ServerListItem>
 			    	AddServerDelegate addServer = new AddServerDelegate(AddServerToList);
 			    	this.BeginInvoke(addServer, new object[] {info, list});
 				}
-			} catch(Exception e){ MessageBox.Show(e.Message + e.StackTrace,"",MessageBoxButtons.OK); }
+			} catch(Exception e){ MessageBox.Show(e.Message + e.StackTrace, appTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
   		}
 
 		delegate void AddServerDelegate(ServerInformation info, ServerListView list);
@@ -493,7 +497,7 @@ public class ListSorter: IComparer<ServerListItem>
 					ps.StartInfo.WorkingDirectory = Path.GetDirectoryName(psPath);
 					ps.Start();
 				} catch (Exception ex) {
-					MessageBox.Show("Error executing Pit Spotter\n"+ex.Message+"\nRecheck your configuration.", appTitle, MessageBoxButtons.OK);
+					MessageBox.Show("Error executing Pit Spotter\n" + ex.Message + "\nRecheck your configuration.", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
 				}
 			}
@@ -510,7 +514,7 @@ public class ListSorter: IComparer<ServerListItem>
 				} catch (Exception silly) {}
 			} catch (Exception ex) {
 				this.WindowState = ws;
-				MessageBox.Show("Error executing LFS.exe\n"+ex.Message+"\nRecheck your configuration.", appTitle, MessageBoxButtons.OK);
+				MessageBox.Show("Error executing LFS.exe\n"+ex.Message+"\nRecheck your configuration.", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			this.WindowState = ws;
 		}
@@ -585,7 +589,7 @@ public class ListSorter: IComparer<ServerListItem>
 		}
 
 		void AboutToolStripMenuItem1Click(object sender, System.EventArgs e) {
-			MessageBox.Show("Browse For Speed "+bfs_version+" - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.", "About", MessageBoxButtons.OK);
+			MessageBox.Show("Browse For Speed "+bfs_version+" - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.", "About Browse For Speed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
 		void ContextMenuBrowserOpening(object sender, System.ComponentModel.CancelEventArgs e)
@@ -631,8 +635,8 @@ public class ListSorter: IComparer<ServerListItem>
 			} catch (FileNotFoundException fnfe) {
 				return false;	
 			} catch (Exception e) {
-				MessageBox.Show("Error loading favourites: " + e.Message + "\nA copy was saved as "+filename +".backup", "", MessageBoxButtons.OK);
 				File.Copy(filename, filename +".backup", true);
+				MessageBox.Show("Error loading favourites: " + e.Message + "\nA copy was saved as "+filename +".backup", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return false;
 			}
 		}
@@ -698,7 +702,7 @@ public class ListSorter: IComparer<ServerListItem>
     			tw.Close();
 			}
     		catch (Exception ex) {
-				MessageBox.Show("An error writing to the favourite server file occured: " +ex.Message, "Browse For Speed", MessageBoxButtons.OK);
+				MessageBox.Show("An error writing to the favourite server file occured: " + ex.Message, appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 
 		}
@@ -771,7 +775,7 @@ public class ListSorter: IComparer<ServerListItem>
 				tw.WriteFullEndElement();
 				tw.Close();
 			} catch (Exception ex) {
-				MessageBox.Show("An error writing to the friends file occured: " +ex.Message, "Browsw For Speed", MessageBoxButtons.OK);
+				MessageBox.Show("An error writing to the friends file occured: " +ex.Message, appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			
 		}
@@ -788,8 +792,8 @@ public class ListSorter: IComparer<ServerListItem>
 				}
 			} catch (FileNotFoundException fnfe){
 			} catch (Exception e) {
-				MessageBox.Show("Error loading friends: " + e.Message + "\nA copy was saved as " + friendFilename + ".backup", "", MessageBoxButtons.OK);
 				File.Copy(friendFilename, friendFilename +".backup", true);
+				MessageBox.Show("Error loading friends: " + e.Message + "\nA copy was saved as " + friendFilename + ".backup", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 			lvFriends.Sort();
 		}
@@ -862,17 +866,17 @@ public class ListSorter: IComparer<ServerListItem>
 		{
 			string player = edtFindUserMain.Text;
 			if (player.Length > 32) {
-				MessageBox.Show("Player name must be less than 32 characters", appTitle);
+				MessageBox.Show("Player name must be less than 32 characters", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return;
 			}
 			string hostname = q.findUser("wabz", player);
 			if (hostname != null){
 				hostname = LFSQuery.removeColourCodes(hostname);
-				if (MessageBox.Show("Join " + player + " at this host?\n-" + hostname +"-", appTitle, MessageBoxButtons.YesNo) == DialogResult.Yes){
+				if (MessageBox.Show("Join " + player + " at this host?\n-" + hostname +"-", appTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes){
 					LoadLFS(hostname, "S2", "");
 				}
 			} else {
-				MessageBox.Show("User was not found online", appTitle, MessageBoxButtons.OK);
+				MessageBox.Show("User was not found online", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
 
@@ -928,17 +932,17 @@ public class ListSorter: IComparer<ServerListItem>
 					stream.Read(buf, 0, buf.Length);
 					if (buf[0] == version_check[0]) {
 						if (botherUser) {
-							MessageBox.Show("Your version is up to date.", "", MessageBoxButtons.OK);
+							MessageBox.Show("Your version is up to date.", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
 						}
 					} else {
-						if (MessageBox.Show("There is a new version available, do you wish to be taken to the download page?", "Browse For Speed", MessageBoxButtons.YesNo) == DialogResult.Yes){
+						if (MessageBox.Show("There is a new version available, do you wish to be taken to the download page?", appTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes){
 							System.Diagnostics.Process.Start(download_url);
 						}
 					}
 				}
 			} catch (Exception e) {
 				if (botherUser) {
-					MessageBox.Show("There was an error, perhaps our site is down. Try again later!", "Error!", MessageBoxButtons.OK);
+					MessageBox.Show("There was an error, perhaps our site is down. Try again later!", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 		}
@@ -1010,7 +1014,7 @@ public class ListSorter: IComparer<ServerListItem>
 			ServerListItem item = null;
 			item = list.GetSelectedServer();
 			if (item != null && item.hostname != null) {
-				Clipboard.SetText(item.hostname);
+				Clipboard.SetText(item.hostname + " | " + item.host.ToString());
 			}
 		}
 		
@@ -1071,7 +1075,7 @@ public class ListSorter: IComparer<ServerListItem>
 				return;
 			string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
 			string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
-			if (MessageBox.Show("Do you want to join " + friend + " at " + hostname + "?", "Join Friend?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+			if (MessageBox.Show("Do you want to join " + friend + " at " + hostname + "?", appTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
 				LoadLFS(hostname, "S2", edtPasswordMain.Text);
 			}
 		}
@@ -1264,6 +1268,33 @@ public class ListSorter: IComparer<ServerListItem>
 			} else {
 				SetClipboard(lvFavourites);
 			}
+		}
+		
+		void BtnAddServerClick(object sender, System.EventArgs e)
+		{
+			try {
+				string[] hostname = edtAddServerAddress.Text.Split(':');
+				if (hostname.Length != 2) {
+					MessageBox.Show("IP Address must be in the form: ipaddress:port", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
+				ServerInformation info = new ServerInformation();
+				int port;
+				try {
+					port = Convert.ToInt32(hostname[1]);
+					if (port < 1 || port > 65535){
+						throw new Exception();
+					}
+				} catch (Exception ex) {
+					MessageBox.Show("The port number was not valid. Must be a number between 1 and 65535", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);				
+					return;
+				}
+				info.host = new IPEndPoint(IPAddress.Parse(hostname[0]), port);
+				lvFavourites.AddServer(info);
+			} catch (Exception ex) {
+				MessageBox.Show("An error occured while adding the server to favourites: " + ex.Message, appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			
 		}
 	}
 /// Horray for code nicked from the MSDN!
