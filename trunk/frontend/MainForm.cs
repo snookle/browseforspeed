@@ -916,6 +916,11 @@ public class ListSorter: IComparer<ServerListItem>
 			ServerListItem item = lvFavourites.GetSelectedServer();
 			if (item == null)
 				return;
+			if (sender is MainForm) { //delete key pressed.
+				if (MessageBox.Show("Remove " + item.hostname + " from your favourites?", appTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No){
+					return;
+				}
+			}
 			lvFavourites.RemoveServer(item);
 			WriteFav();
 		}
@@ -1004,7 +1009,11 @@ public class ListSorter: IComparer<ServerListItem>
 				}
 			} else {
 				if (e.KeyCode == Keys.Delete) {
-					RemoveFromFavouritesToolStripMenuItemClick(sender, e);
+					if (tabControl.TabPages[tabControl.SelectedIndex].Text == "Favourites") {
+						RemoveFromFavouritesToolStripMenuItemClick(sender, e);
+					} else if (tabControl.TabPages[tabControl.SelectedIndex].Text == "Friends") {
+						RemoveFriendToolStripMenuItemClick(sender, e);
+					}
 				}
 			}
 		}
@@ -1056,7 +1065,12 @@ public class ListSorter: IComparer<ServerListItem>
 		{
 			if (lvFriends.SelectedItems.Count == -1)
 				return;
-			string name =  lvFriends.Items[lvFriends.SelectedItems[0].Index].Text;
+			string name = lvFriends.Items[lvFriends.SelectedItems[0].Index].Text;
+			if (sender is MainForm) { //delete key!
+				if (MessageBox.Show("Remove " +name+ " from your friends list?", appTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No){
+					return;
+				}
+			}
 			friendList.RemoveAt(friendList.IndexOf(name));
 			lvFriends.Items.RemoveByKey(name);
 			
