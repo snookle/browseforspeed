@@ -74,6 +74,9 @@ namespace BrowseForSpeed.Frontend
 			this.btnRefreshMain = new System.Windows.Forms.Button();
 			this.btnJoinMain = new System.Windows.Forms.Button();
 			this.tabFavourites = new System.Windows.Forms.TabPage();
+			this.label10 = new System.Windows.Forms.Label();
+			this.edtAddServerAddress = new System.Windows.Forms.TextBox();
+			this.btnAddServer = new System.Windows.Forms.Button();
 			this.buttonRefreshFav = new System.Windows.Forms.Button();
 			this.btnJoinFav = new System.Windows.Forms.Button();
 			this.lvFavourites = new BrowseForSpeed.Frontend.FavouriteListView();
@@ -131,9 +134,6 @@ namespace BrowseForSpeed.Frontend
 			this.statusRefused = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusNoReply = new System.Windows.Forms.ToolStripStatusLabel();
 			this.openFileDialogPS = new System.Windows.Forms.OpenFileDialog();
-			this.btnAddServer = new System.Windows.Forms.Button();
-			this.edtAddServerAddress = new System.Windows.Forms.TextBox();
-			this.label10 = new System.Windows.Forms.Label();
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabMain.SuspendLayout();
@@ -549,6 +549,31 @@ namespace BrowseForSpeed.Frontend
 			this.tabFavourites.TabIndex = 2;
 			this.tabFavourites.Text = "Favourites";
 			this.tabFavourites.UseVisualStyleBackColor = true;
+			// 
+			// label10
+			// 
+			this.label10.Location = new System.Drawing.Point(492, 542);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(100, 16);
+			this.label10.TabIndex = 9;
+			this.label10.Text = "Server IP Address:";
+			// 
+			// edtAddServerAddress
+			// 
+			this.edtAddServerAddress.Location = new System.Drawing.Point(598, 537);
+			this.edtAddServerAddress.Name = "edtAddServerAddress";
+			this.edtAddServerAddress.Size = new System.Drawing.Size(167, 21);
+			this.edtAddServerAddress.TabIndex = 8;
+			// 
+			// btnAddServer
+			// 
+			this.btnAddServer.Location = new System.Drawing.Point(771, 537);
+			this.btnAddServer.Name = "btnAddServer";
+			this.btnAddServer.Size = new System.Drawing.Size(75, 23);
+			this.btnAddServer.TabIndex = 7;
+			this.btnAddServer.Text = "&Add Server";
+			this.btnAddServer.UseVisualStyleBackColor = true;
+			this.btnAddServer.Click += new System.EventHandler(this.BtnAddServerClick);
 			// 
 			// buttonRefreshFav
 			// 
@@ -1119,31 +1144,6 @@ namespace BrowseForSpeed.Frontend
 			this.openFileDialogPS.FileName = "LFSspotter.exe";
 			this.openFileDialogPS.Filter = "LFS Spotter Executable|LFSspotter.exe";
 			// 
-			// btnAddServer
-			// 
-			this.btnAddServer.Location = new System.Drawing.Point(771, 537);
-			this.btnAddServer.Name = "btnAddServer";
-			this.btnAddServer.Size = new System.Drawing.Size(75, 23);
-			this.btnAddServer.TabIndex = 7;
-			this.btnAddServer.Text = "&Add Server";
-			this.btnAddServer.UseVisualStyleBackColor = true;
-			this.btnAddServer.Click += new System.EventHandler(this.BtnAddServerClick);
-			// 
-			// edtAddServerAddress
-			// 
-			this.edtAddServerAddress.Location = new System.Drawing.Point(598, 537);
-			this.edtAddServerAddress.Name = "edtAddServerAddress";
-			this.edtAddServerAddress.Size = new System.Drawing.Size(167, 21);
-			this.edtAddServerAddress.TabIndex = 8;
-			// 
-			// label10
-			// 
-			this.label10.Location = new System.Drawing.Point(492, 542);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(100, 16);
-			this.label10.TabIndex = 9;
-			this.label10.Text = "Server IP Address:";
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1156,6 +1156,7 @@ namespace BrowseForSpeed.Frontend
 			this.KeyPreview = true;
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "MainForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Browse For Speed";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainFormClosed);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainKeyDown);

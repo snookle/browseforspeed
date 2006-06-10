@@ -274,6 +274,7 @@ namespace BrowseForSpeed.Frontend
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "ServerInformationForm";
+			this.ShowInTaskbar = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.Text = "Server Information";
 			this.Load += new System.EventHandler(this.ServerInformationFormLoad);
