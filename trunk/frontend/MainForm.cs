@@ -145,11 +145,7 @@ public class ListSorter: IComparer<ServerListItem>
 		{
 			return !info.filtered;
 		}
-		private static IPEndPoint hostMatch;
-		private static bool MatchesHost(ServerListItem item)
-		{
-			return item.host == hostMatch;
-		}
+
 		public ListViewItem Display(ServerListItem item)
 		{
 			if (item.filtered)
@@ -866,16 +862,9 @@ public class ListSorter: IComparer<ServerListItem>
 		}
 		
 		static string trackFilter;
-		static string hostnameFilter;
 		private static bool FilterServerMatchesTrack(ServerInformation info)
 		{
 			return info.track.Contains(trackFilter);
-		}
-		
-		private static bool FilterServerMatchesHost(ServerInformation info)
-		{
-			return info.hostname == hostnameFilter;
-			
 		}
 
 		void btnFindUserClick(object sender, System.EventArgs e)
