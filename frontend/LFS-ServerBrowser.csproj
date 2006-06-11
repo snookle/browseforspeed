@@ -44,6 +44,14 @@
       <HintPath>..\..\release\libbrowseforspeed.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="LFSLib">
+      <HintPath>..\..\release\LFSLib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\release\log4net.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainForm.cs" />
@@ -63,6 +71,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ca3r.ico" />
     <Compile Include="Configuration.cs" />
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.cs" />
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>
