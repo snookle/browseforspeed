@@ -489,31 +489,36 @@ public class ListSorter: IComparer<ServerListItem>
 		void LoadLFS(String hostName, String mode, String password)
 		{
 			String lfsPath = config.lfsPath;
-			String psPath = config.psPath;
 			FormWindowState ws = this.WindowState;
 			LFSQuery.stopQuerying();
 			Process ps = new Process();
-			if (config.startPS){
+			Process[] prestart = new Process[config.psp.Count];
+			for(int i = 0; i < config.psp.Count; i++){
+					if (config.psp[i].enabled == false)
+						continue;
 				try {
-					ps.StartInfo.FileName = psPath;
-					ps.StartInfo.WorkingDirectory = Path.GetDirectoryName(psPath);
-					ps.Start();
+					prestart[i] = new Process();
+					prestart[i].StartInfo.FileName = config.psp[i].path;
+					prestart[i].StartInfo.WorkingDirectory = Path.GetDirectoryName(config.psp[i].path);
+					prestart[i].StartInfo.Arguments = config.psp[i].options;
+					prestart[i].Start();
 				} catch (Exception ex) {
-					MessageBox.Show("Error executing Pit Spotter\n" + ex.Message + "\nRecheck your configuration.", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Error executing "+config.psp[i].name+" ("+config.psp[i].path+")\n" + ex.Message + "\nRecheck your configuration.", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
 				}
 			}
 			try{
 				this.WindowState = FormWindowState.Minimized;
-				Process p = new Process();
-				p.StartInfo.FileName = lfsPath;
-				p.StartInfo.WorkingDirectory = Path.GetDirectoryName(lfsPath);
-				p.StartInfo.Arguments = "/join=" + hostName + " /mode=" + mode + " /pass=" + password + (config.startPS ? "/insim=" + config.psInsimPort.ToString() : "");
-				p.Start();
-				p.WaitForExit();
-				try {
-					if (config.startPS) ps.Kill();
-				} catch (Exception silly) {}
+				Process lfs = new Process();
+				lfs.StartInfo.FileName = lfsPath;
+				lfs.StartInfo.WorkingDirectory = Path.GetDirectoryName(lfsPath);
+				lfs.StartInfo.Arguments = "/join=" + hostName + " /mode=" + mode + " /pass=" + password + "/insim=" + config.insimPort.ToString();
+				lfs.Start();
+				lfs.WaitForExit();
+				foreach (Process p in prestart){
+					if (p != null && !p.HasExited)
+						p.Kill();
+				}
 			} catch (Exception ex) {
 				this.WindowState = ws;
 				MessageBox.Show("Error executing LFS.exe\n"+ex.Message+"\nRecheck your configuration.", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -913,12 +918,19 @@ public class ListSorter: IComparer<ServerListItem>
 			config.joinOnClick = rbJoin.Checked;
 			LFSQuery.xpsp2_wait = !config.disableWait;
 			LFSQuery.THREAD_WAIT = config.queryWait;
-			config.startPS = cbUsePS.Checked;
-			config.psPath = txtPSPath.Text;
+			config.psp.Clear();
+			config.psp.TrimExcess();
+
+			foreach(Object o in lbPreStart.Items){
+				if (o.ToString() == "[New Program]")
+					continue;
+				config.psp.Add((PreStartProgram)o);
+			}
+			
 			try {
-				config.psInsimPort = Convert.ToInt32(txtInsimPort.Text);
+				config.insimPort = Convert.ToInt32(txtInsimPort.Text);
 			} catch (Exception ex) {
-				config.psInsimPort = 29999;
+				config.insimPort = 29999;
 			}
 		}
 
@@ -977,7 +989,9 @@ public class ListSorter: IComparer<ServerListItem>
 		{
 			if (openFileDialogPS.ShowDialog() == DialogResult)
 					return;
-			txtPSPath.Text = openFileDialogPS.FileName;
+			edtProgramPath.Text = openFileDialogPS.FileName;
+			if (edtProgramName.Text == "")
+				edtProgramName.Text = Path.GetFileName(openFileDialogPS.FileName);
 		}
 
 		void TxtInsimPortLeave(object sender, System.EventArgs e)
@@ -994,9 +1008,9 @@ public class ListSorter: IComparer<ServerListItem>
 
 		void CbUsePSCheckStateChanged(object sender, System.EventArgs e)
 		{
-			txtPSPath.Enabled = ((CheckBox)sender).Checked;
-			txtInsimPort.Enabled = ((CheckBox)sender).Checked;
-			btnBrowsePS.Enabled = ((CheckBox)sender).Checked;
+			//txtPSPath.Enabled = ((CheckBox)sender).Checked;
+			//txtInsimPort.Enabled = ((CheckBox)sender).Checked;
+			//btnBrowsePS.Enabled = ((CheckBox)sender).Checked;
 		}
 
 		void MainKeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
@@ -1214,10 +1228,11 @@ public class ListSorter: IComparer<ServerListItem>
 				queryWait.Value = config.queryWait;
 				//new version
 				cbNewVersion.Checked = config.checkNewVersion;
-				//Pit spotter
-				cbUsePS.Checked = config.startPS;
-				txtPSPath.Text = config.psPath;
-				txtInsimPort.Text = config.psInsimPort != 0 ? config.psInsimPort.ToString() : "29999";
+				//Pre-start programs
+				foreach (PreStartProgram p in config.psp){
+					lbPreStart.Items.Insert(lbPreStart.Items.Count - 1, p);
+				}
+				txtInsimPort.Text = config.insimPort != 0 ? config.insimPort.ToString() : "29999";
 				//join on click
 				rbJoin.Checked = config.joinOnClick;
 				rbView.Checked = !config.joinOnClick;
@@ -1335,6 +1350,127 @@ public class ListSorter: IComparer<ServerListItem>
 			} catch (Exception ex) {
 				MessageBox.Show("An error occured while adding the server to favourites: " + ex.Message, appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+			
+		}
+		
+		void BtnProgramNewClick(object sender, System.EventArgs e)
+		{
+			edtProgramName.Enabled = true;
+			edtProgramName.Text = "";		
+			edtProgramName.Focus();
+			
+			edtProgramOptions.Enabled = true;
+			edtProgramOptions.Text = "";
+			
+			edtProgramPath.Enabled = true;
+			edtProgramPath.Text = "";
+			
+			btnProgramCancel.Enabled = true;
+			btnProgramBrowse.Enabled = true;
+			btnProgramSave.Text = "&Save";
+			lbPreStart.SelectedIndex = -1;
+		}
+		
+		void EdtProgramNameTextChanged(object sender, System.EventArgs e)
+		{
+			btnProgramSave.Enabled = ((edtProgramName.Text != "") && (edtProgramPath.Text != ""));
+			
+		}
+		
+		void BtnProgramCancelClick(object sender, System.EventArgs e)
+		{
+			edtProgramName.Enabled = false;
+			edtProgramName.Text = "";		
+			
+			edtProgramOptions.Enabled = false;
+			edtProgramOptions.Text = "";
+			
+			edtProgramPath.Enabled = false;
+			edtProgramPath.Text = "";
+			
+			btnProgramCancel.Enabled = false;
+			btnProgramBrowse.Enabled = false;
+			btnProgramSave.Text = "&Save";
+			btnProgramEnable.Enabled = false;
+			
+		}
+		
+		void LbPreStartLeave(object sender, System.EventArgs e)
+		{
+			
+		}
+		
+		void LbPreStartDoubleClick(object sender, System.EventArgs e)
+		{
+			if (lbPreStart.SelectedItem == null)
+				return;
+			string item = lbPreStart.SelectedItem.ToString();
+			if (item == "[New Program]"){
+				BtnProgramNewClick(sender, e);
+			}
+			
+		}
+		
+		void LbPreStartSelectedIndexChanged(object sender, System.EventArgs e)
+		{
+			if (lbPreStart.SelectedItem == null){
+				btnProgramEnable.Enabled = false;
+				return;
+			}
+			
+			if (lbPreStart.SelectedItem.ToString() == "[New Program]"){
+				btnProgramDelete.Enabled = false;
+				BtnProgramCancelClick(sender, e);
+				return;
+			}
+				
+			
+			PreStartProgram p = (PreStartProgram)lbPreStart.SelectedItem;
+			edtProgramName.Enabled = true;
+			edtProgramName.Text = p.name;		
+			
+			edtProgramOptions.Enabled = true;
+			edtProgramOptions.Text = p.options;
+			
+			edtProgramPath.Enabled = true;
+			edtProgramPath.Text = p.path;
+			
+			btnProgramCancel.Enabled = true;
+			btnProgramBrowse.Enabled = true;
+			btnProgramSave.Text = "&Update";
+			
+			btnProgramEnable.Enabled = true;
+			btnProgramEnable.Text = (p.enabled ? "&Disable" : "&Enable");
+			
+			btnProgramDelete.Enabled = true;
+		}
+		
+		void BtnProgramSaveClick(object sender, System.EventArgs e)
+		{
+			PreStartProgram p = new PreStartProgram(edtProgramName.Text, edtProgramPath.Text, edtProgramOptions.Text);
+			if (btnProgramSave.Text == "&Update"){
+				lbPreStart.Items[lbPreStart.SelectedIndex] = p;
+			} else {
+				lbPreStart.Items.Insert(lbPreStart.Items.Count - 1, p);
+			}
+		}
+		
+		void BtnProgramEnableClick(object sender, System.EventArgs e)
+		{
+			PreStartProgram p = (PreStartProgram)lbPreStart.SelectedItem;
+			p.enabled = !p.enabled;
+			lbPreStart.Items[lbPreStart.SelectedIndex] = p;
+
+		}
+		
+		void BtnProgramDeleteClick(object sender, System.EventArgs e)
+		{
+			lbPreStart.Items.Remove(lbPreStart.SelectedItem);
+			
+		}
+		
+		void BtnProgramBrowseClick(object sender, System.EventArgs e)
+		{
 			
 		}
 	}

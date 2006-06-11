@@ -109,16 +109,26 @@ namespace BrowseForSpeed.Frontend
 			this.removeFriendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabConfig = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.txtInsimPort = new System.Windows.Forms.TextBox();
+			this.label8 = new System.Windows.Forms.Label();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.rbJoin = new System.Windows.Forms.RadioButton();
 			this.rbView = new System.Windows.Forms.RadioButton();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
-			this.txtInsimPort = new System.Windows.Forms.TextBox();
-			this.label8 = new System.Windows.Forms.Label();
-			this.btnBrowsePS = new System.Windows.Forms.Button();
+			this.btnProgramEnable = new System.Windows.Forms.Button();
+			this.btnProgramDelete = new System.Windows.Forms.Button();
+			this.btnProgramNew = new System.Windows.Forms.Button();
+			this.groupBox6 = new System.Windows.Forms.GroupBox();
+			this.btnProgramCancel = new System.Windows.Forms.Button();
+			this.btnProgramSave = new System.Windows.Forms.Button();
+			this.edtProgramOptions = new System.Windows.Forms.TextBox();
+			this.label12 = new System.Windows.Forms.Label();
+			this.edtProgramName = new System.Windows.Forms.TextBox();
+			this.label11 = new System.Windows.Forms.Label();
+			this.btnProgramBrowse = new System.Windows.Forms.Button();
 			this.label7 = new System.Windows.Forms.Label();
-			this.txtPSPath = new System.Windows.Forms.TextBox();
-			this.cbUsePS = new System.Windows.Forms.CheckBox();
+			this.edtProgramPath = new System.Windows.Forms.TextBox();
+			this.lbPreStart = new System.Windows.Forms.ListBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.queryWait = new System.Windows.Forms.NumericUpDown();
@@ -150,6 +160,7 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox1.SuspendLayout();
 			this.groupBox4.SuspendLayout();
 			this.groupBox5.SuspendLayout();
+			this.groupBox6.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).BeginInit();
 			this.statusStrip.SuspendLayout();
@@ -873,6 +884,8 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.txtInsimPort);
+			this.groupBox1.Controls.Add(this.label8);
 			this.groupBox1.Controls.Add(this.groupBox4);
 			this.groupBox1.Controls.Add(this.groupBox5);
 			this.groupBox1.Controls.Add(this.groupBox3);
@@ -890,13 +903,30 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Configuration";
 			// 
+			// txtInsimPort
+			// 
+			this.txtInsimPort.Location = new System.Drawing.Point(94, 184);
+			this.txtInsimPort.Name = "txtInsimPort";
+			this.txtInsimPort.Size = new System.Drawing.Size(67, 21);
+			this.txtInsimPort.TabIndex = 18;
+			this.txtInsimPort.Text = "29999";
+			// 
+			// label8
+			// 
+			this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.label8.Location = new System.Drawing.Point(11, 187);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(90, 23);
+			this.label8.TabIndex = 17;
+			this.label8.Text = "LFS Insim Port:";
+			// 
 			// groupBox4
 			// 
 			this.groupBox4.Controls.Add(this.rbJoin);
 			this.groupBox4.Controls.Add(this.rbView);
 			this.groupBox4.Location = new System.Drawing.Point(454, 20);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(292, 77);
+			this.groupBox4.Size = new System.Drawing.Size(416, 77);
 			this.groupBox4.TabIndex = 15;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Server double click behaviour";
@@ -926,77 +956,165 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// groupBox5
 			// 
-			this.groupBox5.Controls.Add(this.txtInsimPort);
-			this.groupBox5.Controls.Add(this.label8);
-			this.groupBox5.Controls.Add(this.btnBrowsePS);
-			this.groupBox5.Controls.Add(this.label7);
-			this.groupBox5.Controls.Add(this.txtPSPath);
-			this.groupBox5.Controls.Add(this.cbUsePS);
-			this.groupBox5.Location = new System.Drawing.Point(11, 210);
+			this.groupBox5.Controls.Add(this.btnProgramEnable);
+			this.groupBox5.Controls.Add(this.btnProgramDelete);
+			this.groupBox5.Controls.Add(this.btnProgramNew);
+			this.groupBox5.Controls.Add(this.groupBox6);
+			this.groupBox5.Controls.Add(this.lbPreStart);
+			this.groupBox5.Location = new System.Drawing.Point(11, 219);
 			this.groupBox5.Name = "groupBox5";
-			this.groupBox5.Size = new System.Drawing.Size(419, 124);
+			this.groupBox5.Size = new System.Drawing.Size(419, 334);
 			this.groupBox5.TabIndex = 16;
 			this.groupBox5.TabStop = false;
-			this.groupBox5.Text = "Pit Spotter";
+			this.groupBox5.Text = "Start Before LFS";
 			// 
-			// txtInsimPort
+			// btnProgramEnable
 			// 
-			this.txtInsimPort.Enabled = false;
-			this.txtInsimPort.Location = new System.Drawing.Point(107, 92);
-			this.txtInsimPort.Name = "txtInsimPort";
-			this.txtInsimPort.Size = new System.Drawing.Size(67, 21);
-			this.txtInsimPort.TabIndex = 5;
-			this.txtInsimPort.Text = "29999";
-			this.txtInsimPort.Leave += new System.EventHandler(this.TxtInsimPortLeave);
+			this.btnProgramEnable.Enabled = false;
+			this.btnProgramEnable.Location = new System.Drawing.Point(306, 115);
+			this.btnProgramEnable.Name = "btnProgramEnable";
+			this.btnProgramEnable.Size = new System.Drawing.Size(107, 23);
+			this.btnProgramEnable.TabIndex = 8;
+			this.btnProgramEnable.Text = "&Enable";
+			this.btnProgramEnable.UseVisualStyleBackColor = true;
+			this.btnProgramEnable.Click += new System.EventHandler(this.BtnProgramEnableClick);
 			// 
-			// label8
+			// btnProgramDelete
 			// 
-			this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label8.Location = new System.Drawing.Point(24, 95);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(90, 23);
-			this.label8.TabIndex = 4;
-			this.label8.Text = "LFS Insim Port:";
+			this.btnProgramDelete.Enabled = false;
+			this.btnProgramDelete.Location = new System.Drawing.Point(306, 49);
+			this.btnProgramDelete.Name = "btnProgramDelete";
+			this.btnProgramDelete.Size = new System.Drawing.Size(107, 23);
+			this.btnProgramDelete.TabIndex = 7;
+			this.btnProgramDelete.Text = "&Remove Program";
+			this.btnProgramDelete.UseVisualStyleBackColor = true;
+			this.btnProgramDelete.Click += new System.EventHandler(this.BtnProgramDeleteClick);
 			// 
-			// btnBrowsePS
+			// btnProgramNew
 			// 
-			this.btnBrowsePS.Enabled = false;
-			this.btnBrowsePS.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnBrowsePS.Location = new System.Drawing.Point(322, 63);
-			this.btnBrowsePS.Name = "btnBrowsePS";
-			this.btnBrowsePS.Size = new System.Drawing.Size(75, 23);
-			this.btnBrowsePS.TabIndex = 3;
-			this.btnBrowsePS.Text = "B&rowse...";
-			this.btnBrowsePS.UseVisualStyleBackColor = true;
-			this.btnBrowsePS.Click += new System.EventHandler(this.BtnBrowsePSClick);
+			this.btnProgramNew.Location = new System.Drawing.Point(306, 20);
+			this.btnProgramNew.Name = "btnProgramNew";
+			this.btnProgramNew.Size = new System.Drawing.Size(107, 23);
+			this.btnProgramNew.TabIndex = 6;
+			this.btnProgramNew.Text = "&New Program";
+			this.btnProgramNew.UseVisualStyleBackColor = true;
+			this.btnProgramNew.Click += new System.EventHandler(this.BtnProgramNewClick);
+			// 
+			// groupBox6
+			// 
+			this.groupBox6.Controls.Add(this.btnProgramCancel);
+			this.groupBox6.Controls.Add(this.btnProgramSave);
+			this.groupBox6.Controls.Add(this.edtProgramOptions);
+			this.groupBox6.Controls.Add(this.label12);
+			this.groupBox6.Controls.Add(this.edtProgramName);
+			this.groupBox6.Controls.Add(this.label11);
+			this.groupBox6.Controls.Add(this.btnProgramBrowse);
+			this.groupBox6.Controls.Add(this.label7);
+			this.groupBox6.Controls.Add(this.edtProgramPath);
+			this.groupBox6.Location = new System.Drawing.Point(6, 186);
+			this.groupBox6.Name = "groupBox6";
+			this.groupBox6.Size = new System.Drawing.Size(407, 142);
+			this.groupBox6.TabIndex = 5;
+			this.groupBox6.TabStop = false;
+			this.groupBox6.Text = "Program Configuration";
+			// 
+			// btnProgramCancel
+			// 
+			this.btnProgramCancel.Enabled = false;
+			this.btnProgramCancel.Location = new System.Drawing.Point(87, 113);
+			this.btnProgramCancel.Name = "btnProgramCancel";
+			this.btnProgramCancel.Size = new System.Drawing.Size(75, 23);
+			this.btnProgramCancel.TabIndex = 10;
+			this.btnProgramCancel.Text = "C&ancel";
+			this.btnProgramCancel.UseVisualStyleBackColor = true;
+			this.btnProgramCancel.Click += new System.EventHandler(this.BtnProgramCancelClick);
+			// 
+			// btnProgramSave
+			// 
+			this.btnProgramSave.Enabled = false;
+			this.btnProgramSave.Location = new System.Drawing.Point(6, 113);
+			this.btnProgramSave.Name = "btnProgramSave";
+			this.btnProgramSave.Size = new System.Drawing.Size(75, 23);
+			this.btnProgramSave.TabIndex = 9;
+			this.btnProgramSave.Text = "&Save";
+			this.btnProgramSave.UseVisualStyleBackColor = true;
+			this.btnProgramSave.Click += new System.EventHandler(this.BtnProgramSaveClick);
+			// 
+			// edtProgramOptions
+			// 
+			this.edtProgramOptions.Enabled = false;
+			this.edtProgramOptions.Location = new System.Drawing.Point(77, 74);
+			this.edtProgramOptions.Name = "edtProgramOptions";
+			this.edtProgramOptions.Size = new System.Drawing.Size(241, 21);
+			this.edtProgramOptions.TabIndex = 8;
+			// 
+			// label12
+			// 
+			this.label12.Location = new System.Drawing.Point(6, 77);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(100, 14);
+			this.label12.TabIndex = 7;
+			this.label12.Text = "Options:";
+			// 
+			// edtProgramName
+			// 
+			this.edtProgramName.Enabled = false;
+			this.edtProgramName.Location = new System.Drawing.Point(77, 20);
+			this.edtProgramName.Name = "edtProgramName";
+			this.edtProgramName.Size = new System.Drawing.Size(161, 21);
+			this.edtProgramName.TabIndex = 6;
+			this.edtProgramName.TextChanged += new System.EventHandler(this.EdtProgramNameTextChanged);
+			// 
+			// label11
+			// 
+			this.label11.Location = new System.Drawing.Point(6, 23);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(100, 20);
+			this.label11.TabIndex = 5;
+			this.label11.Text = "Name:";
+			// 
+			// btnProgramBrowse
+			// 
+			this.btnProgramBrowse.Enabled = false;
+			this.btnProgramBrowse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.btnProgramBrowse.Location = new System.Drawing.Point(326, 45);
+			this.btnProgramBrowse.Name = "btnProgramBrowse";
+			this.btnProgramBrowse.Size = new System.Drawing.Size(75, 23);
+			this.btnProgramBrowse.TabIndex = 4;
+			this.btnProgramBrowse.Text = "B&rowse...";
+			this.btnProgramBrowse.UseVisualStyleBackColor = true;
+			this.btnProgramBrowse.Click += new System.EventHandler(this.BtnBrowsePSClick);
 			// 
 			// label7
 			// 
 			this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label7.Location = new System.Drawing.Point(24, 47);
+			this.label7.Location = new System.Drawing.Point(6, 50);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(256, 15);
-			this.label7.TabIndex = 2;
-			this.label7.Text = "Pit Spotter Executable Path:";
+			this.label7.Size = new System.Drawing.Size(34, 15);
+			this.label7.TabIndex = 3;
+			this.label7.Text = "Path:";
 			// 
-			// txtPSPath
+			// edtProgramPath
 			// 
-			this.txtPSPath.Enabled = false;
-			this.txtPSPath.Location = new System.Drawing.Point(24, 65);
-			this.txtPSPath.Name = "txtPSPath";
-			this.txtPSPath.Size = new System.Drawing.Size(292, 21);
-			this.txtPSPath.TabIndex = 1;
+			this.edtProgramPath.Enabled = false;
+			this.edtProgramPath.Location = new System.Drawing.Point(77, 47);
+			this.edtProgramPath.Name = "edtProgramPath";
+			this.edtProgramPath.Size = new System.Drawing.Size(241, 21);
+			this.edtProgramPath.TabIndex = 7;
+			this.edtProgramPath.TextChanged += new System.EventHandler(this.EdtProgramNameTextChanged);
 			// 
-			// cbUsePS
+			// lbPreStart
 			// 
-			this.cbUsePS.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.cbUsePS.Location = new System.Drawing.Point(24, 20);
-			this.cbUsePS.Name = "cbUsePS";
-			this.cbUsePS.Size = new System.Drawing.Size(184, 24);
-			this.cbUsePS.TabIndex = 0;
-			this.cbUsePS.Text = "Start Pit Spotter before LFS";
-			this.cbUsePS.UseVisualStyleBackColor = true;
-			this.cbUsePS.CheckStateChanged += new System.EventHandler(this.CbUsePSCheckStateChanged);
+			this.lbPreStart.FormattingEnabled = true;
+			this.lbPreStart.Items.AddRange(new object[] {
+									"[New Program]"});
+			this.lbPreStart.Location = new System.Drawing.Point(6, 20);
+			this.lbPreStart.Name = "lbPreStart";
+			this.lbPreStart.Size = new System.Drawing.Size(294, 160);
+			this.lbPreStart.TabIndex = 4;
+			this.lbPreStart.Leave += new System.EventHandler(this.LbPreStartLeave);
+			this.lbPreStart.DoubleClick += new System.EventHandler(this.LbPreStartDoubleClick);
+			this.lbPreStart.SelectedIndexChanged += new System.EventHandler(this.LbPreStartSelectedIndexChanged);
 			// 
 			// groupBox3
 			// 
@@ -1004,9 +1122,9 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox3.Controls.Add(this.queryWait);
 			this.groupBox3.Controls.Add(this.cbQueryWait);
 			this.groupBox3.Controls.Add(this.label4);
-			this.groupBox3.Location = new System.Drawing.Point(11, 365);
+			this.groupBox3.Location = new System.Drawing.Point(454, 103);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(419, 174);
+			this.groupBox3.Size = new System.Drawing.Size(416, 174);
 			this.groupBox3.TabIndex = 14;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Advanced";
@@ -1167,8 +1285,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// openFileDialogPS
 			// 
-			this.openFileDialogPS.FileName = "LFSspotter.exe";
-			this.openFileDialogPS.Filter = "LFS Spotter Executable|LFSspotter.exe";
+			this.openFileDialogPS.Filter = "Executables|*.exe";
 			// 
 			// administrateToolStripMenuItem1
 			// 
@@ -1209,9 +1326,11 @@ namespace BrowseForSpeed.Frontend
 			this.contextMenuFriends.ResumeLayout(false);
 			this.tabConfig.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox5.ResumeLayout(false);
-			this.groupBox5.PerformLayout();
+			this.groupBox6.ResumeLayout(false);
+			this.groupBox6.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).EndInit();
 			this.statusStrip.ResumeLayout(false);
@@ -1219,8 +1338,20 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button btnProgramEnable;
+		private System.Windows.Forms.TextBox edtProgramPath;
+		private System.Windows.Forms.Button btnProgramBrowse;
+		private System.Windows.Forms.TextBox edtProgramName;
+		private System.Windows.Forms.TextBox edtProgramOptions;
+		private System.Windows.Forms.Button btnProgramSave;
+		private System.Windows.Forms.Button btnProgramCancel;
+		private System.Windows.Forms.Button btnProgramNew;
+		private System.Windows.Forms.Button btnProgramDelete;
+		private System.Windows.Forms.ListBox lbPreStart;
+		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.ToolStripMenuItem administrateToolStripMenuItem1;
-
 		private System.Windows.Forms.ToolStripMenuItem administrateToolStripMenuItem;
 		private System.Windows.Forms.ComboBox cbAddServerVersion;
 		private System.Windows.Forms.Button btnAddServer;
@@ -1252,9 +1383,6 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.ColumnHeader columnFriendName;
 		private System.Windows.Forms.TabPage tabFriends;
 		private System.Windows.Forms.OpenFileDialog openFileDialogPS;
-		private System.Windows.Forms.CheckBox cbUsePS;
-		private System.Windows.Forms.TextBox txtPSPath;
-		private System.Windows.Forms.Button btnBrowsePS;
 		private System.Windows.Forms.TextBox txtInsimPort;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
