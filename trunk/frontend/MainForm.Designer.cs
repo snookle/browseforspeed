@@ -74,6 +74,7 @@ namespace BrowseForSpeed.Frontend
 			this.btnRefreshMain = new System.Windows.Forms.Button();
 			this.btnJoinMain = new System.Windows.Forms.Button();
 			this.tabFavourites = new System.Windows.Forms.TabPage();
+			this.cbAddServerVersion = new System.Windows.Forms.ComboBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.edtAddServerAddress = new System.Windows.Forms.TextBox();
 			this.btnAddServer = new System.Windows.Forms.Button();
@@ -537,6 +538,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// tabFavourites
 			// 
+			this.tabFavourites.Controls.Add(this.cbAddServerVersion);
 			this.tabFavourites.Controls.Add(this.label10);
 			this.tabFavourites.Controls.Add(this.edtAddServerAddress);
 			this.tabFavourites.Controls.Add(this.btnAddServer);
@@ -550,9 +552,22 @@ namespace BrowseForSpeed.Frontend
 			this.tabFavourites.Text = "Favourites";
 			this.tabFavourites.UseVisualStyleBackColor = true;
 			// 
+			// cbAddServerVersion
+			// 
+			this.cbAddServerVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbAddServerVersion.FormattingEnabled = true;
+			this.cbAddServerVersion.Items.AddRange(new object[] {
+									"S2",
+									"S1",
+									"Demo"});
+			this.cbAddServerVersion.Location = new System.Drawing.Point(706, 541);
+			this.cbAddServerVersion.Name = "cbAddServerVersion";
+			this.cbAddServerVersion.Size = new System.Drawing.Size(59, 21);
+			this.cbAddServerVersion.TabIndex = 10;
+			// 
 			// label10
 			// 
-			this.label10.Location = new System.Drawing.Point(492, 542);
+			this.label10.Location = new System.Drawing.Point(427, 544);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(100, 16);
 			this.label10.TabIndex = 9;
@@ -560,14 +575,14 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// edtAddServerAddress
 			// 
-			this.edtAddServerAddress.Location = new System.Drawing.Point(598, 537);
+			this.edtAddServerAddress.Location = new System.Drawing.Point(533, 541);
 			this.edtAddServerAddress.Name = "edtAddServerAddress";
 			this.edtAddServerAddress.Size = new System.Drawing.Size(167, 21);
 			this.edtAddServerAddress.TabIndex = 8;
 			// 
 			// btnAddServer
 			// 
-			this.btnAddServer.Location = new System.Drawing.Point(771, 537);
+			this.btnAddServer.Location = new System.Drawing.Point(771, 539);
 			this.btnAddServer.Name = "btnAddServer";
 			this.btnAddServer.Size = new System.Drawing.Size(75, 23);
 			this.btnAddServer.TabIndex = 7;
@@ -1186,6 +1201,7 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ComboBox cbAddServerVersion;
 		private System.Windows.Forms.Button btnAddServer;
 		private System.Windows.Forms.TextBox edtAddServerAddress;
 		private System.Windows.Forms.Label label10;

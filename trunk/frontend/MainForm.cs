@@ -1009,6 +1009,9 @@ public class ListSorter: IComparer<ServerListItem>
 				}
 			} else {
 				if (e.KeyCode == Keys.Delete) {
+					if (edtAddServerAddress.Focused || edtFriendName.Focused){
+							return;
+					}
 					if (tabControl.TabPages[tabControl.SelectedIndex].Text == "Favourites") {
 						RemoveFromFavouritesToolStripMenuItemClick(sender, e);
 					} else if (tabControl.TabPages[tabControl.SelectedIndex].Text == "Friends") {
@@ -1229,6 +1232,7 @@ public class ListSorter: IComparer<ServerListItem>
 			cbTracks.SelectedIndex = 0;
 			cbPing.SelectedIndex = 7;
 			cbVersion.SelectedIndex = 2;
+			cbAddServerVersion.SelectedIndex = 0;
 
 		}
 		
@@ -1304,6 +1308,7 @@ public class ListSorter: IComparer<ServerListItem>
 					return;
 				}
 				info.host = new IPEndPoint(IPAddress.Parse(hostname[0]), port);
+				info.version = StringToVersion(cbAddServerVersion.Text);
 				lvFavourites.AddServer(info);
 			} catch (Exception ex) {
 				MessageBox.Show("An error occured while adding the server to favourites: " + ex.Message, appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
