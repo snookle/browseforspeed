@@ -52,13 +52,14 @@ namespace BrowseForSpeed
 			this.txtInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
-			this.txtInfo.Enabled = false;
+			this.txtInfo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.txtInfo.Location = new System.Drawing.Point(12, 45);
 			this.txtInfo.Multiline = true;
 			this.txtInfo.Name = "txtInfo";
+			this.txtInfo.ReadOnly = true;
 			this.txtInfo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.txtInfo.Size = new System.Drawing.Size(474, 288);
-			this.txtInfo.TabIndex = 0;
+			this.txtInfo.TabIndex = 10;
 			// 
 			// edtMessage
 			// 
@@ -68,7 +69,7 @@ namespace BrowseForSpeed
 			this.edtMessage.Location = new System.Drawing.Point(12, 350);
 			this.edtMessage.Name = "edtMessage";
 			this.edtMessage.Size = new System.Drawing.Size(402, 21);
-			this.edtMessage.TabIndex = 1;
+			this.edtMessage.TabIndex = 3;
 			// 
 			// btnSend
 			// 
@@ -98,7 +99,7 @@ namespace BrowseForSpeed
 			this.edtPassword.Location = new System.Drawing.Point(93, 12);
 			this.edtPassword.Name = "edtPassword";
 			this.edtPassword.Size = new System.Drawing.Size(100, 21);
-			this.edtPassword.TabIndex = 4;
+			this.edtPassword.TabIndex = 1;
 			this.edtPassword.TextChanged += new System.EventHandler(this.EdtPasswordTextChanged);
 			// 
 			// edtPort
@@ -107,7 +108,7 @@ namespace BrowseForSpeed
 			this.edtPort.Location = new System.Drawing.Point(267, 12);
 			this.edtPort.Name = "edtPort";
 			this.edtPort.Size = new System.Drawing.Size(100, 21);
-			this.edtPort.TabIndex = 5;
+			this.edtPort.TabIndex = 2;
 			this.edtPort.Text = "29999";
 			this.edtPort.TextChanged += new System.EventHandler(this.EdtPortTextChanged);
 			// 
@@ -144,6 +145,8 @@ namespace BrowseForSpeed
 			this.Controls.Add(this.txtInfo);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "AdminForm";
+			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Admin";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminFormFormClosed);
 			this.Load += new System.EventHandler(this.AdminFormLoad);

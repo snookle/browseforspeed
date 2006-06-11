@@ -71,6 +71,7 @@ namespace BrowseForSpeed.Frontend
 			this.viewServerInformationMain = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.copyServerToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.administrateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnRefreshMain = new System.Windows.Forms.Button();
 			this.btnJoinMain = new System.Windows.Forms.Button();
 			this.tabFavourites = new System.Windows.Forms.TabPage();
@@ -92,7 +93,6 @@ namespace BrowseForSpeed.Frontend
 			this.viewServerInformationFav = new System.Windows.Forms.ToolStripMenuItem();
 			this.removeFromFavouritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.copyServerToClipboardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.administrateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabFriends = new System.Windows.Forms.TabPage();
 			this.edtFriendName = new System.Windows.Forms.TextBox();
 			this.btnAddFriend = new System.Windows.Forms.Button();
@@ -136,7 +136,7 @@ namespace BrowseForSpeed.Frontend
 			this.statusRefused = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusNoReply = new System.Windows.Forms.ToolStripStatusLabel();
 			this.openFileDialogPS = new System.Windows.Forms.OpenFileDialog();
-			this.administrateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.administrateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabMain.SuspendLayout();
@@ -481,7 +481,7 @@ namespace BrowseForSpeed.Frontend
 									this.viewServerInformationMain,
 									this.toolStripMenuItem1,
 									this.copyServerToClipboardToolStripMenuItem,
-									this.administrateToolStripMenuItem});
+									this.administrateToolStripMenuItem1});
 			this.contextMenuBrowser.Name = "contextMenuBrowser";
 			this.contextMenuBrowser.Size = new System.Drawing.Size(214, 136);
 			this.contextMenuBrowser.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuBrowserOpening);
@@ -513,6 +513,13 @@ namespace BrowseForSpeed.Frontend
 			this.copyServerToClipboardToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
 			this.copyServerToClipboardToolStripMenuItem.Text = "&Copy Server to Clipboard";
 			this.copyServerToClipboardToolStripMenuItem.Click += new System.EventHandler(this.CopyServerToClipboardToolStripMenuItemClick);
+			// 
+			// administrateToolStripMenuItem
+			// 
+			this.administrateToolStripMenuItem.Name = "administrateToolStripMenuItem";
+			this.administrateToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.administrateToolStripMenuItem.Text = "Administrate...";
+			this.administrateToolStripMenuItem.Click += new System.EventHandler(this.AdministrateToolStripMenuItemClick);
 			// 
 			// btnRefreshMain
 			// 
@@ -712,13 +719,6 @@ namespace BrowseForSpeed.Frontend
 			this.copyServerToClipboardToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
 			this.copyServerToClipboardToolStripMenuItem1.Text = "&Copy Server to Clipboard";
 			this.copyServerToClipboardToolStripMenuItem1.Click += new System.EventHandler(this.CopyServerToClipboardToolStripMenuItemClick);
-			// 
-			// administrateToolStripMenuItem
-			// 
-			this.administrateToolStripMenuItem.Name = "administrateToolStripMenuItem";
-			this.administrateToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-			this.administrateToolStripMenuItem.Text = "Administrate...";
-			this.administrateToolStripMenuItem.Click += new System.EventHandler(this.AdministrateToolStripMenuItemClick);
 			// 
 			// tabFriends
 			// 
@@ -1172,9 +1172,10 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// administrateToolStripMenuItem1
 			// 
-			this.administrateToolStripMenuItem.Name = "administrateToolStripMenuItem1";
-			this.administrateToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-			this.administrateToolStripMenuItem.Text = "Administrate...";
+			this.administrateToolStripMenuItem1.Name = "administrateToolStripMenuItem1";
+			this.administrateToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
+			this.administrateToolStripMenuItem1.Text = "Administrate...";
+			this.administrateToolStripMenuItem1.Click += new System.EventHandler(this.AdministrateToolStripMenuItemClick);
 			// 
 			// MainForm
 			// 
@@ -1218,6 +1219,7 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem administrateToolStripMenuItem1;
 
 		private System.Windows.Forms.ToolStripMenuItem administrateToolStripMenuItem;
 		private System.Windows.Forms.ComboBox cbAddServerVersion;

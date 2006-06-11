@@ -56,15 +56,13 @@ namespace BrowseForSpeed
 		}
 		
 		void AdminFormFormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e) {
-			info.adminPassword = edtPassword.Text;
-			info.insimPort = Int32.Parse(edtPort.Text);
 			try {
 				if (handler.State == InSimHandler.HandlerState.Connected) {
 					handler.Close();
-				}
-				this.Dispose();
+				}				
 			} catch (Exception) {
-				
+			} finally {				
+				this.Dispose(true);
 			}
 		}
 		
@@ -89,6 +87,7 @@ namespace BrowseForSpeed
 					btnConnect.Text = "Disconnect";
 					edtMessage.Enabled = true;
 					btnConnect.Enabled = true;
+					edtMessage.Focus();
 				} catch (Exception) {
 					btnConnect.Enabled = true;
 					MessageBox.Show("Couldn't connect to InSim!");

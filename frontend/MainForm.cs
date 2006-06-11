@@ -1292,7 +1292,7 @@ public class ListSorter: IComparer<ServerListItem>
 	
 		void AdministrateToolStripMenuItemClick(object sender, System.EventArgs e) {
 			ServerListItem i;			
-			if (true) {//((ToolStripMenuItem)sender).Owner.Parent.Name == "ContextMenuFav") {
+			if (((ToolStripMenuItem)sender).Name == "administrateToolStripMenuItem") {
 				i = lvFavourites.GetSelectedServer();
 			} else {
 				i = lvMain.GetSelectedServer();
