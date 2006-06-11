@@ -11,9 +11,40 @@ using System;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml;
+using System.Collections.Generic;
 
 namespace BrowseForSpeed.Frontend
 {
+	
+public class PreStartProgram
+{
+	public string path;
+	public string name;
+	public string options;
+	public bool enabled;
+	
+	public PreStartProgram()
+	{
+		this.path = "";
+		this.name = "";
+		this.options = "";
+		enabled = false;
+	}
+	
+	public PreStartProgram(string name, string path, string options)
+	{
+		this.name = name;
+		this.path = path;
+		this.options = options;
+		enabled = true;
+	}
+	
+	public override string ToString()
+	{
+		return this.name + " - " + (this.enabled ? "Enabled" : "Disabled");
+	}
+	
+}
 public class Configuration
 {
 		public string userName;
@@ -24,9 +55,8 @@ public class Configuration
 		public bool checkNewVersion;
 		public int queryWait;
 		public bool joinOnClick;
-		public bool startPS;
-		public string psPath;
-		public int psInsimPort;
+		public int insimPort;
+		public List<PreStartProgram> psp = new List<PreStartProgram>();
 
 		public Configuration(string filename) {
 			this.filename = filename;			
@@ -37,6 +67,7 @@ public class Configuration
 				XmlDocument doc = new XmlDocument();				
 				doc.Load(filename);
 				XmlNodeList list = doc.GetElementsByTagName("bfsconfig");
+				String docVersion = ((XmlElement)list[0]).GetAttribute("version");
 				try {
 					lfsPath = ((XmlElement)list[0]).GetElementsByTagName("exepath")[0].FirstChild.Value;
 				} catch (Exception e) { lfsPath = ""; }
@@ -49,15 +80,41 @@ public class Configuration
 				try {
 					checkNewVersion = ((XmlElement)list[0]).GetElementsByTagName("checkversion")[0].FirstChild.Value == "True";
 				} catch (Exception e) { checkNewVersion = false; }
-				try {
-					XmlNode spot = ((XmlElement)list[0]).GetElementsByTagName("spotter")[0];
-					startPS = (spot.Attributes["enabled"].Value == "True");
-					psInsimPort = Convert.ToInt32(((XmlElement)spot).GetElementsByTagName("insimport")[0].FirstChild.Value);
-					psPath = ((XmlElement)spot).GetElementsByTagName("path")[0].FirstChild.Value;
-				} catch (Exception e) {
-					startPS = false;
-					psInsimPort = 29999;
-					psPath = "";
+				if (docVersion == "1"){
+					PreStartProgram p = new PreStartProgram();
+						XmlNode spot = ((XmlElement)list[0]).GetElementsByTagName("spotter")[0];
+						p.enabled = (spot.Attributes["enabled"].Value == "True");
+						if (p.enabled != false) {
+							p.name = "Pit Spotter";
+							p.options = "";
+							try {
+								p.path = ((XmlElement)spot).GetElementsByTagName("path")[0].FirstChild.Value;
+							} catch (Exception e) {
+								p.path = "";
+							}
+							MessageBox.Show(p.ToString());
+							psp.Add(p);
+						}
+				} else {
+					insimPort = Convert.ToInt32(((XmlElement)list[0]).GetElementsByTagName("insimport")[0].FirstChild.Value);
+					XmlNodeList pspList = ((XmlElement)list[0]).GetElementsByTagName("psp");
+					foreach (XmlElement pspXML in pspList) {
+						PreStartProgram p = new PreStartProgram();
+						try {
+							p.enabled = (pspXML.GetAttribute("enabled") == "True");
+							p.name = pspXML.GetElementsByTagName("name")[0].FirstChild.Value;					
+							p.path = pspXML.GetElementsByTagName("path")[0].FirstChild.Value;					
+							try {
+								p.options = pspXML.GetElementsByTagName("options")[0].FirstChild.Value;
+							} catch (Exception e) {
+								p.options = "";
+							}
+
+						} finally {
+							psp.Add(p);
+						}
+						
+				}
 				}
 				try {
 					joinOnClick = ((XmlElement)list[0]).GetElementsByTagName("listclick")[0].FirstChild.Value == "join";
@@ -67,11 +124,11 @@ public class Configuration
 				MessageBox.Show("No existing configuration data found.\nPlease set this up now.", "", MessageBoxButtons.OK);
 				return false;
 			}
-			catch (Exception e) {
+			/*catch (Exception e) {
 				MessageBox.Show("Error loading configuration: " + e.Message + "\nA copy was saved as "+filename +".backup", "", MessageBoxButtons.OK);
 				File.Copy(filename, filename +".backup", true);
 				return false;
-			}
+			}*/
 		}
 
 
@@ -94,12 +151,15 @@ public class Configuration
 					this.joinOnClick = true;
 				}
 				try {
-					this.psInsimPort = Convert.ToInt32(tr.ReadLine());
+					this.insimPort = Convert.ToInt32(tr.ReadLine());
 				} catch (Exception e) {
-					this.psInsimPort = 29999;
+					this.insimPort = 29999;
 				}
-				this.psPath = tr.ReadLine();
-				this.startPS = (tr.ReadLine() == "True");
+				PreStartProgram p = new PreStartProgram();
+				p.name = "Pit Spotter";
+				p.path = tr.ReadLine();
+				p.enabled = (tr.ReadLine() == "True");
+				psp.Add(p);
 				tr.Close();
 				return true;
 			} catch (Exception e) {
@@ -114,18 +174,22 @@ public class Configuration
 				tw.Formatting = Formatting.Indented;
 				tw.WriteStartDocument();
 				tw.WriteStartElement("bfsconfig");
-				tw.WriteAttributeString("version", "1");
+				tw.WriteAttributeString("version", "2");
 				tw.WriteElementString("exepath", lfsPath);
 				tw.WriteStartElement("qwait");
 				tw.WriteAttributeString("enabled", disableWait.ToString());
 				tw.WriteString(queryWait.ToString());
 				tw.WriteEndElement();				
+				tw.WriteElementString("insimport", insimPort.ToString());
 				tw.WriteElementString("checkversion", checkNewVersion.ToString());
-				tw.WriteStartElement("spotter");
-				tw.WriteAttributeString("enabled", startPS.ToString());
-				tw.WriteElementString("insimport", psInsimPort.ToString());
-				tw.WriteElementString("path", psPath);				
-				tw.WriteEndElement();
+				foreach(PreStartProgram p in psp){
+					tw.WriteStartElement("psp");
+					tw.WriteAttributeString("enabled", p.enabled.ToString());
+					tw.WriteElementString("name", p.name);				
+					tw.WriteElementString("path", p.path);
+					tw.WriteElementString("options", p.options);
+					tw.WriteEndElement();
+				}
 				tw.WriteElementString("listclick", joinOnClick ? "join" : "view");
 				tw.WriteEndElement();
 				tw.Close();
