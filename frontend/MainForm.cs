@@ -1350,7 +1350,13 @@ public class ListSorter: IComparer<ServerListItem>
 			} catch (Exception ex) {
 				MessageBox.Show("An error occured while adding the server to favourites: " + ex.Message, appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			
+		}
+		
+		void EdtAddServerAddressKeyDown(object sender, System.Windows.Forms.KeyEventArgs e) {
+			if (edtAddServerAddress.Text.Length > 0 && e.KeyCode == Keys.Enter) {
+				BtnAddServerClick(sender, e);
+				edtAddServerAddress.Clear();
+			}
 		}
 		
 		void BtnProgramNewClick(object sender, System.EventArgs e)
@@ -1394,14 +1400,8 @@ public class ListSorter: IComparer<ServerListItem>
 			btnProgramEnable.Enabled = false;
 			
 		}
-		
-		void LbPreStartLeave(object sender, System.EventArgs e)
-		{
-			
-		}
-		
-		void LbPreStartDoubleClick(object sender, System.EventArgs e)
-		{
+	
+		void LbPreStartDoubleClick(object sender, System.EventArgs e) {
 			if (lbPreStart.SelectedItem == null)
 				return;
 			string item = lbPreStart.SelectedItem.ToString();
@@ -1411,8 +1411,7 @@ public class ListSorter: IComparer<ServerListItem>
 			
 		}
 		
-		void LbPreStartSelectedIndexChanged(object sender, System.EventArgs e)
-		{
+		void LbPreStartSelectedIndexChanged(object sender, System.EventArgs e) {
 			if (lbPreStart.SelectedItem == null){
 				btnProgramEnable.Enabled = false;
 				return;
@@ -1445,8 +1444,7 @@ public class ListSorter: IComparer<ServerListItem>
 			btnProgramDelete.Enabled = true;
 		}
 		
-		void BtnProgramSaveClick(object sender, System.EventArgs e)
-		{
+		void BtnProgramSaveClick(object sender, System.EventArgs e) {
 			PreStartProgram p = new PreStartProgram(edtProgramName.Text, edtProgramPath.Text, edtProgramOptions.Text);
 			if (btnProgramSave.Text == "&Update"){
 				lbPreStart.Items[lbPreStart.SelectedIndex] = p;
@@ -1455,23 +1453,16 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 		}
 		
-		void BtnProgramEnableClick(object sender, System.EventArgs e)
-		{
+		void BtnProgramEnableClick(object sender, System.EventArgs e) {
 			PreStartProgram p = (PreStartProgram)lbPreStart.SelectedItem;
 			p.enabled = !p.enabled;
 			lbPreStart.Items[lbPreStart.SelectedIndex] = p;
 
 		}
 		
-		void BtnProgramDeleteClick(object sender, System.EventArgs e)
-		{
+		void BtnProgramDeleteClick(object sender, System.EventArgs e) {
 			lbPreStart.Items.Remove(lbPreStart.SelectedItem);
 			BtnProgramCancelClick(sender, e);
-			
-		}
-		
-		void BtnProgramBrowseClick(object sender, System.EventArgs e)
-		{
 			
 		}
 	}
