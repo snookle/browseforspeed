@@ -20,7 +20,7 @@ using System.Windows.Forms;
 using FullMotion.LiveForSpeed.InSim;
 using FullMotion.LiveForSpeed.InSim.EventHandlers;
 using libbrowseforspeed;
-namespace BrowseForSpeed
+namespace BrowseForSpeed.Frontend
 {
 	public partial class AdminForm
 	{
@@ -70,7 +70,7 @@ namespace BrowseForSpeed
 			if (handler.State != InSimHandler.HandlerState.Connected) {
 				try {
 					btnConnect.Enabled = false;
-					Configuration config = handler.Configuration;
+					FullMotion.LiveForSpeed.InSim.Configuration config = handler.Configuration;
 					config.LFSHost = info.host.Address.ToString();
 					//config.LFSHostPort = info.host.Port;
 					config.LFSHostPort = Int32.Parse(edtPort.Text);
