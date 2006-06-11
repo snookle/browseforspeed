@@ -1230,7 +1230,7 @@ public class ListSorter: IComparer<ServerListItem>
 				cbNewVersion.Checked = config.checkNewVersion;
 				//Pre-start programs
 				foreach (PreStartProgram p in config.psp){
-					lbPreStart.Items.Insert(lbPreStart.Items.Count - 1, p);
+					lbPreStart.Items.Add(p);
 				}
 				txtInsimPort.Text = config.insimPort != 0 ? config.insimPort.ToString() : "29999";
 				//join on click
@@ -1451,7 +1451,7 @@ public class ListSorter: IComparer<ServerListItem>
 			if (btnProgramSave.Text == "&Update"){
 				lbPreStart.Items[lbPreStart.SelectedIndex] = p;
 			} else {
-				lbPreStart.Items.Insert(lbPreStart.Items.Count - 1, p);
+				lbPreStart.Items.Add(p);
 			}
 		}
 		
@@ -1466,6 +1466,7 @@ public class ListSorter: IComparer<ServerListItem>
 		void BtnProgramDeleteClick(object sender, System.EventArgs e)
 		{
 			lbPreStart.Items.Remove(lbPreStart.SelectedItem);
+			BtnProgramCancelClick(sender, e);
 			
 		}
 		

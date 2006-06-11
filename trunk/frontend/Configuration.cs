@@ -92,7 +92,6 @@ public class Configuration
 							} catch (Exception e) {
 								p.path = "";
 							}
-							MessageBox.Show(p.ToString());
 							psp.Add(p);
 						}
 				} else {
