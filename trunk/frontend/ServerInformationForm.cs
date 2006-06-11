@@ -172,5 +172,9 @@ namespace BrowseForSpeed.Frontend
 				return;
 			main.AddFriend(listPlayers.Items[listPlayers.SelectedIndex].ToString(), true);
 		}
+		
+		void TextInfoPasswordTextChanged(object sender, System.EventArgs e) {
+			info.password = textInfoPassword.Text;
+		}
 	}
 }

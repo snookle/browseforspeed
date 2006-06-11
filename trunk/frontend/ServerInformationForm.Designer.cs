@@ -144,6 +144,7 @@ namespace BrowseForSpeed.Frontend
 			this.textInfoPassword.Size = new System.Drawing.Size(109, 21);
 			this.textInfoPassword.TabIndex = 9;
 			this.textInfoPassword.Leave += new System.EventHandler(this.TextInfoPasswordLeave);
+			this.textInfoPassword.TextChanged += new System.EventHandler(this.TextInfoPasswordTextChanged);
 			// 
 			// groupBox1
 			// 

@@ -110,8 +110,6 @@ namespace BrowseForSpeed.Frontend
 			this.removeFriendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabConfig = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.txtInsimPort = new System.Windows.Forms.TextBox();
-			this.label8 = new System.Windows.Forms.Label();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.rbJoin = new System.Windows.Forms.RadioButton();
 			this.rbView = new System.Windows.Forms.RadioButton();
@@ -131,7 +129,9 @@ namespace BrowseForSpeed.Frontend
 			this.edtProgramPath = new System.Windows.Forms.TextBox();
 			this.lbPreStart = new System.Windows.Forms.ListBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.txtInsimPort = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
 			this.queryWait = new System.Windows.Forms.NumericUpDown();
 			this.cbQueryWait = new System.Windows.Forms.CheckBox();
 			this.label4 = new System.Windows.Forms.Label();
@@ -603,6 +603,7 @@ namespace BrowseForSpeed.Frontend
 			this.edtAddServerAddress.Name = "edtAddServerAddress";
 			this.edtAddServerAddress.Size = new System.Drawing.Size(167, 21);
 			this.edtAddServerAddress.TabIndex = 8;
+			this.edtAddServerAddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EdtAddServerAddressKeyDown);
 			// 
 			// btnAddServer
 			// 
@@ -895,8 +896,6 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.txtInsimPort);
-			this.groupBox1.Controls.Add(this.label8);
 			this.groupBox1.Controls.Add(this.groupBox4);
 			this.groupBox1.Controls.Add(this.groupBox5);
 			this.groupBox1.Controls.Add(this.groupBox3);
@@ -914,30 +913,13 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Configuration";
 			// 
-			// txtInsimPort
-			// 
-			this.txtInsimPort.Location = new System.Drawing.Point(94, 184);
-			this.txtInsimPort.Name = "txtInsimPort";
-			this.txtInsimPort.Size = new System.Drawing.Size(67, 21);
-			this.txtInsimPort.TabIndex = 18;
-			this.txtInsimPort.Text = "29999";
-			// 
-			// label8
-			// 
-			this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label8.Location = new System.Drawing.Point(11, 187);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(90, 23);
-			this.label8.TabIndex = 17;
-			this.label8.Text = "LFS Insim Port:";
-			// 
 			// groupBox4
 			// 
 			this.groupBox4.Controls.Add(this.rbJoin);
 			this.groupBox4.Controls.Add(this.rbView);
-			this.groupBox4.Location = new System.Drawing.Point(454, 20);
+			this.groupBox4.Location = new System.Drawing.Point(466, 17);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(416, 77);
+			this.groupBox4.Size = new System.Drawing.Size(394, 77);
 			this.groupBox4.TabIndex = 15;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Server double click behaviour";
@@ -1120,23 +1102,32 @@ namespace BrowseForSpeed.Frontend
 			this.lbPreStart.Location = new System.Drawing.Point(12, 20);
 			this.lbPreStart.Name = "lbPreStart";
 			this.lbPreStart.Size = new System.Drawing.Size(294, 147);
-			this.lbPreStart.TabIndex = 4;
-			this.lbPreStart.Leave += new System.EventHandler(this.LbPreStartLeave);
+			this.lbPreStart.TabIndex = 4;			
 			this.lbPreStart.DoubleClick += new System.EventHandler(this.LbPreStartDoubleClick);
 			this.lbPreStart.SelectedIndexChanged += new System.EventHandler(this.LbPreStartSelectedIndexChanged);
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.txtInsimPort);
 			this.groupBox3.Controls.Add(this.label3);
+			this.groupBox3.Controls.Add(this.label8);
 			this.groupBox3.Controls.Add(this.queryWait);
 			this.groupBox3.Controls.Add(this.cbQueryWait);
 			this.groupBox3.Controls.Add(this.label4);
-			this.groupBox3.Location = new System.Drawing.Point(454, 103);
+			this.groupBox3.Location = new System.Drawing.Point(466, 100);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(416, 174);
+			this.groupBox3.Size = new System.Drawing.Size(394, 212);
 			this.groupBox3.TabIndex = 14;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Advanced";
+			// 
+			// txtInsimPort
+			// 
+			this.txtInsimPort.Location = new System.Drawing.Point(107, 174);
+			this.txtInsimPort.Name = "txtInsimPort";
+			this.txtInsimPort.Size = new System.Drawing.Size(67, 21);
+			this.txtInsimPort.TabIndex = 18;
+			this.txtInsimPort.Text = "29999";
 			// 
 			// label3
 			// 
@@ -1148,6 +1139,15 @@ namespace BrowseForSpeed.Frontend
 			this.label3.Text = "Query Wait value. This is the time to wait before adding another query to the con" +
 			"current queries. Increase this value if, when querying, all servers start giving" +
 			" \"Connection Refused\"";
+			// 
+			// label8
+			// 
+			this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.label8.Location = new System.Drawing.Point(21, 177);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(90, 23);
+			this.label8.TabIndex = 17;
+			this.label8.Text = "LFS Insim Port:";
 			// 
 			// queryWait
 			// 
@@ -1190,18 +1190,17 @@ namespace BrowseForSpeed.Frontend
 			// label4
 			// 
 			this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label4.Location = new System.Drawing.Point(24, 116);
+			this.label4.Location = new System.Drawing.Point(21, 107);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(357, 48);
+			this.label4.Size = new System.Drawing.Size(364, 40);
 			this.label4.TabIndex = 12;
 			this.label4.Text = "Only disable Query Wait if you are certain your Operating System does not have a " +
-			"connection limit.  Please see the FAQ at http://www.browseforspeed.net for more " +
-			"information.";
+			"connection limit.  Please see readme.txt for more information. ";
 			// 
 			// btnCheckNewVersion
 			// 
 			this.btnCheckNewVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnCheckNewVersion.Location = new System.Drawing.Point(355, 153);
+			this.btnCheckNewVersion.Location = new System.Drawing.Point(355, 163);
 			this.btnCheckNewVersion.Name = "btnCheckNewVersion";
 			this.btnCheckNewVersion.Size = new System.Drawing.Size(75, 23);
 			this.btnCheckNewVersion.TabIndex = 13;
@@ -1212,7 +1211,7 @@ namespace BrowseForSpeed.Frontend
 			// cbNewVersion
 			// 
 			this.cbNewVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.cbNewVersion.Location = new System.Drawing.Point(13, 151);
+			this.cbNewVersion.Location = new System.Drawing.Point(11, 162);
 			this.cbNewVersion.Name = "cbNewVersion";
 			this.cbNewVersion.Size = new System.Drawing.Size(322, 24);
 			this.cbNewVersion.TabIndex = 12;
@@ -1328,12 +1327,12 @@ namespace BrowseForSpeed.Frontend
 			this.contextMenuFriends.ResumeLayout(false);
 			this.tabConfig.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox5.ResumeLayout(false);
 			this.groupBox6.ResumeLayout(false);
 			this.groupBox6.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
+			this.groupBox3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).EndInit();
 			this.statusStrip.ResumeLayout(false);
 			this.statusStrip.PerformLayout();

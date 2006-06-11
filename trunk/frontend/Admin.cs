@@ -61,7 +61,8 @@ namespace BrowseForSpeed
 					handler.Close();
 				}				
 			} catch (Exception) {
-			} finally {				
+			} finally {
+				this.Close();
 				this.Dispose(true);
 			}
 		}
