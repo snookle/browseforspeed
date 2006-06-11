@@ -247,6 +247,8 @@ public class ListSorter: IComparer<ServerListItem>
 			this.totalServers = info.totalServers;
 			this.track = info.track;
 			this.version = info.version;
+			this.adminPassword = info.adminPassword;
+			this.insimPort = info.insimPort;
 		}
 	}
 	
@@ -622,7 +624,14 @@ public class ListSorter: IComparer<ServerListItem>
 							info.version = LFSQuery.VERSION_S2;
 						}
 						info.host = new IPEndPoint(IPAddress.Parse(favourite.GetElementsByTagName("ip")[0].FirstChild.Value), Convert.ToInt32(favourite.GetElementsByTagName("port")[0].FirstChild.Value));
-						info.hostname = favourite.GetElementsByTagName("name")[0].FirstChild.Value;					
+						info.hostname = favourite.GetElementsByTagName("name")[0].FirstChild.Value;
+						try {
+							info.adminPassword = favourite.GetElementsByTagName("adminPassword")[0].FirstChild.Value;
+							info.insimPort = Int32.Parse(favourite.GetElementsByTagName("insimPort")[0].FirstChild.Value);
+						} catch (Exception e) {							
+							info.adminPassword = "";
+							info.insimPort = 29999;
+						}
 						try {
 							info.password = favourite.GetElementsByTagName("password")[0].FirstChild.Value;
 						} catch (Exception e) {
@@ -696,6 +705,8 @@ public class ListSorter: IComparer<ServerListItem>
 					tw.WriteElementString("port", info.host.Port.ToString());
 					tw.WriteElementString("name", info.hostname);
 					tw.WriteElementString("password", info.password);
+					tw.WriteElementString("insimPort", info.insimPort.ToString());
+					tw.WriteElementString("adminPassword", info.adminPassword);
 					tw.WriteEndElement();
 				}
 				tw.WriteFullEndElement();
@@ -1277,6 +1288,17 @@ public class ListSorter: IComparer<ServerListItem>
 		void CbVersionSelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			this.version = StringToVersion(cbVersion.Text);
+		}
+	
+		void AdministrateToolStripMenuItemClick(object sender, System.EventArgs e) {
+			ServerListItem i;			
+			if (true) {//((ToolStripMenuItem)sender).Owner.Parent.Name == "ContextMenuFav") {
+				i = lvFavourites.GetSelectedServer();
+			} else {
+				i = lvMain.GetSelectedServer();
+			}
+			AdminForm admin = new AdminForm(i);
+			admin.Show(this);
 		}
 		
 		void CopyServerToClipboardToolStripMenuItemClick(object sender, System.EventArgs e)
