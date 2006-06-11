@@ -46,10 +46,12 @@ namespace libbrowseforspeed {
 		public string[] racerNames;
 		public string password;
 		public byte version;
+		public string adminPassword;
+		public int insimPort;
 	}
 			
 	public struct hostInfo {
-		public IPEndPoint host;
+		public ServerInformation info;
 		public bool passworded;
 		public object callbackObj;
 		public byte version;
@@ -226,7 +228,7 @@ namespace libbrowseforspeed {
 			public ServerQuery() { }
 
 			public void queryServer() {				
-				IPEndPoint endpoint = new IPEndPoint(host.host.Address, host.host.Port);
+				IPEndPoint endpoint = new IPEndPoint(host.info.host.Address, host.info.host.Port);
 				Socket sock = new Socket(endpoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 				timeoutEvent = new System.Threading.ManualResetEvent(false);				
 				sock.BeginConnect(endpoint, new AsyncCallback(connectCallback), sock);
@@ -266,7 +268,7 @@ namespace libbrowseforspeed {
 					}
 				} else {
 					//connect FAILED BOOHOO
-					ServerInformation ret = new ServerInformation();
+					ServerInformation ret = host.info;
 					ret.success = false;
 					ret.connectFailed = true;
 					ret.totalServers = LFSQuery.totalServers;
@@ -291,7 +293,7 @@ namespace libbrowseforspeed {
 				if (readTimeoutEvent.WaitOne(1000, false)) {
 					//Console.Write("OKAY!\n");
 				} else {
-					ServerInformation ret = new ServerInformation();
+					ServerInformation ret = host.info;
 					ret.success = false;
 					ret.readFailed = true;
 					return ret;
@@ -316,13 +318,13 @@ namespace libbrowseforspeed {
 					return ret;
 				}*/
 				readTimeoutEvent.Close();
-				ServerInformation serverinfo = new ServerInformation();
+				ServerInformation serverinfo = host.info;
 				serverinfo.success = true;
 				serverinfo.ping = (int)((pingEnd - pingStart) / 10000);
 				serverinfo.rules = (ulong)(recbuf[4] * 256 + recbuf[3]);
 				serverinfo.players = (int)recbuf[1];
 				serverinfo.slots = (int)recbuf[2];
-				serverinfo.host = host.host;
+				serverinfo.host = host.info.host;
 				serverinfo.passworded = host.passworded;
 				serverinfo.totalServers = LFSQuery.totalServers;				
 				serverinfo.hostname = getLFSString(recbuf, 5, 32);
@@ -454,7 +456,8 @@ namespace libbrowseforspeed {
 														+ ip[2].ToString() + "."
 														+ ip[3].ToString()), port);
 					hostInfo h;
-					h.host = ips[j];
+					h.info = new ServerInformation();
+					h.info.host = ips[j];
 					h.passworded = (recbuf[5+j] == 0x09);
 					h.callbackObj = callbackObj;
 					h.version = version;
@@ -478,7 +481,7 @@ namespace libbrowseforspeed {
 			totalServers = hosts.Length;
 			foreach (ServerInformation host in hosts) {
 				hostInfo h = new hostInfo();
-				h.host = host.host;
+				h.info = host;
 				h.passworded = false;
 				h.callbackObj = callbackObj;
 				h.version = host.version;
