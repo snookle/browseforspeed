@@ -84,20 +84,20 @@ namespace BrowseForSpeed.Frontend
 					handler.Initialize(3);
 					handler.RequestState();					
 					btnSend.Enabled = true;
-					btnConnect.Text = "Disconnect";
+					btnConnect.Text = "&Disconnect";
 					edtMessage.Enabled = true;
 					btnConnect.Enabled = true;
 					edtMessage.Focus();
 				} catch (Exception) {
 					btnConnect.Enabled = true;
-					MessageBox.Show("Couldn't connect to InSim!");
+					MessageBox.Show("Couldn't connect to InSim!", MainForm.appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			} else {
 				handler.LFSMessage -= new MessageEventHandler(cbMessage);
 				handler.Close();
 				btnSend.Enabled = false;
 				edtMessage.Enabled = false;
-				btnConnect.Text = "Connect";
+				btnConnect.Text = "&Connect";
 			}
 		}
 		
@@ -107,7 +107,13 @@ namespace BrowseForSpeed.Frontend
 		
 		void EdtPortTextChanged(object sender, System.EventArgs e) {
 			if (edtPort.Text.Length == 0) return;
-			info.insimPort = Int32.Parse(edtPort.Text);
+			try {
+				info.insimPort = Int32.Parse(edtPort.Text);
+				if (info.insimPort <= 0 || info.insimPort >= 65536) throw new Exception();
+			} catch (Exception) {
+				MessageBox.Show("Port must be a valid number between 1 and 65535", MainForm.appTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				edtPort.Text = edtPort.Text.Remove(edtPort.Text.Length - 1, 1);
+			}
 		}
 	}
 }
