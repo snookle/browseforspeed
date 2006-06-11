@@ -71,7 +71,7 @@ namespace BrowseForSpeed.Frontend
 			this.viewServerInformationMain = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.copyServerToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.administrateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.administrateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnRefreshMain = new System.Windows.Forms.Button();
 			this.btnJoinMain = new System.Windows.Forms.Button();
 			this.tabFavourites = new System.Windows.Forms.TabPage();
@@ -93,6 +93,7 @@ namespace BrowseForSpeed.Frontend
 			this.viewServerInformationFav = new System.Windows.Forms.ToolStripMenuItem();
 			this.removeFromFavouritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.copyServerToClipboardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.administrateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabFriends = new System.Windows.Forms.TabPage();
 			this.edtFriendName = new System.Windows.Forms.TextBox();
 			this.btnAddFriend = new System.Windows.Forms.Button();
@@ -146,7 +147,6 @@ namespace BrowseForSpeed.Frontend
 			this.statusRefused = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusNoReply = new System.Windows.Forms.ToolStripStatusLabel();
 			this.openFileDialogPS = new System.Windows.Forms.OpenFileDialog();
-			this.administrateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabMain.SuspendLayout();
@@ -494,7 +494,7 @@ namespace BrowseForSpeed.Frontend
 									this.copyServerToClipboardToolStripMenuItem,
 									this.administrateToolStripMenuItem1});
 			this.contextMenuBrowser.Name = "contextMenuBrowser";
-			this.contextMenuBrowser.Size = new System.Drawing.Size(214, 136);
+			this.contextMenuBrowser.Size = new System.Drawing.Size(214, 114);
 			this.contextMenuBrowser.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuBrowserOpening);
 			// 
 			// joinServerToolStripMenuItem
@@ -525,12 +525,12 @@ namespace BrowseForSpeed.Frontend
 			this.copyServerToClipboardToolStripMenuItem.Text = "&Copy Server to Clipboard";
 			this.copyServerToClipboardToolStripMenuItem.Click += new System.EventHandler(this.CopyServerToClipboardToolStripMenuItemClick);
 			// 
-			// administrateToolStripMenuItem
+			// administrateToolStripMenuItem1
 			// 
-			this.administrateToolStripMenuItem.Name = "administrateToolStripMenuItem";
-			this.administrateToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-			this.administrateToolStripMenuItem.Text = "Administrate...";
-			this.administrateToolStripMenuItem.Click += new System.EventHandler(this.AdministrateToolStripMenuItemClick);
+			this.administrateToolStripMenuItem1.Name = "administrateToolStripMenuItem1";
+			this.administrateToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
+			this.administrateToolStripMenuItem1.Text = "Administrate...";
+			this.administrateToolStripMenuItem1.Click += new System.EventHandler(this.AdministrateToolStripMenuItemClick);
 			// 
 			// btnRefreshMain
 			// 
@@ -575,6 +575,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// cbAddServerVersion
 			// 
+			this.cbAddServerVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbAddServerVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbAddServerVersion.FormattingEnabled = true;
 			this.cbAddServerVersion.Items.AddRange(new object[] {
@@ -588,6 +589,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// label10
 			// 
+			this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.label10.Location = new System.Drawing.Point(427, 544);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(100, 16);
@@ -596,6 +598,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// edtAddServerAddress
 			// 
+			this.edtAddServerAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.edtAddServerAddress.Location = new System.Drawing.Point(533, 541);
 			this.edtAddServerAddress.Name = "edtAddServerAddress";
 			this.edtAddServerAddress.Size = new System.Drawing.Size(167, 21);
@@ -603,6 +606,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// btnAddServer
 			// 
+			this.btnAddServer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnAddServer.Location = new System.Drawing.Point(771, 539);
 			this.btnAddServer.Name = "btnAddServer";
 			this.btnAddServer.Size = new System.Drawing.Size(75, 23);
@@ -730,6 +734,13 @@ namespace BrowseForSpeed.Frontend
 			this.copyServerToClipboardToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
 			this.copyServerToClipboardToolStripMenuItem1.Text = "&Copy Server to Clipboard";
 			this.copyServerToClipboardToolStripMenuItem1.Click += new System.EventHandler(this.CopyServerToClipboardToolStripMenuItemClick);
+			// 
+			// administrateToolStripMenuItem
+			// 
+			this.administrateToolStripMenuItem.Name = "administrateToolStripMenuItem";
+			this.administrateToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.administrateToolStripMenuItem.Text = "Administrate...";
+			this.administrateToolStripMenuItem.Click += new System.EventHandler(this.AdministrateToolStripMenuItemClick);
 			// 
 			// tabFriends
 			// 
@@ -961,9 +972,9 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox5.Controls.Add(this.btnProgramNew);
 			this.groupBox5.Controls.Add(this.groupBox6);
 			this.groupBox5.Controls.Add(this.lbPreStart);
-			this.groupBox5.Location = new System.Drawing.Point(11, 219);
+			this.groupBox5.Location = new System.Drawing.Point(13, 228);
 			this.groupBox5.Name = "groupBox5";
-			this.groupBox5.Size = new System.Drawing.Size(419, 334);
+			this.groupBox5.Size = new System.Drawing.Size(437, 321);
 			this.groupBox5.TabIndex = 16;
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "Start Before LFS";
@@ -971,7 +982,7 @@ namespace BrowseForSpeed.Frontend
 			// btnProgramEnable
 			// 
 			this.btnProgramEnable.Enabled = false;
-			this.btnProgramEnable.Location = new System.Drawing.Point(306, 115);
+			this.btnProgramEnable.Location = new System.Drawing.Point(315, 116);
 			this.btnProgramEnable.Name = "btnProgramEnable";
 			this.btnProgramEnable.Size = new System.Drawing.Size(107, 23);
 			this.btnProgramEnable.TabIndex = 8;
@@ -982,7 +993,7 @@ namespace BrowseForSpeed.Frontend
 			// btnProgramDelete
 			// 
 			this.btnProgramDelete.Enabled = false;
-			this.btnProgramDelete.Location = new System.Drawing.Point(306, 49);
+			this.btnProgramDelete.Location = new System.Drawing.Point(315, 49);
 			this.btnProgramDelete.Name = "btnProgramDelete";
 			this.btnProgramDelete.Size = new System.Drawing.Size(107, 23);
 			this.btnProgramDelete.TabIndex = 7;
@@ -992,7 +1003,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// btnProgramNew
 			// 
-			this.btnProgramNew.Location = new System.Drawing.Point(306, 20);
+			this.btnProgramNew.Location = new System.Drawing.Point(315, 20);
 			this.btnProgramNew.Name = "btnProgramNew";
 			this.btnProgramNew.Size = new System.Drawing.Size(107, 23);
 			this.btnProgramNew.TabIndex = 6;
@@ -1011,9 +1022,9 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox6.Controls.Add(this.btnProgramBrowse);
 			this.groupBox6.Controls.Add(this.label7);
 			this.groupBox6.Controls.Add(this.edtProgramPath);
-			this.groupBox6.Location = new System.Drawing.Point(6, 186);
+			this.groupBox6.Location = new System.Drawing.Point(12, 173);
 			this.groupBox6.Name = "groupBox6";
-			this.groupBox6.Size = new System.Drawing.Size(407, 142);
+			this.groupBox6.Size = new System.Drawing.Size(410, 135);
 			this.groupBox6.TabIndex = 5;
 			this.groupBox6.TabStop = false;
 			this.groupBox6.Text = "Program Configuration";
@@ -1021,7 +1032,7 @@ namespace BrowseForSpeed.Frontend
 			// btnProgramCancel
 			// 
 			this.btnProgramCancel.Enabled = false;
-			this.btnProgramCancel.Location = new System.Drawing.Point(87, 113);
+			this.btnProgramCancel.Location = new System.Drawing.Point(87, 101);
 			this.btnProgramCancel.Name = "btnProgramCancel";
 			this.btnProgramCancel.Size = new System.Drawing.Size(75, 23);
 			this.btnProgramCancel.TabIndex = 10;
@@ -1032,7 +1043,7 @@ namespace BrowseForSpeed.Frontend
 			// btnProgramSave
 			// 
 			this.btnProgramSave.Enabled = false;
-			this.btnProgramSave.Location = new System.Drawing.Point(6, 113);
+			this.btnProgramSave.Location = new System.Drawing.Point(6, 101);
 			this.btnProgramSave.Name = "btnProgramSave";
 			this.btnProgramSave.Size = new System.Drawing.Size(75, 23);
 			this.btnProgramSave.TabIndex = 9;
@@ -1043,25 +1054,25 @@ namespace BrowseForSpeed.Frontend
 			// edtProgramOptions
 			// 
 			this.edtProgramOptions.Enabled = false;
-			this.edtProgramOptions.Location = new System.Drawing.Point(77, 74);
+			this.edtProgramOptions.Location = new System.Drawing.Point(87, 74);
 			this.edtProgramOptions.Name = "edtProgramOptions";
-			this.edtProgramOptions.Size = new System.Drawing.Size(241, 21);
+			this.edtProgramOptions.Size = new System.Drawing.Size(231, 21);
 			this.edtProgramOptions.TabIndex = 8;
 			// 
 			// label12
 			// 
 			this.label12.Location = new System.Drawing.Point(6, 77);
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(100, 14);
+			this.label12.Size = new System.Drawing.Size(70, 14);
 			this.label12.TabIndex = 7;
-			this.label12.Text = "Options:";
+			this.label12.Text = "Arguments:";
 			// 
 			// edtProgramName
 			// 
 			this.edtProgramName.Enabled = false;
-			this.edtProgramName.Location = new System.Drawing.Point(77, 20);
+			this.edtProgramName.Location = new System.Drawing.Point(87, 20);
 			this.edtProgramName.Name = "edtProgramName";
-			this.edtProgramName.Size = new System.Drawing.Size(161, 21);
+			this.edtProgramName.Size = new System.Drawing.Size(137, 21);
 			this.edtProgramName.TabIndex = 6;
 			this.edtProgramName.TextChanged += new System.EventHandler(this.EdtProgramNameTextChanged);
 			// 
@@ -1090,27 +1101,25 @@ namespace BrowseForSpeed.Frontend
 			this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.label7.Location = new System.Drawing.Point(6, 50);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(34, 15);
+			this.label7.Size = new System.Drawing.Size(59, 15);
 			this.label7.TabIndex = 3;
 			this.label7.Text = "Path:";
 			// 
 			// edtProgramPath
 			// 
 			this.edtProgramPath.Enabled = false;
-			this.edtProgramPath.Location = new System.Drawing.Point(77, 47);
+			this.edtProgramPath.Location = new System.Drawing.Point(87, 47);
 			this.edtProgramPath.Name = "edtProgramPath";
-			this.edtProgramPath.Size = new System.Drawing.Size(241, 21);
+			this.edtProgramPath.Size = new System.Drawing.Size(231, 21);
 			this.edtProgramPath.TabIndex = 7;
 			this.edtProgramPath.TextChanged += new System.EventHandler(this.EdtProgramNameTextChanged);
 			// 
 			// lbPreStart
 			// 
 			this.lbPreStart.FormattingEnabled = true;
-			this.lbPreStart.Items.AddRange(new object[] {
-									"[New Program]"});
-			this.lbPreStart.Location = new System.Drawing.Point(6, 20);
+			this.lbPreStart.Location = new System.Drawing.Point(12, 20);
 			this.lbPreStart.Name = "lbPreStart";
-			this.lbPreStart.Size = new System.Drawing.Size(294, 160);
+			this.lbPreStart.Size = new System.Drawing.Size(294, 147);
 			this.lbPreStart.TabIndex = 4;
 			this.lbPreStart.Leave += new System.EventHandler(this.LbPreStartLeave);
 			this.lbPreStart.DoubleClick += new System.EventHandler(this.LbPreStartDoubleClick);
@@ -1186,8 +1195,8 @@ namespace BrowseForSpeed.Frontend
 			this.label4.Size = new System.Drawing.Size(357, 48);
 			this.label4.TabIndex = 12;
 			this.label4.Text = "Only disable Query Wait if you are certain your Operating System does not have a " +
-			"connection limit.  Please see the FAQ at http://browseforspeed.whatsbeef.net for" +
-			" more information.";
+			"connection limit.  Please see the FAQ at http://www.browseforspeed.net for more " +
+			"information.";
 			// 
 			// btnCheckNewVersion
 			// 
@@ -1286,13 +1295,6 @@ namespace BrowseForSpeed.Frontend
 			// openFileDialogPS
 			// 
 			this.openFileDialogPS.Filter = "Executables|*.exe";
-			// 
-			// administrateToolStripMenuItem1
-			// 
-			this.administrateToolStripMenuItem1.Name = "administrateToolStripMenuItem1";
-			this.administrateToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
-			this.administrateToolStripMenuItem1.Text = "Administrate...";
-			this.administrateToolStripMenuItem1.Click += new System.EventHandler(this.AdministrateToolStripMenuItemClick);
 			// 
 			// MainForm
 			// 
