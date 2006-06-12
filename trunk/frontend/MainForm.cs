@@ -674,7 +674,7 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 		}
 
-		String VersionToString(byte version)
+		private String VersionToString(byte version)
 		{
 			if (version == LFSQuery.VERSION_S1)
 			    return "S1";
@@ -683,7 +683,7 @@ public class ListSorter: IComparer<ServerListItem>
 			else return "S2";
 		}
 		
-		byte StringToVersion(String version)
+		private byte StringToVersion(String version)
 		{
 			switch (version){
 				case "Demo" : return LFSQuery.VERSION_DEMO;
@@ -849,7 +849,6 @@ public class ListSorter: IComparer<ServerListItem>
 			WriteFav();
 			WriteFriends();
 			this.Hide();
-			SortedList l = new SortedList();
 		}
 
 
@@ -1452,6 +1451,15 @@ public class ListSorter: IComparer<ServerListItem>
 		void BtnProgramDeleteClick(object sender, System.EventArgs e) {
 			lbPreStart.Items.Remove(lbPreStart.SelectedItem);
 			BtnProgramCancelClick(sender, e);
+			
+		}
+		
+		void JoinServerToolStripMenuItem2Click(object sender, System.EventArgs e)
+		{
+			JoinServerDialog j = new JoinServerDialog();
+			if (j.ShowDialog() == DialogResult.OK){
+				LoadLFS(j.serverName, j.version, j.password);
+			}
 			
 		}
 	}

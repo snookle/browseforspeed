@@ -78,6 +78,11 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="JoinServerDialog.cs" />
+    <Compile Include="JoinServerDialog.Designer.cs" />
+    <EmbeddedResource Include="JoinServerDialog.resx">
+      <DependentUpon>JoinServerDialog.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>
