@@ -32,8 +32,12 @@ namespace BrowseForSpeed.Frontend
 			this.info = info;
 			handler = new InSimHandler(true, false);
 			this.Text = "Admin - " + info.hostname;
-			edtPassword.Text = info.adminPassword;
-			edtPort.Text = info.insimPort.ToString();
+			edtPassword.Text = info.adminPassword;			
+			if (info.insimPort != 0) {
+				edtPort.Text = info.insimPort.ToString();
+			} else {
+				edtPort.Text = "29999";
+			}
 		}
 		
 		void AdminFormLoad(object sender, System.EventArgs e) {
@@ -57,6 +61,7 @@ namespace BrowseForSpeed.Frontend
 		
 		void AdminFormFormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e) {
 			try {
+				handler.LFSMessage -= new MessageEventHandler(cbMessage);
 				if (handler.State == InSimHandler.HandlerState.Connected) {
 					handler.Close();
 				}				
@@ -71,8 +76,7 @@ namespace BrowseForSpeed.Frontend
 				try {
 					btnConnect.Enabled = false;
 					FullMotion.LiveForSpeed.InSim.Configuration config = handler.Configuration;
-					config.LFSHost = info.host.Address.ToString();
-					//config.LFSHostPort = info.host.Port;
+					config.LFSHost = info.host.Address.ToString();					
 					config.LFSHostPort = Int32.Parse(edtPort.Text);
 					config.AdminPass = edtPassword.Text;
 					config.ReplyPort = 80085;
