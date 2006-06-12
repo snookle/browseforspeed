@@ -437,6 +437,11 @@ public class ListSorter: IComparer<ServerListItem>
 						numServersDone++;
 						list.AddServer(info);
 					} else {
+						if (list.Name == "lvFavourites") {
+							info.ping = 9999;
+							info.track = "N/A";
+							list.AddServer(info);
+						}
 						if (info.readFailed) {
 							numServersNoReply++;
 						} else {
@@ -1334,6 +1339,7 @@ public class ListSorter: IComparer<ServerListItem>
 				}
 				info.host = new IPEndPoint(IPAddress.Parse(hostname[0]), port);
 				info.version = StringToVersion(cbAddServerVersion.Text);
+				info.hostname = info.host.ToString();
 				lvFavourites.AddServer(info);
 			} catch (Exception ex) {
 				MessageBox.Show("An error occured while adding the server to favourites: " + ex.Message, appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
