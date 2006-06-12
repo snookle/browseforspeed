@@ -1,0 +1,35 @@
+??/6/2006 - 0.5
+    * Added admin interface.
+    * Join server by hostname
+    * Added ability to start arbitrary number of programs before LFS
+    * Added add to favourites by IP address
+    * Added some keyboard shortcuts
+    * Merged in some code changed from Chris Schletter (Hollywood)
+
+6/6/2006 - 0.4
+    * Added ability to list and query Demo/S1 servers. These servers can also be added to favourites.
+    * Added and improved filtering options. Public/Private/Empty/Full/Cars filtering works both server and client side, and ping/track filtering is done client side.
+    * Fixed friends being deleted if the query fails initially (if lfsworld is down for example)
+    * Fixed configuration updating.
+
+
+
+31/5/2006 - 0.3
+    * Pubstat queries are cached, so if you do lots of view server informations in quick succession, the pubstat system will not tell you to go and sit in the corner. Additionally, queries will seem much much faster.
+    * Added a friends system. Similar to the alert system on LFSWorld, this allows you to add to a friends list and will show you if any of your friends are racing, and some information about the server they are racing on.
+    * Track information in the display shows the full track name.
+    * Fixed crash when sorting by car names, then clicking favourites tab.
+
+
+30/5/2006 - 0.2
+    * Fixed crash when using the right-click context menu to join a server.
+    * Fixed crash when closing extended server information dialog while still refreshing.
+    * Passwords are saved for favourite servers.
+    * Sorting by connections works correctly.
+    * Fixed incorrect password being used when starting LFS from the extended server information dialog.
+    * Server list font size can be changed with ctrl +/- (numpad).
+    * Added support for Pit Spotter.
+    * Configuration and Favourite Servers files are now XML.
+    * Hiding empty servers no long retrieves empty servers from the master server on refresh.
+
+27/5/2006 - Initial release - 0.1
