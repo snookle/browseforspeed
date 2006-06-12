@@ -154,6 +154,7 @@ namespace BrowseForSpeed.Frontend
 			this.statusRefused = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusNoReply = new System.Windows.Forms.ToolStripStatusLabel();
 			this.openFileDialogPS = new System.Windows.Forms.OpenFileDialog();
+			this.joinServerToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabMain.SuspendLayout();
@@ -187,6 +188,7 @@ namespace BrowseForSpeed.Frontend
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+									this.joinServerToolStripMenuItem2,
 									this.closeToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
@@ -195,7 +197,7 @@ namespace BrowseForSpeed.Frontend
 			// closeToolStripMenuItem
 			// 
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-			this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+			this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.closeToolStripMenuItem.Text = "&Exit";
 			this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItemClick);
 			// 
@@ -1109,7 +1111,7 @@ namespace BrowseForSpeed.Frontend
 			this.lbPreStart.Location = new System.Drawing.Point(12, 20);
 			this.lbPreStart.Name = "lbPreStart";
 			this.lbPreStart.Size = new System.Drawing.Size(294, 147);
-			this.lbPreStart.TabIndex = 4;			
+			this.lbPreStart.TabIndex = 4;
 			this.lbPreStart.DoubleClick += new System.EventHandler(this.LbPreStartDoubleClick);
 			this.lbPreStart.SelectedIndexChanged += new System.EventHandler(this.LbPreStartSelectedIndexChanged);
 			// 
@@ -1302,6 +1304,13 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.openFileDialogPS.Filter = "Executables|*.exe";
 			// 
+			// joinServerToolStripMenuItem2
+			// 
+			this.joinServerToolStripMenuItem2.Name = "joinServerToolStripMenuItem2";
+			this.joinServerToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+			this.joinServerToolStripMenuItem2.Text = "&Join Server...";
+			this.joinServerToolStripMenuItem2.Click += new System.EventHandler(this.JoinServerToolStripMenuItem2Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1346,6 +1355,7 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem joinServerToolStripMenuItem2;
 		private System.Windows.Forms.Button btnProgramEnable;
 		private System.Windows.Forms.TextBox edtProgramPath;
 		private System.Windows.Forms.Button btnProgramBrowse;
