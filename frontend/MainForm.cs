@@ -1119,7 +1119,7 @@ public class ListSorter: IComparer<ServerListItem>
 			if (e.KeyCode == Keys.Enter && edtFriendName.Text.Length > 0) {
 				AddFriend(edtFriendName.Text, true);
 				lvFriends.Sort();
-				edtFriendName.Text = "";
+				edtFriendName.Clear();
 			}
 			
 		}
@@ -1467,6 +1467,13 @@ public class ListSorter: IComparer<ServerListItem>
 				LoadLFS(j.serverName, j.version, j.password);
 			}
 			
+		}
+		
+		void EdtFindUserMainKeyDown(object sender, System.Windows.Forms.KeyEventArgs e) {
+			if (e.KeyCode == Keys.Enter && edtFindUserMain.Text.Length > 0) {
+				btnFindUserClick(sender, e);
+				edtFindUserMain.Clear();
+			}
 		}
 	}
 /// Horray for code nicked from the MSDN!
