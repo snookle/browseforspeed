@@ -26,30 +26,30 @@ namespace BrowseForSpeed.Frontend
 	{
 		InSimHandler handler;
 		ServerInformation info;
-		
+
 		public AdminForm(ServerInformation info) {
 			InitializeComponent();
 			this.info = info;
 			handler = new InSimHandler(true, false);
 			this.Text = "Admin - " + info.hostname;
-			edtPassword.Text = info.adminPassword;			
+			edtPassword.Text = info.adminPassword;
 			if (info.insimPort != 0) {
 				edtPort.Text = info.insimPort.ToString();
 			} else {
 				edtPort.Text = "29999";
 			}
 		}
-		
+
 		void AdminFormLoad(object sender, System.EventArgs e) {
-			
+
 		}
-		
+
 		void BtnSendClick(object sender, System.EventArgs e) {
 			handler.SendMessage(edtMessage.Text);
 			edtMessage.Clear();
 		}
 
-		private void cbMessage(FullMotion.LiveForSpeed.InSim.Events.Message m) {			
+		private void cbMessage(FullMotion.LiveForSpeed.InSim.Events.Message m) {
 			string msg = "";
 			if (m.IsSplitMessage) {
 				msg = "<" + m.UserName + "> " + m.MessageText;
@@ -58,25 +58,25 @@ namespace BrowseForSpeed.Frontend
 			}
 			txtInfo.Text += msg + "\r\n";
 		}
-		
+
 		void AdminFormFormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e) {
 			try {
 				handler.LFSMessage -= new MessageEventHandler(cbMessage);
 				if (handler.State == InSimHandler.HandlerState.Connected) {
 					handler.Close();
-				}				
+				}
 			} catch (Exception) {
 			} finally {
 				this.Dispose(true);
 			}
 		}
-		
+
 		void BtnConnectClick(object sender, System.EventArgs e) {
 			if (handler.State != InSimHandler.HandlerState.Connected) {
 				try {
 					btnConnect.Enabled = false;
 					FullMotion.LiveForSpeed.InSim.Configuration config = handler.Configuration;
-					config.LFSHost = info.host.Address.ToString();					
+					config.LFSHost = info.host.Address.ToString();
 					config.LFSHostPort = Int32.Parse(edtPort.Text);
 					config.AdminPass = edtPassword.Text;
 					config.ReplyPort = 80085;
@@ -84,9 +84,9 @@ namespace BrowseForSpeed.Frontend
 					config.UseKeepAlives = true;
 					config.RaceTracking = RaceTrackType.NoTracking;
 					config.GuaranteedDelivery = true;
-					handler.LFSMessage += new MessageEventHandler(cbMessage);
 					handler.Initialize(3);
-					handler.RequestState();					
+					handler.RequestState();
+					handler.LFSMessage += new MessageEventHandler(cbMessage);
 					btnSend.Enabled = true;
 					btnConnect.Text = "&Disconnect";
 					edtMessage.Enabled = true;
@@ -104,11 +104,11 @@ namespace BrowseForSpeed.Frontend
 				btnConnect.Text = "&Connect";
 			}
 		}
-		
-		void EdtPasswordTextChanged(object sender, System.EventArgs e) {			
+
+		void EdtPasswordTextChanged(object sender, System.EventArgs e) {
 			info.adminPassword = edtPassword.Text;
 		}
-		
+
 		void EdtPortTextChanged(object sender, System.EventArgs e) {
 			if (edtPort.Text.Length == 0) return;
 			try {
