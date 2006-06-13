@@ -56,7 +56,9 @@ namespace BrowseForSpeed.Frontend
 			} else {
 				msg = m.MessageText;
 			}
-			txtInfo.Text += msg + "\r\n";
+			txtInfo.Text += "\r\n" + msg;
+			txtInfo.SelectionStart = txtInfo.Text.Length;
+			txtInfo.ScrollToCaret();
 		}
 
 		void AdminFormFormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e) {

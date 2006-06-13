@@ -46,6 +46,7 @@ namespace BrowseForSpeed.Frontend
 			this.components = new System.ComponentModel.Container();
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.joinServerToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
 			this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -154,7 +155,6 @@ namespace BrowseForSpeed.Frontend
 			this.statusRefused = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusNoReply = new System.Windows.Forms.ToolStripStatusLabel();
 			this.openFileDialogPS = new System.Windows.Forms.OpenFileDialog();
-			this.joinServerToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabMain.SuspendLayout();
@@ -194,10 +194,17 @@ namespace BrowseForSpeed.Frontend
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
 			this.fileToolStripMenuItem.Text = "&File";
 			// 
+			// joinServerToolStripMenuItem2
+			// 
+			this.joinServerToolStripMenuItem2.Name = "joinServerToolStripMenuItem2";
+			this.joinServerToolStripMenuItem2.Size = new System.Drawing.Size(151, 22);
+			this.joinServerToolStripMenuItem2.Text = "&Join Server...";
+			this.joinServerToolStripMenuItem2.Click += new System.EventHandler(this.JoinServerToolStripMenuItem2Click);
+			// 
 			// closeToolStripMenuItem
 			// 
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-			this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.closeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
 			this.closeToolStripMenuItem.Text = "&Exit";
 			this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItemClick);
 			// 
@@ -257,6 +264,8 @@ namespace BrowseForSpeed.Frontend
 			this.edtFindUserMain.Name = "edtFindUserMain";
 			this.edtFindUserMain.Size = new System.Drawing.Size(158, 21);
 			this.edtFindUserMain.TabIndex = 9;
+			this.edtFindUserMain.WordWrap = false;
+			this.edtFindUserMain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EdtFindUserMainKeyDown);
 			// 
 			// label1
 			// 
@@ -1303,13 +1312,6 @@ namespace BrowseForSpeed.Frontend
 			// openFileDialogPS
 			// 
 			this.openFileDialogPS.Filter = "Executables|*.exe";
-			// 
-			// joinServerToolStripMenuItem2
-			// 
-			this.joinServerToolStripMenuItem2.Name = "joinServerToolStripMenuItem2";
-			this.joinServerToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-			this.joinServerToolStripMenuItem2.Text = "&Join Server...";
-			this.joinServerToolStripMenuItem2.Click += new System.EventHandler(this.JoinServerToolStripMenuItem2Click);
 			// 
 			// MainForm
 			// 
