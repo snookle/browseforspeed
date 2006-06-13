@@ -27,6 +27,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using libbrowseforspeed;
 using System.Threading;
+using System.Globalization;
+using System.Resources;
 using Microsoft.Win32;
 using System.Xml;
 
@@ -248,6 +250,12 @@ public class ListSorter: IComparer<ServerListItem>
 		}
 	}
 	
+	public class FriendListItem
+	{
+		public ServerInformation server;
+		public string name;
+	}
+	
 	public partial class MainForm
 	{
 		static string bfs_version = "0.5";
@@ -268,7 +276,7 @@ public class ListSorter: IComparer<ServerListItem>
 		private LFSQuery q;
 		private ListViewColumnSorter lvwColumnSorter;
 
-		private List<string> friendList;
+		private List<FriendListItem> friendList;
 
 		private int totalServers;
 		private int numQueried;
@@ -284,6 +292,11 @@ public class ListSorter: IComparer<ServerListItem>
 		private bool exiting;
 
 		private Thread t;
+		
+		private ResourceManager ResourceManager = new ResourceManager("BrowseForSpeed.BrowseForSpeed", System.Reflection.Assembly.GetExecutingAssembly());
+		private CultureInfo EnglishCulture = new CultureInfo("en-US");
+	//	private CultureInfo FrenchCulture = new CultureInfo("fr-FR");
+	//	private CultureInfo SpanishCulture = new CultureInfo("es-ES");
 
 
 		[STAThread]
@@ -732,27 +745,27 @@ public class ListSorter: IComparer<ServerListItem>
 		
 		public void DisplayFriendsT() {
 			lvFriends.Items.Clear();
-			foreach (string name in friendList) {
-				ServerInformation info;
-				int result = LFSQuery.getPubStatInfo(name, out info);				
+			for (int i = 0; i < friendList.Count; ++i){
+				FriendListItem friend = friendList[i];
+				int result = LFSQuery.getPubStatInfo(friend.name, out friend.server);
 				ListViewItem lvi;
 				if (result == 0 && !cbHideOffline.Checked) { //offline
-					lvi = lvFriends.Items.Add(name, name, "");
+					lvi = lvFriends.Items.Add(friend.name, friend.name, "");
 					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, "Offline"));
 					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, "N/A"));
 					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "N/A"));
 				} else if (result == 1) {
-					lvi = lvFriends.Items.Add(name, name, "");
-					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi,info.hostname));
-					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, (info.passworded ? "Yes" : "No")));
+					lvi = lvFriends.Items.Add(friend.name, friend.name, "");
+					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi,friend.server.hostname));
+					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, (friend.server.passworded ? "Yes" : "No")));
 					String players = "";
-					foreach (string player in info.racerNames) {
+					foreach (string player in friend.server.racerNames) {
 						players += player + ", ";
 					}
 					players = players.Remove(players.Length - 2, 2).ToString();	
 					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, players));
 				} else if (result == -1) {
-					lvi = lvFriends.Items.Add(name, name, "");
+					lvi = lvFriends.Items.Add(friend.name, friend.name, "");
 					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, "Error Querying Pubstat"));
 					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, "Error"));
 					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "Error"));
@@ -765,12 +778,21 @@ public class ListSorter: IComparer<ServerListItem>
 		public void AddFriend(string name, bool writeToFile)
 		{
 			ListViewItem lvi;
-			if (friendList.IndexOf(name) == -1){
+			bool exists = false; //do this better!
+			foreach(FriendListItem f in friendList){
+				if (f.name == name){
+					exists = true;
+					break;
+				}
+			}
+			if (!exists){
 				lvi = lvFriends.Items.Add(name, name, "");
 				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, "Offline"));
 				lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, "N/A"));
 				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "N/A"));
-				friendList.Add(name);
+				FriendListItem friend = new FriendListItem();
+				friend.name = name;
+				friendList.Add(friend);
 			}
 			if (writeToFile)
 				WriteFriends();
@@ -784,9 +806,9 @@ public class ListSorter: IComparer<ServerListItem>
 				tw.WriteStartDocument();
 				tw.WriteStartElement("friends");
 				tw.WriteAttributeString("version", "1");
-				foreach (String friend in friendList) {
+				foreach (FriendListItem friend in friendList) {
 					tw.WriteStartElement("friend");
-					tw.WriteAttributeString("name", friend);
+					tw.WriteAttributeString("name", friend.name);
 					tw.WriteEndElement();
 				}
 				tw.WriteFullEndElement();
@@ -826,15 +848,30 @@ public class ListSorter: IComparer<ServerListItem>
 		}
 
 		void ViewServerInformationToolStripMenuItemClick(object sender, System.EventArgs e) {
-			ServerListItem info;
+			ServerListItem info = null;
 			if (sender is ToolStripMenuItem){
 				ToolStripMenuItem l = (ToolStripMenuItem)sender;
 				if (l.Name == "viewServerInformationMain")
-					sender = lvMain;
-				else
-					sender = lvFavourites;
+					info = lvMain.GetSelectedServer();
+				else if (l.Name == "viewServerInformationFav")
+					info = lvFavourites.GetSelectedServer();
+				else if (l.Name == "viewServerInformationFriend"){
+				//	if ((lvFriends.SelectedItems.Count > 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == "Offline"))
+			//			return;
+					string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
+					MessageBox.Show(friend);
+					foreach (FriendListItem f in friendList){
+						if (f.name == friend){
+							info = new ServerListItem(f.server);
+							MessageBox.Show(info.host.ToString());
+							info.version = LFSQuery.VERSION_S2;
+							break;
+						}
+					}
+				}
+					
 			}
-			info = ((ServerListView)sender).GetSelectedServer();
+			
 			if (info == null)
 				return;
 			s.SetInfo(info);
@@ -1092,9 +1129,13 @@ public class ListSorter: IComparer<ServerListItem>
 					return;
 				}
 			}
-			friendList.RemoveAt(friendList.IndexOf(name));
+			for (int i = 0; i < friendList.Count; i++){
+				if (friendList[i].name == name){
+					friendList.RemoveAt(i);
+					break;
+				}
+			}
 			lvFriends.Items.RemoveByKey(name);
-			
 		}
 		
 		void ContextMenuFriendsOpening(object sender, System.ComponentModel.CancelEventArgs e)
@@ -1164,7 +1205,7 @@ public class ListSorter: IComparer<ServerListItem>
 				groups[i].Click += new EventHandler(CarsGroupButtonClick);
 				groups[i].Click +=  new EventHandler(carsChanged);
 			}
-            friendList = new List<string>();
+			friendList = new List<FriendListItem>();
 			lvwColumnSorter = new ListViewColumnSorter();
 			lvwColumnSorter.SortColumn = 1;
 			lvwColumnSorter.Order = SortOrder.Ascending;
@@ -1212,6 +1253,7 @@ public class ListSorter: IComparer<ServerListItem>
 				}
 			}
 			//if we have previous config data
+			cbConfigLang.SelectedIndex = 0;
 			if (loadedconf) {
 				//query wait
 				cbQueryWait.Checked = config.disableWait;
@@ -1320,8 +1362,12 @@ public class ListSorter: IComparer<ServerListItem>
 		
 		void BtnAddServerClick(object sender, System.EventArgs e)
 		{
+			string host = edtAddServerAddress.Text;
+			if (!host.Contains(":")){
+				host += ":63392";
+			}
 			try {
-				string[] hostname = edtAddServerAddress.Text.Split(':');
+				string[] hostname = host.Split(':');
 				if (hostname.Length != 2) {
 					MessageBox.Show("IP Address must be in the form: ipaddress:port", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
@@ -1341,6 +1387,7 @@ public class ListSorter: IComparer<ServerListItem>
 				info.version = StringToVersion(cbAddServerVersion.Text);
 				info.hostname = info.host.ToString();
 				lvFavourites.AddServer(info);
+				edtAddServerAddress.Text = "";
 			} catch (Exception ex) {
 				MessageBox.Show("An error occured while adding the server to favourites: " + ex.Message, appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
@@ -1468,7 +1515,18 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 			
 		}
+
+		private void UpdateUI()
+		{
+			btnJoinMain.Text = ResourceManager.GetString("btnJoinMain");	
+		}
 		
+		void CbConfigLangSelectedIndexChanged(object sender, System.EventArgs e)
+		{
+			Thread.CurrentThread.CurrentUICulture = EnglishCulture;
+			UpdateUI();
+		}
+	
 		void EdtFindUserMainKeyDown(object sender, System.Windows.Forms.KeyEventArgs e) {
 			if (e.KeyCode == Keys.Enter && edtFindUserMain.Text.Length > 0) {
 				btnFindUserClick(sender, e);

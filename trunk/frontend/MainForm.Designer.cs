@@ -115,6 +115,7 @@ namespace BrowseForSpeed.Frontend
 			this.columnFriendPlayers = new System.Windows.Forms.ColumnHeader();
 			this.contextMenuFriends = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.joinServerMenuFriends = new System.Windows.Forms.ToolStripMenuItem();
+			this.viewServerInformationFriend = new System.Windows.Forms.ToolStripMenuItem();
 			this.removeFriendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabConfig = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -137,6 +138,8 @@ namespace BrowseForSpeed.Frontend
 			this.edtProgramPath = new System.Windows.Forms.TextBox();
 			this.lbPreStart = new System.Windows.Forms.ListBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.cbConfigLang = new System.Windows.Forms.ComboBox();
+			this.label13 = new System.Windows.Forms.Label();
 			this.txtInsimPort = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
@@ -882,22 +885,30 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.contextMenuFriends.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.joinServerMenuFriends,
+									this.viewServerInformationFriend,
 									this.removeFriendToolStripMenuItem});
 			this.contextMenuFriends.Name = "contextMenuFriends";
-			this.contextMenuFriends.Size = new System.Drawing.Size(158, 48);
+			this.contextMenuFriends.Size = new System.Drawing.Size(214, 70);
 			this.contextMenuFriends.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFriendsOpening);
 			// 
 			// joinServerMenuFriends
 			// 
 			this.joinServerMenuFriends.Name = "joinServerMenuFriends";
-			this.joinServerMenuFriends.Size = new System.Drawing.Size(157, 22);
+			this.joinServerMenuFriends.Size = new System.Drawing.Size(213, 22);
 			this.joinServerMenuFriends.Text = "Join Server";
 			this.joinServerMenuFriends.Click += new System.EventHandler(this.JoinFriendClick);
+			// 
+			// viewServerInformationFriend
+			// 
+			this.viewServerInformationFriend.Name = "viewServerInformationFriend";
+			this.viewServerInformationFriend.Size = new System.Drawing.Size(213, 22);
+			this.viewServerInformationFriend.Text = "View Server Information...";
+			this.viewServerInformationFriend.Click += new System.EventHandler(this.ViewServerInformationToolStripMenuItemClick);
 			// 
 			// removeFriendToolStripMenuItem
 			// 
 			this.removeFriendToolStripMenuItem.Name = "removeFriendToolStripMenuItem";
-			this.removeFriendToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+			this.removeFriendToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
 			this.removeFriendToolStripMenuItem.Text = "Remove Friend";
 			this.removeFriendToolStripMenuItem.Click += new System.EventHandler(this.RemoveFriendToolStripMenuItemClick);
 			// 
@@ -1126,6 +1137,8 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.cbConfigLang);
+			this.groupBox3.Controls.Add(this.label13);
 			this.groupBox3.Controls.Add(this.txtInsimPort);
 			this.groupBox3.Controls.Add(this.label3);
 			this.groupBox3.Controls.Add(this.label8);
@@ -1134,10 +1147,31 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox3.Controls.Add(this.label4);
 			this.groupBox3.Location = new System.Drawing.Point(466, 100);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(394, 212);
+			this.groupBox3.Size = new System.Drawing.Size(394, 267);
 			this.groupBox3.TabIndex = 14;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Advanced";
+			// 
+			// cbConfigLang
+			// 
+			this.cbConfigLang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbConfigLang.FormattingEnabled = true;
+			this.cbConfigLang.Items.AddRange(new object[] {
+									"Australian (English)",
+									"Italian"});
+			this.cbConfigLang.Location = new System.Drawing.Point(107, 216);
+			this.cbConfigLang.Name = "cbConfigLang";
+			this.cbConfigLang.Size = new System.Drawing.Size(135, 21);
+			this.cbConfigLang.TabIndex = 20;
+			this.cbConfigLang.SelectedIndexChanged += new System.EventHandler(this.CbConfigLangSelectedIndexChanged);
+			// 
+			// label13
+			// 
+			this.label13.Location = new System.Drawing.Point(21, 219);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(69, 23);
+			this.label13.TabIndex = 19;
+			this.label13.Text = "Language:";
 			// 
 			// txtInsimPort
 			// 
@@ -1357,6 +1391,9 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.ComboBox cbConfigLang;
+		private System.Windows.Forms.ToolStripMenuItem viewServerInformationFriend;
 		private System.Windows.Forms.ToolStripMenuItem joinServerToolStripMenuItem2;
 		private System.Windows.Forms.Button btnProgramEnable;
 		private System.Windows.Forms.TextBox edtProgramPath;

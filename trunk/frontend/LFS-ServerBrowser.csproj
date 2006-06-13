@@ -83,6 +83,12 @@
     <EmbeddedResource Include="JoinServerDialog.resx">
       <DependentUpon>JoinServerDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="lang\BrowseForSpeed.resources">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lang" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>
