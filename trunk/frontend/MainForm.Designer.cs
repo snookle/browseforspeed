@@ -115,7 +115,6 @@ namespace BrowseForSpeed.Frontend
 			this.columnFriendPlayers = new System.Windows.Forms.ColumnHeader();
 			this.contextMenuFriends = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.joinServerMenuFriends = new System.Windows.Forms.ToolStripMenuItem();
-			this.viewServerInformationFriend = new System.Windows.Forms.ToolStripMenuItem();
 			this.removeFriendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabConfig = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -898,30 +897,22 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.contextMenuFriends.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.joinServerMenuFriends,
-									this.viewServerInformationFriend,
 									this.removeFriendToolStripMenuItem});
 			this.contextMenuFriends.Name = "contextMenuFriends";
-			this.contextMenuFriends.Size = new System.Drawing.Size(214, 70);
+			this.contextMenuFriends.Size = new System.Drawing.Size(158, 70);
 			this.contextMenuFriends.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFriendsOpening);
 			// 
 			// joinServerMenuFriends
 			// 
 			this.joinServerMenuFriends.Name = "joinServerMenuFriends";
-			this.joinServerMenuFriends.Size = new System.Drawing.Size(213, 22);
+			this.joinServerMenuFriends.Size = new System.Drawing.Size(157, 22);
 			this.joinServerMenuFriends.Text = "Join Server";
 			this.joinServerMenuFriends.Click += new System.EventHandler(this.JoinFriendClick);
-			// 
-			// viewServerInformationFriend
-			// 
-			this.viewServerInformationFriend.Name = "viewServerInformationFriend";
-			this.viewServerInformationFriend.Size = new System.Drawing.Size(213, 22);
-			this.viewServerInformationFriend.Text = "View Server Information...";
-			this.viewServerInformationFriend.Click += new System.EventHandler(this.ViewServerInformationToolStripMenuItemClick);
 			// 
 			// removeFriendToolStripMenuItem
 			// 
 			this.removeFriendToolStripMenuItem.Name = "removeFriendToolStripMenuItem";
-			this.removeFriendToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.removeFriendToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
 			this.removeFriendToolStripMenuItem.Text = "Remove Friend";
 			this.removeFriendToolStripMenuItem.Click += new System.EventHandler(this.RemoveFriendToolStripMenuItemClick);
 			// 
@@ -1511,7 +1502,6 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.Label lblProgramConfigName;
 		private System.Windows.Forms.Label lblLanguageConfig;
 		private System.Windows.Forms.ComboBox cbConfigLang;
-		private System.Windows.Forms.ToolStripMenuItem viewServerInformationFriend;
 		private System.Windows.Forms.ToolStripMenuItem joinServerToolStripMenuItem2;
 		private System.Windows.Forms.Button btnProgramEnable;
 		private System.Windows.Forms.TextBox edtProgramPath;

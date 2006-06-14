@@ -1596,7 +1596,7 @@ public class ListSorter: IComparer<ServerListItem>
 			columnFriendPrivate.Text = languages.GetString("MainForm.columnFriendPrivate");
 			columnFriendPlayers.Text = languages.GetString("MainForm.columnFriendPlayers");
 			joinServerMenuFriends.Text = languages.GetString("MainForm.joinServerMenuFriends");
-			viewServerInformationFriend.Text = languages.GetString("MainForm.viewServerInformationFriend");
+			//viewServerInformationFriend.Text = languages.GetString("MainForm.viewServerInformationFriend");
 			removeFriendToolStripMenuItem.Text = languages.GetString("MainForm.removeFriendToolStripMenuItem");
 			tabConfig.Text = languages.GetString("MainForm.tabConfig");
 			groupBox1.Text = languages.GetString("MainForm.groupBox1");
