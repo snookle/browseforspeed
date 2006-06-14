@@ -3,7 +3,7 @@
 	<author>Browse For Speed</author>
 	<email>language@browseforspeed.net</email>
 	<!-- put whatever you like here, but keep it brief-->
-	<comment>Strueth!</comment>
+	<comment>Default language for BFS</comment>
 
 	<!-- Global stuff -->
 	<component name="Global.Yes">Yes</component>
@@ -18,12 +18,12 @@
 	<component name="MainForm.fileToolStripMenuItem">&amp;File</component>
 	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Join Server...</component>
 	<component name="MainForm.closeToolStripMenuItem">&amp;Exit</component>
-	<component name="MainForm.aboutToolStripMenuItem">&amp;Gimmie a hand here mate</component>
-	<component name="MainForm.aboutToolStripMenuItem1">&amp;What the bloody hell is this...</component>
+	<component name="MainForm.aboutToolStripMenuItem">&amp;Help</component>
+	<component name="MainForm.aboutToolStripMenuItem1">&amp;About...</component>
 	<component name="MainForm.tabMain">Server Browser</component>
-	<component name="MainForm.lblFindUserMain">Find mates:</component>
+	<component name="MainForm.lblFindUserMain">Find User:</component>
 	<component name="MainForm.lblPasswordMain">Server Password:</component>
-	<component name="MainForm.btnFindUserMain">&amp;Find mate Online</component>
+	<component name="MainForm.btnFindUserMain">&amp;Find User Online</component>
 	<component name="MainForm.gbFilters">Filters</component>
 	<component name="MainForm.cbPublic">Public</component>
 	<component name="MainForm.cbPrivate">Private</component>
@@ -65,7 +65,7 @@
 	<component name="MainForm.btnRefreshFriend">&amp;Refresh List</component>
 	<component name="MainForm.btnJoinFriend">&amp;Join Friend</component>
 	<component name="MainForm.columnFriendName">Friend Name</component>
-	<component name="MainForm.columnFriendServer">Server</component>
+	<component name="MainForm.columnFriendServer">Serve Namer</component>
 	<component name="MainForm.columnFriendPrivate">Private</component>
 	<component name="MainForm.columnFriendPlayers">Players</component>
 	<component name="MainForm.joinServerMenuFriends">Join Server</component>
@@ -115,7 +115,7 @@
 	<component name="MainForm.NoReply">No Reply: {0}</component>
 	<component name="MainForm.Refused">Refused Connection: {0}</component>
 	<component name="MainForm.Offline">Offline</component>
-	
+
 	<!-- Admin Form components -->
 	<component name="Admin.btnSend">&amp;Send</component>
 	<component name="Admin.btnConnect">&amp;Connect</component>
@@ -154,10 +154,12 @@
 	<component name="ServerInformationForm.PubstatError">Error querying Pubstat!</component>
 
 	<!--Message Box Components -->
+	<!--New lines are denoted with \n-->
+	<!-- {0}, {1} etc are variable placeholders that are replaced by BFS, please ensure they are kept -->
 	<component name="MasterServerError">Unable to contact the LFS Master Server. Perhaps it is down, or your firewall is not configured properly.</component>
 	<component name="StartPSPError">Error executing {0} ({1})\n{2}\nRecheck your configuration.</component>
 	<component name="StartLFSError">Error executing LFS.exe\n{0}\nRecheck your configuration.</component>
-	<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\r\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.</component>
+	<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.</component>
 	<component name="AboutBoxTitle">About Browse For Speed</component>
 	<component name="LoadFavError">Error loading favourites: {0}\nA copy was saved as {1}.backup</component>
 	<component name="SaveFavError">An error writing to the favourite server file occured: {0}</component>
@@ -167,7 +169,7 @@
 	<component name="JoinPlayerQuery">Join {0} at this host?\n{1}</component>
 	<component name="UserNotFound">User was not found online</component>
 	<component name="RemoveFavQuery">Remove {0} from your favourites?</component>
-	<component name="UpToDate">You beauty! Your version is up to date.</component>
+	<component name="UpToDate">Your version is up to date.</component>
 	<component name="NewVersion">There is a new version available, do you wish to be taken to the download page?</component>
 	<component name="UpdateError">There was an error checking versions - perhaps our site is down. Try again later!</component>
 	<component name="InvalidPort">{0} is not a valid port number - must be between 1 and 65535</component>

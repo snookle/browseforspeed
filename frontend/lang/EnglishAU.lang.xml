@@ -65,7 +65,7 @@
 	<component name="MainForm.btnRefreshFriend">&amp;Refresh List</component>
 	<component name="MainForm.btnJoinFriend">&amp;Join Friend</component>
 	<component name="MainForm.columnFriendName">Friend Name</component>
-	<component name="MainForm.columnFriendServer">Server</component>
+	<component name="MainForm.columnFriendServer">Serve Namer</component>
 	<component name="MainForm.columnFriendPrivate">Private</component>
 	<component name="MainForm.columnFriendPlayers">Players</component>
 	<component name="MainForm.joinServerMenuFriends">Join Server</component>
@@ -115,7 +115,7 @@
 	<component name="MainForm.NoReply">No Reply: {0}</component>
 	<component name="MainForm.Refused">Refused Connection: {0}</component>
 	<component name="MainForm.Offline">Offline</component>
-	
+
 	<!-- Admin Form components -->
 	<component name="Admin.btnSend">&amp;Send</component>
 	<component name="Admin.btnConnect">&amp;Connect</component>

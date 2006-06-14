@@ -881,7 +881,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// columnFriendServer
 			// 
-			this.columnFriendServer.Text = "Server";
+			this.columnFriendServer.Text = "Server Name";
 			this.columnFriendServer.Width = 173;
 			// 
 			// columnFriendPrivate
