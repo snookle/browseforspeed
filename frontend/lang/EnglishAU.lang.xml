@@ -154,10 +154,12 @@
 	<component name="ServerInformationForm.PubstatError">Error querying Pubstat!</component>
 
 	<!--Message Box Components -->
+	<!--New lines are denoted with \n-->
+	<!-- {0}, {1} etc are variable placeholders that are replaced by BFS, please ensure they are kept -->
 	<component name="MasterServerError">Unable to contact the LFS Master Server. Perhaps it is down, or your firewall is not configured properly.</component>
 	<component name="StartPSPError">Error executing {0} ({1})\n{2}\nRecheck your configuration.</component>
 	<component name="StartLFSError">Error executing LFS.exe\n{0}\nRecheck your configuration.</component>
-	<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\r\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.</component>
+	<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.</component>
 	<component name="AboutBoxTitle">About Browse For Speed</component>
 	<component name="LoadFavError">Error loading favourites: {0}\nA copy was saved as {1}.backup</component>
 	<component name="SaveFavError">An error writing to the favourite server file occured: {0}</component>
