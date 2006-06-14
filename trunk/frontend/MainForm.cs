@@ -1541,7 +1541,6 @@ public class ListSorter: IComparer<ServerListItem>
 
 		private void UpdateUI()
 		{
-			menuStrip.Text = languages.GetString("MainForm.menuStrip");
 			fileToolStripMenuItem.Text = languages.GetString("MainForm.fileToolStripMenuItem");
 			joinServerToolStripMenuItem2.Text = languages.GetString("MainForm.joinServerToolStripMenuItem2");
 			closeToolStripMenuItem.Text = languages.GetString("MainForm.closeToolStripMenuItem");
@@ -1682,7 +1681,7 @@ public class ListViewColumnSorter : IComparer
 				int playersX = Convert.ToInt32(listviewX.SubItems[ColumnToSort].Text.Split('/')[0]);
 				int playersY = Convert.ToInt32(listviewY.SubItems[ColumnToSort].Text.Split('/')[0]);
 				compareResult = ObjectCompare.Compare(playersX, playersY);
-		} else  if (columnName == MainForm.languages.GetString("MainForm.columnHeaderFavServerName") && (listviewX.SubItems[ColumnToSort].Text == MainForm.languages.GetString("MainForm.Offline") || listviewY.SubItems[ColumnToSort].Text == MainForm.languages.GetString("MainForm.Offline"))) {
+		} else  if (columnName == MainForm.languages.GetString("MainForm.columnFriendServer") && (listviewX.SubItems[ColumnToSort].Text == MainForm.languages.GetString("MainForm.Offline")) || (listviewY.SubItems[ColumnToSort].Text == MainForm.languages.GetString("MainForm.Offline"))) {
 				compareResult = (listviewX.SubItems[ColumnToSort].Text == MainForm.languages.GetString("MainForm.Offline") ? listviewY.SubItems[ColumnToSort].Text == MainForm.languages.GetString("MainForm.Offline") ? 0 : 1 : -1);
 		} else {
 			compareResult = ObjectCompare.Compare(listviewX.SubItems[ColumnToSort].Text, listviewY.SubItems[ColumnToSort].Text);
