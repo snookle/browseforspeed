@@ -100,7 +100,7 @@ namespace BrowseForSpeed.Frontend
 					edtMessage.Focus();
 				} catch (Exception) {
 					btnConnect.Enabled = true;
-					MessageBox.Show(MainForm.languages.GetString("InSimError"), MainForm.languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show(MainForm.languages.GetString("InSimError"), MainForm.languages.GetString("Admin.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			} else {
 				handler.LFSMessage -= new MessageEventHandler(cbMessage);
@@ -122,7 +122,7 @@ namespace BrowseForSpeed.Frontend
 				if (info.insimPort <= 0 || info.insimPort >= 65536) throw new Exception();
 			} catch (Exception) {
 				string message = String.Format(MainForm.languages.GetString("InvalidPort"), edtPort.Text);
-				MessageBox.Show(message, MainForm.languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show(message, MainForm.languages.GetString("Admin.this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				edtPort.Text = edtPort.Text.Remove(edtPort.Text.Length - 1, 1);
 			}
 		}
