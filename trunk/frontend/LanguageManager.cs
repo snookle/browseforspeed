@@ -82,7 +82,7 @@ namespace BrowseForSpeed.Frontend
 		
 		public string GetString(string componentName)
 		{
-			return (string)lang.strings[componentName];
+			return ((string)lang.strings[componentName]).Replace(@"\n", "\n");
 		}
 		
 		public List<string> Languages{

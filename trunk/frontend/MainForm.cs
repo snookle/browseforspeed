@@ -877,7 +877,8 @@ public class ListSorter: IComparer<ServerListItem>
 						}
 					}
 				}
-					
+			} else {
+				info = ((ServerListView)sender).GetSelectedServer();
 			}
 			
 			if (info == null)
@@ -956,6 +957,7 @@ public class ListSorter: IComparer<ServerListItem>
 			config.checkNewVersion = cbNewVersion.Checked;
 			config.queryWait = (int)queryWait.Value;
 			config.joinOnClick = rbJoin.Checked;
+			config.language = cbConfigLang.SelectedItem.ToString();
 			LFSQuery.xpsp2_wait = !config.disableWait;
 			LFSQuery.THREAD_WAIT = config.queryWait;
 			config.psp.Clear();
@@ -1269,7 +1271,6 @@ public class ListSorter: IComparer<ServerListItem>
 			//if we have previous config data
 			cbConfigLang.Items.Clear();
 			cbConfigLang.Items.AddRange(languages.Languages.ToArray());
-			cbConfigLang.SelectedIndex = 0;
 			if (loadedconf) {
 				//query wait
 				cbQueryWait.Checked = config.disableWait;
@@ -1277,7 +1278,11 @@ public class ListSorter: IComparer<ServerListItem>
 				LFSQuery.xpsp2_wait = !config.disableWait;
 				LFSQuery.THREAD_WAIT = config.queryWait;
 				queryWait.Value = config.queryWait;
-				//new version
+				if (config.language == "")
+					cbConfigLang.SelectedIndex = 0;
+				else
+					cbConfigLang.SelectedItem = config.language;
+
 				cbNewVersion.Checked = config.checkNewVersion;
 				//Pre-start programs
 				foreach (PreStartProgram p in config.psp){
@@ -1536,101 +1541,101 @@ public class ListSorter: IComparer<ServerListItem>
 
 		private void UpdateUI()
 		{
-menuStrip.Text = languages.GetString("MainForm.menuStrip");
-fileToolStripMenuItem.Text = languages.GetString("MainForm.fileToolStripMenuItem");
-joinServerToolStripMenuItem2.Text = languages.GetString("MainForm.joinServerToolStripMenuItem2");
-closeToolStripMenuItem.Text = languages.GetString("MainForm.closeToolStripMenuItem");
-aboutToolStripMenuItem.Text = languages.GetString("MainForm.aboutToolStripMenuItem");
-aboutToolStripMenuItem1.Text = languages.GetString("MainForm.aboutToolStripMenuItem1");
-tabMain.Text = languages.GetString("MainForm.tabMain");
-lblFindUserMain.Text = languages.GetString("MainForm.lblFindUserMain");
-lblPasswordMain.Text = languages.GetString("MainForm.lblPasswordMain");
-btnFindUserMain.Text = languages.GetString("MainForm.btnFindUserMain");
-gbFilters.Text = languages.GetString("MainForm.gbFilters");
-cbPublic.Text = languages.GetString("MainForm.cbPublic");
-cbPrivate.Text = languages.GetString("MainForm.cbPrivate");
-cbFull.Text = languages.GetString("MainForm.cbFull");
-lblPingThreshold.Text = languages.GetString("MainForm.lblPingThreshold");
-cbEmpty.Text = languages.GetString("MainForm.cbEmpty");
-columnHeaderName.Text = languages.GetString("MainForm.columnHeaderName");
-columnHeaderPing.Text = languages.GetString("MainForm.columnHeaderPing");
-columnPrivate.Text = languages.GetString("MainForm.columnPrivate");
-columnHeaderConnections.Text = languages.GetString("MainForm.columnHeaderConnections");
-columnHeaderInfo.Text = languages.GetString("MainForm.columnHeaderInfo");
-columnHeaderTrack.Text = languages.GetString("MainForm.columnHeaderTrack");
-columnHeaderCars.Text = languages.GetString("MainForm.columnHeaderCars");
-joinServerToolStripMenuItem.Text = languages.GetString("MainForm.joinServerToolStripMenuItem");
-viewServerInformationMain.Text = languages.GetString("MainForm.viewServerInformationMain");
-toolStripMenuItem1.Text = languages.GetString("MainForm.toolStripMenuItem1");
-copyServerToClipboardToolStripMenuItem.Text = languages.GetString("MainForm.copyServerToClipboardToolStripMenuItem");
-administrateToolStripMenuItem1.Text = languages.GetString("MainForm.administrateToolStripMenuItem1");
-btnRefreshMain.Text = languages.GetString("MainForm.btnRefresh");
-btnJoinMain.Text = languages.GetString("MainForm.btnJoin");
-tabFavourites.Text = languages.GetString("MainForm.tabFavourites");
-lblAddressFav.Text = languages.GetString("MainForm.lblAddressFav");
-btnAddServer.Text = languages.GetString("MainForm.btnAddServer");
-buttonRefreshFav.Text = languages.GetString("MainForm.buttonRefresh");
-btnJoinFav.Text = languages.GetString("MainForm.btnJoin");
-columnHeaderFavServerName.Text = languages.GetString("MainForm.columnHeaderFavServerName");
-columnHeaderFavPing.Text = languages.GetString("MainForm.columnHeaderFavPing");
-columnHeaderFavSlots.Text = languages.GetString("MainForm.columnHeaderFavSlots");
-columnHeaderFavInfo.Text = languages.GetString("MainForm.columnHeaderFavInfo");
-columnHeaderFavTrack.Text = languages.GetString("MainForm.columnHeaderFavTrack");
-columnHeaderFavCars.Text = languages.GetString("MainForm.columnHeaderFavCars");
-joinServerToolStripMenuItem1.Text = languages.GetString("MainForm.joinServerToolStripMenuItem1");
-viewServerInformationFav.Text = languages.GetString("MainForm.viewServerInformationFav");
-removeFromFavouritesToolStripMenuItem.Text = languages.GetString("MainForm.removeFromFavouritesToolStripMenuItem");
-copyServerToClipboardToolStripMenuItem1.Text = languages.GetString("MainForm.copyServerToClipboardToolStripMenuItem1");
-administrateToolStripMenuItem.Text = languages.GetString("MainForm.administrateToolStripMenuItem");
-tabFriends.Text = languages.GetString("MainForm.tabFriends");
-btnAddFriend.Text = languages.GetString("MainForm.btnAddFriend");
-cbHideOffline.Text = languages.GetString("MainForm.cbHideOffline");
-btnRefreshFriend.Text = languages.GetString("MainForm.btnRefreshFriend");
-btnJoinFriend.Text = languages.GetString("MainForm.btnJoinFriend");
-columnFriendName.Text = languages.GetString("MainForm.columnFriendName");
-columnFriendServer.Text = languages.GetString("MainForm.columnFriendServer");
-columnFriendPrivate.Text = languages.GetString("MainForm.columnFriendPrivate");
-columnFriendPlayers.Text = languages.GetString("MainForm.columnFriendPlayers");
-joinServerMenuFriends.Text = languages.GetString("MainForm.joinServerMenuFriends");
-viewServerInformationFriend.Text = languages.GetString("MainForm.viewServerInformationFriend");
-removeFriendToolStripMenuItem.Text = languages.GetString("MainForm.removeFriendToolStripMenuItem");
-tabConfig.Text = languages.GetString("MainForm.tabConfig");
-groupBox1.Text = languages.GetString("MainForm.groupBox1");
-groupBox2.Text = languages.GetString("MainForm.groupBox2");
-groupBox5.Text = languages.GetString("MainForm.groupBox5");
-lblCommentReal.Text = languages.GetString("MainForm.lblCommentReal");
-lblEmailReal.Text = languages.GetString("MainForm.lblEmailReal");
-lblAuthorReal.Text = languages.GetString("MainForm.lblAuthorReal");
-lblLangComment.Text = languages.GetString("MainForm.lblLangComment");
-lblLangContact.Text = languages.GetString("MainForm.lblLangContact");
-lblLangAuthor.Text = languages.GetString("MainForm.lblLangAuthor");
-lblLanguageConfig.Text = languages.GetString("MainForm.lblLanguageConfig");
-groupBox4.Text = languages.GetString("MainForm.groupBox4");
-rbJoin.Text = languages.GetString("MainForm.rbJoin");
-rbView.Text = languages.GetString("MainForm.rbView");
-gbStartBeforeLFS.Text = languages.GetString("MainForm.gbStartBeforeLFS");
-btnProgramEnable.Text = languages.GetString("MainForm.btnProgramEnable");
-btnProgramDelete.Text = languages.GetString("MainForm.btnProgramDelete");
-btnProgramNew.Text = languages.GetString("MainForm.btnProgramNew");
-bgProgramConfig.Text = languages.GetString("MainForm.bgProgramConfig");
-btnProgramCancel.Text = languages.GetString("MainForm.btnProgramCancel");
-btnProgramSave.Text = languages.GetString("MainForm.btnProgramSave");
-lblProgramConfigArg.Text = languages.GetString("MainForm.lblProgramConfigArg");
-lblProgramConfigName.Text = languages.GetString("MainForm.lblProgramConfigName");
-btnProgramBrowse.Text = languages.GetString("MainForm.btnProgramBrowse");
-lblProgramConfigPath.Text = languages.GetString("MainForm.lblProgramConfigPath");
-groupBox3.Text = languages.GetString("MainForm.groupBox3");
-txtInsimPort.Text = languages.GetString("MainForm.txtInsimPort");
-lblQueryWaitDescription.Text = languages.GetString("MainForm.lblQueryWaitDescription");
-lblInsimPortConfig.Text = languages.GetString("MainForm.lblInsimPortConfig");
-cbQueryWait.Text = languages.GetString("MainForm.cbQueryWait");
-lblQueryWaitHelp.Text = languages.GetString("MainForm.lblQueryWaitHelp");
-btnCheckNewVersion.Text = languages.GetString("MainForm.btnCheckNewVersion");
-cbNewVersion.Text = languages.GetString("MainForm.cbNewVersion");
-lblExeDescriptionConfig.Text = languages.GetString("MainForm.lblExeDescriptionConfig");
-lblExePathConfig.Text = languages.GetString("MainForm.lblExePathConfig");
-buttonBrowse.Text = languages.GetString("MainForm.buttonBrowse");
-this.Text = languages.GetString("MainForm.this");
+			menuStrip.Text = languages.GetString("MainForm.menuStrip");
+			fileToolStripMenuItem.Text = languages.GetString("MainForm.fileToolStripMenuItem");
+			joinServerToolStripMenuItem2.Text = languages.GetString("MainForm.joinServerToolStripMenuItem2");
+			closeToolStripMenuItem.Text = languages.GetString("MainForm.closeToolStripMenuItem");
+			aboutToolStripMenuItem.Text = languages.GetString("MainForm.aboutToolStripMenuItem");
+			aboutToolStripMenuItem1.Text = languages.GetString("MainForm.aboutToolStripMenuItem1");
+			tabMain.Text = languages.GetString("MainForm.tabMain");
+			lblFindUserMain.Text = languages.GetString("MainForm.lblFindUserMain");
+			lblPasswordMain.Text = languages.GetString("MainForm.lblPasswordMain");
+			btnFindUserMain.Text = languages.GetString("MainForm.btnFindUserMain");
+			gbFilters.Text = languages.GetString("MainForm.gbFilters");
+			cbPublic.Text = languages.GetString("MainForm.cbPublic");
+			cbPrivate.Text = languages.GetString("MainForm.cbPrivate");
+			cbFull.Text = languages.GetString("MainForm.cbFull");
+			lblPingThreshold.Text = languages.GetString("MainForm.lblPingThreshold");
+			cbEmpty.Text = languages.GetString("MainForm.cbEmpty");
+			columnHeaderName.Text = languages.GetString("MainForm.columnHeaderName");
+			columnHeaderPing.Text = languages.GetString("MainForm.columnHeaderPing");
+			columnPrivate.Text = languages.GetString("MainForm.columnPrivate");
+			columnHeaderConnections.Text = languages.GetString("MainForm.columnHeaderConnections");
+			columnHeaderInfo.Text = languages.GetString("MainForm.columnHeaderInfo");
+			columnHeaderTrack.Text = languages.GetString("MainForm.columnHeaderTrack");
+			columnHeaderCars.Text = languages.GetString("MainForm.columnHeaderCars");
+			joinServerToolStripMenuItem.Text = languages.GetString("MainForm.joinServerToolStripMenuItem");
+			viewServerInformationMain.Text = languages.GetString("MainForm.viewServerInformationMain");
+			toolStripMenuItem1.Text = languages.GetString("MainForm.toolStripMenuItem1");
+			copyServerToClipboardToolStripMenuItem.Text = languages.GetString("MainForm.copyServerToClipboardToolStripMenuItem");
+			administrateToolStripMenuItem1.Text = languages.GetString("MainForm.administrateToolStripMenuItem1");
+			btnRefreshMain.Text = languages.GetString("MainForm.btnRefresh");
+			btnJoinMain.Text = languages.GetString("MainForm.btnJoin");
+			tabFavourites.Text = languages.GetString("MainForm.tabFavourites");
+			lblAddressFav.Text = languages.GetString("MainForm.lblAddressFav");
+			btnAddServer.Text = languages.GetString("MainForm.btnAddServer");
+			buttonRefreshFav.Text = languages.GetString("MainForm.btnRefresh");
+			btnJoinFav.Text = languages.GetString("MainForm.btnJoin");
+			columnHeaderFavServerName.Text = languages.GetString("MainForm.columnHeaderFavServerName");
+			columnHeaderFavPing.Text = languages.GetString("MainForm.columnHeaderFavPing");
+			columnHeaderFavSlots.Text = languages.GetString("MainForm.columnHeaderFavSlots");
+			columnHeaderFavInfo.Text = languages.GetString("MainForm.columnHeaderFavInfo");
+			columnHeaderFavTrack.Text = languages.GetString("MainForm.columnHeaderFavTrack");
+			columnHeaderFavCars.Text = languages.GetString("MainForm.columnHeaderFavCars");
+			joinServerToolStripMenuItem1.Text = languages.GetString("MainForm.joinServerToolStripMenuItem1");
+			viewServerInformationFav.Text = languages.GetString("MainForm.viewServerInformationFav");
+			removeFromFavouritesToolStripMenuItem.Text = languages.GetString("MainForm.removeFromFavouritesToolStripMenuItem");
+			copyServerToClipboardToolStripMenuItem1.Text = languages.GetString("MainForm.copyServerToClipboardToolStripMenuItem1");
+			administrateToolStripMenuItem.Text = languages.GetString("MainForm.administrateToolStripMenuItem");
+			tabFriends.Text = languages.GetString("MainForm.tabFriends");
+			btnAddFriend.Text = languages.GetString("MainForm.btnAddFriend");
+			cbHideOffline.Text = languages.GetString("MainForm.cbHideOffline");
+			btnRefreshFriend.Text = languages.GetString("MainForm.btnRefreshFriend");
+			btnJoinFriend.Text = languages.GetString("MainForm.btnJoinFriend");
+			columnFriendName.Text = languages.GetString("MainForm.columnFriendName");
+			columnFriendServer.Text = languages.GetString("MainForm.columnFriendServer");
+			columnFriendPrivate.Text = languages.GetString("MainForm.columnFriendPrivate");
+			columnFriendPlayers.Text = languages.GetString("MainForm.columnFriendPlayers");
+			joinServerMenuFriends.Text = languages.GetString("MainForm.joinServerMenuFriends");
+			viewServerInformationFriend.Text = languages.GetString("MainForm.viewServerInformationFriend");
+			removeFriendToolStripMenuItem.Text = languages.GetString("MainForm.removeFriendToolStripMenuItem");
+			tabConfig.Text = languages.GetString("MainForm.tabConfig");
+			groupBox1.Text = languages.GetString("MainForm.groupBox1");
+			groupBox2.Text = languages.GetString("MainForm.groupBox2");
+			groupBox5.Text = languages.GetString("MainForm.groupBox5");
+			lblCommentReal.Text = languages.GetString("MainForm.lblCommentReal");
+			lblEmailReal.Text = languages.GetString("MainForm.lblEmailReal");
+			lblAuthorReal.Text = languages.GetString("MainForm.lblAuthorReal");
+			lblLangComment.Text = languages.GetString("MainForm.lblLangComment");
+			lblLangContact.Text = languages.GetString("MainForm.lblLangContact");
+			lblLangAuthor.Text = languages.GetString("MainForm.lblLangAuthor");
+			lblLanguageConfig.Text = languages.GetString("MainForm.lblLanguageConfig");
+			groupBox4.Text = languages.GetString("MainForm.groupBox4");
+			rbJoin.Text = languages.GetString("MainForm.rbJoin");
+			rbView.Text = languages.GetString("MainForm.rbView");
+			gbStartBeforeLFS.Text = languages.GetString("MainForm.gbStartBeforeLFS");
+			btnProgramEnable.Text = languages.GetString("MainForm.btnProgramEnable");
+			btnProgramDelete.Text = languages.GetString("MainForm.btnProgramDelete");
+			btnProgramNew.Text = languages.GetString("MainForm.btnProgramNew");
+			bgProgramConfig.Text = languages.GetString("MainForm.bgProgramConfig");
+			btnProgramCancel.Text = languages.GetString("MainForm.btnProgramCancel");
+			btnProgramSave.Text = languages.GetString("MainForm.btnProgramSave");
+			lblProgramConfigArg.Text = languages.GetString("MainForm.lblProgramConfigArg");
+			lblProgramConfigName.Text = languages.GetString("MainForm.lblProgramConfigName");
+			btnProgramBrowse.Text = languages.GetString("MainForm.btnProgramBrowse");
+			lblProgramConfigPath.Text = languages.GetString("MainForm.lblProgramConfigPath");
+			groupBox3.Text = languages.GetString("MainForm.groupBox3");
+			txtInsimPort.Text = languages.GetString("MainForm.txtInsimPort");
+			lblQueryWaitDescription.Text = languages.GetString("MainForm.lblQueryWaitDescription");
+			lblInsimPortConfig.Text = languages.GetString("MainForm.lblInsimPortConfig");
+			cbQueryWait.Text = languages.GetString("MainForm.cbQueryWait");
+			lblQueryWaitHelp.Text = languages.GetString("MainForm.lblQueryWaitHelp");
+			btnCheckNewVersion.Text = languages.GetString("MainForm.btnCheckNewVersion");
+			cbNewVersion.Text = languages.GetString("MainForm.cbNewVersion");
+			lblExeDescriptionConfig.Text = languages.GetString("MainForm.lblExeDescriptionConfig");
+			lblExePathConfig.Text = languages.GetString("MainForm.lblExePathConfig");
+			buttonBrowse.Text = languages.GetString("MainForm.buttonBrowse");
+			this.Text = languages.GetString("MainForm.this");
 			lblAuthorReal.Text = languages.Author;
 			lblEmailReal.Text = languages.Email;
 			lblCommentReal.Text = languages.Comment;
