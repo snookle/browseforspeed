@@ -14,7 +14,6 @@
 
 	<!-- Main Form Components -->
 	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
-	<component name="MainForm.menuStrip">menuStrip1</component>
 	<component name="MainForm.fileToolStripMenuItem">&amp;File</component>
 	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Join Server...</component>
 	<component name="MainForm.closeToolStripMenuItem">&amp;Exit</component>
@@ -65,7 +64,7 @@
 	<component name="MainForm.btnRefreshFriend">&amp;Refresh List</component>
 	<component name="MainForm.btnJoinFriend">&amp;Join Friend</component>
 	<component name="MainForm.columnFriendName">Friend Name</component>
-	<component name="MainForm.columnFriendServer">Serve Namer</component>
+	<component name="MainForm.columnFriendServer">Server</component>
 	<component name="MainForm.columnFriendPrivate">Private</component>
 	<component name="MainForm.columnFriendPlayers">Players</component>
 	<component name="MainForm.joinServerMenuFriends">Join Server</component>
