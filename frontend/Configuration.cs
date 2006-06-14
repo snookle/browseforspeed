@@ -58,6 +58,7 @@ public class Configuration
 		public string password;
 		public string lfsPath;
 		public string filename;
+		public string language;
 		public bool disableWait;
 		public bool checkNewVersion;
 		public int queryWait;
@@ -87,6 +88,9 @@ public class Configuration
 				try {
 					checkNewVersion = ((XmlElement)list[0]).GetElementsByTagName("checkversion")[0].FirstChild.Value == "True";
 				} catch (Exception e) { checkNewVersion = false; }
+				try {
+					language = ((XmlElement)list[0]).GetElementsByTagName("language")[0].FirstChild.Value;
+				} catch (Exception e) { language = ""; }
 				if (docVersion == "1"){
 					PreStartProgram p = new PreStartProgram();
 						XmlNode spot = ((XmlElement)list[0]).GetElementsByTagName("spotter")[0];
@@ -188,6 +192,7 @@ public class Configuration
 				tw.WriteEndElement();				
 				tw.WriteElementString("insimport", insimPort.ToString());
 				tw.WriteElementString("checkversion", checkNewVersion.ToString());
+				tw.WriteElementString("language", this.language);
 				foreach(PreStartProgram p in psp){
 					tw.WriteStartElement("psp");
 					tw.WriteAttributeString("enabled", p.enabled.ToString());
