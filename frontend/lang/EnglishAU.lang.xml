@@ -1,7 +1,30 @@
+<!-- How to make a new language:
+1. copy this file and rename it to <yourlanguage>.lang.xml
+2. Ensure name accurately represents the language (and is unique to other language names)
+3. Translate the strings!
+4. Contact BFS at bfs@browseforspeed.net for possible inclusion in the main release.
+-->
+
+<!-- Notes:
+	* Some controls in BFS may not be big enough to fit your translated text on. This is because the controls were sized for english words.
+		Once we obtain some translations, we will do our best to make them fit correctly - but for the moment you'll have to make do, sorry!
+
+	* {0}, {1} etc are variable placeholders that are replaced by BFS, please ensure they are kept - BFS will probably crash if they're not!
+
+	* &amp; means that the character directly after this will be the keyboard shortcut
+		eg: "Ser&amp;ver" will look like "Server" in BFS, but the shortcut will be alt+v
+
+	* New lines are denoted with \n
+		eg: "BFS\nRocks" will display as:
+				"BFS
+				Rocks"
+ -->
+
+
 <language>
 	<name>Australian (English)</name>
 	<author>Browse For Speed</author>
-	<email>language@browseforspeed.net</email>
+	<email>bfs@browseforspeed.net</email>
 	<!-- put whatever you like here, but keep it brief-->
 	<comment>Default language for BFS</comment>
 
@@ -14,6 +37,7 @@
 
 	<!-- Main Form Components -->
 	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+
 	<component name="MainForm.fileToolStripMenuItem">&amp;File</component>
 	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Join Server...</component>
 	<component name="MainForm.closeToolStripMenuItem">&amp;Exit</component>
@@ -22,7 +46,7 @@
 	<component name="MainForm.tabMain">Server Browser</component>
 	<component name="MainForm.lblFindUserMain">Find User:</component>
 	<component name="MainForm.lblPasswordMain">Server Password:</component>
-	<component name="MainForm.btnFindUserMain">&amp;Find User Online</component>
+	<component name="MainForm.btnFindUserMain">F&amp;ind User Online</component>
 	<component name="MainForm.gbFilters">Filters</component>
 	<component name="MainForm.cbPublic">Public</component>
 	<component name="MainForm.cbPrivate">Private</component>
@@ -153,8 +177,6 @@
 	<component name="ServerInformationForm.PubstatError">Error querying Pubstat!</component>
 
 	<!--Message Box Components -->
-	<!--New lines are denoted with \n-->
-	<!-- {0}, {1} etc are variable placeholders that are replaced by BFS, please ensure they are kept -->
 	<component name="MasterServerError">Unable to contact the LFS Master Server. Perhaps it is down, or your firewall is not configured properly.</component>
 	<component name="StartPSPError">Error executing {0} ({1})\n{2}\nRecheck your configuration.</component>
 	<component name="StartLFSError">Error executing LFS.exe\n{0}\nRecheck your configuration.</component>
