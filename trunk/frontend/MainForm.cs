@@ -290,13 +290,11 @@ public class ListSorter: IComparer<ServerListItem>
 		private ServerInformationForm s;
 
 		private bool exiting;
+		private bool refreshing;
 
 		private Thread t;
 		
-		private ResourceManager ResourceManager = new ResourceManager("BrowseForSpeed.BrowseForSpeed", System.Reflection.Assembly.GetExecutingAssembly());
-		private CultureInfo EnglishCulture = new CultureInfo("en-US");
-	//	private CultureInfo FrenchCulture = new CultureInfo("fr-FR");
-	//	private CultureInfo SpanishCulture = new CultureInfo("es-ES");
+		public static LanguageManager languages = new LanguageManager(Application.StartupPath + "\\lang");
 
 
 		[STAThread]
@@ -323,6 +321,8 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 			return carNames.Remove(carNames.Length - 2, 2).ToString();			
 		}
+		
+		
 		
 		public static String RulesToString(ulong rules)
 		{
@@ -371,8 +371,9 @@ public class ListSorter: IComparer<ServerListItem>
 		
 		void MakeQuery(bool isFav)
 		{
-			SetControlProperty(buttonRefreshFav, "Text", "&Stop Refresh");
-			SetControlProperty(btnRefreshMain, "Text", "&Stop Refresh");
+			SetControlProperty(buttonRefreshFav, "Text", languages.GetString("MainForm.btnStop"));
+			SetControlProperty(btnRefreshMain, "Text", languages.GetString("MainForm.btnStop"));
+			refreshing = true;
 			try {
 				if (isFav) {
 					q.query(0, 0, "browseforspeed", lvFavourites.GetAllHosts(), 1);
@@ -383,17 +384,18 @@ public class ListSorter: IComparer<ServerListItem>
 					q.query(compulsory, illegal, "browseforspeed", 0, CodeFilters(), version);
 				}
 			} catch(Exception e) {
-					MessageBox.Show("Unable to contact the LFS Master Server. Perhaps it is down, or your firewall is not configured properly." , appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(languages.GetString("MasterServerError") , languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 
 			if (exiting) return;
 			if (totalServers == 0) {
-				statusTotal.Text = "No servers returned. Check your filters.";
+				statusTotal.Text = languages.GetString("MainForm.NoServers");
 			}
+			refreshing = false;
 			SetControlProperty(btnRefreshMain, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Enabled", true);
-			SetControlProperty(buttonRefreshFav, "Text", "&Refresh");
-			SetControlProperty(btnRefreshMain, "Text", "&Refresh");
+			SetControlProperty(buttonRefreshFav, "Text", languages.GetString("MainForm.btnRefresh"));
+			SetControlProperty(btnRefreshMain, "Text", languages.GetString("MainForm.btnRefresh"));
 		}
 
 		void MainQuery()
@@ -409,7 +411,7 @@ public class ListSorter: IComparer<ServerListItem>
 		void RefreshButtonClick(object sender, System.EventArgs e)
 		{
 			Button b = (Button)sender;
-			if (b.Text == "&Refresh"){
+			if (!refreshing){
 				LFSQuery.queried -= new ServerQueried(queryMainEventListener);
 				LFSQuery.queried += new ServerQueried(queryMainEventListener);
 				totalServers = 0;
@@ -422,7 +424,7 @@ public class ListSorter: IComparer<ServerListItem>
 					lvFavourites.Items.Clear();
 					t = new Thread(new ThreadStart(FavQuery));
 				}
-				statusTotal.Text = "Querying...";
+				statusTotal.Text = languages.GetString("MainForm.QueryStatus");
 				statusNoReply.Text = "";
 				statusRefused.Text = "";
   				t.Start();
@@ -461,14 +463,14 @@ public class ListSorter: IComparer<ServerListItem>
 							numServersRefused++;
 						}
 					}
-					statusTotal.Text = String.Format("Checking host {0} of {1}", numQueried, totalServers);
-					statusNoReply.Text = String.Format("No Reply: {0}", numServersNoReply);
-					statusRefused.Text = String.Format("Refused Connection: {0}", numServersRefused);
+					statusTotal.Text = String.Format(languages.GetString("MainForm.StatusTotal"), numQueried, totalServers);
+					statusNoReply.Text = String.Format(languages.GetString("MainForm.NoReply"), numServersNoReply);
+					statusRefused.Text = String.Format(languages.GetString("MainForm.Refused"), numServersRefused);
 				} else {
 			    	AddServerDelegate addServer = new AddServerDelegate(AddServerToList);
 			    	this.BeginInvoke(addServer, new object[] {info, list});
 				}
-			} catch(Exception e){ MessageBox.Show(e.Message + e.StackTrace, appTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
+			} catch(Exception e){ MessageBox.Show(e.Message + e.StackTrace, languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
   		}
 
 		delegate void AddServerDelegate(ServerInformation info, ServerListView list);
@@ -517,7 +519,8 @@ public class ListSorter: IComparer<ServerListItem>
 					prestart[i].StartInfo.Arguments = config.psp[i].options;
 					prestart[i].Start();
 				} catch (Exception ex) {
-					MessageBox.Show("Error executing "+config.psp[i].name+" ("+config.psp[i].path+")\n" + ex.Message + "\nRecheck your configuration.", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					string message = String.Format(languages.GetString("StartPSPError"), config.psp[i].name, config.psp[i].path, ex.Message);
+					MessageBox.Show(message, languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
 				}
 			}
@@ -535,7 +538,8 @@ public class ListSorter: IComparer<ServerListItem>
 				}
 			} catch (Exception ex) {
 				this.WindowState = ws;
-				MessageBox.Show("Error executing LFS.exe\n"+ex.Message+"\nRecheck your configuration.", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				string message = string.Format(languages.GetString("StartLFSError"), ex.Message);
+				MessageBox.Show(message, languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			this.WindowState = ws;
 		}
@@ -610,7 +614,8 @@ public class ListSorter: IComparer<ServerListItem>
 		}
 
 		void AboutToolStripMenuItem1Click(object sender, System.EventArgs e) {
-			MessageBox.Show("Browse For Speed "+bfs_version+" - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.", "About Browse For Speed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			string message = String.Format(languages.GetString("AboutBoxText"), bfs_version);
+			MessageBox.Show(message, languages.GetString("AboutBoxTitle"), MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
 		void ContextMenuBrowserOpening(object sender, System.ComponentModel.CancelEventArgs e)
@@ -664,7 +669,8 @@ public class ListSorter: IComparer<ServerListItem>
 				return false;	
 			} catch (Exception e) {
 				File.Copy(filename, filename +".backup", true);
-				MessageBox.Show("Error loading favourites: " + e.Message + "\nA copy was saved as "+filename +".backup", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				string message = String.Format(languages.GetString("LoadFavError"), e.Message, filename);
+				MessageBox.Show(message, languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return false;
 			}
 		}
@@ -732,7 +738,8 @@ public class ListSorter: IComparer<ServerListItem>
     			tw.Close();
 			}
     		catch (Exception ex) {
-				MessageBox.Show("An error writing to the favourite server file occured: " + ex.Message, appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				string message = String.Format(languages.GetString("SaveFavError"), ex.Message);
+				MessageBox.Show(message, languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 
 		}
@@ -751,13 +758,13 @@ public class ListSorter: IComparer<ServerListItem>
 				ListViewItem lvi;
 				if (result == 0 && !cbHideOffline.Checked) { //offline
 					lvi = lvFriends.Items.Add(friend.name, friend.name, "");
-					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, "Offline"));
+					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, languages.GetString("MainForm.Offline")));
 					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, "N/A"));
 					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "N/A"));
 				} else if (result == 1) {
 					lvi = lvFriends.Items.Add(friend.name, friend.name, "");
 					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi,friend.server.hostname));
-					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, (friend.server.passworded ? "Yes" : "No")));
+					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, (friend.server.passworded ? languages.GetString("Global.Yes") : languages.GetString("Global.No"))));
 					String players = "";
 					foreach (string player in friend.server.racerNames) {
 						players += player + ", ";
@@ -766,9 +773,9 @@ public class ListSorter: IComparer<ServerListItem>
 					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, players));
 				} else if (result == -1) {
 					lvi = lvFriends.Items.Add(friend.name, friend.name, "");
-					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, "Error Querying Pubstat"));
-					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, "Error"));
-					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "Error"));
+					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, languages.GetString("ServerInformationForm.PubstatError")));
+	                lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, languages.GetString("Global.Error")));
+					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, languages.GetString("Global.Error")));
 				}
 			}
 			btnRefreshFriend.Enabled = true;
@@ -787,7 +794,7 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 			if (!exists){
 				lvi = lvFriends.Items.Add(name, name, "");
-				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, "Offline"));
+				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, languages.GetString("MainForm.Error")));
 				lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, "N/A"));
 				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "N/A"));
 				FriendListItem friend = new FriendListItem();
@@ -814,7 +821,8 @@ public class ListSorter: IComparer<ServerListItem>
 				tw.WriteFullEndElement();
 				tw.Close();
 			} catch (Exception ex) {
-				MessageBox.Show("An error writing to the friends file occured: " +ex.Message, appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				string message = String.Format(languages.GetString("SaveFriendsError"), ex.Message);
+				MessageBox.Show(message, languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			
 		}
@@ -832,7 +840,8 @@ public class ListSorter: IComparer<ServerListItem>
 			} catch (FileNotFoundException fnfe){
 			} catch (Exception e) {
 				File.Copy(friendFilename, friendFilename +".backup", true);
-				MessageBox.Show("Error loading friends: " + e.Message + "\nA copy was saved as " + friendFilename + ".backup", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				string message = String.Format(languages.GetString("LoadFriendsError"), e.Message, friendFilename);
+				MessageBox.Show(message, languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 			lvFriends.Sort();
 		}
@@ -859,7 +868,6 @@ public class ListSorter: IComparer<ServerListItem>
 				//	if ((lvFriends.SelectedItems.Count > 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == "Offline"))
 			//			return;
 					string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
-					MessageBox.Show(friend);
 					foreach (FriendListItem f in friendList){
 						if (f.name == friend){
 							info = new ServerListItem(f.server);
@@ -912,24 +920,26 @@ public class ListSorter: IComparer<ServerListItem>
 		{
 			string player = edtFindUserMain.Text;
 			if (player.Length > 32) {
-				MessageBox.Show("Player name must be less than 32 characters", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				string message = String.Format(languages.GetString("PlayerNameTooLongError"));
+				MessageBox.Show(message, languages.GetString("title"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return;
 			}
 			string hostname = q.findUser("wabz", player);
 			if (hostname != null){
 				hostname = LFSQuery.removeColourCodes(hostname);
-				if (MessageBox.Show("Join " + player + " at this host?\n-" + hostname +"-", appTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes){
+				string message = String.Format(languages.GetString("JoinPlayerQuery"), player, hostname);
+				if (MessageBox.Show(message, languages.GetString("this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes){
 					LoadLFS(hostname, "S2", "");
 				}
 			} else {
-				MessageBox.Show("User was not found online", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+				MessageBox.Show(languages.GetString("UserNotFound"), languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
 
 		void TabControlSelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			//if we've just come from the configuration panel to another one
-			if (tabControl.TabPages[this.lastTabSelected].Text  == "Configuration") {
+			if (tabControl.TabPages[this.lastTabSelected] == tabConfig) {
 				UpdateConfig();
 				config.Save(configXMLFilename);
 			}
@@ -970,7 +980,8 @@ public class ListSorter: IComparer<ServerListItem>
 			if (item == null)
 				return;
 			if (sender is MainForm) { //delete key pressed.
-				if (MessageBox.Show("Remove " + item.hostname + " from your favourites?", appTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No){
+				string message = String.Format(languages.GetString("RemoveFavQuery"), item.hostname);
+				if (MessageBox.Show(message, languages.GetString("this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No){
 					return;
 				}
 			}
@@ -990,17 +1001,17 @@ public class ListSorter: IComparer<ServerListItem>
 					stream.Read(buf, 0, buf.Length);
 					if (buf[0] == version_check[0]) {
 						if (botherUser) {
-							MessageBox.Show("Your version is up to date.", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+							MessageBox.Show(languages.GetString("UpToDate"), languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Information);
 						}
 					} else {
-						if (MessageBox.Show("There is a new version available, do you wish to be taken to the download page?", appTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes){
+						if (MessageBox.Show(languages.GetString("NewVersion"), languages.GetString("this"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes){
 							System.Diagnostics.Process.Start(download_url);
 						}
 					}
 				}
 			} catch (Exception e) {
 				if (botherUser) {
-					MessageBox.Show("There was an error, perhaps our site is down. Try again later!", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show(languages.GetString("UpdateError"), languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 		}
@@ -1030,7 +1041,8 @@ public class ListSorter: IComparer<ServerListItem>
 				int value = Convert.ToInt32(txtInsimPort.Text);
 				if (value > 65535) throw new Exception();
 			} catch (Exception ex) {
-				MessageBox.Show(txtInsimPort.Text + " is not a valid port number", "", MessageBoxButtons.OK);
+				string message = String.Format(languages.GetString("InvalidPort"), txtInsimPort.Text);
+				MessageBox.Show(message, languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				txtInsimPort.Focus();
 			}
 
@@ -1055,10 +1067,10 @@ public class ListSorter: IComparer<ServerListItem>
 					lvFavourites.Font = new Font(lvFavourites.Font.FontFamily.Name, lvFavourites.Font.Size - 1);
 					lvFriends.Font = new Font(lvFriends.Font.FontFamily.Name, lvFriends.Font.Size - 1);
 				} else if (e.KeyCode == Keys.C){
-					if (tabControl.TabPages[tabControl.SelectedIndex].Text == "Server Browser"){
+					if (tabControl.TabPages[tabControl.SelectedIndex] == tabMain){
 						SetClipboard(lvMain);
 					}
-					else if (tabControl.TabPages[tabControl.SelectedIndex].Text == "Favourites") {
+					else if (tabControl.TabPages[tabControl.SelectedIndex] == tabFavourites) {
 						SetClipboard(lvFavourites);
 					}
 				}
@@ -1067,9 +1079,9 @@ public class ListSorter: IComparer<ServerListItem>
 					if (edtAddServerAddress.Focused || edtFriendName.Focused){
 							return;
 					}
-					if (tabControl.TabPages[tabControl.SelectedIndex].Text == "Favourites") {
+					if (tabControl.TabPages[tabControl.SelectedIndex] == tabFavourites) {
 						RemoveFromFavouritesToolStripMenuItemClick(sender, e);
-					} else if (tabControl.TabPages[tabControl.SelectedIndex].Text == "Friends") {
+					} else if (tabControl.TabPages[tabControl.SelectedIndex] == tabFriends) {
 						RemoveFriendToolStripMenuItemClick(sender, e);
 					}
 				}
@@ -1098,12 +1110,12 @@ public class ListSorter: IComparer<ServerListItem>
 		
 		void LvFriendsSelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			btnJoinFriend.Enabled = (lvFriends.SelectedItems.Count > 0 && lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text != "Offline");
+			btnJoinFriend.Enabled = (lvFriends.SelectedItems.Count > 0 && lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text != languages.GetString("MainForm.Offline"));
 		}
 		
 		void JoinFriendClick(object sender, System.EventArgs e)
 		{
-			if ((lvFriends.SelectedItems.Count > 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == "Offline"))
+			if ((lvFriends.SelectedItems.Count > 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == languages.GetString("MainForm.Offline")))
 				return;
 			string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
 			LoadLFS(hostname, "S2", edtPasswordMain.Text);
@@ -1125,7 +1137,8 @@ public class ListSorter: IComparer<ServerListItem>
 				return;
 			string name = lvFriends.Items[lvFriends.SelectedItems[0].Index].Text;
 			if (sender is MainForm) { //delete key!
-				if (MessageBox.Show("Remove " +name+ " from your friends list?", appTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No){
+				string message = String.Format(languages.GetString("RemoveFriendQuery"), name);
+				if (MessageBox.Show(message, languages.GetString("this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No){
 					return;
 				}
 			}
@@ -1142,16 +1155,17 @@ public class ListSorter: IComparer<ServerListItem>
 		{
 			bool enabled = (lvFriends.SelectedItems.Count > 0);
 			removeFriendToolStripMenuItem.Enabled = enabled;
-			joinServerMenuFriends.Enabled = enabled && (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text != "Offline");
+			joinServerMenuFriends.Enabled = enabled && (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text != languages.GetString("MainForm.Offline"));
 		}
 		
 		void LvFriendsDoubleClick(object sender, System.EventArgs e)
 		{
-			if ((lvFriends.SelectedItems.Count <= 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == "Offline"))
+			if ((lvFriends.SelectedItems.Count <= 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == languages.GetString("MainForm.Offline")))
 				return;
 			string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
 			string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
-			if (MessageBox.Show("Do you want to join " + friend + " at " + hostname + "?", appTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+			string message = String.Format(languages.GetString("JoinFriendQuery"), friend, hostname);
+			if (MessageBox.Show(message, languages.GetString("this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
 				LoadLFS(hostname, "S2", edtPasswordMain.Text);
 			}
 		}
@@ -1171,7 +1185,7 @@ public class ListSorter: IComparer<ServerListItem>
 			groups = new Button[LFSQuery.CAR_GROUP_BITS.Length];
 			for (int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) { //create car checkboxes
 				cars[i] = new CheckBox();
-				cars[i].Parent = groupBox2;
+				cars[i].Parent = gbFilters;
 				if ((i % 2) == 0) {
 					cars[i].Left = 8;
 					cars[i].Top = (i/2 * 20) + 20;
@@ -1190,7 +1204,7 @@ public class ListSorter: IComparer<ServerListItem>
 
 			for (int i = 0; i < LFSQuery.CAR_GROUP_BITS.Length; ++i) { //create group buttons
 				groups[i] = new Button();
-				groups[i].Parent = groupBox2;
+				groups[i].Parent = gbFilters;
 				if ((i % 2) == 0) {
 					groups[i].Left = 8;
 					groups[i].Top = (i/2 * 30) + 235;
@@ -1253,6 +1267,8 @@ public class ListSorter: IComparer<ServerListItem>
 				}
 			}
 			//if we have previous config data
+			cbConfigLang.Items.Clear();
+			cbConfigLang.Items.AddRange(languages.Languages.ToArray());
 			cbConfigLang.SelectedIndex = 0;
 			if (loadedconf) {
 				//query wait
@@ -1369,7 +1385,7 @@ public class ListSorter: IComparer<ServerListItem>
 			try {
 				string[] hostname = host.Split(':');
 				if (hostname.Length != 2) {
-					MessageBox.Show("IP Address must be in the form: ipaddress:port", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show(languages.GetString("InvalidIPAddress"), languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
 				}
 				ServerInformation info = new ServerInformation();
@@ -1380,7 +1396,8 @@ public class ListSorter: IComparer<ServerListItem>
 						throw new Exception();
 					}
 				} catch (Exception ex) {
-					MessageBox.Show("The port number was not valid. Must be a number between 1 and 65535", appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);				
+					string message = String.Format(languages.GetString("InvalidPort"), hostname[1]);
+					MessageBox.Show(message, languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Error);				
 					return;
 				}
 				info.host = new IPEndPoint(IPAddress.Parse(hostname[0]), port);
@@ -1389,7 +1406,8 @@ public class ListSorter: IComparer<ServerListItem>
 				lvFavourites.AddServer(info);
 				edtAddServerAddress.Text = "";
 			} catch (Exception ex) {
-				MessageBox.Show("An error occured while adding the server to favourites: " + ex.Message, appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				string message = String.Format(languages.GetString("AddFavError"), ex.Message);
+				MessageBox.Show(message, languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 		
@@ -1414,7 +1432,7 @@ public class ListSorter: IComparer<ServerListItem>
 			
 			btnProgramCancel.Enabled = true;
 			btnProgramBrowse.Enabled = true;
-			btnProgramSave.Text = "&Save";
+			btnProgramSave.Text = languages.GetString("MainForm.btnProgramSave");
 			lbPreStart.SelectedIndex = -1;
 		}
 		
@@ -1437,7 +1455,7 @@ public class ListSorter: IComparer<ServerListItem>
 			
 			btnProgramCancel.Enabled = false;
 			btnProgramBrowse.Enabled = false;
-			btnProgramSave.Text = "&Save";
+			btnProgramSave.Text = languages.GetString("MainForm.btnProgramSave");
 			btnProgramEnable.Enabled = false;
 			
 		}
@@ -1477,17 +1495,17 @@ public class ListSorter: IComparer<ServerListItem>
 			
 			btnProgramCancel.Enabled = true;
 			btnProgramBrowse.Enabled = true;
-			btnProgramSave.Text = "&Update";
+			btnProgramSave.Text = languages.GetString("MainForm.btnProgramUpdate");
 			
 			btnProgramEnable.Enabled = true;
-			btnProgramEnable.Text = (p.enabled ? "&Disable" : "&Enable");
+			btnProgramEnable.Text = (p.enabled ? languages.GetString("MainForm.btnProgramDisable") : languages.GetString("MainForm.btnProgramEnable"));
 			
 			btnProgramDelete.Enabled = true;
 		}
 		
 		void BtnProgramSaveClick(object sender, System.EventArgs e) {
 			PreStartProgram p = new PreStartProgram(edtProgramName.Text, edtProgramPath.Text, edtProgramOptions.Text);
-			if (btnProgramSave.Text == "&Update"){
+			if (btnProgramSave.Text == languages.GetString("MainForm.btnProgramUpdate")){
 				lbPreStart.Items[lbPreStart.SelectedIndex] = p;
 			} else {
 				lbPreStart.Items.Add(p);
@@ -1518,12 +1536,109 @@ public class ListSorter: IComparer<ServerListItem>
 
 		private void UpdateUI()
 		{
-			btnJoinMain.Text = ResourceManager.GetString("btnJoinMain");	
+menuStrip.Text = languages.GetString("MainForm.menuStrip");
+fileToolStripMenuItem.Text = languages.GetString("MainForm.fileToolStripMenuItem");
+joinServerToolStripMenuItem2.Text = languages.GetString("MainForm.joinServerToolStripMenuItem2");
+closeToolStripMenuItem.Text = languages.GetString("MainForm.closeToolStripMenuItem");
+aboutToolStripMenuItem.Text = languages.GetString("MainForm.aboutToolStripMenuItem");
+aboutToolStripMenuItem1.Text = languages.GetString("MainForm.aboutToolStripMenuItem1");
+tabMain.Text = languages.GetString("MainForm.tabMain");
+lblFindUserMain.Text = languages.GetString("MainForm.lblFindUserMain");
+lblPasswordMain.Text = languages.GetString("MainForm.lblPasswordMain");
+btnFindUserMain.Text = languages.GetString("MainForm.btnFindUserMain");
+gbFilters.Text = languages.GetString("MainForm.gbFilters");
+cbPublic.Text = languages.GetString("MainForm.cbPublic");
+cbPrivate.Text = languages.GetString("MainForm.cbPrivate");
+cbFull.Text = languages.GetString("MainForm.cbFull");
+lblPingThreshold.Text = languages.GetString("MainForm.lblPingThreshold");
+cbEmpty.Text = languages.GetString("MainForm.cbEmpty");
+columnHeaderName.Text = languages.GetString("MainForm.columnHeaderName");
+columnHeaderPing.Text = languages.GetString("MainForm.columnHeaderPing");
+columnPrivate.Text = languages.GetString("MainForm.columnPrivate");
+columnHeaderConnections.Text = languages.GetString("MainForm.columnHeaderConnections");
+columnHeaderInfo.Text = languages.GetString("MainForm.columnHeaderInfo");
+columnHeaderTrack.Text = languages.GetString("MainForm.columnHeaderTrack");
+columnHeaderCars.Text = languages.GetString("MainForm.columnHeaderCars");
+joinServerToolStripMenuItem.Text = languages.GetString("MainForm.joinServerToolStripMenuItem");
+viewServerInformationMain.Text = languages.GetString("MainForm.viewServerInformationMain");
+toolStripMenuItem1.Text = languages.GetString("MainForm.toolStripMenuItem1");
+copyServerToClipboardToolStripMenuItem.Text = languages.GetString("MainForm.copyServerToClipboardToolStripMenuItem");
+administrateToolStripMenuItem1.Text = languages.GetString("MainForm.administrateToolStripMenuItem1");
+btnRefreshMain.Text = languages.GetString("MainForm.btnRefresh");
+btnJoinMain.Text = languages.GetString("MainForm.btnJoin");
+tabFavourites.Text = languages.GetString("MainForm.tabFavourites");
+lblAddressFav.Text = languages.GetString("MainForm.lblAddressFav");
+btnAddServer.Text = languages.GetString("MainForm.btnAddServer");
+buttonRefreshFav.Text = languages.GetString("MainForm.buttonRefresh");
+btnJoinFav.Text = languages.GetString("MainForm.btnJoin");
+columnHeaderFavServerName.Text = languages.GetString("MainForm.columnHeaderFavServerName");
+columnHeaderFavPing.Text = languages.GetString("MainForm.columnHeaderFavPing");
+columnHeaderFavSlots.Text = languages.GetString("MainForm.columnHeaderFavSlots");
+columnHeaderFavInfo.Text = languages.GetString("MainForm.columnHeaderFavInfo");
+columnHeaderFavTrack.Text = languages.GetString("MainForm.columnHeaderFavTrack");
+columnHeaderFavCars.Text = languages.GetString("MainForm.columnHeaderFavCars");
+joinServerToolStripMenuItem1.Text = languages.GetString("MainForm.joinServerToolStripMenuItem1");
+viewServerInformationFav.Text = languages.GetString("MainForm.viewServerInformationFav");
+removeFromFavouritesToolStripMenuItem.Text = languages.GetString("MainForm.removeFromFavouritesToolStripMenuItem");
+copyServerToClipboardToolStripMenuItem1.Text = languages.GetString("MainForm.copyServerToClipboardToolStripMenuItem1");
+administrateToolStripMenuItem.Text = languages.GetString("MainForm.administrateToolStripMenuItem");
+tabFriends.Text = languages.GetString("MainForm.tabFriends");
+btnAddFriend.Text = languages.GetString("MainForm.btnAddFriend");
+cbHideOffline.Text = languages.GetString("MainForm.cbHideOffline");
+btnRefreshFriend.Text = languages.GetString("MainForm.btnRefreshFriend");
+btnJoinFriend.Text = languages.GetString("MainForm.btnJoinFriend");
+columnFriendName.Text = languages.GetString("MainForm.columnFriendName");
+columnFriendServer.Text = languages.GetString("MainForm.columnFriendServer");
+columnFriendPrivate.Text = languages.GetString("MainForm.columnFriendPrivate");
+columnFriendPlayers.Text = languages.GetString("MainForm.columnFriendPlayers");
+joinServerMenuFriends.Text = languages.GetString("MainForm.joinServerMenuFriends");
+viewServerInformationFriend.Text = languages.GetString("MainForm.viewServerInformationFriend");
+removeFriendToolStripMenuItem.Text = languages.GetString("MainForm.removeFriendToolStripMenuItem");
+tabConfig.Text = languages.GetString("MainForm.tabConfig");
+groupBox1.Text = languages.GetString("MainForm.groupBox1");
+groupBox2.Text = languages.GetString("MainForm.groupBox2");
+groupBox5.Text = languages.GetString("MainForm.groupBox5");
+lblCommentReal.Text = languages.GetString("MainForm.lblCommentReal");
+lblEmailReal.Text = languages.GetString("MainForm.lblEmailReal");
+lblAuthorReal.Text = languages.GetString("MainForm.lblAuthorReal");
+lblLangComment.Text = languages.GetString("MainForm.lblLangComment");
+lblLangContact.Text = languages.GetString("MainForm.lblLangContact");
+lblLangAuthor.Text = languages.GetString("MainForm.lblLangAuthor");
+lblLanguageConfig.Text = languages.GetString("MainForm.lblLanguageConfig");
+groupBox4.Text = languages.GetString("MainForm.groupBox4");
+rbJoin.Text = languages.GetString("MainForm.rbJoin");
+rbView.Text = languages.GetString("MainForm.rbView");
+gbStartBeforeLFS.Text = languages.GetString("MainForm.gbStartBeforeLFS");
+btnProgramEnable.Text = languages.GetString("MainForm.btnProgramEnable");
+btnProgramDelete.Text = languages.GetString("MainForm.btnProgramDelete");
+btnProgramNew.Text = languages.GetString("MainForm.btnProgramNew");
+bgProgramConfig.Text = languages.GetString("MainForm.bgProgramConfig");
+btnProgramCancel.Text = languages.GetString("MainForm.btnProgramCancel");
+btnProgramSave.Text = languages.GetString("MainForm.btnProgramSave");
+lblProgramConfigArg.Text = languages.GetString("MainForm.lblProgramConfigArg");
+lblProgramConfigName.Text = languages.GetString("MainForm.lblProgramConfigName");
+btnProgramBrowse.Text = languages.GetString("MainForm.btnProgramBrowse");
+lblProgramConfigPath.Text = languages.GetString("MainForm.lblProgramConfigPath");
+groupBox3.Text = languages.GetString("MainForm.groupBox3");
+txtInsimPort.Text = languages.GetString("MainForm.txtInsimPort");
+lblQueryWaitDescription.Text = languages.GetString("MainForm.lblQueryWaitDescription");
+lblInsimPortConfig.Text = languages.GetString("MainForm.lblInsimPortConfig");
+cbQueryWait.Text = languages.GetString("MainForm.cbQueryWait");
+lblQueryWaitHelp.Text = languages.GetString("MainForm.lblQueryWaitHelp");
+btnCheckNewVersion.Text = languages.GetString("MainForm.btnCheckNewVersion");
+cbNewVersion.Text = languages.GetString("MainForm.cbNewVersion");
+lblExeDescriptionConfig.Text = languages.GetString("MainForm.lblExeDescriptionConfig");
+lblExePathConfig.Text = languages.GetString("MainForm.lblExePathConfig");
+buttonBrowse.Text = languages.GetString("MainForm.buttonBrowse");
+this.Text = languages.GetString("MainForm.this");
+			lblAuthorReal.Text = languages.Author;
+			lblEmailReal.Text = languages.Email;
+			lblCommentReal.Text = languages.Comment;
 		}
 		
 		void CbConfigLangSelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			Thread.CurrentThread.CurrentUICulture = EnglishCulture;
+			languages.ChangeLanguage(cbConfigLang.SelectedItem.ToString());
 			UpdateUI();
 		}
 	
@@ -1556,14 +1671,14 @@ public class ListViewColumnSorter : IComparer
 		listviewY = (ListViewItem)y;
 		try {
 		string columnName = listviewX.ListView.Columns[ColumnToSort].Text;
-		if (columnName == "Ping") { //if we're sorting the ping column
+		if (columnName == MainForm.languages.GetString("MainForm.columnHeaderFavPing")) { //if we're sorting the ping column
 			compareResult = ObjectCompare.Compare(Convert.ToInt32(listviewX.SubItems[ColumnToSort].Text), Convert.ToInt32(listviewY.SubItems[ColumnToSort].Text));
-		} else if (columnName == "Connections") { //sorting connection column
+		} else if (columnName == MainForm.languages.GetString("MainForm.columnHeaderFavSlots")) { //sorting connection column
 				int playersX = Convert.ToInt32(listviewX.SubItems[ColumnToSort].Text.Split('/')[0]);
 				int playersY = Convert.ToInt32(listviewY.SubItems[ColumnToSort].Text.Split('/')[0]);
 				compareResult = ObjectCompare.Compare(playersX, playersY);
-		} else  if (columnName == "Server" && (listviewX.SubItems[ColumnToSort].Text == "Offline" || listviewY.SubItems[ColumnToSort].Text == "Offline")) {
-				compareResult = (listviewX.SubItems[ColumnToSort].Text == "Offline" ? listviewY.SubItems[ColumnToSort].Text == "Offline" ? 0 : 1 : -1);
+		} else  if (columnName == MainForm.languages.GetString("columnHeaderFavServerName") && (listviewX.SubItems[ColumnToSort].Text == MainForm.languages.GetString("MainForm.Offline") || listviewY.SubItems[ColumnToSort].Text == MainForm.languages.GetString("MainForm.Offline"))) {
+				compareResult = (listviewX.SubItems[ColumnToSort].Text == MainForm.languages.GetString("MainForm.Offline") ? listviewY.SubItems[ColumnToSort].Text == MainForm.languages.GetString("MainForm.Offline") ? 0 : 1 : -1);
 		} else {
 			compareResult = ObjectCompare.Compare(listviewX.SubItems[ColumnToSort].Text, listviewY.SubItems[ColumnToSort].Text);
 		}

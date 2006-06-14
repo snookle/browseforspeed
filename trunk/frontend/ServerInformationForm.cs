@@ -30,11 +30,13 @@ namespace BrowseForSpeed.Frontend
 	{
 		private ServerInformation info;
 		private bool exiting;
+		private bool refreshing = false;
 		
 		public void RefreshPlayerList()
 		{
 			SetControlProperty(buttonInfoJoin, "Enabled", false);
 			SetControlProperty(buttonInfoRefresh, "Enabled", false);
+			refreshing = true;
 			listPlayers.Items.Clear();			
 			int i = LFSQuery.getPubStatInfo(ref info);
 			if (this.exiting) return;
@@ -45,19 +47,20 @@ namespace BrowseForSpeed.Frontend
 						listPlayers.Items.Add(player);
 					}
 				} else {
-					listPlayers.Items.Add("No players currently on the server.");
+					listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.EmptyServer"));
 				}
 			} else {
 				if (i == 0) {
-					listPlayers.Items.Add("Couldn't find server on pubstat!");
+					listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.NoServer"));
 				} else if (i == -1) {
 					listPlayers.Items.Add("Error querying pubstat!");
 				}
 				labelPrivate.Text = "N/A";				
 			}
+			refreshing = false;
 			SetControlProperty(buttonInfoRefresh, "Enabled", true);
 			SetControlProperty(buttonInfoJoin, "Enabled", true);
-			SetControlProperty(buttonInfoRefresh, "Text", "&Refresh");
+			SetControlProperty(buttonInfoRefresh, "Text", MainForm.languages.GetString("ServerInformationForm.buttonInfoRefresh"));
 		}
 		public void SetInfo(ServerInformation info) {
 			if (info == null) return;
@@ -82,11 +85,23 @@ namespace BrowseForSpeed.Frontend
 			this.exiting = true;
 			buttonInfoRefresh.Enabled = true;
 			buttonInfoJoin.Enabled = true;
-			buttonInfoRefresh.Text = "&Refresh";
 			this.Close();
 		}
 		
 		void ServerInformationFormLoad(object sender, System.EventArgs e) {
+			buttonInfoJoin.Text = MainForm.languages.GetString("ServerInformationForm.buttonInfoJoin");
+			buttonInfoClose.Text = MainForm.languages.GetString("ServerInformationForm.buttonInfoClose");
+			buttonInfoRefresh.Text = MainForm.languages.GetString("ServerInformationForm.buttonInfoRefresh");
+			lblServerName.Text = MainForm.languages.GetString("ServerInformationForm.lblServerName");
+			labe3.Text = MainForm.languages.GetString("ServerInformationForm.labe3");
+			label1.Text = MainForm.languages.GetString("ServerInformationForm.label1");
+			lblInformation.Text = MainForm.languages.GetString("ServerInformationForm.lblInformation");
+			label5.Text = MainForm.languages.GetString("ServerInformationForm.label5");
+			groupBox1.Text = MainForm.languages.GetString("ServerInformationForm.groupBox1");
+			btnAddFriend.Text = MainForm.languages.GetString("ServerInformationForm.btnAddFriend");
+			lblCars.Text = MainForm.languages.GetString("ServerInformationForm.lblCars");
+			lblPrivate.Text = MainForm.languages.GetString("ServerInformationForm.lblPrivate");
+			this.Text = MainForm.languages.GetString("ServerInformationForm.this");
 			this.CenterToParent();
 			this.exiting = false;
 			RefreshButtonClick(sender, e);
@@ -102,7 +117,7 @@ namespace BrowseForSpeed.Frontend
 				
 		void MakeMainQuery() {
 			LFSQuery q;
-			SetControlProperty(buttonInfoRefresh, "Text", "&Stop");
+			SetControlProperty(buttonInfoRefresh, "Text", MainForm.languages.GetString("ServerInformationForm.buttonInfoStop"));
 			SetControlProperty(buttonInfoJoin, "Enabled", false);
 			try{
 				q = new LFSQuery();
@@ -125,7 +140,7 @@ namespace BrowseForSpeed.Frontend
 		
 		void RefreshButtonClick(object sender, System.EventArgs e) {
 			Thread t;
-			if (buttonInfoRefresh.Text == "&Refresh") {				
+			if (!refreshing) {
 				LFSQuery.queried += new ServerQueried(queryCallback);
 				t = new Thread(new ThreadStart(MakeMainQuery));
 	  			t.Start();
@@ -148,7 +163,7 @@ namespace BrowseForSpeed.Frontend
 				labelPing.Text = info.ping.ToString();
 				labelTrack.Text = info.track;				
 			} else {				
-				labelServerName.Text = "Query timed out";
+					labelServerName.Text = MainForm.languages.GetString("ServerInformationForm.QueryTimeOut");;
 				labelPing.Text = "9999";
 				labelCars.Text = "N/A";
 				labelTrack.Text = "N/A";				
@@ -163,7 +178,7 @@ namespace BrowseForSpeed.Frontend
 		
 		void ContextMenuOpening(object sender, System.ComponentModel.CancelEventArgs e)
 		{
-			btnAddFriend.Enabled = ((listPlayers.SelectedIndex != -1) && (listPlayers.Items[listPlayers.SelectedIndex].ToString() != "No players currently on the server."));
+			btnAddFriend.Enabled = ((listPlayers.SelectedIndex != -1) && (listPlayers.Items[listPlayers.SelectedIndex].ToString() != MainForm.languages.GetString("ServerInformationForm.EmptyServer")));
 		}
 		
 		void BtnAddFriendClick(object sender, System.EventArgs e)

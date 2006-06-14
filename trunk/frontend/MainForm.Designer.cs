@@ -53,16 +53,16 @@ namespace BrowseForSpeed.Frontend
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabMain = new System.Windows.Forms.TabPage();
 			this.edtFindUserMain = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblFindUserMain = new System.Windows.Forms.Label();
 			this.edtPasswordMain = new System.Windows.Forms.TextBox();
-			this.label6 = new System.Windows.Forms.Label();
+			this.lblPasswordMain = new System.Windows.Forms.Label();
 			this.btnFindUserMain = new System.Windows.Forms.Button();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.gbFilters = new System.Windows.Forms.GroupBox();
 			this.cbVersion = new System.Windows.Forms.ComboBox();
 			this.cbPublic = new System.Windows.Forms.CheckBox();
 			this.cbPrivate = new System.Windows.Forms.CheckBox();
 			this.cbFull = new System.Windows.Forms.CheckBox();
-			this.label9 = new System.Windows.Forms.Label();
+			this.lblPingThreshold = new System.Windows.Forms.Label();
 			this.cbPing = new System.Windows.Forms.ComboBox();
 			this.cbEmpty = new System.Windows.Forms.CheckBox();
 			this.cbTracks = new System.Windows.Forms.ComboBox();
@@ -84,7 +84,7 @@ namespace BrowseForSpeed.Frontend
 			this.btnJoinMain = new System.Windows.Forms.Button();
 			this.tabFavourites = new System.Windows.Forms.TabPage();
 			this.cbAddServerVersion = new System.Windows.Forms.ComboBox();
-			this.label10 = new System.Windows.Forms.Label();
+			this.lblAddressFav = new System.Windows.Forms.Label();
 			this.edtAddServerAddress = new System.Windows.Forms.TextBox();
 			this.btnAddServer = new System.Windows.Forms.Button();
 			this.buttonRefreshFav = new System.Windows.Forms.Button();
@@ -119,38 +119,47 @@ namespace BrowseForSpeed.Frontend
 			this.removeFriendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabConfig = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.lblCommentReal = new System.Windows.Forms.Label();
+			this.lblEmailReal = new System.Windows.Forms.Label();
+			this.lblAuthorReal = new System.Windows.Forms.Label();
+			this.lblLangComment = new System.Windows.Forms.Label();
+			this.lblLangContact = new System.Windows.Forms.Label();
+			this.lblLangAuthor = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.cbConfigLang = new System.Windows.Forms.ComboBox();
+			this.lblLanguageConfig = new System.Windows.Forms.Label();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.rbJoin = new System.Windows.Forms.RadioButton();
 			this.rbView = new System.Windows.Forms.RadioButton();
-			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.gbStartBeforeLFS = new System.Windows.Forms.GroupBox();
 			this.btnProgramEnable = new System.Windows.Forms.Button();
 			this.btnProgramDelete = new System.Windows.Forms.Button();
 			this.btnProgramNew = new System.Windows.Forms.Button();
-			this.groupBox6 = new System.Windows.Forms.GroupBox();
+			this.bgProgramConfig = new System.Windows.Forms.GroupBox();
 			this.btnProgramCancel = new System.Windows.Forms.Button();
 			this.btnProgramSave = new System.Windows.Forms.Button();
 			this.edtProgramOptions = new System.Windows.Forms.TextBox();
-			this.label12 = new System.Windows.Forms.Label();
+			this.lblProgramConfigArg = new System.Windows.Forms.Label();
 			this.edtProgramName = new System.Windows.Forms.TextBox();
-			this.label11 = new System.Windows.Forms.Label();
+			this.lblProgramConfigName = new System.Windows.Forms.Label();
 			this.btnProgramBrowse = new System.Windows.Forms.Button();
-			this.label7 = new System.Windows.Forms.Label();
+			this.lblProgramConfigPath = new System.Windows.Forms.Label();
 			this.edtProgramPath = new System.Windows.Forms.TextBox();
 			this.lbPreStart = new System.Windows.Forms.ListBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.cbConfigLang = new System.Windows.Forms.ComboBox();
-			this.label13 = new System.Windows.Forms.Label();
 			this.txtInsimPort = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
+			this.lblQueryWaitDescription = new System.Windows.Forms.Label();
+			this.lblInsimPortConfig = new System.Windows.Forms.Label();
 			this.queryWait = new System.Windows.Forms.NumericUpDown();
 			this.cbQueryWait = new System.Windows.Forms.CheckBox();
-			this.label4 = new System.Windows.Forms.Label();
+			this.lblQueryWaitHelp = new System.Windows.Forms.Label();
 			this.btnCheckNewVersion = new System.Windows.Forms.Button();
 			this.cbNewVersion = new System.Windows.Forms.CheckBox();
 			this.pathList = new System.Windows.Forms.ListBox();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lblExeDescriptionConfig = new System.Windows.Forms.Label();
+			this.lblExePathConfig = new System.Windows.Forms.Label();
 			this.buttonBrowse = new System.Windows.Forms.Button();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -161,7 +170,7 @@ namespace BrowseForSpeed.Frontend
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabMain.SuspendLayout();
-			this.groupBox2.SuspendLayout();
+			this.gbFilters.SuspendLayout();
 			this.contextMenuBrowser.SuspendLayout();
 			this.tabFavourites.SuspendLayout();
 			this.contextMenuFav.SuspendLayout();
@@ -169,9 +178,11 @@ namespace BrowseForSpeed.Frontend
 			this.contextMenuFriends.SuspendLayout();
 			this.tabConfig.SuspendLayout();
 			this.groupBox1.SuspendLayout();
-			this.groupBox4.SuspendLayout();
+			this.groupBox2.SuspendLayout();
 			this.groupBox5.SuspendLayout();
-			this.groupBox6.SuspendLayout();
+			this.groupBox4.SuspendLayout();
+			this.gbStartBeforeLFS.SuspendLayout();
+			this.bgProgramConfig.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).BeginInit();
 			this.statusStrip.SuspendLayout();
@@ -244,11 +255,11 @@ namespace BrowseForSpeed.Frontend
 			// tabMain
 			// 
 			this.tabMain.Controls.Add(this.edtFindUserMain);
-			this.tabMain.Controls.Add(this.label1);
+			this.tabMain.Controls.Add(this.lblFindUserMain);
 			this.tabMain.Controls.Add(this.edtPasswordMain);
-			this.tabMain.Controls.Add(this.label6);
+			this.tabMain.Controls.Add(this.lblPasswordMain);
 			this.tabMain.Controls.Add(this.btnFindUserMain);
-			this.tabMain.Controls.Add(this.groupBox2);
+			this.tabMain.Controls.Add(this.gbFilters);
 			this.tabMain.Controls.Add(this.lvMain);
 			this.tabMain.Controls.Add(this.btnRefreshMain);
 			this.tabMain.Controls.Add(this.btnJoinMain);
@@ -270,33 +281,35 @@ namespace BrowseForSpeed.Frontend
 			this.edtFindUserMain.WordWrap = false;
 			this.edtFindUserMain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EdtFindUserMainKeyDown);
 			// 
-			// label1
+			// lblFindUserMain
 			// 
-			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label1.Location = new System.Drawing.Point(539, 541);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(58, 21);
-			this.label1.TabIndex = 8;
-			this.label1.Text = "Find User:";
+			this.lblFindUserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblFindUserMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.lblFindUserMain.Location = new System.Drawing.Point(503, 541);
+			this.lblFindUserMain.Name = "lblFindUserMain";
+			this.lblFindUserMain.Size = new System.Drawing.Size(94, 21);
+			this.lblFindUserMain.TabIndex = 8;
+			this.lblFindUserMain.Text = "Find User:";
+			this.lblFindUserMain.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// edtPasswordMain
 			// 
 			this.edtPasswordMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.edtPasswordMain.Location = new System.Drawing.Point(262, 538);
+			this.edtPasswordMain.Location = new System.Drawing.Point(324, 536);
 			this.edtPasswordMain.Name = "edtPasswordMain";
 			this.edtPasswordMain.Size = new System.Drawing.Size(173, 21);
 			this.edtPasswordMain.TabIndex = 7;
 			// 
-			// label6
+			// lblPasswordMain
 			// 
-			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label6.Location = new System.Drawing.Point(170, 541);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(97, 16);
-			this.label6.TabIndex = 6;
-			this.label6.Text = "Server Password:";
+			this.lblPasswordMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.lblPasswordMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.lblPasswordMain.Location = new System.Drawing.Point(170, 541);
+			this.lblPasswordMain.Name = "lblPasswordMain";
+			this.lblPasswordMain.Size = new System.Drawing.Size(148, 16);
+			this.lblPasswordMain.TabIndex = 6;
+			this.lblPasswordMain.Text = "Server Password:";
+			this.lblPasswordMain.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// btnFindUserMain
 			// 
@@ -310,24 +323,24 @@ namespace BrowseForSpeed.Frontend
 			this.btnFindUserMain.UseVisualStyleBackColor = true;
 			this.btnFindUserMain.Click += new System.EventHandler(this.btnFindUserClick);
 			// 
-			// groupBox2
+			// gbFilters
 			// 
-			this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.gbFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBox2.Controls.Add(this.cbVersion);
-			this.groupBox2.Controls.Add(this.cbPublic);
-			this.groupBox2.Controls.Add(this.cbPrivate);
-			this.groupBox2.Controls.Add(this.cbFull);
-			this.groupBox2.Controls.Add(this.label9);
-			this.groupBox2.Controls.Add(this.cbPing);
-			this.groupBox2.Controls.Add(this.cbEmpty);
-			this.groupBox2.Controls.Add(this.cbTracks);
-			this.groupBox2.Location = new System.Drawing.Point(737, 6);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(137, 522);
-			this.groupBox2.TabIndex = 4;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Filters";
+			this.gbFilters.Controls.Add(this.cbVersion);
+			this.gbFilters.Controls.Add(this.cbPublic);
+			this.gbFilters.Controls.Add(this.cbPrivate);
+			this.gbFilters.Controls.Add(this.cbFull);
+			this.gbFilters.Controls.Add(this.lblPingThreshold);
+			this.gbFilters.Controls.Add(this.cbPing);
+			this.gbFilters.Controls.Add(this.cbEmpty);
+			this.gbFilters.Controls.Add(this.cbTracks);
+			this.gbFilters.Location = new System.Drawing.Point(737, 6);
+			this.gbFilters.Name = "gbFilters";
+			this.gbFilters.Size = new System.Drawing.Size(137, 522);
+			this.gbFilters.TabIndex = 4;
+			this.gbFilters.TabStop = false;
+			this.gbFilters.Text = "Filters";
 			// 
 			// cbVersion
 			// 
@@ -382,14 +395,14 @@ namespace BrowseForSpeed.Frontend
 			this.cbFull.UseVisualStyleBackColor = true;
 			this.cbFull.CheckedChanged += new System.EventHandler(this.CbFullCheckedChanged);
 			// 
-			// label9
+			// lblPingThreshold
 			// 
-			this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label9.Location = new System.Drawing.Point(6, 450);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(100, 15);
-			this.label9.TabIndex = 13;
-			this.label9.Text = "Ping Threshold:";
+			this.lblPingThreshold.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.lblPingThreshold.Location = new System.Drawing.Point(6, 450);
+			this.lblPingThreshold.Name = "lblPingThreshold";
+			this.lblPingThreshold.Size = new System.Drawing.Size(100, 15);
+			this.lblPingThreshold.TabIndex = 13;
+			this.lblPingThreshold.Text = "Ping Threshold:";
 			// 
 			// cbPing
 			// 
@@ -581,7 +594,7 @@ namespace BrowseForSpeed.Frontend
 			// tabFavourites
 			// 
 			this.tabFavourites.Controls.Add(this.cbAddServerVersion);
-			this.tabFavourites.Controls.Add(this.label10);
+			this.tabFavourites.Controls.Add(this.lblAddressFav);
 			this.tabFavourites.Controls.Add(this.edtAddServerAddress);
 			this.tabFavourites.Controls.Add(this.btnAddServer);
 			this.tabFavourites.Controls.Add(this.buttonRefreshFav);
@@ -608,14 +621,14 @@ namespace BrowseForSpeed.Frontend
 			this.cbAddServerVersion.Size = new System.Drawing.Size(59, 21);
 			this.cbAddServerVersion.TabIndex = 10;
 			// 
-			// label10
+			// lblAddressFav
 			// 
-			this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.label10.Location = new System.Drawing.Point(427, 544);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(100, 16);
-			this.label10.TabIndex = 9;
-			this.label10.Text = "Server IP Address:";
+			this.lblAddressFav.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblAddressFav.Location = new System.Drawing.Point(427, 544);
+			this.lblAddressFav.Name = "lblAddressFav";
+			this.lblAddressFav.Size = new System.Drawing.Size(100, 16);
+			this.lblAddressFav.TabIndex = 9;
+			this.lblAddressFav.Text = "Server IP Address:";
 			// 
 			// edtAddServerAddress
 			// 
@@ -925,14 +938,15 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.groupBox2);
 			this.groupBox1.Controls.Add(this.groupBox4);
-			this.groupBox1.Controls.Add(this.groupBox5);
+			this.groupBox1.Controls.Add(this.gbStartBeforeLFS);
 			this.groupBox1.Controls.Add(this.groupBox3);
 			this.groupBox1.Controls.Add(this.btnCheckNewVersion);
 			this.groupBox1.Controls.Add(this.cbNewVersion);
 			this.groupBox1.Controls.Add(this.pathList);
-			this.groupBox1.Controls.Add(this.label5);
-			this.groupBox1.Controls.Add(this.label2);
+			this.groupBox1.Controls.Add(this.lblExeDescriptionConfig);
+			this.groupBox1.Controls.Add(this.lblExePathConfig);
 			this.groupBox1.Controls.Add(this.buttonBrowse);
 			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox1.Location = new System.Drawing.Point(3, 3);
@@ -941,6 +955,107 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Configuration";
+			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.groupBox5);
+			this.groupBox2.Controls.Add(this.label1);
+			this.groupBox2.Controls.Add(this.cbConfigLang);
+			this.groupBox2.Controls.Add(this.lblLanguageConfig);
+			this.groupBox2.Location = new System.Drawing.Point(466, 100);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(394, 176);
+			this.groupBox2.TabIndex = 17;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Language";
+			// 
+			// groupBox5
+			// 
+			this.groupBox5.Controls.Add(this.lblCommentReal);
+			this.groupBox5.Controls.Add(this.lblEmailReal);
+			this.groupBox5.Controls.Add(this.lblAuthorReal);
+			this.groupBox5.Controls.Add(this.lblLangComment);
+			this.groupBox5.Controls.Add(this.lblLangContact);
+			this.groupBox5.Controls.Add(this.lblLangAuthor);
+			this.groupBox5.Location = new System.Drawing.Point(24, 53);
+			this.groupBox5.Name = "groupBox5";
+			this.groupBox5.Size = new System.Drawing.Size(347, 104);
+			this.groupBox5.TabIndex = 24;
+			this.groupBox5.TabStop = false;
+			this.groupBox5.Text = "Language Details";
+			// 
+			// lblCommentReal
+			// 
+			this.lblCommentReal.Location = new System.Drawing.Point(116, 63);
+			this.lblCommentReal.Name = "lblCommentReal";
+			this.lblCommentReal.Size = new System.Drawing.Size(225, 38);
+			this.lblCommentReal.TabIndex = 5;
+			this.lblCommentReal.Text = "langComments";
+			// 
+			// lblEmailReal
+			// 
+			this.lblEmailReal.Location = new System.Drawing.Point(116, 40);
+			this.lblEmailReal.Name = "lblEmailReal";
+			this.lblEmailReal.Size = new System.Drawing.Size(225, 23);
+			this.lblEmailReal.TabIndex = 4;
+			this.lblEmailReal.Text = "AuthorEmal";
+			// 
+			// lblAuthorReal
+			// 
+			this.lblAuthorReal.Location = new System.Drawing.Point(116, 17);
+			this.lblAuthorReal.Name = "lblAuthorReal";
+			this.lblAuthorReal.Size = new System.Drawing.Size(212, 23);
+			this.lblAuthorReal.TabIndex = 3;
+			this.lblAuthorReal.Text = "langAuthor";
+			// 
+			// lblLangComment
+			// 
+			this.lblLangComment.Location = new System.Drawing.Point(10, 63);
+			this.lblLangComment.Name = "lblLangComment";
+			this.lblLangComment.Size = new System.Drawing.Size(100, 23);
+			this.lblLangComment.TabIndex = 2;
+			this.lblLangComment.Text = "Comments:";
+			// 
+			// lblLangContact
+			// 
+			this.lblLangContact.Location = new System.Drawing.Point(10, 40);
+			this.lblLangContact.Name = "lblLangContact";
+			this.lblLangContact.Size = new System.Drawing.Size(100, 23);
+			this.lblLangContact.TabIndex = 1;
+			this.lblLangContact.Text = "Contact Address:";
+			// 
+			// lblLangAuthor
+			// 
+			this.lblLangAuthor.Location = new System.Drawing.Point(10, 17);
+			this.lblLangAuthor.Name = "lblLangAuthor";
+			this.lblLangAuthor.Size = new System.Drawing.Size(100, 23);
+			this.lblLangAuthor.TabIndex = 0;
+			this.lblLangAuthor.Text = "Author:";
+			// 
+			// label1
+			// 
+			this.label1.Location = new System.Drawing.Point(34, 59);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(96, 27);
+			this.label1.TabIndex = 23;
+			// 
+			// cbConfigLang
+			// 
+			this.cbConfigLang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbConfigLang.FormattingEnabled = true;
+			this.cbConfigLang.Location = new System.Drawing.Point(99, 24);
+			this.cbConfigLang.Name = "cbConfigLang";
+			this.cbConfigLang.Size = new System.Drawing.Size(188, 21);
+			this.cbConfigLang.TabIndex = 22;
+			this.cbConfigLang.SelectedIndexChanged += new System.EventHandler(this.CbConfigLangSelectedIndexChanged);
+			// 
+			// lblLanguageConfig
+			// 
+			this.lblLanguageConfig.Location = new System.Drawing.Point(24, 27);
+			this.lblLanguageConfig.Name = "lblLanguageConfig";
+			this.lblLanguageConfig.Size = new System.Drawing.Size(69, 23);
+			this.lblLanguageConfig.TabIndex = 21;
+			this.lblLanguageConfig.Text = "Language:";
 			// 
 			// groupBox4
 			// 
@@ -976,19 +1091,19 @@ namespace BrowseForSpeed.Frontend
 			this.rbView.Text = "View server information";
 			this.rbView.UseVisualStyleBackColor = true;
 			// 
-			// groupBox5
+			// gbStartBeforeLFS
 			// 
-			this.groupBox5.Controls.Add(this.btnProgramEnable);
-			this.groupBox5.Controls.Add(this.btnProgramDelete);
-			this.groupBox5.Controls.Add(this.btnProgramNew);
-			this.groupBox5.Controls.Add(this.groupBox6);
-			this.groupBox5.Controls.Add(this.lbPreStart);
-			this.groupBox5.Location = new System.Drawing.Point(13, 228);
-			this.groupBox5.Name = "groupBox5";
-			this.groupBox5.Size = new System.Drawing.Size(437, 321);
-			this.groupBox5.TabIndex = 16;
-			this.groupBox5.TabStop = false;
-			this.groupBox5.Text = "Start Before LFS";
+			this.gbStartBeforeLFS.Controls.Add(this.btnProgramEnable);
+			this.gbStartBeforeLFS.Controls.Add(this.btnProgramDelete);
+			this.gbStartBeforeLFS.Controls.Add(this.btnProgramNew);
+			this.gbStartBeforeLFS.Controls.Add(this.bgProgramConfig);
+			this.gbStartBeforeLFS.Controls.Add(this.lbPreStart);
+			this.gbStartBeforeLFS.Location = new System.Drawing.Point(13, 228);
+			this.gbStartBeforeLFS.Name = "gbStartBeforeLFS";
+			this.gbStartBeforeLFS.Size = new System.Drawing.Size(437, 321);
+			this.gbStartBeforeLFS.TabIndex = 16;
+			this.gbStartBeforeLFS.TabStop = false;
+			this.gbStartBeforeLFS.Text = "Start Before LFS";
 			// 
 			// btnProgramEnable
 			// 
@@ -1022,23 +1137,23 @@ namespace BrowseForSpeed.Frontend
 			this.btnProgramNew.UseVisualStyleBackColor = true;
 			this.btnProgramNew.Click += new System.EventHandler(this.BtnProgramNewClick);
 			// 
-			// groupBox6
+			// bgProgramConfig
 			// 
-			this.groupBox6.Controls.Add(this.btnProgramCancel);
-			this.groupBox6.Controls.Add(this.btnProgramSave);
-			this.groupBox6.Controls.Add(this.edtProgramOptions);
-			this.groupBox6.Controls.Add(this.label12);
-			this.groupBox6.Controls.Add(this.edtProgramName);
-			this.groupBox6.Controls.Add(this.label11);
-			this.groupBox6.Controls.Add(this.btnProgramBrowse);
-			this.groupBox6.Controls.Add(this.label7);
-			this.groupBox6.Controls.Add(this.edtProgramPath);
-			this.groupBox6.Location = new System.Drawing.Point(12, 173);
-			this.groupBox6.Name = "groupBox6";
-			this.groupBox6.Size = new System.Drawing.Size(410, 135);
-			this.groupBox6.TabIndex = 5;
-			this.groupBox6.TabStop = false;
-			this.groupBox6.Text = "Program Configuration";
+			this.bgProgramConfig.Controls.Add(this.btnProgramCancel);
+			this.bgProgramConfig.Controls.Add(this.btnProgramSave);
+			this.bgProgramConfig.Controls.Add(this.edtProgramOptions);
+			this.bgProgramConfig.Controls.Add(this.lblProgramConfigArg);
+			this.bgProgramConfig.Controls.Add(this.edtProgramName);
+			this.bgProgramConfig.Controls.Add(this.lblProgramConfigName);
+			this.bgProgramConfig.Controls.Add(this.btnProgramBrowse);
+			this.bgProgramConfig.Controls.Add(this.lblProgramConfigPath);
+			this.bgProgramConfig.Controls.Add(this.edtProgramPath);
+			this.bgProgramConfig.Location = new System.Drawing.Point(12, 173);
+			this.bgProgramConfig.Name = "bgProgramConfig";
+			this.bgProgramConfig.Size = new System.Drawing.Size(410, 135);
+			this.bgProgramConfig.TabIndex = 5;
+			this.bgProgramConfig.TabStop = false;
+			this.bgProgramConfig.Text = "Program Configuration";
 			// 
 			// btnProgramCancel
 			// 
@@ -1070,13 +1185,13 @@ namespace BrowseForSpeed.Frontend
 			this.edtProgramOptions.Size = new System.Drawing.Size(231, 21);
 			this.edtProgramOptions.TabIndex = 8;
 			// 
-			// label12
+			// lblProgramConfigArg
 			// 
-			this.label12.Location = new System.Drawing.Point(6, 77);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(70, 14);
-			this.label12.TabIndex = 7;
-			this.label12.Text = "Arguments:";
+			this.lblProgramConfigArg.Location = new System.Drawing.Point(6, 77);
+			this.lblProgramConfigArg.Name = "lblProgramConfigArg";
+			this.lblProgramConfigArg.Size = new System.Drawing.Size(70, 14);
+			this.lblProgramConfigArg.TabIndex = 7;
+			this.lblProgramConfigArg.Text = "Arguments:";
 			// 
 			// edtProgramName
 			// 
@@ -1087,13 +1202,13 @@ namespace BrowseForSpeed.Frontend
 			this.edtProgramName.TabIndex = 6;
 			this.edtProgramName.TextChanged += new System.EventHandler(this.EdtProgramNameTextChanged);
 			// 
-			// label11
+			// lblProgramConfigName
 			// 
-			this.label11.Location = new System.Drawing.Point(6, 23);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(100, 20);
-			this.label11.TabIndex = 5;
-			this.label11.Text = "Name:";
+			this.lblProgramConfigName.Location = new System.Drawing.Point(6, 23);
+			this.lblProgramConfigName.Name = "lblProgramConfigName";
+			this.lblProgramConfigName.Size = new System.Drawing.Size(100, 20);
+			this.lblProgramConfigName.TabIndex = 5;
+			this.lblProgramConfigName.Text = "Name:";
 			// 
 			// btnProgramBrowse
 			// 
@@ -1107,14 +1222,14 @@ namespace BrowseForSpeed.Frontend
 			this.btnProgramBrowse.UseVisualStyleBackColor = true;
 			this.btnProgramBrowse.Click += new System.EventHandler(this.BtnBrowsePSClick);
 			// 
-			// label7
+			// lblProgramConfigPath
 			// 
-			this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label7.Location = new System.Drawing.Point(6, 50);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(59, 15);
-			this.label7.TabIndex = 3;
-			this.label7.Text = "Path:";
+			this.lblProgramConfigPath.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.lblProgramConfigPath.Location = new System.Drawing.Point(6, 50);
+			this.lblProgramConfigPath.Name = "lblProgramConfigPath";
+			this.lblProgramConfigPath.Size = new System.Drawing.Size(59, 15);
+			this.lblProgramConfigPath.TabIndex = 3;
+			this.lblProgramConfigPath.Text = "Path:";
 			// 
 			// edtProgramPath
 			// 
@@ -1137,41 +1252,18 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// groupBox3
 			// 
-			this.groupBox3.Controls.Add(this.cbConfigLang);
-			this.groupBox3.Controls.Add(this.label13);
 			this.groupBox3.Controls.Add(this.txtInsimPort);
-			this.groupBox3.Controls.Add(this.label3);
-			this.groupBox3.Controls.Add(this.label8);
+			this.groupBox3.Controls.Add(this.lblQueryWaitDescription);
+			this.groupBox3.Controls.Add(this.lblInsimPortConfig);
 			this.groupBox3.Controls.Add(this.queryWait);
 			this.groupBox3.Controls.Add(this.cbQueryWait);
-			this.groupBox3.Controls.Add(this.label4);
-			this.groupBox3.Location = new System.Drawing.Point(466, 100);
+			this.groupBox3.Controls.Add(this.lblQueryWaitHelp);
+			this.groupBox3.Location = new System.Drawing.Point(466, 282);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(394, 267);
 			this.groupBox3.TabIndex = 14;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Advanced";
-			// 
-			// cbConfigLang
-			// 
-			this.cbConfigLang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cbConfigLang.FormattingEnabled = true;
-			this.cbConfigLang.Items.AddRange(new object[] {
-									"Australian (English)",
-									"Italian"});
-			this.cbConfigLang.Location = new System.Drawing.Point(107, 216);
-			this.cbConfigLang.Name = "cbConfigLang";
-			this.cbConfigLang.Size = new System.Drawing.Size(135, 21);
-			this.cbConfigLang.TabIndex = 20;
-			this.cbConfigLang.SelectedIndexChanged += new System.EventHandler(this.CbConfigLangSelectedIndexChanged);
-			// 
-			// label13
-			// 
-			this.label13.Location = new System.Drawing.Point(21, 219);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(69, 23);
-			this.label13.TabIndex = 19;
-			this.label13.Text = "Language:";
 			// 
 			// txtInsimPort
 			// 
@@ -1181,25 +1273,25 @@ namespace BrowseForSpeed.Frontend
 			this.txtInsimPort.TabIndex = 18;
 			this.txtInsimPort.Text = "29999";
 			// 
-			// label3
+			// lblQueryWaitDescription
 			// 
-			this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label3.Location = new System.Drawing.Point(85, 50);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(286, 57);
-			this.label3.TabIndex = 15;
-			this.label3.Text = "Query Wait value. This is the time to wait before adding another query to the con" +
+			this.lblQueryWaitDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.lblQueryWaitDescription.Location = new System.Drawing.Point(85, 50);
+			this.lblQueryWaitDescription.Name = "lblQueryWaitDescription";
+			this.lblQueryWaitDescription.Size = new System.Drawing.Size(286, 57);
+			this.lblQueryWaitDescription.TabIndex = 15;
+			this.lblQueryWaitDescription.Text = "Query Wait value. This is the time to wait before adding another query to the con" +
 			"current queries. Increase this value if, when querying, all servers start giving" +
 			" \"Connection Refused\"";
 			// 
-			// label8
+			// lblInsimPortConfig
 			// 
-			this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label8.Location = new System.Drawing.Point(21, 177);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(90, 23);
-			this.label8.TabIndex = 17;
-			this.label8.Text = "LFS Insim Port:";
+			this.lblInsimPortConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.lblInsimPortConfig.Location = new System.Drawing.Point(21, 177);
+			this.lblInsimPortConfig.Name = "lblInsimPortConfig";
+			this.lblInsimPortConfig.Size = new System.Drawing.Size(90, 23);
+			this.lblInsimPortConfig.TabIndex = 17;
+			this.lblInsimPortConfig.Text = "LFS Insim Port:";
 			// 
 			// queryWait
 			// 
@@ -1239,22 +1331,22 @@ namespace BrowseForSpeed.Frontend
 			this.cbQueryWait.UseVisualStyleBackColor = true;
 			this.cbQueryWait.CheckedChanged += new System.EventHandler(this.CbQueryWaitCheckedChanged);
 			// 
-			// label4
+			// lblQueryWaitHelp
 			// 
-			this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label4.Location = new System.Drawing.Point(21, 107);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(364, 40);
-			this.label4.TabIndex = 12;
-			this.label4.Text = "Only disable Query Wait if you are certain your Operating System does not have a " +
+			this.lblQueryWaitHelp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.lblQueryWaitHelp.Location = new System.Drawing.Point(21, 116);
+			this.lblQueryWaitHelp.Name = "lblQueryWaitHelp";
+			this.lblQueryWaitHelp.Size = new System.Drawing.Size(364, 40);
+			this.lblQueryWaitHelp.TabIndex = 12;
+			this.lblQueryWaitHelp.Text = "Only disable Query Wait if you are certain your Operating System does not have a " +
 			"connection limit.  Please see readme.txt for more information. ";
 			// 
 			// btnCheckNewVersion
 			// 
 			this.btnCheckNewVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnCheckNewVersion.Location = new System.Drawing.Point(355, 163);
+			this.btnCheckNewVersion.Location = new System.Drawing.Point(339, 163);
 			this.btnCheckNewVersion.Name = "btnCheckNewVersion";
-			this.btnCheckNewVersion.Size = new System.Drawing.Size(75, 23);
+			this.btnCheckNewVersion.Size = new System.Drawing.Size(91, 23);
 			this.btnCheckNewVersion.TabIndex = 13;
 			this.btnCheckNewVersion.Text = "&Check Now";
 			this.btnCheckNewVersion.UseVisualStyleBackColor = true;
@@ -1278,32 +1370,32 @@ namespace BrowseForSpeed.Frontend
 			this.pathList.Size = new System.Drawing.Size(322, 56);
 			this.pathList.TabIndex = 8;
 			// 
-			// label5
+			// lblExeDescriptionConfig
 			// 
-			this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label5.Location = new System.Drawing.Point(11, 100);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(403, 41);
-			this.label5.TabIndex = 7;
-			this.label5.Text = "If there is more than one entry in the box above, please select which one is the " +
+			this.lblExeDescriptionConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.lblExeDescriptionConfig.Location = new System.Drawing.Point(11, 100);
+			this.lblExeDescriptionConfig.Name = "lblExeDescriptionConfig";
+			this.lblExeDescriptionConfig.Size = new System.Drawing.Size(403, 41);
+			this.lblExeDescriptionConfig.TabIndex = 7;
+			this.lblExeDescriptionConfig.Text = "If there is more than one entry in the box above, please select which one is the " +
 			"correct path for your LFS.exe. If there are no entries, please click the Browse " +
 			"button to manually locate it.";
 			// 
-			// label2
+			// lblExePathConfig
 			// 
-			this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.label2.Location = new System.Drawing.Point(13, 20);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(114, 18);
-			this.label2.TabIndex = 5;
-			this.label2.Text = "LFS Executable Path:";
+			this.lblExePathConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.lblExePathConfig.Location = new System.Drawing.Point(13, 20);
+			this.lblExePathConfig.Name = "lblExePathConfig";
+			this.lblExePathConfig.Size = new System.Drawing.Size(114, 18);
+			this.lblExePathConfig.TabIndex = 5;
+			this.lblExePathConfig.Text = "LFS Executable Path:";
 			// 
 			// buttonBrowse
 			// 
 			this.buttonBrowse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.buttonBrowse.Location = new System.Drawing.Point(355, 41);
+			this.buttonBrowse.Location = new System.Drawing.Point(341, 41);
 			this.buttonBrowse.Name = "buttonBrowse";
-			this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
+			this.buttonBrowse.Size = new System.Drawing.Size(89, 23);
 			this.buttonBrowse.TabIndex = 4;
 			this.buttonBrowse.Text = "&Browse...";
 			this.buttonBrowse.UseVisualStyleBackColor = true;
@@ -1369,7 +1461,7 @@ namespace BrowseForSpeed.Frontend
 			this.tabControl.ResumeLayout(false);
 			this.tabMain.ResumeLayout(false);
 			this.tabMain.PerformLayout();
-			this.groupBox2.ResumeLayout(false);
+			this.gbFilters.ResumeLayout(false);
 			this.contextMenuBrowser.ResumeLayout(false);
 			this.tabFavourites.ResumeLayout(false);
 			this.tabFavourites.PerformLayout();
@@ -1379,10 +1471,12 @@ namespace BrowseForSpeed.Frontend
 			this.contextMenuFriends.ResumeLayout(false);
 			this.tabConfig.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
-			this.groupBox4.ResumeLayout(false);
+			this.groupBox2.ResumeLayout(false);
 			this.groupBox5.ResumeLayout(false);
-			this.groupBox6.ResumeLayout(false);
-			this.groupBox6.PerformLayout();
+			this.groupBox4.ResumeLayout(false);
+			this.gbStartBeforeLFS.ResumeLayout(false);
+			this.bgProgramConfig.ResumeLayout(false);
+			this.bgProgramConfig.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).EndInit();
@@ -1391,7 +1485,31 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblLangAuthor;
+		private System.Windows.Forms.Label lblLangContact;
+		private System.Windows.Forms.Label lblLangComment;
+		private System.Windows.Forms.Label lblAuthorReal;
+		private System.Windows.Forms.Label lblEmailReal;
+		private System.Windows.Forms.Label lblCommentReal;
+		private System.Windows.Forms.GroupBox groupBox5;
+		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.GroupBox gbFilters;
+		private System.Windows.Forms.Label lblExePathConfig;
+		private System.Windows.Forms.Label lblExeDescriptionConfig;
+		private System.Windows.Forms.Label lblPasswordMain;
+		private System.Windows.Forms.Label lblFindUserMain;
+		private System.Windows.Forms.Label lblQueryWaitHelp;
+		private System.Windows.Forms.Label lblQueryWaitDescription;
+		private System.Windows.Forms.GroupBox gbStartBeforeLFS;
+		private System.Windows.Forms.Label lblInsimPortConfig;
+		private System.Windows.Forms.Label lblProgramConfigPath;
+		private System.Windows.Forms.Label lblPingThreshold;
+		private System.Windows.Forms.Label lblAddressFav;
+		private System.Windows.Forms.GroupBox bgProgramConfig;
+		private System.Windows.Forms.Label lblProgramConfigArg;
+		private System.Windows.Forms.Label lblProgramConfigName;
+		private System.Windows.Forms.Label lblLanguageConfig;
 		private System.Windows.Forms.ComboBox cbConfigLang;
 		private System.Windows.Forms.ToolStripMenuItem viewServerInformationFriend;
 		private System.Windows.Forms.ToolStripMenuItem joinServerToolStripMenuItem2;
@@ -1405,15 +1523,11 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.Button btnProgramNew;
 		private System.Windows.Forms.Button btnProgramDelete;
 		private System.Windows.Forms.ListBox lbPreStart;
-		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.ToolStripMenuItem administrateToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem administrateToolStripMenuItem;
 		private System.Windows.Forms.ComboBox cbAddServerVersion;
 		private System.Windows.Forms.Button btnAddServer;
 		private System.Windows.Forms.TextBox edtAddServerAddress;
-		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.ToolStripMenuItem copyServerToClipboardToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem copyServerToClipboardToolStripMenuItem;
 		private System.Windows.Forms.ComboBox cbVersion;
@@ -1421,7 +1535,6 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.CheckBox cbPrivate;
 		private System.Windows.Forms.CheckBox cbPublic;
 		private System.Windows.Forms.ComboBox cbPing;
-		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.ToolStripMenuItem joinServerMenuFriends;
 		private System.Windows.Forms.ToolStripMenuItem removeFriendToolStripMenuItem;
 		private System.Windows.Forms.ContextMenuStrip contextMenuFriends;
@@ -1441,15 +1554,11 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.TabPage tabFriends;
 		private System.Windows.Forms.OpenFileDialog openFileDialogPS;
 		private System.Windows.Forms.TextBox txtInsimPort;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.RadioButton rbView;
 		private System.Windows.Forms.RadioButton rbJoin;
 		private System.Windows.Forms.GroupBox groupBox4;
 		private System.Windows.Forms.CheckBox cbEmpty;
 		private System.Windows.Forms.NumericUpDown queryWait;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.Button btnCheckNewVersion;
 		private System.Windows.Forms.Button buttonBrowse;
@@ -1466,11 +1575,9 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.ColumnHeader columnPrivate;
 		private System.Windows.Forms.CheckBox cbNewVersion;
 		private System.Windows.Forms.CheckBox cbQueryWait;
-		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.ToolStripMenuItem viewServerInformationFav;
 		private System.Windows.Forms.ToolStripMenuItem viewServerInformationMain;
 		private System.Windows.Forms.ColumnHeader columnHeaderFavCars;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.StatusStrip statusStrip;
 		private System.Windows.Forms.ToolStripStatusLabel statusNoReply;
 		private System.Windows.Forms.ToolStripStatusLabel statusRefused;
@@ -1490,11 +1597,7 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
 		private System.Windows.Forms.ContextMenuStrip contextMenuBrowser;
 		private System.Windows.Forms.Button buttonRefreshFav;
-		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.ListBox pathList;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.ColumnHeader columnHeaderConnections;
 		private System.Windows.Forms.ColumnHeader columnHeaderPing;
 		private System.Windows.Forms.ColumnHeader columnHeaderName;

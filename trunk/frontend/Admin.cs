@@ -31,7 +31,7 @@ namespace BrowseForSpeed.Frontend
 			InitializeComponent();
 			this.info = info;
 			handler = new InSimHandler(true, false);
-			this.Text = "Admin - " + info.hostname;
+			this.Text = MainForm.languages.GetString("Admin.this") + " - " + info.hostname;
 			edtPassword.Text = info.adminPassword;
 			if (info.insimPort != 0) {
 				edtPort.Text = info.insimPort.ToString();
@@ -41,7 +41,11 @@ namespace BrowseForSpeed.Frontend
 		}
 
 		void AdminFormLoad(object sender, System.EventArgs e) {
-
+			btnSend.Text = MainForm.languages.GetString("Admin.btnSend");
+			btnConnect.Text = MainForm.languages.GetString("Admin.btnConnect");
+			lblPassword.Text = MainForm.languages.GetString("Admin.lblPassword");
+			lblinsimPort.Text = MainForm.languages.GetString("Admin.lblinsimPort");
+			this.Text = MainForm.languages.GetString("Admin.this");
 		}
 
 		void BtnSendClick(object sender, System.EventArgs e) {
@@ -90,20 +94,20 @@ namespace BrowseForSpeed.Frontend
 					handler.RequestState();
 					handler.LFSMessage += new MessageEventHandler(cbMessage);
 					btnSend.Enabled = true;
-					btnConnect.Text = "&Disconnect";
+					btnConnect.Text = MainForm.languages.GetString("Admin.btnDisconnect");
 					edtMessage.Enabled = true;
 					btnConnect.Enabled = true;
 					edtMessage.Focus();
 				} catch (Exception) {
 					btnConnect.Enabled = true;
-					MessageBox.Show("Couldn't connect to InSim!", MainForm.appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show(MainForm.languages.GetString("InSimError"), MainForm.languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			} else {
 				handler.LFSMessage -= new MessageEventHandler(cbMessage);
 				handler.Close();
 				btnSend.Enabled = false;
 				edtMessage.Enabled = false;
-				btnConnect.Text = "&Connect";
+				btnConnect.Text = MainForm.languages.GetString("Admin.btnConnect");
 			}
 		}
 
@@ -117,7 +121,8 @@ namespace BrowseForSpeed.Frontend
 				info.insimPort = Int32.Parse(edtPort.Text);
 				if (info.insimPort <= 0 || info.insimPort >= 65536) throw new Exception();
 			} catch (Exception) {
-				MessageBox.Show("Port must be a valid number between 1 and 65535", MainForm.appTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				string message = String.Format(MainForm.languages.GetString("InvalidPort"), edtPort.Text);
+				MessageBox.Show(message, MainForm.languages.GetString("this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				edtPort.Text = edtPort.Text.Remove(edtPort.Text.Length - 1, 1);
 			}
 		}

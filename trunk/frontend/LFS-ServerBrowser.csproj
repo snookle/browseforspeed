@@ -83,9 +83,8 @@
     <EmbeddedResource Include="JoinServerDialog.resx">
       <DependentUpon>JoinServerDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="lang\BrowseForSpeed.resources">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="lang\BrowseForSpeed.resx" />
+    <Compile Include="LanguageManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="lang" />
