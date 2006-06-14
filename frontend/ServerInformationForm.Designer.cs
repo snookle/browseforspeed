@@ -48,23 +48,23 @@ namespace BrowseForSpeed.Frontend
 			this.buttonInfoJoin = new System.Windows.Forms.Button();
 			this.buttonInfoClose = new System.Windows.Forms.Button();
 			this.buttonInfoRefresh = new System.Windows.Forms.Button();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lblServerName = new System.Windows.Forms.Label();
 			this.labe3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
+			this.lblInformation = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.textInfoPassword = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.listPlayers = new System.Windows.Forms.ListBox();
 			this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.btnAddFriend = new System.Windows.Forms.ToolStripMenuItem();
-			this.label6 = new System.Windows.Forms.Label();
+			this.lblCars = new System.Windows.Forms.Label();
 			this.labelServerName = new System.Windows.Forms.Label();
 			this.labelInfo = new System.Windows.Forms.Label();
 			this.labelCars = new System.Windows.Forms.Label();
 			this.labelPing = new System.Windows.Forms.Label();
 			this.labelTrack = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
+			this.lblPrivate = new System.Windows.Forms.Label();
 			this.labelPrivate = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.contextMenu.SuspendLayout();
@@ -101,14 +101,14 @@ namespace BrowseForSpeed.Frontend
 			this.buttonInfoRefresh.UseVisualStyleBackColor = true;
 			this.buttonInfoRefresh.Click += new System.EventHandler(this.RefreshButtonClick);
 			// 
-			// label2
+			// lblServerName
 			// 
-			this.label2.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-			this.label2.Location = new System.Drawing.Point(12, 9);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(100, 23);
-			this.label2.TabIndex = 4;
-			this.label2.Text = "Server Name:";
+			this.lblServerName.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
+			this.lblServerName.Location = new System.Drawing.Point(12, 9);
+			this.lblServerName.Name = "lblServerName";
+			this.lblServerName.Size = new System.Drawing.Size(100, 23);
+			this.lblServerName.TabIndex = 4;
+			this.lblServerName.Text = "Server Name:";
 			// 
 			// labe3
 			// 
@@ -122,20 +122,21 @@ namespace BrowseForSpeed.Frontend
 			// label1
 			// 
 			this.label1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-			this.label1.Location = new System.Drawing.Point(229, 32);
+			this.label1.Location = new System.Drawing.Point(226, 32);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(90, 23);
+			this.label1.Size = new System.Drawing.Size(93, 23);
 			this.label1.TabIndex = 6;
 			this.label1.Text = "Current Track:";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
-			// label4
+			// lblInformation
 			// 
-			this.label4.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-			this.label4.Location = new System.Drawing.Point(12, 32);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(100, 23);
-			this.label4.TabIndex = 7;
-			this.label4.Text = "Information:";
+			this.lblInformation.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
+			this.lblInformation.Location = new System.Drawing.Point(12, 32);
+			this.lblInformation.Name = "lblInformation";
+			this.lblInformation.Size = new System.Drawing.Size(100, 23);
+			this.lblInformation.TabIndex = 7;
+			this.lblInformation.Text = "Information:";
 			// 
 			// label5
 			// 
@@ -190,14 +191,14 @@ namespace BrowseForSpeed.Frontend
 			this.btnAddFriend.Text = "&Add to Friends";
 			this.btnAddFriend.Click += new System.EventHandler(this.BtnAddFriendClick);
 			// 
-			// label6
+			// lblCars
 			// 
-			this.label6.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-			this.label6.Location = new System.Drawing.Point(12, 77);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(100, 23);
-			this.label6.TabIndex = 11;
-			this.label6.Text = "Cars:";
+			this.lblCars.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
+			this.lblCars.Location = new System.Drawing.Point(12, 77);
+			this.lblCars.Name = "lblCars";
+			this.lblCars.Size = new System.Drawing.Size(100, 23);
+			this.lblCars.TabIndex = 11;
+			this.lblCars.Text = "Cars:";
 			// 
 			// labelServerName
 			// 
@@ -211,7 +212,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.labelInfo.Location = new System.Drawing.Point(105, 32);
 			this.labelInfo.Name = "labelInfo";
-			this.labelInfo.Size = new System.Drawing.Size(126, 23);
+			this.labelInfo.Size = new System.Drawing.Size(115, 23);
 			this.labelInfo.TabIndex = 13;
 			this.labelInfo.Text = "INFO HERE";
 			// 
@@ -239,14 +240,14 @@ namespace BrowseForSpeed.Frontend
 			this.labelTrack.TabIndex = 16;
 			this.labelTrack.Text = "label3";
 			// 
-			// label3
+			// lblPrivate
 			// 
-			this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(12, 55);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(60, 23);
-			this.label3.TabIndex = 17;
-			this.label3.Text = "Private:";
+			this.lblPrivate.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblPrivate.Location = new System.Drawing.Point(12, 55);
+			this.lblPrivate.Name = "lblPrivate";
+			this.lblPrivate.Size = new System.Drawing.Size(60, 23);
+			this.lblPrivate.TabIndex = 17;
+			this.lblPrivate.Text = "Private:";
 			// 
 			// labelPrivate
 			// 
@@ -263,20 +264,20 @@ namespace BrowseForSpeed.Frontend
 			this.ClientSize = new System.Drawing.Size(436, 373);
 			this.ControlBox = false;
 			this.Controls.Add(this.labelPrivate);
-			this.Controls.Add(this.label3);
+			this.Controls.Add(this.lblPrivate);
 			this.Controls.Add(this.labelTrack);
 			this.Controls.Add(this.labelPing);
 			this.Controls.Add(this.labelCars);
 			this.Controls.Add(this.labelInfo);
 			this.Controls.Add(this.labelServerName);
-			this.Controls.Add(this.label6);
+			this.Controls.Add(this.lblCars);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.textInfoPassword);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.label4);
+			this.Controls.Add(this.lblInformation);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.labe3);
-			this.Controls.Add(this.label2);
+			this.Controls.Add(this.lblServerName);
 			this.Controls.Add(this.buttonInfoRefresh);
 			this.Controls.Add(this.buttonInfoClose);
 			this.Controls.Add(this.buttonInfoJoin);
@@ -292,10 +293,13 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Label lblServerName;
+		private System.Windows.Forms.Label lblInformation;
+		private System.Windows.Forms.Label lblCars;
+		private System.Windows.Forms.Label lblPrivate;
 		private System.Windows.Forms.ToolStripMenuItem btnAddFriend;
 		private System.Windows.Forms.ContextMenuStrip contextMenu;
 		private System.Windows.Forms.Label labelPrivate;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.ListBox listPlayers;
 		private System.Windows.Forms.Label labelTrack;
 		private System.Windows.Forms.Label labelPing;
@@ -307,11 +311,8 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.Button buttonInfoClose;
 		private System.Windows.Forms.Button buttonInfoRefresh;
 		private System.Windows.Forms.TextBox textInfoPassword;
-		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
 	}
 }

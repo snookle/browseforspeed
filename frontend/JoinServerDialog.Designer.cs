@@ -1,4 +1,4 @@
-
+﻿
 
 // Copyright (C) 2006 Richard Nelson, Ben Kenny, Philip Nelson
 //
@@ -47,13 +47,13 @@ namespace BrowseForSpeed.Frontend
 		private void InitializeComponent()
 		{
 			this.btnJoin = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblServerName = new System.Windows.Forms.Label();
 			this.edtServerName = new System.Windows.Forms.TextBox();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.cbVersion = new System.Windows.Forms.ComboBox();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lblPassword = new System.Windows.Forms.Label();
 			this.edtPassword = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
+			this.lblVersion = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// btnJoin
@@ -67,13 +67,13 @@ namespace BrowseForSpeed.Frontend
 			this.btnJoin.Text = "&Join Server";
 			this.btnJoin.UseVisualStyleBackColor = true;
 			// 
-			// label1
+			// lblServerName
 			// 
-			this.label1.Location = new System.Drawing.Point(12, 17);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(74, 23);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Server Name:";
+			this.lblServerName.Location = new System.Drawing.Point(12, 17);
+			this.lblServerName.Name = "lblServerName";
+			this.lblServerName.Size = new System.Drawing.Size(74, 23);
+			this.lblServerName.TabIndex = 1;
+			this.lblServerName.Text = "Server Name:";
 			// 
 			// edtServerName
 			// 
@@ -106,13 +106,13 @@ namespace BrowseForSpeed.Frontend
 			this.cbVersion.Size = new System.Drawing.Size(88, 21);
 			this.cbVersion.TabIndex = 4;
 			// 
-			// label2
+			// lblPassword
 			// 
-			this.label2.Location = new System.Drawing.Point(12, 45);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(74, 23);
-			this.label2.TabIndex = 5;
-			this.label2.Text = "Password:";
+			this.lblPassword.Location = new System.Drawing.Point(12, 45);
+			this.lblPassword.Name = "lblPassword";
+			this.lblPassword.Size = new System.Drawing.Size(74, 23);
+			this.lblPassword.TabIndex = 5;
+			this.lblPassword.Text = "Password:";
 			// 
 			// edtPassword
 			// 
@@ -121,13 +121,13 @@ namespace BrowseForSpeed.Frontend
 			this.edtPassword.Size = new System.Drawing.Size(192, 21);
 			this.edtPassword.TabIndex = 6;
 			// 
-			// label3
+			// lblVersion
 			// 
-			this.label3.Location = new System.Drawing.Point(12, 71);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(74, 23);
-			this.label3.TabIndex = 7;
-			this.label3.Text = "Version:";
+			this.lblVersion.Location = new System.Drawing.Point(12, 71);
+			this.lblVersion.Name = "lblVersion";
+			this.lblVersion.Size = new System.Drawing.Size(74, 23);
+			this.lblVersion.TabIndex = 7;
+			this.lblVersion.Text = "Version:";
 			// 
 			// JoinServerDialog
 			// 
@@ -136,13 +136,13 @@ namespace BrowseForSpeed.Frontend
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnCancel;
 			this.ClientSize = new System.Drawing.Size(298, 128);
-			this.Controls.Add(this.label3);
+			this.Controls.Add(this.lblVersion);
 			this.Controls.Add(this.edtPassword);
-			this.Controls.Add(this.label2);
+			this.Controls.Add(this.lblPassword);
 			this.Controls.Add(this.cbVersion);
 			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.edtServerName);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.lblServerName);
 			this.Controls.Add(this.btnJoin);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
@@ -155,13 +155,13 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label lblServerName;
+		private System.Windows.Forms.Label lblPassword;
+		private System.Windows.Forms.Label lblVersion;
 		private System.Windows.Forms.TextBox edtPassword;
-		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.ComboBox cbVersion;
 		private System.Windows.Forms.Button btnCancel;
 		private System.Windows.Forms.TextBox edtServerName;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button btnJoin;
 	}
 }

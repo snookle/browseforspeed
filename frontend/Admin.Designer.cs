@@ -51,8 +51,8 @@ namespace BrowseForSpeed.Frontend
 			this.btnConnect = new System.Windows.Forms.Button();
 			this.edtPassword = new System.Windows.Forms.TextBox();
 			this.edtPort = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lblPassword = new System.Windows.Forms.Label();
+			this.lblinsimPort = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// txtInfo
@@ -120,22 +120,22 @@ namespace BrowseForSpeed.Frontend
 			this.edtPort.Text = "29999";
 			this.edtPort.TextChanged += new System.EventHandler(this.EdtPortTextChanged);
 			// 
-			// label1
+			// lblPassword
 			// 
-			this.label1.Location = new System.Drawing.Point(31, 17);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(59, 19);
-			this.label1.TabIndex = 6;
-			this.label1.Text = "Password:";
+			this.lblPassword.Location = new System.Drawing.Point(31, 17);
+			this.lblPassword.Name = "lblPassword";
+			this.lblPassword.Size = new System.Drawing.Size(59, 19);
+			this.lblPassword.TabIndex = 6;
+			this.lblPassword.Text = "Password:";
 			// 
-			// label2
+			// lblinsimPort
 			// 
-			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.label2.Location = new System.Drawing.Point(204, 14);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(62, 17);
-			this.label2.TabIndex = 7;
-			this.label2.Text = "InSim Port:";
+			this.lblinsimPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblinsimPort.Location = new System.Drawing.Point(204, 14);
+			this.lblinsimPort.Name = "lblinsimPort";
+			this.lblinsimPort.Size = new System.Drawing.Size(62, 17);
+			this.lblinsimPort.TabIndex = 7;
+			this.lblinsimPort.Text = "InSim Port:";
 			// 
 			// AdminForm
 			// 
@@ -143,8 +143,8 @@ namespace BrowseForSpeed.Frontend
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(498, 383);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.lblinsimPort);
+			this.Controls.Add(this.lblPassword);
 			this.Controls.Add(this.edtPort);
 			this.Controls.Add(this.edtPassword);
 			this.Controls.Add(this.btnConnect);
@@ -161,8 +161,8 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblPassword;
+		private System.Windows.Forms.Label lblinsimPort;
 		private System.Windows.Forms.TextBox edtPort;
 		private System.Windows.Forms.TextBox edtPassword;
 		private System.Windows.Forms.Button btnConnect;
