@@ -67,7 +67,8 @@ namespace BrowseForSpeed.Frontend
 			l.filename = filename;
 			XmlDocument doc = new XmlDocument();
 			try {
-				doc.Load(filename);
+				System.IO.TextReader r = new System.IO.StreamReader(filename, System.Text.Encoding.Default);
+				doc.Load(r);
 				XmlNodeList list = doc.GetElementsByTagName("language");
 				l.name = ((XmlElement)list[0]).GetElementsByTagName("name")[0].FirstChild.Value;
 				l.email = ((XmlElement)list[0]).GetElementsByTagName("email")[0].FirstChild.Value;

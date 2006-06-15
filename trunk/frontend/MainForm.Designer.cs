@@ -615,7 +615,7 @@ namespace BrowseForSpeed.Frontend
 									"S2",
 									"S1",
 									"Demo"});
-			this.cbAddServerVersion.Location = new System.Drawing.Point(706, 541);
+			this.cbAddServerVersion.Location = new System.Drawing.Point(677, 541);
 			this.cbAddServerVersion.Name = "cbAddServerVersion";
 			this.cbAddServerVersion.Size = new System.Drawing.Size(59, 21);
 			this.cbAddServerVersion.TabIndex = 10;
@@ -623,16 +623,17 @@ namespace BrowseForSpeed.Frontend
 			// lblAddressFav
 			// 
 			this.lblAddressFav.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.lblAddressFav.Location = new System.Drawing.Point(427, 544);
+			this.lblAddressFav.Location = new System.Drawing.Point(312, 544);
 			this.lblAddressFav.Name = "lblAddressFav";
-			this.lblAddressFav.Size = new System.Drawing.Size(100, 16);
+			this.lblAddressFav.Size = new System.Drawing.Size(186, 16);
 			this.lblAddressFav.TabIndex = 9;
 			this.lblAddressFav.Text = "Server IP Address:";
+			this.lblAddressFav.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// edtAddServerAddress
 			// 
 			this.edtAddServerAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.edtAddServerAddress.Location = new System.Drawing.Point(533, 541);
+			this.edtAddServerAddress.Location = new System.Drawing.Point(504, 541);
 			this.edtAddServerAddress.Name = "edtAddServerAddress";
 			this.edtAddServerAddress.Size = new System.Drawing.Size(167, 21);
 			this.edtAddServerAddress.TabIndex = 8;
@@ -641,9 +642,9 @@ namespace BrowseForSpeed.Frontend
 			// btnAddServer
 			// 
 			this.btnAddServer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnAddServer.Location = new System.Drawing.Point(771, 539);
+			this.btnAddServer.Location = new System.Drawing.Point(742, 539);
 			this.btnAddServer.Name = "btnAddServer";
-			this.btnAddServer.Size = new System.Drawing.Size(75, 23);
+			this.btnAddServer.Size = new System.Drawing.Size(104, 23);
 			this.btnAddServer.TabIndex = 7;
 			this.btnAddServer.Text = "&Add Server";
 			this.btnAddServer.UseVisualStyleBackColor = true;
@@ -794,7 +795,7 @@ namespace BrowseForSpeed.Frontend
 			// edtFriendName
 			// 
 			this.edtFriendName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.edtFriendName.Location = new System.Drawing.Point(583, 537);
+			this.edtFriendName.Location = new System.Drawing.Point(552, 538);
 			this.edtFriendName.Name = "edtFriendName";
 			this.edtFriendName.Size = new System.Drawing.Size(182, 21);
 			this.edtFriendName.TabIndex = 6;
@@ -804,9 +805,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.btnAddFriend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnAddFriend.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnAddFriend.Location = new System.Drawing.Point(771, 536);
+			this.btnAddFriend.Location = new System.Drawing.Point(740, 536);
 			this.btnAddFriend.Name = "btnAddFriend";
-			this.btnAddFriend.Size = new System.Drawing.Size(75, 23);
+			this.btnAddFriend.Size = new System.Drawing.Size(106, 23);
 			this.btnAddFriend.TabIndex = 5;
 			this.btnAddFriend.Text = "&Add Friend";
 			this.btnAddFriend.UseVisualStyleBackColor = true;
@@ -818,7 +819,7 @@ namespace BrowseForSpeed.Frontend
 			this.cbHideOffline.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.cbHideOffline.Location = new System.Drawing.Point(166, 538);
 			this.cbHideOffline.Name = "cbHideOffline";
-			this.cbHideOffline.Size = new System.Drawing.Size(129, 24);
+			this.cbHideOffline.Size = new System.Drawing.Size(278, 24);
 			this.cbHideOffline.TabIndex = 4;
 			this.cbHideOffline.Text = "Hide Offline Friends";
 			this.cbHideOffline.UseVisualStyleBackColor = true;
