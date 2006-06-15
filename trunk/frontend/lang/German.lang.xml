@@ -22,7 +22,7 @@
 
 
 <language>
-	<name>German</name>
+	<name>Deutsch</name>
 	<author>Sebastian "Octrin.VorTeX" Bauer</author>
 	<email>vortex@gjl-network.net</email>
 	<!-- put whatever you like here, but keep it brief-->
@@ -34,6 +34,8 @@
 	<component name="Global.True">Wahr</component>
 	<component name="Global.False">Falsch</component>
 	<component name="Global.Error">Fehler</component>
+	<component name="Global.Enabled">Aktiviert</component>
+	<component name="Global.Disabled">Deaktiviert</component>
 
 	<!-- Main Form Components -->
 	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
