@@ -111,8 +111,8 @@
 	<component name="MainForm.gbStartBeforeLFS">Starte vor LFS</component>
 	<component name="MainForm.btnProgramEnable">&amp;Aktivieren</component>
 	<component name="MainForm.btnProgramDisable">&amp;Deaktivieren</component>
-	<component name="MainForm.btnProgramDelete">&amp;Programm entfernen</component>
-	<component name="MainForm.btnProgramNew">&amp;Neues Programm</component>
+	<component name="MainForm.btnProgramDelete">&amp;Entfernen</component>
+	<component name="MainForm.btnProgramNew">&amp;Neues</component>
 	<component name="MainForm.bgProgramConfig">Programmkonfiguration</component>
 	<component name="MainForm.btnProgramCancel">A&amp;bbrechen</component>
 	<component name="MainForm.btnProgramSave">&amp;Speichern</component>

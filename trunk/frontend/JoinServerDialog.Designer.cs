@@ -60,9 +60,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.btnJoin.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.btnJoin.Enabled = false;
-			this.btnJoin.Location = new System.Drawing.Point(128, 97);
+			this.btnJoin.Location = new System.Drawing.Point(61, 97);
 			this.btnJoin.Name = "btnJoin";
-			this.btnJoin.Size = new System.Drawing.Size(75, 23);
+			this.btnJoin.Size = new System.Drawing.Size(108, 23);
 			this.btnJoin.TabIndex = 0;
 			this.btnJoin.Text = "&Join Server";
 			this.btnJoin.UseVisualStyleBackColor = true;
@@ -86,9 +86,9 @@ namespace BrowseForSpeed.Frontend
 			// btnCancel
 			// 
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.btnCancel.Location = new System.Drawing.Point(209, 97);
+			this.btnCancel.Location = new System.Drawing.Point(175, 97);
 			this.btnCancel.Name = "btnCancel";
-			this.btnCancel.Size = new System.Drawing.Size(75, 23);
+			this.btnCancel.Size = new System.Drawing.Size(109, 23);
 			this.btnCancel.TabIndex = 3;
 			this.btnCancel.Text = "&Cancel";
 			this.btnCancel.UseVisualStyleBackColor = true;
