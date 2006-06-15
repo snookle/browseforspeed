@@ -73,9 +73,9 @@ namespace BrowseForSpeed.Frontend
 			// buttonInfoJoin
 			// 
 			this.buttonInfoJoin.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.buttonInfoJoin.Location = new System.Drawing.Point(12, 338);
+			this.buttonInfoJoin.Location = new System.Drawing.Point(301, 343);
 			this.buttonInfoJoin.Name = "buttonInfoJoin";
-			this.buttonInfoJoin.Size = new System.Drawing.Size(75, 23);
+			this.buttonInfoJoin.Size = new System.Drawing.Size(102, 23);
 			this.buttonInfoJoin.TabIndex = 0;
 			this.buttonInfoJoin.Text = "&Join";
 			this.buttonInfoJoin.UseVisualStyleBackColor = true;
@@ -83,9 +83,9 @@ namespace BrowseForSpeed.Frontend
 			// buttonInfoClose
 			// 
 			this.buttonInfoClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.buttonInfoClose.Location = new System.Drawing.Point(349, 338);
+			this.buttonInfoClose.Location = new System.Drawing.Point(409, 342);
 			this.buttonInfoClose.Name = "buttonInfoClose";
-			this.buttonInfoClose.Size = new System.Drawing.Size(75, 23);
+			this.buttonInfoClose.Size = new System.Drawing.Size(102, 23);
 			this.buttonInfoClose.TabIndex = 1;
 			this.buttonInfoClose.Text = "&Close";
 			this.buttonInfoClose.UseVisualStyleBackColor = true;
@@ -93,9 +93,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// buttonInfoRefresh
 			// 
-			this.buttonInfoRefresh.Location = new System.Drawing.Point(268, 338);
+			this.buttonInfoRefresh.Location = new System.Drawing.Point(12, 343);
 			this.buttonInfoRefresh.Name = "buttonInfoRefresh";
-			this.buttonInfoRefresh.Size = new System.Drawing.Size(75, 23);
+			this.buttonInfoRefresh.Size = new System.Drawing.Size(102, 23);
 			this.buttonInfoRefresh.TabIndex = 2;
 			this.buttonInfoRefresh.Text = "&Refresh";
 			this.buttonInfoRefresh.UseVisualStyleBackColor = true;
@@ -106,25 +106,27 @@ namespace BrowseForSpeed.Frontend
 			this.lblServerName.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
 			this.lblServerName.Location = new System.Drawing.Point(12, 9);
 			this.lblServerName.Name = "lblServerName";
-			this.lblServerName.Size = new System.Drawing.Size(100, 23);
+			this.lblServerName.Size = new System.Drawing.Size(118, 23);
 			this.lblServerName.TabIndex = 4;
 			this.lblServerName.Text = "Server Name:";
+			this.lblServerName.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// labe3
 			// 
 			this.labe3.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-			this.labe3.Location = new System.Drawing.Point(283, 9);
+			this.labe3.Location = new System.Drawing.Point(331, 9);
 			this.labe3.Name = "labe3";
-			this.labe3.Size = new System.Drawing.Size(36, 23);
+			this.labe3.Size = new System.Drawing.Size(53, 23);
 			this.labe3.TabIndex = 5;
 			this.labe3.Text = "Ping:";
+			this.labe3.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// label1
 			// 
 			this.label1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-			this.label1.Location = new System.Drawing.Point(226, 32);
+			this.label1.Location = new System.Drawing.Point(253, 32);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(93, 23);
+			this.label1.Size = new System.Drawing.Size(131, 23);
 			this.label1.TabIndex = 6;
 			this.label1.Text = "Current Track:";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -134,23 +136,25 @@ namespace BrowseForSpeed.Frontend
 			this.lblInformation.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
 			this.lblInformation.Location = new System.Drawing.Point(12, 32);
 			this.lblInformation.Name = "lblInformation";
-			this.lblInformation.Size = new System.Drawing.Size(100, 23);
+			this.lblInformation.Size = new System.Drawing.Size(118, 23);
 			this.lblInformation.TabIndex = 7;
 			this.lblInformation.Text = "Information:";
+			this.lblInformation.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// label5
 			// 
-			this.label5.Location = new System.Drawing.Point(93, 343);
+			this.label5.Location = new System.Drawing.Point(93, 348);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(100, 23);
+			this.label5.Size = new System.Drawing.Size(106, 23);
 			this.label5.TabIndex = 8;
 			this.label5.Text = "Password:";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// textInfoPassword
 			// 
-			this.textInfoPassword.Location = new System.Drawing.Point(153, 340);
+			this.textInfoPassword.Location = new System.Drawing.Point(205, 345);
 			this.textInfoPassword.Name = "textInfoPassword";
-			this.textInfoPassword.Size = new System.Drawing.Size(109, 21);
+			this.textInfoPassword.Size = new System.Drawing.Size(90, 21);
 			this.textInfoPassword.TabIndex = 9;
 			this.textInfoPassword.Leave += new System.EventHandler(this.TextInfoPasswordLeave);
 			this.textInfoPassword.TextChanged += new System.EventHandler(this.TextInfoPasswordTextChanged);
@@ -160,7 +164,7 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox1.Controls.Add(this.listPlayers);
 			this.groupBox1.Location = new System.Drawing.Point(12, 103);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(412, 233);
+			this.groupBox1.Size = new System.Drawing.Size(499, 233);
 			this.groupBox1.TabIndex = 10;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Players";
@@ -173,7 +177,7 @@ namespace BrowseForSpeed.Frontend
 									"Retrieving...."});
 			this.listPlayers.Location = new System.Drawing.Point(6, 15);
 			this.listPlayers.Name = "listPlayers";
-			this.listPlayers.Size = new System.Drawing.Size(400, 212);
+			this.listPlayers.Size = new System.Drawing.Size(487, 212);
 			this.listPlayers.TabIndex = 0;
 			// 
 			// contextMenu
@@ -196,13 +200,14 @@ namespace BrowseForSpeed.Frontend
 			this.lblCars.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
 			this.lblCars.Location = new System.Drawing.Point(12, 77);
 			this.lblCars.Name = "lblCars";
-			this.lblCars.Size = new System.Drawing.Size(100, 23);
+			this.lblCars.Size = new System.Drawing.Size(118, 23);
 			this.lblCars.TabIndex = 11;
 			this.lblCars.Text = "Cars:";
+			this.lblCars.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// labelServerName
 			// 
-			this.labelServerName.Location = new System.Drawing.Point(105, 9);
+			this.labelServerName.Location = new System.Drawing.Point(136, 9);
 			this.labelServerName.Name = "labelServerName";
 			this.labelServerName.Size = new System.Drawing.Size(180, 23);
 			this.labelServerName.TabIndex = 12;
@@ -210,7 +215,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// labelInfo
 			// 
-			this.labelInfo.Location = new System.Drawing.Point(105, 32);
+			this.labelInfo.Location = new System.Drawing.Point(136, 32);
 			this.labelInfo.Name = "labelInfo";
 			this.labelInfo.Size = new System.Drawing.Size(115, 23);
 			this.labelInfo.TabIndex = 13;
@@ -218,23 +223,23 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// labelCars
 			// 
-			this.labelCars.Location = new System.Drawing.Point(45, 77);
+			this.labelCars.Location = new System.Drawing.Point(136, 77);
 			this.labelCars.Name = "labelCars";
-			this.labelCars.Size = new System.Drawing.Size(379, 23);
+			this.labelCars.Size = new System.Drawing.Size(375, 23);
 			this.labelCars.TabIndex = 14;
 			this.labelCars.Text = "CARS HERE LOL";
 			// 
 			// labelPing
 			// 
-			this.labelPing.Location = new System.Drawing.Point(319, 9);
+			this.labelPing.Location = new System.Drawing.Point(396, 9);
 			this.labelPing.Name = "labelPing";
-			this.labelPing.Size = new System.Drawing.Size(91, 23);
+			this.labelPing.Size = new System.Drawing.Size(115, 23);
 			this.labelPing.TabIndex = 15;
 			this.labelPing.Text = "label3";
 			// 
 			// labelTrack
 			// 
-			this.labelTrack.Location = new System.Drawing.Point(320, 32);
+			this.labelTrack.Location = new System.Drawing.Point(396, 32);
 			this.labelTrack.Name = "labelTrack";
 			this.labelTrack.Size = new System.Drawing.Size(115, 23);
 			this.labelTrack.TabIndex = 16;
@@ -245,13 +250,14 @@ namespace BrowseForSpeed.Frontend
 			this.lblPrivate.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblPrivate.Location = new System.Drawing.Point(12, 55);
 			this.lblPrivate.Name = "lblPrivate";
-			this.lblPrivate.Size = new System.Drawing.Size(60, 23);
+			this.lblPrivate.Size = new System.Drawing.Size(118, 23);
 			this.lblPrivate.TabIndex = 17;
 			this.lblPrivate.Text = "Private:";
+			this.lblPrivate.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// labelPrivate
 			// 
-			this.labelPrivate.Location = new System.Drawing.Point(105, 55);
+			this.labelPrivate.Location = new System.Drawing.Point(136, 54);
 			this.labelPrivate.Name = "labelPrivate";
 			this.labelPrivate.Size = new System.Drawing.Size(100, 23);
 			this.labelPrivate.TabIndex = 18;
@@ -261,26 +267,26 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(436, 373);
-			this.ControlBox = false;
-			this.Controls.Add(this.labelPrivate);
+			this.ClientSize = new System.Drawing.Size(523, 373);
 			this.Controls.Add(this.lblPrivate);
+			this.Controls.Add(this.labelPrivate);
 			this.Controls.Add(this.labelTrack);
-			this.Controls.Add(this.labelPing);
 			this.Controls.Add(this.labelCars);
+			this.Controls.Add(this.labelPing);
 			this.Controls.Add(this.labelInfo);
-			this.Controls.Add(this.labelServerName);
 			this.Controls.Add(this.lblCars);
+			this.Controls.Add(this.labelServerName);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.textInfoPassword);
-			this.Controls.Add(this.label5);
 			this.Controls.Add(this.lblInformation);
+			this.Controls.Add(this.lblServerName);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.labe3);
-			this.Controls.Add(this.lblServerName);
-			this.Controls.Add(this.buttonInfoRefresh);
 			this.Controls.Add(this.buttonInfoClose);
 			this.Controls.Add(this.buttonInfoJoin);
+			this.Controls.Add(this.buttonInfoRefresh);
+			this.Controls.Add(this.label5);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "ServerInformationForm";

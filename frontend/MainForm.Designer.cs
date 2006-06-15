@@ -273,9 +273,9 @@ namespace BrowseForSpeed.Frontend
 			// edtFindUserMain
 			// 
 			this.edtFindUserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.edtFindUserMain.Location = new System.Drawing.Point(595, 536);
+			this.edtFindUserMain.Location = new System.Drawing.Point(595, 539);
 			this.edtFindUserMain.Name = "edtFindUserMain";
-			this.edtFindUserMain.Size = new System.Drawing.Size(158, 21);
+			this.edtFindUserMain.Size = new System.Drawing.Size(136, 21);
 			this.edtFindUserMain.TabIndex = 9;
 			this.edtFindUserMain.WordWrap = false;
 			this.edtFindUserMain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EdtFindUserMainKeyDown);
@@ -284,9 +284,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.lblFindUserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblFindUserMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.lblFindUserMain.Location = new System.Drawing.Point(503, 541);
+			this.lblFindUserMain.Location = new System.Drawing.Point(469, 542);
 			this.lblFindUserMain.Name = "lblFindUserMain";
-			this.lblFindUserMain.Size = new System.Drawing.Size(94, 21);
+			this.lblFindUserMain.Size = new System.Drawing.Size(120, 21);
 			this.lblFindUserMain.TabIndex = 8;
 			this.lblFindUserMain.Text = "Find User:";
 			this.lblFindUserMain.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -294,16 +294,16 @@ namespace BrowseForSpeed.Frontend
 			// edtPasswordMain
 			// 
 			this.edtPasswordMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.edtPasswordMain.Location = new System.Drawing.Point(324, 536);
+			this.edtPasswordMain.Location = new System.Drawing.Point(324, 539);
 			this.edtPasswordMain.Name = "edtPasswordMain";
-			this.edtPasswordMain.Size = new System.Drawing.Size(173, 21);
+			this.edtPasswordMain.Size = new System.Drawing.Size(139, 21);
 			this.edtPasswordMain.TabIndex = 7;
 			// 
 			// lblPasswordMain
 			// 
 			this.lblPasswordMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.lblPasswordMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.lblPasswordMain.Location = new System.Drawing.Point(170, 541);
+			this.lblPasswordMain.Location = new System.Drawing.Point(179, 542);
 			this.lblPasswordMain.Name = "lblPasswordMain";
 			this.lblPasswordMain.Size = new System.Drawing.Size(148, 16);
 			this.lblPasswordMain.TabIndex = 6;
@@ -314,9 +314,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.btnFindUserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnFindUserMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnFindUserMain.Location = new System.Drawing.Point(759, 536);
+			this.btnFindUserMain.Location = new System.Drawing.Point(737, 537);
 			this.btnFindUserMain.Name = "btnFindUserMain";
-			this.btnFindUserMain.Size = new System.Drawing.Size(115, 23);
+			this.btnFindUserMain.Size = new System.Drawing.Size(137, 23);
 			this.btnFindUserMain.TabIndex = 5;
 			this.btnFindUserMain.Text = "&Find User Online";
 			this.btnFindUserMain.UseVisualStyleBackColor = true;
@@ -795,7 +795,7 @@ namespace BrowseForSpeed.Frontend
 			// edtFriendName
 			// 
 			this.edtFriendName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.edtFriendName.Location = new System.Drawing.Point(552, 538);
+			this.edtFriendName.Location = new System.Drawing.Point(540, 538);
 			this.edtFriendName.Name = "edtFriendName";
 			this.edtFriendName.Size = new System.Drawing.Size(182, 21);
 			this.edtFriendName.TabIndex = 6;
@@ -805,9 +805,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.btnAddFriend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnAddFriend.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnAddFriend.Location = new System.Drawing.Point(740, 536);
+			this.btnAddFriend.Location = new System.Drawing.Point(728, 536);
 			this.btnAddFriend.Name = "btnAddFriend";
-			this.btnAddFriend.Size = new System.Drawing.Size(106, 23);
+			this.btnAddFriend.Size = new System.Drawing.Size(118, 23);
 			this.btnAddFriend.TabIndex = 5;
 			this.btnAddFriend.Text = "&Add Friend";
 			this.btnAddFriend.UseVisualStyleBackColor = true;
@@ -817,7 +817,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.cbHideOffline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.cbHideOffline.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.cbHideOffline.Location = new System.Drawing.Point(166, 538);
+			this.cbHideOffline.Location = new System.Drawing.Point(256, 537);
 			this.cbHideOffline.Name = "cbHideOffline";
 			this.cbHideOffline.Size = new System.Drawing.Size(278, 24);
 			this.cbHideOffline.TabIndex = 4;
@@ -829,9 +829,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.btnRefreshFriend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btnRefreshFriend.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnRefreshFriend.Location = new System.Drawing.Point(85, 538);
+			this.btnRefreshFriend.Location = new System.Drawing.Point(119, 536);
 			this.btnRefreshFriend.Name = "btnRefreshFriend";
-			this.btnRefreshFriend.Size = new System.Drawing.Size(75, 23);
+			this.btnRefreshFriend.Size = new System.Drawing.Size(105, 23);
 			this.btnRefreshFriend.TabIndex = 2;
 			this.btnRefreshFriend.Text = "&Refresh List";
 			this.btnRefreshFriend.UseVisualStyleBackColor = true;
@@ -842,9 +842,9 @@ namespace BrowseForSpeed.Frontend
 			this.btnJoinFriend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btnJoinFriend.Enabled = false;
 			this.btnJoinFriend.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnJoinFriend.Location = new System.Drawing.Point(4, 538);
+			this.btnJoinFriend.Location = new System.Drawing.Point(8, 536);
 			this.btnJoinFriend.Name = "btnJoinFriend";
-			this.btnJoinFriend.Size = new System.Drawing.Size(75, 23);
+			this.btnJoinFriend.Size = new System.Drawing.Size(105, 23);
 			this.btnJoinFriend.TabIndex = 1;
 			this.btnJoinFriend.Text = "&Join Friend";
 			this.btnJoinFriend.UseVisualStyleBackColor = true;
@@ -1150,9 +1150,9 @@ namespace BrowseForSpeed.Frontend
 			// btnProgramCancel
 			// 
 			this.btnProgramCancel.Enabled = false;
-			this.btnProgramCancel.Location = new System.Drawing.Point(87, 101);
+			this.btnProgramCancel.Location = new System.Drawing.Point(108, 101);
 			this.btnProgramCancel.Name = "btnProgramCancel";
-			this.btnProgramCancel.Size = new System.Drawing.Size(75, 23);
+			this.btnProgramCancel.Size = new System.Drawing.Size(96, 23);
 			this.btnProgramCancel.TabIndex = 10;
 			this.btnProgramCancel.Text = "C&ancel";
 			this.btnProgramCancel.UseVisualStyleBackColor = true;
@@ -1163,7 +1163,7 @@ namespace BrowseForSpeed.Frontend
 			this.btnProgramSave.Enabled = false;
 			this.btnProgramSave.Location = new System.Drawing.Point(6, 101);
 			this.btnProgramSave.Name = "btnProgramSave";
-			this.btnProgramSave.Size = new System.Drawing.Size(75, 23);
+			this.btnProgramSave.Size = new System.Drawing.Size(96, 23);
 			this.btnProgramSave.TabIndex = 9;
 			this.btnProgramSave.Text = "&Save";
 			this.btnProgramSave.UseVisualStyleBackColor = true;
@@ -1174,7 +1174,7 @@ namespace BrowseForSpeed.Frontend
 			this.edtProgramOptions.Enabled = false;
 			this.edtProgramOptions.Location = new System.Drawing.Point(87, 74);
 			this.edtProgramOptions.Name = "edtProgramOptions";
-			this.edtProgramOptions.Size = new System.Drawing.Size(231, 21);
+			this.edtProgramOptions.Size = new System.Drawing.Size(210, 21);
 			this.edtProgramOptions.TabIndex = 8;
 			// 
 			// lblProgramConfigArg
@@ -1206,9 +1206,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.btnProgramBrowse.Enabled = false;
 			this.btnProgramBrowse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnProgramBrowse.Location = new System.Drawing.Point(326, 45);
+			this.btnProgramBrowse.Location = new System.Drawing.Point(303, 45);
 			this.btnProgramBrowse.Name = "btnProgramBrowse";
-			this.btnProgramBrowse.Size = new System.Drawing.Size(75, 23);
+			this.btnProgramBrowse.Size = new System.Drawing.Size(98, 23);
 			this.btnProgramBrowse.TabIndex = 4;
 			this.btnProgramBrowse.Text = "B&rowse...";
 			this.btnProgramBrowse.UseVisualStyleBackColor = true;
@@ -1228,7 +1228,7 @@ namespace BrowseForSpeed.Frontend
 			this.edtProgramPath.Enabled = false;
 			this.edtProgramPath.Location = new System.Drawing.Point(87, 47);
 			this.edtProgramPath.Name = "edtProgramPath";
-			this.edtProgramPath.Size = new System.Drawing.Size(231, 21);
+			this.edtProgramPath.Size = new System.Drawing.Size(210, 21);
 			this.edtProgramPath.TabIndex = 7;
 			this.edtProgramPath.TextChanged += new System.EventHandler(this.EdtProgramNameTextChanged);
 			// 
@@ -1317,7 +1317,7 @@ namespace BrowseForSpeed.Frontend
 			this.cbQueryWait.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.cbQueryWait.Location = new System.Drawing.Point(24, 20);
 			this.cbQueryWait.Name = "cbQueryWait";
-			this.cbQueryWait.Size = new System.Drawing.Size(139, 24);
+			this.cbQueryWait.Size = new System.Drawing.Size(294, 24);
 			this.cbQueryWait.TabIndex = 13;
 			this.cbQueryWait.Text = "Disable Query Wait";
 			this.cbQueryWait.UseVisualStyleBackColor = true;
@@ -1336,7 +1336,7 @@ namespace BrowseForSpeed.Frontend
 			// btnCheckNewVersion
 			// 
 			this.btnCheckNewVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnCheckNewVersion.Location = new System.Drawing.Point(339, 163);
+			this.btnCheckNewVersion.Location = new System.Drawing.Point(339, 171);
 			this.btnCheckNewVersion.Name = "btnCheckNewVersion";
 			this.btnCheckNewVersion.Size = new System.Drawing.Size(91, 23);
 			this.btnCheckNewVersion.TabIndex = 13;
@@ -1349,7 +1349,7 @@ namespace BrowseForSpeed.Frontend
 			this.cbNewVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.cbNewVersion.Location = new System.Drawing.Point(11, 162);
 			this.cbNewVersion.Name = "cbNewVersion";
-			this.cbNewVersion.Size = new System.Drawing.Size(322, 24);
+			this.cbNewVersion.Size = new System.Drawing.Size(322, 42);
 			this.cbNewVersion.TabIndex = 12;
 			this.cbNewVersion.Text = "Check for a new version of Browse For Speed on start up";
 			this.cbNewVersion.UseVisualStyleBackColor = true;
