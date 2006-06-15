@@ -23,10 +23,10 @@
 
 <language>
 	<name>German</name>
-	<author>Sebastian Bauer (Octrin.VorTeX)</author>
-	<email>N/A</email>
+	<author>Sebastian "Octrin.VorTeX" Bauer</author>
+	<email>vortex@gjl-network.net</email>
 	<!-- put whatever you like here, but keep it brief-->
-	<comment>German translation by VorTeX</comment>
+	<comment>German Language file for Browse for Speed</comment>
 
 	<!-- Global stuff -->
 	<component name="Global.Yes">Ja</component>
@@ -111,8 +111,8 @@
 	<component name="MainForm.gbStartBeforeLFS">Starte vor LFS</component>
 	<component name="MainForm.btnProgramEnable">&amp;Aktivieren</component>
 	<component name="MainForm.btnProgramDisable">&amp;Deaktivieren</component>
-	<component name="MainForm.btnProgramDelete">&amp;Entfernen</component>
-	<component name="MainForm.btnProgramNew">&amp;Neues</component>
+	<component name="MainForm.btnProgramDelete">&amp;Programm entfernen</component>
+	<component name="MainForm.btnProgramNew">&amp;Neues Programm</component>
 	<component name="MainForm.bgProgramConfig">Programmkonfiguration</component>
 	<component name="MainForm.btnProgramCancel">A&amp;bbrechen</component>
 	<component name="MainForm.btnProgramSave">&amp;Speichern</component>
