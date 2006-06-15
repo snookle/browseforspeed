@@ -899,7 +899,7 @@ namespace BrowseForSpeed.Frontend
 									this.joinServerMenuFriends,
 									this.removeFriendToolStripMenuItem});
 			this.contextMenuFriends.Name = "contextMenuFriends";
-			this.contextMenuFriends.Size = new System.Drawing.Size(158, 70);
+			this.contextMenuFriends.Size = new System.Drawing.Size(158, 48);
 			this.contextMenuFriends.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFriendsOpening);
 			// 
 			// joinServerMenuFriends
@@ -981,7 +981,7 @@ namespace BrowseForSpeed.Frontend
 			this.lblCommentReal.Name = "lblCommentReal";
 			this.lblCommentReal.Size = new System.Drawing.Size(225, 38);
 			this.lblCommentReal.TabIndex = 5;
-			this.lblCommentReal.Text = "langComments";
+			this.lblCommentReal.Text = "N/A";
 			// 
 			// lblEmailReal
 			// 
@@ -989,7 +989,7 @@ namespace BrowseForSpeed.Frontend
 			this.lblEmailReal.Name = "lblEmailReal";
 			this.lblEmailReal.Size = new System.Drawing.Size(225, 23);
 			this.lblEmailReal.TabIndex = 4;
-			this.lblEmailReal.Text = "AuthorEmal";
+			this.lblEmailReal.Text = "N/A";
 			// 
 			// lblAuthorReal
 			// 
@@ -997,7 +997,7 @@ namespace BrowseForSpeed.Frontend
 			this.lblAuthorReal.Name = "lblAuthorReal";
 			this.lblAuthorReal.Size = new System.Drawing.Size(212, 23);
 			this.lblAuthorReal.TabIndex = 3;
-			this.lblAuthorReal.Text = "langAuthor";
+			this.lblAuthorReal.Text = "N/A";
 			// 
 			// lblLangComment
 			// 

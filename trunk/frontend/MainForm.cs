@@ -957,7 +957,7 @@ public class ListSorter: IComparer<ServerListItem>
 			config.checkNewVersion = cbNewVersion.Checked;
 			config.queryWait = (int)queryWait.Value;
 			config.joinOnClick = rbJoin.Checked;
-			config.language = cbConfigLang.SelectedItem.ToString();
+			config.language = (cbConfigLang.SelectedItem ?? "").ToString();
 			LFSQuery.xpsp2_wait = !config.disableWait;
 			LFSQuery.THREAD_WAIT = config.queryWait;
 			config.psp.Clear();
@@ -1278,7 +1278,7 @@ public class ListSorter: IComparer<ServerListItem>
 				LFSQuery.xpsp2_wait = !config.disableWait;
 				LFSQuery.THREAD_WAIT = config.queryWait;
 				queryWait.Value = config.queryWait;
-				if (config.language == "")
+				if (config.language == "" && languages.Count > 0)
 					cbConfigLang.SelectedIndex = 0;
 				else
 					cbConfigLang.SelectedItem = config.language;
@@ -1541,6 +1541,8 @@ public class ListSorter: IComparer<ServerListItem>
 
 		private void UpdateUI()
 		{
+			if (languages.Count == 0)
+				return;
 			fileToolStripMenuItem.Text = languages.GetString("MainForm.fileToolStripMenuItem");
 			joinServerToolStripMenuItem2.Text = languages.GetString("MainForm.joinServerToolStripMenuItem2");
 			closeToolStripMenuItem.Text = languages.GetString("MainForm.closeToolStripMenuItem");

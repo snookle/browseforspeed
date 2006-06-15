@@ -39,6 +39,7 @@ namespace BrowseForSpeed.Frontend
 		private Hashtable languages = new Hashtable();
 		private Language lang;
 		private string directory;
+		public int Count = 0;
 		
 		public LanguageManager(string langDirectory)
 		{
@@ -47,42 +48,53 @@ namespace BrowseForSpeed.Frontend
 				DirectoryInfo dir = new DirectoryInfo(langDirectory);
 				FileInfo[] files = dir.GetFiles("*.lang.xml");
 				foreach (FileInfo file in files){
-					Language l = ParseLanguage(file.FullName, false);
-					languages.Add(l.name, l);
+					try {
+						Language l = ParseLanguage(file.FullName, false);
+						languages.Add(l.name, l);
+						Count++;
+					} catch (Exception e) {
+						MessageBox.Show("Error loading " +file.FullName+ "\n" + e.Message+"\nThis language will not be avaliable.", MainForm.appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
 				}
 			} catch (Exception e) {
-				MessageBox.Show("Error loading languages. The only available language will be English (Australian)." + e.Message , MainForm.appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Error loading languages. The only available language will be English" + e.Message , MainForm.appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 		
 		private Language ParseLanguage(string filename, bool getStrings)
 		{
-			XmlDocument doc = new XmlDocument();				
-			doc.Load(filename);
 			Language l = new Language();
 			l.filename = filename;
-			XmlNodeList list = doc.GetElementsByTagName("language");
-			l.name = ((XmlElement)list[0]).GetElementsByTagName("name")[0].FirstChild.Value;
-			l.email = ((XmlElement)list[0]).GetElementsByTagName("email")[0].FirstChild.Value;
-			l.author = ((XmlElement)list[0]).GetElementsByTagName("author")[0].FirstChild.Value;
-			l.comment = ((XmlElement)list[0]).GetElementsByTagName("comment")[0].FirstChild.Value;
-			if (getStrings) {
-				list = ((XmlElement)list[0]).GetElementsByTagName("component");
-				foreach (XmlElement elem in list) {
-					l.strings.Add(elem.GetAttribute("name"), elem.FirstChild.Value);
+			XmlDocument doc = new XmlDocument();
+			try {
+				doc.Load(filename);
+				XmlNodeList list = doc.GetElementsByTagName("language");
+				l.name = ((XmlElement)list[0]).GetElementsByTagName("name")[0].FirstChild.Value;
+				l.email = ((XmlElement)list[0]).GetElementsByTagName("email")[0].FirstChild.Value;
+				l.author = ((XmlElement)list[0]).GetElementsByTagName("author")[0].FirstChild.Value;
+				l.comment = ((XmlElement)list[0]).GetElementsByTagName("comment")[0].FirstChild.Value;
+				if (getStrings) {
+					list = ((XmlElement)list[0]).GetElementsByTagName("component");
+					foreach (XmlElement elem in list) {
+						l.strings.Add(elem.GetAttribute("name"), elem.FirstChild.Value);
+					}
 				}
+			} catch (Exception e) {
+				MessageBox.Show(e.Message, MainForm.appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			return l;
 		}
 		
 		public void ChangeLanguage(string language)
 		{
-			lang = ParseLanguage(((Language)languages[language]).filename, true);
+			if (Count > 0) {
+				lang = ParseLanguage(((Language)languages[language]).filename, true);
+			}
 		}
 		
 		public string GetString(string componentName)
 		{
-			return ((string)lang.strings[componentName]).Replace(@"\n", "\n");
+			return (((string)lang.strings[componentName]) ?? componentName).Replace(@"\n", "\n");
 		}
 		
 		public List<string> Languages{
