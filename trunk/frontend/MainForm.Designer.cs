@@ -303,7 +303,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.lblPasswordMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.lblPasswordMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.lblPasswordMain.Location = new System.Drawing.Point(179, 542);
+			this.lblPasswordMain.Location = new System.Drawing.Point(170, 542);
 			this.lblPasswordMain.Name = "lblPasswordMain";
 			this.lblPasswordMain.Size = new System.Drawing.Size(148, 16);
 			this.lblPasswordMain.TabIndex = 6;
@@ -1100,9 +1100,9 @@ namespace BrowseForSpeed.Frontend
 			// btnProgramEnable
 			// 
 			this.btnProgramEnable.Enabled = false;
-			this.btnProgramEnable.Location = new System.Drawing.Point(315, 116);
+			this.btnProgramEnable.Location = new System.Drawing.Point(292, 116);
 			this.btnProgramEnable.Name = "btnProgramEnable";
-			this.btnProgramEnable.Size = new System.Drawing.Size(107, 23);
+			this.btnProgramEnable.Size = new System.Drawing.Size(130, 23);
 			this.btnProgramEnable.TabIndex = 8;
 			this.btnProgramEnable.Text = "&Enable";
 			this.btnProgramEnable.UseVisualStyleBackColor = true;
@@ -1111,9 +1111,9 @@ namespace BrowseForSpeed.Frontend
 			// btnProgramDelete
 			// 
 			this.btnProgramDelete.Enabled = false;
-			this.btnProgramDelete.Location = new System.Drawing.Point(315, 49);
+			this.btnProgramDelete.Location = new System.Drawing.Point(292, 49);
 			this.btnProgramDelete.Name = "btnProgramDelete";
-			this.btnProgramDelete.Size = new System.Drawing.Size(107, 23);
+			this.btnProgramDelete.Size = new System.Drawing.Size(130, 23);
 			this.btnProgramDelete.TabIndex = 7;
 			this.btnProgramDelete.Text = "&Remove Program";
 			this.btnProgramDelete.UseVisualStyleBackColor = true;
@@ -1121,9 +1121,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// btnProgramNew
 			// 
-			this.btnProgramNew.Location = new System.Drawing.Point(315, 20);
+			this.btnProgramNew.Location = new System.Drawing.Point(292, 20);
 			this.btnProgramNew.Name = "btnProgramNew";
-			this.btnProgramNew.Size = new System.Drawing.Size(107, 23);
+			this.btnProgramNew.Size = new System.Drawing.Size(130, 23);
 			this.btnProgramNew.TabIndex = 6;
 			this.btnProgramNew.Text = "&New Program";
 			this.btnProgramNew.UseVisualStyleBackColor = true;
@@ -1237,7 +1237,7 @@ namespace BrowseForSpeed.Frontend
 			this.lbPreStart.FormattingEnabled = true;
 			this.lbPreStart.Location = new System.Drawing.Point(12, 20);
 			this.lbPreStart.Name = "lbPreStart";
-			this.lbPreStart.Size = new System.Drawing.Size(294, 147);
+			this.lbPreStart.Size = new System.Drawing.Size(274, 147);
 			this.lbPreStart.TabIndex = 4;
 			this.lbPreStart.DoubleClick += new System.EventHandler(this.LbPreStartDoubleClick);
 			this.lbPreStart.SelectedIndexChanged += new System.EventHandler(this.LbPreStartSelectedIndexChanged);
