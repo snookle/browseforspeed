@@ -48,7 +48,7 @@ public class PreStartProgram
 	
 	public override string ToString()
 	{
-		return this.name + " - " + (this.enabled ? "Enabled" : "Disabled");
+		return this.name + " - " + (this.enabled ? MainForm.languages.GetString("Global.Enabled") : MainForm.languages.GetString("Global.Disabled"));
 	}
 	
 }
