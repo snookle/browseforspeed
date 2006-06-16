@@ -211,7 +211,7 @@ namespace BrowseForSpeed.Frontend
 			this.labelServerName.Name = "labelServerName";
 			this.labelServerName.Size = new System.Drawing.Size(180, 23);
 			this.labelServerName.TabIndex = 12;
-			this.labelServerName.Text = "SERVERNAME HERE";
+			this.labelServerName.Text = "N/A";
 			// 
 			// labelInfo
 			// 
@@ -219,7 +219,7 @@ namespace BrowseForSpeed.Frontend
 			this.labelInfo.Name = "labelInfo";
 			this.labelInfo.Size = new System.Drawing.Size(115, 23);
 			this.labelInfo.TabIndex = 13;
-			this.labelInfo.Text = "INFO HERE";
+			this.labelInfo.Text = "N/A";
 			// 
 			// labelCars
 			// 
@@ -227,7 +227,7 @@ namespace BrowseForSpeed.Frontend
 			this.labelCars.Name = "labelCars";
 			this.labelCars.Size = new System.Drawing.Size(375, 23);
 			this.labelCars.TabIndex = 14;
-			this.labelCars.Text = "CARS HERE LOL";
+			this.labelCars.Text = "N/A";
 			// 
 			// labelPing
 			// 
@@ -235,7 +235,7 @@ namespace BrowseForSpeed.Frontend
 			this.labelPing.Name = "labelPing";
 			this.labelPing.Size = new System.Drawing.Size(115, 23);
 			this.labelPing.TabIndex = 15;
-			this.labelPing.Text = "label3";
+			this.labelPing.Text = "99999";
 			// 
 			// labelTrack
 			// 
@@ -243,7 +243,7 @@ namespace BrowseForSpeed.Frontend
 			this.labelTrack.Name = "labelTrack";
 			this.labelTrack.Size = new System.Drawing.Size(115, 23);
 			this.labelTrack.TabIndex = 16;
-			this.labelTrack.Text = "label3";
+			this.labelTrack.Text = "N/A";
 			// 
 			// lblPrivate
 			// 
@@ -261,7 +261,7 @@ namespace BrowseForSpeed.Frontend
 			this.labelPrivate.Name = "labelPrivate";
 			this.labelPrivate.Size = new System.Drawing.Size(100, 23);
 			this.labelPrivate.TabIndex = 18;
-			this.labelPrivate.Text = "Dunno yet, LOL";
+			this.labelPrivate.Text = "N/A";
 			// 
 			// ServerInformationForm
 			// 
