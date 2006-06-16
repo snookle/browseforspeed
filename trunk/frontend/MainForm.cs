@@ -501,14 +501,33 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 			((ListView)sender).Sort();
 		}
-
+		
+		
+		Process[] prestart;
+		FormWindowState ws;		
+		
+		private void KillPreStartPrograms()
+		{
+			foreach (Process p in prestart){
+				if (p != null && !p.HasExited)
+					p.Kill();
+			}
+			
+		}
+		
+		private void LFSExit(object sender, EventArgs e)
+		{
+			KillPreStartPrograms();
+			this.WindowState = ws;
+		}
+		
+			
 		void LoadLFS(String hostName, String mode, String password)
 		{
 			String lfsPath = config.lfsPath;
-			FormWindowState ws = this.WindowState;
+			ws= this.WindowState;
 			LFSQuery.stopQuerying();
-			Process ps = new Process();
-			Process[] prestart = new Process[config.psp.Count];
+			prestart = new Process[config.psp.Count];
 			for(int i = 0; i < config.psp.Count; i++){
 					if (config.psp[i].enabled == false)
 						continue;
@@ -527,21 +546,18 @@ public class ListSorter: IComparer<ServerListItem>
 			try{
 				this.WindowState = FormWindowState.Minimized;
 				Process lfs = new Process();
+				lfs.Exited += new EventHandler(LFSExit);
+				lfs.EnableRaisingEvents = true;
 				lfs.StartInfo.FileName = lfsPath;
 				lfs.StartInfo.WorkingDirectory = Path.GetDirectoryName(lfsPath);
 				lfs.StartInfo.Arguments = "/join=" + hostName + " /mode=" + mode + " /pass=" + password + "/insim=" + config.insimPort.ToString();
 				lfs.Start();
-				lfs.WaitForExit();
-				foreach (Process p in prestart){
-					if (p != null && !p.HasExited)
-						p.Kill();
-				}
 			} catch (Exception ex) {
 				this.WindowState = ws;
+				KillPreStartPrograms();
 				string message = string.Format(languages.GetString("StartLFSError"), ex.Message);
 				MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			this.WindowState = ws;
 		}
 
 		void btnBrowseClick(object sender, System.EventArgs e)
