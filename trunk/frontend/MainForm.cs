@@ -1285,6 +1285,7 @@ public class ListSorter: IComparer<ServerListItem>
 
 				cbNewVersion.Checked = config.checkNewVersion;
 				//Pre-start programs
+				lbPreStart.Items.Clear();
 				foreach (PreStartProgram p in config.psp){
 					lbPreStart.Items.Add(p);
 				}
@@ -1637,6 +1638,18 @@ public class ListSorter: IComparer<ServerListItem>
 			lblExePathConfig.Text = languages.GetString("MainForm.lblExePathConfig");
 			buttonBrowse.Text = languages.GetString("MainForm.buttonBrowse");
 			this.Text = languages.GetString("MainForm.this");
+			
+			lbPreStart.Items.Clear();
+			foreach (PreStartProgram p in config.psp){
+				lbPreStart.Items.Add(p);
+			}
+			
+			if (statusTotal.Text != ""){
+				statusTotal.Text = String.Format(languages.GetString("MainForm.StatusTotal"), numQueried, totalServers);
+				statusNoReply.Text = String.Format(languages.GetString("MainForm.NoReply"), numServersNoReply);
+				statusRefused.Text = String.Format(languages.GetString("MainForm.Refused"), numServersRefused);
+			}
+			
 			lblAuthorReal.Text = languages.Author;
 			lblEmailReal.Text = languages.Email;
 			lblCommentReal.Text = languages.Comment;

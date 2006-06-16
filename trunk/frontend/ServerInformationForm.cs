@@ -41,7 +41,7 @@ namespace BrowseForSpeed.Frontend
 			int i = LFSQuery.getPubStatInfo(ref info);
 			if (this.exiting) return;
 			if (i == 1) { //LFSQuery.getPubStatInfo(ref info)) {
-				labelPrivate.Text = info.passworded ? "Yes" : "No";
+				labelPrivate.Text = info.passworded ? MainForm.languages.GetString("Global.Yes") : MainForm.languages.GetString("Global.No");
 				if (info.players > 0) {
 					foreach (string player in info.racerNames) {
 						listPlayers.Items.Add(player);
@@ -53,7 +53,7 @@ namespace BrowseForSpeed.Frontend
 				if (i == 0) {
 					listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.NoServer"));
 				} else if (i == -1) {
-					listPlayers.Items.Add("Error querying pubstat!");
+					listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.PubstatError"));
 				}
 				labelPrivate.Text = "N/A";				
 			}
@@ -81,7 +81,8 @@ namespace BrowseForSpeed.Frontend
 		
 		void ButtonInfoCloseClick(object sender, System.EventArgs e) {
 			LFSQuery.queried -= new ServerQueried(queryCallback);
-			labelPrivate.Text = "Dunno yet LOL";
+			labelPrivate.Text = "N/A";
+			labelInfo.Text = "N/A";
 			this.exiting = true;
 			buttonInfoRefresh.Enabled = true;
 			buttonInfoJoin.Enabled = true;
