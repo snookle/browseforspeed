@@ -34,6 +34,8 @@
 	<component name="Global.True">True</component>
 	<component name="Global.False">False</component>
 	<component name="Global.Error">Error</component>
+	<component name="Global.Enabled">Enabled</component>
+	<component name="Global.Disabled">Disabled</component>
 
 	<!-- Main Form Components -->
 	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->

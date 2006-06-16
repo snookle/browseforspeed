@@ -73,7 +73,7 @@ namespace BrowseForSpeed.Frontend
 			// buttonInfoJoin
 			// 
 			this.buttonInfoJoin.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.buttonInfoJoin.Location = new System.Drawing.Point(301, 343);
+			this.buttonInfoJoin.Location = new System.Drawing.Point(12, 345);
 			this.buttonInfoJoin.Name = "buttonInfoJoin";
 			this.buttonInfoJoin.Size = new System.Drawing.Size(102, 23);
 			this.buttonInfoJoin.TabIndex = 0;
@@ -83,7 +83,7 @@ namespace BrowseForSpeed.Frontend
 			// buttonInfoClose
 			// 
 			this.buttonInfoClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.buttonInfoClose.Location = new System.Drawing.Point(409, 342);
+			this.buttonInfoClose.Location = new System.Drawing.Point(301, 343);
 			this.buttonInfoClose.Name = "buttonInfoClose";
 			this.buttonInfoClose.Size = new System.Drawing.Size(102, 23);
 			this.buttonInfoClose.TabIndex = 1;
@@ -93,7 +93,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// buttonInfoRefresh
 			// 
-			this.buttonInfoRefresh.Location = new System.Drawing.Point(12, 343);
+			this.buttonInfoRefresh.Location = new System.Drawing.Point(409, 343);
 			this.buttonInfoRefresh.Name = "buttonInfoRefresh";
 			this.buttonInfoRefresh.Size = new System.Drawing.Size(102, 23);
 			this.buttonInfoRefresh.TabIndex = 2;
@@ -268,6 +268,7 @@ namespace BrowseForSpeed.Frontend
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(523, 373);
+			this.Controls.Add(this.buttonInfoJoin);
 			this.Controls.Add(this.lblPrivate);
 			this.Controls.Add(this.labelPrivate);
 			this.Controls.Add(this.labelTrack);
@@ -282,10 +283,9 @@ namespace BrowseForSpeed.Frontend
 			this.Controls.Add(this.lblServerName);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.labe3);
-			this.Controls.Add(this.buttonInfoClose);
-			this.Controls.Add(this.buttonInfoJoin);
-			this.Controls.Add(this.buttonInfoRefresh);
 			this.Controls.Add(this.label5);
+			this.Controls.Add(this.buttonInfoClose);
+			this.Controls.Add(this.buttonInfoRefresh);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
