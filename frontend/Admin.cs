@@ -20,12 +20,15 @@ using System.Windows.Forms;
 using FullMotion.LiveForSpeed.InSim;
 using FullMotion.LiveForSpeed.InSim.EventHandlers;
 using libbrowseforspeed;
+using System.Text.RegularExpressions;
+
 namespace BrowseForSpeed.Frontend
 {
 	public partial class AdminForm
 	{
 		InSimHandler handler;
 		ServerInformation info;
+		FullMotion.LiveForSpeed.InSim.Configuration config;
 
 		public AdminForm(ServerInformation info) {
 			InitializeComponent();
@@ -45,6 +48,7 @@ namespace BrowseForSpeed.Frontend
 			btnConnect.Text = MainForm.languages.GetString("Admin.btnConnect");
 			lblPassword.Text = MainForm.languages.GetString("Admin.lblPassword");
 			lblinsimPort.Text = MainForm.languages.GetString("Admin.lblinsimPort");
+			lblinsimPort.Text = MainForm.languages.GetString("Admin.chkRelay");
 			this.Text = MainForm.languages.GetString("Admin.this");
 		}
 
@@ -52,6 +56,14 @@ namespace BrowseForSpeed.Frontend
 			handler.SendMessage(edtMessage.Text);
 			edtMessage.Clear();
 		}
+		
+		/*private void cbState(FullMotion.LiveForSpeed.InSim.Events.) {			
+			handler.LFSMessage -= new MessageEventHandler(cbMessage);
+			handler.Close();
+			btnSend.Enabled = false;
+			edtMessage.Enabled = false;
+			btnConnect.Text = MainForm.languages.GetString("Admin.btnConnect");
+		}*/
 
 		private void cbMessage(FullMotion.LiveForSpeed.InSim.Events.Message m) {
 			string msg = "";
@@ -60,6 +72,7 @@ namespace BrowseForSpeed.Frontend
 			} else {
 				msg = m.MessageText;
 			}
+			msg = Regex.Replace(msg, "\\^L", "");
 			txtInfo.Text += "\r\n" + msg;
 			txtInfo.SelectionStart = txtInfo.Text.Length;
 			txtInfo.ScrollToCaret();
@@ -78,10 +91,11 @@ namespace BrowseForSpeed.Frontend
 		}
 
 		void BtnConnectClick(object sender, System.EventArgs e) {
-			if (handler.State != InSimHandler.HandlerState.Connected) {
+			if (handler.State != InSimHandler.HandlerState.Connected) {				
 				try {
+					config = handler.Configuration;
 					btnConnect.Enabled = false;
-					FullMotion.LiveForSpeed.InSim.Configuration config = handler.Configuration;
+					chkRelay.Enabled = false;
 					config.LFSHost = info.host.Address.ToString();
 					config.LFSHostPort = Int32.Parse(edtPort.Text);
 					config.AdminPass = edtPassword.Text;
@@ -90,16 +104,20 @@ namespace BrowseForSpeed.Frontend
 					config.UseKeepAlives = true;
 					config.RaceTracking = RaceTrackType.NoTracking;
 					config.GuaranteedDelivery = true;
+					config.UseRelay = chkRelay.Checked;
+					config.Hostname = info.hostname;
 					handler.Initialize(3);
 					handler.RequestState();
 					handler.LFSMessage += new MessageEventHandler(cbMessage);
+					//handler.LFSState += new StateEventHandler(cbState);
 					btnSend.Enabled = true;
 					btnConnect.Text = MainForm.languages.GetString("Admin.btnDisconnect");
 					edtMessage.Enabled = true;
 					btnConnect.Enabled = true;
 					edtMessage.Focus();
-				} catch (Exception) {
+				} catch (Exception ex) {					
 					btnConnect.Enabled = true;
+					chkRelay.Enabled = true;
 					MessageBox.Show(MainForm.languages.GetString("InSimError"), MainForm.languages.GetString("Admin.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			} else {
@@ -107,6 +125,7 @@ namespace BrowseForSpeed.Frontend
 				handler.Close();
 				btnSend.Enabled = false;
 				edtMessage.Enabled = false;
+				chkRelay.Enabled = true;
 				btnConnect.Text = MainForm.languages.GetString("Admin.btnConnect");
 			}
 		}
@@ -125,6 +144,10 @@ namespace BrowseForSpeed.Frontend
 				MessageBox.Show(message, MainForm.languages.GetString("Admin.this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				edtPort.Text = edtPort.Text.Remove(edtPort.Text.Length - 1, 1);
 			}
+		}
+		
+		void ChkRelayCheckedChanged(object sender, System.EventArgs e) {
+			edtPort.Enabled = !chkRelay.Checked;
 		}
 	}
 }
