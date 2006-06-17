@@ -1205,11 +1205,11 @@ public class ListSorter: IComparer<ServerListItem>
 				cars[i] = new CheckBox();
 				cars[i].Parent = gbFilters;
 				if ((i % 2) == 0) {
-					cars[i].Left = 8;
+					cars[i].Left = 16;
 					cars[i].Top = (i/2 * 20) + 20;
 				} else {
 					cars[i].Top = cars[i-1].Top;
-					cars[i].Left = 62;
+					cars[i].Left = 78;
 				}
 				cars[i].Text = LFSQuery.CAR_NAMES[i];
 				cars[i].Width = 50;
@@ -1224,11 +1224,11 @@ public class ListSorter: IComparer<ServerListItem>
 				groups[i] = new Button();
 				groups[i].Parent = gbFilters;
 				if ((i % 2) == 0) {
-					groups[i].Left = 8;
+					groups[i].Left = 16;
 					groups[i].Top = (i/2 * 30) + 235;
 				} else {
 					groups[i].Top = groups[i-1].Top;
-					groups[i].Left = 62;
+					groups[i].Left = 78;
 				}
 				groups[i].Text = LFSQuery.CAR_GROUP_NAMES[i];
 				groups[i].Width = 42;
