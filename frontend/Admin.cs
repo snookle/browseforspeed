@@ -49,7 +49,7 @@ namespace BrowseForSpeed.Frontend
 			lblPassword.Text = MainForm.languages.GetString("Admin.lblPassword");
 			lblinsimPort.Text = MainForm.languages.GetString("Admin.lblinsimPort");
 			lblinsimPort.Text = MainForm.languages.GetString("Admin.chkRelay");
-			this.Text = MainForm.languages.GetString("Admin.this");
+			this.Text = MainForm.languages.GetString("Admin.this") + " - " + info.hostname;;
 		}
 
 		void BtnSendClick(object sender, System.EventArgs e) {
@@ -117,7 +117,7 @@ namespace BrowseForSpeed.Frontend
 					edtMessage.Focus();
 				} catch (Exception ex) {					
 					btnConnect.Enabled = true;
-					chkRelay.Enabled = true;
+					chkRelay.Enabled = true;					
 					MessageBox.Show(MainForm.languages.GetString("InSimError"), MainForm.languages.GetString("Admin.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			} else {
