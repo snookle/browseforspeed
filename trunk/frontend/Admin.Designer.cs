@@ -53,6 +53,7 @@ namespace BrowseForSpeed.Frontend
 			this.edtPort = new System.Windows.Forms.TextBox();
 			this.lblPassword = new System.Windows.Forms.Label();
 			this.lblinsimPort = new System.Windows.Forms.Label();
+			this.chkRelay = new System.Windows.Forms.CheckBox();
 			this.SuspendLayout();
 			// 
 			// txtInfo
@@ -61,12 +62,12 @@ namespace BrowseForSpeed.Frontend
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
 			this.txtInfo.BackColor = System.Drawing.SystemColors.Window;
-			this.txtInfo.Location = new System.Drawing.Point(12, 45);
+			this.txtInfo.Location = new System.Drawing.Point(12, 71);
 			this.txtInfo.Multiline = true;
 			this.txtInfo.Name = "txtInfo";
 			this.txtInfo.ReadOnly = true;
 			this.txtInfo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.txtInfo.Size = new System.Drawing.Size(474, 288);
+			this.txtInfo.Size = new System.Drawing.Size(498, 342);
 			this.txtInfo.TabIndex = 10;
 			// 
 			// edtMessage
@@ -74,16 +75,16 @@ namespace BrowseForSpeed.Frontend
 			this.edtMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
 			this.edtMessage.Enabled = false;
-			this.edtMessage.Location = new System.Drawing.Point(12, 350);
+			this.edtMessage.Location = new System.Drawing.Point(12, 430);
 			this.edtMessage.Name = "edtMessage";
-			this.edtMessage.Size = new System.Drawing.Size(402, 21);
+			this.edtMessage.Size = new System.Drawing.Size(426, 21);
 			this.edtMessage.TabIndex = 3;
 			// 
 			// btnSend
 			// 
 			this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnSend.Enabled = false;
-			this.btnSend.Location = new System.Drawing.Point(420, 348);
+			this.btnSend.Location = new System.Drawing.Point(444, 428);
 			this.btnSend.Name = "btnSend";
 			this.btnSend.Size = new System.Drawing.Size(66, 23);
 			this.btnSend.TabIndex = 2;
@@ -94,7 +95,7 @@ namespace BrowseForSpeed.Frontend
 			// btnConnect
 			// 
 			this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnConnect.Location = new System.Drawing.Point(383, 11);
+			this.btnConnect.Location = new System.Drawing.Point(407, 11);
 			this.btnConnect.Name = "btnConnect";
 			this.btnConnect.Size = new System.Drawing.Size(75, 23);
 			this.btnConnect.TabIndex = 3;
@@ -113,7 +114,7 @@ namespace BrowseForSpeed.Frontend
 			// edtPort
 			// 
 			this.edtPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.edtPort.Location = new System.Drawing.Point(267, 12);
+			this.edtPort.Location = new System.Drawing.Point(291, 12);
 			this.edtPort.Name = "edtPort";
 			this.edtPort.Size = new System.Drawing.Size(100, 21);
 			this.edtPort.TabIndex = 2;
@@ -131,18 +132,29 @@ namespace BrowseForSpeed.Frontend
 			// lblinsimPort
 			// 
 			this.lblinsimPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.lblinsimPort.Location = new System.Drawing.Point(204, 14);
+			this.lblinsimPort.Location = new System.Drawing.Point(228, 14);
 			this.lblinsimPort.Name = "lblinsimPort";
 			this.lblinsimPort.Size = new System.Drawing.Size(62, 17);
 			this.lblinsimPort.TabIndex = 7;
 			this.lblinsimPort.Text = "InSim Port:";
+			// 
+			// chkRelay
+			// 
+			this.chkRelay.Location = new System.Drawing.Point(228, 41);
+			this.chkRelay.Name = "chkRelay";
+			this.chkRelay.Size = new System.Drawing.Size(144, 24);
+			this.chkRelay.TabIndex = 11;
+			this.chkRelay.Text = "Connect to Relay";
+			this.chkRelay.UseVisualStyleBackColor = true;
+			this.chkRelay.CheckedChanged += new System.EventHandler(this.ChkRelayCheckedChanged);
 			// 
 			// AdminForm
 			// 
 			this.AcceptButton = this.btnSend;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(498, 383);
+			this.ClientSize = new System.Drawing.Size(522, 463);
+			this.Controls.Add(this.chkRelay);
 			this.Controls.Add(this.lblinsimPort);
 			this.Controls.Add(this.lblPassword);
 			this.Controls.Add(this.edtPort);
@@ -161,6 +173,7 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.CheckBox chkRelay;
 		private System.Windows.Forms.Label lblPassword;
 		private System.Windows.Forms.Label lblinsimPort;
 		private System.Windows.Forms.TextBox edtPort;

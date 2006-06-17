@@ -148,6 +148,7 @@
 	<component name="Admin.edtPort">29999</component>
 	<component name="Admin.lblPassword">Password:</component>
 	<component name="Admin.lblinsimPort">InSim Port:</component>
+	<component name="Admin.chkRelay">Connect to Relay</component>
 	<component name="Admin.this">Admin</component>
 
 	<!--Join Server Dialog Components -->
