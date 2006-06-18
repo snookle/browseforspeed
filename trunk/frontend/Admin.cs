@@ -48,7 +48,7 @@ namespace BrowseForSpeed.Frontend
 			btnConnect.Text = MainForm.languages.GetString("Admin.btnConnect");
 			lblPassword.Text = MainForm.languages.GetString("Admin.lblPassword");
 			lblinsimPort.Text = MainForm.languages.GetString("Admin.lblinsimPort");
-			lblinsimPort.Text = MainForm.languages.GetString("Admin.chkRelay");
+			chkRelay.Text = MainForm.languages.GetString("Admin.chkRelay");
 			this.Text = MainForm.languages.GetString("Admin.this") + " - " + info.hostname;;
 		}
 

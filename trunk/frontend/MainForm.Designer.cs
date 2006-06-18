@@ -1038,6 +1038,7 @@ namespace BrowseForSpeed.Frontend
 			this.cbConfigLang.Location = new System.Drawing.Point(99, 24);
 			this.cbConfigLang.Name = "cbConfigLang";
 			this.cbConfigLang.Size = new System.Drawing.Size(188, 21);
+			this.cbConfigLang.Sorted = true;
 			this.cbConfigLang.TabIndex = 22;
 			this.cbConfigLang.SelectedIndexChanged += new System.EventHandler(this.CbConfigLangSelectedIndexChanged);
 			// 
