@@ -83,7 +83,7 @@ namespace BrowseForSpeed.Frontend
 			// buttonInfoClose
 			// 
 			this.buttonInfoClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.buttonInfoClose.Location = new System.Drawing.Point(301, 343);
+			this.buttonInfoClose.Location = new System.Drawing.Point(409, 343);
 			this.buttonInfoClose.Name = "buttonInfoClose";
 			this.buttonInfoClose.Size = new System.Drawing.Size(102, 23);
 			this.buttonInfoClose.TabIndex = 1;
@@ -93,7 +93,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// buttonInfoRefresh
 			// 
-			this.buttonInfoRefresh.Location = new System.Drawing.Point(409, 343);
+			this.buttonInfoRefresh.Location = new System.Drawing.Point(301, 343);
 			this.buttonInfoRefresh.Name = "buttonInfoRefresh";
 			this.buttonInfoRefresh.Size = new System.Drawing.Size(102, 23);
 			this.buttonInfoRefresh.TabIndex = 2;
@@ -284,8 +284,8 @@ namespace BrowseForSpeed.Frontend
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.labe3);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.buttonInfoClose);
 			this.Controls.Add(this.buttonInfoRefresh);
+			this.Controls.Add(this.buttonInfoClose);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
