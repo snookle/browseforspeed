@@ -97,7 +97,7 @@ namespace BrowseForSpeed.Frontend
 			this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnConnect.Location = new System.Drawing.Point(407, 11);
 			this.btnConnect.Name = "btnConnect";
-			this.btnConnect.Size = new System.Drawing.Size(75, 23);
+			this.btnConnect.Size = new System.Drawing.Size(103, 23);
 			this.btnConnect.TabIndex = 3;
 			this.btnConnect.Text = "Connect";
 			this.btnConnect.UseVisualStyleBackColor = true;
@@ -123,26 +123,28 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// lblPassword
 			// 
-			this.lblPassword.Location = new System.Drawing.Point(31, 17);
+			this.lblPassword.Location = new System.Drawing.Point(12, 17);
 			this.lblPassword.Name = "lblPassword";
-			this.lblPassword.Size = new System.Drawing.Size(59, 19);
+			this.lblPassword.Size = new System.Drawing.Size(78, 19);
 			this.lblPassword.TabIndex = 6;
 			this.lblPassword.Text = "Password:";
+			this.lblPassword.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// lblinsimPort
 			// 
 			this.lblinsimPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.lblinsimPort.Location = new System.Drawing.Point(228, 14);
+			this.lblinsimPort.Location = new System.Drawing.Point(199, 14);
 			this.lblinsimPort.Name = "lblinsimPort";
-			this.lblinsimPort.Size = new System.Drawing.Size(62, 17);
+			this.lblinsimPort.Size = new System.Drawing.Size(91, 17);
 			this.lblinsimPort.TabIndex = 7;
 			this.lblinsimPort.Text = "InSim Port:";
+			this.lblinsimPort.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// chkRelay
 			// 
-			this.chkRelay.Location = new System.Drawing.Point(228, 41);
+			this.chkRelay.Location = new System.Drawing.Point(291, 39);
 			this.chkRelay.Name = "chkRelay";
-			this.chkRelay.Size = new System.Drawing.Size(144, 24);
+			this.chkRelay.Size = new System.Drawing.Size(219, 24);
 			this.chkRelay.TabIndex = 11;
 			this.chkRelay.Text = "Connect to Relay";
 			this.chkRelay.UseVisualStyleBackColor = true;

@@ -1287,6 +1287,8 @@ public class ListSorter: IComparer<ServerListItem>
 			//if we have previous config data
 			cbConfigLang.Items.Clear();
 			cbConfigLang.Items.AddRange(languages.Languages.ToArray());
+			cbConfigLang.SelectedItem = "English";
+			
 			if (loadedconf) {
 				//query wait
 				cbQueryWait.Checked = config.disableWait;
@@ -1294,8 +1296,8 @@ public class ListSorter: IComparer<ServerListItem>
 				LFSQuery.xpsp2_wait = !config.disableWait;
 				LFSQuery.THREAD_WAIT = config.queryWait;
 				queryWait.Value = config.queryWait;
-				if (config.language == "" && languages.Count > 0)
-					cbConfigLang.SelectedIndex = 0;
+				if (String.IsNullOrEmpty(config.language) && languages.Count > 0)
+					cbConfigLang.SelectedItem = "English";
 				else
 					cbConfigLang.SelectedItem = config.language;
 
