@@ -149,6 +149,8 @@
 	<component name="Admin.lblPassword">Passwort:</component>
 	<component name="Admin.lblinsimPort">InSim Port:</component>
 	<component name="Admin.this">Admin</component>
+	<component name="Admin.chkRelay">Connect to Relay</component>
+
 
 	<!--Join Server Dialog Components -->
 	<component name="JoinServerDialog.btnJoin">&amp;Server beitreten</component>

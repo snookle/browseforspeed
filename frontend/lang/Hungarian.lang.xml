@@ -1,0 +1,225 @@
+﻿<!-- How to make a new language:
+1. copy this file and rename it to <yourlanguage>.lang.xml
+2. Ensure name accurately represents the language (and is unique to other language names)
+3. Translate the strings!
+4. Contact BFS at bfs@browseforspeed.net for possible inclusion in the main release.
+-->
+
+<!-- Notes:
+	* Some controls in BFS may not be big enough to fit your translated text on. This is because the controls were sized for english words.
+		Once we obtain some translations, we will do our best to make them fit correctly - but for the moment you'll have to make do, sorry!
+
+	* {0}, {1} etc are variable placeholders that are replaced by BFS, please ensure they are kept - BFS will probably crash if they're not!
+
+	* &amp; means that the character directly after this will be the keyboard shortcut
+		eg: "Ser&amp;ver" will look like "Server" in BFS, but the shortcut will be alt+v
+
+	* New lines are denoted with \n
+		eg: "BFS\nRocks" will display as:
+				"BFS
+				Rocks"
+ -->
+
+
+<language>
+	<name>Magyar (Hungarian)</name>
+	<author>Gabor 'GerG' Gergely</author>
+	<email>gergely.gabor@gmail.com</email>
+	<!-- put whatever you like here, but keep it brief-->
+	<comment>Hungarian Language File for Browse For Speed</comment>
+
+	<!-- Global stuff -->
+	<component name="Global.Yes">Igen</component>
+	<component name="Global.No">Nem</component>
+	<component name="Global.True">Van</component>
+	<component name="Global.False">Nincs</component>
+	<component name="Global.Error">Hiba</component>
+	<component name="Global.Enabled">Engedélyezve</component>
+	<component name="Global.Disabled">Tiltva</component>
+
+
+	<!-- Main Form Components -->
+	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+
+	<component name="MainForm.fileToolStripMenuItem">&amp;Fájl</component>
+	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Csatlakozás...</component>
+	<component name="MainForm.closeToolStripMenuItem">&amp;Kilépés</component>
+	<component name="MainForm.aboutToolStripMenuItem">&amp;Segítség</component>
+	<component name="MainForm.aboutToolStripMenuItem1">&amp;Névjegy...</component>
+	<component name="MainForm.tabMain">Szerver Böngésző</component>
+	<component name="MainForm.lblFindUserMain">Játékos keresés:</component>
+	<component name="MainForm.lblPasswordMain">Szerver Jelszó:</component>
+	<component name="MainForm.btnFindUserMain">&amp;Keresés</component>
+	<component name="MainForm.gbFilters">Szűrők</component>
+
+ <!-- This would need a bit wider place-->
+	<component name="MainForm.cbPublic">Nyilv.</component>
+	<component name="MainForm.cbPrivate">Privát</component> 
+	<component name="MainForm.cbFull">Teli</component> 
+    
+
+	<component name="MainForm.lblPingThreshold">Válaszidő:</component>
+	<component name="MainForm.cbEmpty">Üres</component>
+	<component name="MainForm.columnHeaderName">Szerver neve</component>
+	<component name="MainForm.columnHeaderPing">Válaszidő</component>
+	<component name="MainForm.columnPrivate">Privát</component>
+	<component name="MainForm.columnHeaderConnections">Férőhelyek</component>
+	<component name="MainForm.columnHeaderInfo">Info</component>
+	<component name="MainForm.columnHeaderTrack">Pálya</component>
+	<component name="MainForm.columnHeaderCars">Autók</component>
+	<component name="MainForm.joinServerToolStripMenuItem">&amp;Kapcsolódás</component>
+	<component name="MainForm.viewServerInformationMain">&amp;Szerverinformáció Megtekintése</component>
+	<component name="MainForm.toolStripMenuItem1">&amp;Hozáadás a Kedvencekhez</component>
+	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Vágólapra Másolás</component>
+	<component name="MainForm.administrateToolStripMenuItem1">Adminisztrálás...</component>
+	<component name="MainForm.btnRefresh">&amp;Frissítés</component>
+	<component name="MainForm.btnStop">&amp;Stop</component>
+	<component name="MainForm.btnJoin">&amp;Kapcsolódás</component>
+	<component name="MainForm.tabFavourites">Kedvencek</component>
+	<component name="MainForm.lblAddressFav">Szerver IP Címe:</component>
+	<component name="MainForm.btnAddServer">&amp;Hozzáadás</component>
+	<component name="MainForm.columnHeaderFavServerName">Szerver neve</component>
+	<component name="MainForm.columnHeaderFavPing">Válaszidő</component>
+	<component name="MainForm.columnHeaderFavSlots">Férőhelyek</component>
+	<component name="MainForm.columnHeaderFavInfo">Info</component>
+	<component name="MainForm.columnHeaderFavTrack">Pálya</component>
+	<component name="MainForm.columnHeaderFavCars">Autók</component>
+	<component name="MainForm.joinServerToolStripMenuItem1">&amp;Kapcsolódás</component>
+	<component name="MainForm.viewServerInformationFav">&amp;Szerverinformáció Megtekintése</component>
+	<component name="MainForm.removeFromFavouritesToolStripMenuItem">&amp;Eltávolítás a Kedvencekből</component>
+	<component name="MainForm.copyServerToClipboardToolStripMenuItem1">&amp;Vágólapra Másolás</component>
+	<component name="MainForm.administrateToolStripMenuItem">Adminisztrálás...</component>
+	<component name="MainForm.tabFriends">Barátok</component>
+	<component name="MainForm.btnAddFriend">&amp;Hozzáadás</component>
+	<component name="MainForm.cbHideOffline">Inaktívok Elrejtése</component>
+	<component name="MainForm.btnRefreshFriend">&amp;Frissítés</component>
+	<component name="MainForm.btnJoinFriend">&amp;Csatlakozás</component>
+	<component name="MainForm.columnFriendName">Barát Neve</component>
+	<component name="MainForm.columnFriendServer">Szerver neve</component>
+	<component name="MainForm.columnFriendPrivate">Privát</component>
+	<component name="MainForm.columnFriendPlayers">Versenyzők</component>
+	<component name="MainForm.joinServerMenuFriends">Kapcsolódás</component>
+	<component name="MainForm.viewServerInformationFriend">Szerverinformáció Megtekintése</component>
+	<component name="MainForm.removeFriendToolStripMenuItem">Barát Törlése</component>
+	<component name="MainForm.tabConfig">Beállítások</component>
+	<component name="MainForm.groupBox1">Beállítások</component>
+	<component name="MainForm.groupBox2">Nyelv</component>
+	<component name="MainForm.groupBox5">Nyelvi beállítások</component>
+	<component name="MainForm.lblCommentReal">langComments</component>
+	<component name="MainForm.lblEmailReal">AuthorEmal</component>
+	<component name="MainForm.lblAuthorReal">langAuthor</component>
+	<component name="MainForm.lblLangComment">Megjegyzések:</component>
+	<component name="MainForm.lblLangContact">E-Mail:</component>
+	<component name="MainForm.lblLangAuthor">Szerző:</component>
+	<component name="MainForm.lblLanguageConfig">Nyelv:</component>
+	<component name="MainForm.groupBox4">Duplakattintásra: </component>
+	<component name="MainForm.rbJoin">Csatlakozás</component>
+	<component name="MainForm.rbView">Szerverinformáció Megtekintése</component>
+	<component name="MainForm.gbStartBeforeLFS">LFS előtt induló programok:</component>
+	<component name="MainForm.btnProgramEnable">&amp;Engedélyzés</component>
+	<component name="MainForm.btnProgramDisable">&amp;Letiltás</component>
+	<component name="MainForm.btnProgramDelete">&amp;Eltávolítás</component>
+	<component name="MainForm.btnProgramNew">&amp;Új Program</component>
+	<component name="MainForm.bgProgramConfig">Program Beállításai</component>
+	<component name="MainForm.btnProgramCancel">Mé&amp;gse</component>
+	<component name="MainForm.btnProgramSave">&amp;Mentés</component>
+	<component name="MainForm.btnProgramUpdate">&amp;Frissítés</component>
+	<component name="MainForm.lblProgramConfigArg">Paraméterek:</component>
+	<component name="MainForm.lblProgramConfigName">Név:</component>
+	<component name="MainForm.btnProgramBrowse">&amp;Tallóz...</component>
+	<component name="MainForm.lblProgramConfigPath">Elérési út:</component>
+	<component name="MainForm.groupBox3">Speciális</component>
+	<component name="MainForm.txtInsimPort">29999</component>
+	<component name="MainForm.lblQueryWaitDescription">Lekérdezések közötti szünet. Azt az időt határozza meg, amelynek két lekérdezés között kell eltelnie. Növelje az értéket, ha lekérdezéskor a szerverek "Kapcsolódás Visszautasítva" üzenetet adnak.</component>
+	<component name="MainForm.lblInsimPortConfig">LFS Insim Port:</component>
+
+<!-- Same problem here with QueryWaitCheckboxlabel. If i'm right this can be autosize too -->
+	<component name="MainForm.cbQueryWait">Lekérd. szünet nélkül</component>
+
+	<component name="MainForm.lblQueryWaitHelp">Csak akkor válassza a "Lekérd. szünet nélkül" opciót, ha az operációs rendszerében nincs korlátozás a kapcsolatok számát illetően.</component>
+	<component name="MainForm.btnCheckNewVersion">&amp;Keresés MOST</component>
+	<component name="MainForm.cbNewVersion">Indításkor frissítés keresése az interneten</component>
+	<component name="MainForm.lblExeDescriptionConfig">Ha több bejegyzést lát itt, akkor válassza ki a megfelelő elérési utat az LFS.EXE-hez. Ha nincs bejegyzés, akkor kattintson a "Tallóz..." gombra a kézi megadáshoz.</component>
+	<component name="MainForm.lblExePathConfig">LFS Elérési Útvonala:</component>
+	<component name="MainForm.buttonBrowse">&amp;Tallóz...</component>
+	<component name="MainForm.NoServers">Nem találtam a szűrőnek megfelelő szervert! Kérem módosítsa!.</component>
+	<component name="MainForm.QueryStatus">Lekérdezés...</component>
+	<component name="MainForm.StatusTotal">Hoszt ellenőrzése {0} / {1}</component>
+	<component name="MainForm.NoReply">Nincs Válasz: {0}</component>
+	<component name="MainForm.Refused">Kapcsolat visszautasítva: {0}</component>
+	<component name="MainForm.Offline">Inaktív</component>
+
+	<!-- Admin Form components -->
+	<component name="Admin.btnSend">&amp;Küldés</component>
+	<component name="Admin.btnConnect">&amp;Kapcsolódás</component>
+	<component name="Admin.btnDisconnect">&amp;Szétkapcsolás</component>
+	<component name="Admin.edtPort">29999</component>
+	<component name="Admin.lblPassword">Jelszó:</component>
+	<component name="Admin.lblinsimPort">InSim Port:</component>
+	<component name="Admin.this">Adminisztáció</component>
+	<component name="Admin.chkRelay">Connect to Relay</component>
+
+
+	<!--Join Server Dialog Components -->
+<!-- GerG: Tab Order here is not good -->
+	<component name="JoinServerDialog.btnJoin">&amp;Kapcsolódás</component>
+	<component name="JoinServerDialog.lblServerName">Szerver neve:</component>
+	<component name="JoinServerDialog.btnCancel">&amp;Mégse</component>
+	<component name="JoinServerDialog.lblPassword">Jelszó:</component>
+	<component name="JoinServerDialog.lblVersion">Verzió:</component>
+	<component name="JoinServerDialog.this">Kapcsolódás</component>
+
+	<!--Server Information Form components-->
+	<component name="ServerInformationForm.buttonInfoJoin">&amp;Kapcsolódás</component>
+	<component name="ServerInformationForm.buttonInfoClose">&amp;Bezárás</component>
+	<component name="ServerInformationForm.buttonInfoRefresh">&amp;Frissítés</component>
+	<component name="ServerInformationForm.lblServerName">Szerver neve:</component>
+
+<!-- These two need wider space, or autosize=true labels :) -->
+	<component name="ServerInformationForm.labe3">Válaszidő:</component>
+	<component name="ServerInformationForm.label1">Pálya:</component>
+
+
+	<component name="ServerInformationForm.lblInformation">Információ:</component>
+	<component name="ServerInformationForm.label5">Jelszó:</component>
+	<component name="ServerInformationForm.groupBox1">Játékosok</component>
+	<component name="ServerInformationForm.btnAddFriend">&amp;Hozzáadás barátok lisájához</component>
+
+<!-- This one is just a bit short for me, maybe autosize=true could fix this issue too -->
+	<component name="ServerInformationForm.lblCars">Autók:</component>
+
+<!-- I can't find the text to edit 'Yes' or 'No' which is displayed here -->
+	<component name="ServerInformationForm.lblPrivate">Privát?</component>
+
+
+	<component name="ServerInformationForm.this">Szerver információ</component>
+	<component name="ServerInformationForm.buttonInfoStop">&amp;Állj</component>
+	<component name="ServerInformationForm.QueryTimeOut">Query timed out</component>
+	<component name="ServerInformationForm.EmptyServer">Jelenleg üres a szerver.</component>
+	<component name="ServerInformationForm.NoServer">A szerver nem található a Publikus Statisztikai adatbázisban!</component>
+	<component name="ServerInformationForm.PubstatError">Hiba a Publikus Statisztika lekérdezésekor!</component>
+
+	<!--Message Box Components -->
+	<component name="MasterServerError">Nem tudok kapcsolódni a fő-szerverhez. Lehetséges hogy karbantartás alatt áll. Ha van tűzfala akkor ellenőrizze a beállításokat!</component>
+	<component name="StartPSPError">Indítási hiba: {0} ({1})\n{2}\nEllenőrizze a beállításokat!.</component>
+	<component name="StartLFSError">LFS.EXE indítási hiba!\n{0}\nEllenőrizze a beállításokat!.</component>
+	<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nAz Általános felhasználási feltételek betartása mellett ez a szoftver szabadon terjeszthető, illetve módosítható.\nAz Általános Felhasználási Feltételek a 'COPYING' fájlban találhatóak.\nA szoftver készítője nem válllal semmilyen felelősséget az esetleg felmerülő károkért.</component>
+	<component name="AboutBoxTitle">Névjegy</component>
+	<component name="LoadFavError">Hiba a kedvencek betöltésekor: {0}\nBiztonsági másolat {1}.backup néven mentve.</component>
+	<component name="SaveFavError">Hiba a kedvenc szerverek file írása közben: {0}</component>
+	<component name="SaveFriendsError">Hiba a barátok file írása közben: {0}</component>
+	<component name="LoadFriendsError">Hiba a barátok betöltésekor: {0}\nBiztonsági másolat {1}.backup néven mentve.</component>
+	<component name="PlayerNameTooLongError">A Játékos neve nem lehet hosszabb mint 32 karakter.</component>
+	<component name="JoinPlayerQuery">Valóban csatlakozni szeretne {0} -hez/höz/hoz erre a szerverre?\n{1}</component>
+	<component name="UserNotFound">A felhasználó jelenleg nem aktív.</component>
+	<component name="RemoveFavQuery">Valóban el akarja távolítani {0} -t a kedvencek közül?</component>
+	<component name="UpToDate">Nincs újabb verzió.</component>
+	<component name="NewVersion">Újabb verziót találtam. Kívánja hogy megjelenítsem a letöltési oldalt?</component>
+	<component name="UpdateError">Hiba történt az új verzió keresésekor. Előfodulhat, hogy a program honlapja karbantartás alatt van. Próbálja meg később.</component>
+	<component name="InvalidPort">Nem megfelelő port szám: {0}  - 1 és 65535 közötti egészekre van szükség.</component>
+	<component name="RemoveFriendQuery">Valóban törölni akarja {0} -t a barátai közül?</component>
+	<component name="JoinFriendQuery">Valóban csatlakozni szeretne {0} -hoz/hez/höz a(z) {1} szerveren?</component>
+	<component name="InvalidIPAddress">Az IP címnek a következő formátumban kell lennie: ipcím:portszám</component>
+	<component name="AddFavError">Hiba történt a szerver kedvencekhez adása közben: {0}</component>
+	<component name="InSimError">Nem tudok kapcsolódni az InSimhez!</component>
+</language>

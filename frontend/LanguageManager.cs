@@ -58,7 +58,9 @@ namespace BrowseForSpeed.Frontend
 				}
 			} catch (Exception e) {
 				MessageBox.Show("Error loading languages. The only available language will be English" + e.Message , MainForm.appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
 			}
+			ChangeLanguage("English");//languages["English"] ?? ((string)Languages.ToArray()[0]));
 		}
 		
 		private Language ParseLanguage(string filename, bool getStrings)
@@ -95,7 +97,7 @@ namespace BrowseForSpeed.Frontend
 		
 		public string GetString(string componentName)
 		{
-			return (((string)lang.strings[componentName]) ?? componentName).Replace(@"\n", "\n");
+			return ((string)lang.strings[componentName] ?? componentName).Replace(@"\n", "\n");
 		}
 		
 		public List<string> Languages{
