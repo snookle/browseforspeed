@@ -136,8 +136,9 @@ public class ListSorter: IComparer<ServerListItem>
 			Items.Clear();
 			foreach(ServerListItem item in serverList.FindAll(ServersNotFiltered)){
 				Display(item);
-				Sort();
 			}
+			Sort();
+
 		}
 		public List<ServerListItem> AllServers()
 		{
@@ -165,7 +166,7 @@ public class ListSorter: IComparer<ServerListItem>
 				if (this is FavouriteListView){
 					columnOffset = 1;
 				} else {
-					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, item.passworded == true ? "Yes" : "No"));
+					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, item.passworded == true ? MainForm.languages.GetString("Global.Yes") : MainForm.languages.GetString("Global.No")));
 				}
 				lvi.SubItems.Insert(3 - columnOffset, new ListViewItem.ListViewSubItem(lvi, item.players.ToString() +"/" + item.slots.ToString()));
 				lvi.SubItems.Insert(4 - columnOffset, new ListViewItem.ListViewSubItem(lvi, rules));
@@ -828,10 +829,10 @@ public class ListSorter: IComparer<ServerListItem>
 				tw.Formatting = Formatting.Indented;
 				tw.WriteStartDocument();
 				tw.WriteStartElement("friends");
-				tw.WriteAttributeString("version", "1");
+				tw.WriteAttributeString("version", "2");
 				foreach (FriendListItem friend in friendList) {
 					tw.WriteStartElement("friend");
-					tw.WriteAttributeString("name", friend.name);
+					tw.WriteAttributeString("licence", friend.name);
 					tw.WriteEndElement();
 				}
 				tw.WriteFullEndElement();
@@ -851,7 +852,11 @@ public class ListSorter: IComparer<ServerListItem>
 				XmlNodeList list = doc.GetElementsByTagName("friends");
 				list = ((XmlElement)list[0]).GetElementsByTagName("friend");
 				foreach (XmlElement friend in list) {
-					AddFriend(friend.GetAttribute("name"), false);
+					try {
+						AddFriend(friend.GetAttribute("licence"), false);
+					} catch (Exception/*catch the specific exception?*/) {
+						AddFriend(friend.GetAttribute("name"), false);
+					}
 				}
 			} catch (FileNotFoundException fnfe){
 			} catch (Exception e) {
@@ -1667,6 +1672,9 @@ public class ListSorter: IComparer<ServerListItem>
 				statusNoReply.Text = String.Format(languages.GetString("MainForm.NoReply"), numServersNoReply);
 				statusRefused.Text = String.Format(languages.GetString("MainForm.Refused"), numServersRefused);
 			}
+			
+			lvMain.DisplayAll();
+			lvFavourites.DisplayAll();
 			
 			lblAuthorReal.Text = languages.Author;
 			lblEmailReal.Text = languages.Email;

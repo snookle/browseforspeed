@@ -26,7 +26,7 @@
 	<author>Rene "Lible" Allkivi</author>
 	<email>lible0@gmail.com</email>
 	<!-- put whatever you like here, but keep it brief-->
-	<comment>Estonian language file BFS</comment>
+	<comment>Estonian language file for BFS.</comment>
 
 	<!-- Global stuff -->
 	<component name="Global.Yes">Jah</component>
@@ -50,15 +50,15 @@
 	<component name="MainForm.lblPasswordMain">Serveri parool:</component>
 	<component name="MainForm.btnFindUserMain">F&amp;ind Kasutaja online</component>
 	<component name="MainForm.gbFilters">Filtrid</component>
-	<component name="MainForm.cbPublic">Publik</component>
-	<component name="MainForm.cbPrivate">Privaat</component>
+	<component name="MainForm.cbPublic">Avalikud</component>
+	<component name="MainForm.cbPrivate">Privaatsed</component>
 	<component name="MainForm.cbFull">Täis</component>
 	<component name="MainForm.lblPingThreshold">Pingi lävi:</component>
-	<component name="MainForm.cbEmpty">Tühi</component>
+	<component name="MainForm.cbEmpty">Tühjad</component>
 	<component name="MainForm.columnHeaderName">Serveri nimi</component>
 	<component name="MainForm.columnHeaderPing">Ping</component>
 	<component name="MainForm.columnPrivate">Privaat</component>
-	<component name="MainForm.columnHeaderConnections">Ühendused</component>
+	<component name="MainForm.columnHeaderConnections">Ühendusi</component>
 	<component name="MainForm.columnHeaderInfo">Info</component>
 	<component name="MainForm.columnHeaderTrack">Rada</component>
 	<component name="MainForm.columnHeaderCars">Autod</component>
@@ -103,8 +103,8 @@
 	<component name="MainForm.lblCommentReal">Komentaarid</component>
 	<component name="MainForm.lblEmailReal">AuthorEmal</component>
 	<component name="MainForm.lblAuthorReal">langAutor</component>
-	<component name="MainForm.lblLangComment">Komentarid:</component>
-	<component name="MainForm.lblLangContact">Kontakt aadress:</component>
+	<component name="MainForm.lblLangComment">Komentaarid:</component>
+	<component name="MainForm.lblLangContact">E-mail:</component>
 	<component name="MainForm.lblLangAuthor">Autor:</component>
 	<component name="MainForm.lblLanguageConfig">Keel:</component>
 	<component name="MainForm.groupBox4">Serveri topeltklõpsu käitumine</component>
@@ -121,7 +121,7 @@
 	<component name="MainForm.btnProgramUpdate">&amp;Uuenda</component>
 	<component name="MainForm.lblProgramConfigArg">Argument:</component>
 	<component name="MainForm.lblProgramConfigName">Nimi:</component>
-	<component name="MainForm.btnProgramBrowse">B&amp;Lehitse...</component>
+	<component name="MainForm.btnProgramBrowse">B&amp;Lehitse</component>
 	<component name="MainForm.lblProgramConfigPath">Tee:</component>
 	<component name="MainForm.groupBox3">Edasijõudnutele</component>
 	<component name="MainForm.txtInsimPort">29999</component>
@@ -131,9 +131,9 @@
 	<component name="MainForm.lblQueryWaitHelp">Keela päringu oode vaid siis, kui sa oled kindel, et su süsteemil pole ühenduste limiiti. Palun vaata readme.txt rohkema informatsiooni saamiseks. </component>
 	<component name="MainForm.btnCheckNewVersion">&amp;Kontrolli kohe</component>
 	<component name="MainForm.cbNewVersion">Kontrolli Browse For Speedi uut versiooni käivitamisel</component>
-	<component name="MainForm.lblExeDescriptionConfig">Kui kastis on rohkem kui üks sissekanne, palun vali õige ee enda LFS.exe'ni. Kui seal ei ole ühtegi sissekannet, palun vajuta nupule Lehite, et selle asukohta ise määrata.</component>
+	<component name="MainForm.lblExeDescriptionConfig">Kui kastis on rohkem kui üks sissekanne, palun vali õige tee enda LFS.exe'ni. Kui seal ei ole ühtegi sissekannet, palun vajuta nupule Lehite, et selle asukohta ise määrata.</component>
 	<component name="MainForm.lblExePathConfig">LFSi täidetav tee:</component>
-	<component name="MainForm.buttonBrowse">&amp;Lehitse...</component>
+	<component name="MainForm.buttonBrowse">&amp;Lehitse</component>
 	<component name="MainForm.NoServers">Ühtegi serverit ei leitud. KOntrolli enda filtriseadeid.</component>
 	<component name="MainForm.QueryStatus">Päring...</component>
 	<component name="MainForm.StatusTotal">Kontrollib serverit {0}/{1}</component>
@@ -148,6 +148,7 @@
 	<component name="Admin.edtPort">29999</component>
 	<component name="Admin.lblPassword">Parool:</component>
 	<component name="Admin.lblinsimPort">InSim port:</component>
+	<component name="Admin.chkRelay">Connect to Relay</component>
 	<component name="Admin.this">Admin</component>
 
 	<!--Join Server Dialog Components -->
