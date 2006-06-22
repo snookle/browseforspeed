@@ -1,0 +1,19 @@
+Browse For Speed is Copyright 2006 - Richard Nelson, Ben Kenny, Philip Nelson
+
+Full source code available at http://www.browseforspeed.net
+Source code for LFSLib available at http://www.claassen.net/geek/lfs/
+Our patch against 0.11b of LFSLib at http://www.browseforspeed.net/files/relaypatch.diff.txt
+
+Translation Team:
+Rene "Lible" Allkivi - Estonian
+Sebastian "Octrin.VorTeX" Bauer - German
+Gabor "GerG" Gergely - Hungarian
+maczo - Polish
+dEiCidE - Spanish
+
+Thanks to:
+Arne Claassen (sdether) - Author of LFSLib - used by the admin interface
+Chris Schletter (Hollywood) - Code submission
+Trent Scholl - Various code submissions
+Bernadette Sweeney - Pretty logo and icon
+alco64 - Lots and lots of testing.

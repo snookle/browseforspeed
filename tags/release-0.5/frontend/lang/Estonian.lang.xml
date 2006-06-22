@@ -1,0 +1,205 @@
+<!-- How to make a new language:
+1. copy this file and rename it to <yourlanguage>.lang.xml
+2. Ensure name accurately represents the language (and is unique to other language names)
+3. Translate the strings!
+4. Contact BFS at bfs@browseforspeed.net for possible inclusion in the main release.
+-->
+
+<!-- Notes:
+	* Some controls in BFS may not be big enough to fit your translated text on. This is because the controls were sized for english words.
+		Once we obtain some translations, we will do our best to make them fit correctly - but for the moment you'll have to make do, sorry!
+
+	* {0}, {1} etc are variable placeholders that are replaced by BFS, please ensure they are kept - BFS will probably crash if they're not!
+
+	* &amp; means that the character directly after this will be the keyboard shortcut
+		eg: "Ser&amp;ver" will look like "Server" in BFS, but the shortcut will be alt+v
+
+	* New lines are denoted with \n
+		eg: "BFS\nRocks" will display as:
+				"BFS
+				Rocks"
+ -->
+
+
+<language>
+	<name>Eesti</name>
+	<author>Rene "Lible" Allkivi</author>
+	<email>lible0@gmail.com</email>
+	<!-- put whatever you like here, but keep it brief-->
+	<comment>Estonian language file for BFS.</comment>
+
+	<!-- Global stuff -->
+	<component name="Global.Yes">Jah</component>
+	<component name="Global.No">Ei</component>
+	<component name="Global.True">Õige</component>
+	<component name="Global.False">Vale</component>
+	<component name="Global.Error">Viga</component>
+	<component name="Global.Enabled">Lubatud</component>
+	<component name="Global.Disabled">Keelatud</component>
+
+	<!-- Main Form Components -->
+	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+
+	<component name="MainForm.fileToolStripMenuItem">&amp;Fail</component>
+	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Liitu serveriga...</component>
+	<component name="MainForm.closeToolStripMenuItem">&amp;Välju</component>
+	<component name="MainForm.aboutToolStripMenuItem">&amp;Abi</component>
+	<component name="MainForm.aboutToolStripMenuItem1">&amp;Teave...</component>
+	<component name="MainForm.tabMain">Serveribrauser</component>
+	<component name="MainForm.lblFindUserMain">Leia kasutaja:</component>
+	<component name="MainForm.lblPasswordMain">Serveri parool:</component>
+	<component name="MainForm.btnFindUserMain">F&amp;ind Kasutaja online</component>
+	<component name="MainForm.gbFilters">Filtrid</component>
+	<component name="MainForm.cbPublic">Avalikud</component>
+	<component name="MainForm.cbPrivate">Privaatsed</component>
+	<component name="MainForm.cbFull">Täis</component>
+	<component name="MainForm.lblPingThreshold">Pingi lävi:</component>
+	<component name="MainForm.cbEmpty">Tühjad</component>
+	<component name="MainForm.columnHeaderName">Serveri nimi</component>
+	<component name="MainForm.columnHeaderPing">Ping</component>
+	<component name="MainForm.columnPrivate">Privaat</component>
+	<component name="MainForm.columnHeaderConnections">Ühendusi</component>
+	<component name="MainForm.columnHeaderInfo">Info</component>
+	<component name="MainForm.columnHeaderTrack">Rada</component>
+	<component name="MainForm.columnHeaderCars">Autod</component>
+	<component name="MainForm.joinServerToolStripMenuItem">&amp;Liitu serveriga</component>
+	<component name="MainForm.viewServerInformationMain">&amp;Vaata serveri informatsiooni...</component>
+	<component name="MainForm.toolStripMenuItem1">&amp;Lisa lemmikutesse</component>
+	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Kopeeri server Clipboardi</component>
+	<component name="MainForm.administrateToolStripMenuItem1">Administreeri...</component>
+	<component name="MainForm.btnRefresh">&amp;Värskenda</component>
+	<component name="MainForm.btnStop">&amp;Peata</component>
+	<component name="MainForm.btnJoin">&amp;Liitu</component>
+	<component name="MainForm.tabFavourites">Lemmikud</component>
+	<component name="MainForm.lblAddressFav">Serveri IP aadress:</component>
+	<component name="MainForm.btnAddServer">&amp;Lisa server</component>
+	<component name="MainForm.columnHeaderFavServerName">Serveri nimi</component>
+	<component name="MainForm.columnHeaderFavPing">Ping</component>
+	<component name="MainForm.columnHeaderFavSlots">Ühendused</component>
+	<component name="MainForm.columnHeaderFavInfo">Info</component>
+	<component name="MainForm.columnHeaderFavTrack">Rada</component>
+	<component name="MainForm.columnHeaderFavCars">Autod</component>
+	<component name="MainForm.joinServerToolStripMenuItem1">&amp;Liitu serveriga</component>
+	<component name="MainForm.viewServerInformationFav">&amp;Vaata serveri informatsiooni...</component>
+	<component name="MainForm.removeFromFavouritesToolStripMenuItem">&amp;Eemalda lemmikutest</component>
+	<component name="MainForm.copyServerToClipboardToolStripMenuItem1">&amp;Kopeeri server Clipboardi</component>
+	<component name="MainForm.administrateToolStripMenuItem">Administreeri...</component>
+	<component name="MainForm.tabFriends">Sõbrad</component>
+	<component name="MainForm.btnAddFriend">&amp;Lisa sõber</component>
+	<component name="MainForm.cbHideOffline">Peida offline sõbrad</component>
+	<component name="MainForm.btnRefreshFriend">&amp;Värksenda nimekirja</component>
+	<component name="MainForm.btnJoinFriend">&amp;Liitu sõbraga</component>
+	<component name="MainForm.columnFriendName">Sõbra nimi</component>
+	<component name="MainForm.columnFriendServer">Serveri nimi</component>
+	<component name="MainForm.columnFriendPrivate">Privaat</component>
+	<component name="MainForm.columnFriendPlayers">Mängijad</component>
+	<component name="MainForm.joinServerMenuFriends">Liitu serveriga</component>
+	<component name="MainForm.viewServerInformationFriend">Vaata serveri informatsiooni...</component>
+	<component name="MainForm.removeFriendToolStripMenuItem">Eemalda sõbrad</component>
+	<component name="MainForm.tabConfig">Konfiguratsioon</component>
+	<component name="MainForm.groupBox1">Konfiguratsioon</component>
+	<component name="MainForm.groupBox2">Keel</component>
+	<component name="MainForm.groupBox5">Keele detailid</component>
+	<component name="MainForm.lblCommentReal">Komentaarid</component>
+	<component name="MainForm.lblEmailReal">AuthorEmal</component>
+	<component name="MainForm.lblAuthorReal">langAutor</component>
+	<component name="MainForm.lblLangComment">Komentaarid:</component>
+	<component name="MainForm.lblLangContact">E-mail:</component>
+	<component name="MainForm.lblLangAuthor">Autor:</component>
+	<component name="MainForm.lblLanguageConfig">Keel:</component>
+	<component name="MainForm.groupBox4">Serveri topeltklõpsu käitumine</component>
+	<component name="MainForm.rbJoin">Liitu serveriga</component>
+	<component name="MainForm.rbView">Vaata serveri informatsiooni</component>
+	<component name="MainForm.gbStartBeforeLFS">Käivita enne LFSi</component>
+	<component name="MainForm.btnProgramEnable">&amp;Luba</component>
+	<component name="MainForm.btnProgramDisable">&amp;Keela</component>
+	<component name="MainForm.btnProgramDelete">&amp;Eemalda programm</component>
+	<component name="MainForm.btnProgramNew">&amp;Uus programm</component>
+	<component name="MainForm.bgProgramConfig">Programmi konfiguratsioon</component>
+	<component name="MainForm.btnProgramCancel">&amp;Tühista</component>
+	<component name="MainForm.btnProgramSave">&amp;Salvesta</component>
+	<component name="MainForm.btnProgramUpdate">&amp;Uuenda</component>
+	<component name="MainForm.lblProgramConfigArg">Argument:</component>
+	<component name="MainForm.lblProgramConfigName">Nimi:</component>
+	<component name="MainForm.btnProgramBrowse">&amp;Lehitse</component>
+	<component name="MainForm.lblProgramConfigPath">Tee:</component>
+	<component name="MainForm.groupBox3">Edasijõudnutele</component>
+	<component name="MainForm.txtInsimPort">29999</component>
+	<component name="MainForm.lblQueryWaitDescription">Päringu oote väärtus. See on ootamise aeg ennem samaaegse päringu lisamist. Suurenda seda väärtust, kui kõik serverid annavad päringut tehes "Connection Refused"</component>
+	<component name="MainForm.lblInsimPortConfig">LFSi insim port:</component>
+	<component name="MainForm.cbQueryWait">Keela päringu oode</component>
+	<component name="MainForm.lblQueryWaitHelp">Keela päringu oode vaid siis, kui sa oled kindel, et su süsteemil pole ühenduste limiiti. Palun vaata readme.txt rohkema informatsiooni saamiseks. </component>
+	<component name="MainForm.btnCheckNewVersion">&amp;Kontrolli kohe</component>
+	<component name="MainForm.cbNewVersion">Kontrolli Browse For Speedi uut versiooni käivitamisel</component>
+	<component name="MainForm.lblExeDescriptionConfig">Kui kastis on rohkem kui üks sissekanne, palun vali õige tee enda LFS.exe'ni. Kui seal ei ole ühtegi sissekannet, palun vajuta nupule Lehite, et selle asukohta ise määrata.</component>
+	<component name="MainForm.lblExePathConfig">LFSi täidetav tee:</component>
+	<component name="MainForm.buttonBrowse">&amp;Lehitse</component>
+	<component name="MainForm.NoServers">Ühtegi serverit ei leitud. KOntrolli enda filtriseadeid.</component>
+	<component name="MainForm.QueryStatus">Päring...</component>
+	<component name="MainForm.StatusTotal">Kontrollib serverit {0}/{1}</component>
+	<component name="MainForm.NoReply">Mitte mingit vastust: {0}</component>
+	<component name="MainForm.Refused">Keeldus ühendusest: {0}</component>
+	<component name="MainForm.Offline">Offline</component>
+
+	<!-- Admin Form components -->
+	<component name="Admin.btnSend">&amp;Saada</component>
+	<component name="Admin.btnConnect">&amp;Ühenda</component>
+	<component name="Admin.btnDisconnect">&amp;Ühenda lahti</component>
+	<component name="Admin.edtPort">29999</component>
+	<component name="Admin.lblPassword">Parool:</component>
+	<component name="Admin.lblinsimPort">InSim port:</component>
+	<component name="Admin.chkRelay">Connect to Relay</component>
+	<component name="Admin.this">Admin</component>
+
+	<!--Join Server Dialog Components -->
+	<component name="JoinServerDialog.btnJoin">&amp;Liitu serveriga</component>
+	<component name="JoinServerDialog.lblServerName">Serveri nimi:</component>
+	<component name="JoinServerDialog.btnCancel">&amp;Tühista</component>
+	<component name="JoinServerDialog.lblPassword">Parool:</component>
+	<component name="JoinServerDialog.lblVersion">Versioon:</component>
+	<component name="JoinServerDialog.this">Liitu serveriga</component>
+
+	<!--Server Information Form components-->
+	<component name="ServerInformationForm.buttonInfoJoin">&amp;Liitu</component>
+	<component name="ServerInformationForm.buttonInfoClose">&amp;Sulge</component>
+	<component name="ServerInformationForm.buttonInfoRefresh">&amp;Värskenda</component>
+	<component name="ServerInformationForm.lblServerName">Serveri nimi:</component>
+	<component name="ServerInformationForm.labe3">Ping:</component>
+	<component name="ServerInformationForm.label1">Rada:</component>
+	<component name="ServerInformationForm.lblInformation">Informatsioon:</component>
+	<component name="ServerInformationForm.label5">Parool:</component>
+	<component name="ServerInformationForm.groupBox1">Mängijad</component>
+	<component name="ServerInformationForm.btnAddFriend">&amp;Lisa sõpradesse</component>
+	<component name="ServerInformationForm.lblCars">Autod:</component>
+	<component name="ServerInformationForm.lblPrivate">Privaat:</component>
+	<component name="ServerInformationForm.this">Serveri informatsioon</component>
+	<component name="ServerInformationForm.buttonInfoStop">&amp;Peata</component>
+	<component name="ServerInformationForm.QueryTimeOut">Päring aegus</component>
+	<component name="ServerInformationForm.EmptyServer">Mängijaid ei leitud serverist.</component>
+	<component name="ServerInformationForm.NoServer">Ei leia pubstat'i!</component>
+	<component name="ServerInformationForm.PubstatError">Viga pubstat'i päringul!</component>
+
+	<!--Message Box Components -->
+	<component name="MasterServerError">Võimetu LFSi peaserveriga ühenduma. Võib olla on see maas, või on sinu tulemüür korralikult seadistamata.</component>
+	<component name="StartPSPError">Error executing {0} ({1})\n{2}\nRecheck your configuration.</component>
+	<component name="StartLFSError">Error executing LFS.exe\n{0}\nRecheck your configuration.</component>
+	<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\nAutoriõigused 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nSavõids eda programmi modifitseerida ja ümber paigutada GPLi tingimuste all (versioon 2 või hilisem) \nA koopia GPList on sisaldatud 'COPYING' failis, mis on sisaldatud Browse For Speedis.\nWeme ei anna selle programmida mitte mingit garantiid.</component>
+	<component name="AboutBoxTitle">Browse For Speedi kohta</component>
+	<component name="LoadFavError">Viga lemmikute laadimisel: {0}\nA koopia salvestatud kui {1}.tagavara</component>
+	<component name="SaveFavError">Viga lemmikserverite faili kirjutamisel ilmnes: {0}</component>
+	<component name="SaveFriendsError">Viga sõprade faili kirjutamisel ilmnes: {0}</component>
+	<component name="LoadFriendsError">Viga sõprade laadimisel: {0}\nA koopia salvestatud kui {1}.tagavara</component>
+	<component name="PlayerNameTooLongError">Mängija nimi liiga pikk, peab olema vähem kui 32 märki</component>
+	<component name="JoinPlayerQuery">Liitu {0} selle serveriga?\n{1}</component>
+	<component name="UserNotFound">Kasutajat ei leitud online</component>
+	<component name="RemoveFavQuery">Eemaldada {0} sinu lemmikutest?</component>
+	<component name="UpToDate">Su versioon on uusim.</component>
+	<component name="NewVersion">Uus versioon on olemas, kas sa tahad minna Allalaadimislehele?</component>
+	<component name="UpdateError">Viga versiooni kontrollil - võibolla on meie leht maas. Proovi uuesti hiljem!</component>
+	<component name="InvalidPort">{0} ei ole kehtiv port - peab olema 1 ja 65535 vahel</component>
+	<component name="RemoveFriendQuery">Eemaldada {0} sõpradenimekirjast?</component>
+	<component name="JoinFriendQuery">Kas sa tahad liitud {0} kell {1?</component>
+	<component name="InvalidIPAddress">IP aadress peabolema vormis ipaadress:port</component>
+	<component name="AddFavError">Viga ilmnes lisades serverit lemmikutesse: {0}</component>
+	<component name="InSimError">Ei suutnud insimiga ühenduda!</component>
+</language>
