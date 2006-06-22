@@ -32,36 +32,47 @@ namespace BrowseForSpeed.Frontend
 		private bool exiting;
 		private bool refreshing = false;
 		
+		delegate void DelegateMethod();
+		
 		public void RefreshPlayerList()
 		{
-			SetControlProperty(buttonInfoJoin, "Enabled", false);
-			SetControlProperty(buttonInfoRefresh, "Enabled", false);
-			refreshing = true;
-			listPlayers.Items.Clear();			
-			int i = LFSQuery.getPubStatInfo(ref info);
 			if (this.exiting) return;
-			if (i == 1) { //LFSQuery.getPubStatInfo(ref info)) {
-				labelPrivate.Text = info.passworded ? MainForm.languages.GetString("Global.Yes") : MainForm.languages.GetString("Global.No");
-				if (info.players > 0) {
-					foreach (string player in info.racerNames) {
-						listPlayers.Items.Add(player);
+			if (this.InvokeRequired == false) {
+				SetControlProperty(buttonInfoJoin, "Enabled", false);
+				SetControlProperty(buttonInfoRefresh, "Enabled", false);
+				try {
+				refreshing = true;
+				listPlayers.Items.Clear();			
+				int i = LFSQuery.getPubStatInfo(ref info);
+				if (i == 1) { //LFSQuery.getPubStatInfo(ref info)) {
+					labelPrivate.Text = info.passworded ? MainForm.languages.GetString("Global.Yes") : MainForm.languages.GetString("Global.No");
+					if (info.players > 0) {
+						foreach (string player in info.racerNames) {
+							listPlayers.Items.Add(player);
+						}
+					} else {
+						listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.EmptyServer"));
 					}
 				} else {
-					listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.EmptyServer"));
+					if (i == 0) {
+						listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.NoServer"));
+					} else if (i == -1) {
+						listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.PubstatError"));
+					}
+					labelPrivate.Text = "N/A";				
+				}
+				refreshing = false;
+				SetControlProperty(buttonInfoRefresh, "Enabled", true);
+				SetControlProperty(buttonInfoJoin, "Enabled", true);
+				SetControlProperty(buttonInfoRefresh, "Text", MainForm.languages.GetString("ServerInformationForm.buttonInfoRefresh"));
+				} catch (NullReferenceException ex) {
+					MessageBox.Show(ex.Message);
 				}
 			} else {
-				if (i == 0) {
-					listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.NoServer"));
-				} else if (i == -1) {
-					listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.PubstatError"));
-				}
-				labelPrivate.Text = "N/A";				
+				this.Invoke(new DelegateMethod(RefreshPlayerList), new Object[]{});
 			}
-			refreshing = false;
-			SetControlProperty(buttonInfoRefresh, "Enabled", true);
-			SetControlProperty(buttonInfoJoin, "Enabled", true);
-			SetControlProperty(buttonInfoRefresh, "Text", MainForm.languages.GetString("ServerInformationForm.buttonInfoRefresh"));
 		}
+		
 		public void SetInfo(ServerInformation info) {
 			if (info == null) return;
 			this.info = info;
@@ -80,10 +91,10 @@ namespace BrowseForSpeed.Frontend
 		}		
 		
 		void ButtonInfoCloseClick(object sender, System.EventArgs e) {
+			this.exiting = true;
 			LFSQuery.queried -= new ServerQueried(queryCallback);
 			labelPrivate.Text = "N/A";
 			labelInfo.Text = "N/A";
-			this.exiting = true;
 			buttonInfoRefresh.Enabled = true;
 			buttonInfoJoin.Enabled = true;
 			this.Close();
@@ -125,6 +136,7 @@ namespace BrowseForSpeed.Frontend
 				ServerInformation[] server = new ServerInformation[1];
 				server[0] = this.info;
 				q.query(0, 0, "browseforspeed", server, 3);
+				if (this.exiting) return;
 				Thread t = new Thread(new ThreadStart(RefreshPlayerList));
 				t.Start();
 			} catch(Exception e) {
@@ -133,8 +145,9 @@ namespace BrowseForSpeed.Frontend
 		}
 		
 		public void queryCallback(object o, ServerInformation info, Object cbObj) {
+			if (this.exiting) return;
 			if ((int)cbObj != 3) return;
-			if (info != null) {				
+			if (info != null) {	
 				refreshServer(info);
 			}
 		}
@@ -154,6 +167,7 @@ namespace BrowseForSpeed.Frontend
 
 		public void refreshServer(ServerInformation info)
 		{
+			if (this.exiting) return;
 			try{
 			if (info.success){
 				this.info = info;
@@ -164,11 +178,11 @@ namespace BrowseForSpeed.Frontend
 				labelPing.Text = info.ping.ToString();
 				labelTrack.Text = info.track;				
 			} else {				
-					labelServerName.Text = MainForm.languages.GetString("ServerInformationForm.QueryTimeOut");;
+				labelServerName.Text = MainForm.languages.GetString("ServerInformationForm.QueryTimeOut");;
 				labelPing.Text = "9999";
 				labelCars.Text = "N/A";
 				labelTrack.Text = "N/A";				
-			}
+			} 
 			} catch(Exception e){}
   		}
 		

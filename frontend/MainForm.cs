@@ -832,7 +832,7 @@ public class ListSorter: IComparer<ServerListItem>
 				tw.WriteAttributeString("version", "2");
 				foreach (FriendListItem friend in friendList) {
 					tw.WriteStartElement("friend");
-					tw.WriteAttributeString("licence", friend.name);
+					tw.WriteAttributeString("license", friend.name);
 					tw.WriteEndElement();
 				}
 				tw.WriteFullEndElement();
@@ -850,13 +850,14 @@ public class ListSorter: IComparer<ServerListItem>
 				XmlDocument doc = new XmlDocument();
 				doc.Load(friendFilename);
 				XmlNodeList list = doc.GetElementsByTagName("friends");
+				String docVersion = ((XmlElement)list[0]).GetAttribute("version");
 				list = ((XmlElement)list[0]).GetElementsByTagName("friend");
+				MessageBox.Show(docVersion);
 				foreach (XmlElement friend in list) {
-					try {
-						AddFriend(friend.GetAttribute("licence"), false);
-					} catch (Exception/*catch the specific exception?*/) {
+					if (docVersion == "2")
+						AddFriend(friend.GetAttribute("license"), false);
+					else
 						AddFriend(friend.GetAttribute("name"), false);
-					}
 				}
 			} catch (FileNotFoundException fnfe){
 			} catch (Exception e) {
