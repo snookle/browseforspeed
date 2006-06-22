@@ -113,6 +113,7 @@ public class ListSorter: IComparer<ServerListItem>
 				int index = (int)SelectedItems[0].Tag;
 				if (index == -1)
 					return null;
+				MessageBox.Show(index.ToString());
 				ServerListItem item = serverList[index];
 				item.index = SelectedItems[0].Index;
 				return item;
@@ -124,6 +125,11 @@ public class ListSorter: IComparer<ServerListItem>
 		{
 			Items.RemoveAt(item.index);
 			serverList.Remove(item);
+			for (int i = 0; i < this.Items.Count; ++i){
+				if ((int)Items[i].Tag > item.index){
+					int tmp = (int)(Items[i].Tag); Items[i].Tag = --tmp;
+				}
+			}
 		}
 		public void ClearServers()
 		{
