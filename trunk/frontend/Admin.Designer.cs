@@ -76,6 +76,7 @@ namespace BrowseForSpeed.Frontend
 									| System.Windows.Forms.AnchorStyles.Right)));
 			this.edtMessage.Enabled = false;
 			this.edtMessage.Location = new System.Drawing.Point(12, 430);
+			this.edtMessage.MaxLength = 63;
 			this.edtMessage.Name = "edtMessage";
 			this.edtMessage.Size = new System.Drawing.Size(426, 21);
 			this.edtMessage.TabIndex = 3;

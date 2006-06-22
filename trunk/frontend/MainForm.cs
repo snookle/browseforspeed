@@ -112,8 +112,7 @@ public class ListSorter: IComparer<ServerListItem>
 			if (SelectedItems.Count > 0) {
 				int index = (int)SelectedItems[0].Tag;
 				if (index == -1)
-					return null;
-				MessageBox.Show(index.ToString());
+					return null;				
 				ServerListItem item = serverList[index];
 				item.index = SelectedItems[0].Index;
 				return item;
