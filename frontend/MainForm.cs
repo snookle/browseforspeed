@@ -260,7 +260,7 @@ public class ListSorter: IComparer<ServerListItem>
 	public partial class MainForm
 	{
 		static string bfs_version = "0.5";
-		static string version_check = "6";
+		static string version_check = "7";
 		static string download_url = "http://www.browseforspeed.net";
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
 		
@@ -851,8 +851,7 @@ public class ListSorter: IComparer<ServerListItem>
 				doc.Load(friendFilename);
 				XmlNodeList list = doc.GetElementsByTagName("friends");
 				String docVersion = ((XmlElement)list[0]).GetAttribute("version");
-				list = ((XmlElement)list[0]).GetElementsByTagName("friend");
-				MessageBox.Show(docVersion);
+				list = ((XmlElement)list[0]).GetElementsByTagName("friend");				
 				foreach (XmlElement friend in list) {
 					if (docVersion == "2")
 						AddFriend(friend.GetAttribute("license"), false);
