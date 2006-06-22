@@ -8,8 +8,7 @@ Configuration:
  - Check for new version of Browse For Speed on start up
     When Browse for Speed loads, it can query our website to see if there is a new version
     available. If there is, a message box will show up prompting you to visit the download
-    page. Only disabled by default as we don't approve of programs calling home
-    automatically.
+    page.
 
  - Start Before LFS
     A list of programs to be run before LFS.exe. This is useful for running mods and other
@@ -22,10 +21,10 @@ Configuration:
 
  - Advanced
   - Query Wait:
-    Windows XP SP2 introduced a limit of 10 outgoing TCP connections per second (this is 
+    Windows XP SP2 introduced a limit of 10 outgoing TCP connections per second (this is
     completely ridiculous). If your OS does not have this limit (XP SP2 definitely does have
-    this limit), you may be able to check this box, and the whole query process will be 
-    much, much faster. If you check this when you shouldn't, queries will start failing 
+    this limit), you may be able to check this box, and the whole query process will be
+    much, much faster. If you check this when you shouldn't, queries will start failing
     after a random amount of succeeded queries.
 
     It has been reported that disabling query wait in Windows 2000 doesn't have any negative
@@ -45,7 +44,7 @@ Notes:
    are cached for 30 seconds, because 1) pubstat queries are rather large, even though
    Browse For Speed requests them gzipped and 2) pubstat allows a maximum of one query every
    5 seconds.
-   
+
  - ctrl +/- increases/decreases font size in the lists.
 
 
@@ -56,7 +55,7 @@ Comments/Abuse to: bfs@browseforspeed.net
 
 Browse For Speed is Copyright 2006 Richard Nelson, Ben Kenny and Philip Nelson.
 
-See CREDITS for a list of contributors.
+See CREDITS for a list of contributors and information on where to obtain the sources.
 
 Browse For Speed is provided without warranty.
 
