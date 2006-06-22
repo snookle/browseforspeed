@@ -116,12 +116,12 @@
 	<component name="MainForm.btnProgramDelete">&amp;Eemalda programm</component>
 	<component name="MainForm.btnProgramNew">&amp;Uus programm</component>
 	<component name="MainForm.bgProgramConfig">Programmi konfiguratsioon</component>
-	<component name="MainForm.btnProgramCancel">C&amp;Tühista</component>
+	<component name="MainForm.btnProgramCancel">&amp;Tühista</component>
 	<component name="MainForm.btnProgramSave">&amp;Salvesta</component>
 	<component name="MainForm.btnProgramUpdate">&amp;Uuenda</component>
 	<component name="MainForm.lblProgramConfigArg">Argument:</component>
 	<component name="MainForm.lblProgramConfigName">Nimi:</component>
-	<component name="MainForm.btnProgramBrowse">B&amp;Lehitse</component>
+	<component name="MainForm.btnProgramBrowse">&amp;Lehitse</component>
 	<component name="MainForm.lblProgramConfigPath">Tee:</component>
 	<component name="MainForm.groupBox3">Edasijõudnutele</component>
 	<component name="MainForm.txtInsimPort">29999</component>
