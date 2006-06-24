@@ -1,0 +1,205 @@
+<!-- How to make a new language:
+1. copy this file and rename it to <yourlanguage>.lang.xml
+2. Ensure name accurately represents the language (and is unique to other language names)
+3. Translate the strings!
+4. Contact BFS at bfs@browseforspeed.net for possible inclusion in the main release.
+-->
+
+<!-- Notes:
+	* Some controls in BFS may not be big enough to fit your translated text on. This is because the controls were sized for english words.
+		Once we obtain some translations, we will do our best to make them fit correctly - but for the moment you'll have to make do, sorry!
+
+	* {0}, {1} etc are variable placeholders that are replaced by BFS, please ensure they are kept - BFS will probably crash if they're not!
+
+	* &amp; means that the character directly after this will be the keyboard shortcut
+		eg: "Ser&amp;ver" will look like "Server" in BFS, but the shortcut will be alt+v
+
+	* New lines are denoted with \n
+		eg: "BFS\nRocks" will display as:
+				"BFS
+				Rocks"
+ -->
+
+
+<language>
+	<name>Italiano</name>
+	<author>IronFly</author>
+	<email>ironfly@slipangle.it</email>
+	<!-- put whatever you like here, but keep it brief-->
+	<comment>Traduzione italiano BFS</comment>
+
+	<!-- Global stuff -->
+	<component name="Global.Yes">Si</component>
+	<component name="Global.No">No</component>
+	<component name="Global.True">Vero</component>
+	<component name="Global.False">Falso</component>
+	<component name="Global.Error">Errore</component>
+	<component name="Global.Enabled">Abilitato</component>
+	<component name="Global.Disabled">Disabilitato</component>
+
+	<!-- Main Form Components -->
+	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+
+	<component name="MainForm.fileToolStripMenuItem">&amp;File</component>
+	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Entra nel Server...</component>
+	<component name="MainForm.closeToolStripMenuItem">&amp;Esci</component>
+	<component name="MainForm.aboutToolStripMenuItem">&amp;Aiuto</component>
+	<component name="MainForm.aboutToolStripMenuItem1">&amp;A riguardo...</component>
+	<component name="MainForm.tabMain">Server Browser</component>
+	<component name="MainForm.lblFindUserMain">Trova Utente:</component>
+	<component name="MainForm.lblPasswordMain">Password Server:</component>
+	<component name="MainForm.btnFindUserMain">T&amp;rova Utente in linea</component>
+	<component name="MainForm.gbFilters">Filtri</component>
+	<component name="MainForm.cbPublic">Pubblico</component>
+	<component name="MainForm.cbPrivate">Privato</component>
+	<component name="MainForm.cbFull">Pieno</component>
+	<component name="MainForm.lblPingThreshold">Limite Ping:</component>
+	<component name="MainForm.cbEmpty">Vuoto</component>
+	<component name="MainForm.columnHeaderName">Nome Server</component>
+	<component name="MainForm.columnHeaderPing">Ping</component>
+	<component name="MainForm.columnPrivate">Privato</component>
+	<component name="MainForm.columnHeaderConnections">Connessioni</component>
+	<component name="MainForm.columnHeaderInfo">Info</component>
+	<component name="MainForm.columnHeaderTrack">Piste</component>
+	<component name="MainForm.columnHeaderCars">Auto</component>
+	<component name="MainForm.joinServerToolStripMenuItem">&amp;Entra nel Server</component>
+	<component name="MainForm.viewServerInformationMain">&amp;Vedi Informazioni Server...</component>
+	<component name="MainForm.toolStripMenuItem1">&amp;Aggiungi a Favoriti</component>
+	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Copia Server Negli Appunti</component>
+	<component name="MainForm.administrateToolStripMenuItem1">Amministra...</component>
+	<component name="MainForm.btnRefresh">&amp;Aggiorna</component>
+	<component name="MainForm.btnStop">&amp;Stop</component>
+	<component name="MainForm.btnJoin">&amp;Entra</component>
+	<component name="MainForm.tabFavourites">Favoriti</component>
+	<component name="MainForm.lblAddressFav">Indirizzo IP Server:</component>
+	<component name="MainForm.btnAddServer">&amp;Aggiungi Server</component>
+	<component name="MainForm.columnHeaderFavServerName">Nome Server</component>
+	<component name="MainForm.columnHeaderFavPing">Ping</component>
+	<component name="MainForm.columnHeaderFavSlots">Connessioni</component>
+	<component name="MainForm.columnHeaderFavInfo">Info</component>
+	<component name="MainForm.columnHeaderFavTrack">Piste</component>
+	<component name="MainForm.columnHeaderFavCars">Auto</component>
+	<component name="MainForm.joinServerToolStripMenuItem1">&amp;Entra nel Server</component>
+	<component name="MainForm.viewServerInformationFav">&amp;Vedi Informazioni Server...</component>
+	<component name="MainForm.removeFromFavouritesToolStripMenuItem">&amp;Rimuovi Da Favourites</component>
+	<component name="MainForm.copyServerToClipboardToolStripMenuItem1">&amp;Copia Server Negli Appunti</component>
+	<component name="MainForm.administrateToolStripMenuItem">Amministra...</component>
+	<component name="MainForm.tabFriends">Amici</component>
+	<component name="MainForm.btnAddFriend">&amp;Aggiungi Amico</component>
+	<component name="MainForm.cbHideOffline">Nascondi Amici Offline</component>
+	<component name="MainForm.btnRefreshFriend">&amp;Aggiorna Lista</component>
+	<component name="MainForm.btnJoinFriend">&amp;Raggiungi Amico</component>
+	<component name="MainForm.columnFriendName">Nome Amico</component>
+	<component name="MainForm.columnFriendServer">Nome Server</component>
+	<component name="MainForm.columnFriendPrivate">Privato</component>
+	<component name="MainForm.columnFriendPlayers">Giocatori</component>
+	<component name="MainForm.joinServerMenuFriends">Entra Nel Server</component>
+	<component name="MainForm.viewServerInformationFriend">Vedi Informazioni Server...</component>
+	<component name="MainForm.removeFriendToolStripMenuItem">Rimuovi Amico</component>
+	<component name="MainForm.tabConfig">Configurazione</component>
+	<component name="MainForm.groupBox1">Configurazione</component>
+	<component name="MainForm.groupBox2">Lingua</component>
+	<component name="MainForm.groupBox5">Dettagli Lingua</component>
+	<component name="MainForm.lblCommentReal">Commenti Lingua</component>
+	<component name="MainForm.lblEmailReal">Email Autore</component>
+	<component name="MainForm.lblAuthorReal">Autore Lingua</component>
+	<component name="MainForm.lblLangComment">Commenti:</component>
+	<component name="MainForm.lblLangContact">Indirizzo:</component>
+	<component name="MainForm.lblLangAuthor">Autore:</component>
+	<component name="MainForm.lblLanguageConfig">Linguaggio:</component>
+	<component name="MainForm.groupBox4">Con doppio click</component>
+	<component name="MainForm.rbJoin">Entra nel server</component>
+	<component name="MainForm.rbView">Vedi informazioni server</component>
+	<component name="MainForm.gbStartBeforeLFS">Lancia prima LFS</component>
+	<component name="MainForm.btnProgramEnable">&amp;Abilita</component>
+	<component name="MainForm.btnProgramDisable">&amp;Disabilita</component>
+	<component name="MainForm.btnProgramDelete">&amp;Rimuovi Programma</component>
+	<component name="MainForm.btnProgramNew">&amp;Nuovo Programma</component>
+	<component name="MainForm.bgProgramConfig">Configurazione Programma</component>
+	<component name="MainForm.btnProgramCancel">C&amp;ancella</component>
+	<component name="MainForm.btnProgramSave">&amp;Salva</component>
+	<component name="MainForm.btnProgramUpdate">&amp;Aggiorna</component>
+	<component name="MainForm.lblProgramConfigArg">Commenti:</component>
+	<component name="MainForm.lblProgramConfigName">Nome:</component>
+	<component name="MainForm.btnProgramBrowse">C&amp;erca...</component>
+	<component name="MainForm.lblProgramConfigPath">Percorso:</component>
+	<component name="MainForm.groupBox3">Avanzate</component>
+	<component name="MainForm.txtInsimPort">29999</component>
+	<component name="MainForm.lblQueryWaitDescription">Valore di Attesa. Questo è il tempo di attesa prima di aggiungere una richiesta a quella già effettuata. Aumenta il valore se, quando richiesto, tutti i server danno come risposta "Connessione rifiutata"</component>
+	<component name="MainForm.lblInsimPortConfig">LFS Insim Port:</component>
+	<component name="MainForm.cbQueryWait">Disabilita Attesa</component>
+	<component name="MainForm.lblQueryWaitHelp">Disabilita l'attesa solo se si è sicuri che il sistema operativo non abbia un limite di connessioni. Leggere il file readme.txt per maggiori informazioni. </component>
+	<component name="MainForm.btnCheckNewVersion">&amp;Check Now</component>
+	<component name="MainForm.cbNewVersion">Controlla se è disponibile una nuova versione di Browse For Speed all'avvio,</component>
+	<component name="MainForm.lblExeDescriptionConfig">Se è disponibile più di un'opzione nel box qui sopra, per favore scegliere il percorso corretto del vostro LFS.exe. Se il box è bianco, premete il pulsante "Cerca" per cercare manualmente LFS.exe.</component>
+	<component name="MainForm.lblExePathConfig">Percorso eseguibile LFS:</component>
+	<component name="MainForm.buttonBrowse">&amp;Cerca...</component>
+	<component name="MainForm.NoServers">Nessuna risposta server. Controlla impostazioni filtri.</component>
+	<component name="MainForm.QueryStatus">Ricerca...</component>
+	<component name="MainForm.StatusTotal">Controllo host {0} di {1}</component>
+	<component name="MainForm.NoReply">Nessuna Risposta: {0}</component>
+	<component name="MainForm.Refused">Connessione Rifiutata: {0}</component>
+	<component name="MainForm.Offline">Non disponibile</component>
+
+	<!-- Admin Form components -->
+	<component name="Admin.btnSend">&amp;Invia</component>
+	<component name="Admin.btnConnect">&amp;Connetti</component>
+	<component name="Admin.btnDisconnect">&amp;Disconnetti</component>
+	<component name="Admin.edtPort">29999</component>
+	<component name="Admin.lblPassword">Password:</component>
+	<component name="Admin.lblinsimPort">InSim Port:</component>
+	<component name="Admin.chkRelay">Connect to Relay</component>
+	<component name="Admin.this">Amministratore</component>
+
+	<!--Join Server Dialog Components -->
+	<component name="JoinServerDialog.btnJoin">&amp;Entra nel Server</component>
+	<component name="JoinServerDialog.lblServerName">Nome Server:</component>
+	<component name="JoinServerDialog.btnCancel">&amp;Cancella</component>
+	<component name="JoinServerDialog.lblPassword">Password:</component>
+	<component name="JoinServerDialog.lblVersion">Versione:</component>
+	<component name="JoinServerDialog.this">Entra nel Server</component>
+
+	<!--Server Information Form components-->
+	<component name="ServerInformationForm.buttonInfoJoin">&amp;Entra</component>
+	<component name="ServerInformationForm.buttonInfoClose">&amp;Chiudi</component>
+	<component name="ServerInformationForm.buttonInfoRefresh">&amp;Aggiorna</component>
+	<component name="ServerInformationForm.lblServerName">Nome Server:</component>
+	<component name="ServerInformationForm.labe3">Ping:</component>
+	<component name="ServerInformationForm.label1">Pista:</component>
+	<component name="ServerInformationForm.lblInformation">Informazione:</component>
+	<component name="ServerInformationForm.label5">Password:</component>
+	<component name="ServerInformationForm.groupBox1">Giocatori</component>
+	<component name="ServerInformationForm.btnAddFriend">&amp;Aggiungi ad Amici</component>
+	<component name="ServerInformationForm.lblCars">Auto:</component>
+	<component name="ServerInformationForm.lblPrivate">Privato:</component>
+	<component name="ServerInformationForm.this">Server Informazioni</component>
+	<component name="ServerInformationForm.buttonInfoStop">&amp;Stop</component>
+	<component name="ServerInformationForm.QueryTimeOut">Richiesta Scaduta</component>
+	<component name="ServerInformationForm.EmptyServer">Nessun giocatore nel server.</component>
+	<component name="ServerInformationForm.NoServer">Non trovo il server in pubstat!</component>
+	<component name="ServerInformationForm.PubstatError">Errore richiesta Pubstat!</component>
+
+	<!--Message Box Components -->
+	<component name="MasterServerError">Impossibile Connetersi al Server Principale di LFS. Probabilmente è spento, o il tuo firewall non è configurato bene.</component>
+	<component name="StartPSPError">Errore avviando {0} ({1})\n{2}\nControlla la tua configurazione.</component>
+	<component name="StartLFSError">Errore avviando LFS.exe\n{0}\nControlla la tua configurazione.</component>
+	<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nPuoi modificare e redistribuire questo programma rispettando i termini della GPL (versione2 o successive).\nUna copia della GPL è contenuta nel file 'COPYNG' distribuito con Browse For Speed.\nNon diamo nessuna garanzia su questo programma.</component>
+	<component name="AboutBoxTitle">Riguardo Browse For Speed</component>
+	<component name="LoadFavError">Errore caricamento Preferiti: {0}\nUna copia è stata salvata come {1}.backup</component>
+	<component name="SaveFavError">Errore nel scrivere il file Preferiti: {0}</component>
+	<component name="SaveFriendsError">Errore nel scrivere il file Amici: {0}</component>
+	<component name="LoadFriendsError">Errore caricamento Amici: {0}\nUna copia è stata salvata come {1}.backup</component>
+	<component name="PlayerNameTooLongError">Il nome del giocatore deve avere meno di 32 caratteri</component>
+	<component name="JoinPlayerQuery">Entra {0} in questo host?\n{1}</component>
+	<component name="UserNotFound">L'utente non è online</component>
+	<component name="RemoveFavQuery">Rimuovi {0} dai favoriti?</component>
+	<component name="UpToDate">Versione aggiornata.</component>
+	<component name="NewVersion">Nuova versione disponibile, vuoi andare alla pagina del download?</component>
+	<component name="UpdateError">C'è un errore nel controllo della versione - probabilmente il nostro sito non è raggiungibile. Riprova più tardi!</component>
+	<component name="InvalidPort">{0} non è un porta valida - deve essere tra 1 e 65535</component>
+	<component name="RemoveFriendQuery">Rimuovi {0} dalla lista Amici?</component>
+	<component name="JoinFriendQuery">Vuoi entrare {0} al {1}?</component>
+	<component name="InvalidIPAddress">L'indirizzo IP deve essere: indirizzoIP:port</component>
+	<component name="AddFavError">Errore nell'aggiungere il server a favoriti: {0}</component>
+	<component name="InSimError">Impossibile connettersi ad InSim!</component>
+</language>
