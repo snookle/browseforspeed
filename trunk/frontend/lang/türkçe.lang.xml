@@ -1,0 +1,205 @@
+<!-- How to make a new language:
+1. copy this file and rename it to <yourlanguage>.lang.xml
+2. Ensure name accurately represents the language (and is unique to other language names)
+3. Translate the strings!
+4. Contact BFS at bfs@browseforspeed.net for possible inclusion in the main release.
+-->
+
+<!-- Notes:
+	* Some controls in BFS may not be big enough to fit your translated text on. This is because the controls were sized for english words.
+		Once we obtain some translations, we will do our best to make them fit correctly - but for the moment you'll have to make do, sorry!
+
+	* {0}, {1} etc are variable placeholders that are replaced by BFS, please ensure they are kept - BFS will probably crash if they're not!
+
+	* &amp; means that the character directly after this will be the keyboard shortcut
+		eg: "Ser&amp;ver" will look like "Server" in BFS, but the shortcut will be alt+v
+
+	* New lines are denoted with \n
+		eg: "BFS\nRocks" will display as:
+				"BFS
+				Rocks"
+ -->
+
+
+<language>
+	<name>Türkçe</name>
+	<author>NOS.onurTR</author>
+	<email>tansoy@gmail.com</email>
+	<!-- put whatever you like here, but keep it brief-->
+	<comment>www.nosracingteam.com</comment>
+
+	<!-- Global stuff -->
+	<component name="Global.Yes">Evet</component>
+	<component name="Global.No">Hayýr</component>
+	<component name="Global.True">Doðru</component>
+	<component name="Global.False">Yanlýþ</component>
+	<component name="Global.Error">Hata</component>
+	<component name="Global.Enabled">Açýk</component>
+	<component name="Global.Disabled">Kapalý</component>
+
+	<!-- Main Form Components -->
+	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+
+	<component name="MainForm.fileToolStripMenuItem">&amp;Dosya</component>
+	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Sunucuya Gir...</component>
+	<component name="MainForm.closeToolStripMenuItem">&amp;Çýkýþ</component>
+	<component name="MainForm.aboutToolStripMenuItem">&amp;Yardým</component>
+	<component name="MainForm.aboutToolStripMenuItem1">&amp;Hakkýnda...</component>
+	<component name="MainForm.tabMain">Sunucu Gezgini</component>
+	<component name="MainForm.lblFindUserMain">Kullanýcý Bul:</component>
+	<component name="MainForm.lblPasswordMain">Sunucu Þifresi:</component>
+	<component name="MainForm.btnFindUserMain">&amp;Online kullanýcý bul</component>
+	<component name="MainForm.gbFilters">Filtreler</component>
+	<component name="MainForm.cbPublic">Public</component>
+	<component name="MainForm.cbPrivate">Özel</component>
+	<component name="MainForm.cbFull">Full</component>
+	<component name="MainForm.lblPingThreshold">Ping Süresi:</component>
+	<component name="MainForm.cbEmpty">Boþ</component>
+	<component name="MainForm.columnHeaderName">Sunucu ismi</component>
+	<component name="MainForm.columnHeaderPing">Ping</component>
+	<component name="MainForm.columnPrivate">Özel</component>
+	<component name="MainForm.columnHeaderConnections">Baðlantýlar</component>
+	<component name="MainForm.columnHeaderInfo">Bilgi</component>
+	<component name="MainForm.columnHeaderTrack">Pist</component>
+	<component name="MainForm.columnHeaderCars">Arabalar</component>
+	<component name="MainForm.joinServerToolStripMenuItem">&amp;Sunucuya Gir</component>
+	<component name="MainForm.viewServerInformationMain">S&amp;unucu Bilgisi Göster...</component>
+	<component name="MainForm.toolStripMenuItem1">&amp;Favorilere Ekle</component>
+	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Kopyala</component>
+	<component name="MainForm.administrateToolStripMenuItem1">Yönet...</component>
+	<component name="MainForm.btnRefresh">&amp;Yenile</component>
+	<component name="MainForm.btnStop">&amp;Dur</component>
+	<component name="MainForm.btnJoin">&amp;Gir</component>
+	<component name="MainForm.tabFavourites">Favoriler</component>
+	<component name="MainForm.lblAddressFav">Sunucu IP adresi:</component>
+	<component name="MainForm.btnAddServer">&amp;Sunucu Ekle</component>
+	<component name="MainForm.columnHeaderFavServerName">Server Name</component>
+	<component name="MainForm.columnHeaderFavPing">Ping</component>
+	<component name="MainForm.columnHeaderFavSlots">Baðlantýlar</component>
+	<component name="MainForm.columnHeaderFavInfo">Bilgi</component>
+	<component name="MainForm.columnHeaderFavTrack">Pist</component>
+	<component name="MainForm.columnHeaderFavCars">Arabalar</component>
+	<component name="MainForm.joinServerToolStripMenuItem1">&amp;Sunucuya Gir</component>
+	<component name="MainForm.viewServerInformationFav">S&amp;unucu Bilgisi Göster...</component>
+	<component name="MainForm.removeFromFavouritesToolStripMenuItem">&amp;Favorilerden Sil</component>
+	<component name="MainForm.copyServerToClipboardToolStripMenuItem1">&amp;Kopyala</component>
+	<component name="MainForm.administrateToolStripMenuItem">Yönet...</component>
+	<component name="MainForm.tabFriends">Arkadaþlar</component>
+	<component name="MainForm.btnAddFriend">&amp;Arkadaþ Ekle</component>
+	<component name="MainForm.cbHideOffline">Offline arkadaþlarý gizle</component>
+	<component name="MainForm.btnRefreshFriend">&amp;Listeyi Yenile</component>
+	<component name="MainForm.btnJoinFriend">Arkadaþa &amp;Katýl</component>
+	<component name="MainForm.columnFriendName">Ýsim</component>
+	<component name="MainForm.columnFriendServer">Sunucu ismi</component>
+	<component name="MainForm.columnFriendPrivate">Özel</component>
+	<component name="MainForm.columnFriendPlayers">Oyuncular</component>
+	<component name="MainForm.joinServerMenuFriends">Sunucuya Gir</component>
+	<component name="MainForm.viewServerInformationFriend">Sunucu bilgisi göster...</component>
+	<component name="MainForm.removeFriendToolStripMenuItem">Arkadaþ sil</component>
+	<component name="MainForm.tabConfig">Ayarlar</component>
+	<component name="MainForm.groupBox1">Ayarlar</component>
+	<component name="MainForm.groupBox2">Dil</component>
+	<component name="MainForm.groupBox5">Dil detaylarý</component>
+	<component name="MainForm.lblCommentReal">langComments</component>
+	<component name="MainForm.lblEmailReal">AuthorEmal</component>
+	<component name="MainForm.lblAuthorReal">langAuthor</component>
+	<component name="MainForm.lblLangComment">Yorumlar:</component>
+	<component name="MainForm.lblLangContact">Ýletiþim Adresi:</component>
+	<component name="MainForm.lblLangAuthor">Yazar:</component>
+	<component name="MainForm.lblLanguageConfig">Dil:</component>
+	<component name="MainForm.groupBox4">Sunucuya çift týkladýðýmda:</component>
+	<component name="MainForm.rbJoin">Sunucuya gir</component>
+	<component name="MainForm.rbView">Sunucu bilgisi göster</component>
+	<component name="MainForm.gbStartBeforeLFS">LFS'den önce baþlat</component>
+	<component name="MainForm.btnProgramEnable">&amp;Açýk</component>
+	<component name="MainForm.btnProgramDisable">&amp;Kapalý</component>
+	<component name="MainForm.btnProgramDelete">&amp;Programý sil</component>
+	<component name="MainForm.btnProgramNew">&amp;Yeni program</component>
+	<component name="MainForm.bgProgramConfig">Program ayarlarý</component>
+	<component name="MainForm.btnProgramCancel">&amp;Ýptal</component>
+	<component name="MainForm.btnProgramSave">&amp;Kaydet</component>
+	<component name="MainForm.btnProgramUpdate">&amp;Güncelle</component>
+	<component name="MainForm.lblProgramConfigArg">Arguments:</component>
+	<component name="MainForm.lblProgramConfigName">Ýsim:</component>
+	<component name="MainForm.btnProgramBrowse">&amp;Gözat...</component>
+	<component name="MainForm.lblProgramConfigPath">Dizin:</component>
+	<component name="MainForm.groupBox3">Geliþmiþ</component>
+	<component name="MainForm.txtInsimPort">29999</component>
+	<component name="MainForm.lblQueryWaitDescription">Ýstek Bekleme Süresi ( Eðer tüm sunucular "Baðlantý Reddedildi" uyarýsý veriyorsa bu deðeri yükseltin )</component>
+	<component name="MainForm.lblInsimPortConfig">LFS Insim Portu:</component>
+	<component name="MainForm.cbQueryWait">Ýstek beklemeyi iptal et</component>
+	<component name="MainForm.lblQueryWaitHelp">Sadece eðer iþletim sisteminizde baðlantý sýnýrlamasý olmadýðýndan eminseniz Ýstek Beklemeyi iptal edin. Daha çok bilgi için readme.txt dosyasýný okuyun.</component>
+	<component name="MainForm.btnCheckNewVersion">&amp;Þimdi Kontrol Et</component>
+	<component name="MainForm.cbNewVersion">Baþlangýçta yeni versiyon kontrolü yap</component>
+	<component name="MainForm.lblExeDescriptionConfig">Eðer yukarýdaki kutuda birden fazla giriþ varsa hangisi doðru dizinse onu seçiniz. Eðer hiçbir giriþ yoksa, Gözat butonuna týklayarak dizini gösteriniz.</component>
+	<component name="MainForm.lblExePathConfig">LFS'nin bulunduðu dizin:</component>
+	<component name="MainForm.buttonBrowse">&amp;Gözat...</component>
+	<component name="MainForm.NoServers">Hiç server bulunamadý. Filtre ayarlarýný kontrol ediniz.</component>
+	<component name="MainForm.QueryStatus">Ýsteniyor...</component>
+	<component name="MainForm.StatusTotal">Kontrol ediyor: {0} of {1}</component>
+	<component name="MainForm.NoReply">Yanýt yok: {0}</component>
+	<component name="MainForm.Refused">Baðlantý reddedildi: {0}</component>
+	<component name="MainForm.Offline">Offline</component>
+
+	<!-- Admin Form components -->
+	<component name="Admin.btnSend">&amp;Gönder</component>
+	<component name="Admin.btnConnect">&amp;Baðlan</component>
+	<component name="Admin.btnDisconnect">Baðlantýyý &amp;Kes</component>
+	<component name="Admin.edtPort">29999</component>
+	<component name="Admin.lblPassword">Þifre:</component>
+	<component name="Admin.lblinsimPort">InSim Portu:</component>
+	<component name="Admin.chkRelay">Connect to Relay</component>
+	<component name="Admin.this">Admin</component>
+
+	<!--Join Server Dialog Components -->
+	<component name="JoinServerDialog.btnJoin">&amp;Sunucuya gir</component>
+	<component name="JoinServerDialog.lblServerName">Sunucu ismi:</component>
+	<component name="JoinServerDialog.btnCancel">&amp;Ýptal</component>
+	<component name="JoinServerDialog.lblPassword">Þifre:</component>
+	<component name="JoinServerDialog.lblVersion">Versiyon:</component>
+	<component name="JoinServerDialog.this">Sunucuya gir</component>
+
+	<!--Server Information Form components-->
+	<component name="ServerInformationForm.buttonInfoJoin">&amp;Gir</component>
+	<component name="ServerInformationForm.buttonInfoClose">&amp;Kapat</component>
+	<component name="ServerInformationForm.buttonInfoRefresh">&amp;Yenile</component>
+	<component name="ServerInformationForm.lblServerName">Sunucu ismi:</component>
+	<component name="ServerInformationForm.labe3">Ping:</component>
+	<component name="ServerInformationForm.label1">Þu anki pist:</component>
+	<component name="ServerInformationForm.lblInformation">Bilgi:</component>
+	<component name="ServerInformationForm.label5">Þifre:</component>
+	<component name="ServerInformationForm.groupBox1">Oyuncular</component>
+	<component name="ServerInformationForm.btnAddFriend">&amp;Arkadaþlara Ekle</component>
+	<component name="ServerInformationForm.lblCars">Arabalar:</component>
+	<component name="ServerInformationForm.lblPrivate">Özel:</component>
+	<component name="ServerInformationForm.this">Sunucu bilgisi</component>
+	<component name="ServerInformationForm.buttonInfoStop">&amp;Dur</component>
+	<component name="ServerInformationForm.QueryTimeOut">Ýstek zaman aþýmýna uðradý</component>
+	<component name="ServerInformationForm.EmptyServer">Sunucuda þu an oyuncu yok.</component>
+	<component name="ServerInformationForm.NoServer">pubstat'ta sunucu bulunamadý!</component>
+	<component name="ServerInformationForm.PubstatError">Pubstat isteðinde hata</component>
+
+	<!--Message Box Components -->
+	<component name="MasterServerError">LFS Master Sunucusuna baðlanamadý. Sunucu çalýþmýyor olabilir ya da güvenlik duvaýnýz engelliyor olabilir, ayarlarýnýzý gözden geçirin.</component>
+	<component name="StartPSPError">Çalýþtýrýrken Hata: {0} ({1})\n{2}\nAyarlarýnýzý kontrol edin.</component>
+	<component name="StartLFSError">Çalýþtýrýrken Hata: LFS.exe\n{0}\ nAyarlarýnýzý kontrol edin.</component>
+	<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.</component>
+	<component name="AboutBoxTitle">Browse For Speed Hakkýnda</component>
+	<component name="LoadFavError">Favorileri yüklerken hata: {0}\nBir kopyasý {1}.backup olarak kaydedildi.</component>
+	<component name="SaveFavError">Favori sunucular dosyasýna yazarken hata oluþtu: {0}</component>
+	<component name="SaveFriendsError">Arkadaþlar dosyasýna yazarken hata oluþtu: {0}</component>
+	<component name="LoadFriendsError">Arkadaþlar listesi yüklenirken hata: {0}\nBir kopyasý {1}.backup olarak kaydedildi.</component>
+	<component name="PlayerNameTooLongError">Oyuncu ismi 32 karakterden daha az olmalý.</component>
+	<component name="JoinPlayerQuery">{0} bu sunucuya girmek istiyor musunuz?\n{1}</component>
+	<component name="UserNotFound">Kullanýcý bulunamadý</component>
+	<component name="RemoveFavQuery">{0} sunucusu favorilerden silinsin mi?</component>
+	<component name="UpToDate">Versiyonunuz güncel.</component>
+	<component name="NewVersion">Yeni versiyon kullanýlabilir. Ýndirme sayfasina yönlendirilmek ister misiniz?</component>
+	<component name="UpdateError">Versiyon kontrolü sýrasýnda hata oluþtu – site calýþmýyor olabilir. Daha sonra tekrar deneyin!</component>
+	<component name="InvalidPort">{0} geçerli bir port numarasý deðil - 1 ile 65535 arasýnda olmalý</component>
+	<component name="RemoveFriendQuery">{0} arkadaþlar listesinden silinsin mi?</component>
+	<component name="JoinFriendQuery">Girmek istiyor musunuz {0} at {1}?</component>
+	<component name="InvalidIPAddress">IP adresi þu formda olmalý: ipadresi:port</component>
+	<component name="AddFavError">Sunucuyu favorilere eklerken bir hata oluþtu: {0}</component>
+	<component name="InSimError">InSim’e baðlanamýyor!</component>
+</language>
