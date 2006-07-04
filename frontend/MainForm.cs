@@ -264,7 +264,7 @@ public class ListSorter: IComparer<ServerListItem>
 	
 	public partial class MainForm
 	{
-		static string bfs_version = "0.5";
+		static string bfs_version = "0.6 ALPHA";
 		static string version_check = "7";
 		static string download_url = "http://www.browseforspeed.net";
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
@@ -584,31 +584,40 @@ public class ListSorter: IComparer<ServerListItem>
 
 		void btnJoinClick(object sender, System.EventArgs e) {
 			ServerListItem item;
+			string pass = "";
 			bool writefav = false;
 			if (sender is Button) {
 				if (((Button)sender).Name == "btnJoinMain") {
 					item = lvMain.GetSelectedServer();
-				} else {
+				} else { //is this even possible?
 					item = lvFavourites.GetSelectedServer();
-					writefav = true;
+					pass = item.password;
+					//writefav = true; WHY?!?
 				}
 			} else if (sender is ToolStripMenuItem) {
 				if (((ToolStripMenuItem)sender).Name == "joinServerToolStripMenuItem") {
 					item = lvMain.GetSelectedServer();
+					pass = edtPasswordMain.Text;
 				} else {
 					item = lvFavourites.GetSelectedServer();
-					writefav = true;
+					pass = item.password;
+					//writefav = true;
 				}
-			}else {
+			} else {
 				item = ((ServerListView)sender).GetSelectedServer();
+				if (item.password != null && item.password != "") {
+					pass = item.password;
+				} else {
+					pass = edtPasswordMain.Text;
+				}
 			}
 			if (item == null)
 				return;
-			if (writefav) {
+			if (writefav) { //why would anyone put the password in there?
 				lvFavourites.GetSelectedServer().password = edtPasswordMain.Text;
 				WriteFav();
 			}
-			LoadLFS(item.hostname, VersionToString(item.version), edtPasswordMain.Text);
+			LoadLFS(item.hostname, VersionToString(item.version), pass);
 		}
 
 		void lvMainSelectedIndexChanged(object sender, System.EventArgs e)
