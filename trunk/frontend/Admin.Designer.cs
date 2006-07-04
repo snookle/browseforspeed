@@ -44,7 +44,7 @@ namespace BrowseForSpeed.Frontend
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
+			this.components = new System.ComponentModel.Container();
 			this.txtInfo = new System.Windows.Forms.TextBox();
 			this.edtMessage = new System.Windows.Forms.TextBox();
 			this.btnSend = new System.Windows.Forms.Button();
@@ -54,6 +54,18 @@ namespace BrowseForSpeed.Frontend
 			this.lblPassword = new System.Windows.Forms.Label();
 			this.lblinsimPort = new System.Windows.Forms.Label();
 			this.chkRelay = new System.Windows.Forms.CheckBox();
+			this.lstRacers = new System.Windows.Forms.ListBox();
+			this.racerMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.kickToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.banToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.hoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.dayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.daysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.daysToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.weekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.forceSpectateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnSendRacer = new System.Windows.Forms.Button();
+			this.racerMenuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// txtInfo
@@ -67,7 +79,7 @@ namespace BrowseForSpeed.Frontend
 			this.txtInfo.Name = "txtInfo";
 			this.txtInfo.ReadOnly = true;
 			this.txtInfo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.txtInfo.Size = new System.Drawing.Size(498, 342);
+			this.txtInfo.Size = new System.Drawing.Size(512, 342);
 			this.txtInfo.TabIndex = 10;
 			// 
 			// edtMessage
@@ -78,14 +90,14 @@ namespace BrowseForSpeed.Frontend
 			this.edtMessage.Location = new System.Drawing.Point(12, 430);
 			this.edtMessage.MaxLength = 63;
 			this.edtMessage.Name = "edtMessage";
-			this.edtMessage.Size = new System.Drawing.Size(426, 21);
+			this.edtMessage.Size = new System.Drawing.Size(434, 21);
 			this.edtMessage.TabIndex = 3;
 			// 
 			// btnSend
 			// 
 			this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnSend.Enabled = false;
-			this.btnSend.Location = new System.Drawing.Point(444, 428);
+			this.btnSend.Location = new System.Drawing.Point(458, 428);
 			this.btnSend.Name = "btnSend";
 			this.btnSend.Size = new System.Drawing.Size(66, 23);
 			this.btnSend.TabIndex = 2;
@@ -96,7 +108,7 @@ namespace BrowseForSpeed.Frontend
 			// btnConnect
 			// 
 			this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnConnect.Location = new System.Drawing.Point(407, 11);
+			this.btnConnect.Location = new System.Drawing.Point(421, 13);
 			this.btnConnect.Name = "btnConnect";
 			this.btnConnect.Size = new System.Drawing.Size(103, 23);
 			this.btnConnect.TabIndex = 3;
@@ -115,7 +127,7 @@ namespace BrowseForSpeed.Frontend
 			// edtPort
 			// 
 			this.edtPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.edtPort.Location = new System.Drawing.Point(291, 12);
+			this.edtPort.Location = new System.Drawing.Point(305, 14);
 			this.edtPort.Name = "edtPort";
 			this.edtPort.Size = new System.Drawing.Size(100, 21);
 			this.edtPort.TabIndex = 2;
@@ -134,7 +146,7 @@ namespace BrowseForSpeed.Frontend
 			// lblinsimPort
 			// 
 			this.lblinsimPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.lblinsimPort.Location = new System.Drawing.Point(199, 14);
+			this.lblinsimPort.Location = new System.Drawing.Point(213, 16);
 			this.lblinsimPort.Name = "lblinsimPort";
 			this.lblinsimPort.Size = new System.Drawing.Size(91, 17);
 			this.lblinsimPort.TabIndex = 7;
@@ -143,20 +155,115 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// chkRelay
 			// 
-			this.chkRelay.Location = new System.Drawing.Point(291, 39);
+			this.chkRelay.Location = new System.Drawing.Point(213, 41);
 			this.chkRelay.Name = "chkRelay";
-			this.chkRelay.Size = new System.Drawing.Size(219, 24);
+			this.chkRelay.Size = new System.Drawing.Size(195, 24);
 			this.chkRelay.TabIndex = 11;
 			this.chkRelay.Text = "Connect to Relay";
 			this.chkRelay.UseVisualStyleBackColor = true;
 			this.chkRelay.CheckedChanged += new System.EventHandler(this.ChkRelayCheckedChanged);
+			// 
+			// lstRacers
+			// 
+			this.lstRacers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Right)));
+			this.lstRacers.ContextMenuStrip = this.racerMenuStrip;
+			this.lstRacers.FormattingEnabled = true;
+			this.lstRacers.HorizontalScrollbar = true;
+			this.lstRacers.Location = new System.Drawing.Point(540, 71);
+			this.lstRacers.Name = "lstRacers";
+			this.lstRacers.Size = new System.Drawing.Size(132, 342);
+			this.lstRacers.TabIndex = 12;
+			// 
+			// racerMenuStrip
+			// 
+			this.racerMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+									this.kickToolStripMenuItem,
+									this.banToolStripMenuItem,
+									this.forceSpectateToolStripMenuItem});
+			this.racerMenuStrip.Name = "racerMenuStrip";
+			this.racerMenuStrip.Size = new System.Drawing.Size(158, 70);
+			// 
+			// kickToolStripMenuItem
+			// 
+			this.kickToolStripMenuItem.Name = "kickToolStripMenuItem";
+			this.kickToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+			this.kickToolStripMenuItem.Text = "Kick";
+			this.kickToolStripMenuItem.Click += new System.EventHandler(this.KickToolStripMenuItemClick);
+			// 
+			// banToolStripMenuItem
+			// 
+			this.banToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+									this.hoursToolStripMenuItem,
+									this.dayToolStripMenuItem,
+									this.daysToolStripMenuItem,
+									this.daysToolStripMenuItem1,
+									this.weekToolStripMenuItem});
+			this.banToolStripMenuItem.Name = "banToolStripMenuItem";
+			this.banToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+			this.banToolStripMenuItem.Text = "Ban";
+			// 
+			// hoursToolStripMenuItem
+			// 
+			this.hoursToolStripMenuItem.Name = "hoursToolStripMenuItem";
+			this.hoursToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.hoursToolStripMenuItem.Text = "12 hours";
+			this.hoursToolStripMenuItem.Click += new System.EventHandler(this.HoursToolStripMenuItemClick);
+			// 
+			// dayToolStripMenuItem
+			// 
+			this.dayToolStripMenuItem.Name = "dayToolStripMenuItem";
+			this.dayToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.dayToolStripMenuItem.Text = "1 day";
+			this.dayToolStripMenuItem.Click += new System.EventHandler(this.DayToolStripMenuItemClick);
+			// 
+			// daysToolStripMenuItem
+			// 
+			this.daysToolStripMenuItem.Name = "daysToolStripMenuItem";
+			this.daysToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.daysToolStripMenuItem.Text = "2 days";
+			this.daysToolStripMenuItem.Click += new System.EventHandler(this.DaysToolStripMenuItemClick);
+			// 
+			// daysToolStripMenuItem1
+			// 
+			this.daysToolStripMenuItem1.Name = "daysToolStripMenuItem1";
+			this.daysToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+			this.daysToolStripMenuItem1.Text = "3 days";
+			this.daysToolStripMenuItem1.Click += new System.EventHandler(this.DaysToolStripMenuItem1Click);
+			// 
+			// weekToolStripMenuItem
+			// 
+			this.weekToolStripMenuItem.Name = "weekToolStripMenuItem";
+			this.weekToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.weekToolStripMenuItem.Text = "1 week";
+			this.weekToolStripMenuItem.Click += new System.EventHandler(this.WeekToolStripMenuItemClick);
+			// 
+			// forceSpectateToolStripMenuItem
+			// 
+			this.forceSpectateToolStripMenuItem.Name = "forceSpectateToolStripMenuItem";
+			this.forceSpectateToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+			this.forceSpectateToolStripMenuItem.Text = "Force spectate";
+			this.forceSpectateToolStripMenuItem.Click += new System.EventHandler(this.ForceSpectateToolStripMenuItemClick);
+			// 
+			// btnSendRacer
+			// 
+			this.btnSendRacer.Enabled = false;
+			this.btnSendRacer.Location = new System.Drawing.Point(540, 428);
+			this.btnSendRacer.Name = "btnSendRacer";
+			this.btnSendRacer.Size = new System.Drawing.Size(132, 23);
+			this.btnSendRacer.TabIndex = 13;
+			this.btnSendRacer.Text = "Send to selected racer";
+			this.btnSendRacer.UseVisualStyleBackColor = true;
+			this.btnSendRacer.Click += new System.EventHandler(this.Button1Click);
 			// 
 			// AdminForm
 			// 
 			this.AcceptButton = this.btnSend;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(522, 463);
+			this.ClientSize = new System.Drawing.Size(684, 463);
+			this.Controls.Add(this.btnSendRacer);
+			this.Controls.Add(this.lstRacers);
 			this.Controls.Add(this.chkRelay);
 			this.Controls.Add(this.lblinsimPort);
 			this.Controls.Add(this.lblPassword);
@@ -166,16 +273,27 @@ namespace BrowseForSpeed.Frontend
 			this.Controls.Add(this.btnSend);
 			this.Controls.Add(this.edtMessage);
 			this.Controls.Add(this.txtInfo);
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "AdminForm";
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Admin";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminFormFormClosed);
 			this.Load += new System.EventHandler(this.AdminFormLoad);
+			this.racerMenuStrip.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button btnSendRacer;
+		private System.Windows.Forms.ToolStripMenuItem forceSpectateToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem weekToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem daysToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem daysToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem dayToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem hoursToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem banToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem kickToolStripMenuItem;
+		private System.Windows.Forms.ContextMenuStrip racerMenuStrip;
+		private System.Windows.Forms.ListBox lstRacers;
 		private System.Windows.Forms.CheckBox chkRelay;
 		private System.Windows.Forms.Label lblPassword;
 		private System.Windows.Forms.Label lblinsimPort;

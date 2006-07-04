@@ -17,6 +17,8 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Collections;
 using FullMotion.LiveForSpeed.InSim;
 using FullMotion.LiveForSpeed.InSim.EventHandlers;
 using libbrowseforspeed;
@@ -24,11 +26,20 @@ using System.Text.RegularExpressions;
 
 namespace BrowseForSpeed.Frontend
 {
+	public class racer {
+		public racer(string playername, int connection) {
+			this.playername = playername;
+			this.connection = connection;
+		}
+		public string playername;
+		public int connection;
+	}
 	public partial class AdminForm
 	{
 		InSimHandler handler;
 		ServerInformation info;
 		FullMotion.LiveForSpeed.InSim.Configuration config;
+		Dictionary<String, racer> racers;
 
 		public AdminForm(ServerInformation info) {
 			InitializeComponent();
@@ -49,7 +60,8 @@ namespace BrowseForSpeed.Frontend
 			lblPassword.Text = MainForm.languages.GetString("Admin.lblPassword");
 			lblinsimPort.Text = MainForm.languages.GetString("Admin.lblinsimPort");
 			chkRelay.Text = MainForm.languages.GetString("Admin.chkRelay");
-			this.Text = MainForm.languages.GetString("Admin.this") + " - " + info.hostname;;
+			this.Text = MainForm.languages.GetString("Admin.this") + " - " + info.hostname;
+			racers = new Dictionary<String, racer>();
 		}
 
 		void BtnSendClick(object sender, System.EventArgs e) {
@@ -77,6 +89,18 @@ namespace BrowseForSpeed.Frontend
 			txtInfo.SelectionStart = txtInfo.Text.Length;
 			txtInfo.ScrollToCaret();
 		}
+		
+		private void cbConnection(FullMotion.LiveForSpeed.InSim.Events.RaceTrackConnection c) {
+			//MessageBox.Show("Got a connection!");
+			if (!racers.ContainsKey(c.Username)) {
+				racers.Add(c.Username, new racer(c.Playername, c.ConnectionNumber));
+				lstRacers.Items.Add(c.Username);
+			}
+		}
+		private void cbConnectionLeave(FullMotion.LiveForSpeed.InSim.Events.RaceTrackConnectionLeave c) {
+			racers.Remove(c.Username);
+			lstRacers.Items.Remove(c.Username);
+		}
 
 		void AdminFormFormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e) {
 			try {
@@ -102,20 +126,26 @@ namespace BrowseForSpeed.Frontend
 					config.ReplyPort = 80085;
 					config.UseSplitMessages = true;
 					config.UseKeepAlives = true;
-					config.RaceTracking = RaceTrackType.NoTracking;
+					config.RaceTracking = RaceTrackType.MultiCarTracking;
 					config.GuaranteedDelivery = true;
 					config.UseRelay = chkRelay.Checked;
 					config.Hostname = info.hostname;
 					handler.Initialize(3);
-					handler.RequestState();
 					handler.LFSMessage += new MessageEventHandler(cbMessage);
+					handler.RaceTrackConnection += new RaceTrackNewConnectionHandler(cbConnection);
+					handler.RaceTrackConnectionLeave += new RaceTrackConnectionLeaveHandler(cbConnectionLeave);
+					//handler.RequestRaceTrackingMultiCarInfo();
+					for (int i = 0; i < 24; i++) {
+						handler.RequestRaceTrackingConnectionInfo(i);
+					}
 					//handler.LFSState += new StateEventHandler(cbState);
 					btnSend.Enabled = true;
 					btnConnect.Text = MainForm.languages.GetString("Admin.btnDisconnect");
 					edtMessage.Enabled = true;
 					btnConnect.Enabled = true;
+					btnSendRacer.Enabled = true;
 					edtMessage.Focus();
-				} catch (Exception ex) {					
+				} catch (Exception ex) {
 					btnConnect.Enabled = true;
 					chkRelay.Enabled = true;					
 					MessageBox.Show(MainForm.languages.GetString("InSimError"), MainForm.languages.GetString("Admin.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -123,9 +153,12 @@ namespace BrowseForSpeed.Frontend
 			} else {
 				handler.LFSMessage -= new MessageEventHandler(cbMessage);
 				handler.Close();
+				btnSendRacer.Enabled = false;
 				btnSend.Enabled = false;
 				edtMessage.Enabled = false;
 				chkRelay.Enabled = true;
+				lstRacers.Items.Clear();
+				racers.Clear();
 				btnConnect.Text = MainForm.languages.GetString("Admin.btnConnect");
 			}
 		}
@@ -148,6 +181,41 @@ namespace BrowseForSpeed.Frontend
 		
 		void ChkRelayCheckedChanged(object sender, System.EventArgs e) {
 			edtPort.Enabled = !chkRelay.Checked;
+		}
+		
+		void KickToolStripMenuItemClick(object sender, System.EventArgs e) {
+			handler.SendMessage("/kick " + lstRacers.SelectedItem.ToString());
+		}
+		
+		void HoursToolStripMenuItemClick(object sender, System.EventArgs e) {
+			handler.SendMessage("/ban " + lstRacers.Text + " 0");
+		}
+		
+		void DayToolStripMenuItemClick(object sender, System.EventArgs e) {
+			handler.SendMessage("/ban " + lstRacers.Text + " 1");
+		}
+		
+		void DaysToolStripMenuItemClick(object sender, System.EventArgs e) {
+			handler.SendMessage("/ban " + lstRacers.Text + " 2");
+		}
+		
+		void DaysToolStripMenuItem1Click(object sender, System.EventArgs e) {
+			handler.SendMessage("/ban " + lstRacers.Text + " 3");
+		}
+		
+		void WeekToolStripMenuItemClick(object sender, System.EventArgs e) {
+			handler.SendMessage("/ban " + lstRacers.Text + " 7");
+		}
+		
+		void ForceSpectateToolStripMenuItemClick(object sender, System.EventArgs e) {
+			handler.SendMessage("/spectate " + lstRacers.Text);			
+		}		
+		
+		void Button1Click(object sender, System.EventArgs e) {
+			if (lstRacers.Text != null && lstRacers.Text != "") {
+				handler.SendMessageToConnection(edtMessage.Text, racers[lstRacers.Text].connection);
+				edtMessage.Clear();
+			}
 		}
 	}
 }
