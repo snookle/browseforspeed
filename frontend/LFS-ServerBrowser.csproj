@@ -1,4 +1,4 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <RootNamespace>BrowseForSpeed</RootNamespace>
@@ -84,6 +84,13 @@
       <DependentUpon>JoinServerDialog.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="LanguageManager.cs" />
+    <Compile Include="Ban.Designer.cs">
+      <DependentUpon>Ban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ban.cs" />
+    <EmbeddedResource Include="Ban.resx">
+      <DependentUpon>Ban.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>

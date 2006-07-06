@@ -65,6 +65,7 @@ namespace BrowseForSpeed.Frontend
 			this.weekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.forceSpectateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnSendRacer = new System.Windows.Forms.Button();
+			this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.racerMenuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -182,7 +183,7 @@ namespace BrowseForSpeed.Frontend
 									this.banToolStripMenuItem,
 									this.forceSpectateToolStripMenuItem});
 			this.racerMenuStrip.Name = "racerMenuStrip";
-			this.racerMenuStrip.Size = new System.Drawing.Size(158, 70);
+			this.racerMenuStrip.Size = new System.Drawing.Size(158, 92);
 			// 
 			// kickToolStripMenuItem
 			// 
@@ -198,7 +199,8 @@ namespace BrowseForSpeed.Frontend
 									this.dayToolStripMenuItem,
 									this.daysToolStripMenuItem,
 									this.daysToolStripMenuItem1,
-									this.weekToolStripMenuItem});
+									this.weekToolStripMenuItem,
+									this.customToolStripMenuItem});
 			this.banToolStripMenuItem.Name = "banToolStripMenuItem";
 			this.banToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
 			this.banToolStripMenuItem.Text = "Ban";
@@ -206,35 +208,35 @@ namespace BrowseForSpeed.Frontend
 			// hoursToolStripMenuItem
 			// 
 			this.hoursToolStripMenuItem.Name = "hoursToolStripMenuItem";
-			this.hoursToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.hoursToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.hoursToolStripMenuItem.Text = "12 hours";
 			this.hoursToolStripMenuItem.Click += new System.EventHandler(this.HoursToolStripMenuItemClick);
 			// 
 			// dayToolStripMenuItem
 			// 
 			this.dayToolStripMenuItem.Name = "dayToolStripMenuItem";
-			this.dayToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.dayToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.dayToolStripMenuItem.Text = "1 day";
 			this.dayToolStripMenuItem.Click += new System.EventHandler(this.DayToolStripMenuItemClick);
 			// 
 			// daysToolStripMenuItem
 			// 
 			this.daysToolStripMenuItem.Name = "daysToolStripMenuItem";
-			this.daysToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.daysToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.daysToolStripMenuItem.Text = "2 days";
 			this.daysToolStripMenuItem.Click += new System.EventHandler(this.DaysToolStripMenuItemClick);
 			// 
 			// daysToolStripMenuItem1
 			// 
 			this.daysToolStripMenuItem1.Name = "daysToolStripMenuItem1";
-			this.daysToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+			this.daysToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
 			this.daysToolStripMenuItem1.Text = "3 days";
 			this.daysToolStripMenuItem1.Click += new System.EventHandler(this.DaysToolStripMenuItem1Click);
 			// 
 			// weekToolStripMenuItem
 			// 
 			this.weekToolStripMenuItem.Name = "weekToolStripMenuItem";
-			this.weekToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.weekToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.weekToolStripMenuItem.Text = "1 week";
 			this.weekToolStripMenuItem.Click += new System.EventHandler(this.WeekToolStripMenuItemClick);
 			// 
@@ -255,6 +257,13 @@ namespace BrowseForSpeed.Frontend
 			this.btnSendRacer.Text = "Send to selected racer";
 			this.btnSendRacer.UseVisualStyleBackColor = true;
 			this.btnSendRacer.Click += new System.EventHandler(this.Button1Click);
+			// 
+			// customToolStripMenuItem
+			// 
+			this.customToolStripMenuItem.Name = "customToolStripMenuItem";
+			this.customToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.customToolStripMenuItem.Text = "Custom...";
+			this.customToolStripMenuItem.Click += new System.EventHandler(this.CustomToolStripMenuItemClick);
 			// 
 			// AdminForm
 			// 
@@ -283,6 +292,7 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
 		private System.Windows.Forms.Button btnSendRacer;
 		private System.Windows.Forms.ToolStripMenuItem forceSpectateToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem weekToolStripMenuItem;
