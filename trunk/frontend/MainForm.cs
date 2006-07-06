@@ -990,6 +990,10 @@ public class ListSorter: IComparer<ServerListItem>
 				config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();
 			config.disableWait = cbQueryWait.Checked;
 			config.checkNewVersion = cbNewVersion.Checked;
+			config.filter_empty = cbEmpty.Checked;
+			config.filter_full = cbFull.Checked;
+			config.filter_private = cbPrivate.Checked;
+			config.filter_public = cbPublic.Checked;
 			config.queryWait = (int)queryWait.Value;
 			config.joinOnClick = rbJoin.Checked;
 			config.language = (cbConfigLang.SelectedItem ?? "").ToString();
@@ -1310,6 +1314,10 @@ public class ListSorter: IComparer<ServerListItem>
 			
 			if (loadedconf) {
 				//query wait
+				cbEmpty.Checked = config.filter_empty;
+				cbFull.Checked = config.filter_full;
+				cbPrivate.Checked = config.filter_private;
+				cbPublic.Checked = config.filter_public;
 				cbQueryWait.Checked = config.disableWait;
 				queryWait.Enabled = !config.disableWait;
 				LFSQuery.xpsp2_wait = !config.disableWait;

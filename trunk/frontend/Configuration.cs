@@ -64,6 +64,10 @@ public class Configuration
 		public int queryWait;
 		public bool joinOnClick;
 		public int insimPort;
+		public bool filter_empty;
+		public bool filter_full;
+		public bool filter_private;
+		public bool filter_public;
 		public List<PreStartProgram> psp = new List<PreStartProgram>();
 
 		public Configuration(string filename) {
@@ -88,6 +92,18 @@ public class Configuration
 				try {
 					checkNewVersion = ((XmlElement)list[0]).GetElementsByTagName("checkversion")[0].FirstChild.Value == "True";
 				} catch (Exception e) { checkNewVersion = false; }
+				try {
+					filter_empty = ((XmlElement)list[0]).GetElementsByTagName("filter_empty")[0].FirstChild.Value == "True";
+				} catch (Exception e) { filter_empty = true; }
+				try {
+					filter_full = ((XmlElement)list[0]).GetElementsByTagName("filter_full")[0].FirstChild.Value == "True";
+				} catch (Exception e) { filter_full = true; }
+				try {
+					filter_private = ((XmlElement)list[0]).GetElementsByTagName("filter_private")[0].FirstChild.Value == "True";
+				} catch (Exception e) { filter_private = true; }
+				try {
+					filter_public = ((XmlElement)list[0]).GetElementsByTagName("filter_public")[0].FirstChild.Value == "True";
+				} catch (Exception e) { filter_public = true; }
 				try {
 					language = ((XmlElement)list[0]).GetElementsByTagName("language")[0].FirstChild.Value;
 				} catch (Exception e) { language = ""; }
@@ -192,6 +208,10 @@ public class Configuration
 				tw.WriteEndElement();				
 				tw.WriteElementString("insimport", insimPort.ToString());
 				tw.WriteElementString("checkversion", checkNewVersion.ToString());
+				tw.WriteElementString("filter_public", filter_public.ToString());
+				tw.WriteElementString("filter_private", filter_private.ToString());
+				tw.WriteElementString("filter_empty", filter_empty.ToString());
+				tw.WriteElementString("filter_full", filter_full.ToString());
 				tw.WriteElementString("language", this.language);
 				foreach(PreStartProgram p in psp){
 					tw.WriteStartElement("psp");

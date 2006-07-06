@@ -40,6 +40,7 @@ namespace BrowseForSpeed.Frontend
 		ServerInformation info;
 		FullMotion.LiveForSpeed.InSim.Configuration config;
 		Dictionary<String, racer> racers;
+		frmBan ban;
 
 		public AdminForm(ServerInformation info) {
 			InitializeComponent();
@@ -61,7 +62,7 @@ namespace BrowseForSpeed.Frontend
 			lblinsimPort.Text = MainForm.languages.GetString("Admin.lblinsimPort");
 			chkRelay.Text = MainForm.languages.GetString("Admin.chkRelay");
 			this.Text = MainForm.languages.GetString("Admin.this") + " - " + info.hostname;
-			racers = new Dictionary<String, racer>();
+			racers = new Dictionary<String, racer>();			
 		}
 
 		void BtnSendClick(object sender, System.EventArgs e) {
@@ -216,6 +217,14 @@ namespace BrowseForSpeed.Frontend
 				handler.SendMessageToConnection(edtMessage.Text, racers[lstRacers.Text].connection);
 				edtMessage.Clear();
 			}
+		}
+		
+		void CustomToolStripMenuItemClick(object sender, System.EventArgs e) {
+			ban = new frmBan();
+			if (ban.ShowDialog(this) == DialogResult.OK) {
+				handler.SendMessage("/ban " + lstRacers.Text + " " + ban.days);
+			}
+			ban.Dispose();
 		}
 	}
 }
