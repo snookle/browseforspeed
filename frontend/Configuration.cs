@@ -68,6 +68,11 @@ public class Configuration
 		public bool filter_full;
 		public bool filter_private;
 		public bool filter_public;
+		public bool hide_offline;
+		public int ping_threshold;
+		public string filter_track;
+		public bool startup_refresh;
+		public string filter_version;
 		public List<PreStartProgram> psp = new List<PreStartProgram>();
 
 		public Configuration(string filename) {
@@ -105,8 +110,26 @@ public class Configuration
 					filter_public = ((XmlElement)list[0]).GetElementsByTagName("filter_public")[0].FirstChild.Value == "True";
 				} catch (Exception e) { filter_public = true; }
 				try {
+					hide_offline = ((XmlElement)list[0]).GetElementsByTagName("hide_offline")[0].FirstChild.Value == "True";
+				} catch (Exception e) { hide_offline = false; }
+				try {
+					startup_refresh = ((XmlElement)list[0]).GetElementsByTagName("startup_refresh")[0].FirstChild.Value == "True";
+				} catch (Exception e) { startup_refresh = false; }
+				try {
 					language = ((XmlElement)list[0]).GetElementsByTagName("language")[0].FirstChild.Value;
 				} catch (Exception e) { language = ""; }
+				try {
+					filter_track = ((XmlElement)list[0]).GetElementsByTagName("filter_track")[0].FirstChild.Value;
+				} catch (Exception e) { filter_track = ""; }
+				try {
+					lfsPath = ((XmlElement)list[0]).GetElementsByTagName("exepath")[0].FirstChild.Value;
+				} catch (Exception e) { lfsPath = ""; }
+				try {
+					filter_version = ((XmlElement)list[0]).GetElementsByTagName("filter_version")[0].FirstChild.Value;
+				} catch (Exception e) { filter_version = "S2"; }
+				try {
+					ping_threshold = Convert.ToInt32(((XmlElement)list[0]).GetElementsByTagName("ping_threshold")[0].FirstChild.Value);
+				} catch (Exception e) { ping_threshold = 5000; }
 				if (docVersion == "1"){
 					PreStartProgram p = new PreStartProgram();
 						XmlNode spot = ((XmlElement)list[0]).GetElementsByTagName("spotter")[0];
@@ -212,6 +235,11 @@ public class Configuration
 				tw.WriteElementString("filter_private", filter_private.ToString());
 				tw.WriteElementString("filter_empty", filter_empty.ToString());
 				tw.WriteElementString("filter_full", filter_full.ToString());
+				tw.WriteElementString("filter_version", filter_version.ToString());
+				tw.WriteElementString("hide_offline", hide_offline.ToString());
+				tw.WriteElementString("ping_threshold", ping_threshold.ToString());
+				tw.WriteElementString("startup_refresh", startup_refresh.ToString());
+				tw.WriteElementString("filter_track", filter_track.ToString());
 				tw.WriteElementString("language", this.language);
 				foreach(PreStartProgram p in psp){
 					tw.WriteStartElement("psp");

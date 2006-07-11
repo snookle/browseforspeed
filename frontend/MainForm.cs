@@ -264,7 +264,7 @@ public class ListSorter: IComparer<ServerListItem>
 	
 	public partial class MainForm
 	{
-		static string bfs_version = "0.6 ALPHA";
+		static string bfs_version = "0.6";
 		static string version_check = "7";
 		static string download_url = "http://www.browseforspeed.net";
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
@@ -994,8 +994,13 @@ public class ListSorter: IComparer<ServerListItem>
 			config.filter_full = cbFull.Checked;
 			config.filter_private = cbPrivate.Checked;
 			config.filter_public = cbPublic.Checked;
+			config.filter_version = cbVersion.Text;
 			config.queryWait = (int)queryWait.Value;
 			config.joinOnClick = rbJoin.Checked;
+			config.startup_refresh = cbStartupRefresh.Checked;
+			config.hide_offline = cbHideOffline.Checked;
+			config.ping_threshold = Convert.ToInt32(cbPing.Text);
+			config.filter_track = cbTracks.Text;
 			config.language = (cbConfigLang.SelectedItem ?? "").ToString();
 			LFSQuery.xpsp2_wait = !config.disableWait;
 			LFSQuery.THREAD_WAIT = config.queryWait;
@@ -1144,8 +1149,8 @@ public class ListSorter: IComparer<ServerListItem>
 			lvFriends.Sort();
 		}
 		
-		void CheckBox2CheckedChanged(object sender, System.EventArgs e)
-		{
+		void CheckBox2CheckedChanged(object sender, System.EventArgs e) {
+			config.hide_offline = cbHideOffline.Checked;
 			BtnRefreshFriendClick(sender, e);
 		}
 		
@@ -1276,10 +1281,10 @@ public class ListSorter: IComparer<ServerListItem>
 			//search for LFS.exe
 			RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\ShellNoRoam\\MUICache\\" );
 			foreach(string valuename in key.GetValueNames()){
-					//insert all the found values into the list
-					if (key.GetValue(valuename).ToString() == "LFS.exe"){
-						pathList.Items.Add(valuename);
-					}
+				//insert all the found values into the list
+				if (valuename.EndsWith("LFS.exe")) {
+					pathList.Items.Add(valuename);
+				}
 			}
 			//setup the config
 			config = new Configuration(configXMLFilename);
@@ -1290,7 +1295,7 @@ public class ListSorter: IComparer<ServerListItem>
 					//config not valid, take them to config screen
 					tabControl.SelectTab(tabControl.TabPages.IndexOf(tabConfig));
 					config.disableWait =  false;
-					config.checkNewVersion = false;
+					config.checkNewVersion = true;
 					this.lastTabSelected = 2;
 					if (pathList.Items.Count > 0) {
 						pathList.SelectedIndex = 0;
@@ -1310,8 +1315,7 @@ public class ListSorter: IComparer<ServerListItem>
 			//if we have previous config data
 			cbConfigLang.Items.Clear();
 			cbConfigLang.Items.AddRange(languages.Languages.ToArray());
-			cbConfigLang.SelectedItem = "English";
-			
+			cbConfigLang.SelectedItem = "English";			
 			if (loadedconf) {
 				//query wait
 				cbEmpty.Checked = config.filter_empty;
@@ -1319,6 +1323,8 @@ public class ListSorter: IComparer<ServerListItem>
 				cbPrivate.Checked = config.filter_private;
 				cbPublic.Checked = config.filter_public;
 				cbQueryWait.Checked = config.disableWait;
+				cbStartupRefresh.Checked = config.startup_refresh;
+				cbHideOffline.Checked = config.hide_offline;
 				queryWait.Enabled = !config.disableWait;
 				LFSQuery.xpsp2_wait = !config.disableWait;
 				LFSQuery.THREAD_WAIT = config.queryWait;
@@ -1354,13 +1360,24 @@ public class ListSorter: IComparer<ServerListItem>
 					pathList.Items.Add(config.lfsPath);
 					pathList.SelectedIndex = 0;
 				}
+				if (config.filter_track.Length != 0) {
+					cbTracks.Text = config.filter_track;
+				} else {
+					cbTracks.SelectedIndex = 0;
+				}
+				cbPing.Text = config.ping_threshold.ToString();
+				cbVersion.Text = config.filter_version;
+			} else {
+				cbPing.SelectedIndex = 7;
+				cbTracks.SelectedIndex = 0;
+				cbVersion.SelectedIndex = 2;
 			}
 			ReadFriends();
 			DisplayFriends();
-			cbTracks.SelectedIndex = 0;
-			cbPing.SelectedIndex = 7;
-			cbVersion.SelectedIndex = 2;
 			cbAddServerVersion.SelectedIndex = 0;
+			if (config.startup_refresh) {				
+				RefreshButtonClick(buttonRefreshFav, null);				
+			}
 
 		}
 		
@@ -1371,8 +1388,7 @@ public class ListSorter: IComparer<ServerListItem>
 			
 		}
 		
-		void CbPingSelectedIndexChanged(object sender, System.EventArgs e)
-		{
+		void CbPingSelectedIndexChanged(object sender, System.EventArgs e) {			
 			lvMain.Filter(FilterType.Ping, Convert.ToInt32(cbPing.Text));
 			lvMain.DisplayAll();
 			
@@ -1567,13 +1583,11 @@ public class ListSorter: IComparer<ServerListItem>
 			PreStartProgram p = (PreStartProgram)lbPreStart.SelectedItem;
 			p.enabled = !p.enabled;
 			lbPreStart.Items[lbPreStart.SelectedIndex] = p;
-
 		}
 		
 		void BtnProgramDeleteClick(object sender, System.EventArgs e) {
 			lbPreStart.Items.Remove(lbPreStart.SelectedItem);
 			BtnProgramCancelClick(sender, e);
-			
 		}
 		
 		void JoinServerToolStripMenuItem2Click(object sender, System.EventArgs e)
@@ -1582,7 +1596,6 @@ public class ListSorter: IComparer<ServerListItem>
 			if (j.ShowDialog() == DialogResult.OK){
 				LoadLFS(j.serverName, j.version, j.password);
 			}
-			
 		}
 
 		private void UpdateUI()
@@ -1714,6 +1727,10 @@ public class ListSorter: IComparer<ServerListItem>
 				btnFindUserClick(sender, e);
 				edtFindUserMain.Clear();
 			}
+		}
+		
+		void ChkStartupRefreshCheckedChanged(object sender, System.EventArgs e) {
+			config.startup_refresh = cbStartupRefresh.Checked;
 		}
 	}
 /// Horray for code nicked from the MSDN!

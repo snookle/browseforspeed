@@ -176,7 +176,7 @@ namespace BrowseForSpeed.Frontend
 				labelCars.Text = MainForm.CarsToString(LFSQuery.getCarNames(info.cars));
 				labelInfo.Text = MainForm.RulesToString(info.rules);
 				labelPing.Text = info.ping.ToString();
-				labelTrack.Text = info.track;				
+				labelTrack.Text = info.track;
 			} else {				
 				labelServerName.Text = MainForm.languages.GetString("ServerInformationForm.QueryTimeOut");;
 				labelPing.Text = "9999";
