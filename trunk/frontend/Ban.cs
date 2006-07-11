@@ -32,6 +32,7 @@ namespace BrowseForSpeed.Frontend
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
+			this.Icon = new Icon(GetType().Assembly.GetManifestResourceStream("BrowseForSpeed.ca3r.ico"));
 			days = 30;
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.

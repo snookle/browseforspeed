@@ -56,6 +56,7 @@ namespace BrowseForSpeed.Frontend
 		}
 
 		void AdminFormLoad(object sender, System.EventArgs e) {
+			this.Icon = new Icon(GetType().Assembly.GetManifestResourceStream("BrowseForSpeed.ca3r.ico"));
 			btnSend.Text = MainForm.languages.GetString("Admin.btnSend");
 			btnConnect.Text = MainForm.languages.GetString("Admin.btnConnect");
 			lblPassword.Text = MainForm.languages.GetString("Admin.lblPassword");

@@ -148,6 +148,7 @@ namespace BrowseForSpeed.Frontend
 			this.edtProgramPath = new System.Windows.Forms.TextBox();
 			this.lbPreStart = new System.Windows.Forms.ListBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.cbStartupRefresh = new System.Windows.Forms.CheckBox();
 			this.txtInsimPort = new System.Windows.Forms.TextBox();
 			this.lblQueryWaitDescription = new System.Windows.Forms.Label();
 			this.lblInsimPortConfig = new System.Windows.Forms.Label();
@@ -1245,6 +1246,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.cbStartupRefresh);
 			this.groupBox3.Controls.Add(this.txtInsimPort);
 			this.groupBox3.Controls.Add(this.lblQueryWaitDescription);
 			this.groupBox3.Controls.Add(this.lblInsimPortConfig);
@@ -1257,6 +1259,16 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox3.TabIndex = 14;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Advanced";
+			// 
+			// cbStartupRefresh
+			// 
+			this.cbStartupRefresh.Location = new System.Drawing.Point(24, 220);
+			this.cbStartupRefresh.Name = "cbStartupRefresh";
+			this.cbStartupRefresh.Size = new System.Drawing.Size(175, 24);
+			this.cbStartupRefresh.TabIndex = 19;
+			this.cbStartupRefresh.Text = "Refresh favourites on startup";
+			this.cbStartupRefresh.UseVisualStyleBackColor = true;
+			this.cbStartupRefresh.CheckedChanged += new System.EventHandler(this.ChkStartupRefreshCheckedChanged);
 			// 
 			// txtInsimPort
 			// 
@@ -1347,6 +1359,8 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// cbNewVersion
 			// 
+			this.cbNewVersion.Checked = true;
+			this.cbNewVersion.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.cbNewVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.cbNewVersion.Location = new System.Drawing.Point(11, 162);
 			this.cbNewVersion.Name = "cbNewVersion";
@@ -1478,6 +1492,7 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.CheckBox cbStartupRefresh;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblLangAuthor;
 		private System.Windows.Forms.Label lblLangContact;
