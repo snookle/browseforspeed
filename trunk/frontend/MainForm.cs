@@ -1277,7 +1277,7 @@ public class ListSorter: IComparer<ServerListItem>
 			RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\ShellNoRoam\\MUICache\\" );
 			foreach(string valuename in key.GetValueNames()){
 					//insert all the found values into the list
-					if (key.GetValue(valuename).ToString() == "LFS"){
+					if (key.GetValue(valuename).ToString() == "LFS.exe"){
 						pathList.Items.Add(valuename);
 					}
 			}
