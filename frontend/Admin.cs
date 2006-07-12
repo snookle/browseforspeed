@@ -71,6 +71,7 @@ namespace BrowseForSpeed.Frontend
 			daysToolStripMenuItem1.Text = MainForm.languages.GetString("Admin.ban3d");
 			weekToolStripMenuItem.Text = MainForm.languages.GetString("Admin.ban1w");
 			customToolStripMenuItem.Text = MainForm.languages.GetString("Admin.banCustom");
+			btnSendRacer.Text = MainForm.languages.GetString("Admin.sendPrivate");
 			this.Text = MainForm.languages.GetString("Admin.this") + " - " + info.hostname;
 			racers = new Dictionary<String, racer>();			
 		}
