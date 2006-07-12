@@ -1161,7 +1161,7 @@ public class ListSorter: IComparer<ServerListItem>
 		
 		void JoinFriendClick(object sender, System.EventArgs e)
 		{
-			if ((lvFriends.SelectedItems.Count > 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == languages.GetString("MainForm.Offline")))
+			if ((lvFriends.SelectedItems.Count <= 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == languages.GetString("MainForm.Offline")))
 				return;
 			string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
 			LoadLFS(hostname, "S2", edtPasswordMain.Text);
@@ -1206,13 +1206,17 @@ public class ListSorter: IComparer<ServerListItem>
 		
 		void LvFriendsDoubleClick(object sender, System.EventArgs e)
 		{
-			if ((lvFriends.SelectedItems.Count <= 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == languages.GetString("MainForm.Offline")))
-				return;
-			string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
-			string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
-			string message = String.Format(languages.GetString("JoinFriendQuery"), friend, hostname);
-			if (MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
-				LoadLFS(hostname, "S2", edtPasswordMain.Text);
+			if (config.joinOnClick) {								
+				if ((lvFriends.SelectedItems.Count <= 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == languages.GetString("MainForm.Offline")))
+					return;
+				string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
+				string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
+				string message = String.Format(languages.GetString("JoinFriendQuery"), friend, hostname);
+				if (MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+					LoadLFS(hostname, "S2", edtPasswordMain.Text);
+				}
+			} else {
+				ViewServerInformationToolStripMenuItemClick(viewServerInformationFriend, e);
 			}
 		}
 		

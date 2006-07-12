@@ -169,7 +169,7 @@
 	<component name="JoinServerDialog.lblVersion">Version:</component>
 	<component name="JoinServerDialog.this">Join Server</component>
 
-	<!--Join Server Dialog Components -->
+	<!--Ban Dialog Components -->
 	<component name="BanDialog.nmDays">Days</component>
 	<component name="BanDialog.ok">O&amp;K</component>
 	<component name="BanDialog.cancel">&amp;Cancel</component>
