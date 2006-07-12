@@ -131,12 +131,14 @@ namespace BrowseForSpeed.Frontend
 			LFSQuery q;
 			SetControlProperty(buttonInfoRefresh, "Text", MainForm.languages.GetString("ServerInformationForm.buttonInfoStop"));
 			SetControlProperty(buttonInfoJoin, "Enabled", false);
-			try{
-				q = new LFSQuery();
-				ServerInformation[] server = new ServerInformation[1];
-				server[0] = this.info;
-				q.query(0, 0, "browseforspeed", server, 3);
+			try {
 				if (this.exiting) return;
+				if (this.info.host != null) {
+					q = new LFSQuery();
+					ServerInformation[] server = new ServerInformation[1];
+					server[0] = this.info;
+					q.query(0, 0, "browseforspeed", server, 3);
+				}
 				Thread t = new Thread(new ThreadStart(RefreshPlayerList));
 				t.Start();
 			} catch(Exception e) {
