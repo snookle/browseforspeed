@@ -903,7 +903,7 @@ namespace BrowseForSpeed.Frontend
 									this.viewServerInformationFriend,
 									this.removeFriendToolStripMenuItem});
 			this.contextMenuFriends.Name = "contextMenuFriends";
-			this.contextMenuFriends.Size = new System.Drawing.Size(214, 48);
+			this.contextMenuFriends.Size = new System.Drawing.Size(214, 70);
 			this.contextMenuFriends.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFriendsOpening);
 			// 
 			// joinServerMenuFriends
@@ -912,9 +912,9 @@ namespace BrowseForSpeed.Frontend
 			this.joinServerMenuFriends.Size = new System.Drawing.Size(213, 22);
 			this.joinServerMenuFriends.Text = "Join Server";
 			this.joinServerMenuFriends.Click += new System.EventHandler(this.JoinFriendClick);
-			//
+			// 
 			// viewServerInformationFriend
-			//
+			// 
 			this.viewServerInformationFriend.Name = "viewServerInformationFriend";
 			this.viewServerInformationFriend.Size = new System.Drawing.Size(213, 22);
 			this.viewServerInformationFriend.Text = "View Server Information...";
@@ -1273,7 +1273,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.cbStartupRefresh.Location = new System.Drawing.Point(24, 220);
 			this.cbStartupRefresh.Name = "cbStartupRefresh";
-			this.cbStartupRefresh.Size = new System.Drawing.Size(175, 24);
+			this.cbStartupRefresh.Size = new System.Drawing.Size(263, 24);
 			this.cbStartupRefresh.TabIndex = 19;
 			this.cbStartupRefresh.Text = "Refresh favourites on startup";
 			this.cbStartupRefresh.UseVisualStyleBackColor = true;

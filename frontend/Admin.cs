@@ -62,6 +62,15 @@ namespace BrowseForSpeed.Frontend
 			lblPassword.Text = MainForm.languages.GetString("Admin.lblPassword");
 			lblinsimPort.Text = MainForm.languages.GetString("Admin.lblinsimPort");
 			chkRelay.Text = MainForm.languages.GetString("Admin.chkRelay");
+			kickToolStripMenuItem.Text = MainForm.languages.GetString("Admin.kick");
+			forceSpectateToolStripMenuItem.Text = MainForm.languages.GetString("Admin.spectate");
+			banToolStripMenuItem.Text = MainForm.languages.GetString("Admin.ban");
+			hoursToolStripMenuItem.Text = MainForm.languages.GetString("Admin.ban12h");
+			dayToolStripMenuItem.Text = MainForm.languages.GetString("Admin.ban1d");
+			daysToolStripMenuItem.Text = MainForm.languages.GetString("Admin.ban2d");
+			daysToolStripMenuItem1.Text = MainForm.languages.GetString("Admin.ban3d");
+			weekToolStripMenuItem.Text = MainForm.languages.GetString("Admin.ban1w");
+			customToolStripMenuItem.Text = MainForm.languages.GetString("Admin.banCustom");
 			this.Text = MainForm.languages.GetString("Admin.this") + " - " + info.hostname;
 			racers = new Dictionary<String, racer>();			
 		}
@@ -181,35 +190,42 @@ namespace BrowseForSpeed.Frontend
 			}
 		}
 		
-		void ChkRelayCheckedChanged(object sender, System.EventArgs e) {
+		void ChkRelayCheckedChanged(object sender, System.EventArgs e) {			
 			edtPort.Enabled = !chkRelay.Checked;
 		}
 		
 		void KickToolStripMenuItemClick(object sender, System.EventArgs e) {
+			if (lstRacers.SelectedIndex == -1) return;
 			handler.SendMessage("/kick " + lstRacers.SelectedItem.ToString());
 		}
 		
 		void HoursToolStripMenuItemClick(object sender, System.EventArgs e) {
+			if (lstRacers.SelectedIndex == -1) return;
 			handler.SendMessage("/ban " + lstRacers.Text + " 0");
 		}
 		
 		void DayToolStripMenuItemClick(object sender, System.EventArgs e) {
+			if (lstRacers.SelectedIndex == -1) return;
 			handler.SendMessage("/ban " + lstRacers.Text + " 1");
 		}
 		
 		void DaysToolStripMenuItemClick(object sender, System.EventArgs e) {
+			if (lstRacers.SelectedIndex == -1) return;
 			handler.SendMessage("/ban " + lstRacers.Text + " 2");
 		}
 		
 		void DaysToolStripMenuItem1Click(object sender, System.EventArgs e) {
+			if (lstRacers.SelectedIndex == -1) return;
 			handler.SendMessage("/ban " + lstRacers.Text + " 3");
 		}
 		
 		void WeekToolStripMenuItemClick(object sender, System.EventArgs e) {
+			if (lstRacers.SelectedIndex == -1) return;
 			handler.SendMessage("/ban " + lstRacers.Text + " 7");
 		}
 		
 		void ForceSpectateToolStripMenuItemClick(object sender, System.EventArgs e) {
+			if (lstRacers.SelectedIndex == -1) return;
 			handler.SendMessage("/spectate " + lstRacers.Text);			
 		}		
 		
@@ -221,6 +237,7 @@ namespace BrowseForSpeed.Frontend
 		}
 		
 		void CustomToolStripMenuItemClick(object sender, System.EventArgs e) {
+			if (lstRacers.SelectedIndex == -1) return;
 			ban = new frmBan();
 			if (ban.ShowDialog(this) == DialogResult.OK) {
 				handler.SendMessage("/ban " + lstRacers.Text + " " + ban.days);

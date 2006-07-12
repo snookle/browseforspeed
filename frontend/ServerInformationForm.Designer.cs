@@ -235,7 +235,7 @@ namespace BrowseForSpeed.Frontend
 			this.labelPing.Name = "labelPing";
 			this.labelPing.Size = new System.Drawing.Size(115, 23);
 			this.labelPing.TabIndex = 15;
-			this.labelPing.Text = "99999";
+			this.labelPing.Text = "N/A";
 			// 
 			// labelTrack
 			// 
