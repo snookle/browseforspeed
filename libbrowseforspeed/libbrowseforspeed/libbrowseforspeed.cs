@@ -120,6 +120,10 @@ namespace libbrowseforspeed {
 		public static event ServerQueried queried;
 
 		public LFSQuery() {
+			fillStaticStuff();
+		}
+
+		private static void fillStaticStuff() {
 			trackCodes = new Hashtable(53);
 			trackCodes.Add("BL1", "Blackwood");
 			trackCodes.Add("BL1R", "Blackwood Rev");
@@ -622,6 +626,7 @@ namespace libbrowseforspeed {
 		}		
 		
 		private static int findHostOrPlayer(ref ServerInformation serverInfo, string racer) {
+			fillStaticStuff();
 			try {
 				if (!getPubStatBuf()) return -1;
 				Stream s = new GZipInputStream(new MemoryStream(pubstatBuf));
@@ -655,6 +660,7 @@ namespace libbrowseforspeed {
 							if (((int)(buf[i + 38])) == 1) {
 								track += "R";
 							}
+							Console.WriteLine("\""+track+"\"");
 							serverInfo.track = (string)trackCodes[track];
 							if (serverInfo.host == null) {
 								serverInfo.ping = -1;
