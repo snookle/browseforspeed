@@ -642,7 +642,7 @@ namespace libbrowseforspeed {
 						racers = new string[numRacers];
 						for (int j = 0; j < numRacers; ++j) {
 							racers[j] = getLFSString(buf, i + 53 + (24 * j), 24);
-							if (!found && (racers[j].ToLower() == racer.ToLower())) {								
+							if (!found && (racer != null && racers[j].ToLower() == racer.ToLower())) {								
 								found = true;
 							}
 						}
