@@ -71,6 +71,8 @@ namespace libbrowseforspeed {
 		public static byte VERSION_S1 = (byte)0x01;
 		public static byte VERSION_S2 = (byte)0x02;
 		
+		private static string[] pubstatTracks = {"BL", "SO", "FE", "AU", "KY", "WE", "AS"};
+		
 		public static Hashtable msFilters;
 		public static Hashtable trackCodes;
 
@@ -635,7 +637,7 @@ namespace libbrowseforspeed {
 						racers = new string[numRacers];
 						for (int j = 0; j < numRacers; ++j) {
 							racers[j] = getLFSString(buf, i + 53 + (24 * j), 24);
-							if (!found && (racers[j] == racer)) {								
+							if (!found && (racers[j].ToLower() == racer.ToLower())) {								
 								found = true;
 							}
 						}
@@ -644,7 +646,19 @@ namespace libbrowseforspeed {
 							serverInfo.hostname = hostname;
 							serverInfo.players = numRacers;
 							serverInfo.racerNames = racers;
-							serverInfo.passworded = ((ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]) & 8) != 0;
+							serverInfo.passworded = ((ulong)(buf[i + 43] * 16777216 + buf[i + 42] * 65536 + buf[i + 41] * 256 + buf[i + 40]) & 8) != 0;
+							serverInfo.cars = (ulong)(buf[i + 39] * 16777216 + buf[i + 38] * 65536 + buf[i + 37] * 256 + buf[i + 36]);
+							serverInfo.rules = (ulong)(buf[i + 43] * 16777216 + buf[i + 42] * 65536 + buf[i + 41] * 256 + buf[i + 40]);
+							string track = "";
+							track += pubstatTracks[(int)(buf[i + 32])]; //BL
+							track += (((int)(buf[i + 33])) + 1); //1
+							if (((int)(buf[i + 34])) == 1) {
+								track += "R";
+							}
+							serverInfo.track = (string)trackCodes[track];
+							if (serverInfo.host == null) {
+								serverInfo.ping = -1;
+							}
 							return 1;
 						}
 					}
