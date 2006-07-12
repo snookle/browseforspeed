@@ -646,13 +646,13 @@ namespace libbrowseforspeed {
 							serverInfo.hostname = hostname;
 							serverInfo.players = numRacers;
 							serverInfo.racerNames = racers;
-							serverInfo.passworded = ((ulong)(buf[i + 43] * 16777216 + buf[i + 42] * 65536 + buf[i + 41] * 256 + buf[i + 40]) & 8) != 0;
-							serverInfo.cars = (ulong)(buf[i + 39] * 16777216 + buf[i + 38] * 65536 + buf[i + 37] * 256 + buf[i + 36]);
-							serverInfo.rules = (ulong)(buf[i + 43] * 16777216 + buf[i + 42] * 65536 + buf[i + 41] * 256 + buf[i + 40]);
+							serverInfo.passworded = ((ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]) & 8) != 0;
+							serverInfo.cars = (ulong)(buf[i + 43] * 16777216 + buf[i + 42] * 65536 + buf[i + 41] * 256 + buf[i + 40]);
+							serverInfo.rules = (ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]);
 							string track = "";
-							track += pubstatTracks[(int)(buf[i + 32])]; //BL
-							track += (((int)(buf[i + 33])) + 1); //1
-							if (((int)(buf[i + 34])) == 1) {
+							track += pubstatTracks[(int)(buf[i + 36])]; //BL
+							track += (((int)(buf[i + 37])) + 1); //1
+							if (((int)(buf[i + 38])) == 1) {
 								track += "R";
 							}
 							serverInfo.track = (string)trackCodes[track];
