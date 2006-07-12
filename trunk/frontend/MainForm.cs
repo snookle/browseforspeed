@@ -900,14 +900,13 @@ public class ListSorter: IComparer<ServerListItem>
 				else if (l.Name == "viewServerInformationFav")
 					info = lvFavourites.GetSelectedServer();
 				else if (l.Name == "viewServerInformationFriend"){
-					if ((lvFriends.SelectedItems.Count > 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == "Offline")) {
+					if ((lvFriends.SelectedItems.Count <= 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == "Offline")) {
 						return;
 					}
 					string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
 					foreach (FriendListItem f in friendList){
 						if (f.name == friend){
 							info = new ServerListItem(f.server);
-							//MessageBox.Show(info.host.ToString());
 							info.version = LFSQuery.VERSION_S2;
 							break;
 						}
@@ -1696,6 +1695,8 @@ public class ListSorter: IComparer<ServerListItem>
 			lblExeDescriptionConfig.Text = languages.GetString("MainForm.lblExeDescriptionConfig");
 			lblExePathConfig.Text = languages.GetString("MainForm.lblExePathConfig");
 			buttonBrowse.Text = languages.GetString("MainForm.buttonBrowse");
+			cbStartupRefresh.Text = languages.GetString("MainForm.cbStartupRefresh");
+			
 			this.Text = languages.GetString("MainForm.this");
 			
 			lbPreStart.Items.Clear();

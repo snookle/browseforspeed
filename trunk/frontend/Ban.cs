@@ -42,5 +42,11 @@ namespace BrowseForSpeed.Frontend
 		void NumericUpDown1ValueChanged(object sender, System.EventArgs e) {
 			days = nmDays.Value;			
 		}
+		
+		void FrmBanLoad(object sender, System.EventArgs e) {
+			nmDays.Text = MainForm.languages.GetString("BanDialog.nmDays");
+			btnOkay.Text = MainForm.languages.GetString("BanDialog.ok");
+			btnCancel.Text = MainForm.languages.GetString("BanDialog.cancel");
+		}
 	}
 }

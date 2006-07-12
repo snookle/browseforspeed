@@ -107,6 +107,7 @@ namespace BrowseForSpeed.Frontend
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Ban user";
+			this.Load += new System.EventHandler(this.FrmBanLoad);
 			((System.ComponentModel.ISupportInitialize)(this.nmDays)).EndInit();
 			this.ResumeLayout(false);
 		}

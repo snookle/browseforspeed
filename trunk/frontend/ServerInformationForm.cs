@@ -42,7 +42,7 @@ namespace BrowseForSpeed.Frontend
 				SetControlProperty(buttonInfoRefresh, "Enabled", false);
 				try {
 				refreshing = true;
-				listPlayers.Items.Clear();			
+				listPlayers.Items.Clear();				
 				int i = LFSQuery.getPubStatInfo(ref info);
 				if (i == 1) { //LFSQuery.getPubStatInfo(ref info)) {
 					labelPrivate.Text = info.passworded ? MainForm.languages.GetString("Global.Yes") : MainForm.languages.GetString("Global.No");
@@ -53,6 +53,12 @@ namespace BrowseForSpeed.Frontend
 					} else {
 						listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.EmptyServer"));
 					}
+					info.hostname = LFSQuery.removeColourCodes(info.hostname);				
+					labelServerName.Text = info.hostname;
+					labelCars.Text = MainForm.CarsToString(LFSQuery.getCarNames(info.cars));
+					labelInfo.Text = MainForm.RulesToString(info.rules);
+					//labelPing.Text = info.ping.ToString();
+					labelTrack.Text = info.track;
 				} else {
 					if (i == 0) {
 						listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.NoServer"));
@@ -95,6 +101,7 @@ namespace BrowseForSpeed.Frontend
 			LFSQuery.queried -= new ServerQueried(queryCallback);
 			labelPrivate.Text = "N/A";
 			labelInfo.Text = "N/A";
+			labelPing.Text = "N/A";
 			buttonInfoRefresh.Enabled = true;
 			buttonInfoJoin.Enabled = true;
 			this.Close();
@@ -181,7 +188,7 @@ namespace BrowseForSpeed.Frontend
 				labelTrack.Text = info.track;
 			} else {				
 				labelServerName.Text = MainForm.languages.GetString("ServerInformationForm.QueryTimeOut");;
-				labelPing.Text = "9999";
+				labelPing.Text = "N/A";
 				labelCars.Text = "N/A";
 				labelTrack.Text = "N/A";				
 			} 
