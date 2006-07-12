@@ -900,13 +900,14 @@ public class ListSorter: IComparer<ServerListItem>
 				else if (l.Name == "viewServerInformationFav")
 					info = lvFavourites.GetSelectedServer();
 				else if (l.Name == "viewServerInformationFriend"){
-				//	if ((lvFriends.SelectedItems.Count > 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == "Offline"))
-			//			return;
+					if ((lvFriends.SelectedItems.Count > 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == "Offline")) {
+						return;
+					}
 					string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
 					foreach (FriendListItem f in friendList){
 						if (f.name == friend){
 							info = new ServerListItem(f.server);
-							MessageBox.Show(info.host.ToString());
+							//MessageBox.Show(info.host.ToString());
 							info.version = LFSQuery.VERSION_S2;
 							break;
 						}
@@ -1657,7 +1658,7 @@ public class ListSorter: IComparer<ServerListItem>
 			columnFriendPrivate.Text = languages.GetString("MainForm.columnFriendPrivate");
 			columnFriendPlayers.Text = languages.GetString("MainForm.columnFriendPlayers");
 			joinServerMenuFriends.Text = languages.GetString("MainForm.joinServerMenuFriends");
-			//viewServerInformationFriend.Text = languages.GetString("MainForm.viewServerInformationFriend");
+			viewServerInformationFriend.Text = languages.GetString("MainForm.viewServerInformationFriend");
 			removeFriendToolStripMenuItem.Text = languages.GetString("MainForm.removeFriendToolStripMenuItem");
 			tabConfig.Text = languages.GetString("MainForm.tabConfig");
 			groupBox1.Text = languages.GetString("MainForm.groupBox1");
