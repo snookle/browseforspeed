@@ -34,7 +34,7 @@ using System.Xml;
 
 namespace BrowseForSpeed.Frontend
 {
-	
+
 public class ListSorter: IComparer<ServerListItem>
 {
 	public SortOrder order;
@@ -61,7 +61,7 @@ public class ListSorter: IComparer<ServerListItem>
 				case SortType.Track:
 					compareResult = ObjectCompare.Compare(itemX.track, itemY.track); break;
 			}
-			
+
 		if (order == SortOrder.Ascending) {
 			return compareResult;
 		}
@@ -72,7 +72,7 @@ public class ListSorter: IComparer<ServerListItem>
 	}
 }
 
-	
+
 	public enum QueryType{Main, Favorite, Friend}
 	public enum SortType{Hostname, Ping, Players, Track};
 	public enum FilterType{None, Track, Ping, Cars, Empty, Full, Private, Public};
@@ -84,7 +84,7 @@ public class ListSorter: IComparer<ServerListItem>
 			value = null;
 		}
 	}
-	
+
 	public class ServerListView : ListView
 	{
 		protected List<ServerListItem> serverList = new List<ServerListItem>();
@@ -112,7 +112,7 @@ public class ListSorter: IComparer<ServerListItem>
 			if (SelectedItems.Count > 0) {
 				int index = (int)SelectedItems[0].Tag;
 				if (index == -1)
-					return null;				
+					return null;
 				ServerListItem item = serverList[index];
 				item.index = SelectedItems[0].Index;
 				return item;
@@ -120,7 +120,7 @@ public class ListSorter: IComparer<ServerListItem>
 			else
 				return null;
 		}
-		
+
 		public ServerListItem getServer(string hostname) {
 			foreach (ServerListItem s in serverList) {
 				if (s.hostname == hostname)
@@ -183,7 +183,7 @@ public class ListSorter: IComparer<ServerListItem>
 				}
 				lvi.SubItems.Insert(3 - columnOffset, new ListViewItem.ListViewSubItem(lvi, item.players.ToString() +"/" + item.slots.ToString()));
 				lvi.SubItems.Insert(4 - columnOffset, new ListViewItem.ListViewSubItem(lvi, rules));
-				lvi.SubItems.Insert(5 - columnOffset, new ListViewItem.ListViewSubItem(lvi, item.track));			
+				lvi.SubItems.Insert(5 - columnOffset, new ListViewItem.ListViewSubItem(lvi, item.track));
 				lvi.SubItems.Insert(6 - columnOffset, new ListViewItem.ListViewSubItem(lvi, cars));
 				return lvi;
 			}catch (Exception ex) {
@@ -234,8 +234,8 @@ public class ListSorter: IComparer<ServerListItem>
 		}
 	}
 	public class MainListView : ServerListView{}
-	
-	
+
+
 	public class ServerListItem : ServerInformation
 	{
 		public bool filtered;
@@ -263,26 +263,26 @@ public class ListSorter: IComparer<ServerListItem>
 			this.insimPort = info.insimPort;
 		}
 	}
-	
+
 	public class FriendListItem
 	{
 		public ServerInformation server;
 		public string name;
 	}
-	
+
 	public partial class MainForm
 	{
 		static string bfs_version = "0.6";
 		static string version_check = "7";
 		static string download_url = "http://www.browseforspeed.net";
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
-		
+
 		public static String appTitle = "Browse For Speed";
 		static String configFilename = Application.StartupPath + "\\config.cfg";
 		static String configXMLFilename = Application.StartupPath + "\\config.xml";
 		static String favFilename = Application.StartupPath + "\\favourite.servers";
 		static String favXMLFilename = Application.StartupPath + "\\favourites.xml";
-		static String friendFilename = Application.StartupPath + "\\friends.xml"; 
+		static String friendFilename = Application.StartupPath + "\\friends.xml";
 
 		private CheckBox[] cars;
 		private Button[] groups;
@@ -307,7 +307,7 @@ public class ListSorter: IComparer<ServerListItem>
 		private bool refreshing;
 
 		private Thread t;
-		
+
 		public static LanguageManager languages = new LanguageManager(Application.StartupPath + "\\lang");
 
 
@@ -333,11 +333,11 @@ public class ListSorter: IComparer<ServerListItem>
 			if (carNames.Length == 0) {
 				return carNames.ToString();
 			}
-			return carNames.Remove(carNames.Length - 2, 2).ToString();			
+			return carNames.Remove(carNames.Length - 2, 2).ToString();
 		}
-		
-		
-		
+
+
+
 		public static String RulesToString(ulong rules)
 		{
 			String str = "";
@@ -350,7 +350,7 @@ public class ListSorter: IComparer<ServerListItem>
 			if ((rules & 64) != 0) str += "p"; //MUSTPIT
 			return str;
 		}
-		
+
 		void CodeCars(out ulong compulsory, out ulong illegal) {
 			compulsory = 0;
 			illegal = 0;
@@ -372,7 +372,7 @@ public class ListSorter: IComparer<ServerListItem>
 			Delegate dgtSetValue = new SetValueDelegate(propInfo.SetValue);
       		ctrl.Invoke(dgtSetValue, new Object[3] { ctrl, val, /*index*/null });
 		}
-		
+
 		byte CodeFilters()
 		{
 			byte filters = 0x00;
@@ -382,7 +382,7 @@ public class ListSorter: IComparer<ServerListItem>
             filters ^= (byte)(!cbFull.Checked ? (byte)(LFSQuery.msFilters["Full"]) : (byte)0x00);
 			return filters;
 		}
-		
+
 		void MakeQuery(bool isFav)
 		{
 			SetControlProperty(buttonRefreshFav, "Text", languages.GetString("MainForm.btnStop"));
@@ -416,7 +416,7 @@ public class ListSorter: IComparer<ServerListItem>
 		{
 			MakeQuery(false);
 		}
-		
+
 		void FavQuery()
 		{
 			MakeQuery(true);
@@ -503,7 +503,7 @@ public class ListSorter: IComparer<ServerListItem>
 		}
 
 		void lvMainColumnClick(object sender, System.Windows.Forms.ColumnClickEventArgs e)
-		{                     
+		{
 			if (e.Column == lvwColumnSorter.SortColumn) {
 				if (lvwColumnSorter.Order == SortOrder.Ascending)
 					lvwColumnSorter.Order = SortOrder.Descending;
@@ -515,27 +515,27 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 			((ListView)sender).Sort();
 		}
-		
-		
+
+
 		Process[] prestart;
-		FormWindowState ws;		
-		
+		FormWindowState ws;
+
 		private void KillPreStartPrograms()
 		{
 			foreach (Process p in prestart){
 				if (p != null && !p.HasExited)
 					p.Kill();
 			}
-			
+
 		}
-		
+
 		private void LFSExit(object sender, EventArgs e)
 		{
 			KillPreStartPrograms();
 			this.WindowState = ws;
 		}
-		
-			
+
+
 		void LoadLFS(String hostName, String mode, String password)
 		{
 			String lfsPath = config.lfsPath;
@@ -691,7 +691,7 @@ public class ListSorter: IComparer<ServerListItem>
 						try {
 							info.adminPassword = favourite.GetElementsByTagName("adminPassword")[0].FirstChild.Value;
 							info.insimPort = Int32.Parse(favourite.GetElementsByTagName("insimPort")[0].FirstChild.Value);
-						} catch (Exception e) {							
+						} catch (Exception e) {
 							info.adminPassword = "";
 							info.insimPort = 29999;
 						}
@@ -705,7 +705,7 @@ public class ListSorter: IComparer<ServerListItem>
 				}
 				return true;
 			} catch (FileNotFoundException fnfe) {
-				return false;	
+				return false;
 			} catch (Exception e) {
 				File.Copy(filename, filename +".backup", true);
 				string message = String.Format(languages.GetString("LoadFavError"), e.Message, filename);
@@ -745,7 +745,7 @@ public class ListSorter: IComparer<ServerListItem>
 			    return "Demo";
 			else return "S2";
 		}
-		
+
 		private byte StringToVersion(String version)
 		{
 			switch (version){
@@ -754,7 +754,7 @@ public class ListSorter: IComparer<ServerListItem>
 				case "S2" : default : return LFSQuery.VERSION_S2;
 			}
 		}
-		
+
 		void WriteFav() {
 			try {
 				XmlTextWriter tw = new XmlTextWriter(favXMLFilename, null);
@@ -788,7 +788,7 @@ public class ListSorter: IComparer<ServerListItem>
 			Thread t = new Thread(new ThreadStart(DisplayFriendsT));
 			t.Start();
 		}
-		
+
 		public void DisplayFriendsT() {
 			lvFriends.Items.Clear();
 			for (int i = 0; i < friendList.Count; ++i){
@@ -808,7 +808,7 @@ public class ListSorter: IComparer<ServerListItem>
 					foreach (string player in friend.server.racerNames) {
 						players += player + ", ";
 					}
-					players = players.Remove(players.Length - 2, 2).ToString();	
+					players = players.Remove(players.Length - 2, 2).ToString();
 					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, players));
 				} else if (result == -1) {
 					lvi = lvFriends.Items.Add(friend.name, friend.name, "");
@@ -820,7 +820,7 @@ public class ListSorter: IComparer<ServerListItem>
 			btnRefreshFriend.Enabled = true;
 			btnAddFriend.Enabled = true;
 		}
-		
+
 		public void AddFriend(string name, bool writeToFile)
 		{
 			ListViewItem lvi;
@@ -843,7 +843,7 @@ public class ListSorter: IComparer<ServerListItem>
 			if (writeToFile)
 				WriteFriends();
 		}
-		
+
 		void WriteFriends()
 		{
 			try {
@@ -863,9 +863,9 @@ public class ListSorter: IComparer<ServerListItem>
 				string message = String.Format(languages.GetString("SaveFriendsError"), ex.Message);
 				MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-			
+
 		}
-		
+
 		void ReadFriends()
 		{
 			try{
@@ -873,7 +873,7 @@ public class ListSorter: IComparer<ServerListItem>
 				doc.Load(friendFilename);
 				XmlNodeList list = doc.GetElementsByTagName("friends");
 				String docVersion = ((XmlElement)list[0]).GetAttribute("version");
-				list = ((XmlElement)list[0]).GetElementsByTagName("friend");				
+				list = ((XmlElement)list[0]).GetElementsByTagName("friend");
 				foreach (XmlElement friend in list) {
 					if (docVersion == "2")
 						AddFriend(friend.GetAttribute("license"), false);
@@ -926,7 +926,7 @@ public class ListSorter: IComparer<ServerListItem>
 			} else {
 				info = ((ServerListView)sender).GetSelectedServer();
 			}
-			
+
 			if (info == null)
 				return;
 			s.SetInfo(info);
@@ -956,7 +956,7 @@ public class ListSorter: IComparer<ServerListItem>
 			lvMain.Filter(FilterType.Track, filter);
 			lvMain.DisplayAll();
 		}
-		
+
 		static string trackFilter;
 		private static bool FilterServerMatchesTrack(ServerInformation info)
 		{
@@ -1023,7 +1023,7 @@ public class ListSorter: IComparer<ServerListItem>
 					continue;
 				config.psp.Add((PreStartProgram)o);
 			}
-			
+
 			try {
 				config.insimPort = Convert.ToInt32(txtInsimPort.Text);
 			} catch (Exception ex) {
@@ -1144,7 +1144,7 @@ public class ListSorter: IComparer<ServerListItem>
 				}
 			}
 		}
-		
+
 		void SetClipboard(ServerListView list)
 		{
 			ServerListItem item = null;
@@ -1153,23 +1153,23 @@ public class ListSorter: IComparer<ServerListItem>
 				Clipboard.SetText(item.hostname + " | " + item.host.ToString());
 			}
 		}
-		
+
 		void BtnRefreshFriendClick(object sender, System.EventArgs e)
 		{
 			DisplayFriends();
 			lvFriends.Sort();
 		}
-		
+
 		void CheckBox2CheckedChanged(object sender, System.EventArgs e) {
 			config.hide_offline = cbHideOffline.Checked;
 			BtnRefreshFriendClick(sender, e);
 		}
-		
+
 		void LvFriendsSelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			btnJoinFriend.Enabled = (lvFriends.SelectedItems.Count > 0 && lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text != languages.GetString("MainForm.Offline"));
 		}
-		
+
 		void JoinFriendClick(object sender, System.EventArgs e)
 		{
 			if ((lvFriends.SelectedItems.Count <= 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == languages.GetString("MainForm.Offline")))
@@ -1179,10 +1179,10 @@ public class ListSorter: IComparer<ServerListItem>
 			string password = edtPasswordMain.Text;
 			if (info != null) {
 				password = info.password;
-			}			
-			LoadLFS(hostname, "S2", edtPasswordMain.Text);
+			}
+			LoadLFS(hostname, "S2", password);
 		}
-		
+
 		void BtnAddFriendClick(object sender, System.EventArgs e)
 		{
 			if (edtFriendName.Text.Length > 0) {
@@ -1192,7 +1192,7 @@ public class ListSorter: IComparer<ServerListItem>
 				edtFriendName.Text = "";
 			}
 		}
-		
+
 		void RemoveFriendToolStripMenuItemClick(object sender, System.EventArgs e)
 		{
 			if (lvFriends.SelectedItems.Count == -1)
@@ -1212,17 +1212,17 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 			lvFriends.Items.RemoveByKey(name);
 		}
-		
+
 		void ContextMenuFriendsOpening(object sender, System.ComponentModel.CancelEventArgs e)
 		{
 			bool enabled = (lvFriends.SelectedItems.Count > 0);
 			removeFriendToolStripMenuItem.Enabled = enabled;
 			joinServerMenuFriends.Enabled = enabled && (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text != languages.GetString("MainForm.Offline"));
 		}
-		
+
 		void LvFriendsDoubleClick(object sender, System.EventArgs e)
 		{
-			if (config.joinOnClick) {								
+			if (config.joinOnClick) {
 				if ((lvFriends.SelectedItems.Count <= 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == languages.GetString("MainForm.Offline")))
 					return;
 				string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
@@ -1240,16 +1240,16 @@ public class ListSorter: IComparer<ServerListItem>
 				ViewServerInformationToolStripMenuItemClick(viewServerInformationFriend, e);
 			}
 		}
-		
+
 		void EdtFriendNameKeyDown(object sender, System.Windows.Forms.KeyEventArgs e) {
 			if (e.KeyCode == Keys.Enter && edtFriendName.Text.Length > 0) {
 				AddFriend(edtFriendName.Text, true);
 				lvFriends.Sort();
 				edtFriendName.Clear();
 			}
-			
+
 		}
-		
+
 		void MainFormLoad(object sender, System.EventArgs e)
 		{
 			cars = new CheckBox[LFSQuery.CAR_BITS.Length];
@@ -1314,7 +1314,7 @@ public class ListSorter: IComparer<ServerListItem>
 			//setup the config
 			config = new Configuration(configXMLFilename);
 			bool loadedconf = false;
-			if (!config.LoadXML()) {				
+			if (!config.LoadXML()) {
 				config = new Configuration(configFilename);
 				if (!config.Load()) {
 					//config not valid, take them to config screen
@@ -1329,8 +1329,8 @@ public class ListSorter: IComparer<ServerListItem>
 					loadedconf = true;
 					File.Delete(configFilename); //xml'ised!
 				}
-			} else {				
-				loadedconf = true; 
+			} else {
+				loadedconf = true;
 			}
 			if (!ReadXMLFav(favXMLFilename)) {
 				if (ReadFav(favFilename)) {
@@ -1340,7 +1340,7 @@ public class ListSorter: IComparer<ServerListItem>
 			//if we have previous config data
 			cbConfigLang.Items.Clear();
 			cbConfigLang.Items.AddRange(languages.Languages.ToArray());
-			cbConfigLang.SelectedItem = "English";			
+			cbConfigLang.SelectedItem = "English";
 			if (loadedconf) {
 				//query wait
 				cbEmpty.Checked = config.filter_empty;
@@ -1400,56 +1400,56 @@ public class ListSorter: IComparer<ServerListItem>
 			ReadFriends();
 			DisplayFriends();
 			cbAddServerVersion.SelectedIndex = 0;
-			if (config.startup_refresh) {				
-				RefreshButtonClick(buttonRefreshFav, null);				
+			if (config.startup_refresh) {
+				RefreshButtonClick(buttonRefreshFav, null);
 			}
 
 		}
-		
+
 		void CbEmptyCheckedChanged(object sender, System.EventArgs e)
 		{
 			lvMain.Filter(FilterType.Empty, cbEmpty.Checked);
 			lvMain.DisplayAll();
-			
+
 		}
-		
-		void CbPingSelectedIndexChanged(object sender, System.EventArgs e) {			
+
+		void CbPingSelectedIndexChanged(object sender, System.EventArgs e) {
 			lvMain.Filter(FilterType.Ping, Convert.ToInt32(cbPing.Text));
 			lvMain.DisplayAll();
-			
+
 		}
-		
+
 		void CbFullCheckedChanged(object sender, System.EventArgs e)
 		{
 			lvMain.Filter(FilterType.Full, cbFull.Checked);
 			lvMain.DisplayAll();
 		}
-		
+
 		void CbPrivateCheckedChanged(object sender, System.EventArgs e)
 		{
 			lvMain.Filter(FilterType.Private, cbPrivate.Checked);
 			lvMain.DisplayAll();
 		}
-		
+
 		void CbPublicCheckedChanged(object sender, System.EventArgs e)
 		{
 			lvMain.Filter(FilterType.Public, cbPublic.Checked);
 			lvMain.DisplayAll();
 		}
-		
+
 		void carsChanged(object sender, System.EventArgs e) {
 			lvMain.Filter(FilterType.Cars, cars);
 			lvMain.DisplayAll();
 		}
-		
+
 		private byte version;
 		void CbVersionSelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			this.version = StringToVersion(cbVersion.Text);
 		}
-	
+
 		void AdministrateToolStripMenuItemClick(object sender, System.EventArgs e) {
-			ServerListItem i;			
+			ServerListItem i;
 			if (((ToolStripMenuItem)sender).Name == "administrateToolStripMenuItem") {
 				i = lvFavourites.GetSelectedServer();
 			} else {
@@ -1458,7 +1458,7 @@ public class ListSorter: IComparer<ServerListItem>
 			AdminForm admin = new AdminForm(i);
 			admin.Show(this);
 		}
-		
+
 		void CopyServerToClipboardToolStripMenuItemClick(object sender, System.EventArgs e)
 		{
 			if (((ToolStripMenuItem)sender).Name == "copyServerToClipboardToolStripMenuItem") {
@@ -1467,7 +1467,7 @@ public class ListSorter: IComparer<ServerListItem>
 				SetClipboard(lvFavourites);
 			}
 		}
-		
+
 		void BtnAddServerClick(object sender, System.EventArgs e)
 		{
 			string host = edtAddServerAddress.Text;
@@ -1489,7 +1489,7 @@ public class ListSorter: IComparer<ServerListItem>
 					}
 				} catch (Exception ex) {
 					string message = String.Format(languages.GetString("InvalidPort"), hostname[1]);
-					MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);				
+					MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
 				}
 				info.host = new IPEndPoint(IPAddress.Parse(hostname[0]), port);
@@ -1502,56 +1502,56 @@ public class ListSorter: IComparer<ServerListItem>
 				MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
-		
+
 		void EdtAddServerAddressKeyDown(object sender, System.Windows.Forms.KeyEventArgs e) {
 			if (edtAddServerAddress.Text.Length > 0 && e.KeyCode == Keys.Enter) {
 				BtnAddServerClick(sender, e);
 				edtAddServerAddress.Clear();
 			}
 		}
-		
+
 		void BtnProgramNewClick(object sender, System.EventArgs e)
 		{
 			edtProgramName.Enabled = true;
-			edtProgramName.Text = "";		
+			edtProgramName.Text = "";
 			edtProgramName.Focus();
-			
+
 			edtProgramOptions.Enabled = true;
 			edtProgramOptions.Text = "";
-			
+
 			edtProgramPath.Enabled = true;
 			edtProgramPath.Text = "";
-			
+
 			btnProgramCancel.Enabled = true;
 			btnProgramBrowse.Enabled = true;
 			btnProgramSave.Text = languages.GetString("MainForm.btnProgramSave");
 			lbPreStart.SelectedIndex = -1;
 		}
-		
+
 		void EdtProgramNameTextChanged(object sender, System.EventArgs e)
 		{
 			btnProgramSave.Enabled = ((edtProgramName.Text != "") && (edtProgramPath.Text != ""));
-			
+
 		}
-		
+
 		void BtnProgramCancelClick(object sender, System.EventArgs e)
 		{
 			edtProgramName.Enabled = false;
-			edtProgramName.Text = "";		
-			
+			edtProgramName.Text = "";
+
 			edtProgramOptions.Enabled = false;
 			edtProgramOptions.Text = "";
-			
+
 			edtProgramPath.Enabled = false;
 			edtProgramPath.Text = "";
-			
+
 			btnProgramCancel.Enabled = false;
 			btnProgramBrowse.Enabled = false;
 			btnProgramSave.Text = languages.GetString("MainForm.btnProgramSave");
 			btnProgramEnable.Enabled = false;
-			
+
 		}
-	
+
 		void LbPreStartDoubleClick(object sender, System.EventArgs e) {
 			if (lbPreStart.SelectedItem == null)
 				return;
@@ -1559,42 +1559,42 @@ public class ListSorter: IComparer<ServerListItem>
 			if (item == "[New Program]"){
 				BtnProgramNewClick(sender, e);
 			}
-			
+
 		}
-		
+
 		void LbPreStartSelectedIndexChanged(object sender, System.EventArgs e) {
 			if (lbPreStart.SelectedItem == null){
 				btnProgramEnable.Enabled = false;
 				return;
 			}
-			
+
 			if (lbPreStart.SelectedItem.ToString() == "[New Program]"){
 				btnProgramDelete.Enabled = false;
 				BtnProgramCancelClick(sender, e);
 				return;
 			}
-				
-			
+
+
 			PreStartProgram p = (PreStartProgram)lbPreStart.SelectedItem;
 			edtProgramName.Enabled = true;
-			edtProgramName.Text = p.name;		
-			
+			edtProgramName.Text = p.name;
+
 			edtProgramOptions.Enabled = true;
 			edtProgramOptions.Text = p.options;
-			
+
 			edtProgramPath.Enabled = true;
 			edtProgramPath.Text = p.path;
-			
+
 			btnProgramCancel.Enabled = true;
 			btnProgramBrowse.Enabled = true;
 			btnProgramSave.Text = languages.GetString("MainForm.btnProgramUpdate");
-			
+
 			btnProgramEnable.Enabled = true;
 			btnProgramEnable.Text = (p.enabled ? languages.GetString("MainForm.btnProgramDisable") : languages.GetString("MainForm.btnProgramEnable"));
-			
+
 			btnProgramDelete.Enabled = true;
 		}
-		
+
 		void BtnProgramSaveClick(object sender, System.EventArgs e) {
 			PreStartProgram p = new PreStartProgram(edtProgramName.Text, edtProgramPath.Text, edtProgramOptions.Text);
 			if (btnProgramSave.Text == languages.GetString("MainForm.btnProgramUpdate")){
@@ -1603,18 +1603,18 @@ public class ListSorter: IComparer<ServerListItem>
 				lbPreStart.Items.Add(p);
 			}
 		}
-		
+
 		void BtnProgramEnableClick(object sender, System.EventArgs e) {
 			PreStartProgram p = (PreStartProgram)lbPreStart.SelectedItem;
 			p.enabled = !p.enabled;
 			lbPreStart.Items[lbPreStart.SelectedIndex] = p;
 		}
-		
+
 		void BtnProgramDeleteClick(object sender, System.EventArgs e) {
 			lbPreStart.Items.Remove(lbPreStart.SelectedItem);
 			BtnProgramCancelClick(sender, e);
 		}
-		
+
 		void JoinServerToolStripMenuItem2Click(object sender, System.EventArgs e)
 		{
 			JoinServerDialog j = new JoinServerDialog();
@@ -1721,41 +1721,41 @@ public class ListSorter: IComparer<ServerListItem>
 			lblExePathConfig.Text = languages.GetString("MainForm.lblExePathConfig");
 			buttonBrowse.Text = languages.GetString("MainForm.buttonBrowse");
 			cbStartupRefresh.Text = languages.GetString("MainForm.cbStartupRefresh");
-			
+
 			this.Text = languages.GetString("MainForm.this");
-			
+
 			lbPreStart.Items.Clear();
 			foreach (PreStartProgram p in config.psp){
 				lbPreStart.Items.Add(p);
 			}
-			
+
 			if (statusTotal.Text != ""){
 				statusTotal.Text = String.Format(languages.GetString("MainForm.StatusTotal"), numQueried, totalServers);
 				statusNoReply.Text = String.Format(languages.GetString("MainForm.NoReply"), numServersNoReply);
 				statusRefused.Text = String.Format(languages.GetString("MainForm.Refused"), numServersRefused);
 			}
-			
+
 			lvMain.DisplayAll();
 			lvFavourites.DisplayAll();
-			
+
 			lblAuthorReal.Text = languages.Author;
 			lblEmailReal.Text = languages.Email;
 			lblCommentReal.Text = languages.Comment;
 		}
-		
+
 		void CbConfigLangSelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			languages.ChangeLanguage(cbConfigLang.SelectedItem.ToString());
 			UpdateUI();
 		}
-	
+
 		void EdtFindUserMainKeyDown(object sender, System.Windows.Forms.KeyEventArgs e) {
 			if (e.KeyCode == Keys.Enter && edtFindUserMain.Text.Length > 0) {
 				btnFindUserClick(sender, e);
 				edtFindUserMain.Clear();
 			}
 		}
-		
+
 		void ChkStartupRefreshCheckedChanged(object sender, System.EventArgs e) {
 			config.startup_refresh = cbStartupRefresh.Checked;
 		}
