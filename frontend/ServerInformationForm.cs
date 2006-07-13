@@ -42,7 +42,7 @@ namespace BrowseForSpeed.Frontend
 				SetControlProperty(buttonInfoRefresh, "Enabled", false);
 				try {
 				refreshing = true;
-				listPlayers.Items.Clear();				
+				listPlayers.Items.Clear();
 				int i = LFSQuery.getPubStatInfo(ref info);
 				if (i == 1) { //LFSQuery.getPubStatInfo(ref info)) {
 					labelPrivate.Text = info.passworded ? MainForm.languages.GetString("Global.Yes") : MainForm.languages.GetString("Global.No");
@@ -104,6 +104,7 @@ namespace BrowseForSpeed.Frontend
 			labelPing.Text = "N/A";
 			buttonInfoRefresh.Enabled = true;
 			buttonInfoJoin.Enabled = true;
+			listPlayers.Items.Clear();
 			this.Close();
 		}
 		
