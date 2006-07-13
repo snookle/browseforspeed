@@ -120,6 +120,14 @@ public class ListSorter: IComparer<ServerListItem>
 			else
 				return null;
 		}
+		
+		public ServerListItem getServer(string hostname) {
+			foreach (ServerListItem s in serverList) {
+				if (s.hostname == hostname)
+					return s;
+			}
+			return null;
+		}
 		public void RemoveServer(ServerListItem item)
 		{
 			Items.RemoveAt(item.index);
@@ -906,8 +914,11 @@ public class ListSorter: IComparer<ServerListItem>
 					string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
 					foreach (FriendListItem f in friendList){
 						if (f.name == friend){
-							info = new ServerListItem(f.server);
-							info.version = LFSQuery.VERSION_S2;
+							info = lvFavourites.getServer(f.server.hostname);
+							if (info == null) {
+								info = new ServerListItem(f.server);
+								info.version = LFSQuery.VERSION_S2;
+							}
 							break;
 						}
 					}
@@ -1164,6 +1175,11 @@ public class ListSorter: IComparer<ServerListItem>
 			if ((lvFriends.SelectedItems.Count <= 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == languages.GetString("MainForm.Offline")))
 				return;
 			string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
+			ServerInformation info = lvFavourites.getServer(hostname);
+			string password = edtPasswordMain.Text;
+			if (info != null) {
+				password = info.password;
+			}			
 			LoadLFS(hostname, "S2", edtPasswordMain.Text);
 		}
 		
@@ -1212,8 +1228,13 @@ public class ListSorter: IComparer<ServerListItem>
 				string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
 				string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
 				string message = String.Format(languages.GetString("JoinFriendQuery"), friend, hostname);
+				ServerInformation info = lvFavourites.getServer(hostname);
+				string password = edtPasswordMain.Text;
+				if (info != null) {
+					password = info.password;
+				}
 				if (MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
-					LoadLFS(hostname, "S2", edtPasswordMain.Text);
+					LoadLFS(hostname, "S2", password);
 				}
 			} else {
 				ViewServerInformationToolStripMenuItemClick(viewServerInformationFriend, e);

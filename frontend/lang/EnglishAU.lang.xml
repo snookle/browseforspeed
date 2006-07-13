@@ -159,7 +159,7 @@
 	<component name="Admin.ban3d">3 days</component>
 	<component name="Admin.ban1w">1 week</component>
 	<component name="Admin.banCustom">Custom...</component>
-	<component name="Admin.sendPrivate">Send to selewcted racer</component>
+	<component name="Admin.sendPrivate">Send to selected racer</component>
 	<component name="Admin.this">Admin</component>
 
 	<!--Join Server Dialog Components -->
