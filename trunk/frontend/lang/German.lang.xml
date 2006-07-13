@@ -160,6 +160,7 @@
 	<component name="Admin.ban3d">3 Tage</component>
 	<component name="Admin.ban1w">1 Woche</component>
 	<component name="Admin.banCustom">Angepasst...</component>
+	<component name="Admin.sendPrivate">An gewählten Fahrer senden</component>
 
 	<!--Join Server Dialog Components -->
 	<component name="JoinServerDialog.btnJoin">&amp;Server beitreten</component>

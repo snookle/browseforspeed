@@ -4,10 +4,9 @@
 3. Translate the strings!
 4. Contact BFS at bfs@browseforspeed.net for possible inclusion in the main release.
 -->
-
 <!-- Notes:
-	* Some controls in BFS may not be big enough to fit your translated text on. This is because the controls were sized for english words.
-		Once we obtain some translations, we will do our best to make them fit correctly - but for the moment you'll have to make do, sorry!
+* Some controls in BFS may not be big enough to fit your translated text on. This is because the controls were sized for english words.
+Once we obtain some translations, we will do our best to make them fit correctly - but for the moment you'll have to make do, sorry!
 
 	* {0}, {1} etc are variable placeholders that are replaced by BFS, please ensure they are kept - BFS will probably crash if they're not!
 
@@ -15,192 +14,206 @@
 		eg: "Ser&amp;ver" will look like "Server" in BFS, but the shortcut will be alt+v
 
 	* New lines are denoted with \n
-		eg: "BFS\nRocks" will display as:
-				"BFS
-				Rocks"
- -->
+eg: "BFS\nRocks" will display as:
+"BFS
+Rocks"
+-->
 
 
 <language>
-	<name>Czech</name>
-	<author>M4DC4T</author>
-	<email>madcatx@atlas.cz</email>
-	<!-- put whatever you like here, but keep it brief-->
-	<comment>Czech language for BrowseForSpeed</comment>
+<name>Czech</name>
+<author>MadCatX</author>
+<email>madcatx@atlas.cz</email>
+<!-- put whatever you like here, but keep it brief-->
+<comment>Czech language for BrowseForSpeed</comment>
+<!-- Global stuff -->
+<component name="Global.Yes">Ano</component>
+<component name="Global.No">Ne</component>
+<component name="Global.True">Pravda</component>
+<component name="Global.False">Nepravda</component>
+<component name="Global.Error">Chyba</component>
+<component name="Global.Enabled">Povoleno</component>
+<component name="Global.Disabled">Zakázáno</component>
+<!-- Main Form Components -->
 
-	<!-- Global stuff -->
-	<component name="Global.Yes">Ano</component>
-	<component name="Global.No">Ne</component>
-	<component name="Global.True">Pravda</component>
-	<component name="Global.False">Nepravda</component>
-	<component name="Global.Error">Chyba</component>
-	<component name="Global.Enabled">Povoleno</component>
-	<component name="Global.Disabled">Zakázáno</component>
+<component name="MainForm.this">Browse For Speed</component>
 
-	<!-- Main Form Components -->
-	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+<!-- This is the Program Title -->
+<component name="MainForm.fileToolStripMenuItem">&amp;Soubor</component>
+<component name="MainForm.joinServerToolStripMenuItem2">&amp;Pøipojit...</component>
+<component name="MainForm.closeToolStripMenuItem">&amp;Konec</component>
+<component name="MainForm.aboutToolStripMenuItem">Pomoc</component>
+<component name="MainForm.aboutToolStripMenuItem1">&amp;O programu</component>
+<component name="MainForm.tabMain">Prohlíeè serverù</component>
+<component name="MainForm.lblFindUserMain">Najdi hráèe:</component>
+<component name="MainForm.lblPasswordMain">Heslo na server:</component>
+<component name="MainForm.btnFindUserMain">Na&amp;jdi hráèe Online</component>
+<component name="MainForm.gbFilters">Filtry</component>
+<component name="MainForm.cbPublic">Veøej.</component>
+<component name="MainForm.cbPrivate">Soukr.</component>
+<component name="MainForm.cbFull">Plnı</component>
+<component name="MainForm.lblPingThreshold">Max. Ping:</component>
+<component name="MainForm.cbEmpty">Prázdnı</component>
+<component name="MainForm.columnHeaderName">Jméno serveru</component>
+<component name="MainForm.columnHeaderPing">Ping</component>
+<component name="MainForm.columnPrivate">Soukr.</component>
+<component name="MainForm.columnHeaderConnections">Pøipojení</component>
+<component name="MainForm.columnHeaderInfo">Info</component>
+<component name="MainForm.columnHeaderTrack">Tra</component>
+<component name="MainForm.columnHeaderCars">Vozy</component>
+<component name="MainForm.joinServerToolStripMenuItem">&amp;Pøipoj k serveru</component>
+<component name="MainForm.viewServerInformationMain">&amp;Zobraz info o serveru...</component>
+<component name="MainForm.toolStripMenuItem1">&amp;Pøidej k oblíbenım</component>
+<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Kopíruj server do schránky</component>
+<component name="MainForm.administrateToolStripMenuItem1">Administrace...</component>
+<component name="MainForm.btnRefresh">&amp;Obnovit</component>
+<component name="MainForm.btnStop">&amp;Stop</component>
+<component name="MainForm.btnJoin">&amp;Pøipojit</component>
+<component name="MainForm.tabFavourites">Oblíbené</component>
+<component name="MainForm.lblAddressFav">IP Adresa serveru:</component>
+<component name="MainForm.btnAddServer">&amp;Pøidej server</component>
+<component name="MainForm.columnHeaderFavServerName">Jméno serveru</component>
+<component name="MainForm.columnHeaderFavPing">Ping</component>
+<component name="MainForm.columnHeaderFavSlots">Pøipojení</component>
+<component name="MainForm.columnHeaderFavInfo">Info</component>
+<component name="MainForm.columnHeaderFavTrack">Tra</component>
+<component name="MainForm.columnHeaderFavCars">Vozy</component>
+<component name="MainForm.joinServerToolStripMenuItem1">&amp;Pøipoj k serveru</component>
+<component name="MainForm.viewServerInformationFav">&amp;Zobraz info o serveru</component>
+<component name="MainForm.removeFromFavouritesToolStripMenuItem">&amp;Odstraò z oblíbenıch</component>
+<component name="MainForm.copyServerToClipboardToolStripMenuItem1">&amp;Zkopíruj server do schránky</component>
+<component name="MainForm.administrateToolStripMenuItem">Administrace...</component>
+<component name="MainForm.tabFriends">Pøátelé</component>
+<component name="MainForm.btnAddFriend">&amp;Pøidej pøítele</component>
+<component name="MainForm.cbHideOffline">Skryj pøátele offline</component>
+<component name="MainForm.btnRefreshFriend">&amp;Obnov seznam</component>
+<component name="MainForm.btnJoinFriend">&amp;Pøipoj k pøíteli</component>
+<component name="MainForm.columnFriendName">Jméno pøítele</component>
+<component name="MainForm.columnFriendServer">Jméno serveru</component>
+<component name="MainForm.columnFriendPrivate">Soukr.</component>
+<component name="MainForm.columnFriendPlayers">Hráèi</component>
+<component name="MainForm.joinServerMenuFriends">Pøipoj k serveru</component>
+<component name="MainForm.viewServerInformationFriend">Zobraz info o serveru</component>
+<component name="MainForm.removeFriendToolStripMenuItem">Odstraò prítele</component>
+<component name="MainForm.tabConfig">Konfigurace</component>
+<component name="MainForm.groupBox1">Konfigurace</component>
+<component name="MainForm.groupBox2">Jazyk</component>
+<component name="MainForm.groupBox5">Detaily o jazyku</component>
+<component name="MainForm.lblCommentReal">komentáre</component>
+<component name="MainForm.lblEmailReal">AuthorEmal</component>
+<component name="MainForm.lblAuthorReal">langAuthor</component>
+<component name="MainForm.lblLangComment">Komentáøe:</component>
+<component name="MainForm.lblLangContact">Kontaktní adresa:</component>
+<component name="MainForm.lblLangAuthor">Autor:</component>
+<component name="MainForm.lblLanguageConfig">Jazyk:</component>
+<component name="MainForm.groupBox4">Akce po dvojkliku na server</component>
+<component name="MainForm.rbJoin">Pøipoj k serveru</component>
+<component name="MainForm.rbView">Zobraz info o serveru</component>
+<component name="MainForm.gbStartBeforeLFS">Spus pred LFS</component>
+<component name="MainForm.btnProgramEnable">&amp;Povolit</component>
+<component name="MainForm.btnProgramDisable">&amp;Zakázat</component>
+<component name="MainForm.btnProgramDelete">&amp;Odstraò program</component>
+<component name="MainForm.btnProgramNew">&amp;Novı program</component>
+<component name="MainForm.bgProgramConfig">Konfigurace programu</component>
+<component name="MainForm.btnProgramCancel">Z&amp;rušit</component>
+<component name="MainForm.btnProgramSave">&amp;Ulo</component>
+<component name="MainForm.btnProgramUpdate">&amp;Aktualizuj</component>
+<component name="MainForm.lblProgramConfigArg">Argumenty:</component>
+<component name="MainForm.lblProgramConfigName">Jméno:</component>
+<component name="MainForm.btnProgramBrowse">P&amp;rocházet</component>
+<component name="MainForm.lblProgramConfigPath">Cesta:</component>
+<component name="MainForm.groupBox3">Pokroèilé</component>
+<component name="MainForm.txtInsimPort">29999</component><component name="MainForm.lblQueryWaitDescription">Doba èekání na poadavek. Tato hodnota udává, jak dlouho se má èekat pred pøidáním dalšího poadavku. Zvyšte tuto hodnotu pokud servery vracejí "Pøipojení zamítnuto"</component>
+<component name="MainForm.lblInsimPortConfig">LFS Insim Port:</component>
+<component name="MainForm.cbQueryWait">Zrušit Èekání na poadavek </component>
+<component name="MainForm.lblQueryWaitHelp">Zakate Èekání na poadavek pouze pokud váš operaèní systém nemá toto limitováno. Pro více informací ètete readme.txt.</component>
+<component name="MainForm.btnCheckNewVersion">&amp;Zkontroluj</component>
+<component name="MainForm.cbNewVersion">Pøi spuštìní hledat nové verze BFS</component>
+<component name="MainForm.lblExeDescriptionConfig">Pokud je v poli vıše více ne jedna poloka, vyberte, prosím, tu, která obsahuje správnou cestu k souboru LFS.exe. Není-li tam, musíte jej najít.</component>
+<component name="MainForm.lblExePathConfig">Cesta k LFS.exe</component>
+<component name="MainForm.buttonBrowse">&amp;Procházet</component>
+<component name="MainForm.NoServers">ádnı server nenalezen, zkontrolujte nastavení filtrù.</component>
+<component name="MainForm.QueryStatus">Querying...</component>
+<component name="MainForm.StatusTotal">Kontroluji server {0} z {1}</component>
+<component name="MainForm.NoReply">Bez odpovìdi: {0}</component>
+<component name="MainForm.Refused">Odmítnutá pøipojení: {0}</component>
+<component name="MainForm.Offline">Offline</component>
+<component name="MainForm.cbStartupRefresh">Pøi spuštìní zkontrolovat oblíbené</component>
 
-	<component name="MainForm.fileToolStripMenuItem">&amp;Soubor</component>
-	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Pøipojit...</component>
-	<component name="MainForm.closeToolStripMenuItem">&amp;Konec</component>
-	<component name="MainForm.aboutToolStripMenuItem">Pomoc</component>
-	<component name="MainForm.aboutToolStripMenuItem1">&amp;O programu</component>
-	<component name="MainForm.tabMain">Prohlíeè serverù</component>
-	<component name="MainForm.lblFindUserMain">Najdi hráèe:</component>
-	<component name="MainForm.lblPasswordMain">Heslo na server:</component>
-	<component name="MainForm.btnFindUserMain">Na&amp;jdi hráèe Online</component>
-	<component name="MainForm.gbFilters">Filtry</component>
-	<component name="MainForm.cbPublic">Veøej.</component>
-	<component name="MainForm.cbPrivate">Soukr.</component>
-	<component name="MainForm.cbFull">Plnı</component>
-	<component name="MainForm.lblPingThreshold">Max. Ping:</component>
-	<component name="MainForm.cbEmpty">Prázdnı</component>
-	<component name="MainForm.columnHeaderName">Jméno serveru</component>
-	<component name="MainForm.columnHeaderPing">Ping</component>
-	<component name="MainForm.columnPrivate">Soukr.</component>
-	<component name="MainForm.columnHeaderConnections">Pøipojení</component>
-	<component name="MainForm.columnHeaderInfo">Info</component>
-	<component name="MainForm.columnHeaderTrack">Tra</component>
-	<component name="MainForm.columnHeaderCars">Vozy</component>
-	<component name="MainForm.joinServerToolStripMenuItem">&amp;Pøipoj k serveru</component>
-	<component name="MainForm.viewServerInformationMain">&amp;Zobraz info o serveru...</component>
-	<component name="MainForm.toolStripMenuItem1">&amp;Pøidej k oblíbenım</component>
-	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Kopíruj server do schránky</component>
-	<component name="MainForm.administrateToolStripMenuItem1">Administrace...</component>
-	<component name="MainForm.btnRefresh">&amp;Obnovit</component>
-	<component name="MainForm.btnStop">&amp;Stop</component>
-	<component name="MainForm.btnJoin">&amp;Pøipojit</component>
-	<component name="MainForm.tabFavourites">Oblíbené</component>
-	<component name="MainForm.lblAddressFav">IP Adresa serveru:</component>
-	<component name="MainForm.btnAddServer">&amp;Pøidej server</component>
-	<component name="MainForm.columnHeaderFavServerName">Jméno serveru</component>
-	<component name="MainForm.columnHeaderFavPing">Ping</component>
-	<component name="MainForm.columnHeaderFavSlots">Pøipojení</component>
-	<component name="MainForm.columnHeaderFavInfo">Info</component>
-	<component name="MainForm.columnHeaderFavTrack">Tra</component>
-	<component name="MainForm.columnHeaderFavCars">Vozy</component>
-	<component name="MainForm.joinServerToolStripMenuItem1">&amp;Pøipoj k serveru</component>
-	<component name="MainForm.viewServerInformationFav">&amp;Zobraz info o serveru</component>
-	<component name="MainForm.removeFromFavouritesToolStripMenuItem">&amp;Odstraò z oblíbenıch</component>
-	<component name="MainForm.copyServerToClipboardToolStripMenuItem1">&amp;Zkopíruj server do schránky</component>
-	<component name="MainForm.administrateToolStripMenuItem">Administrace...</component>
-	<component name="MainForm.tabFriends">Pøátelé</component>
-	<component name="MainForm.btnAddFriend">&amp;Pøidej pøítele</component>
-	<component name="MainForm.cbHideOffline">Skryj pøátele offline</component>
-	<component name="MainForm.btnRefreshFriend">&amp;Obnov seznam</component>
-	<component name="MainForm.btnJoinFriend">&amp;Pøipoj k pøíteli</component>
-	<component name="MainForm.columnFriendName">Jméno pøítele</component>
-	<component name="MainForm.columnFriendServer">Jméno serveru</component>
-	<component name="MainForm.columnFriendPrivate">Soukr.</component>
-	<component name="MainForm.columnFriendPlayers">Hráèi</component>
-	<component name="MainForm.joinServerMenuFriends">Pøipoj k serveru</component>
-	<component name="MainForm.viewServerInformationFriend">Zobraz info o serveru</component>
-	<component name="MainForm.removeFriendToolStripMenuItem">Odstraò prítele</component>
-	<component name="MainForm.tabConfig">Konfigurace</component>
-	<component name="MainForm.groupBox1">Konfigurace</component>
-	<component name="MainForm.groupBox2">Jazyk</component>
-	<component name="MainForm.groupBox5">Detaily o jazyku</component>
-	<component name="MainForm.lblCommentReal">komentáre</component>
-	<component name="MainForm.lblEmailReal">AuthorEmal</component>
-	<component name="MainForm.lblAuthorReal">langAuthor</component>
-	<component name="MainForm.lblLangComment">Komentáøe:</component>
-	<component name="MainForm.lblLangContact">Kontaktní adresa:</component>
-	<component name="MainForm.lblLangAuthor">Autor:</component>
-	<component name="MainForm.lblLanguageConfig">Jazyk:</component>
-	<component name="MainForm.groupBox4">Akce po dvojkliku na server</component>
-	<component name="MainForm.rbJoin">Pøipoj k serveru</component>
-	<component name="MainForm.rbView">Zobraz info o serveru</component>
-	<component name="MainForm.gbStartBeforeLFS">Spus pred LFS</component>
-	<component name="MainForm.btnProgramEnable">&amp;Povolit</component>
-	<component name="MainForm.btnProgramDisable">&amp;Zakázat</component>
-	<component name="MainForm.btnProgramDelete">&amp;Odstraò program</component>
-	<component name="MainForm.btnProgramNew">&amp;Novı program</component>
-	<component name="MainForm.bgProgramConfig">Konfigurace programu</component>
-	<component name="MainForm.btnProgramCancel">Z&amp;rušit</component>
-	<component name="MainForm.btnProgramSave">&amp;Ulo</component>
-	<component name="MainForm.btnProgramUpdate">&amp;Aktualizuj</component>
-	<component name="MainForm.lblProgramConfigArg">Argumenty:</component>
-	<component name="MainForm.lblProgramConfigName">Jméno:</component>
-	<component name="MainForm.btnProgramBrowse">P&amp;rocházet</component>
-	<component name="MainForm.lblProgramConfigPath">Cesta:</component>
-	<component name="MainForm.groupBox3">Pokroèilé</component>
-	<component name="MainForm.txtInsimPort">29999</component>
-	<component name="MainForm.lblQueryWaitDescription">Doba èekání na poadavek. Tato hodnota udává, jak dlouho se má èekat pred pøidáním dalšího poadavku. Zvyšte tuto hodnotu pokud servery vracejí "Pøipojení zamítnuto"</component>
-	<component name="MainForm.lblInsimPortConfig">LFS Insim Port:</component>
-	<component name="MainForm.cbQueryWait">Zrušit Èekání na poadavek </component>
-	<component name="MainForm.lblQueryWaitHelp">Zakate Èekání na poadavek pouze pokud váš operaèní systém nemá toto limitováno. Pro více informací ètete readme.txt.</component>
-	<component name="MainForm.btnCheckNewVersion">&amp;Zkontroluj</component>
-	<component name="MainForm.cbNewVersion">Pøi spuštìní hledat nové verze BFS</component>
-	<component name="MainForm.lblExeDescriptionConfig">
-Pokud je v poli vıše více ne jedna poloka, vyberte, prosím, tu, která obsahuje správnou cestu k souboru LFS.exe. Není-li tam, musíte jej najít.</component>
-	<component name="MainForm.lblExePathConfig">Cesta k LFS.exe</component>
-	<component name="MainForm.buttonBrowse">&amp;Procházet</component>
-	<component name="MainForm.NoServers">ádnı server nenalezen, zkontrolujte nastavení filtrù.</component>
-	<component name="MainForm.QueryStatus">Querying...</component>
-	<component name="MainForm.StatusTotal">Kontroluji server {0} z {1}</component>
-	<component name="MainForm.NoReply">Bez odpovìdi: {0}</component>
-	<component name="MainForm.Refused">Odmítnutá pøipojení: {0}</component>
-	<component name="MainForm.Offline">Offline</component>
+<!--Ban Dialog Components -->
+<component name="BanDialog.nmDays">Dny</component>
+<component name="BanDialog.ok">O&amp;K</component>
+<component name="BanDialog.cancel">&amp;Zrušit</component>
 
-	<!-- Admin Form components -->
-	<component name="Admin.btnSend">&amp;Poslat</component>
-	<component name="Admin.btnConnect">&amp;Pøipojit</component>
-	<component name="Admin.btnDisconnect">&amp;Odpojit</component>
-	<component name="Admin.edtPort">29999</component>
-	<component name="Admin.lblPassword">Heslo:</component>
-	<component name="Admin.lblinsimPort">InSim Port:</component>
-	<component name="Admin.chkRelay">Pøipojit k Relayi</component>
-	<component name="Admin.this">Admin</component>
+<!-- Admin Form components -->
+<component name="Admin.btnSend">&amp;Poslat</component>
+<component name="Admin.btnConnect">&amp;Pøipojit</component>
+<component name="Admin.btnDisconnect">&amp;Odpojit</component>
+<component name="Admin.edtPort">29999</component>
+<component name="Admin.lblPassword">Heslo:</component>
+<component name="Admin.lblinsimPort">InSim Port:</component>
+<component name="Admin.chkRelay">Pøipojit k Relayi</component>
+<component name="Admin.this">Admin</component>
+<component name="Admin.sendPrivate">Poslat vybranému jezdci</component>
+<component name="Admin.kick">Kick</component>
+<component name="Admin.ban">Ban</component>
+<component name="Admin.spectate">Pøinutit pozorovat</component>
+<component name="Admin.ban12h">12 hodin</component>
+<component name="Admin.ban1d">1 den</component>
+<component name="Admin.ban2d">2 dny</component>
+<component name="Admin.ban3d">3 dny</component>
+<component name="Admin.ban1w">1 tıden</component>
+<component name="Admin.banCustom">Vlastní...</component>
 
-	<!--Join Server Dialog Components -->
-	<component name="JoinServerDialog.btnJoin">&amp;Pøipojit k serveru</component>
-	<component name="JoinServerDialog.lblServerName">Jméno serveru:</component>
-	<component name="JoinServerDialog.btnCancel">&amp;Zrušit</component>
-	<component name="JoinServerDialog.lblPassword">Heslo:</component>
-	<component name="JoinServerDialog.lblVersion">Verze:</component>
-	<component name="JoinServerDialog.this">Pøipojit k serveru</component>
+<!--Join Server Dialog Components -->
+<component name="JoinServerDialog.btnJoin">&amp;Pøipojit k serveru</component>
+<component name="JoinServerDialog.lblServerName">Jméno serveru:</component>
+<component name="JoinServerDialog.btnCancel">&amp;Zrušit</component>
+<component name="JoinServerDialog.lblPassword">Heslo:</component>
+<component name="JoinServerDialog.lblVersion">Verze:</component>
+<component name="JoinServerDialog.this">Pøipojit k serveru</component>
 
-	<!--Server Information Form components-->
-	<component name="ServerInformationForm.buttonInfoJoin">&amp;Pøipojit</component>
-	<component name="ServerInformationForm.buttonInfoClose">&amp;Zavøít</component>
-	<component name="ServerInformationForm.buttonInfoRefresh">&amp;Obnovit</component>
-	<component name="ServerInformationForm.lblServerName">Jméno serveru:</component>
-	<component name="ServerInformationForm.labe3">Ping:</component>
-	<component name="ServerInformationForm.label1">Aktuální tra:</component>
-	<component name="ServerInformationForm.lblInformation">Informace:</component>
-	<component name="ServerInformationForm.label5">Heslo:</component>
-	<component name="ServerInformationForm.groupBox1">Hráèi</component>
-	<component name="ServerInformationForm.btnAddFriend">&amp;Pøidat k pøátelùm</component>
-	<component name="ServerInformationForm.lblCars">Vozy:</component>
-	<component name="ServerInformationForm.lblPrivate">Soukr.:</component>
-	<component name="ServerInformationForm.this">Server - Informace</component>
-	<component name="ServerInformationForm.buttonInfoStop">&amp;Stop</component>
-	<component name="ServerInformationForm.QueryTimeOut">Èas poadavku vypršel</component>
-	<component name="ServerInformationForm.EmptyServer">Na serveru nejsou ádní hráèi.</component>
-	<component name="ServerInformationForm.NoServer">Nelze najít server na pubstat!</component>
-	<component name="ServerInformationForm.PubstatError">Chyba pøi poadavku na Pubstat!</component>
+<!--Server Information Form components-->
+<component name="ServerInformationForm.buttonInfoJoin">&amp;Pøipojit</component>
+<component name="ServerInformationForm.buttonInfoClose">&amp;Zavøít</component>
+<component name="ServerInformationForm.buttonInfoRefresh">&amp;Obnovit</component>
+<component name="ServerInformationForm.lblServerName">Jméno serveru:</component>
+<component name="ServerInformationForm.labe3">Ping:</component>
+<component name="ServerInformationForm.label1">Aktuální tra:</component>
+<component name="ServerInformationForm.lblInformation">Informace:</component>
+<component name="ServerInformationForm.label5">Heslo:</component>
+<component name="ServerInformationForm.groupBox1">Hráèi</component>
+<component name="ServerInformationForm.btnAddFriend">&amp;Pøidat k pøátelùm</component>
+<component name="ServerInformationForm.lblCars">Vozy:</component>
+<component name="ServerInformationForm.lblPrivate">Soukr.:</component>
+<component name="ServerInformationForm.this">Server - Informace</component>
+<component name="ServerInformationForm.buttonInfoStop">&amp;Stop</component>
+<component name="ServerInformationForm.QueryTimeOut">Èas poadavku vypršel</component>
+<component name="ServerInformationForm.EmptyServer">Na serveru nejsou ádní hráèi.</component>
+<component name="ServerInformationForm.NoServer">Nelze najít server na pubstat!</component>
+<component name="ServerInformationForm.PubstatError">Chyba pøi poadavku na Pubstat!</component>
 
-	<!--Message Box Components -->
-	<component name="MasterServerError">Nelze kontaktovat LFS Master Server. Pravdìpodbnì je vypnut nebo váš firewall není správnì nastaven.</component>
-	<component name="StartPSPError">Chyba zpracování {0} ({1})\n{2}\nPøekontrolujte své nastavení.</component>
-	<component name="StartLFSError">Chyba zpracování LFS.exe\n{0}\nPøekontrolujte své nastavení.</component>
-	<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nMùete modifikovat a redistribuovat tento program v souladu s pravidly GPL (verze 2 a pozdejší).\nKopie GPL je obsaena v souboru 'COPYING' distribuovaného s Browse For Speed.\nNa program neposkytujeme ádnou záruku.</component>
-	<component name="AboutBoxTitle">O Browse For Speed</component>
+<!--Message Box Components -->
+<component name="MasterServerError">Nelze kontaktovat LFS Master Server. Pravdìpodbnì je vypnut nebo váš firewall není správnì nastaven.</component>
+<component name="StartPSPError">Chyba zpracování {0} ({1})\n{2}\nPøekontrolujte své nastavení.</component>
+<component name="StartLFSError">Chyba zpracování LFS.exe\n{0}\nPøekontrolujte své nastavení.</component>
+<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nMùete modifikovat a redistribuovat tento program v souladu s pravidly GPL (verze 2 a pozdejší).\nKopie GPL je obsaena v souboru 'COPYING' distribuovaného s Browse For Speed.\nNa program neposkytujeme ádnou záruku.</component>
+<component name="AboutBoxTitle">O Browse For Speed</component>
 	<component name="LoadFavError">Chyba pøi nahrávání oblíbenıch: {0}\nKopie uloena jako {1}.backup</component>
 	<component name="SaveFavError">Chyba pøi zápisu do seznamu oblíbenıch serverù: {0}</component>
-	<component name="SaveFriendsError">Chyba pøi zápisu do seznamu pøátel: {0}</component>
+<component name="SaveFriendsError">Chyba pøi zápisu do seznamu pøátel: {0}</component>
 	<component name="LoadFriendsError">Chyba nahrávání seznamu pøátel: {0}\nKopie uloena jako {1}.backup</component>
-	<component name="PlayerNameTooLongError">Jméno hráce musí bıt kratší ne 32 znakù</component>
-	<component name="JoinPlayerQuery">Pøipojit {0} k tomuto hostu?\n{1}</component>
-	<component name="UserNotFound">Uivatel nenalezen online</component>
-	<component name="RemoveFavQuery">Odstranit {0} z oblíbenıch?</component>
-	<component name="UpToDate">Vaše verze je aktuální</component>
-	<component name="NewVersion">K dispozici je nová verze, pøejít na stránku s Downloady?</component>
-	<component name="UpdateError">Chyba pøi kontrole nové verze, náš server je pravdìpodobnì vypnut. Zkuste to pozdìji.</component>
-	<component name="InvalidPort">{0} není platné èíslo portu - musí bıt mezi 1 a 65535</component>
-	<component name="RemoveFriendQuery">Odstranit {0} ze seznamu pøátel?</component>
-	<component name="JoinFriendQuery">Pøipojit k {0} na {1}?</component>
-	<component name="InvalidIPAddress">IP Adresa musí bıt ve formátu: ipadresa:port</component>
-	<component name="AddFavError">Chyba pøi pøidávání tohoto serveru k oblíbenım: {0}</component>
-	<component name="InSimError">Nemohu se pøipojit k InSim</component>
+<component name="PlayerNameTooLongError">Jméno hráce musí bıt kratší ne 32 znakù</component>
+<component name="JoinPlayerQuery">Pøipojit {0} k tomuto hostu?\n{1}</component>
+<component name="UserNotFound">Uivatel nenalezen online</component>
+<component name="RemoveFavQuery">Odstranit {0} z oblíbenıch?</component>
+<component name="UpToDate">Vaše verze je aktuální</component>
+<component name="NewVersion">K dispozici je nová verze, pøejít na stránku s Downloady?</component>
+<component name="UpdateError">Chyba pøi kontrole nové verze, náš server je pravdìpodobnì vypnut. Zkuste to pozdìji.</component>
+<component name="InvalidPort">{0} není platné èíslo portu - musí bıt mezi 1 a 65535</component>
+<component name="RemoveFriendQuery">Odstranit {0} ze seznamu pøátel?</component>
+<component name="JoinFriendQuery">Pøipojit k {0} na {1}?</component>
+<component name="InvalidIPAddress">IP Adresa musí bıt ve formátu: ipadresa:port</component>
+<component name="AddFavError">Chyba pøi pøidávání tohoto serveru k oblíbenım: {0}</component>
+<component name="InSimError">Nemohu se pøipojit k InSim</component>
 </language>
