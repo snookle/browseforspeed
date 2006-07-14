@@ -39,7 +39,7 @@
 
 	<!-- Main Form Components -->
 	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
-
+	<component name="MainForm.cbStartupRefresh">Actualizar Favoritos al iniciar</component>
 	<component name="MainForm.fileToolStripMenuItem">&amp;Archivo</component>
 	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Conectar al servidor...</component>
 	<component name="MainForm.closeToolStripMenuItem">&amp;Salir</component>
@@ -58,7 +58,7 @@
 	<component name="MainForm.columnHeaderName">Nombre del Servidor</component>
 	<component name="MainForm.columnHeaderPing">Ping</component>
 	<component name="MainForm.columnPrivate">Privado</component>
-	<component name="MainForm.columnHeaderConnections">Conexiones</component>
+	<component name="MainForm.columnHeaderConnections">Slots</component>
 	<component name="MainForm.columnHeaderInfo">Informacion</component>
 	<component name="MainForm.columnHeaderTrack">Pista</component>
 	<component name="MainForm.columnHeaderCars">Autos</component>
@@ -75,7 +75,7 @@
 	<component name="MainForm.btnAddServer">&amp;Agregar Servidor</component>
 	<component name="MainForm.columnHeaderFavServerName">Nombre del Servidor</component>
 	<component name="MainForm.columnHeaderFavPing">Ping</component>
-	<component name="MainForm.columnHeaderFavSlots">Conexiones</component>
+	<component name="MainForm.columnHeaderFavSlots">Slots</component>
 	<component name="MainForm.columnHeaderFavInfo">Informacion</component>
 	<component name="MainForm.columnHeaderFavTrack">Pista</component>
 	<component name="MainForm.columnHeaderFavCars">Autos</component>
@@ -86,7 +86,7 @@
 	<component name="MainForm.administrateToolStripMenuItem">Administrar...</component>
 	<component name="MainForm.tabFriends">Amigos</component>
 	<component name="MainForm.btnAddFriend">&amp;Agregar Amigo</component>
-	<component name="MainForm.cbHideOffline">Ocultar los que no esten Online</component>
+	<component name="MainForm.cbHideOffline">Ocultar amigos offline</component>
 	<component name="MainForm.btnRefreshFriend">&amp;Refrescar lista</component>
 	<component name="MainForm.btnJoinFriend">&amp;Agregar Amigo</component>
 	<component name="MainForm.columnFriendName">Nombre</component>
@@ -125,7 +125,7 @@
 	<component name="MainForm.lblProgramConfigPath">Ejecutar:</component>
 	<component name="MainForm.groupBox3">Advanzado</component>
 	<component name="MainForm.txtInsimPort">29999</component>
-	<component name="MainForm.lblQueryWaitDescription">Valor de espera. Este es el tiempo de espera antes de hacer una nueva peticion. Aumenta este valor solamente si al hacer una peticion los servidores empiezan a dar el mensaje "Conexion Denegada"</component>
+	<component name="MainForm.lblQueryWaitDescription">Este es el tiempo de espera (en ms) antes de hacer una nueva peticion. Aumenta este valor si al actualizar la lista de servidores recives muchos mensajes de "Conexion Denegada"</component>
 	<component name="MainForm.lblInsimPortConfig">Puerto para LFS Insim:</component>
 	<component name="MainForm.cbQueryWait">Desactivar tiempo de espera</component>
 	<component name="MainForm.lblQueryWaitHelp">Solo desactiva el tiempo de espera si estas utilizando un SO que no posea limite de conexiones.  Por favor lee el readme.txt para mas informacion. </component>
@@ -150,6 +150,22 @@
 	<component name="Admin.lblinsimPort">Puerto InSim:</component>
 	<component name="Admin.this">Admin</component>
 	<component name="Admin.chkRelay">Conectar al relay</component>
+      <component name="Admin.kick">Kickear</component>
+      <component name="Admin.ban">Banear</component>
+      <component name="Admin.spectate">Forzar a Expectador</component>
+      <component name="Admin.ban12h">12 horas</component>
+      <component name="Admin.ban1d">1 dia</component>
+      <component name="Admin.ban2d">2 dias</component>
+      <component name="Admin.ban3d">3 dias</component>
+      <component name="Admin.ban1w">1 semana</component>
+      <component name="Admin.banCustom">Personalizado...</component>
+      <component name="Admin.sendPrivate">Enviar al corredor...</component>	
+
+
+	<!--Ban Dialog Components -->
+      <component name="BanDialog.nmDays">Dias</component>
+      <component name="BanDialog.ok">A&amp;ceptar</component>
+      <component name="BanDialog.cancel">&amp;Cancelar</component>
 
 	<!--Join Server Dialog Components -->
 	<component name="JoinServerDialog.btnJoin">&amp;Conectarse al servidor</component>
