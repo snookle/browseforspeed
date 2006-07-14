@@ -89,7 +89,7 @@ namespace BrowseForSpeed.Frontend
 			this.btnCancel.Location = new System.Drawing.Point(175, 97);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(109, 23);
-			this.btnCancel.TabIndex = 3;
+			this.btnCancel.TabIndex = 5;
 			this.btnCancel.Text = "&Cancel";
 			this.btnCancel.UseVisualStyleBackColor = true;
 			// 
