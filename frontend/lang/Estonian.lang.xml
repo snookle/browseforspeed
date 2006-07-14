@@ -140,6 +140,7 @@
 	<component name="MainForm.NoReply">Mitte mingit vastust: {0}</component>
 	<component name="MainForm.Refused">Keeldus ühendusest: {0}</component>
 	<component name="MainForm.Offline">Offline</component>
+	<component name="MainForm.cbStartupRefresh">Refresh favourites on startup</component>
 
 	<!-- Admin Form components -->
 	<component name="Admin.btnSend">&amp;Saada</component>
@@ -149,6 +150,16 @@
 	<component name="Admin.lblPassword">Parool:</component>
 	<component name="Admin.lblinsimPort">InSim port:</component>
 	<component name="Admin.chkRelay">Connect to Relay</component>
+	<component name="Admin.kick">Kick</component>
+	<component name="Admin.ban">Ban</component>
+	<component name="Admin.spectate">Force Spectate</component>
+	<component name="Admin.ban12h">12 hours</component>
+	<component name="Admin.ban1d">1 day</component>
+	<component name="Admin.ban2d">2 days</component>
+	<component name="Admin.ban3d">3 days</component>
+	<component name="Admin.ban1w">1 week</component>
+	<component name="Admin.banCustom">Custom...</component>
+	<component name="Admin.sendPrivate">Send to selected racer</component>
 	<component name="Admin.this">Admin</component>
 
 	<!--Join Server Dialog Components -->
@@ -158,6 +169,11 @@
 	<component name="JoinServerDialog.lblPassword">Parool:</component>
 	<component name="JoinServerDialog.lblVersion">Versioon:</component>
 	<component name="JoinServerDialog.this">Liitu serveriga</component>
+
+	<!--Ban Dialog Components -->
+	<component name="BanDialog.nmDays">Days</component>
+	<component name="BanDialog.ok">O&amp;K</component>
+	<component name="BanDialog.cancel">&amp;Cancel</component>
 
 	<!--Server Information Form components-->
 	<component name="ServerInformationForm.buttonInfoJoin">&amp;Liitu</component>

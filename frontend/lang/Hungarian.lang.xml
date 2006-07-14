@@ -148,6 +148,7 @@
 	<component name="MainForm.NoReply">Nincs Válasz: {0}</component>
 	<component name="MainForm.Refused">Kapcsolat visszautasítva: {0}</component>
 	<component name="MainForm.Offline">Inaktív</component>
+	<component name="MainForm.cbStartupRefresh">Refresh favourites on startup</component>
 
 	<!-- Admin Form components -->
 	<component name="Admin.btnSend">&amp;Küldés</component>
@@ -157,8 +158,22 @@
 	<component name="Admin.lblPassword">Jelszó:</component>
 	<component name="Admin.lblinsimPort">InSim Port:</component>
 	<component name="Admin.this">Adminisztáció</component>
+	<component name="Admin.kick">Kick</component>
+	<component name="Admin.ban">Ban</component>
+	<component name="Admin.spectate">Force Spectate</component>
+	<component name="Admin.ban12h">12 hours</component>
+	<component name="Admin.ban1d">1 day</component>
+	<component name="Admin.ban2d">2 days</component>
+	<component name="Admin.ban3d">3 days</component>
+	<component name="Admin.ban1w">1 week</component>
+	<component name="Admin.banCustom">Custom...</component>
+	<component name="Admin.sendPrivate">Send to selected racer</component>
 	<component name="Admin.chkRelay">Connect to Relay</component>
 
+	<!--Ban Dialog Components -->
+	<component name="BanDialog.nmDays">Days</component>
+	<component name="BanDialog.ok">O&amp;K</component>
+	<component name="BanDialog.cancel">&amp;Cancel</component>
 
 	<!--Join Server Dialog Components -->
 <!-- GerG: Tab Order here is not good -->
