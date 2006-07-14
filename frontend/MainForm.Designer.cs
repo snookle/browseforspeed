@@ -277,7 +277,7 @@ namespace BrowseForSpeed.Frontend
 			this.edtFindUserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.edtFindUserMain.Location = new System.Drawing.Point(595, 539);
 			this.edtFindUserMain.Name = "edtFindUserMain";
-			this.edtFindUserMain.Size = new System.Drawing.Size(136, 21);
+			this.edtFindUserMain.Size = new System.Drawing.Size(116, 21);
 			this.edtFindUserMain.TabIndex = 9;
 			this.edtFindUserMain.WordWrap = false;
 			this.edtFindUserMain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EdtFindUserMainKeyDown);
@@ -316,9 +316,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.btnFindUserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnFindUserMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnFindUserMain.Location = new System.Drawing.Point(737, 537);
+			this.btnFindUserMain.Location = new System.Drawing.Point(717, 537);
 			this.btnFindUserMain.Name = "btnFindUserMain";
-			this.btnFindUserMain.Size = new System.Drawing.Size(137, 23);
+			this.btnFindUserMain.Size = new System.Drawing.Size(157, 23);
 			this.btnFindUserMain.TabIndex = 5;
 			this.btnFindUserMain.Text = "&Find User Online";
 			this.btnFindUserMain.UseVisualStyleBackColor = true;
@@ -857,6 +857,7 @@ namespace BrowseForSpeed.Frontend
 			this.lvFriends.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
+			this.lvFriends.AutoArrange = false;
 			this.lvFriends.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
 									this.columnFriendName,
 									this.columnFriendServer,

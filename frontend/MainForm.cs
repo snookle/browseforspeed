@@ -273,7 +273,7 @@ public class ListSorter: IComparer<ServerListItem>
 	public partial class MainForm
 	{
 		static string bfs_version = "0.6";
-		static string version_check = "7";
+		static string version_check = "8";
 		static string download_url = "http://www.browseforspeed.net";
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
 
