@@ -63,9 +63,9 @@ namespace BrowseForSpeed.Frontend
 			this.daysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.daysToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.weekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.forceSpectateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnSendRacer = new System.Windows.Forms.Button();
-			this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.racerMenuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -80,7 +80,7 @@ namespace BrowseForSpeed.Frontend
 			this.txtInfo.Name = "txtInfo";
 			this.txtInfo.ReadOnly = true;
 			this.txtInfo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.txtInfo.Size = new System.Drawing.Size(512, 342);
+			this.txtInfo.Size = new System.Drawing.Size(482, 342);
 			this.txtInfo.TabIndex = 10;
 			// 
 			// edtMessage
@@ -91,14 +91,14 @@ namespace BrowseForSpeed.Frontend
 			this.edtMessage.Location = new System.Drawing.Point(12, 430);
 			this.edtMessage.MaxLength = 63;
 			this.edtMessage.Name = "edtMessage";
-			this.edtMessage.Size = new System.Drawing.Size(434, 21);
+			this.edtMessage.Size = new System.Drawing.Size(410, 21);
 			this.edtMessage.TabIndex = 3;
 			// 
 			// btnSend
 			// 
 			this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnSend.Enabled = false;
-			this.btnSend.Location = new System.Drawing.Point(458, 428);
+			this.btnSend.Location = new System.Drawing.Point(428, 428);
 			this.btnSend.Name = "btnSend";
 			this.btnSend.Size = new System.Drawing.Size(66, 23);
 			this.btnSend.TabIndex = 2;
@@ -109,7 +109,7 @@ namespace BrowseForSpeed.Frontend
 			// btnConnect
 			// 
 			this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnConnect.Location = new System.Drawing.Point(421, 13);
+			this.btnConnect.Location = new System.Drawing.Point(448, 13);
 			this.btnConnect.Name = "btnConnect";
 			this.btnConnect.Size = new System.Drawing.Size(103, 23);
 			this.btnConnect.TabIndex = 3;
@@ -128,7 +128,7 @@ namespace BrowseForSpeed.Frontend
 			// edtPort
 			// 
 			this.edtPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.edtPort.Location = new System.Drawing.Point(305, 14);
+			this.edtPort.Location = new System.Drawing.Point(332, 14);
 			this.edtPort.Name = "edtPort";
 			this.edtPort.Size = new System.Drawing.Size(100, 21);
 			this.edtPort.TabIndex = 2;
@@ -147,7 +147,7 @@ namespace BrowseForSpeed.Frontend
 			// lblinsimPort
 			// 
 			this.lblinsimPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.lblinsimPort.Location = new System.Drawing.Point(213, 16);
+			this.lblinsimPort.Location = new System.Drawing.Point(240, 16);
 			this.lblinsimPort.Name = "lblinsimPort";
 			this.lblinsimPort.Size = new System.Drawing.Size(91, 17);
 			this.lblinsimPort.TabIndex = 7;
@@ -156,7 +156,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// chkRelay
 			// 
-			this.chkRelay.Location = new System.Drawing.Point(213, 41);
+			this.chkRelay.Location = new System.Drawing.Point(276, 41);
 			this.chkRelay.Name = "chkRelay";
 			this.chkRelay.Size = new System.Drawing.Size(195, 24);
 			this.chkRelay.TabIndex = 11;
@@ -166,14 +166,13 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// lstRacers
 			// 
-			this.lstRacers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Right)));
+			this.lstRacers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.lstRacers.ContextMenuStrip = this.racerMenuStrip;
 			this.lstRacers.FormattingEnabled = true;
 			this.lstRacers.HorizontalScrollbar = true;
-			this.lstRacers.Location = new System.Drawing.Point(540, 71);
+			this.lstRacers.Location = new System.Drawing.Point(502, 71);
 			this.lstRacers.Name = "lstRacers";
-			this.lstRacers.Size = new System.Drawing.Size(132, 342);
+			this.lstRacers.Size = new System.Drawing.Size(165, 342);
 			this.lstRacers.TabIndex = 12;
 			// 
 			// racerMenuStrip
@@ -183,7 +182,7 @@ namespace BrowseForSpeed.Frontend
 									this.banToolStripMenuItem,
 									this.forceSpectateToolStripMenuItem});
 			this.racerMenuStrip.Name = "racerMenuStrip";
-			this.racerMenuStrip.Size = new System.Drawing.Size(158, 92);
+			this.racerMenuStrip.Size = new System.Drawing.Size(158, 70);
 			// 
 			// kickToolStripMenuItem
 			// 
@@ -208,37 +207,44 @@ namespace BrowseForSpeed.Frontend
 			// hoursToolStripMenuItem
 			// 
 			this.hoursToolStripMenuItem.Name = "hoursToolStripMenuItem";
-			this.hoursToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.hoursToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
 			this.hoursToolStripMenuItem.Text = "12 hours";
 			this.hoursToolStripMenuItem.Click += new System.EventHandler(this.HoursToolStripMenuItemClick);
 			// 
 			// dayToolStripMenuItem
 			// 
 			this.dayToolStripMenuItem.Name = "dayToolStripMenuItem";
-			this.dayToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.dayToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
 			this.dayToolStripMenuItem.Text = "1 day";
 			this.dayToolStripMenuItem.Click += new System.EventHandler(this.DayToolStripMenuItemClick);
 			// 
 			// daysToolStripMenuItem
 			// 
 			this.daysToolStripMenuItem.Name = "daysToolStripMenuItem";
-			this.daysToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.daysToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
 			this.daysToolStripMenuItem.Text = "2 days";
 			this.daysToolStripMenuItem.Click += new System.EventHandler(this.DaysToolStripMenuItemClick);
 			// 
 			// daysToolStripMenuItem1
 			// 
 			this.daysToolStripMenuItem1.Name = "daysToolStripMenuItem1";
-			this.daysToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+			this.daysToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
 			this.daysToolStripMenuItem1.Text = "3 days";
 			this.daysToolStripMenuItem1.Click += new System.EventHandler(this.DaysToolStripMenuItem1Click);
 			// 
 			// weekToolStripMenuItem
 			// 
 			this.weekToolStripMenuItem.Name = "weekToolStripMenuItem";
-			this.weekToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.weekToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
 			this.weekToolStripMenuItem.Text = "1 week";
 			this.weekToolStripMenuItem.Click += new System.EventHandler(this.WeekToolStripMenuItemClick);
+			// 
+			// customToolStripMenuItem
+			// 
+			this.customToolStripMenuItem.Name = "customToolStripMenuItem";
+			this.customToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+			this.customToolStripMenuItem.Text = "Custom...";
+			this.customToolStripMenuItem.Click += new System.EventHandler(this.CustomToolStripMenuItemClick);
 			// 
 			// forceSpectateToolStripMenuItem
 			// 
@@ -249,39 +255,33 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// btnSendRacer
 			// 
+			this.btnSendRacer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnSendRacer.Enabled = false;
-			this.btnSendRacer.Location = new System.Drawing.Point(540, 428);
+			this.btnSendRacer.Location = new System.Drawing.Point(502, 428);
 			this.btnSendRacer.Name = "btnSendRacer";
-			this.btnSendRacer.Size = new System.Drawing.Size(132, 23);
+			this.btnSendRacer.Size = new System.Drawing.Size(165, 23);
 			this.btnSendRacer.TabIndex = 13;
 			this.btnSendRacer.Text = "Send to selected racer";
 			this.btnSendRacer.UseVisualStyleBackColor = true;
 			this.btnSendRacer.Click += new System.EventHandler(this.Button1Click);
-			// 
-			// customToolStripMenuItem
-			// 
-			this.customToolStripMenuItem.Name = "customToolStripMenuItem";
-			this.customToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.customToolStripMenuItem.Text = "Custom...";
-			this.customToolStripMenuItem.Click += new System.EventHandler(this.CustomToolStripMenuItemClick);
 			// 
 			// AdminForm
 			// 
 			this.AcceptButton = this.btnSend;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(684, 463);
-			this.Controls.Add(this.btnSendRacer);
-			this.Controls.Add(this.lstRacers);
-			this.Controls.Add(this.chkRelay);
-			this.Controls.Add(this.lblinsimPort);
+			this.ClientSize = new System.Drawing.Size(677, 463);
 			this.Controls.Add(this.lblPassword);
-			this.Controls.Add(this.edtPort);
+			this.Controls.Add(this.lblinsimPort);
+			this.Controls.Add(this.chkRelay);
+			this.Controls.Add(this.lstRacers);
+			this.Controls.Add(this.btnSendRacer);
 			this.Controls.Add(this.edtPassword);
-			this.Controls.Add(this.btnConnect);
-			this.Controls.Add(this.btnSend);
-			this.Controls.Add(this.edtMessage);
+			this.Controls.Add(this.edtPort);
 			this.Controls.Add(this.txtInfo);
+			this.Controls.Add(this.btnConnect);
+			this.Controls.Add(this.edtMessage);
+			this.Controls.Add(this.btnSend);
 			this.Name = "AdminForm";
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
