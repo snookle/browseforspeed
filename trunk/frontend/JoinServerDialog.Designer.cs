@@ -63,7 +63,7 @@ namespace BrowseForSpeed.Frontend
 			this.btnJoin.Location = new System.Drawing.Point(61, 97);
 			this.btnJoin.Name = "btnJoin";
 			this.btnJoin.Size = new System.Drawing.Size(108, 23);
-			this.btnJoin.TabIndex = 0;
+			this.btnJoin.TabIndex = 4;
 			this.btnJoin.Text = "&Join Server";
 			this.btnJoin.UseVisualStyleBackColor = true;
 			// 
@@ -80,7 +80,7 @@ namespace BrowseForSpeed.Frontend
 			this.edtServerName.Location = new System.Drawing.Point(92, 14);
 			this.edtServerName.Name = "edtServerName";
 			this.edtServerName.Size = new System.Drawing.Size(192, 21);
-			this.edtServerName.TabIndex = 2;
+			this.edtServerName.TabIndex = 1;
 			this.edtServerName.TextChanged += new System.EventHandler(this.EdtServerNameTextChanged);
 			// 
 			// btnCancel
@@ -104,7 +104,7 @@ namespace BrowseForSpeed.Frontend
 			this.cbVersion.Location = new System.Drawing.Point(92, 68);
 			this.cbVersion.Name = "cbVersion";
 			this.cbVersion.Size = new System.Drawing.Size(88, 21);
-			this.cbVersion.TabIndex = 4;
+			this.cbVersion.TabIndex = 3;
 			// 
 			// lblPassword
 			// 
@@ -119,7 +119,7 @@ namespace BrowseForSpeed.Frontend
 			this.edtPassword.Location = new System.Drawing.Point(92, 41);
 			this.edtPassword.Name = "edtPassword";
 			this.edtPassword.Size = new System.Drawing.Size(192, 21);
-			this.edtPassword.TabIndex = 6;
+			this.edtPassword.TabIndex = 2;
 			// 
 			// lblVersion
 			// 
