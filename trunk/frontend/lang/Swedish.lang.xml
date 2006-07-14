@@ -1,0 +1,205 @@
+<!-- How to make a new language:
+1. copy this file and rename it to <yourlanguage>.lang.xml
+2. Ensure name accurately represents the language (and is unique to other language names)
+3. Translate the strings!
+4. Contact BFS at bfs@browseforspeed.net for possible inclusion in the main release.
+-->
+
+<!-- Notes:
+	* Some controls in BFS may not be big enough to fit your translated text on. This is because the controls were sized for english words.
+		Once we obtain some translations, we will do our best to make them fit correctly - but for the moment you'll have to make do, sorry!
+
+	* {0}, {1} etc are variable placeholders that are replaced by BFS, please ensure they are kept - BFS will probably crash if they're not!
+
+	* &amp; means that the character directly after this will be the keyboard shortcut
+		eg: "Ser&amp;ver" will look like "Server" in BFS, but the shortcut will be alt+v
+
+	* New lines are denoted with \n
+		eg: "BFS\nRocks" will display as:
+				"BFS
+				Rocks"
+ -->
+
+
+<language>
+	<name>Svenska</name>
+	<author>filur</author>
+	<email>lfsforum.net</email>
+	<!-- put whatever you like here, but keep it brief-->
+	<comment>Swedish</comment>
+
+	<!-- Global stuff -->
+	<component name="Global.Yes">Ja</component>
+	<component name="Global.No">Nej</component>
+	<component name="Global.True">Sant</component>
+	<component name="Global.False">Falskt</component>
+	<component name="Global.Error">Fel</component>
+	<component name="Global.Enabled">Aktiverad</component>
+	<component name="Global.Disabled">Deaktiverad</component>
+
+	<!-- Main Form Components -->
+	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+
+	<component name="MainForm.fileToolStripMenuItem">&amp;Arkiv</component>
+	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Anslut...</component>
+	<component name="MainForm.closeToolStripMenuItem">&amp;Avsluta</component>
+	<component name="MainForm.aboutToolStripMenuItem">&amp;Hjälp</component>
+	<component name="MainForm.aboutToolStripMenuItem1">&amp;Om...</component>
+	<component name="MainForm.tabMain">Serverlista</component>
+	<component name="MainForm.lblFindUserMain">Sök användare:</component>
+	<component name="MainForm.lblPasswordMain">Lösenord till server:</component>
+	<component name="MainForm.btnFindUserMain">&amp;Sök</component>
+	<component name="MainForm.gbFilters">Filter</component>
+	<component name="MainForm.cbPublic">Fri</component>
+	<component name="MainForm.cbPrivate">Privat</component>
+	<component name="MainForm.cbFull">Full</component>
+	<component name="MainForm.lblPingThreshold">Maximal ping:</component>
+	<component name="MainForm.cbEmpty">Tom</component>
+	<component name="MainForm.columnHeaderName">Servernamn</component>
+	<component name="MainForm.columnHeaderPing">Ping</component>
+	<component name="MainForm.columnPrivate">Privat</component>
+	<component name="MainForm.columnHeaderConnections">Användare</component>
+	<component name="MainForm.columnHeaderInfo">Info</component>
+	<component name="MainForm.columnHeaderTrack">Bana</component>
+	<component name="MainForm.columnHeaderCars">Fordon</component>
+	<component name="MainForm.joinServerToolStripMenuItem">&amp;Anslut till server</component>
+	<component name="MainForm.viewServerInformationMain">&amp;Visa serverinformation...</component>
+	<component name="MainForm.toolStripMenuItem1">&amp;Lägg till favorit</component>
+	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Kopiera serveradress</component>
+	<component name="MainForm.administrateToolStripMenuItem1">Administrera...</component>
+	<component name="MainForm.btnRefresh">&amp;Uppdatera</component>
+	<component name="MainForm.btnStop">&amp;Stopp</component>
+	<component name="MainForm.btnJoin">&amp;Anslut</component>
+	<component name="MainForm.tabFavourites">Favoriter</component>
+	<component name="MainForm.lblAddressFav">Serverns IP-adress:</component>
+	<component name="MainForm.btnAddServer">&amp;Lägg till</component>
+	<component name="MainForm.columnHeaderFavServerName">Servernamn</component>
+	<component name="MainForm.columnHeaderFavPing">Ping</component>
+	<component name="MainForm.columnHeaderFavSlots">Användare</component>
+	<component name="MainForm.columnHeaderFavInfo">Info</component>
+	<component name="MainForm.columnHeaderFavTrack">Bana</component>
+	<component name="MainForm.columnHeaderFavCars">Fordon</component>
+	<component name="MainForm.joinServerToolStripMenuItem1">&amp;Anslut till server</component>
+	<component name="MainForm.viewServerInformationFav">&amp;Visa serverinformation...</component>
+	<component name="MainForm.removeFromFavouritesToolStripMenuItem">&amp;Radera favorit</component>
+	<component name="MainForm.copyServerToClipboardToolStripMenuItem1">&amp;Kopiera serveradress</component>
+	<component name="MainForm.administrateToolStripMenuItem">Administrera...</component>
+	<component name="MainForm.tabFriends">Vänner</component>
+	<component name="MainForm.btnAddFriend">&amp;Lägg till</component>
+	<component name="MainForm.cbHideOffline">Visa bara online</component>
+	<component name="MainForm.btnRefreshFriend">&amp;Uppdatera</component>
+	<component name="MainForm.btnJoinFriend">&amp;Anslut</component>
+	<component name="MainForm.columnFriendName">Namn</component>
+	<component name="MainForm.columnFriendServer">Servernamn</component>
+	<component name="MainForm.columnFriendPrivate">Privat</component>
+	<component name="MainForm.columnFriendPlayers">Användare</component>
+	<component name="MainForm.joinServerMenuFriends">Anslut till server</component>
+	<component name="MainForm.viewServerInformationFriend">Visa serverinformation...</component>
+	<component name="MainForm.removeFriendToolStripMenuItem">Radera vän</component>
+	<component name="MainForm.tabConfig">Inställningar</component>
+	<component name="MainForm.groupBox1">Inställningar</component>
+	<component name="MainForm.groupBox2">Språk</component>
+	<component name="MainForm.groupBox5">Språkdetaljer</component>
+	<component name="MainForm.lblCommentReal">langComments</component>
+	<component name="MainForm.lblEmailReal">AuthorEmal</component>
+	<component name="MainForm.lblAuthorReal">langAuthor</component>
+	<component name="MainForm.lblLangComment">Kommentarer:</component>
+	<component name="MainForm.lblLangContact">Kontakt:</component>
+	<component name="MainForm.lblLangAuthor">Skapat av:</component>
+	<component name="MainForm.lblLanguageConfig">Språk:</component>
+	<component name="MainForm.groupBox4">Hantering av dubbelklick</component>
+	<component name="MainForm.rbJoin">Anslut till server</component>
+	<component name="MainForm.rbView">Visa serverinformation</component>
+	<component name="MainForm.gbStartBeforeLFS">Starta innan LFS</component>
+	<component name="MainForm.btnProgramEnable">&amp;Aktivera</component>
+	<component name="MainForm.btnProgramDisable">&amp;Deaktivera</component>
+	<component name="MainForm.btnProgramDelete">&amp;Ta bort</component>
+	<component name="MainForm.btnProgramNew">&amp;Lägg till</component>
+	<component name="MainForm.bgProgramConfig">Inställningar</component>
+	<component name="MainForm.btnProgramCancel">A&amp;vbryt</component>
+	<component name="MainForm.btnProgramSave">&amp;Spara</component>
+	<component name="MainForm.btnProgramUpdate">&amp;Uppdatera</component>
+	<component name="MainForm.lblProgramConfigArg">Parametrar:</component>
+	<component name="MainForm.lblProgramConfigName">Namn:</component>
+	<component name="MainForm.btnProgramBrowse">B&amp;läddra...</component>
+	<component name="MainForm.lblProgramConfigPath">Sökväg:</component>
+	<component name="MainForm.groupBox3">Avancerat</component>
+	<component name="MainForm.txtInsimPort">29999</component>
+	<component name="MainForm.lblQueryWaitDescription">Anropsfördröjning, värdet är tiden programmet väntar innan ett nytt anrops lägg till i kön. Om du upplever att allt för många servrar inte svarar, öka detta värde.</component>
+	<component name="MainForm.lblInsimPortConfig">Port för InSim:</component>
+	<component name="MainForm.cbQueryWait">Deaktivera Anropsfördröjning</component>
+	<component name="MainForm.lblQueryWaitHelp">Deaktivera anropsfördröjning enbart om du är säker på att ditt operativsystem ej har en gräns för max antal nätverksanslutningar, se readme.txt</component>
+	<component name="MainForm.btnCheckNewVersion">&amp;Sök nu</component>
+	<component name="MainForm.cbNewVersion">Sök efter uppdateringar när programmet startas</component>
+	<component name="MainForm.lblExeDescriptionConfig">Välj den sökväg som pekar till den LFS-installation du använder.\nKlicka på bläddra och välj manuellt om du ej ser några sökvägar.</component>
+	<component name="MainForm.lblExePathConfig">Sökväg till LFS.EXE:</component>
+	<component name="MainForm.buttonBrowse">&amp;Bläddra...</component>
+	<component name="MainForm.NoServers">Inga servrar att visa, kontrollera filterinställningar.</component>
+	<component name="MainForm.QueryStatus">Anropar...</component>
+	<component name="MainForm.StatusTotal">Anropar server {0} av {1}</component>
+	<component name="MainForm.NoReply">Inget svar: {0}</component>
+	<component name="MainForm.Refused">Anslutning nekad: {0}</component>
+	<component name="MainForm.Offline">Offline</component>
+
+	<!-- Admin Form components -->
+	<component name="Admin.btnSend">&amp;Skicka</component>
+	<component name="Admin.btnConnect">&amp;Anslut</component>
+	<component name="Admin.btnDisconnect">&amp;Stäng anslutning</component>
+	<component name="Admin.edtPort">29999</component>
+	<component name="Admin.lblPassword">Lösenord:</component>
+	<component name="Admin.lblinsimPort">Port för InSim:</component>
+	<component name="Admin.chkRelay">Anslut till Relay</component>
+	<component name="Admin.this">Administrator</component>
+
+	<!--Join Server Dialog Components -->
+	<component name="JoinServerDialog.btnJoin">&amp;Anslut till server</component>
+	<component name="JoinServerDialog.lblServerName">Servernamn:</component>
+	<component name="JoinServerDialog.btnCancel">&amp;Avbryt</component>
+	<component name="JoinServerDialog.lblPassword">Lösenord:</component>
+	<component name="JoinServerDialog.lblVersion">Version:</component>
+	<component name="JoinServerDialog.this">Anslut</component>
+
+	<!--Server Information Form components-->
+	<component name="ServerInformationForm.buttonInfoJoin">&amp;Anslut</component>
+	<component name="ServerInformationForm.buttonInfoClose">&amp;Stäng</component>
+	<component name="ServerInformationForm.buttonInfoRefresh">&amp;Uppdatera</component>
+	<component name="ServerInformationForm.lblServerName">Servernamn:</component>
+	<component name="ServerInformationForm.labe3">Ping:</component>
+	<component name="ServerInformationForm.label1">Bana:</component>
+	<component name="ServerInformationForm.lblInformation">Information:</component>
+	<component name="ServerInformationForm.label5">Lösenord:</component>
+	<component name="ServerInformationForm.groupBox1">Användare</component>
+	<component name="ServerInformationForm.btnAddFriend">&amp;Lägg till vän</component>
+	<component name="ServerInformationForm.lblCars">Fordon:</component>
+	<component name="ServerInformationForm.lblPrivate">Privat:</component>
+	<component name="ServerInformationForm.this">Serverinformation</component>
+	<component name="ServerInformationForm.buttonInfoStop">&amp;Stopp</component>
+	<component name="ServerInformationForm.QueryTimeOut">Anropet avbröts</component>
+	<component name="ServerInformationForm.EmptyServer">Server är tom</component>
+	<component name="ServerInformationForm.NoServer">Server ej tillgänglig via Pubstat!</component>
+	<component name="ServerInformationForm.PubstatError">Fel vid anrop av Pubstat!</component>
+
+	<!--Message Box Components -->
+	<component name="MasterServerError">Fel vid anslutning till LFS Master Server, kontrollera din internetanslutning eller brandvägg.</component>
+	<component name="StartPSPError">Fel vid start av {0} ({1})\n{2}\nKontrollera dina inställningar.</component>
+	<component name="StartLFSError">Fel vid start av LFS.exe\n{0}\nKontrollera dina inställningar.</component>
+	<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nYou may modify and redistribute the program under the terms of the GPL (version 2 or later).\nA copy of the GPL is contained in the 'COPYING' file distributed with Browse For Speed.\nWe provide no warranty for this program.\n\nProgrammet får modifieras och spridas under de villkor som anges av GPL (version 2 eller senare)\nEn kopia av GPL finns i filen 'COPYING' som medföljer programmet.\nProgrammet tillhandahålles utan garantier av några slag.</component>
+	<component name="AboutBoxTitle">Om Browse For Speed</component>
+	<component name="LoadFavError">Fel vid laddning av favoriter: {0}\nEn kopia har sparats som {1}.backup</component>
+	<component name="SaveFavError">Kan inte spara favoriter: {0}</component>
+	<component name="SaveFriendsError">Kan inte spara vänner: {0}</component>
+	<component name="LoadFriendsError">Fel vid laddning av vänner: {0}\nEn kopia har sparats som {1}.backup</component>
+	<component name="PlayerNameTooLongError">Namn får maximalt vara 32 tecken</component>
+	<component name="JoinPlayerQuery">Anslut till {0} på denna server?\n{1}</component>
+	<component name="UserNotFound">Användaren hittades inte online</component>
+	<component name="RemoveFavQuery">Radera {0} från favoriter?</component>
+	<component name="UpToDate">Det finns inga uppdateringar.</component>
+	<component name="NewVersion">Det finns uppdateringar tillgängliga, vill du öppna nedladdningssidan?</component>
+	<component name="UpdateError">Fel vid kontroll av tillgängliga uppdateringar, försök igen senare.</component>
+	<component name="InvalidPort">Ogiltig port: {0}, giltiga värden är heltal mellan 0 och 65535</component>
+	<component name="RemoveFriendQuery">Radera {0} från vänner?</component>
+	<component name="JoinFriendQuery">Vill du möta upp {0} på {1}?</component>
+	<component name="InvalidIPAddress">Serveradress måste ges i följande format: ip-adress:port</component>
+	<component name="AddFavError">Fel vid ny favorit: {0}</component>
+	<component name="InSimError">Kan inte ansluta InSim!</component>
+</language>
