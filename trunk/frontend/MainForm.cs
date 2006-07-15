@@ -1598,9 +1598,12 @@ public class ListSorter: IComparer<ServerListItem>
 		void BtnProgramSaveClick(object sender, System.EventArgs e) {
 			PreStartProgram p = new PreStartProgram(edtProgramName.Text, edtProgramPath.Text, edtProgramOptions.Text);
 			if (btnProgramSave.Text == languages.GetString("MainForm.btnProgramUpdate")){
-				lbPreStart.Items[lbPreStart.SelectedIndex] = p;
-			} else {
+				config.psp.Remove((PreStartProgram)lbPreStart.SelectedItem);
+				lbPreStart.Items[lbPreStart.SelectedIndex] = p;				
+				config.psp.Add(p);
+			} else {				
 				lbPreStart.Items.Add(p);
+				config.psp.Add(p);
 			}
 		}
 
@@ -1611,8 +1614,9 @@ public class ListSorter: IComparer<ServerListItem>
 		}
 
 		void BtnProgramDeleteClick(object sender, System.EventArgs e) {
+			config.psp.Remove((PreStartProgram)lbPreStart.SelectedItem);
 			lbPreStart.Items.Remove(lbPreStart.SelectedItem);
-			BtnProgramCancelClick(sender, e);
+			BtnProgramCancelClick(sender, e);						
 		}
 
 		void JoinServerToolStripMenuItem2Click(object sender, System.EventArgs e)
@@ -1741,6 +1745,7 @@ public class ListSorter: IComparer<ServerListItem>
 			lblAuthorReal.Text = languages.Author;
 			lblEmailReal.Text = languages.Email;
 			lblCommentReal.Text = languages.Comment;
+			BtnProgramCancelClick(this, null);
 		}
 
 		void CbConfigLangSelectedIndexChanged(object sender, System.EventArgs e)
