@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <widget class="Gtk.Window" id="MainWindow" design-size="675 524">
+    <property name="Title" translatable="yes">gtkbrowseforspeed</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Visible">True</property>
+    <property name="Events">0</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.VBox" id="mainVBox">
+        <property name="Visible">True</property>
+        <property name="Events">0</property>
+        <child>
+          <placeholder />
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
