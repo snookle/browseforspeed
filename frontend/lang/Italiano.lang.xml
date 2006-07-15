@@ -160,7 +160,7 @@
 	<component name="Admin.ban3d">3 giorni</component>
 	<component name="Admin.ban1w">1 settimana</component>
 	<component name="Admin.banCustom">Personalizza...</component>
-	<component name="Admin.sendPrivate">Invia a giocatore &amp;selezionato</component>
+	<component name="Admin.sendPrivate">Invia al giocatore &amp;selezionato</component>
 
 	<!--Ban Dialog Components -->
 	<component name="BanDialog.nmDays">Giorni</component>
