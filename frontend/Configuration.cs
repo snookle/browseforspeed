@@ -19,6 +19,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Xml;
 using System.Collections.Generic;
+using libbrowseforspeed;
 
 namespace BrowseForSpeed.Frontend
 {
@@ -73,6 +74,8 @@ public class Configuration
 		public string filter_track;
 		public bool startup_refresh;
 		public string filter_version;
+		public ulong filter_cars_allow;
+		public ulong filter_cars_disallow;
 		public List<PreStartProgram> psp = new List<PreStartProgram>();
 
 		public Configuration(string filename) {
@@ -115,6 +118,12 @@ public class Configuration
 				try {
 					startup_refresh = ((XmlElement)list[0]).GetElementsByTagName("startup_refresh")[0].FirstChild.Value == "True";
 				} catch (Exception e) { startup_refresh = false; }
+				try {
+					filter_cars_allow = Convert.ToUInt64(((XmlElement)list[0]).GetElementsByTagName("filter_cars_allow")[0].FirstChild.Value);
+				} catch (Exception e) { filter_cars_allow = 0; }
+				try {
+					filter_cars_disallow = Convert.ToUInt64(((XmlElement)list[0]).GetElementsByTagName("filter_cars_disallow")[0].FirstChild.Value); 
+				} catch (Exception e) { filter_cars_disallow = 0; }
 				try {
 					language = ((XmlElement)list[0]).GetElementsByTagName("language")[0].FirstChild.Value;
 				} catch (Exception e) { language = ""; }
@@ -240,6 +249,8 @@ public class Configuration
 				tw.WriteElementString("ping_threshold", ping_threshold.ToString());
 				tw.WriteElementString("startup_refresh", startup_refresh.ToString());
 				tw.WriteElementString("filter_track", filter_track.ToString());
+				tw.WriteElementString("filter_cars_allow", filter_cars_allow.ToString());
+				tw.WriteElementString("filter_cars_disallow", filter_cars_disallow.ToString());
 				tw.WriteElementString("language", this.language);
 				foreach(PreStartProgram p in psp){
 					tw.WriteStartElement("psp");

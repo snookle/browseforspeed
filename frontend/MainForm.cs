@@ -392,8 +392,7 @@ public class ListSorter: IComparer<ServerListItem>
 				if (isFav) {
 					q.query(0, 0, "browseforspeed", lvFavourites.GetAllHosts(), 1);
 				} else {
-					ulong compulsory;
-					ulong illegal;
+					ulong compulsory, illegal;
 					CodeCars(out compulsory, out illegal);
 					q.query(compulsory, illegal, "browseforspeed", 0, CodeFilters(), version);
 				}
@@ -1013,6 +1012,10 @@ public class ListSorter: IComparer<ServerListItem>
 			config.ping_threshold = Convert.ToInt32(cbPing.Text);
 			config.filter_track = cbTracks.Text;
 			config.language = (cbConfigLang.SelectedItem ?? "").ToString();
+			ulong allow, disallow;
+			CodeCars(out allow, out disallow);
+			config.filter_cars_allow = allow;
+			config.filter_cars_disallow = disallow;
 			LFSQuery.xpsp2_wait = !config.disableWait;
 			LFSQuery.THREAD_WAIT = config.queryWait;
 			config.psp.Clear();
@@ -1392,6 +1395,13 @@ public class ListSorter: IComparer<ServerListItem>
 				}
 				cbPing.Text = config.ping_threshold.ToString();
 				cbVersion.Text = config.filter_version;
+				for(int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) {
+					if ((LFSQuery.CAR_BITS[i] & config.filter_cars_allow) != 0){
+						cars[i].CheckState = CheckState.Checked;
+					} else if ((LFSQuery.CAR_BITS[i] & config.filter_cars_disallow) != 0) {
+						cars[i].CheckState = CheckState.Unchecked;
+					}
+				}
 			} else {
 				cbPing.SelectedIndex = 7;
 				cbTracks.SelectedIndex = 0;
@@ -1763,6 +1773,14 @@ public class ListSorter: IComparer<ServerListItem>
 
 		void ChkStartupRefreshCheckedChanged(object sender, System.EventArgs e) {
 			config.startup_refresh = cbStartupRefresh.Checked;
+		}
+		
+		void PathListSelectedIndexChanged(object sender, System.EventArgs e)
+		{
+			if (pathList.SelectedIndex < 0)
+				config.lfsPath = "";
+			else
+				config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();	
 		}
 	}
 /// Horray for code nicked from the MSDN!

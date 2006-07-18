@@ -646,7 +646,7 @@ namespace BrowseForSpeed.Frontend
 			this.btnAddServer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnAddServer.Location = new System.Drawing.Point(742, 539);
 			this.btnAddServer.Name = "btnAddServer";
-			this.btnAddServer.Size = new System.Drawing.Size(104, 23);
+			this.btnAddServer.Size = new System.Drawing.Size(132, 23);
 			this.btnAddServer.TabIndex = 7;
 			this.btnAddServer.Text = "&Add Server";
 			this.btnAddServer.UseVisualStyleBackColor = true;
@@ -695,7 +695,7 @@ namespace BrowseForSpeed.Frontend
 			this.lvFavourites.Location = new System.Drawing.Point(8, 6);
 			this.lvFavourites.MultiSelect = false;
 			this.lvFavourites.Name = "lvFavourites";
-			this.lvFavourites.Size = new System.Drawing.Size(838, 525);
+			this.lvFavourites.Size = new System.Drawing.Size(866, 525);
 			this.lvFavourites.TabIndex = 4;
 			this.lvFavourites.UseCompatibleStateImageBehavior = false;
 			this.lvFavourites.View = System.Windows.Forms.View.Details;
@@ -730,7 +730,7 @@ namespace BrowseForSpeed.Frontend
 			// columnHeaderFavCars
 			// 
 			this.columnHeaderFavCars.Text = "Cars";
-			this.columnHeaderFavCars.Width = 200;
+			this.columnHeaderFavCars.Width = 320;
 			// 
 			// contextMenuFav
 			// 
@@ -1386,6 +1386,7 @@ namespace BrowseForSpeed.Frontend
 			this.pathList.Name = "pathList";
 			this.pathList.Size = new System.Drawing.Size(322, 56);
 			this.pathList.TabIndex = 8;
+			this.pathList.SelectedIndexChanged += new System.EventHandler(this.PathListSelectedIndexChanged);
 			// 
 			// lblExeDescriptionConfig
 			// 
