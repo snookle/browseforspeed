@@ -789,10 +789,12 @@ public class ListSorter: IComparer<ServerListItem>
 
 		public void DisplayFriendsT() {
 			lvFriends.Items.Clear();
+			lvFriends.ListViewItemSorter = null;
 			for (int i = 0; i < friendList.Count; ++i){
 				FriendListItem friend = friendList[i];
-				int result = LFSQuery.getPubStatInfo(friend.name, out friend.server);
+			//	int result = LFSQuery.getPubStatInfo(friend.name, out friend.server);
 				ListViewItem lvi;
+				int result = 0;
 				if (result == 0 && !cbHideOffline.Checked) { //offline
 					lvi = lvFriends.Items.Add(friend.name, friend.name, "");
 					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, languages.GetString("MainForm.Offline")));
@@ -815,6 +817,7 @@ public class ListSorter: IComparer<ServerListItem>
 					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, languages.GetString("Global.Error")));
 				}
 			}
+			lvFriends.ListViewItemSorter = lvwColumnSorter;
 			btnRefreshFriend.Enabled = true;
 			btnAddFriend.Enabled = true;
 		}
