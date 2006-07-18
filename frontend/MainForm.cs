@@ -175,16 +175,15 @@ public class ListSorter: IComparer<ServerListItem>
 				string cars = MainForm.CarsToString(LFSQuery.getCarNames(item.cars));
 				string rules = MainForm.RulesToString(item.rules);
 				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, item.ping.ToString()));
-				int columnOffset = 0;
 				if (this is FavouriteListView){
-					columnOffset = 1;
+					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, MainForm.VersionToString(item.version)));
 				} else {
 					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, item.passworded == true ? MainForm.languages.GetString("Global.Yes") : MainForm.languages.GetString("Global.No")));
 				}
-				lvi.SubItems.Insert(3 - columnOffset, new ListViewItem.ListViewSubItem(lvi, item.players.ToString() +"/" + item.slots.ToString()));
-				lvi.SubItems.Insert(4 - columnOffset, new ListViewItem.ListViewSubItem(lvi, rules));
-				lvi.SubItems.Insert(5 - columnOffset, new ListViewItem.ListViewSubItem(lvi, item.track));
-				lvi.SubItems.Insert(6 - columnOffset, new ListViewItem.ListViewSubItem(lvi, cars));
+				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, item.players.ToString() +"/" + item.slots.ToString()));
+				lvi.SubItems.Insert(4, new ListViewItem.ListViewSubItem(lvi, rules));
+				lvi.SubItems.Insert(5, new ListViewItem.ListViewSubItem(lvi, item.track));
+				lvi.SubItems.Insert(6, new ListViewItem.ListViewSubItem(lvi, cars));
 				return lvi;
 			}catch (Exception ex) {
 				return null;
@@ -736,7 +735,7 @@ public class ListSorter: IComparer<ServerListItem>
 			}
 		}
 
-		private String VersionToString(byte version)
+		public static String VersionToString(byte version)
 		{
 			if (version == LFSQuery.VERSION_S1)
 			    return "S1";
@@ -745,7 +744,7 @@ public class ListSorter: IComparer<ServerListItem>
 			else return "S2";
 		}
 
-		private byte StringToVersion(String version)
+		public static byte StringToVersion(String version)
 		{
 			switch (version){
 				case "Demo" : return LFSQuery.VERSION_DEMO;

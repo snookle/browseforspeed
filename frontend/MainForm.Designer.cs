@@ -92,6 +92,7 @@ namespace BrowseForSpeed.Frontend
 			this.lvFavourites = new BrowseForSpeed.Frontend.FavouriteListView();
 			this.columnHeaderFavServerName = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderFavPing = new System.Windows.Forms.ColumnHeader();
+			this.columnHeaderFavVersion = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderFavSlots = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderFavInfo = new System.Windows.Forms.ColumnHeader();
 			this.columnHeaderFavTrack = new System.Windows.Forms.ColumnHeader();
@@ -685,6 +686,7 @@ namespace BrowseForSpeed.Frontend
 			this.lvFavourites.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
 									this.columnHeaderFavServerName,
 									this.columnHeaderFavPing,
+									this.columnHeaderFavVersion,
 									this.columnHeaderFavSlots,
 									this.columnHeaderFavInfo,
 									this.columnHeaderFavTrack,
@@ -706,12 +708,17 @@ namespace BrowseForSpeed.Frontend
 			// columnHeaderFavServerName
 			// 
 			this.columnHeaderFavServerName.Text = "Server Name";
-			this.columnHeaderFavServerName.Width = 200;
+			this.columnHeaderFavServerName.Width = 158;
 			// 
 			// columnHeaderFavPing
 			// 
 			this.columnHeaderFavPing.Text = "Ping";
 			this.columnHeaderFavPing.Width = 50;
+			// 
+			// columnHeaderFavVersion
+			// 
+			this.columnHeaderFavVersion.Text = "Version";
+			this.columnHeaderFavVersion.Width = 50;
 			// 
 			// columnHeaderFavSlots
 			// 
@@ -725,7 +732,7 @@ namespace BrowseForSpeed.Frontend
 			// columnHeaderFavTrack
 			// 
 			this.columnHeaderFavTrack.Text = "Track";
-			this.columnHeaderFavTrack.Width = 140;
+			this.columnHeaderFavTrack.Width = 134;
 			// 
 			// columnHeaderFavCars
 			// 
@@ -1503,6 +1510,7 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ColumnHeader columnHeaderFavVersion;
 		private System.Windows.Forms.CheckBox cbStartupRefresh;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblLangAuthor;
