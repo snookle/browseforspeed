@@ -57,7 +57,7 @@ namespace BrowseForSpeed.Frontend
 					}
 				}
 			} catch (Exception e) {
-				MessageBox.Show("Error loading languages. The only available language will be English" + e.Message , MainForm.appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Error loading languages. The only available language will be English.\n" + e.Message , MainForm.appTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 			ChangeLanguage("English");//languages["English"] ?? ((string)Languages.ToArray()[0]));
