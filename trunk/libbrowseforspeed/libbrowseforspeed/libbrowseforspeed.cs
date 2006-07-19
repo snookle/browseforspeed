@@ -527,10 +527,7 @@ namespace libbrowseforspeed {
 			if (recbuf[0] == 0x20) {
 				return null;
 			} else {
-				Decoder d = Encoding.ASCII.GetDecoder();
-				char[] hostchars = new char[32];
-				d.GetChars(recbuf, 1, 32, hostchars, 0);
-				return new string(hostchars);
+				return getLFSString(recbuf, 1, 32);
 			}			
 		}
 
@@ -708,17 +705,47 @@ namespace libbrowseforspeed {
 
 		private static string getLFSString(byte[] buf, int startpos, int maxlen) {
 			int i;
-			int endpos = 0;
-			for (i = 0; i < maxlen; ++i) {
+			//int endpos = 0;
+			string ret = "";
+			Encoding enc = Encoding.GetEncoding(1252);
+			int stringoffset = 0;
+			int ignore = 0;
+			for (i = 0; i < maxlen; ++i) {				
 				if (buf[i + startpos] == 0x00) {
-					endpos = i;
+					//endpos = i;
 					break;
 				}
-				if (i + 1 == maxlen) {
-					endpos = i+1;
+				if (buf.Length > i + startpos + 1) {
+					byte[] c = { buf[i + startpos], buf[i + startpos + 1]};
+					string tmp = Encoding.GetEncoding(1252).GetString(c);
+					if (tmp == "^J") {
+						enc = Encoding.GetEncoding(932);
+						ignore += 2;
+					} else if (tmp == "^B") {
+						enc = Encoding.GetEncoding(1257);
+						ignore += 2;
+					} else if (tmp == "^C") {
+						enc = Encoding.GetEncoding(1251);
+						ignore += 2;
+					} else if (tmp == "^E") {
+						enc = Encoding.GetEncoding(1250);
+						ignore += 2;
+					} else if (tmp == "^T") {
+						enc = Encoding.GetEncoding(1254);
+						ignore += 2;
+					} else if (tmp == "^L") {
+						enc = Encoding.GetEncoding(1252);
+						ignore += 2;
+					}
+				}
+				if (ignore == 0) {
+					ret += enc.GetString(buf, i + startpos + stringoffset, 1);
+				} else {
+					ignore--;
 				}
 			}
-			return Encoding.ASCII.GetString(buf, startpos, endpos);
+			return ret;
+			//return convertLFSString(Encoding.UTF7.GetString(buf, startpos, endpos));
 		}
 		
 		public static string removeColourCodes(string text) {
@@ -726,5 +753,24 @@ namespace libbrowseforspeed {
 			text = Regex.Replace(text, "\\^\\^", "^");
 			return text;
 		}
+		
+		/*BROKENprivate static string convertLFSString(string lfsstring) {
+			string ret = "";
+			Encoding enc = Encoding.Unicode;
+			for (int i = 0; i < lfsstring.Length; i++) {				
+				if (i + 1 < lfsstring.Length) {
+					if (lfsstring.Substring(i, 2) == "^J") {
+						Console.WriteLine("JAP ENCODING!");
+						enc = Encoding.GetEncoding(932);
+						i += 2;
+					}
+				}				
+				byte[] orig = new byte[10];
+				int m = Encoding.Unicode.GetBytes(lfsstring.Substring(i, 1), 0, 1, orig, 0);
+				byte[] tmp = Encoding.Convert(Encoding.Unicode, enc, orig, 0, m);				
+				ret += enc.GetString(tmp);
+			}
+			return ret;
+		}*/
 	}
 }
