@@ -1797,6 +1797,10 @@ public class ListSorter: IComparer<ServerListItem>
 			else
 				config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();	
 		}
+
+		private Brush[] LFSColours = {  Brushes.Black, Brushes.Red, Brushes.LightGreen,
+										Brushes.Yellow, Brushes.Blue, Brushes.Purple,
+										Brushes.LightBlue, Brushes.Black, SystemBrushes.ControlText};
 		
 		void ListViewDrawSubItem(object sender, System.Windows.Forms.DrawListViewSubItemEventArgs e)
 		{
@@ -1816,19 +1820,7 @@ public class ListSorter: IComparer<ServerListItem>
 					if (e.Item.Selected) b = SystemBrushes.HighlightText;
 					if (e.Item.Text[i] == '^') {
 						try {
-							int colour = Convert.ToInt32(e.Item.Text[i+1].ToString());
-							switch (colour) {
-								case 0 : b = Brushes.Black; break;
-								case 1 : b = Brushes.Red; break;
-								case 2 : b = Brushes.LightGreen; break;
-								case 3 : b = Brushes.Yellow; break;
-								case 4 : b = Brushes.Blue; break;
-								case 5 : b = Brushes.Purple; break;
-								case 6 : b = Brushes.LightBlue; break;
-								case 7 : b = Brushes.Black; break;
-								case 8 : b = SystemBrushes.ControlText; break;
-								default: b = SystemBrushes.ControlText; break;
-							}
+							b = LFSColours[Convert.ToInt32(e.Item.Text[i+1].ToString())];
 							++i;
 							--j;
 							continue;
