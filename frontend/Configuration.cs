@@ -76,6 +76,7 @@ public class Configuration
 		public string filter_version;
 		public ulong filter_cars_allow;
 		public ulong filter_cars_disallow;
+		public bool fancy_hostnames;
 		public List<PreStartProgram> psp = new List<PreStartProgram>();
 
 		public Configuration(string filename) {
@@ -118,6 +119,9 @@ public class Configuration
 				try {
 					startup_refresh = ((XmlElement)list[0]).GetElementsByTagName("startup_refresh")[0].FirstChild.Value == "True";
 				} catch (Exception e) { startup_refresh = false; }
+				try {
+					fancy_hostnames = ((XmlElement)list[0]).GetElementsByTagName("fancy_hostnames")[0].FirstChild.Value == "True";
+				} catch (Exception e) { fancy_hostnames = true; }
 				try {
 					filter_cars_allow = Convert.ToUInt64(((XmlElement)list[0]).GetElementsByTagName("filter_cars_allow")[0].FirstChild.Value);
 				} catch (Exception e) { filter_cars_allow = 0; }
@@ -251,6 +255,7 @@ public class Configuration
 				tw.WriteElementString("filter_track", filter_track.ToString());
 				tw.WriteElementString("filter_cars_allow", filter_cars_allow.ToString());
 				tw.WriteElementString("filter_cars_disallow", filter_cars_disallow.ToString());
+				tw.WriteElementString("fancy_hostnames", fancy_hostnames.ToString());
 				tw.WriteElementString("language", this.language);
 				foreach(PreStartProgram p in psp){
 					tw.WriteStartElement("psp");
