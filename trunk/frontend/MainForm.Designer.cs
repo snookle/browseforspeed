@@ -150,6 +150,7 @@ namespace BrowseForSpeed.Frontend
 			this.edtProgramPath = new System.Windows.Forms.TextBox();
 			this.lbPreStart = new System.Windows.Forms.ListBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.cbColouredHostnames = new System.Windows.Forms.CheckBox();
 			this.cbStartupRefresh = new System.Windows.Forms.CheckBox();
 			this.txtInsimPort = new System.Windows.Forms.TextBox();
 			this.lblQueryWaitDescription = new System.Windows.Forms.Label();
@@ -474,18 +475,24 @@ namespace BrowseForSpeed.Frontend
 									this.columnHeaderTrack,
 									this.columnHeaderCars});
 			this.lvMain.ContextMenuStrip = this.contextMenuBrowser;
+			this.lvMain.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lvMain.FullRowSelect = true;
 			this.lvMain.GridLines = true;
+			this.lvMain.ImeMode = System.Windows.Forms.ImeMode.On;
 			this.lvMain.Location = new System.Drawing.Point(8, 6);
 			this.lvMain.MultiSelect = false;
 			this.lvMain.Name = "lvMain";
+			this.lvMain.OwnerDraw = true;
 			this.lvMain.Size = new System.Drawing.Size(723, 524);
 			this.lvMain.TabIndex = 3;
 			this.lvMain.UseCompatibleStateImageBehavior = false;
 			this.lvMain.View = System.Windows.Forms.View.Details;
 			this.lvMain.DoubleClick += new System.EventHandler(this.listDblClick);
 			this.lvMain.SelectedIndexChanged += new System.EventHandler(this.lvMainSelectedIndexChanged);
+			this.lvMain.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.ListViewDrawSubItem);
 			this.lvMain.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
+			this.lvMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ListViewMouseMove);
+			this.lvMain.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListViewDrawColumnHeader);
 			// 
 			// columnHeaderName
 			// 
@@ -683,6 +690,7 @@ namespace BrowseForSpeed.Frontend
 			this.lvFavourites.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
+			this.lvFavourites.BackColor = System.Drawing.SystemColors.Window;
 			this.lvFavourites.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
 									this.columnHeaderFavServerName,
 									this.columnHeaderFavPing,
@@ -692,18 +700,23 @@ namespace BrowseForSpeed.Frontend
 									this.columnHeaderFavTrack,
 									this.columnHeaderFavCars});
 			this.lvFavourites.ContextMenuStrip = this.contextMenuFav;
+			this.lvFavourites.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lvFavourites.FullRowSelect = true;
 			this.lvFavourites.GridLines = true;
 			this.lvFavourites.Location = new System.Drawing.Point(8, 6);
 			this.lvFavourites.MultiSelect = false;
 			this.lvFavourites.Name = "lvFavourites";
+			this.lvFavourites.OwnerDraw = true;
 			this.lvFavourites.Size = new System.Drawing.Size(866, 525);
 			this.lvFavourites.TabIndex = 4;
 			this.lvFavourites.UseCompatibleStateImageBehavior = false;
 			this.lvFavourites.View = System.Windows.Forms.View.Details;
 			this.lvFavourites.DoubleClick += new System.EventHandler(this.listDblClick);
 			this.lvFavourites.SelectedIndexChanged += new System.EventHandler(this.lvFavouritesSelectedIndexChanged);
+			this.lvFavourites.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.ListViewDrawSubItem);
 			this.lvFavourites.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
+			this.lvFavourites.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ListViewMouseMove);
+			this.lvFavourites.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListViewDrawColumnHeader);
 			// 
 			// columnHeaderFavServerName
 			// 
@@ -1263,6 +1276,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.cbColouredHostnames);
 			this.groupBox3.Controls.Add(this.cbStartupRefresh);
 			this.groupBox3.Controls.Add(this.txtInsimPort);
 			this.groupBox3.Controls.Add(this.lblQueryWaitDescription);
@@ -1277,9 +1291,21 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Advanced";
 			// 
+			// cbColouredHostnames
+			// 
+			this.cbColouredHostnames.Checked = true;
+			this.cbColouredHostnames.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.cbColouredHostnames.Location = new System.Drawing.Point(24, 230);
+			this.cbColouredHostnames.Name = "cbColouredHostnames";
+			this.cbColouredHostnames.Size = new System.Drawing.Size(364, 24);
+			this.cbColouredHostnames.TabIndex = 20;
+			this.cbColouredHostnames.Text = "Show coloured server names";
+			this.cbColouredHostnames.UseVisualStyleBackColor = true;
+			this.cbColouredHostnames.CheckedChanged += new System.EventHandler(this.CbColouredHostnamesCheckedChanged);
+			// 
 			// cbStartupRefresh
 			// 
-			this.cbStartupRefresh.Location = new System.Drawing.Point(24, 220);
+			this.cbStartupRefresh.Location = new System.Drawing.Point(24, 203);
 			this.cbStartupRefresh.Name = "cbStartupRefresh";
 			this.cbStartupRefresh.Size = new System.Drawing.Size(263, 24);
 			this.cbStartupRefresh.TabIndex = 19;
@@ -1510,6 +1536,7 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.CheckBox cbColouredHostnames;
 		private System.Windows.Forms.ColumnHeader columnHeaderFavVersion;
 		private System.Windows.Forms.CheckBox cbStartupRefresh;
 		private System.Windows.Forms.Label label1;

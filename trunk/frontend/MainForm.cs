@@ -89,6 +89,19 @@ public class ListSorter: IComparer<ServerListItem>
 	{
 		protected List<ServerListItem> serverList = new List<ServerListItem>();
 		protected ListSorter sorter = new ListSorter();
+		protected override bool DoubleBuffered {
+			get {
+				return base.DoubleBuffered;
+			}
+			set {
+				base.DoubleBuffered = value;
+			}
+		} 
+		
+		public ServerListView() {
+			this.DoubleBuffered = true;
+		}
+		
 		public void AddServer(ServerInformation info)
 		{
 			ServerListItem item = new ServerListItem(info);
@@ -170,7 +183,7 @@ public class ListSorter: IComparer<ServerListItem>
 				ListViewItem lvi;
 				lvi = this.Items.Add(item.host.ToString());
 				lvi.Tag = serverList.IndexOf(item);
-				item.hostname = LFSQuery.removeColourCodes(item.hostname);
+				//item.hostname = LFSQuery.removeColourCodes(item.hostname);
 				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, item.hostname));
 				string cars = MainForm.CarsToString(LFSQuery.getCarNames(item.cars));
 				string rules = MainForm.RulesToString(item.rules);
@@ -792,9 +805,8 @@ public class ListSorter: IComparer<ServerListItem>
 			lvFriends.ListViewItemSorter = null;
 			for (int i = 0; i < friendList.Count; ++i){
 				FriendListItem friend = friendList[i];
-			//	int result = LFSQuery.getPubStatInfo(friend.name, out friend.server);
+				int result = LFSQuery.getPubStatInfo(friend.name, out friend.server);
 				ListViewItem lvi;
-				int result = 0;
 				if (result == 0 && !cbHideOffline.Checked) { //offline
 					lvi = lvFriends.Items.Add(friend.name, friend.name, "");
 					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, languages.GetString("MainForm.Offline")));
@@ -1013,6 +1025,7 @@ public class ListSorter: IComparer<ServerListItem>
 			config.hide_offline = cbHideOffline.Checked;
 			config.ping_threshold = Convert.ToInt32(cbPing.Text);
 			config.filter_track = cbTracks.Text;
+			config.fancy_hostnames = cbColouredHostnames.Checked;
 			config.language = (cbConfigLang.SelectedItem ?? "").ToString();
 			ulong allow, disallow;
 			CodeCars(out allow, out disallow);
@@ -1354,6 +1367,7 @@ public class ListSorter: IComparer<ServerListItem>
 				cbPublic.Checked = config.filter_public;
 				cbQueryWait.Checked = config.disableWait;
 				cbStartupRefresh.Checked = config.startup_refresh;
+				cbColouredHostnames.Checked = config.fancy_hostnames;
 				cbHideOffline.Checked = config.hide_offline;
 				queryWait.Enabled = !config.disableWait;
 				LFSQuery.xpsp2_wait = !config.disableWait;
@@ -1415,7 +1429,6 @@ public class ListSorter: IComparer<ServerListItem>
 			if (config.startup_refresh) {
 				RefreshButtonClick(buttonRefreshFav, null);
 			}
-
 		}
 
 		void CbEmptyCheckedChanged(object sender, System.EventArgs e)
@@ -1783,6 +1796,73 @@ public class ListSorter: IComparer<ServerListItem>
 				config.lfsPath = "";
 			else
 				config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();	
+		}
+		
+		void ListViewDrawSubItem(object sender, System.Windows.Forms.DrawListViewSubItemEventArgs e)
+		{
+			ListView list = (ListView)sender;
+			if (e.ColumnIndex > 0) {
+				e.DrawDefault = true;
+			} else {
+				e.DrawBackground();
+				if (e.Item.Selected) {
+					e.Graphics.FillRectangle(SystemBrushes.Highlight, e.Bounds);
+					e.DrawFocusRectangle(e.Bounds);
+				}
+				Brush b = SystemBrushes.ControlText;
+				//String displayed = "";
+				for (int i = 0, j = 0; i < e.Item.Text.Length; ++i, ++j) {
+					if (!config.fancy_hostnames) b = SystemBrushes.ControlText;
+					if (e.Item.Selected) b = SystemBrushes.HighlightText;
+					if (e.Item.Text[i] == '^') {
+						try {
+							int colour = Convert.ToInt32(e.Item.Text[i+1].ToString());
+							switch (colour) {
+								case 0 : b = Brushes.Black; break;
+								case 1 : b = Brushes.Red; break;
+								case 2 : b = Brushes.LightGreen; break;
+								case 3 : b = Brushes.Yellow; break;
+								case 4 : b = Brushes.Blue; break;
+								case 5 : b = Brushes.Purple; break;
+								case 6 : b = Brushes.LightBlue; break;
+								case 7 : b = Brushes.Black; break;
+								case 8 : b = SystemBrushes.ControlText; break;
+								default: b = SystemBrushes.ControlText; break;
+							}
+							++i;
+							--j;
+							continue;
+						} catch (Exception) {/*just fall through*/}
+					}
+//					displayed += e.Item.Text[i].ToString();
+//					Region[] charRegion = e.Graphics.MeasureCharacterRanges(displayed, list.Font, e.Bounds, new StringFormat());
+					try {
+						e.Graphics.DrawString(e.Item.Text[i].ToString(), list.Font, b, e.Bounds.X + (j *6), e.Bounds.Y);
+					} catch (Exception ex) {
+						//e.Graphics.FillRectangle(Brushes.Red, e.Bounds);
+						e.Graphics.DrawString(ex.Message, list.Font, Brushes.Black, e.Bounds);
+					}
+				}
+			}
+		}
+		
+		void CbColouredHostnamesCheckedChanged(object sender, System.EventArgs e)
+		{
+			config.fancy_hostnames = cbColouredHostnames.Checked;
+		}
+		
+		void ListViewDrawColumnHeader(object sender, System.Windows.Forms.DrawListViewColumnHeaderEventArgs e)
+		{
+			e.DrawDefault = true;
+		}
+		
+		void ListViewMouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+		{
+			ListViewItem item = ((ListView)sender).GetItemAt(e.X, e.Y);
+			if (item != null) {
+				//stops the gridlines disappearing when the mouse first moves over an item.
+				((ListView)sender).Invalidate(item.Bounds);
+			}
 		}
 	}
 /// Horray for code nicked from the MSDN!
