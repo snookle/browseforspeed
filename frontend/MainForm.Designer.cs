@@ -120,6 +120,13 @@ namespace BrowseForSpeed.Frontend
 			this.removeFriendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabConfig = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.groupBox7 = new System.Windows.Forms.GroupBox();
+			this.txtInsimPort = new System.Windows.Forms.TextBox();
+			this.lblInsimPortConfig = new System.Windows.Forms.Label();
+			this.pathList = new System.Windows.Forms.ListBox();
+			this.lblExeDescriptionConfig = new System.Windows.Forms.Label();
+			this.lblExePathConfig = new System.Windows.Forms.Label();
+			this.buttonBrowse = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
 			this.lblCommentReal = new System.Windows.Forms.Label();
@@ -131,9 +138,6 @@ namespace BrowseForSpeed.Frontend
 			this.label1 = new System.Windows.Forms.Label();
 			this.cbConfigLang = new System.Windows.Forms.ComboBox();
 			this.lblLanguageConfig = new System.Windows.Forms.Label();
-			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.rbJoin = new System.Windows.Forms.RadioButton();
-			this.rbView = new System.Windows.Forms.RadioButton();
 			this.gbStartBeforeLFS = new System.Windows.Forms.GroupBox();
 			this.btnProgramEnable = new System.Windows.Forms.Button();
 			this.btnProgramDelete = new System.Windows.Forms.Button();
@@ -150,20 +154,19 @@ namespace BrowseForSpeed.Frontend
 			this.edtProgramPath = new System.Windows.Forms.TextBox();
 			this.lbPreStart = new System.Windows.Forms.ListBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.cbColouredHostnames = new System.Windows.Forms.CheckBox();
-			this.cbStartupRefresh = new System.Windows.Forms.CheckBox();
-			this.txtInsimPort = new System.Windows.Forms.TextBox();
+			this.cbDoubleClick = new System.Windows.Forms.ComboBox();
+			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.lblQueryWaitDescription = new System.Windows.Forms.Label();
-			this.lblInsimPortConfig = new System.Windows.Forms.Label();
 			this.queryWait = new System.Windows.Forms.NumericUpDown();
 			this.cbQueryWait = new System.Windows.Forms.CheckBox();
 			this.lblQueryWaitHelp = new System.Windows.Forms.Label();
+			this.groupBox6 = new System.Windows.Forms.GroupBox();
+			this.cbFriendRefresh = new System.Windows.Forms.CheckBox();
 			this.btnCheckNewVersion = new System.Windows.Forms.Button();
+			this.cbFavRefresh = new System.Windows.Forms.CheckBox();
 			this.cbNewVersion = new System.Windows.Forms.CheckBox();
-			this.pathList = new System.Windows.Forms.ListBox();
-			this.lblExeDescriptionConfig = new System.Windows.Forms.Label();
-			this.lblExePathConfig = new System.Windows.Forms.Label();
-			this.buttonBrowse = new System.Windows.Forms.Button();
+			this.lblDoubleClick = new System.Windows.Forms.Label();
+			this.cbColouredHostnames = new System.Windows.Forms.CheckBox();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.statusTotal = new System.Windows.Forms.ToolStripStatusLabel();
@@ -181,13 +184,15 @@ namespace BrowseForSpeed.Frontend
 			this.contextMenuFriends.SuspendLayout();
 			this.tabConfig.SuspendLayout();
 			this.groupBox1.SuspendLayout();
+			this.groupBox7.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox5.SuspendLayout();
-			this.groupBox4.SuspendLayout();
 			this.gbStartBeforeLFS.SuspendLayout();
 			this.bgProgramConfig.SuspendLayout();
 			this.groupBox3.SuspendLayout();
+			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).BeginInit();
+			this.groupBox6.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -961,16 +966,10 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.groupBox7);
 			this.groupBox1.Controls.Add(this.groupBox2);
-			this.groupBox1.Controls.Add(this.groupBox4);
 			this.groupBox1.Controls.Add(this.gbStartBeforeLFS);
 			this.groupBox1.Controls.Add(this.groupBox3);
-			this.groupBox1.Controls.Add(this.btnCheckNewVersion);
-			this.groupBox1.Controls.Add(this.cbNewVersion);
-			this.groupBox1.Controls.Add(this.pathList);
-			this.groupBox1.Controls.Add(this.lblExeDescriptionConfig);
-			this.groupBox1.Controls.Add(this.lblExePathConfig);
-			this.groupBox1.Controls.Add(this.buttonBrowse);
 			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox1.Location = new System.Drawing.Point(3, 3);
 			this.groupBox1.Name = "groupBox1";
@@ -979,15 +978,85 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Configuration";
 			// 
+			// groupBox7
+			// 
+			this.groupBox7.Controls.Add(this.txtInsimPort);
+			this.groupBox7.Controls.Add(this.lblInsimPortConfig);
+			this.groupBox7.Controls.Add(this.pathList);
+			this.groupBox7.Controls.Add(this.lblExeDescriptionConfig);
+			this.groupBox7.Controls.Add(this.lblExePathConfig);
+			this.groupBox7.Controls.Add(this.buttonBrowse);
+			this.groupBox7.Location = new System.Drawing.Point(13, 20);
+			this.groupBox7.Name = "groupBox7";
+			this.groupBox7.Size = new System.Drawing.Size(437, 202);
+			this.groupBox7.TabIndex = 18;
+			this.groupBox7.TabStop = false;
+			this.groupBox7.Text = "Live For Speed";
+			// 
+			// txtInsimPort
+			// 
+			this.txtInsimPort.Location = new System.Drawing.Point(131, 152);
+			this.txtInsimPort.Name = "txtInsimPort";
+			this.txtInsimPort.Size = new System.Drawing.Size(67, 21);
+			this.txtInsimPort.TabIndex = 26;
+			this.txtInsimPort.Text = "29999";
+			// 
+			// lblInsimPortConfig
+			// 
+			this.lblInsimPortConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.lblInsimPortConfig.Location = new System.Drawing.Point(11, 155);
+			this.lblInsimPortConfig.Name = "lblInsimPortConfig";
+			this.lblInsimPortConfig.Size = new System.Drawing.Size(90, 23);
+			this.lblInsimPortConfig.TabIndex = 25;
+			this.lblInsimPortConfig.Text = "Insim Port:";
+			// 
+			// pathList
+			// 
+			this.pathList.FormattingEnabled = true;
+			this.pathList.Location = new System.Drawing.Point(11, 45);
+			this.pathList.Name = "pathList";
+			this.pathList.Size = new System.Drawing.Size(322, 56);
+			this.pathList.TabIndex = 24;
+			// 
+			// lblExeDescriptionConfig
+			// 
+			this.lblExeDescriptionConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.lblExeDescriptionConfig.Location = new System.Drawing.Point(9, 104);
+			this.lblExeDescriptionConfig.Name = "lblExeDescriptionConfig";
+			this.lblExeDescriptionConfig.Size = new System.Drawing.Size(419, 41);
+			this.lblExeDescriptionConfig.TabIndex = 23;
+			this.lblExeDescriptionConfig.Text = "If there is more than one entry in the box above, please select which one is the " +
+			"correct path for your LFS.exe. If there are no entries, please click the Browse " +
+			"button to manually locate it.";
+			// 
+			// lblExePathConfig
+			// 
+			this.lblExePathConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.lblExePathConfig.Location = new System.Drawing.Point(11, 24);
+			this.lblExePathConfig.Name = "lblExePathConfig";
+			this.lblExePathConfig.Size = new System.Drawing.Size(114, 18);
+			this.lblExePathConfig.TabIndex = 22;
+			this.lblExePathConfig.Text = "Executable Path:";
+			// 
+			// buttonBrowse
+			// 
+			this.buttonBrowse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.buttonBrowse.Location = new System.Drawing.Point(339, 45);
+			this.buttonBrowse.Name = "buttonBrowse";
+			this.buttonBrowse.Size = new System.Drawing.Size(89, 23);
+			this.buttonBrowse.TabIndex = 21;
+			this.buttonBrowse.Text = "&Browse...";
+			this.buttonBrowse.UseVisualStyleBackColor = true;
+			// 
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.groupBox5);
 			this.groupBox2.Controls.Add(this.label1);
 			this.groupBox2.Controls.Add(this.cbConfigLang);
 			this.groupBox2.Controls.Add(this.lblLanguageConfig);
-			this.groupBox2.Location = new System.Drawing.Point(466, 100);
+			this.groupBox2.Location = new System.Drawing.Point(466, 20);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(394, 176);
+			this.groupBox2.Size = new System.Drawing.Size(394, 171);
 			this.groupBox2.TabIndex = 17;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Language";
@@ -1080,40 +1149,6 @@ namespace BrowseForSpeed.Frontend
 			this.lblLanguageConfig.Size = new System.Drawing.Size(69, 23);
 			this.lblLanguageConfig.TabIndex = 21;
 			this.lblLanguageConfig.Text = "Language:";
-			// 
-			// groupBox4
-			// 
-			this.groupBox4.Controls.Add(this.rbJoin);
-			this.groupBox4.Controls.Add(this.rbView);
-			this.groupBox4.Location = new System.Drawing.Point(466, 17);
-			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(394, 77);
-			this.groupBox4.TabIndex = 15;
-			this.groupBox4.TabStop = false;
-			this.groupBox4.Text = "Server double click behaviour";
-			// 
-			// rbJoin
-			// 
-			this.rbJoin.Checked = true;
-			this.rbJoin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.rbJoin.Location = new System.Drawing.Point(21, 48);
-			this.rbJoin.Name = "rbJoin";
-			this.rbJoin.Size = new System.Drawing.Size(104, 22);
-			this.rbJoin.TabIndex = 1;
-			this.rbJoin.TabStop = true;
-			this.rbJoin.Text = "Join server";
-			this.rbJoin.UseVisualStyleBackColor = true;
-			// 
-			// rbView
-			// 
-			this.rbView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.rbView.Location = new System.Drawing.Point(21, 20);
-			this.rbView.Name = "rbView";
-			this.rbView.Size = new System.Drawing.Size(142, 22);
-			this.rbView.TabIndex = 0;
-			this.rbView.TabStop = true;
-			this.rbView.Text = "View server information";
-			this.rbView.UseVisualStyleBackColor = true;
 			// 
 			// gbStartBeforeLFS
 			// 
@@ -1276,70 +1311,54 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.cbDoubleClick);
+			this.groupBox3.Controls.Add(this.groupBox4);
+			this.groupBox3.Controls.Add(this.groupBox6);
+			this.groupBox3.Controls.Add(this.lblDoubleClick);
 			this.groupBox3.Controls.Add(this.cbColouredHostnames);
-			this.groupBox3.Controls.Add(this.cbStartupRefresh);
-			this.groupBox3.Controls.Add(this.txtInsimPort);
-			this.groupBox3.Controls.Add(this.lblQueryWaitDescription);
-			this.groupBox3.Controls.Add(this.lblInsimPortConfig);
-			this.groupBox3.Controls.Add(this.queryWait);
-			this.groupBox3.Controls.Add(this.cbQueryWait);
-			this.groupBox3.Controls.Add(this.lblQueryWaitHelp);
-			this.groupBox3.Location = new System.Drawing.Point(466, 282);
+			this.groupBox3.Location = new System.Drawing.Point(466, 197);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(394, 267);
+			this.groupBox3.Size = new System.Drawing.Size(394, 352);
 			this.groupBox3.TabIndex = 14;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Advanced";
+			this.groupBox3.Enter += new System.EventHandler(this.GroupBox3Enter);
 			// 
-			// cbColouredHostnames
+			// cbDoubleClick
 			// 
-			this.cbColouredHostnames.Checked = true;
-			this.cbColouredHostnames.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.cbColouredHostnames.Location = new System.Drawing.Point(24, 230);
-			this.cbColouredHostnames.Name = "cbColouredHostnames";
-			this.cbColouredHostnames.Size = new System.Drawing.Size(364, 24);
-			this.cbColouredHostnames.TabIndex = 20;
-			this.cbColouredHostnames.Text = "Show coloured server names";
-			this.cbColouredHostnames.UseVisualStyleBackColor = true;
-			this.cbColouredHostnames.CheckedChanged += new System.EventHandler(this.CbColouredHostnamesCheckedChanged);
+			this.cbDoubleClick.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbDoubleClick.FormattingEnabled = true;
+			this.cbDoubleClick.Items.AddRange(new object[] {
+									"View Server Information",
+									"Join Server"});
+			this.cbDoubleClick.Location = new System.Drawing.Point(212, 16);
+			this.cbDoubleClick.Name = "cbDoubleClick";
+			this.cbDoubleClick.Size = new System.Drawing.Size(170, 21);
+			this.cbDoubleClick.TabIndex = 27;
 			// 
-			// cbStartupRefresh
+			// groupBox4
 			// 
-			this.cbStartupRefresh.Location = new System.Drawing.Point(24, 203);
-			this.cbStartupRefresh.Name = "cbStartupRefresh";
-			this.cbStartupRefresh.Size = new System.Drawing.Size(263, 24);
-			this.cbStartupRefresh.TabIndex = 19;
-			this.cbStartupRefresh.Text = "Refresh favourites on startup";
-			this.cbStartupRefresh.UseVisualStyleBackColor = true;
-			this.cbStartupRefresh.CheckedChanged += new System.EventHandler(this.ChkStartupRefreshCheckedChanged);
-			// 
-			// txtInsimPort
-			// 
-			this.txtInsimPort.Location = new System.Drawing.Point(107, 174);
-			this.txtInsimPort.Name = "txtInsimPort";
-			this.txtInsimPort.Size = new System.Drawing.Size(67, 21);
-			this.txtInsimPort.TabIndex = 18;
-			this.txtInsimPort.Text = "29999";
+			this.groupBox4.Controls.Add(this.lblQueryWaitDescription);
+			this.groupBox4.Controls.Add(this.queryWait);
+			this.groupBox4.Controls.Add(this.cbQueryWait);
+			this.groupBox4.Controls.Add(this.lblQueryWaitHelp);
+			this.groupBox4.Location = new System.Drawing.Point(9, 191);
+			this.groupBox4.Name = "groupBox4";
+			this.groupBox4.Size = new System.Drawing.Size(379, 148);
+			this.groupBox4.TabIndex = 24;
+			this.groupBox4.TabStop = false;
+			this.groupBox4.Text = "Query Wait";
 			// 
 			// lblQueryWaitDescription
 			// 
 			this.lblQueryWaitDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.lblQueryWaitDescription.Location = new System.Drawing.Point(85, 50);
+			this.lblQueryWaitDescription.Location = new System.Drawing.Point(79, 41);
 			this.lblQueryWaitDescription.Name = "lblQueryWaitDescription";
 			this.lblQueryWaitDescription.Size = new System.Drawing.Size(286, 57);
-			this.lblQueryWaitDescription.TabIndex = 15;
+			this.lblQueryWaitDescription.TabIndex = 25;
 			this.lblQueryWaitDescription.Text = "Query Wait value. This is the time to wait before adding another query to the con" +
 			"current queries. Increase this value if, when querying, all servers start giving" +
 			" \"Connection Refused\"";
-			// 
-			// lblInsimPortConfig
-			// 
-			this.lblInsimPortConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.lblInsimPortConfig.Location = new System.Drawing.Point(21, 177);
-			this.lblInsimPortConfig.Name = "lblInsimPortConfig";
-			this.lblInsimPortConfig.Size = new System.Drawing.Size(90, 23);
-			this.lblInsimPortConfig.TabIndex = 17;
-			this.lblInsimPortConfig.Text = "LFS Insim Port:";
 			// 
 			// queryWait
 			// 
@@ -1348,7 +1367,7 @@ namespace BrowseForSpeed.Frontend
 									0,
 									0,
 									0});
-			this.queryWait.Location = new System.Drawing.Point(24, 62);
+			this.queryWait.Location = new System.Drawing.Point(15, 44);
 			this.queryWait.Maximum = new decimal(new int[] {
 									1000,
 									0,
@@ -1361,7 +1380,7 @@ namespace BrowseForSpeed.Frontend
 									0});
 			this.queryWait.Name = "queryWait";
 			this.queryWait.Size = new System.Drawing.Size(52, 21);
-			this.queryWait.TabIndex = 14;
+			this.queryWait.TabIndex = 24;
 			this.queryWait.Value = new decimal(new int[] {
 									150,
 									0,
@@ -1371,10 +1390,10 @@ namespace BrowseForSpeed.Frontend
 			// cbQueryWait
 			// 
 			this.cbQueryWait.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.cbQueryWait.Location = new System.Drawing.Point(24, 20);
+			this.cbQueryWait.Location = new System.Drawing.Point(15, 14);
 			this.cbQueryWait.Name = "cbQueryWait";
 			this.cbQueryWait.Size = new System.Drawing.Size(294, 24);
-			this.cbQueryWait.TabIndex = 13;
+			this.cbQueryWait.TabIndex = 23;
 			this.cbQueryWait.Text = "Disable Query Wait";
 			this.cbQueryWait.UseVisualStyleBackColor = true;
 			this.cbQueryWait.CheckedChanged += new System.EventHandler(this.CbQueryWaitCheckedChanged);
@@ -1382,75 +1401,87 @@ namespace BrowseForSpeed.Frontend
 			// lblQueryWaitHelp
 			// 
 			this.lblQueryWaitHelp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.lblQueryWaitHelp.Location = new System.Drawing.Point(21, 116);
+			this.lblQueryWaitHelp.Location = new System.Drawing.Point(18, 98);
 			this.lblQueryWaitHelp.Name = "lblQueryWaitHelp";
-			this.lblQueryWaitHelp.Size = new System.Drawing.Size(364, 40);
-			this.lblQueryWaitHelp.TabIndex = 12;
+			this.lblQueryWaitHelp.Size = new System.Drawing.Size(355, 39);
+			this.lblQueryWaitHelp.TabIndex = 22;
 			this.lblQueryWaitHelp.Text = "Only disable Query Wait if you are certain your Operating System does not have a " +
 			"connection limit.  Please see readme.txt for more information. ";
+			// 
+			// groupBox6
+			// 
+			this.groupBox6.Controls.Add(this.cbFriendRefresh);
+			this.groupBox6.Controls.Add(this.btnCheckNewVersion);
+			this.groupBox6.Controls.Add(this.cbFavRefresh);
+			this.groupBox6.Controls.Add(this.cbNewVersion);
+			this.groupBox6.Location = new System.Drawing.Point(9, 73);
+			this.groupBox6.Name = "groupBox6";
+			this.groupBox6.Size = new System.Drawing.Size(379, 112);
+			this.groupBox6.TabIndex = 23;
+			this.groupBox6.TabStop = false;
+			this.groupBox6.Text = "When Browse For Speed Starts";
+			// 
+			// cbFriendRefresh
+			// 
+			this.cbFriendRefresh.Location = new System.Drawing.Point(12, 48);
+			this.cbFriendRefresh.Name = "cbFriendRefresh";
+			this.cbFriendRefresh.Size = new System.Drawing.Size(361, 24);
+			this.cbFriendRefresh.TabIndex = 21;
+			this.cbFriendRefresh.Text = "Refresh Friends list";
+			this.cbFriendRefresh.UseVisualStyleBackColor = true;
 			// 
 			// btnCheckNewVersion
 			// 
 			this.btnCheckNewVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnCheckNewVersion.Location = new System.Drawing.Point(339, 171);
+			this.btnCheckNewVersion.Location = new System.Drawing.Point(282, 21);
 			this.btnCheckNewVersion.Name = "btnCheckNewVersion";
 			this.btnCheckNewVersion.Size = new System.Drawing.Size(91, 23);
 			this.btnCheckNewVersion.TabIndex = 13;
 			this.btnCheckNewVersion.Text = "&Check Now";
 			this.btnCheckNewVersion.UseVisualStyleBackColor = true;
-			this.btnCheckNewVersion.Click += new System.EventHandler(this.btnCheckNewVersionClick);
+			// 
+			// cbFavRefresh
+			// 
+			this.cbFavRefresh.Location = new System.Drawing.Point(12, 78);
+			this.cbFavRefresh.Name = "cbFavRefresh";
+			this.cbFavRefresh.Size = new System.Drawing.Size(350, 24);
+			this.cbFavRefresh.TabIndex = 19;
+			this.cbFavRefresh.Text = "Refresh Favourite Servers";
+			this.cbFavRefresh.UseVisualStyleBackColor = true;
+			this.cbFavRefresh.CheckedChanged += new System.EventHandler(this.ChkStartupRefreshCheckedChanged);
 			// 
 			// cbNewVersion
 			// 
+			this.cbNewVersion.AutoEllipsis = true;
 			this.cbNewVersion.Checked = true;
 			this.cbNewVersion.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.cbNewVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.cbNewVersion.Location = new System.Drawing.Point(11, 162);
+			this.cbNewVersion.Location = new System.Drawing.Point(12, 24);
 			this.cbNewVersion.Name = "cbNewVersion";
-			this.cbNewVersion.Size = new System.Drawing.Size(322, 42);
+			this.cbNewVersion.Size = new System.Drawing.Size(253, 18);
 			this.cbNewVersion.TabIndex = 12;
-			this.cbNewVersion.Text = "Check for a new version of Browse For Speed on start up";
+			this.cbNewVersion.Text = "Check for a new version of BFS";
 			this.cbNewVersion.UseVisualStyleBackColor = true;
 			// 
-			// pathList
+			// lblDoubleClick
 			// 
-			this.pathList.FormattingEnabled = true;
-			this.pathList.Location = new System.Drawing.Point(13, 41);
-			this.pathList.Name = "pathList";
-			this.pathList.Size = new System.Drawing.Size(322, 56);
-			this.pathList.TabIndex = 8;
-			this.pathList.SelectedIndexChanged += new System.EventHandler(this.PathListSelectedIndexChanged);
+			this.lblDoubleClick.Location = new System.Drawing.Point(18, 17);
+			this.lblDoubleClick.Name = "lblDoubleClick";
+			this.lblDoubleClick.Size = new System.Drawing.Size(188, 23);
+			this.lblDoubleClick.TabIndex = 22;
+			this.lblDoubleClick.Text = "When double clicking a server:";
 			// 
-			// lblExeDescriptionConfig
+			// cbColouredHostnames
 			// 
-			this.lblExeDescriptionConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.lblExeDescriptionConfig.Location = new System.Drawing.Point(11, 100);
-			this.lblExeDescriptionConfig.Name = "lblExeDescriptionConfig";
-			this.lblExeDescriptionConfig.Size = new System.Drawing.Size(403, 41);
-			this.lblExeDescriptionConfig.TabIndex = 7;
-			this.lblExeDescriptionConfig.Text = "If there is more than one entry in the box above, please select which one is the " +
-			"correct path for your LFS.exe. If there are no entries, please click the Browse " +
-			"button to manually locate it.";
-			// 
-			// lblExePathConfig
-			// 
-			this.lblExePathConfig.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.lblExePathConfig.Location = new System.Drawing.Point(13, 20);
-			this.lblExePathConfig.Name = "lblExePathConfig";
-			this.lblExePathConfig.Size = new System.Drawing.Size(114, 18);
-			this.lblExePathConfig.TabIndex = 5;
-			this.lblExePathConfig.Text = "LFS Executable Path:";
-			// 
-			// buttonBrowse
-			// 
-			this.buttonBrowse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.buttonBrowse.Location = new System.Drawing.Point(341, 41);
-			this.buttonBrowse.Name = "buttonBrowse";
-			this.buttonBrowse.Size = new System.Drawing.Size(89, 23);
-			this.buttonBrowse.TabIndex = 4;
-			this.buttonBrowse.Text = "&Browse...";
-			this.buttonBrowse.UseVisualStyleBackColor = true;
-			this.buttonBrowse.Click += new System.EventHandler(this.btnBrowseClick);
+			this.cbColouredHostnames.Checked = true;
+			this.cbColouredHostnames.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.cbColouredHostnames.Location = new System.Drawing.Point(18, 43);
+			this.cbColouredHostnames.Name = "cbColouredHostnames";
+			this.cbColouredHostnames.Size = new System.Drawing.Size(364, 24);
+			this.cbColouredHostnames.TabIndex = 20;
+			this.cbColouredHostnames.Text = "Show coloured server names";
+			this.cbColouredHostnames.UseVisualStyleBackColor = true;
+			this.cbColouredHostnames.CheckedChanged += new System.EventHandler(this.CbColouredHostnamesCheckedChanged);
 			// 
 			// openFileDialog
 			// 
@@ -1522,23 +1553,30 @@ namespace BrowseForSpeed.Frontend
 			this.contextMenuFriends.ResumeLayout(false);
 			this.tabConfig.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
+			this.groupBox7.ResumeLayout(false);
+			this.groupBox7.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox5.ResumeLayout(false);
-			this.groupBox4.ResumeLayout(false);
 			this.gbStartBeforeLFS.ResumeLayout(false);
 			this.bgProgramConfig.ResumeLayout(false);
 			this.bgProgramConfig.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
-			this.groupBox3.PerformLayout();
+			this.groupBox4.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).EndInit();
+			this.groupBox6.ResumeLayout(false);
 			this.statusStrip.ResumeLayout(false);
 			this.statusStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Label lblDoubleClick;
+		private System.Windows.Forms.ComboBox cbDoubleClick;
+		private System.Windows.Forms.GroupBox groupBox7;
+		private System.Windows.Forms.CheckBox cbFavRefresh;
+		private System.Windows.Forms.CheckBox cbFriendRefresh;
+		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.CheckBox cbColouredHostnames;
 		private System.Windows.Forms.ColumnHeader columnHeaderFavVersion;
-		private System.Windows.Forms.CheckBox cbStartupRefresh;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblLangAuthor;
 		private System.Windows.Forms.Label lblLangContact;
@@ -1608,8 +1646,6 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.TabPage tabFriends;
 		private System.Windows.Forms.OpenFileDialog openFileDialogPS;
 		private System.Windows.Forms.TextBox txtInsimPort;
-		private System.Windows.Forms.RadioButton rbView;
-		private System.Windows.Forms.RadioButton rbJoin;
 		private System.Windows.Forms.GroupBox groupBox4;
 		private System.Windows.Forms.CheckBox cbEmpty;
 		private System.Windows.Forms.NumericUpDown queryWait;
