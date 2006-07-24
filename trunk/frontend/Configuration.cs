@@ -72,7 +72,8 @@ public class Configuration
 		public bool hide_offline;
 		public int ping_threshold;
 		public string filter_track;
-		public bool startup_refresh;
+		public bool fav_refresh;
+		public bool friend_refresh;
 		public string filter_version;
 		public ulong filter_cars_allow;
 		public ulong filter_cars_disallow;
@@ -117,8 +118,11 @@ public class Configuration
 					hide_offline = ((XmlElement)list[0]).GetElementsByTagName("hide_offline")[0].FirstChild.Value == "True";
 				} catch (Exception e) { hide_offline = false; }
 				try {
-					startup_refresh = ((XmlElement)list[0]).GetElementsByTagName("startup_refresh")[0].FirstChild.Value == "True";
-				} catch (Exception e) { startup_refresh = false; }
+					fav_refresh = ((XmlElement)list[0]).GetElementsByTagName("fav_refresh")[0].FirstChild.Value == "True";
+				} catch (Exception e) { fav_refresh = false; }
+				try {
+					friend_refresh = ((XmlElement)list[0]).GetElementsByTagName("friend_refresh")[0].FirstChild.Value == "True";
+				} catch (Exception e) { friend_refresh = false; }
 				try {
 					fancy_hostnames = ((XmlElement)list[0]).GetElementsByTagName("fancy_hostnames")[0].FirstChild.Value == "True";
 				} catch (Exception e) { fancy_hostnames = true; }
@@ -251,8 +255,10 @@ public class Configuration
 				tw.WriteElementString("filter_version", filter_version.ToString());
 				tw.WriteElementString("hide_offline", hide_offline.ToString());
 				tw.WriteElementString("ping_threshold", ping_threshold.ToString());
-				tw.WriteElementString("startup_refresh", startup_refresh.ToString());
+				tw.WriteElementString("fav_refresh", fav_refresh.ToString());
 				tw.WriteElementString("filter_track", filter_track.ToString());
+				tw.WriteElementString("friend_refresh", friend_refresh.ToString());
+				tw.WriteElementString("fav_refresh", fav_refresh.ToString());
 				tw.WriteElementString("filter_cars_allow", filter_cars_allow.ToString());
 				tw.WriteElementString("filter_cars_disallow", filter_cars_disallow.ToString());
 				tw.WriteElementString("fancy_hostnames", fancy_hostnames.ToString());
