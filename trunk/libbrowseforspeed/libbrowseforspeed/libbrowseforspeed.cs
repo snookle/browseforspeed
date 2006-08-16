@@ -657,7 +657,6 @@ namespace libbrowseforspeed {
 						ServerInformation si = new ServerInformation();
 						si.hostname = hostname;
 						si.players = numRacers;
-						si.racerNames = racers;
 						si.passworded = ((ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]) & 8) != 0;
 						si.cars = (ulong)(buf[i + 43] * 16777216 + buf[i + 42] * 65536 + buf[i + 41] * 256 + buf[i + 40]);
 						si.rules = (ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]);
@@ -672,12 +671,15 @@ namespace libbrowseforspeed {
 							si.ping = -1;
 						}
 						for (int j = 0; j < numRacers; ++j) {
-							racers[j] = getLFSString(buf, i + 53 + (24 * j), 24);
-							playerServers[racers[j]] = si;
+							racers[j] = getLFSString(buf, i + 53 + (24 * j), 24);							
 							if (!found && (racer != null && racers[j].ToLower() == racer.ToLower())) {
 								found = true;
 								serverInfo = si;
 							}
+						}
+						si.racerNames = racers;
+						foreach (string r in racers) {
+							playerServers[r] = si;
 						}
 						/*
 						if (found || racer == null) { //either we've found a player, or the hostname matched
