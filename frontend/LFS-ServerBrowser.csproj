@@ -93,6 +93,14 @@
     </EmbeddedResource>
     <Compile Include="ServerListView.cs" />
     <Compile Include="ListSorter.cs" />
+    <Compile Include="FriendListView.cs" />
+    <Compile Include="DebugForm.Designer.cs">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugForm.cs" />
+    <EmbeddedResource Include="DebugForm.resx">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>

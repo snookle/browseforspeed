@@ -53,11 +53,11 @@ namespace BrowseForSpeed.Frontend
 					} else {
 						listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.EmptyServer"));
 					}
-					info.hostname = LFSQuery.removeColourCodes(info.hostname);				
-					labelServerName.Text = info.hostname;
+					labelServerName.Text = "";
+					MainForm.DrawColouredHostname(labelServerName.CreateGraphics(), info.rawHostname, labelServerName.Font, labelServerName.ClientRectangle);
 					labelCars.Text = MainForm.CarsToString(LFSQuery.getCarNames(info.cars));
 					labelInfo.Text = MainForm.RulesToString(info.rules);
-					//labelPing.Text = info.ping.ToString();
+					labelPing.Text = info.ping.ToString();
 					labelTrack.Text = info.track;
 				} else {
 					if (i == 0) {
@@ -181,14 +181,14 @@ namespace BrowseForSpeed.Frontend
 			try{
 			if (info.success){
 				this.info = info;
-				info.hostname = LFSQuery.removeColourCodes(info.hostname);				
-				labelServerName.Text = info.hostname;
+				labelServerName.Text = "";
+				MainForm.DrawColouredHostname(labelServerName.CreateGraphics(), info.rawHostname, labelServerName.Font, labelServerName.ClientRectangle);
 				labelCars.Text = MainForm.CarsToString(LFSQuery.getCarNames(info.cars));
 				labelInfo.Text = MainForm.RulesToString(info.rules);
 				labelPing.Text = info.ping.ToString();
 				labelTrack.Text = info.track;
 			} else {				
-				labelServerName.Text = MainForm.languages.GetString("ServerInformationForm.QueryTimeOut");;
+				labelServerName.Text = MainForm.languages.GetString("ServerInformationForm.QueryTimeOut");
 				labelPing.Text = "N/A";
 				labelCars.Text = "N/A";
 				labelTrack.Text = "N/A";				
@@ -210,11 +210,16 @@ namespace BrowseForSpeed.Frontend
 		{
 			if (listPlayers.SelectedIndex == -1)
 				return;
-			main.AddFriend(listPlayers.Items[listPlayers.SelectedIndex].ToString(), true);
+			main.lvFriends.AddFriend(listPlayers.Items[listPlayers.SelectedIndex].ToString());
 		}
 		
 		void TextInfoPasswordTextChanged(object sender, System.EventArgs e) {
 			info.password = textInfoPassword.Text;
+		}
+		
+		void LabelInvalidated(object o, InvalidateEventArgs e)
+		{
+			MainForm.DrawColouredHostname(labelServerName.CreateGraphics(), info.rawHostname, labelServerName.Font, labelServerName.ClientRectangle);
 		}
 	}
 }
