@@ -68,8 +68,9 @@ namespace BrowseForSpeed.Frontend
 			if (this is MainListView)
 				FilterServer(item);
 			Display(item);
-			this.Sort();
+			Sort();
 		}
+		
 		public ServerListItem GetSelectedServer()
 		{
 			if (SelectedItems.Count > 0) {
@@ -84,13 +85,18 @@ namespace BrowseForSpeed.Frontend
 				return null;
 		}
 
-		public ServerListItem getServer(string hostname) {
+		public ServerListItem GetServer(string hostname) {
 			foreach (ServerListItem s in serverList) {
-				if (s.hostname == hostname)
+				if (s.hostname == hostname || s.rawHostname == hostname)
 					return s;
 			}
 			return null;
 		}
+		
+		public ServerListItem GetServer(int index) {
+			return serverList[index];
+		}
+		
 		public void RemoveServer(ServerListItem item)
 		{
 			Items.RemoveAt(item.index);
@@ -101,12 +107,14 @@ namespace BrowseForSpeed.Frontend
 				}
 			}
 		}
+		
 		public void ClearServers()
 		{
 			serverList.Clear();
 			serverList.TrimExcess();
 			this.Items.Clear();
 		}
+		
 		public void DisplayAll()
 		{
 			Items.Clear();
@@ -114,8 +122,8 @@ namespace BrowseForSpeed.Frontend
 				Display(item);
 			}
 			Sort();
-
 		}
+		
 		public List<ServerListItem> AllServers()
 		{
 			return serverList;
@@ -133,7 +141,6 @@ namespace BrowseForSpeed.Frontend
 				ListViewItem lvi;
 				lvi = this.Items.Add(item.host.ToString());
 				lvi.Tag = serverList.IndexOf(item);
-				//item.hostname = LFSQuery.removeColourCodes(item.hostname);
 				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, item.hostname));
 				string cars = MainForm.CarsToString(LFSQuery.getCarNames(item.cars));
 				string rules = MainForm.RulesToString(item.rules);
@@ -148,10 +155,11 @@ namespace BrowseForSpeed.Frontend
 				lvi.SubItems.Insert(5, new ListViewItem.ListViewSubItem(lvi, item.track));
 				lvi.SubItems.Insert(6, new ListViewItem.ListViewSubItem(lvi, cars));
 				return lvi;
-			}catch (Exception ex) {
+			} catch (Exception ex) {
 				return null;
 			}
 		}
+		
 		private Filter[] filters = new Filter[10];
 		public void Filter(FilterType filter, Object value)
 		{
@@ -211,7 +219,7 @@ namespace BrowseForSpeed.Frontend
 					tw.WriteElementString("version", MainForm.VersionToString(info.version));
 					tw.WriteElementString("ip", info.host.Address.ToString());
 					tw.WriteElementString("port", info.host.Port.ToString());
-					tw.WriteElementString("name", info.hostname);
+					tw.WriteElementString("name", info.rawHostname);
 					tw.WriteElementString("password", info.password);
 					tw.WriteElementString("insimPort", info.insimPort.ToString());
 					tw.WriteElementString("adminPassword", info.adminPassword);
@@ -242,7 +250,7 @@ namespace BrowseForSpeed.Frontend
 							info.version = LFSQuery.VERSION_S2;
 						}
 						info.host = new IPEndPoint(IPAddress.Parse(favourite.GetElementsByTagName("ip")[0].FirstChild.Value), Convert.ToInt32(favourite.GetElementsByTagName("port")[0].FirstChild.Value));
-						info.hostname = favourite.GetElementsByTagName("name")[0].FirstChild.Value;
+						info.rawHostname = favourite.GetElementsByTagName("name")[0].FirstChild.Value;
 						try {
 							info.adminPassword = favourite.GetElementsByTagName("adminPassword")[0].FirstChild.Value;
 							info.insimPort = Int32.Parse(favourite.GetElementsByTagName("insimPort")[0].FirstChild.Value);
@@ -308,7 +316,9 @@ namespace BrowseForSpeed.Frontend
 			this.connectFailed = info.connectFailed;
 			this.filtered = false;
 			this.host = info.host;
-			this.hostname = info.hostname;
+			//ensure the colour codes are totally removed
+			this.hostname = LFSQuery.removeColourCodes(info.rawHostname);
+			this.rawHostname = info.rawHostname;
 			this.password = info.password;
 			this.passworded = info.passworded;
 			this.ping = info.ping;

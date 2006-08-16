@@ -109,7 +109,7 @@ namespace BrowseForSpeed.Frontend
 			this.cbHideOffline = new System.Windows.Forms.CheckBox();
 			this.btnRefreshFriend = new System.Windows.Forms.Button();
 			this.btnJoinFriend = new System.Windows.Forms.Button();
-			this.lvFriends = new System.Windows.Forms.ListView();
+			this.lvFriends = new BrowseForSpeed.Frontend.FriendListView();
 			this.columnFriendName = new System.Windows.Forms.ColumnHeader();
 			this.columnFriendServer = new System.Windows.Forms.ColumnHeader();
 			this.columnFriendPrivate = new System.Windows.Forms.ColumnHeader();
@@ -480,7 +480,7 @@ namespace BrowseForSpeed.Frontend
 									this.columnHeaderTrack,
 									this.columnHeaderCars});
 			this.lvMain.ContextMenuStrip = this.contextMenuBrowser;
-			this.lvMain.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lvMain.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
 			this.lvMain.FullRowSelect = true;
 			this.lvMain.GridLines = true;
 			this.lvMain.ImeMode = System.Windows.Forms.ImeMode.On;
@@ -705,7 +705,7 @@ namespace BrowseForSpeed.Frontend
 									this.columnHeaderFavTrack,
 									this.columnHeaderFavCars});
 			this.lvFavourites.ContextMenuStrip = this.contextMenuFav;
-			this.lvFavourites.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lvFavourites.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
 			this.lvFavourites.FullRowSelect = true;
 			this.lvFavourites.GridLines = true;
 			this.lvFavourites.Location = new System.Drawing.Point(8, 6);
@@ -891,16 +891,21 @@ namespace BrowseForSpeed.Frontend
 			this.lvFriends.ContextMenuStrip = this.contextMenuFriends;
 			this.lvFriends.FullRowSelect = true;
 			this.lvFriends.GridLines = true;
+			this.lvFriends.HideOffline = false;
 			this.lvFriends.Location = new System.Drawing.Point(8, 6);
 			this.lvFriends.MultiSelect = false;
 			this.lvFriends.Name = "lvFriends";
+			this.lvFriends.OwnerDraw = true;
 			this.lvFriends.Size = new System.Drawing.Size(838, 524);
 			this.lvFriends.TabIndex = 0;
 			this.lvFriends.UseCompatibleStateImageBehavior = false;
 			this.lvFriends.View = System.Windows.Forms.View.Details;
 			this.lvFriends.DoubleClick += new System.EventHandler(this.LvFriendsDoubleClick);
 			this.lvFriends.SelectedIndexChanged += new System.EventHandler(this.LvFriendsSelectedIndexChanged);
+			this.lvFriends.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.ListViewDrawSubItem);
 			this.lvFriends.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
+			this.lvFriends.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ListViewMouseMove);
+			this.lvFriends.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListViewDrawColumnHeader);
 			// 
 			// columnFriendName
 			// 
@@ -1322,7 +1327,6 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox3.TabIndex = 14;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Advanced";
-			this.groupBox3.Enter += new System.EventHandler(this.GroupBox3Enter);
 			// 
 			// cbDoubleClick
 			// 
@@ -1633,7 +1637,7 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.Button btnAddFriend;
 		private System.Windows.Forms.TextBox edtFriendName;
 		private System.Windows.Forms.CheckBox cbHideOffline;
-		private System.Windows.Forms.ListView lvFriends;
+		protected internal BrowseForSpeed.Frontend.FriendListView lvFriends;
 		private System.Windows.Forms.Button btnRefreshFriend;
 		private System.Windows.Forms.Button btnJoinFriend;
 		private System.Windows.Forms.ColumnHeader columnFriendPlayers;

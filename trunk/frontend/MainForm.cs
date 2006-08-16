@@ -34,11 +34,7 @@ using System.Xml;
 namespace BrowseForSpeed.Frontend
 {
 	public enum QueryType{Main, Favorite, Friend}
-	public class FriendListItem
-	{
-		public ServerInformation server;
-		public string name;
-	}
+
 
 	public partial class MainForm
 	{
@@ -50,15 +46,12 @@ namespace BrowseForSpeed.Frontend
 		public static String appTitle = "Browse For Speed";
 		static String configFilename = Application.StartupPath + "\\config.cfg";
 		static String configXMLFilename = Application.StartupPath + "\\config.xml";
-		static String friendFilename = Application.StartupPath + "\\friends.xml";
 
 		private CheckBox[] cars;
 		private Button[] groups;
 
 		private LFSQuery q;
 		private ListViewColumnSorter lvwColumnSorter;
-
-		private List<FriendListItem> friendList;
 
 		private int totalServers;
 		private int numQueried;
@@ -77,7 +70,6 @@ namespace BrowseForSpeed.Frontend
 		private Thread t;
 
 		public static LanguageManager languages = new LanguageManager(Application.StartupPath + "\\lang");
-
 
 		[STAThread]
 		public static void Main(string[] args)
@@ -325,7 +317,6 @@ namespace BrowseForSpeed.Frontend
 				}
 			}
 			try{
-				this.WindowState = FormWindowState.Minimized;
 				Process lfs = new Process();
 				lfs.Exited += new EventHandler(LFSExit);
 				lfs.EnableRaisingEvents = true;
@@ -333,6 +324,7 @@ namespace BrowseForSpeed.Frontend
 				lfs.StartInfo.WorkingDirectory = Path.GetDirectoryName(lfsPath);
 				lfs.StartInfo.Arguments = "/join=" + hostName + " /mode=" + mode + " /pass=" + password + "/insim=" + config.insimPort.ToString();
 				lfs.Start();
+				this.WindowState = FormWindowState.Minimized;
 			} catch (Exception ex) {
 				this.WindowState = ws;
 				KillPreStartPrograms();
@@ -456,117 +448,6 @@ namespace BrowseForSpeed.Frontend
 			}
 		}
 
-
-		public void DisplayFriends() {
-			btnRefreshFriend.Enabled = false;
-			btnAddFriend.Enabled = false;
-			Thread t = new Thread(new ThreadStart(DisplayFriendsT));
-			t.Start();
-		}
-
-		public void DisplayFriendsT() {
-			lvFriends.Items.Clear();
-			lvFriends.ListViewItemSorter = null;
-			for (int i = 0; i < friendList.Count; ++i){
-				FriendListItem friend = friendList[i];
-				int result = LFSQuery.getPubStatInfo(friend.name, out friend.server);
-				ListViewItem lvi;
-				if (result == 0 && !cbHideOffline.Checked) { //offline
-					lvi = lvFriends.Items.Add(friend.name, friend.name, "");
-					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, languages.GetString("MainForm.Offline")));
-					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, "N/A"));
-					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "N/A"));
-				} else if (result == 1) {
-					lvi = lvFriends.Items.Add(friend.name, friend.name, "");
-					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi,friend.server.hostname));
-					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, (friend.server.passworded ? languages.GetString("Global.Yes") : languages.GetString("Global.No"))));
-					String players = "";
-					foreach (string player in friend.server.racerNames) {
-						players += player + ", ";
-					}
-					players = players.Remove(players.Length - 2, 2).ToString();
-					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, players));
-				} else if (result == -1) {
-					lvi = lvFriends.Items.Add(friend.name, friend.name, "");
-					lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, languages.GetString("ServerInformationForm.PubstatError")));
-	                lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, languages.GetString("Global.Error")));
-					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, languages.GetString("Global.Error")));
-				}
-			}
-			lvFriends.ListViewItemSorter = lvwColumnSorter;
-			btnRefreshFriend.Enabled = true;
-			btnAddFriend.Enabled = true;
-		}
-
-		public void AddFriend(string name, bool writeToFile)
-		{
-			ListViewItem lvi;
-			bool exists = false; //do this better!
-			foreach(FriendListItem f in friendList){
-				if (f.name == name){
-					exists = true;
-					break;
-				}
-			}
-			if (!exists){
-				lvi = lvFriends.Items.Add(name, name, "");
-				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, languages.GetString("Global.Error")));
-				lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, "N/A"));
-				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "N/A"));
-				FriendListItem friend = new FriendListItem();
-				friend.name = name;
-				friendList.Add(friend);
-			}
-			if (writeToFile)
-				WriteFriends();
-		}
-
-		void WriteFriends()
-		{
-			try {
-				XmlTextWriter tw = new XmlTextWriter(friendFilename, null);
-				tw.Formatting = Formatting.Indented;
-				tw.WriteStartDocument();
-				tw.WriteStartElement("friends");
-				tw.WriteAttributeString("version", "2");
-				foreach (FriendListItem friend in friendList) {
-					tw.WriteStartElement("friend");
-					tw.WriteAttributeString("license", friend.name);
-					tw.WriteEndElement();
-				}
-				tw.WriteFullEndElement();
-				tw.Close();
-			} catch (Exception ex) {
-				string message = String.Format(languages.GetString("SaveFriendsError"), ex.Message);
-				MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-
-		}
-
-		void ReadFriends()
-		{
-			try{
-				XmlDocument doc = new XmlDocument();
-				doc.Load(friendFilename);
-				XmlNodeList list = doc.GetElementsByTagName("friends");
-				String docVersion = ((XmlElement)list[0]).GetAttribute("version");
-				list = ((XmlElement)list[0]).GetElementsByTagName("friend");
-				foreach (XmlElement friend in list) {
-					if (docVersion == "2")
-						AddFriend(friend.GetAttribute("license"), false);
-					else
-						AddFriend(friend.GetAttribute("name"), false);
-				}
-			} catch (FileNotFoundException fnfe){
-			} catch (Exception e) {
-				File.Copy(friendFilename, friendFilename +".backup", true);
-				string message = String.Format(languages.GetString("LoadFriendsError"), e.Message, friendFilename);
-				MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-			}
-			lvFriends.Sort();
-		}
-
-
 		void ContextMenuFavOpening(object sender, System.ComponentModel.CancelEventArgs e)
 		{
 			contextMenuFav.Enabled = (lvFavourites.GetSelectedServer() !=  null);
@@ -580,25 +461,18 @@ namespace BrowseForSpeed.Frontend
 			ServerListItem info = null;
 			if (sender is ToolStripMenuItem){
 				ToolStripMenuItem l = (ToolStripMenuItem)sender;
-				if (l.Name == "viewServerInformationMain")
+				if (l.Name == "viewServerInformationMain") {
 					info = lvMain.GetSelectedServer();
-				else if (l.Name == "viewServerInformationFav")
+				} else if (l.Name == "viewServerInformationFav") {
 					info = lvFavourites.GetSelectedServer();
+				}
 				else if (l.Name == "viewServerInformationFriend"){
-					if ((lvFriends.SelectedItems.Count <= 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == "Offline")) {
+					FriendListItem selectedFriend = lvFriends.GetSelectedFriend();
+					if (selectedFriend != null && selectedFriend.status == FriendStatus.Offline) {
 						return;
 					}
-					string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
-					foreach (FriendListItem f in friendList){
-						if (f.name == friend){
-							info = lvFavourites.getServer(f.server.hostname);
-							if (info == null) {
-								info = new ServerListItem(f.server);
-								info.version = LFSQuery.VERSION_S2;
-							}
-							break;
-						}
-					}
+					info = new ServerListItem(selectedFriend.server);
+					info.version = LFSQuery.VERSION_S2;
 				}
 			} else {
 				info = ((ServerListView)sender).GetSelectedServer();
@@ -621,7 +495,7 @@ namespace BrowseForSpeed.Frontend
 			UpdateConfig();
 			config.Save(configXMLFilename);
 			lvFavourites.Save();
-			WriteFriends();
+			lvFriends.Save();
 			this.Hide();
 		}
 
@@ -788,13 +662,6 @@ namespace BrowseForSpeed.Frontend
 
 		}
 
-		void CbUsePSCheckStateChanged(object sender, System.EventArgs e)
-		{
-			//txtPSPath.Enabled = ((CheckBox)sender).Checked;
-			//txtInsimPort.Enabled = ((CheckBox)sender).Checked;
-			//btnBrowsePS.Enabled = ((CheckBox)sender).Checked;
-		}
-
 		void MainKeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
 		{
 			if (e.Control) {
@@ -839,85 +706,89 @@ namespace BrowseForSpeed.Frontend
 
 		void BtnRefreshFriendClick(object sender, System.EventArgs e)
 		{
-			DisplayFriends();
+			lvFriends.DisplayAll();
 			lvFriends.Sort();
 		}
 
 		void CheckBox2CheckedChanged(object sender, System.EventArgs e) {
 			config.hide_offline = cbHideOffline.Checked;
-			BtnRefreshFriendClick(sender, e);
+			lvFriends.HideOffline = config.hide_offline;
 		}
 
 		void LvFriendsSelectedIndexChanged(object sender, System.EventArgs e)
 		{
-			btnJoinFriend.Enabled = (lvFriends.SelectedItems.Count > 0 && lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text != languages.GetString("MainForm.Offline"));
+			FriendListItem friend = lvFriends.GetSelectedFriend();
+			btnJoinFriend.Enabled = ((friend != null) && (friend.status == FriendStatus.Online));
 		}
 
 		void JoinFriendClick(object sender, System.EventArgs e)
 		{
-			if ((lvFriends.SelectedItems.Count <= 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == languages.GetString("MainForm.Offline")))
-				return;
-			string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
-			ServerInformation info = lvFavourites.getServer(hostname);
+			FriendListItem friend = lvFriends.GetSelectedFriend();
+			if ((friend == null) || (friend.status != FriendStatus.Online))
+			    return;
+
+			ServerInformation info = lvFavourites.GetServer(friend.server.hostname);
 			string password = edtPasswordMain.Text;
 			if (info != null) {
 				password = info.password;
 			}
-			LoadLFS(hostname, "S2", password);
+			LoadLFS(friend.server.hostname, "S2", password);
 		}
 
 		void BtnAddFriendClick(object sender, System.EventArgs e)
 		{
 			if (edtFriendName.Text.Length > 0) {
-				AddFriend(edtFriendName.Text, true);
-				DisplayFriends();
-				lvFriends.Sort();
-				edtFriendName.Text = "";
+				if (lvFriends.AddFriend(edtFriendName.Text)) {
+					lvFriends.DisplayFriend(edtFriendName.Text);
+					lvFriends.Sort();
+					edtFriendName.Text = "";
+				} else {
+					MessageBox.Show("Friend Already Exists");
+					edtFriendName.Focus();
+				}
 			}
 		}
 
 		void RemoveFriendToolStripMenuItemClick(object sender, System.EventArgs e)
 		{
-			if (lvFriends.SelectedItems.Count == -1)
+			FriendListItem friend = lvFriends.GetSelectedFriend();
+			if (friend == null){
 				return;
-			string name = lvFriends.Items[lvFriends.SelectedItems[0].Index].Text;
+			}
 			if (sender is MainForm) { //delete key!
-				string message = String.Format(languages.GetString("RemoveFriendQuery"), name);
+				string message = String.Format(languages.GetString("RemoveFriendQuery"), friend.name);
 				if (MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No){
 					return;
 				}
 			}
-			for (int i = 0; i < friendList.Count; i++){
-				if (friendList[i].name == name){
-					friendList.RemoveAt(i);
-					break;
-				}
-			}
-			lvFriends.Items.RemoveByKey(name);
+			lvFriends.RemoveFriend(friend);
 		}
 
 		void ContextMenuFriendsOpening(object sender, System.ComponentModel.CancelEventArgs e)
 		{
-			bool enabled = (lvFriends.SelectedItems.Count > 0);
+			FriendListItem friend = lvFriends.GetSelectedFriend();
+			bool enabled = (friend != null);
 			removeFriendToolStripMenuItem.Enabled = enabled;
-			joinServerMenuFriends.Enabled = enabled && (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text != languages.GetString("MainForm.Offline"));
+			enabled = enabled && (friend.status == FriendStatus.Online);
+			viewServerInformationFriend.Enabled = enabled;
+			joinServerMenuFriends.Enabled = enabled;
 		}
 
 		void LvFriendsDoubleClick(object sender, System.EventArgs e)
 		{
 			if (config.joinOnClick) {
-				if ((lvFriends.SelectedItems.Count <= 0) || (lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text == languages.GetString("MainForm.Offline")))
+				FriendListItem friend = lvFriends.GetSelectedFriend();
+				if (friend == null || (friend.status != FriendStatus.Online))
 					return;
-				string hostname = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[1].Text;
-				string friend = lvFriends.Items[lvFriends.SelectedItems[0].Index].SubItems[0].Text;
-				string message = String.Format(languages.GetString("JoinFriendQuery"), friend, hostname);
-				ServerInformation info = lvFavourites.getServer(hostname);
+
+				string message = String.Format(languages.GetString("JoinFriendQuery"), friend.name, friend.server.hostname);
+				ServerInformation info = lvFavourites.GetServer(friend.server.hostname);
 				string password = edtPasswordMain.Text;
 				if (info != null) {
 					password = info.password;
 				}
 				if (MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
-					LoadLFS(hostname, "S2", password);
+					LoadLFS(friend.server.hostname, "S2", password);
 				}
 			} else {
 				ViewServerInformationToolStripMenuItemClick(viewServerInformationFriend, e);
@@ -926,7 +797,7 @@ namespace BrowseForSpeed.Frontend
 
 		void EdtFriendNameKeyDown(object sender, System.Windows.Forms.KeyEventArgs e) {
 			if (e.KeyCode == Keys.Enter && edtFriendName.Text.Length > 0) {
-				AddFriend(edtFriendName.Text, true);
+				lvFriends.AddFriend(edtFriendName.Text);
 				lvFriends.Sort();
 				edtFriendName.Clear();
 			}
@@ -973,7 +844,6 @@ namespace BrowseForSpeed.Frontend
 				groups[i].Click += new EventHandler(CarsGroupButtonClick);
 				groups[i].Click +=  new EventHandler(carsChanged);
 			}
-			friendList = new List<FriendListItem>();
 			lvwColumnSorter = new ListViewColumnSorter();
 			lvwColumnSorter.SortColumn = 1;
 			lvwColumnSorter.Order = SortOrder.Ascending;
@@ -1088,8 +958,8 @@ namespace BrowseForSpeed.Frontend
 				cbTracks.SelectedIndex = 0;
 				cbVersion.SelectedIndex = 2;
 			}
-			ReadFriends();
-			DisplayFriends();
+			lvFriends.Load();
+			lvFriends.DisplayAll();
 			cbAddServerVersion.SelectedIndex = 0;
 			if (config.fav_refresh) {
 				RefreshButtonClick(buttonRefreshFav, null);
@@ -1466,49 +1336,79 @@ namespace BrowseForSpeed.Frontend
 				config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();	
 		}
 
-		private Brush[] LFSColours = {  Brushes.Black, Brushes.Red, Brushes.LightGreen,
+		private static Brush[] LFSColours = {  Brushes.Black, Brushes.Red, Brushes.LightGreen,
 										Brushes.Yellow, Brushes.Blue, Brushes.Purple,
 										Brushes.LightBlue, Brushes.Black, SystemBrushes.ControlText};
 		
 		void ListViewDrawSubItem(object sender, System.Windows.Forms.DrawListViewSubItemEventArgs e)
 		{
-			ListView list = (ListView)sender;
-			if (e.ColumnIndex > 0) {
+			if (e.Item.Selected) {
 				e.DrawDefault = true;
+				return;
+			}
+			ListView list = (ListView)sender;
+			if (list is FriendListView) {
+				if (e.ColumnIndex == 0) {
+					FriendListItem friend = lvFriends.GetFriend((string)e.Item.Tag);
+					if (friend.status == FriendStatus.Online) {
+						DrawColouredHostname(e.Graphics, friend.server.rawHostname, list.Font, e.Bounds);
+						return;
+					}
+				} 
+				e.DrawDefault = true;
+				return;
 			} else {
-				e.DrawBackground();
-				if (e.Item.Selected) {
-					e.Graphics.FillRectangle(SystemBrushes.Highlight, e.Bounds);
-					e.DrawFocusRectangle(e.Bounds);
+				if (e.ColumnIndex == 0) {
+					ServerListItem server = ((ServerListView)list).GetServer((int)e.Item.Tag);
+					e.DrawBackground();
+					DrawColouredHostname(e.Graphics, server.rawHostname, list.Font, e.Bounds);
+				} else {
+					e.DrawDefault = true;
+					return;
 				}
-				Brush b = SystemBrushes.ControlText;
-				//String displayed = "";
-				for (int i = 0, j = 0; i < e.Item.Text.Length; ++i, ++j) {
-					if (!config.fancy_hostnames) b = SystemBrushes.ControlText;
-					if (e.Item.Selected) b = SystemBrushes.HighlightText;
-					if (e.Item.Text[i] == '^') {
-						try {
-							b = LFSColours[Convert.ToInt32(e.Item.Text[i+1].ToString())];
-							++i;
-							--j;
-							continue;
-						} catch (Exception) {/*just fall through*/}
-					}
-//					displayed += e.Item.Text[i].ToString();
-//					Region[] charRegion = e.Graphics.MeasureCharacterRanges(displayed, list.Font, e.Bounds, new StringFormat());
+			}
+		}
+		
+		public static void DrawColouredHostname(Graphics g, string hostname, Font f, Rectangle bounds)
+		{
+			try {
+			string cleanHostname = LFSQuery.removeColourCodes(hostname);
+			CharacterRange[] ranges = new CharacterRange[cleanHostname.Length];
+			StringFormat format = new StringFormat();
+			Region[] stringRegions = new Region[cleanHostname.Length];
+			
+			format.FormatFlags = StringFormatFlags.NoClip;
+			for(int i = 0;  i < cleanHostname.Length; i++)
+    				ranges[i] = new CharacterRange(i, 1);
+			
+			SizeF size = g.MeasureString(cleanHostname, f);			
+			RectangleF layoutRect = new RectangleF(0,0,size.Width, size.Height);
+			format.SetMeasurableCharacterRanges(ranges);
+			stringRegions = g.MeasureCharacterRanges(cleanHostname, f, layoutRect, format);			
+			Brush b = SystemBrushes.ControlText;
+			for (int i = 0, j = 0; i < hostname.Length; ++i, ++j) {
+				if (hostname[i] == '^') {
 					try {
-						e.Graphics.DrawString(e.Item.Text[i].ToString(), list.Font, b, e.Bounds.X + (j *6), e.Bounds.Y);
-					} catch (Exception ex) {
-						//e.Graphics.FillRectangle(Brushes.Red, e.Bounds);
-						e.Graphics.DrawString(ex.Message, list.Font, Brushes.Black, e.Bounds);
-					}
+						b = LFSColours[Convert.ToInt32(hostname[i++ + 1].ToString())];
+						j--;
+						continue;
+					} catch (Exception) {}
 				}
+				Region region = stringRegions[j] as Region;
+        		RectangleF rect = region.GetBounds(g);
+        		g.DrawString(cleanHostname[j].ToString(), f, b, rect.X, bounds.Y, format);
+			}
+			} catch (Exception ex) {
+					g.DrawString(ex.Message + ex.StackTrace, f, Brushes.Black, g.VisibleClipBounds);
 			}
 		}
 		
 		void CbColouredHostnamesCheckedChanged(object sender, System.EventArgs e)
 		{
 			config.fancy_hostnames = cbColouredHostnames.Checked;
+			lvFriends.OwnerDraw = config.fancy_hostnames;
+			lvMain.OwnerDraw = config.fancy_hostnames;
+			lvFavourites.OwnerDraw = config.fancy_hostnames;
 		}
 		
 		void ListViewDrawColumnHeader(object sender, System.Windows.Forms.DrawListViewColumnHeaderEventArgs e)
@@ -1519,15 +1419,11 @@ namespace BrowseForSpeed.Frontend
 		void ListViewMouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
 		{
 			ListViewItem item = ((ListView)sender).GetItemAt(e.X, e.Y);
-			if (item != null) {
+			if (item != null && item.Checked == false) {
 				//stops the gridlines disappearing when the mouse first moves over an item.
 				((ListView)sender).Invalidate(item.Bounds);
+				item.Checked = true;
 			}
-		}
-		
-		void GroupBox3Enter(object sender, System.EventArgs e)
-		{
-			
 		}
 	}
 }

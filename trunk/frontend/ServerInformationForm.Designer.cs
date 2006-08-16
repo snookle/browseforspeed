@@ -212,6 +212,7 @@ namespace BrowseForSpeed.Frontend
 			this.labelServerName.Size = new System.Drawing.Size(180, 23);
 			this.labelServerName.TabIndex = 12;
 			this.labelServerName.Text = "N/A";
+			this.labelServerName.Invalidated += new System.Windows.Forms.InvalidateEventHandler(this.LabelInvalidated);
 			// 
 			// labelInfo
 			// 
