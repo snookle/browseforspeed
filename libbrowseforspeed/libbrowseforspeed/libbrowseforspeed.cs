@@ -40,6 +40,7 @@ namespace libbrowseforspeed {
 		public ulong rules;
 		public ulong cars;
 		public string hostname;
+        public string rawHostname;
 		public string track;		
 		public int ping;
 		public bool passworded;
@@ -622,66 +623,31 @@ namespace libbrowseforspeed {
 			return findHostOrPlayer(ref serverInfo, null);
 		}		
 		
-		static Hashtable playerServers = new Hashtable();
 		private static int findHostOrPlayer(ref ServerInformation serverInfo, string racer) {
 			fillStaticStuff();
-			if (racer != null && playerServers.Count > 0 && System.Environment.TickCount <= (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
-				ServerInformation s = (ServerInformation)(playerServers[racer]);
-				if (s != null) {
-					serverInfo = new ServerInformation();
-					serverInfo.hostname = s.hostname;
-					serverInfo.players = s.players;
-					serverInfo.password = s.password;
-					serverInfo.cars = s.cars;
-					serverInfo.rules = s.rules;
-					serverInfo.track = s.track;
-					//Console.Write("HUZZA!!!!!!\n");
-					return 1;
-				}
-				return 0;
-			}
 			try {
 				if (!getPubStatBuf()) return -1;
-				//Console.Write("using pubstat query\n");
 				Stream s = new GZipInputStream(new MemoryStream(pubstatBuf));
-				byte[] buf = getStreamBytes(s);
+				byte[] buf = getStreamBytes(s);				
 				s.Close();
 				int i = 0;
 				string[] racers = null;
 				bool found = false;				
-				while (i < buf.Length) {					
-					string hostname = removeColourCodes(getLFSString(buf, i, 32));
+				while (i < buf.Length) {
+                    string rawHostname = getLFSString(buf, i, 32); 
+					string hostname = removeColourCodes(rawHostname);
 					int numRacers = (int)buf[i + 52];
 					if ((racer == null && hostname == serverInfo.hostname) || racer != null) {
 						racers = new string[numRacers];
-						ServerInformation si = new ServerInformation();
-						si.hostname = hostname;
-						si.players = numRacers;
-						si.racerNames = racers;
-						si.passworded = ((ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]) & 8) != 0;
-						si.cars = (ulong)(buf[i + 43] * 16777216 + buf[i + 42] * 65536 + buf[i + 41] * 256 + buf[i + 40]);
-						si.rules = (ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]);
-						string track = "";
-						track += pubstatTracks[(int)(buf[i + 36])]; //BL
-						track += (((int)(buf[i + 37])) + 1); //1
-						if (((int)(buf[i + 38])) == 1) {
-							track += "R";
-						}
-						si.track = (string)trackCodes[track];
-						if (serverInfo.host == null) {
-							si.ping = -1;
-						}
 						for (int j = 0; j < numRacers; ++j) {
 							racers[j] = getLFSString(buf, i + 53 + (24 * j), 24);
-							playerServers[racers[j]] = si;
-							if (!found && (racer != null && racers[j].ToLower() == racer.ToLower())) {
+							if (!found && (racer != null && racers[j].ToLower() == racer.ToLower())) {								
 								found = true;
-								serverInfo = si;
 							}
 						}
-						/*
 						if (found || racer == null) { //either we've found a player, or the hostname matched
 							if (found) serverInfo = new ServerInformation();
+                            serverInfo.rawHostname = rawHostname;
 							serverInfo.hostname = hostname;
 							serverInfo.players = numRacers;
 							serverInfo.racerNames = racers;
@@ -694,14 +660,13 @@ namespace libbrowseforspeed {
 							if (((int)(buf[i + 38])) == 1) {
 								track += "R";
 							}
-							//Console.WriteLine("\""+track+"\"");
+							Console.WriteLine("\""+track+"\"");
 							serverInfo.track = (string)trackCodes[track];
 							if (serverInfo.host == null) {
 								serverInfo.ping = -1;
 							}
 							return 1;
 						}
-						*/
 					}
 					i += (53 + (24 * numRacers));
 				}
@@ -714,7 +679,6 @@ namespace libbrowseforspeed {
 		private static bool getPubStatBuf() {
 			try {
 				if (pubstatBuf == null || System.Environment.TickCount > (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
-					//Console.WriteLine("DOING HTTP REQUEST!!!!\n");
 					HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1");
 					request.Timeout = 4000;
 					HttpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -743,42 +707,42 @@ namespace libbrowseforspeed {
 		}
 
 		private static string getLFSString(byte[] buf, int startpos, int maxlen) {
-			int i;			
+			int i;
+			//int endpos = 0;
 			string ret = "";
-			Encoding enc = Encoding.GetEncoding(1252); //latin-1, default			
+			Encoding enc = Encoding.GetEncoding(1252);
+			int stringoffset = 0;
 			int ignore = 0;
-			for (i = 0; i < maxlen; ++i) {
+			for (i = 0; i < maxlen; ++i) {				
 				if (buf[i + startpos] == 0x00) {
+					//endpos = i;
 					break;
 				}
 				if (buf.Length > i + startpos + 1) {
 					byte[] c = { buf[i + startpos], buf[i + startpos + 1]};
 					string tmp = Encoding.GetEncoding(1252).GetString(c);
 					if (tmp == "^J") {
-						enc = Encoding.GetEncoding(932); //japanese
-						ignore += 2;
-					} else if (tmp == "^G") {
-						enc = Encoding.GetEncoding(1253); //greek
+						enc = Encoding.GetEncoding(932);
 						ignore += 2;
 					} else if (tmp == "^B") {
-						enc = Encoding.GetEncoding(1257); //baltic
+						enc = Encoding.GetEncoding(1257);
 						ignore += 2;
 					} else if (tmp == "^C") {
-						enc = Encoding.GetEncoding(1251); //cryllic
+						enc = Encoding.GetEncoding(1251);
 						ignore += 2;
 					} else if (tmp == "^E") {
-						enc = Encoding.GetEncoding(1250); //eastern europe
+						enc = Encoding.GetEncoding(1250);
 						ignore += 2;
 					} else if (tmp == "^T") {
-						enc = Encoding.GetEncoding(1254); //turkish
+						enc = Encoding.GetEncoding(1254);
 						ignore += 2;
 					} else if (tmp == "^L") {
-						enc = Encoding.GetEncoding(1252); //latin-1
+						enc = Encoding.GetEncoding(1252);
 						ignore += 2;
 					}
 				}
 				if (ignore == 0) {
-					ret += enc.GetString(buf, i + startpos, 1);
+					ret += enc.GetString(buf, i + startpos + stringoffset, 1);
 				} else {
 					ignore--;
 				}
@@ -812,5 +776,4 @@ namespace libbrowseforspeed {
 			return ret;
 		}*/
 	}
-
 }
