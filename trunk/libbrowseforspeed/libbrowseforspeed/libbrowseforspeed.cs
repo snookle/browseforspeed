@@ -704,42 +704,42 @@ namespace libbrowseforspeed {
 		}
 
 		private static string getLFSString(byte[] buf, int startpos, int maxlen) {
-			int i;
-			//int endpos = 0;
+			int i;			
 			string ret = "";
-			Encoding enc = Encoding.GetEncoding(1252);
-			int stringoffset = 0;
+			Encoding enc = Encoding.GetEncoding(1252); //latin-1, default			
 			int ignore = 0;
-			for (i = 0; i < maxlen; ++i) {				
+			for (i = 0; i < maxlen; ++i) {
 				if (buf[i + startpos] == 0x00) {
-					//endpos = i;
 					break;
 				}
 				if (buf.Length > i + startpos + 1) {
 					byte[] c = { buf[i + startpos], buf[i + startpos + 1]};
 					string tmp = Encoding.GetEncoding(1252).GetString(c);
 					if (tmp == "^J") {
-						enc = Encoding.GetEncoding(932);
+						enc = Encoding.GetEncoding(932); //japanese
+						ignore += 2;
+					} else if (tmp == "^G") {
+						enc = Encoding.GetEncoding(1253); //greek
 						ignore += 2;
 					} else if (tmp == "^B") {
-						enc = Encoding.GetEncoding(1257);
+						enc = Encoding.GetEncoding(1257); //baltic
 						ignore += 2;
 					} else if (tmp == "^C") {
-						enc = Encoding.GetEncoding(1251);
+						enc = Encoding.GetEncoding(1251); //cryllic
 						ignore += 2;
 					} else if (tmp == "^E") {
-						enc = Encoding.GetEncoding(1250);
+						enc = Encoding.GetEncoding(1250); //eastern europe
 						ignore += 2;
 					} else if (tmp == "^T") {
-						enc = Encoding.GetEncoding(1254);
+						enc = Encoding.GetEncoding(1254); //turkish
 						ignore += 2;
 					} else if (tmp == "^L") {
-						enc = Encoding.GetEncoding(1252);
+						enc = Encoding.GetEncoding(1252); //latin-1
 						ignore += 2;
 					}
 				}
 				if (ignore == 0) {
-					ret += enc.GetString(buf, i + startpos + stringoffset, 1);
+					ret += enc.GetString(buf, i + startpos, 1);
 				} else {
 					ignore--;
 				}
