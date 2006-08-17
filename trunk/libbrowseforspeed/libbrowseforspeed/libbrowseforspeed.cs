@@ -816,25 +816,22 @@ namespace libbrowseforspeed {
 			Encoding turk = Encoding.GetEncoding(1254); 
 			char[] c = str.ToCharArray();
 			for (int i = 0; i < c.Length; ++i) {
-				Console.WriteLine("Jap: " + jap.GetBytes(c, i, 1)[0]);
-				Console.WriteLine("Grk: " + greek.GetBytes(c, i, 1)[0]);
-				Console.WriteLine("Lat: " + greek.GetBytes(c, i, 1)[0]);
-				if (jap.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
+				if (current != jap && jap.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
 					current = jap;
 					ret += "^J";
-				} else if (greek.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
+				} else if (current != greek && greek.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
 					current = greek;
 					ret += "^G";
-				} else if (bal.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
+				} else if (current != bal && bal.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
 					current = bal;
 					ret += "^B";
-				} else if (cryl.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
+				} else if (current != cryl && cryl.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
 					current = cryl;
 					ret += "^C";
-				} else if (euro.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
+				} else if (current != euro && euro.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
 					current = euro;
 					ret += "^E";
-				} else if (turk.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
+				} else if (current != turk && turk.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
 					current = turk;
 					ret += "^T";
 				}
