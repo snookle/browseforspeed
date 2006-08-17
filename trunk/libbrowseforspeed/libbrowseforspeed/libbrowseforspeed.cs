@@ -803,6 +803,45 @@ namespace libbrowseforspeed {
 			text = Regex.Replace(text, "\\^\\^", "^");
 			return text;
 		}
+		
+		public static string convertToLFSString(string str) {
+			string ret = "";			
+			Encoding current = Encoding.GetEncoding(1252);
+			Encoding lat = Encoding.GetEncoding(1252);
+			Encoding jap = Encoding.GetEncoding(932);
+			Encoding greek = Encoding.GetEncoding(1253);
+			Encoding bal = Encoding.GetEncoding(1257);
+			Encoding cryl = Encoding.GetEncoding(1251);
+			Encoding euro = Encoding.GetEncoding(1250);
+			Encoding turk = Encoding.GetEncoding(1254); 
+			char[] c = str.ToCharArray();
+			for (int i = 0; i < c.Length; ++i) {
+				Console.WriteLine("Jap: " + jap.GetBytes(c, i, 1)[0]);
+				Console.WriteLine("Grk: " + greek.GetBytes(c, i, 1)[0]);
+				Console.WriteLine("Lat: " + greek.GetBytes(c, i, 1)[0]);
+				if (jap.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
+					current = jap;
+					ret += "^J";
+				} else if (greek.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
+					current = greek;
+					ret += "^G";
+				} else if (bal.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
+					current = bal;
+					ret += "^B";
+				} else if (cryl.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
+					current = cryl;
+					ret += "^C";
+				} else if (euro.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
+					current = euro;
+					ret += "^E";
+				} else if (turk.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
+					current = turk;
+					ret += "^T";
+				}
+				ret += lat.GetString(current.GetBytes(c, i, 1));
+			}
+			return ret;
+		}
 
 		/*BROKENprivate static string convertLFSString(string lfsstring) {
 			string ret = "";
