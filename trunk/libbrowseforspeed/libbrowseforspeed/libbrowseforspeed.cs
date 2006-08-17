@@ -39,9 +39,9 @@ namespace libbrowseforspeed {
 		public int players;
 		public ulong rules;
 		public ulong cars;
-        public string rawHostname;
+		public string rawHostname;
 		public string hostname;
-		public string track;		
+		public string track;
 		public int ping;
 		public bool passworded;
 		public string[] racerNames;
@@ -50,13 +50,13 @@ namespace libbrowseforspeed {
 		public string adminPassword;
 		public int insimPort;
 	}
-			
+
 	public struct hostInfo {
 		public ServerInformation info;
 		public bool passworded;
 		public object callbackObj;
 		public byte version;
-	}	
+	}
 
 	public delegate void ServerQueried(object o, ServerInformation info, object callbackObj);
 
@@ -71,17 +71,17 @@ namespace libbrowseforspeed {
 		public static byte VERSION_DEMO = (byte)0x00;
 		public static byte VERSION_S1 = (byte)0x01;
 		public static byte VERSION_S2 = (byte)0x02;
-		
+
 		private static string[] pubstatTracks = {"BL", "SO", "FE", "AU", "KY", "WE", "AS"};
-		
+
 		public static Hashtable msFilters;
 		public static Hashtable trackCodes;
 
-		
+
 		public static int QTHREADS = 16;
 		public static int THREAD_WAIT = 150;
 		public static bool xpsp2_wait = true;
-		
+
 		public const ulong CAR_XFG = 1;
 		public const ulong CAR_XRG = 2;
 		public const ulong CAR_XRT = 4;
@@ -113,7 +113,7 @@ namespace libbrowseforspeed {
 
 		private static bool keepQuerying;
 		private static int totalServers;
-		
+
 		private static byte[] pubstatBuf;
 		private static int pubstatLastUpdate;
 		private const int PUBSTAT_CACHE_TIME = 1000 * 30; //30 second cache
@@ -185,7 +185,7 @@ namespace libbrowseforspeed {
 			msFilters.Add("Empty", (byte)0x10);
 			msFilters.Add("Full", (byte)0x20);
 		}
-	
+
 		public class ServerQuery {
 			private hostInfo host;
 			private System.Threading.ManualResetEvent timeoutEvent;
@@ -202,9 +202,9 @@ namespace libbrowseforspeed {
 				}
 				timeoutEvent.Set();
 			}
-			
-			public void readCallback(IAsyncResult ar) {				
-				NetworkStream str = (NetworkStream)ar.AsyncState;				
+
+			public void readCallback(IAsyncResult ar) {
+				NetworkStream str = (NetworkStream)ar.AsyncState;
 				if (str != null) {
 					try {
 						str.EndRead(ar);
@@ -214,7 +214,7 @@ namespace libbrowseforspeed {
 				}
 				readTimeoutEvent.Set();
 			}
-			
+
 			public void setHost(hostInfo host) {
 				this.host = host;
 			}
@@ -234,10 +234,10 @@ namespace libbrowseforspeed {
 
 			public ServerQuery() { }
 
-			public void queryServer() {				
+			public void queryServer() {
 				IPEndPoint endpoint = new IPEndPoint(host.info.host.Address, host.info.host.Port);
 				Socket sock = new Socket(endpoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-				timeoutEvent = new System.Threading.ManualResetEvent(false);				
+				timeoutEvent = new System.Threading.ManualResetEvent(false);
 				sock.BeginConnect(endpoint, new AsyncCallback(connectCallback), sock);
 				if (this.host.version == VERSION_DEMO) {
 					send_query1[1] = send_query2[1] = 0x00;
@@ -252,10 +252,10 @@ namespace libbrowseforspeed {
 					send_query1[7] = send_query2[7] = 0x2f;
 					send_query1[8] = send_query2[8] = 0x4e;
 				}
-					
+
 				if (timeoutEvent.WaitOne(1000, false)) {
 					//connected aok!
-					NetworkStream str = new NetworkStream(sock);					
+					NetworkStream str = new NetworkStream(sock);
 					//str.ReadTimeout = 500; //.NET 2.0 :(
 					str.Write(send_query1, 0, send_query1.Length);
 					ServerInformation serverinfo = query1(ref str);
@@ -268,7 +268,7 @@ namespace libbrowseforspeed {
 					try {
 						str.Close();
 						sock.Shutdown(SocketShutdown.Both);
-						sock.Close();						
+						sock.Close();
 					} catch (Exception e) { }
 					if (queried != null) {
 						queried(this, serverinfo, host.callbackObj);
@@ -288,10 +288,10 @@ namespace libbrowseforspeed {
 					queried(this, ret, host.callbackObj);
 				}
 			}
-			
+
 			private ServerInformation query1(ref NetworkStream str) {
 				readTimeoutEvent = new System.Threading.ManualResetEvent(false);
-				byte[] recbuf = new byte[37];				
+				byte[] recbuf = new byte[37];
 				//int rcn = 0;
 				//int pingStart = System.Environment.TickCount;
 				DateTime time = System.DateTime.Now;
@@ -317,7 +317,7 @@ namespace libbrowseforspeed {
 				time = System.DateTime.Now;
 				long pingEnd = time.Ticks;
 				//int pingEnd = System.Environment.TickCount;
-				/*if (rcn != recbuf.Length) {					
+				/*if (rcn != recbuf.Length) {
 					serverInformation ret = new serverInformation();
 					ret.success = false;
 					ret.readFailed = true;
@@ -333,7 +333,7 @@ namespace libbrowseforspeed {
 				serverinfo.slots = (int)recbuf[2];
 				serverinfo.host = host.info.host;
 				serverinfo.passworded = host.passworded;
-				serverinfo.totalServers = LFSQuery.totalServers;				
+				serverinfo.totalServers = LFSQuery.totalServers;
 				serverinfo.hostname = getLFSString(recbuf, 5, 32);
                 serverinfo.rawHostname = serverinfo.hostname;
 				return serverinfo;
@@ -358,9 +358,9 @@ namespace libbrowseforspeed {
 					serverinfo.readFailed = true;
 					return;
 				}
-				if (rcn != recbuf.Length) {					
+				if (rcn != recbuf.Length) {
 					serverinfo.success = false;
-					serverinfo.readFailed = true;					
+					serverinfo.readFailed = true;
 					return;
 				}*/
 				if (recbuf[0] == 0x00) {
@@ -401,7 +401,7 @@ namespace libbrowseforspeed {
 				Query.cars_illegal = cars_illegal;
 				Encoding ascii = Encoding.ASCII;
 				ascii.GetBytes(user.ToCharArray(), 0, user.Length, this.username, 0);
-			}			
+			}
 
 			public void setFilters(ulong cars_compulsory, ulong cars_illegal) {
 				Query.cars_compulsory = cars_compulsory;
@@ -453,9 +453,9 @@ namespace libbrowseforspeed {
 				if (i == 0) {
 					LFSQuery.totalServers = (int)(recbuf[2] * 256 + recbuf[1]);
 				}
-				for (int j = 0; j < 16; j++) {					
+				for (int j = 0; j < 16; j++) {
 					byte[] ip = new byte[4];
-					int port;					
+					int port;
 					Array.Copy(recbuf, 21 + j * 4, ip, 0, 4); //21 = offset of first IP
 					port = (int)(recbuf[86 + j * 2] * 256 + recbuf[85 + j * 2]); // 85 = offset of first port
 					if (port == 0) break; //all done
@@ -478,13 +478,13 @@ namespace libbrowseforspeed {
 			m.allDone();
 			m.getThread().Join();
 		}
-		
+
 		public static void stopQuerying() {
 			LFSQuery.keepQuerying = false;
 		}
-	
+
 		public void query(ulong cars_compulsory, ulong cars_illegal, string username, ServerInformation[] hosts, object callbackObj) {
-			LFSQuery.keepQuerying = true;			
+			LFSQuery.keepQuerying = true;
 			QueryThreadManager m = new QueryThreadManager();
 			totalServers = hosts.Length;
 			foreach (ServerInformation host in hosts) {
@@ -501,14 +501,14 @@ namespace libbrowseforspeed {
 
 		public string findUser(string username, string userToFind) {
 			byte[] query = { //VERY SIMILAR TO Query class...fix this
-				0x4c, 0x4c, 0x46, 0x53, 0x00, 0x04, 0x1d, 0x04, 
-				0x00, 0x54, 0x75, 0x6b, 0x6b, 0x6f, 0x00, 0x00, 
-				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-				0x00, 0x53, 0x6e, 0x6f, 0x6f, 0x6b, 0x6c, 0x65, 
-				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+				0x4c, 0x4c, 0x46, 0x53, 0x00, 0x04, 0x1d, 0x04,
+				0x00, 0x54, 0x75, 0x6b, 0x6b, 0x6f, 0x00, 0x00,
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+				0x00, 0x53, 0x6e, 0x6f, 0x6f, 0x6b, 0x6c, 0x65,
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 				0x00, 0x19, 0x00, 0xe4, 0xa3, 0xff, 0xbe, 0x59,
 				0xf2, 0x00, 0x00, 0x2f, 0x4e
 			};
@@ -530,7 +530,7 @@ namespace libbrowseforspeed {
 				return null;
 			} else {
 				return getLFSString(recbuf, 1, 32);
-			}			
+			}
 		}
 
 		public static void changeFilters(ulong cars_compulsory, ulong cars_illegal) {
@@ -540,7 +540,7 @@ namespace libbrowseforspeed {
 
 		private class QueryThreadManager {
 			private bool keepgoing = true;
-			private Thread[] queries;			
+			private Thread[] queries;
 			private Queue myQueue;
 			private Thread myThread;
 			public QueryThreadManager() {
@@ -577,7 +577,7 @@ namespace libbrowseforspeed {
 			public void allDone() {
 				int j = 0;
 				int i = 0;
-				while (true) { //Join threads until there are none to join 
+				while (true) { //Join threads until there are none to join
 					if (queries[i] != null && queries[i].ThreadState != ThreadState.Stopped) {
 						queries[i].Join();
 					} else {
@@ -587,43 +587,43 @@ namespace libbrowseforspeed {
 						i = 0;
 						j = 0;
 					}
-				}				
+				}
 				keepgoing = false;
 			}
 
 			public Thread getThread() { return myThread; }
 		}
-		
+
 		public static Array getCarNames(ulong c) {
 			ArrayList carNames = new ArrayList();
 			for (int i = 0; i < CAR_GROUP_BITS.Length; ++i) {
 				if (((c & CAR_GROUP_BITS[i]) != 0) && c >= CAR_GROUP_BITS[i]) {
-					carNames.Add(CAR_GROUP_NAMES[i]);					
+					carNames.Add(CAR_GROUP_NAMES[i]);
 					c -= CAR_GROUP_BITS[i];
 				}
-			}			
+			}
 			for (int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) {
 				if ((c & CAR_BITS[i]) != 0) {
-					carNames.Add(CAR_NAMES[i]);					
+					carNames.Add(CAR_NAMES[i]);
 					c -= CAR_BITS[i];
 				}
 			}
 			return carNames.ToArray();
 		}
-		
+
 		public static void clearPubstatCache() {
 			pubstatBuf = null;
 		}
-		
+
 		public static int getPubStatInfo(string playername, out ServerInformation serverInfo) {
 			serverInfo = new ServerInformation();
-			return findHostOrPlayer(ref serverInfo, playername);			
+			return findHostOrPlayer(ref serverInfo, playername);
 		}
 
 		public static int getPubStatInfo(ref ServerInformation serverInfo) {
 			return findHostOrPlayer(ref serverInfo, null);
-		}		
-		
+		}
+
 		static Hashtable playerServers = new Hashtable();
 		private static int findHostOrPlayer(ref ServerInformation serverInfo, string racer) {
 			fillStaticStuff();
@@ -651,16 +651,16 @@ namespace libbrowseforspeed {
 				s.Close();
 				int i = 0;
 				string[] racers = null;
-				bool found = false;				
+				bool found = false;
 				while (i < buf.Length) {
                     string rawHostname = getLFSString(buf, i, 32);
-					string hostname = removeColourCodes(rawHostname);
+					string hostname = removeColourCodes(rawHostname); // TODO: fix me when getLFSString() is fixed. We do _not_ want to removecolourcodes here.
 					int numRacers = (int)buf[i + 52];
-					if ((racer == null && hostname == serverInfo.hostname) || racer != null) {
+					if ((racer == null && removeColourCodes(hostname) == removeColourCodes(serverInfo.hostname)) || racer != null) {
 						racers = new string[numRacers];
 						ServerInformation si = new ServerInformation();
-                        si.rawHostname = rawHostname;
-                        si.hostname = hostname;
+						si.rawHostname = rawHostname;
+						si.hostname = hostname;
 						si.players = numRacers;
 						si.passworded = ((ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]) & 8) != 0;
 						si.cars = (ulong)(buf[i + 43] * 16777216 + buf[i + 42] * 65536 + buf[i + 41] * 256 + buf[i + 40]);
@@ -676,15 +676,18 @@ namespace libbrowseforspeed {
 							si.ping = -1;
 						}
 						for (int j = 0; j < numRacers; ++j) {
-							racers[j] = getLFSString(buf, i + 53 + (24 * j), 24);							
+							racers[j] = getLFSString(buf, i + 53 + (24 * j), 24);
 							if (!found && (racer != null && racers[j].ToLower() == racer.ToLower())) {
 								found = true;
-								serverInfo = si;
 							}
 						}
 						si.racerNames = racers;
 						foreach (string r in racers) {
 							playerServers[r] = si;
+						}
+						if (found || (racer == null)) {
+							serverInfo = si;
+							return 1;
 						}
 						/*
 						if (found || racer == null) { //either we've found a player, or the hostname matched
@@ -712,12 +715,12 @@ namespace libbrowseforspeed {
 					}
 					i += (53 + (24 * numRacers));
 				}
-			} catch (Exception e) {				
+			} catch (Exception e) {
 				return -1;
 			}
 			return 0;
 		}
-		
+
 		private static bool getPubStatBuf() {
 			try {
 				if (pubstatBuf == null || System.Environment.TickCount > (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
@@ -750,9 +753,9 @@ namespace libbrowseforspeed {
 		}
 
 		private static string getLFSString(byte[] buf, int startpos, int maxlen) {
-			int i;			
+			int i;
 			string ret = "";
-			Encoding enc = Encoding.GetEncoding(1252); //latin-1, default			
+			Encoding enc = Encoding.GetEncoding(1252); //latin-1, default
 			int ignore = 0;
 			for (i = 0; i < maxlen; ++i) {
 				if (buf[i + startpos] == 0x00) {
@@ -793,27 +796,27 @@ namespace libbrowseforspeed {
 			return ret;
 			//return convertLFSString(Encoding.UTF7.GetString(buf, startpos, endpos));
 		}
-		
+
 		public static string removeColourCodes(string text) {
 			text = Regex.Replace(text, "\\^\\d", "");
 			text = Regex.Replace(text, "\\^\\^", "^");
 			return text;
 		}
-		
+
 		/*BROKENprivate static string convertLFSString(string lfsstring) {
 			string ret = "";
 			Encoding enc = Encoding.Unicode;
-			for (int i = 0; i < lfsstring.Length; i++) {				
+			for (int i = 0; i < lfsstring.Length; i++) {
 				if (i + 1 < lfsstring.Length) {
 					if (lfsstring.Substring(i, 2) == "^J") {
 						Console.WriteLine("JAP ENCODING!");
 						enc = Encoding.GetEncoding(932);
 						i += 2;
 					}
-				}				
+				}
 				byte[] orig = new byte[10];
 				int m = Encoding.Unicode.GetBytes(lfsstring.Substring(i, 1), 0, 1, orig, 0);
-				byte[] tmp = Encoding.Convert(Encoding.Unicode, enc, orig, 0, m);				
+				byte[] tmp = Encoding.Convert(Encoding.Unicode, enc, orig, 0, m);
 				ret += enc.GetString(tmp);
 			}
 			return ret;
