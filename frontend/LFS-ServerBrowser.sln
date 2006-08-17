@@ -1,5 +1,5 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 9.00
-# SharpDevelop 2.0.0.1291
+# SharpDevelop 2.0.0.1591
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LFS-ServerBrowser", "LFS-ServerBrowser.csproj", "{AF019A72-0111-4F8C-B261-8DB9812BEB3C}"
 EndProject
 Global

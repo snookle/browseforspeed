@@ -92,16 +92,66 @@ namespace BrowseForSpeed.Frontend
 		
 		private void DisplayAllT()
 		{
-			System.Collections.IComparer sorter = ListViewItemSorter;
-			ListViewItemSorter = null;
-			Items.Clear();
+			List<ListViewItem> items = new List<ListViewItem>();
 			foreach(FriendListItem f in friends.Values){
-				DisplayFriend(f.name);
+				ListViewItem item = BuildListItem(f);
+				if (item == null) continue;
+				if (f.status == FriendStatus.Online)
+					items.Insert(0, item);
+				else
+					items.Add(item);
 			}
-			ListViewItemSorter = sorter;
-						
+			Items.Clear();
+			if (items.Count == 0) {
+				Items.Add("No Friends Online");
+			} else {
+				Items.AddRange(items.ToArray());
+			}
 		}
 		
+		private ListViewItem BuildListItem(FriendListItem friend)
+		{
+			ListViewItem lvi = new ListViewItem();
+			try {
+			RefreshFriend(ref friend);
+
+			if (friend.status != FriendStatus.Online && hideOffline)
+				return null;
+			if (friend.status == FriendStatus.Offline) { //offline
+				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, friend.name));
+				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, MainForm.languages.GetString("MainForm.Offline")));
+				lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, "N/A"));
+				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "N/A"));
+			} else if (friend.status == FriendStatus.Online) {
+				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, friend.name));
+				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, friend.server.hostname));
+				lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, (friend.server.passworded ? MainForm.languages.GetString("Global.Yes") : MainForm.languages.GetString("Global.No"))));
+				String players = "";
+				foreach (string player in friend.server.racerNames) {
+					players += player + ", ";
+				}
+				players = players.Remove(players.Length - 2, 2).ToString();
+				if (friend.server.racerNames == null)
+					lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "null racerNames"));
+
+				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, players));
+			} else {
+				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, friend.name));
+				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, MainForm.languages.GetString("ServerInformationForm.PubstatError")));
+	            lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, MainForm.languages.GetString("Global.Error")));
+				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, MainForm.languages.GetString("Global.Error")));
+			}
+				lvi.Tag = (string)friend.name;
+				return lvi;
+			} catch (Exception ex) {
+				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, friend.name));
+				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, MainForm.languages.GetString("Global.Error")));
+	            lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, ex.Message));
+				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, ex.StackTrace));
+				return lvi;
+			}
+		}
+				
 		public void DisplayFriend(string name)
 		{
 			FriendListItem friend;
@@ -129,44 +179,14 @@ namespace BrowseForSpeed.Frontend
 		{
 			friends.Remove(friend.name);
 			Items.RemoveByKey(friend.name);
+			DisplayAll();
 		}
 		
 		public void DisplayFriend(FriendListItem friend)
 		{
-			try {
-			if (friend.status != FriendStatus.Online && hideOffline)
-				return;
-			RefreshFriend(ref friend);
-			ListViewItem lvi;
-			if (friend.status == FriendStatus.Offline) { //offline
-				lvi = Items.Add(friend.name, friend.name, "");
-				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, friend.name));
-				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, MainForm.languages.GetString("MainForm.Offline")));
-				lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, "N/A"));
-				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "N/A"));
-			} else if (friend.status == FriendStatus.Online) {
-				lvi = Items.Add(friend.name, friend.name, "");
-				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, friend.name));
-				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, friend.server.hostname));
-				lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, (friend.server.passworded ? MainForm.languages.GetString("Global.Yes") : MainForm.languages.GetString("Global.No"))));
-				String players = "";
-				foreach (string player in friend.server.racerNames) {
-					players += player + ", ";
-				}
-				players = players.Remove(players.Length - 2, 2).ToString();
-				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, players));
-			} else {
-				lvi = Items.Add(friend.name, friend.name, "");
-				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, friend.name));
-				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, MainForm.languages.GetString("ServerInformationForm.PubstatError")));
-	            lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, MainForm.languages.GetString("Global.Error")));
-				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, MainForm.languages.GetString("Global.Error")));
-			}
-				lvi.Tag = (string)friend.name;
-
-			} catch (Exception ex) {
-				//MessageBox.Show(ex.Message + ex.StackTrace);
-			}
+			ListViewItem i = BuildListItem(friend);
+			if (i != null)
+				Items.Add(i);
 		}
 
 		public void Save()

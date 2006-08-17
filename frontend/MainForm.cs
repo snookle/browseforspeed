@@ -239,6 +239,7 @@ namespace BrowseForSpeed.Frontend
 					statusTotal.Text = String.Format(languages.GetString("MainForm.StatusTotal"), numQueried, totalServers);
 					statusNoReply.Text = String.Format(languages.GetString("MainForm.NoReply"), numServersNoReply);
 					statusRefused.Text = String.Format(languages.GetString("MainForm.Refused"), numServersRefused);
+					list.Sort();
 				} else {
 			    	AddServerDelegate addServer = new AddServerDelegate(AddServerToList);
 			    	this.BeginInvoke(addServer, new object[] {info, list});
@@ -384,7 +385,7 @@ namespace BrowseForSpeed.Frontend
 				lvFavourites.GetSelectedServer().password = edtPasswordMain.Text;
 				lvFavourites.Save();
 			}
-			LoadLFS(item.hostname, VersionToString(item.version), pass);
+			LoadLFS(item.rawHostname, VersionToString(item.version), pass);
 		}
 
 		void lvMainSelectedIndexChanged(object sender, System.EventArgs e)
@@ -484,7 +485,7 @@ namespace BrowseForSpeed.Frontend
 			if (s.ShowDialog(this) == DialogResult.OK) {
 				info.password = s.GetInfo().password;
 				lvFavourites.Save();
-				LoadLFS(s.GetInfo().hostname, VersionToString(s.GetInfo().version), s.GetInfo().password);
+				LoadLFS(s.GetInfo().rawHostname, VersionToString(s.GetInfo().version), s.GetInfo().password);
 			}
 		}
 
@@ -788,7 +789,7 @@ namespace BrowseForSpeed.Frontend
 					password = info.password;
 				}
 				if (MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
-					LoadLFS(friend.server.hostname, "S2", password);
+					LoadLFS(friend.server.rawHostname, "S2", password);
 				}
 			} else {
 				ViewServerInformationToolStripMenuItemClick(viewServerInformationFriend, e);
@@ -965,7 +966,7 @@ namespace BrowseForSpeed.Frontend
 				RefreshButtonClick(buttonRefreshFav, null);
 			}
 			if (config.friend_refresh) {
-				BtnRefreshFriendClick(btnRefreshFriend, null);
+			//	BtnRefreshFriendClick(btnRefreshFriend, null);
 			}
 		}
 
@@ -1058,10 +1059,11 @@ namespace BrowseForSpeed.Frontend
 				info.host = new IPEndPoint(IPAddress.Parse(hostname[0]), port);
 				info.version = StringToVersion(cbAddServerVersion.Text);
 				info.hostname = info.host.ToString();
+				info.rawHostname = info.hostname;
 				lvFavourites.AddServer(info);
 				edtAddServerAddress.Text = "";
 			} catch (Exception ex) {
-				string message = String.Format(languages.GetString("AddFavError"), ex.Message);
+				string message = String.Format(languages.GetString("AddFavError"), ex.Message + ex.StackTrace);
 				MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
@@ -1263,13 +1265,11 @@ namespace BrowseForSpeed.Frontend
 			lblLangAuthor.Text = languages.GetString("MainForm.lblLangAuthor");
 			lblLanguageConfig.Text = languages.GetString("MainForm.lblLanguageConfig");
 			groupBox4.Text = languages.GetString("MainForm.groupBox4");
-			//rbJoin.Text = languages.GetString("MainForm.rbJoin");
-			//rbView.Text = languages.GetString("MainForm.rbView");
 			gbStartBeforeLFS.Text = languages.GetString("MainForm.gbStartBeforeLFS");
 			btnProgramEnable.Text = languages.GetString("MainForm.btnProgramEnable");
 			btnProgramDelete.Text = languages.GetString("MainForm.btnProgramDelete");
 			btnProgramNew.Text = languages.GetString("MainForm.btnProgramNew");
-			bgProgramConfig.Text = languages.GetString("MainForm.bgProgramConfig");
+			gbProgramConfig.Text = languages.GetString("MainForm.gbProgramConfig");
 			btnProgramCancel.Text = languages.GetString("MainForm.btnProgramCancel");
 			btnProgramSave.Text = languages.GetString("MainForm.btnProgramSave");
 			lblProgramConfigArg.Text = languages.GetString("MainForm.lblProgramConfigArg");
@@ -1288,6 +1288,7 @@ namespace BrowseForSpeed.Frontend
 			lblExePathConfig.Text = languages.GetString("MainForm.lblExePathConfig");
 			buttonBrowse.Text = languages.GetString("MainForm.buttonBrowse");
 			cbFavRefresh.Text = languages.GetString("MainForm.cbStartupRefresh");
+			cbNewVersion.Text = languages.GetString("MainForm.cbNewVersion");
 
 			this.Text = languages.GetString("MainForm.this");
 
@@ -1336,7 +1337,7 @@ namespace BrowseForSpeed.Frontend
 				config.lfsPath = pathList.Items[pathList.SelectedIndex].ToString();	
 		}
 
-		private static Brush[] LFSColours = {  Brushes.Black, Brushes.Red, Brushes.LightGreen,
+		private static Brush[] LFSColours = {SystemBrushes.ControlText, Brushes.Red, Brushes.LightGreen,
 										Brushes.Yellow, Brushes.Blue, Brushes.Purple,
 										Brushes.LightBlue, Brushes.Black, SystemBrushes.ControlText};
 		
@@ -1348,10 +1349,10 @@ namespace BrowseForSpeed.Frontend
 			}
 			ListView list = (ListView)sender;
 			if (list is FriendListView) {
-				if (e.ColumnIndex == 0) {
+				if (e.ColumnIndex == 1) {
 					FriendListItem friend = lvFriends.GetFriend((string)e.Item.Tag);
 					if (friend.status == FriendStatus.Online) {
-						DrawColouredHostname(e.Graphics, friend.server.rawHostname, list.Font, e.Bounds);
+						DrawColouredHostname(e.Graphics, friend.server.rawHostname, list.Font, e.SubItem.Bounds);
 						return;
 					}
 				} 
@@ -1389,17 +1390,18 @@ namespace BrowseForSpeed.Frontend
 			for (int i = 0, j = 0; i < hostname.Length; ++i, ++j) {
 				if (hostname[i] == '^') {
 					try {
-						b = LFSColours[Convert.ToInt32(hostname[i++ + 1].ToString())];
+						b = LFSColours[Convert.ToInt32(hostname[i + 1].ToString())];
+						i++;
 						j--;
 						continue;
 					} catch (Exception) {}
 				}
 				Region region = stringRegions[j] as Region;
         		RectangleF rect = region.GetBounds(g);
-        		g.DrawString(cleanHostname[j].ToString(), f, b, rect.X, bounds.Y, format);
+        		g.DrawString(cleanHostname[j].ToString(), f, b, bounds.X + rect.X, bounds.Y, format);
 			}
 			} catch (Exception ex) {
-					g.DrawString(ex.Message + ex.StackTrace, f, Brushes.Black, g.VisibleClipBounds);
+				g.DrawString(ex.Message + ex.StackTrace, f, Brushes.Black, g.VisibleClipBounds);
 			}
 		}
 		
