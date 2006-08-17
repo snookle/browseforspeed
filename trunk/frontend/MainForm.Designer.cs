@@ -44,6 +44,7 @@ namespace BrowseForSpeed.Frontend
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("No Friends Online");
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.joinServerToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -142,7 +143,7 @@ namespace BrowseForSpeed.Frontend
 			this.btnProgramEnable = new System.Windows.Forms.Button();
 			this.btnProgramDelete = new System.Windows.Forms.Button();
 			this.btnProgramNew = new System.Windows.Forms.Button();
-			this.bgProgramConfig = new System.Windows.Forms.GroupBox();
+			this.gbProgramConfig = new System.Windows.Forms.GroupBox();
 			this.btnProgramCancel = new System.Windows.Forms.Button();
 			this.btnProgramSave = new System.Windows.Forms.Button();
 			this.edtProgramOptions = new System.Windows.Forms.TextBox();
@@ -188,7 +189,7 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox2.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			this.gbStartBeforeLFS.SuspendLayout();
-			this.bgProgramConfig.SuspendLayout();
+			this.gbProgramConfig.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).BeginInit();
@@ -892,6 +893,8 @@ namespace BrowseForSpeed.Frontend
 			this.lvFriends.FullRowSelect = true;
 			this.lvFriends.GridLines = true;
 			this.lvFriends.HideOffline = false;
+			this.lvFriends.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+									listViewItem1});
 			this.lvFriends.Location = new System.Drawing.Point(8, 6);
 			this.lvFriends.MultiSelect = false;
 			this.lvFriends.Name = "lvFriends";
@@ -1160,7 +1163,7 @@ namespace BrowseForSpeed.Frontend
 			this.gbStartBeforeLFS.Controls.Add(this.btnProgramEnable);
 			this.gbStartBeforeLFS.Controls.Add(this.btnProgramDelete);
 			this.gbStartBeforeLFS.Controls.Add(this.btnProgramNew);
-			this.gbStartBeforeLFS.Controls.Add(this.bgProgramConfig);
+			this.gbStartBeforeLFS.Controls.Add(this.gbProgramConfig);
 			this.gbStartBeforeLFS.Controls.Add(this.lbPreStart);
 			this.gbStartBeforeLFS.Location = new System.Drawing.Point(13, 228);
 			this.gbStartBeforeLFS.Name = "gbStartBeforeLFS";
@@ -1201,23 +1204,23 @@ namespace BrowseForSpeed.Frontend
 			this.btnProgramNew.UseVisualStyleBackColor = true;
 			this.btnProgramNew.Click += new System.EventHandler(this.BtnProgramNewClick);
 			// 
-			// bgProgramConfig
+			// gbProgramConfig
 			// 
-			this.bgProgramConfig.Controls.Add(this.btnProgramCancel);
-			this.bgProgramConfig.Controls.Add(this.btnProgramSave);
-			this.bgProgramConfig.Controls.Add(this.edtProgramOptions);
-			this.bgProgramConfig.Controls.Add(this.lblProgramConfigArg);
-			this.bgProgramConfig.Controls.Add(this.edtProgramName);
-			this.bgProgramConfig.Controls.Add(this.lblProgramConfigName);
-			this.bgProgramConfig.Controls.Add(this.btnProgramBrowse);
-			this.bgProgramConfig.Controls.Add(this.lblProgramConfigPath);
-			this.bgProgramConfig.Controls.Add(this.edtProgramPath);
-			this.bgProgramConfig.Location = new System.Drawing.Point(12, 173);
-			this.bgProgramConfig.Name = "bgProgramConfig";
-			this.bgProgramConfig.Size = new System.Drawing.Size(410, 135);
-			this.bgProgramConfig.TabIndex = 5;
-			this.bgProgramConfig.TabStop = false;
-			this.bgProgramConfig.Text = "Program Configuration";
+			this.gbProgramConfig.Controls.Add(this.btnProgramCancel);
+			this.gbProgramConfig.Controls.Add(this.btnProgramSave);
+			this.gbProgramConfig.Controls.Add(this.edtProgramOptions);
+			this.gbProgramConfig.Controls.Add(this.lblProgramConfigArg);
+			this.gbProgramConfig.Controls.Add(this.edtProgramName);
+			this.gbProgramConfig.Controls.Add(this.lblProgramConfigName);
+			this.gbProgramConfig.Controls.Add(this.btnProgramBrowse);
+			this.gbProgramConfig.Controls.Add(this.lblProgramConfigPath);
+			this.gbProgramConfig.Controls.Add(this.edtProgramPath);
+			this.gbProgramConfig.Location = new System.Drawing.Point(12, 173);
+			this.gbProgramConfig.Name = "gbProgramConfig";
+			this.gbProgramConfig.Size = new System.Drawing.Size(410, 135);
+			this.gbProgramConfig.TabIndex = 5;
+			this.gbProgramConfig.TabStop = false;
+			this.gbProgramConfig.Text = "Program Configuration";
 			// 
 			// btnProgramCancel
 			// 
@@ -1562,8 +1565,8 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox5.ResumeLayout(false);
 			this.gbStartBeforeLFS.ResumeLayout(false);
-			this.bgProgramConfig.ResumeLayout(false);
-			this.bgProgramConfig.PerformLayout();
+			this.gbProgramConfig.ResumeLayout(false);
+			this.gbProgramConfig.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).EndInit();
@@ -1573,6 +1576,7 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.GroupBox gbProgramConfig;
 		private System.Windows.Forms.Label lblDoubleClick;
 		private System.Windows.Forms.ComboBox cbDoubleClick;
 		private System.Windows.Forms.GroupBox groupBox7;
@@ -1602,7 +1606,6 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.Label lblProgramConfigPath;
 		private System.Windows.Forms.Label lblPingThreshold;
 		private System.Windows.Forms.Label lblAddressFav;
-		private System.Windows.Forms.GroupBox bgProgramConfig;
 		private System.Windows.Forms.Label lblProgramConfigArg;
 		private System.Windows.Forms.Label lblProgramConfigName;
 		private System.Windows.Forms.Label lblLanguageConfig;
