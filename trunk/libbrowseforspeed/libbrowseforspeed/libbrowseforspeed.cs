@@ -632,8 +632,9 @@ namespace libbrowseforspeed {
 				if (s != null) {
 					serverInfo = new ServerInformation();
 					serverInfo.hostname = s.hostname;
-                    serverInfo.rawHostname = s.rawHostname;
+					serverInfo.rawHostname = s.rawHostname;
 					serverInfo.players = s.players;
+					serverInfo.racerNames = s.racerNames;
 					serverInfo.password = s.password;
 					serverInfo.cars = s.cars;
 					serverInfo.rules = s.rules;
@@ -687,7 +688,7 @@ namespace libbrowseforspeed {
 						}
 						if (found || (racer == null)) {
 							serverInfo = si;
-							return 1;
+							//return 1; i think it has to keep going the first time, in order to fill all of playerServers
 						}
 						/*
 						if (found || racer == null) { //either we've found a player, or the hostname matched
