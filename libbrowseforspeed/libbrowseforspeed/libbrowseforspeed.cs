@@ -39,6 +39,7 @@ namespace libbrowseforspeed {
 		public int players;
 		public ulong rules;
 		public ulong cars;
+        public string rawHostname;
 		public string hostname;
 		public string track;		
 		public int ping;
@@ -334,6 +335,7 @@ namespace libbrowseforspeed {
 				serverinfo.passworded = host.passworded;
 				serverinfo.totalServers = LFSQuery.totalServers;				
 				serverinfo.hostname = getLFSString(recbuf, 5, 32);
+                serverinfo.rawHostname = serverinfo.hostname;
 				return serverinfo;
 			}
 
@@ -630,6 +632,7 @@ namespace libbrowseforspeed {
 				if (s != null) {
 					serverInfo = new ServerInformation();
 					serverInfo.hostname = s.hostname;
+                    serverInfo.rawHostname = s.rawHostname;
 					serverInfo.players = s.players;
 					serverInfo.password = s.password;
 					serverInfo.cars = s.cars;
@@ -649,13 +652,15 @@ namespace libbrowseforspeed {
 				int i = 0;
 				string[] racers = null;
 				bool found = false;				
-				while (i < buf.Length) {					
-					string hostname = removeColourCodes(getLFSString(buf, i, 32));
+				while (i < buf.Length) {
+                    string rawHostname = getLFSString(buf, i, 32);
+					string hostname = removeColourCodes(rawHostname);
 					int numRacers = (int)buf[i + 52];
 					if ((racer == null && hostname == serverInfo.hostname) || racer != null) {
 						racers = new string[numRacers];
 						ServerInformation si = new ServerInformation();
-						si.hostname = hostname;
+                        si.rawHostname = rawHostname;
+                        si.hostname = hostname;
 						si.players = numRacers;
 						si.passworded = ((ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]) & 8) != 0;
 						si.cars = (ulong)(buf[i + 43] * 16777216 + buf[i + 42] * 65536 + buf[i + 41] * 256 + buf[i + 40]);
