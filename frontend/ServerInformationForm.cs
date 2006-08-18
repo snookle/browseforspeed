@@ -53,8 +53,8 @@ namespace BrowseForSpeed.Frontend
 					} else {
 						listPlayers.Items.Add(MainForm.languages.GetString("ServerInformationForm.EmptyServer"));
 					}
-					labelServerName.Text = "";
-					MainForm.DrawColouredHostname(labelServerName.CreateGraphics(), info.rawHostname, labelServerName.Font, labelServerName.ClientRectangle);
+					labelServerName.Text = LFSQuery.removeColourCodes(info.hostname);
+					//MainForm.DrawColouredHostname(labelServerName.CreateGraphics(), info.rawHostname, labelServerName.Font, labelServerName.ClientRectangle);
 					labelCars.Text = MainForm.CarsToString(LFSQuery.getCarNames(info.cars));
 					labelInfo.Text = MainForm.RulesToString(info.rules);
 					labelPing.Text = info.ping.ToString();
@@ -181,8 +181,8 @@ namespace BrowseForSpeed.Frontend
 			try{
 			if (info.success){
 				this.info = info;
-				labelServerName.Text = "";
-				MainForm.DrawColouredHostname(labelServerName.CreateGraphics(), info.rawHostname, labelServerName.Font, labelServerName.ClientRectangle);
+				labelServerName.Text = LFSQuery.removeColourCodes(info.hostname);
+				//MainForm.DrawColouredHostname(labelServerName.CreateGraphics(), info., labelServerName.Font, labelServerName.ClientRectangle);
 				labelCars.Text = MainForm.CarsToString(LFSQuery.getCarNames(info.cars));
 				labelInfo.Text = MainForm.RulesToString(info.rules);
 				labelPing.Text = info.ping.ToString();
@@ -219,7 +219,7 @@ namespace BrowseForSpeed.Frontend
 		
 		void LabelInvalidated(object o, InvalidateEventArgs e)
 		{
-			MainForm.DrawColouredHostname(labelServerName.CreateGraphics(), info.rawHostname, labelServerName.Font, labelServerName.ClientRectangle);
+		//	MainForm.DrawColouredHostname(labelServerName.CreateGraphics(), info.rawHostname, labelServerName.Font, labelServerName.ClientRectangle);
 		}
 	}
 }

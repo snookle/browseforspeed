@@ -1345,14 +1345,13 @@ namespace BrowseForSpeed.Frontend
 		{
 			if (e.Item.Selected) {
 				e.DrawDefault = true;
-				return;
 			}
 			ListView list = (ListView)sender;
 			if (list is FriendListView) {
 				if (e.ColumnIndex == 1) {
 					FriendListItem friend = lvFriends.GetFriend((string)e.Item.Tag);
 					if (friend.status == FriendStatus.Online) {
-						DrawColouredHostname(e.Graphics, friend.server.rawHostname, list.Font, e.SubItem.Bounds);
+						DrawColouredHostname(e.Graphics, friend.server.hostname, list.Font, e.SubItem.Bounds);
 						return;
 					}
 				} 
@@ -1362,7 +1361,7 @@ namespace BrowseForSpeed.Frontend
 				if (e.ColumnIndex == 0) {
 					ServerListItem server = ((ServerListView)list).GetServer((int)e.Item.Tag);
 					e.DrawBackground();
-					DrawColouredHostname(e.Graphics, server.rawHostname, list.Font, e.Bounds);
+					DrawColouredHostname(e.Graphics, server.hostname, list.Font, e.SubItem.Bounds);
 				} else {
 					e.DrawDefault = true;
 					return;

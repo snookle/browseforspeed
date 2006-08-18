@@ -124,7 +124,7 @@ namespace BrowseForSpeed.Frontend
 				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, "N/A"));
 			} else if (friend.status == FriendStatus.Online) {
 				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, friend.name));
-				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, friend.server.hostname));
+				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, LFSQuery.removeColourCodes(friend.server.hostname)));
 				lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, (friend.server.passworded ? MainForm.languages.GetString("Global.Yes") : MainForm.languages.GetString("Global.No"))));
 				String players = "";
 				foreach (string player in friend.server.racerNames) {
