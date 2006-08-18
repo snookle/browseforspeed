@@ -40,7 +40,7 @@ namespace libbrowseforspeed {
 		public ulong rules;
 		public ulong cars;
 		public string rawHostname;
-		public string hostname;
+		public string hostname;		
 		public string track;
 		public int ping;
 		public bool passworded;
@@ -334,8 +334,8 @@ namespace libbrowseforspeed {
 				serverinfo.host = host.info.host;
 				serverinfo.passworded = host.passworded;
 				serverinfo.totalServers = LFSQuery.totalServers;
-				serverinfo.hostname = getLFSString(recbuf, 5, 32);
-                serverinfo.rawHostname = serverinfo.hostname;
+				serverinfo.hostname = getConvertedLFSString(recbuf, 5, 32);
+                serverinfo.rawHostname = getLFSString(recbuf, 5, 32);
 				return serverinfo;
 			}
 
@@ -655,7 +655,7 @@ namespace libbrowseforspeed {
 				bool found = false;
 				while (i < buf.Length) {
                     string rawHostname = getLFSString(buf, i, 32);
-					string hostname = removeColourCodes(rawHostname); // TODO: fix me when getLFSString() is fixed. We do _not_ want to removecolourcodes here.
+					string hostname = getConvertedLFSString(buf, i, 32);
 					int numRacers = (int)buf[i + 52];
 					if ((racer == null && removeColourCodes(hostname) == removeColourCodes(serverInfo.hostname)) || racer != null) {
 						racers = new string[numRacers];
@@ -752,8 +752,22 @@ namespace libbrowseforspeed {
 				}
 			}
 		}
-
 		private static string getLFSString(byte[] buf, int startpos, int maxlen) {
+			int i;
+			int endpos = 0;
+			for (i = 0; i < maxlen; ++i) {
+				if (buf[i + startpos] == 0x00) {
+					endpos = i;
+					break;
+				}
+				if (i + 1 == maxlen) {
+					endpos = i+1;
+				}
+			}
+			return Encoding.GetEncoding(1252).GetString(buf, startpos, endpos);
+		}
+
+		private static string getConvertedLFSString(byte[] buf, int startpos, int maxlen) {
 			int i;
 			string ret = "";
 			Encoding enc = Encoding.GetEncoding(1252); //latin-1, default
@@ -795,7 +809,6 @@ namespace libbrowseforspeed {
 				}
 			}
 			return ret;
-			//return convertLFSString(Encoding.UTF7.GetString(buf, startpos, endpos));
 		}
 
 		public static string removeColourCodes(string text) {
@@ -803,9 +816,10 @@ namespace libbrowseforspeed {
 			text = Regex.Replace(text, "\\^\\^", "^");
 			return text;
 		}
-		
+
+		/*This works, but can't resolve ambiguities. e.g ﾉﾏedline ﾉﾏacing may have originally had two ^Js.
 		public static string convertToLFSString(string str) {
-			string ret = "";			
+			string ret = "";
 			Encoding current = Encoding.GetEncoding(1252);
 			Encoding lat = Encoding.GetEncoding(1252);
 			Encoding jap = Encoding.GetEncoding(932);
@@ -813,7 +827,7 @@ namespace libbrowseforspeed {
 			Encoding bal = Encoding.GetEncoding(1257);
 			Encoding cryl = Encoding.GetEncoding(1251);
 			Encoding euro = Encoding.GetEncoding(1250);
-			Encoding turk = Encoding.GetEncoding(1254); 
+			Encoding turk = Encoding.GetEncoding(1254);
 			char[] c = str.ToCharArray();
 			for (int i = 0; i < c.Length; ++i) {
 				if (current != jap && jap.GetBytes(c, i, 1)[0] != lat.GetBytes(c, i, 1)[0]) {
@@ -836,25 +850,6 @@ namespace libbrowseforspeed {
 					ret += "^T";
 				}
 				ret += lat.GetString(current.GetBytes(c, i, 1));
-			}
-			return ret;
-		}
-
-		/*BROKENprivate static string convertLFSString(string lfsstring) {
-			string ret = "";
-			Encoding enc = Encoding.Unicode;
-			for (int i = 0; i < lfsstring.Length; i++) {
-				if (i + 1 < lfsstring.Length) {
-					if (lfsstring.Substring(i, 2) == "^J") {
-						Console.WriteLine("JAP ENCODING!");
-						enc = Encoding.GetEncoding(932);
-						i += 2;
-					}
-				}
-				byte[] orig = new byte[10];
-				int m = Encoding.Unicode.GetBytes(lfsstring.Substring(i, 1), 0, 1, orig, 0);
-				byte[] tmp = Encoding.Convert(Encoding.Unicode, enc, orig, 0, m);
-				ret += enc.GetString(tmp);
 			}
 			return ret;
 		}*/
