@@ -626,6 +626,7 @@ namespace libbrowseforspeed {
 
 		static Hashtable playerServers = new Hashtable();
 		private static int findHostOrPlayer(ref ServerInformation serverInfo, string racer) {
+			int ret = 0;
 			fillStaticStuff();
 			if (racer != null && playerServers.Count > 0 && System.Environment.TickCount <= (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
 				ServerInformation s = (ServerInformation)(playerServers[racer]);
@@ -680,6 +681,7 @@ namespace libbrowseforspeed {
 							racers[j] = getLFSString(buf, i + 53 + (24 * j), 24);
 							if (!found && (racer != null && racers[j].ToLower() == racer.ToLower())) {
 								found = true;
+								ret = 1;
 							}
 						}
 						si.racerNames = racers;
@@ -687,6 +689,7 @@ namespace libbrowseforspeed {
 							playerServers[r] = si;
 						}
 						if (found || (racer == null)) {
+							ret = 1;
 							serverInfo = si;
 							//return 1; i think it has to keep going the first time, in order to fill all of playerServers
 						}
@@ -719,7 +722,7 @@ namespace libbrowseforspeed {
 			} catch (Exception e) {
 				return -1;
 			}
-			return 0;
+			return ret;
 		}
 
 		private static bool getPubStatBuf() {
