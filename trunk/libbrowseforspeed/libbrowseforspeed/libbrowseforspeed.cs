@@ -752,6 +752,12 @@ namespace libbrowseforspeed {
 				}
 			}
 		}
+		
+		public static string convertLFSString(string str) {
+			byte[] b = Encoding.GetEncoding(1252).GetBytes(str);
+			return getConvertedLFSString(b, 0, b.Length);
+		}
+
 		private static string getLFSString(byte[] buf, int startpos, int maxlen) {
 			int i;
 			int endpos = 0;
