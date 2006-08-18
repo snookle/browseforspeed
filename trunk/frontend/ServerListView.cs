@@ -141,7 +141,7 @@ namespace BrowseForSpeed.Frontend
 				ListViewItem lvi;
 				lvi = this.Items.Add(item.host.ToString());
 				lvi.Tag = serverList.IndexOf(item);
-				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, item.hostname));
+				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, LFSQuery.removeColourCodes(item.hostname)));
 				string cars = MainForm.CarsToString(LFSQuery.getCarNames(item.cars));
 				string rules = MainForm.RulesToString(item.rules);
 				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, item.ping.ToString()));
@@ -251,6 +251,7 @@ namespace BrowseForSpeed.Frontend
 						}
 						info.host = new IPEndPoint(IPAddress.Parse(favourite.GetElementsByTagName("ip")[0].FirstChild.Value), Convert.ToInt32(favourite.GetElementsByTagName("port")[0].FirstChild.Value));
 						info.rawHostname = favourite.GetElementsByTagName("name")[0].FirstChild.Value;
+						info.hostname = LFSQuery.convertLFSString(info.rawHostname);
 						try {
 							info.adminPassword = favourite.GetElementsByTagName("adminPassword")[0].FirstChild.Value;
 							info.insimPort = Int32.Parse(favourite.GetElementsByTagName("insimPort")[0].FirstChild.Value);
@@ -316,8 +317,7 @@ namespace BrowseForSpeed.Frontend
 			this.connectFailed = info.connectFailed;
 			this.filtered = false;
 			this.host = info.host;
-			//ensure the colour codes are totally removed
-			this.hostname = LFSQuery.removeColourCodes(info.rawHostname);
+			this.hostname = info.hostname;
 			this.rawHostname = info.rawHostname;
 			this.password = info.password;
 			this.passworded = info.passworded;
