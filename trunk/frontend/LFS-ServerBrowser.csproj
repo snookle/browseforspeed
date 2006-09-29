@@ -1,6 +1,6 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>BrowseForSpeed</RootNamespace>
     <AssemblyName>BrowseForSpeed</AssemblyName>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -17,6 +17,8 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <ApplicationIcon>ca3r.ico</ApplicationIcon>
     <NoWarn>0168</NoWarn>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -54,18 +56,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="ServerInformationForm.Designer.cs">
       <DependentUpon>ServerInformationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServerInformationForm.cs" />
+    <Compile Include="ServerInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="ServerInformationForm.resx">
       <DependentUpon>ServerInformationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,11 +81,15 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin.cs" />
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="JoinServerDialog.cs" />
+    <Compile Include="JoinServerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="JoinServerDialog.Designer.cs" />
     <EmbeddedResource Include="JoinServerDialog.resx">
       <DependentUpon>JoinServerDialog.cs</DependentUpon>
@@ -87,13 +98,19 @@
     <Compile Include="Ban.Designer.cs">
       <DependentUpon>Ban.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ban.cs" />
+    <Compile Include="Ban.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="Ban.resx">
       <DependentUpon>Ban.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="ServerListView.cs" />
+    <Compile Include="ServerListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ListSorter.cs" />
-    <Compile Include="FriendListView.cs" />
+    <Compile Include="FriendListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>

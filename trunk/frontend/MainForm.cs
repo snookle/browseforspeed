@@ -30,10 +30,11 @@ using System.Globalization;
 using System.Resources;
 using Microsoft.Win32;
 using System.Xml;
+using System.Reflection;
 
 namespace BrowseForSpeed.Frontend
 {
-	public enum QueryType{Main, Favorite, Friend}
+	public enum QueryType{Main, Favourite, Friend, Quick}
 
 
 	public partial class MainForm
@@ -74,7 +75,7 @@ namespace BrowseForSpeed.Frontend
 		[STAThread]
 		public static void Main(string[] args)
 		{
-			Application.EnableVisualStyles();
+            Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MainForm());
 		}
@@ -128,9 +129,9 @@ namespace BrowseForSpeed.Frontend
 
 		public void SetControlProperty(Control ctrl, String propName, Object val)
 		{
-			System.Reflection.PropertyInfo propInfo = ctrl.GetType().GetProperty(propName);
+			PropertyInfo propInfo = ctrl.GetType().GetProperty(propName);
 			Delegate dgtSetValue = new SetValueDelegate(propInfo.SetValue);
-      		ctrl.Invoke(dgtSetValue, new Object[3] { ctrl, val, /*index*/null });
+      		ctrl.Invoke(dgtSetValue, new Object[3] { ctrl, val, null });
 		}
 
 		byte CodeFilters()
@@ -143,22 +144,25 @@ namespace BrowseForSpeed.Frontend
 			return filters;
 		}
 
-		void MakeQuery(bool isFav)
+		void MakeQuery(QueryType type)
 		{
 			SetControlProperty(buttonRefreshFav, "Text", languages.GetString("MainForm.btnStop"));
-			SetControlProperty(btnRefreshMain, "Text", languages.GetString("MainForm.btnStop"));
 			refreshing = true;
 			try {
-				if (isFav) {
+				if (type == QueryType.Favourite) {
 					q.query(0, 0, "browseforspeed", lvFavourites.GetAllHosts(), 1);
+				} else if (type == QueryType.Quick) {
+					SetControlProperty(btnQuickRefresh, "Text", languages.GetString("MainForm.btnStop"));
+					q.query(0,0, "browseforsped", lvMain.GetVisibleHosts(), 0);
 				} else {
+					SetControlProperty(btnRefreshMain, "Text", languages.GetString("MainForm.btnStop"));
 					ulong compulsory, illegal;
 					CodeCars(out compulsory, out illegal);
 					q.query(compulsory, illegal, "browseforspeed", 0, CodeFilters(), version);
 				}
 			} catch(Exception e) {
 				MessageBox.Show(languages.GetString("MasterServerError") , languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
+			}
 
 			if (exiting) return;
 			if (totalServers == 0) {
@@ -167,22 +171,30 @@ namespace BrowseForSpeed.Frontend
 			refreshing = false;
 			SetControlProperty(btnRefreshMain, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Enabled", true);
+			SetControlProperty(btnQuickRefresh, "Enabled", true);
 			SetControlProperty(buttonRefreshFav, "Text", languages.GetString("MainForm.btnRefresh"));
 			SetControlProperty(btnRefreshMain, "Text", languages.GetString("MainForm.btnRefresh"));
+			SetControlProperty(btnQuickRefresh, "Text", languages.GetString("MainForm.btnQuickRefresh"));
 		}
 
 		void MainQuery()
 		{
-			MakeQuery(false);
+			MakeQuery(QueryType.Main);
+		}
+		
+		void QuickQuery()
+		{
+			MakeQuery(QueryType.Quick);
 		}
 
 		void FavQuery()
 		{
-			MakeQuery(true);
+			MakeQuery(QueryType.Favourite);
 		}
 
 		void RefreshButtonClick(object sender, System.EventArgs e)
 		{
+            Console.WriteLine(sender.ToString());
 			Button b = (Button)sender;
 			if (!refreshing){
 				LFSQuery.queried -= new ServerQueried(queryMainEventListener);
@@ -190,8 +202,14 @@ namespace BrowseForSpeed.Frontend
 				totalServers = 0;
 				btnJoinMain.Enabled = false;
 				if (b.Name == "btnRefreshMain") {
+					btnQuickRefresh.Enabled = false;
 					t = new Thread(new ThreadStart(MainQuery));
 					lvMain.ClearServers();
+				}
+				else if (b.Name == "btnQuickRefresh") {
+					btnRefreshMain.Enabled = false;
+					t = new Thread(new ThreadStart(QuickQuery));
+					lvMain.Items.Clear();
 				}
 				else {
 					lvFavourites.Items.Clear();
@@ -204,6 +222,7 @@ namespace BrowseForSpeed.Frontend
 			} else {
 				LFSQuery.stopQuerying();
 				btnRefreshMain.Enabled = false;
+				btnQuickRefresh.Enabled = false;
 				buttonRefreshFav.Enabled = false;
 			}
 		}
@@ -1196,6 +1215,21 @@ namespace BrowseForSpeed.Frontend
 		{
 			if (languages.Count == 0)
 				return;
+            foreach (string component in languages.ComponentNames) {
+                int index = component.IndexOf('.');
+                if (index == -1) continue;
+				//this is the component name.
+                string temp = component.Remove(0, index+1);
+                Console.WriteLine(temp);
+				Control o = (Control)GetType().InvokeMember(temp, BindingFlags.CreateInstance, null, null, null);
+				Console.Out.Write(o.Text);
+				PropertyInfo pi = o.GetType().GetProperty("Text");
+                 if (pi != null) {
+                        Console.WriteLine("Setting text");
+						pi.SetValue(o, "Lol", null);
+                    }
+                   // mi[0].GetType().InvokeMember("Text", BindingFlags.SetField, null, o, new Object[] { "LOL" });
+                }
 			fileToolStripMenuItem.Text = languages.GetString("MainForm.fileToolStripMenuItem");
 			joinServerToolStripMenuItem2.Text = languages.GetString("MainForm.joinServerToolStripMenuItem2");
 			closeToolStripMenuItem.Text = languages.GetString("MainForm.closeToolStripMenuItem");
@@ -1276,7 +1310,6 @@ namespace BrowseForSpeed.Frontend
 			lblProgramConfigName.Text = languages.GetString("MainForm.lblProgramConfigName");
 			btnProgramBrowse.Text = languages.GetString("MainForm.btnProgramBrowse");
 			lblProgramConfigPath.Text = languages.GetString("MainForm.lblProgramConfigPath");
-			groupBox3.Text = languages.GetString("MainForm.groupBox3");
 			txtInsimPort.Text = languages.GetString("MainForm.txtInsimPort");
 			lblQueryWaitDescription.Text = languages.GetString("MainForm.lblQueryWaitDescription");
 			lblInsimPortConfig.Text = languages.GetString("MainForm.lblInsimPortConfig");
@@ -1290,8 +1323,11 @@ namespace BrowseForSpeed.Frontend
 			cbFavRefresh.Text = languages.GetString("MainForm.cbStartupRefresh");
 			cbNewVersion.Text = languages.GetString("MainForm.cbNewVersion");
 
-			this.Text = languages.GetString("MainForm.this");
+			btnQuickRefresh.Text = languages.GetString("MainForm.btnQuickRefresh");
+			//gbAdvanced.Text = languages.GetString("MainForm.gbAdvanced");
 
+			this.Text = languages.GetString("MainForm.this");
+			
 			lbPreStart.Items.Clear();
 			foreach (PreStartProgram p in config.psp){
 				lbPreStart.Items.Add(p);
@@ -1302,7 +1338,8 @@ namespace BrowseForSpeed.Frontend
 				statusNoReply.Text = String.Format(languages.GetString("MainForm.NoReply"), numServersNoReply);
 				statusRefused.Text = String.Format(languages.GetString("MainForm.Refused"), numServersRefused);
 			}
-
+			Console.WriteLine();
+	
 			lvMain.DisplayAll();
 			lvFavourites.DisplayAll();
 
@@ -1359,7 +1396,7 @@ namespace BrowseForSpeed.Frontend
 				return;
 			} else {
 				if (e.ColumnIndex == 0) {
-					ServerListItem server = ((ServerListView)list).GetServer((int)e.Item.Tag);
+					ServerListItem server = ((ServerListView)list).GetServer((IPEndPoint)e.Item.Tag);
 					e.DrawBackground();
 					DrawColouredHostname(e.Graphics, server.hostname, list.Font, e.SubItem.Bounds);
 				} else {
@@ -1382,7 +1419,7 @@ namespace BrowseForSpeed.Frontend
     				ranges[i] = new CharacterRange(i, 1);
 			
 			SizeF size = g.MeasureString(cleanHostname, f);			
-			RectangleF layoutRect = new RectangleF(0,0,size.Width, size.Height);
+			RectangleF layoutRect = new RectangleF(0, 0, size.Width, size.Height);
 			format.SetMeasurableCharacterRanges(ranges);
 			stringRegions = g.MeasureCharacterRanges(cleanHostname, f, layoutRect, format);			
 			Brush b = SystemBrushes.ControlText;
