@@ -37,7 +37,7 @@ namespace BrowseForSpeed.Frontend
 	
 	public class ServerListView : ListView
 	{
-		protected List<ServerListItem> serverList = new List<ServerListItem>();
+		protected Dictionary<IPEndPoint, ServerListItem> serverList = new Dictionary<IPEndPoint, ServerListItem>();
 		protected ListSorter sorter = new ListSorter();
 		protected override bool DoubleBuffered {
 			get {
@@ -55,16 +55,11 @@ namespace BrowseForSpeed.Frontend
 		public void AddServer(ServerInformation info)
 		{
 			ServerListItem item = new ServerListItem(info);
-			//iterate through the list, and see if we have a match.
-			for (int i = 0; i < serverList.Count; ++i){
-				if (serverList[i].host == item.host) {
-					serverList[i] = item;
-					Display(item).Tag = i;
-					return;
-				}
+			if (serverList.ContainsKey(item.host)) {
+				serverList.Remove(item.host);
 			}
-			item.filtered = false;
-			serverList.Add(item);
+			serverList.Add(item.host, item);
+
 			if (this is MainListView)
 				FilterServer(item);
 			Display(item);
@@ -74,60 +69,60 @@ namespace BrowseForSpeed.Frontend
 		public ServerListItem GetSelectedServer()
 		{
 			if (SelectedItems.Count > 0) {
-				int index = (int)SelectedItems[0].Tag;
-				if (index == -1)
-					return null;
-				ServerListItem item = serverList[index];
-				item.index = SelectedItems[0].Index;
+				ServerListItem item;
+				serverList.TryGetValue((IPEndPoint)SelectedItems[0].Tag, out item);
 				return item;
-			}
-			else
+			} else {
 				return null;
+			}
 		}
 
 		public ServerListItem GetServer(string hostname) {
-			foreach (ServerListItem s in serverList) {
-				if (s.hostname == hostname || s.rawHostname == hostname)
-					return s;
+			foreach(ServerListItem item in serverList.Values) {
+				if (hostname == item.hostname || hostname == item.rawHostname)
+					return item;
 			}
 			return null;
 		}
 		
-		public ServerListItem GetServer(int index) {
-			return serverList[index];
+		public ServerListItem GetServer(IPEndPoint host) {
+			ServerListItem item;
+			serverList.TryGetValue(host, out item);
+			return item;
 		}
 		
 		public void RemoveServer(ServerListItem item)
 		{
-			Items.RemoveAt(item.index);
-			serverList.Remove(item);
-			for (int i = 0; i < this.Items.Count; ++i){
-				if ((int)Items[i].Tag > item.index){
-					int tmp = (int)(Items[i].Tag); Items[i].Tag = --tmp;
-				}
-			}
+			Items.Remove(item.item);
+			serverList.Remove(item.host);
 		}
 		
 		public void ClearServers()
 		{
 			serverList.Clear();
-			serverList.TrimExcess();
 			this.Items.Clear();
 		}
 		
 		public void DisplayAll()
 		{
 			Items.Clear();
-			foreach(ServerListItem item in serverList.FindAll(ServersNotFiltered)){
-				Display(item);
+			foreach(ServerListItem item in serverList.Values){
+				if (!item.filtered)
+					Display(item);
 			}
 			Sort();
 		}
 		
+		public ServerInformation[] GetVisibleHosts()
+		{
+			return (new List<ServerListItem>(serverList.Values)).FindAll(ServersNotFiltered).ToArray();
+		}
+		
 		public List<ServerListItem> AllServers()
 		{
-			return serverList;
+			return new List<ServerListItem>(serverList.Values);
 		}
+		
 		private static bool ServersNotFiltered(ServerListItem info)
 		{
 			return !info.filtered;
@@ -140,7 +135,8 @@ namespace BrowseForSpeed.Frontend
 			try {
 				ListViewItem lvi;
 				lvi = this.Items.Add(item.host.ToString());
-				lvi.Tag = serverList.IndexOf(item);
+				lvi.Name = item.host.ToString();
+				lvi.Tag = item.host;
 				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, LFSQuery.removeColourCodes(item.hostname)));
 				string cars = MainForm.CarsToString(LFSQuery.getCarNames(item.cars));
 				string rules = MainForm.RulesToString(item.rules);
@@ -154,6 +150,7 @@ namespace BrowseForSpeed.Frontend
 				lvi.SubItems.Insert(4, new ListViewItem.ListViewSubItem(lvi, rules));
 				lvi.SubItems.Insert(5, new ListViewItem.ListViewSubItem(lvi, item.track));
 				lvi.SubItems.Insert(6, new ListViewItem.ListViewSubItem(lvi, cars));
+				item.item = lvi;
 				return lvi;
 			} catch (Exception ex) {
 				return null;
@@ -165,7 +162,7 @@ namespace BrowseForSpeed.Frontend
 		{
 			filters[(int)filter].type = filter;
 			filters[(int)filter].value = value;
-			foreach(ServerListItem item in serverList){
+			foreach(ServerListItem item in serverList.Values){
 				FilterServer(item);
 			}
 		}
@@ -204,7 +201,7 @@ namespace BrowseForSpeed.Frontend
 
 		public ServerInformation[] GetAllHosts()
 		{
-			return serverList.ToArray();
+			return new List<ServerListItem>(serverList.Values).ToArray();
 		}
 		
 		public void Save() {
@@ -311,6 +308,7 @@ namespace BrowseForSpeed.Frontend
 	{
 		public bool filtered;
 		public int index;
+		public ListViewItem item;
 		public ServerListItem(ServerInformation info)
 		{
 			this.cars = info.cars;

@@ -127,5 +127,13 @@ namespace BrowseForSpeed.Frontend
 				return lang.email;
 			}
 		}
+
+        public string[] ComponentNames{
+            get {
+                string[] temp = new string[lang.strings.Count];
+                lang.strings.Keys.CopyTo(temp, 0);
+                return temp;
+            }
+        }
 	}
 }

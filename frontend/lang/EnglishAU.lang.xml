@@ -140,7 +140,10 @@
 	<component name="MainForm.NoReply">No Reply: {0}</component>
 	<component name="MainForm.Refused">Refused Connection: {0}</component>
 	<component name="MainForm.Offline">Offline</component>
-	<component name="MainForm.cbStartupRefresh">Refresh favourites on startup</component>
+	<!-- Begin New in 0.7 -->
+	<component name="MainForm.cbStartupRefresh">Refresh favourites</component>
+	<component name="MainForm.btnQuickRefresh">Quick Refresh</component>
+	<!-- End New in 0.7 -->
 
 	<!-- Admin Form components -->
 	<component name="Admin.btnSend">&amp;Send</component>
