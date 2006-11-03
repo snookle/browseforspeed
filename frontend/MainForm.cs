@@ -1368,7 +1368,7 @@ namespace BrowseForSpeed.Frontend
 
 		private static Brush[] LFSColours = {SystemBrushes.ControlText, Brushes.Red, Brushes.LightGreen,
 										Brushes.Yellow, Brushes.Blue, Brushes.Purple,
-										Brushes.LightBlue, Brushes.Black, SystemBrushes.ControlText};
+										Brushes.LightBlue, Brushes.White, Brushes.Black};
 		
 		void ListViewDrawSubItem(object sender, System.Windows.Forms.DrawListViewSubItemEventArgs e)
 		{
@@ -1416,7 +1416,7 @@ namespace BrowseForSpeed.Frontend
 			stringRegions = g.MeasureCharacterRanges(cleanHostname, f, layoutRect, format);			
 			Brush b = SystemBrushes.ControlText;
 			for (int i = 0, j = 0; i < hostname.Length; ++i, ++j) {
-				if (hostname[i] == '^') {
+				if (i < hostname.Length - 1 && hostname[i] == '^' && char.IsDigit(hostname[i+1])) {
 					try {
 						b = LFSColours[Convert.ToInt32(hostname[i + 1].ToString())];
 						i++;
@@ -1435,8 +1435,8 @@ namespace BrowseForSpeed.Frontend
 			}
 			} catch (Exception ex) {
 				//g.DrawString(ex.Message + ex.StackTrace, f, Brushes.Black, g.VisibleClipBounds);
-				Console.WriteLine(ex);
-				Console.WriteLine(hostname);
+				//Console.WriteLine(ex);
+				//Console.WriteLine(hostname);
 			}
 		}
 		
