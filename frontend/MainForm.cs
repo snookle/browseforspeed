@@ -45,8 +45,8 @@ namespace BrowseForSpeed.Frontend
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
 
 		public static String appTitle = "Browse For Speed";
-		static String configFilename = Application.StartupPath + "\\config.cfg";
-		static String configXMLFilename = Application.StartupPath + "\\config.xml";
+		static String configFilename = Application.StartupPath +  + Path.DirectorySeparatorChar + "config.cfg";
+		static String configXMLFilename = Application.StartupPath + Path.DirectorySeparatorChar + "config.xml";
 
 		private CheckBox[] cars;
 		private Button[] groups;
@@ -70,7 +70,7 @@ namespace BrowseForSpeed.Frontend
 
 		private Thread t;
 
-		public static LanguageManager languages = new LanguageManager(Application.StartupPath + "\\lang");
+		public static LanguageManager languages = new LanguageManager(Application.StartupPath + Path.DirectorySeparatorChar + "lang");
 
 		[STAThread]
 		public static void Main(string[] args)
@@ -891,7 +891,7 @@ namespace BrowseForSpeed.Frontend
 				config = new Configuration(configFilename);
 				if (!config.Load()) {
 					//config not valid, take them to config screen
-					tabControl.SelectTab(tabControl.TabPages.IndexOf(tabConfig));
+					tabControl.SelectedTab = tabConfig;
 					config.disableWait =  false;
 					config.checkNewVersion = true;
 					this.lastTabSelected = 2;
@@ -985,7 +985,7 @@ namespace BrowseForSpeed.Frontend
 				RefreshButtonClick(buttonRefreshFav, null);
 			}
 			if (config.friend_refresh) {
-			//	BtnRefreshFriendClick(btnRefreshFriend, null);
+				BtnRefreshFriendClick(btnRefreshFriend, null);
 			}
 		}
 
@@ -1211,123 +1211,116 @@ namespace BrowseForSpeed.Frontend
 			}
 		}
 
+		public List<ToolStripMenuItem> GetControls(ToolStripMenuItem menu)
+		{
+			List<ToolStripMenuItem> list = new List<ToolStripMenuItem>();
+			if (menu.DropDownItems.Count == 0) {
+				list.Add(menu);
+				return list;
+			} else {
+				foreach (ToolStripMenuItem item in menu.DropDownItems) {
+					list.AddRange(GetControls(item));
+				}
+				return list;
+			}
+		}
+
+		public List<Control> GetControls(Control c)
+		{
+			List<Control> controlList = new List<Control>();
+			//tab controls inherit from control, but have a different collection for sub-controls
+			if (c is TabControl) {
+				TabControl tc = c as TabControl;
+				if (tc.TabPages.Count == 0) {
+					controlList.Add(c);
+					return controlList;
+				} else {
+					foreach (TabPage page in tc.TabPages) {
+						controlList.AddRange(GetControls(page));
+						controlList.Add(page);
+					}
+					return controlList;
+				}
+			}
+			
+			if (c.Controls.Count == 0) {
+				controlList.Add(c);
+				return controlList;
+			} else {
+				foreach (Control cont in c.Controls) {
+					controlList.AddRange(GetControls(cont));
+				}
+				return controlList;
+			}
+		}
+
 		private void UpdateUI()
 		{
 			if (languages.Count == 0)
 				return;
-            foreach (string component in languages.ComponentNames) {
-                int index = component.IndexOf('.');
-                if (index == -1) continue;
-				//this is the component name.
-                string temp = component.Remove(0, index+1);
-                Console.WriteLine(temp);
-				Control o = (Control)GetType().InvokeMember(temp, BindingFlags.CreateInstance, null, null, null);
-				Console.Out.Write(o.Text);
-				PropertyInfo pi = o.GetType().GetProperty("Text");
-                 if (pi != null) {
-                        Console.WriteLine("Setting text");
-						pi.SetValue(o, "Lol", null);
-                    }
-                   // mi[0].GetType().InvokeMember("Text", BindingFlags.SetField, null, o, new Object[] { "LOL" });
-                }
-			fileToolStripMenuItem.Text = languages.GetString("MainForm.fileToolStripMenuItem");
-			joinServerToolStripMenuItem2.Text = languages.GetString("MainForm.joinServerToolStripMenuItem2");
-			closeToolStripMenuItem.Text = languages.GetString("MainForm.closeToolStripMenuItem");
-			aboutToolStripMenuItem.Text = languages.GetString("MainForm.aboutToolStripMenuItem");
-			aboutToolStripMenuItem1.Text = languages.GetString("MainForm.aboutToolStripMenuItem1");
-			tabMain.Text = languages.GetString("MainForm.tabMain");
-			lblFindUserMain.Text = languages.GetString("MainForm.lblFindUserMain");
-			lblPasswordMain.Text = languages.GetString("MainForm.lblPasswordMain");
-			btnFindUserMain.Text = languages.GetString("MainForm.btnFindUserMain");
-			gbFilters.Text = languages.GetString("MainForm.gbFilters");
-			cbPublic.Text = languages.GetString("MainForm.cbPublic");
-			cbPrivate.Text = languages.GetString("MainForm.cbPrivate");
-			cbFull.Text = languages.GetString("MainForm.cbFull");
-			lblPingThreshold.Text = languages.GetString("MainForm.lblPingThreshold");
-			cbEmpty.Text = languages.GetString("MainForm.cbEmpty");
-			columnHeaderName.Text = languages.GetString("MainForm.columnHeaderName");
-			columnHeaderPing.Text = languages.GetString("MainForm.columnHeaderPing");
-			columnPrivate.Text = languages.GetString("MainForm.columnPrivate");
-			columnHeaderConnections.Text = languages.GetString("MainForm.columnHeaderConnections");
-			columnHeaderInfo.Text = languages.GetString("MainForm.columnHeaderInfo");
-			columnHeaderTrack.Text = languages.GetString("MainForm.columnHeaderTrack");
-			columnHeaderCars.Text = languages.GetString("MainForm.columnHeaderCars");
-			joinServerToolStripMenuItem.Text = languages.GetString("MainForm.joinServerToolStripMenuItem");
-			viewServerInformationMain.Text = languages.GetString("MainForm.viewServerInformationMain");
-			toolStripMenuItem1.Text = languages.GetString("MainForm.toolStripMenuItem1");
-			copyServerToClipboardToolStripMenuItem.Text = languages.GetString("MainForm.copyServerToClipboardToolStripMenuItem");
-			administrateToolStripMenuItem1.Text = languages.GetString("MainForm.administrateToolStripMenuItem1");
-			btnRefreshMain.Text = languages.GetString("MainForm.btnRefresh");
-			btnJoinMain.Text = languages.GetString("MainForm.btnJoin");
-			tabFavourites.Text = languages.GetString("MainForm.tabFavourites");
-			lblAddressFav.Text = languages.GetString("MainForm.lblAddressFav");
-			btnAddServer.Text = languages.GetString("MainForm.btnAddServer");
-			buttonRefreshFav.Text = languages.GetString("MainForm.btnRefresh");
-			btnJoinFav.Text = languages.GetString("MainForm.btnJoin");
-			columnHeaderFavServerName.Text = languages.GetString("MainForm.columnHeaderFavServerName");
-			columnHeaderFavPing.Text = languages.GetString("MainForm.columnHeaderFavPing");
-			columnHeaderFavSlots.Text = languages.GetString("MainForm.columnHeaderFavSlots");
-			columnHeaderFavInfo.Text = languages.GetString("MainForm.columnHeaderFavInfo");
-			columnHeaderFavTrack.Text = languages.GetString("MainForm.columnHeaderFavTrack");
-			columnHeaderFavCars.Text = languages.GetString("MainForm.columnHeaderFavCars");
-			joinServerToolStripMenuItem1.Text = languages.GetString("MainForm.joinServerToolStripMenuItem1");
-			viewServerInformationFav.Text = languages.GetString("MainForm.viewServerInformationFav");
-			removeFromFavouritesToolStripMenuItem.Text = languages.GetString("MainForm.removeFromFavouritesToolStripMenuItem");
-			copyServerToClipboardToolStripMenuItem1.Text = languages.GetString("MainForm.copyServerToClipboardToolStripMenuItem1");
-			administrateToolStripMenuItem.Text = languages.GetString("MainForm.administrateToolStripMenuItem");
-			tabFriends.Text = languages.GetString("MainForm.tabFriends");
-			btnAddFriend.Text = languages.GetString("MainForm.btnAddFriend");
-			cbHideOffline.Text = languages.GetString("MainForm.cbHideOffline");
-			btnRefreshFriend.Text = languages.GetString("MainForm.btnRefreshFriend");
-			btnJoinFriend.Text = languages.GetString("MainForm.btnJoinFriend");
-			columnFriendName.Text = languages.GetString("MainForm.columnFriendName");
-			columnFriendServer.Text = languages.GetString("MainForm.columnFriendServer");
-			columnFriendPrivate.Text = languages.GetString("MainForm.columnFriendPrivate");
-			columnFriendPlayers.Text = languages.GetString("MainForm.columnFriendPlayers");
-			joinServerMenuFriends.Text = languages.GetString("MainForm.joinServerMenuFriends");
-			viewServerInformationFriend.Text = languages.GetString("MainForm.viewServerInformationFriend");
-			removeFriendToolStripMenuItem.Text = languages.GetString("MainForm.removeFriendToolStripMenuItem");
-			tabConfig.Text = languages.GetString("MainForm.tabConfig");
-			groupBox1.Text = languages.GetString("MainForm.groupBox1");
-			groupBox2.Text = languages.GetString("MainForm.groupBox2");
-			groupBox5.Text = languages.GetString("MainForm.groupBox5");
-			lblCommentReal.Text = languages.GetString("MainForm.lblCommentReal");
-			lblEmailReal.Text = languages.GetString("MainForm.lblEmailReal");
-			lblAuthorReal.Text = languages.GetString("MainForm.lblAuthorReal");
-			lblLangComment.Text = languages.GetString("MainForm.lblLangComment");
-			lblLangContact.Text = languages.GetString("MainForm.lblLangContact");
-			lblLangAuthor.Text = languages.GetString("MainForm.lblLangAuthor");
-			lblLanguageConfig.Text = languages.GetString("MainForm.lblLanguageConfig");
-			groupBox4.Text = languages.GetString("MainForm.groupBox4");
-			gbStartBeforeLFS.Text = languages.GetString("MainForm.gbStartBeforeLFS");
-			btnProgramEnable.Text = languages.GetString("MainForm.btnProgramEnable");
-			btnProgramDelete.Text = languages.GetString("MainForm.btnProgramDelete");
-			btnProgramNew.Text = languages.GetString("MainForm.btnProgramNew");
-			gbProgramConfig.Text = languages.GetString("MainForm.gbProgramConfig");
-			btnProgramCancel.Text = languages.GetString("MainForm.btnProgramCancel");
-			btnProgramSave.Text = languages.GetString("MainForm.btnProgramSave");
-			lblProgramConfigArg.Text = languages.GetString("MainForm.lblProgramConfigArg");
-			lblProgramConfigName.Text = languages.GetString("MainForm.lblProgramConfigName");
-			btnProgramBrowse.Text = languages.GetString("MainForm.btnProgramBrowse");
-			lblProgramConfigPath.Text = languages.GetString("MainForm.lblProgramConfigPath");
-			txtInsimPort.Text = languages.GetString("MainForm.txtInsimPort");
-			lblQueryWaitDescription.Text = languages.GetString("MainForm.lblQueryWaitDescription");
-			lblInsimPortConfig.Text = languages.GetString("MainForm.lblInsimPortConfig");
-			cbQueryWait.Text = languages.GetString("MainForm.cbQueryWait");
-			lblQueryWaitHelp.Text = languages.GetString("MainForm.lblQueryWaitHelp");
-			btnCheckNewVersion.Text = languages.GetString("MainForm.btnCheckNewVersion");
-			cbNewVersion.Text = languages.GetString("MainForm.cbNewVersion");
-			lblExeDescriptionConfig.Text = languages.GetString("MainForm.lblExeDescriptionConfig");
-			lblExePathConfig.Text = languages.GetString("MainForm.lblExePathConfig");
-			buttonBrowse.Text = languages.GetString("MainForm.buttonBrowse");
-			cbFavRefresh.Text = languages.GetString("MainForm.cbStartupRefresh");
-			cbNewVersion.Text = languages.GetString("MainForm.cbNewVersion");
-
-			btnQuickRefresh.Text = languages.GetString("MainForm.btnQuickRefresh");
-			//gbAdvanced.Text = languages.GetString("MainForm.gbAdvanced");
-
-			this.Text = languages.GetString("MainForm.this");
 			
+			string formPrefix = "MainForm.";
+
+			List<string> stringsToAdd = new List<string>();
+			List<Control> contList = GetControls(this);
+			for(int i = 0; i < contList.Count; i++){
+				Control c = contList[i];
+				//context menus of any controls need to be added to the control list too.
+				if (c.ContextMenuStrip != null) {
+					contList.Add(c.ContextMenuStrip);
+				}
+				if (String.IsNullOrEmpty(c.Text) || String.IsNullOrEmpty(c.Name) || c is ComboBox) //controls with empty text/names are going to stuff up. we also dont want ComboBoxes
+					continue;
+				//we need to process menu sub-items seperately because they're not inherited from control.
+				if (c is ToolStrip) {
+					Console.WriteLine(c.Name);
+					foreach (ToolStripMenuItem menu in (c as ToolStrip).Items) {
+						//process each sub menu.
+						foreach (ToolStripMenuItem item in GetControls(menu)) {
+							string name = formPrefix + item.Name;
+							string result = languages.GetString(name);
+							if (name == result) {
+								Console.WriteLine(name + " not found in lang.");
+								stringsToAdd.Add("<component name=\"" + result + "\">" + item.Text.Replace("&", "&amp;") + "</component>");
+								continue;
+							} else {
+								item.Text = result;
+							}
+						}
+						//process the parent menu text.
+						string menuname = formPrefix + menu.Name;
+						string menuresult = languages.GetString(menuname);
+						if (menuname == menuresult) {
+							Console.WriteLine(menuname + " not found in lang.");
+							stringsToAdd.Add("<component name=\"" + menuresult + "\">" + menu.Text.Replace("&", "&amp;") + "</component>");
+							continue;
+						} else {
+							menu.Text = menuresult;
+						}
+
+					}
+				//now process controls as normal
+				} else {
+					string name = formPrefix + c.Name;
+					string result = languages.GetString(name);
+					if (name == result) {
+						Console.WriteLine(name + " not found in lang.");
+						stringsToAdd.Add("<component name=\"" + result + "\">" + c.Text.Replace("&", "&amp;") + "</component>");
+						continue;
+					} else {
+						c.Text = result;
+					}
+				}
+			}
+			
+			//Write some cool shit about missing strings.
+			if (stringsToAdd.Count > 0) {
+				Console.WriteLine("\nPlease add the following lines to " + Path.GetFileName(languages.Filename) + " (translating them if needed):");
+				foreach (string s in stringsToAdd) {
+					Console.WriteLine(s);
+				}
+			}
+
 			lbPreStart.Items.Clear();
 			foreach (PreStartProgram p in config.psp){
 				lbPreStart.Items.Add(p);
@@ -1338,7 +1331,6 @@ namespace BrowseForSpeed.Frontend
 				statusNoReply.Text = String.Format(languages.GetString("MainForm.NoReply"), numServersNoReply);
 				statusRefused.Text = String.Format(languages.GetString("MainForm.Refused"), numServersRefused);
 			}
-			Console.WriteLine();
 	
 			lvMain.DisplayAll();
 			lvFavourites.DisplayAll();
@@ -1398,7 +1390,7 @@ namespace BrowseForSpeed.Frontend
 				if (e.ColumnIndex == 0) {
 					ServerListItem server = ((ServerListView)list).GetServer((IPEndPoint)e.Item.Tag);
 					e.DrawBackground();
-					DrawColouredHostname(e.Graphics, server.hostname, list.Font, e.SubItem.Bounds);
+					DrawColouredHostname(e.Graphics, server.hostname, list.Font, e.Bounds);
 				} else {
 					e.DrawDefault = true;
 					return;
@@ -1434,10 +1426,17 @@ namespace BrowseForSpeed.Frontend
 				}
 				Region region = stringRegions[j] as Region;
         		RectangleF rect = region.GetBounds(g);
-        		g.DrawString(cleanHostname[j].ToString(), f, b, bounds.X + rect.X, bounds.Y, format);
+				//yay ellipsissss
+/*				if ((rect.X + (rect.Width + stringRegions[j-(1 < j ? 1 : 0)].GetBounds(g).Width + stringRegions[j-(2 < j ? 2 : 0)].GetBounds(g).Width)) > bounds.Width) {
+					g.DrawString("...", f, SystemBrushes.ControlText, stringRegions[0].GetBounds(g).X + bounds.X + rect.X, bounds.Y, format);
+					return;
+				}*/
+        		g.DrawString(cleanHostname[j].ToString(), f, b, stringRegions[0].GetBounds(g).X + bounds.X + rect.X, bounds.Y, format);
 			}
 			} catch (Exception ex) {
-				g.DrawString(ex.Message + ex.StackTrace, f, Brushes.Black, g.VisibleClipBounds);
+				//g.DrawString(ex.Message + ex.StackTrace, f, Brushes.Black, g.VisibleClipBounds);
+				Console.WriteLine(ex);
+				Console.WriteLine(hostname);
 			}
 		}
 		

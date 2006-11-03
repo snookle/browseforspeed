@@ -54,6 +54,8 @@ namespace BrowseForSpeed.Frontend
 			System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("No Friends Online");
 			System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("No Friends Online");
 			System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("No Friends Online");
+			System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("No Friends Online");
+			System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("No Friends Online");
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.joinServerToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,14 +79,6 @@ namespace BrowseForSpeed.Frontend
 			this.cbPing = new System.Windows.Forms.ComboBox();
 			this.cbEmpty = new System.Windows.Forms.CheckBox();
 			this.cbTracks = new System.Windows.Forms.ComboBox();
-			this.lvMain = new BrowseForSpeed.Frontend.MainListView();
-			this.columnHeaderName = new System.Windows.Forms.ColumnHeader();
-			this.columnHeaderPing = new System.Windows.Forms.ColumnHeader();
-			this.columnPrivate = new System.Windows.Forms.ColumnHeader();
-			this.columnHeaderConnections = new System.Windows.Forms.ColumnHeader();
-			this.columnHeaderInfo = new System.Windows.Forms.ColumnHeader();
-			this.columnHeaderTrack = new System.Windows.Forms.ColumnHeader();
-			this.columnHeaderCars = new System.Windows.Forms.ColumnHeader();
 			this.contextMenuBrowser = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.joinServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewServerInformationMain = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,14 +94,6 @@ namespace BrowseForSpeed.Frontend
 			this.btnAddServer = new System.Windows.Forms.Button();
 			this.buttonRefreshFav = new System.Windows.Forms.Button();
 			this.btnJoinFav = new System.Windows.Forms.Button();
-			this.lvFavourites = new BrowseForSpeed.Frontend.FavouriteListView();
-			this.columnHeaderFavServerName = new System.Windows.Forms.ColumnHeader();
-			this.columnHeaderFavPing = new System.Windows.Forms.ColumnHeader();
-			this.columnHeaderFavVersion = new System.Windows.Forms.ColumnHeader();
-			this.columnHeaderFavSlots = new System.Windows.Forms.ColumnHeader();
-			this.columnHeaderFavInfo = new System.Windows.Forms.ColumnHeader();
-			this.columnHeaderFavTrack = new System.Windows.Forms.ColumnHeader();
-			this.columnHeaderFavCars = new System.Windows.Forms.ColumnHeader();
 			this.contextMenuFav = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.joinServerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewServerInformationFav = new System.Windows.Forms.ToolStripMenuItem();
@@ -120,25 +106,20 @@ namespace BrowseForSpeed.Frontend
 			this.cbHideOffline = new System.Windows.Forms.CheckBox();
 			this.btnRefreshFriend = new System.Windows.Forms.Button();
 			this.btnJoinFriend = new System.Windows.Forms.Button();
-			this.lvFriends = new BrowseForSpeed.Frontend.FriendListView();
-			this.columnFriendName = new System.Windows.Forms.ColumnHeader();
-			this.columnFriendServer = new System.Windows.Forms.ColumnHeader();
-			this.columnFriendPrivate = new System.Windows.Forms.ColumnHeader();
-			this.columnFriendPlayers = new System.Windows.Forms.ColumnHeader();
 			this.contextMenuFriends = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.joinServerMenuFriends = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewServerInformationFriend = new System.Windows.Forms.ToolStripMenuItem();
 			this.removeFriendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabConfig = new System.Windows.Forms.TabPage();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.groupBox7 = new System.Windows.Forms.GroupBox();
+			this.gbConfigurationMain = new System.Windows.Forms.GroupBox();
+			this.gbLiveForSpeed = new System.Windows.Forms.GroupBox();
 			this.txtInsimPort = new System.Windows.Forms.TextBox();
 			this.lblInsimPortConfig = new System.Windows.Forms.Label();
 			this.pathList = new System.Windows.Forms.ListBox();
 			this.lblExeDescriptionConfig = new System.Windows.Forms.Label();
 			this.lblExePathConfig = new System.Windows.Forms.Label();
 			this.buttonBrowse = new System.Windows.Forms.Button();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.gbLanguage = new System.Windows.Forms.GroupBox();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
 			this.lblCommentReal = new System.Windows.Forms.Label();
 			this.lblEmailReal = new System.Windows.Forms.Label();
@@ -166,12 +147,12 @@ namespace BrowseForSpeed.Frontend
 			this.lbPreStart = new System.Windows.Forms.ListBox();
 			this.gbAdvanced = new System.Windows.Forms.GroupBox();
 			this.cbDoubleClick = new System.Windows.Forms.ComboBox();
-			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.gbQueryWait = new System.Windows.Forms.GroupBox();
 			this.lblQueryWaitDescription = new System.Windows.Forms.Label();
 			this.queryWait = new System.Windows.Forms.NumericUpDown();
 			this.cbQueryWait = new System.Windows.Forms.CheckBox();
 			this.lblQueryWaitHelp = new System.Windows.Forms.Label();
-			this.groupBox6 = new System.Windows.Forms.GroupBox();
+			this.gbWhenBFSStarts = new System.Windows.Forms.GroupBox();
 			this.cbFriendRefresh = new System.Windows.Forms.CheckBox();
 			this.btnCheckNewVersion = new System.Windows.Forms.Button();
 			this.cbFavRefresh = new System.Windows.Forms.CheckBox();
@@ -185,6 +166,27 @@ namespace BrowseForSpeed.Frontend
 			this.statusNoReply = new System.Windows.Forms.ToolStripStatusLabel();
 			this.openFileDialogPS = new System.Windows.Forms.OpenFileDialog();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+			this.lvMain = new BrowseForSpeed.Frontend.MainListView();
+			this.columnHeaderName = new System.Windows.Forms.ColumnHeader();
+			this.columnHeaderPing = new System.Windows.Forms.ColumnHeader();
+			this.columnPrivate = new System.Windows.Forms.ColumnHeader();
+			this.columnHeaderConnections = new System.Windows.Forms.ColumnHeader();
+			this.columnHeaderInfo = new System.Windows.Forms.ColumnHeader();
+			this.columnHeaderTrack = new System.Windows.Forms.ColumnHeader();
+			this.columnHeaderCars = new System.Windows.Forms.ColumnHeader();
+			this.lvFavourites = new BrowseForSpeed.Frontend.FavouriteListView();
+			this.columnHeaderFavServerName = new System.Windows.Forms.ColumnHeader();
+			this.columnHeaderFavPing = new System.Windows.Forms.ColumnHeader();
+			this.columnHeaderFavVersion = new System.Windows.Forms.ColumnHeader();
+			this.columnHeaderFavSlots = new System.Windows.Forms.ColumnHeader();
+			this.columnHeaderFavInfo = new System.Windows.Forms.ColumnHeader();
+			this.columnHeaderFavTrack = new System.Windows.Forms.ColumnHeader();
+			this.columnHeaderFavCars = new System.Windows.Forms.ColumnHeader();
+			this.lvFriends = new BrowseForSpeed.Frontend.FriendListView();
+			this.columnFriendName = new System.Windows.Forms.ColumnHeader();
+			this.columnFriendServer = new System.Windows.Forms.ColumnHeader();
+			this.columnFriendPrivate = new System.Windows.Forms.ColumnHeader();
+			this.columnFriendPlayers = new System.Windows.Forms.ColumnHeader();
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabMain.SuspendLayout();
@@ -195,24 +197,24 @@ namespace BrowseForSpeed.Frontend
 			this.tabFriends.SuspendLayout();
 			this.contextMenuFriends.SuspendLayout();
 			this.tabConfig.SuspendLayout();
-			this.groupBox1.SuspendLayout();
-			this.groupBox7.SuspendLayout();
-			this.groupBox2.SuspendLayout();
+			this.gbConfigurationMain.SuspendLayout();
+			this.gbLiveForSpeed.SuspendLayout();
+			this.gbLanguage.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			this.gbStartBeforeLFS.SuspendLayout();
 			this.gbProgramConfig.SuspendLayout();
 			this.gbAdvanced.SuspendLayout();
-			this.groupBox4.SuspendLayout();
+			this.gbQueryWait.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).BeginInit();
-			this.groupBox6.SuspendLayout();
+			this.gbWhenBFSStarts.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip
 			// 
 			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.fileToolStripMenuItem,
-									this.aboutToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.aboutToolStripMenuItem});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.Name = "menuStrip";
 			this.menuStrip.Size = new System.Drawing.Size(946, 24);
@@ -222,8 +224,8 @@ namespace BrowseForSpeed.Frontend
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.joinServerToolStripMenuItem2,
-									this.closeToolStripMenuItem});
+            this.joinServerToolStripMenuItem2,
+            this.closeToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
 			this.fileToolStripMenuItem.Text = "&File";
@@ -245,7 +247,7 @@ namespace BrowseForSpeed.Frontend
 			// aboutToolStripMenuItem
 			// 
 			this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.aboutToolStripMenuItem1});
+            this.aboutToolStripMenuItem1});
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
 			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
 			this.aboutToolStripMenuItem.Text = "&Help";
@@ -357,8 +359,8 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// gbFilters
 			// 
-			this.gbFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Right)));
+			this.gbFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.gbFilters.Controls.Add(this.cbVersion);
 			this.gbFilters.Controls.Add(this.cbPublic);
 			this.gbFilters.Controls.Add(this.cbPrivate);
@@ -379,9 +381,9 @@ namespace BrowseForSpeed.Frontend
 			this.cbVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbVersion.FormattingEnabled = true;
 			this.cbVersion.Items.AddRange(new object[] {
-									"Demo",
-									"S1",
-									"S2"});
+            "Demo",
+            "S1",
+            "S2"});
 			this.cbVersion.Location = new System.Drawing.Point(6, 372);
 			this.cbVersion.Name = "cbVersion";
 			this.cbVersion.Size = new System.Drawing.Size(124, 21);
@@ -441,14 +443,14 @@ namespace BrowseForSpeed.Frontend
 			this.cbPing.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbPing.FormattingEnabled = true;
 			this.cbPing.Items.AddRange(new object[] {
-									"50",
-									"100",
-									"150",
-									"200",
-									"300",
-									"500",
-									"1000",
-									"5000"});
+            "50",
+            "100",
+            "150",
+            "200",
+            "300",
+            "500",
+            "1000",
+            "5000"});
 			this.cbPing.Location = new System.Drawing.Point(7, 468);
 			this.cbPing.Name = "cbPing";
 			this.cbPing.Size = new System.Drawing.Size(123, 21);
@@ -473,99 +475,30 @@ namespace BrowseForSpeed.Frontend
 			this.cbTracks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbTracks.FormattingEnabled = true;
 			this.cbTracks.Items.AddRange(new object[] {
-									"All Tracks",
-									"Blackwood",
-									"South City",
-									"Fern Bay",
-									"Kyoto",
-									"Westhill",
-									"Aston",
-									"Autocross",
-									"Drag",
-									"Skid Pad"});
+            "All Tracks",
+            "Blackwood",
+            "South City",
+            "Fern Bay",
+            "Kyoto",
+            "Westhill",
+            "Aston",
+            "Autocross",
+            "Drag",
+            "Skid Pad"});
 			this.cbTracks.Location = new System.Drawing.Point(7, 495);
 			this.cbTracks.Name = "cbTracks";
 			this.cbTracks.Size = new System.Drawing.Size(124, 21);
 			this.cbTracks.TabIndex = 10;
 			this.cbTracks.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTracksSelectedIndexChanged);
 			// 
-			// lvMain
-			// 
-			this.lvMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
-			this.lvMain.AutoArrange = false;
-			this.lvMain.BackColor = System.Drawing.Color.CornflowerBlue;
-			this.lvMain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-									this.columnHeaderName,
-									this.columnHeaderPing,
-									this.columnPrivate,
-									this.columnHeaderConnections,
-									this.columnHeaderInfo,
-									this.columnHeaderTrack,
-									this.columnHeaderCars});
-			this.lvMain.ContextMenuStrip = this.contextMenuBrowser;
-			this.lvMain.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-			this.lvMain.FullRowSelect = true;
-			this.lvMain.GridLines = true;
-			this.lvMain.ImeMode = System.Windows.Forms.ImeMode.On;
-			this.lvMain.Location = new System.Drawing.Point(8, 6);
-			this.lvMain.MultiSelect = false;
-			this.lvMain.Name = "lvMain";
-			this.lvMain.OwnerDraw = true;
-			this.lvMain.Size = new System.Drawing.Size(779, 520);
-			this.lvMain.TabIndex = 3;
-			this.lvMain.UseCompatibleStateImageBehavior = false;
-			this.lvMain.View = System.Windows.Forms.View.Details;
-			this.lvMain.DoubleClick += new System.EventHandler(this.listDblClick);
-			this.lvMain.SelectedIndexChanged += new System.EventHandler(this.lvMainSelectedIndexChanged);
-			this.lvMain.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.ListViewDrawSubItem);
-			this.lvMain.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
-			this.lvMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ListViewMouseMove);
-			this.lvMain.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListViewDrawColumnHeader);
-			// 
-			// columnHeaderName
-			// 
-			this.columnHeaderName.Text = "Server Name";
-			this.columnHeaderName.Width = 158;
-			// 
-			// columnHeaderPing
-			// 
-			this.columnHeaderPing.Text = "Ping";
-			this.columnHeaderPing.Width = 50;
-			// 
-			// columnPrivate
-			// 
-			this.columnPrivate.Text = "Private";
-			this.columnPrivate.Width = 50;
-			// 
-			// columnHeaderConnections
-			// 
-			this.columnHeaderConnections.Text = "Connections";
-			this.columnHeaderConnections.Width = 80;
-			// 
-			// columnHeaderInfo
-			// 
-			this.columnHeaderInfo.Text = "Info";
-			// 
-			// columnHeaderTrack
-			// 
-			this.columnHeaderTrack.Text = "Track";
-			this.columnHeaderTrack.Width = 134;
-			// 
-			// columnHeaderCars
-			// 
-			this.columnHeaderCars.Text = "Cars";
-			this.columnHeaderCars.Width = 180;
-			// 
 			// contextMenuBrowser
 			// 
 			this.contextMenuBrowser.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.joinServerToolStripMenuItem,
-									this.viewServerInformationMain,
-									this.toolStripMenuItem1,
-									this.copyServerToClipboardToolStripMenuItem,
-									this.administrateToolStripMenuItem1});
+            this.joinServerToolStripMenuItem,
+            this.viewServerInformationMain,
+            this.toolStripMenuItem1,
+            this.copyServerToClipboardToolStripMenuItem,
+            this.administrateToolStripMenuItem1});
 			this.contextMenuBrowser.Name = "contextMenuBrowser";
 			this.contextMenuBrowser.Size = new System.Drawing.Size(203, 114);
 			this.contextMenuBrowser.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuBrowserOpening);
@@ -653,9 +586,9 @@ namespace BrowseForSpeed.Frontend
 			this.cbAddServerVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbAddServerVersion.FormattingEnabled = true;
 			this.cbAddServerVersion.Items.AddRange(new object[] {
-									"S2",
-									"S1",
-									"Demo"});
+            "S2",
+            "S1",
+            "Demo"});
 			this.cbAddServerVersion.Location = new System.Drawing.Point(677, 534);
 			this.cbAddServerVersion.Name = "cbAddServerVersion";
 			this.cbAddServerVersion.Size = new System.Drawing.Size(59, 21);
@@ -716,81 +649,14 @@ namespace BrowseForSpeed.Frontend
 			this.btnJoinFav.UseVisualStyleBackColor = true;
 			this.btnJoinFav.Click += new System.EventHandler(this.btnJoinClick);
 			// 
-			// lvFavourites
-			// 
-			this.lvFavourites.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
-			this.lvFavourites.BackColor = System.Drawing.Color.CornflowerBlue;
-			this.lvFavourites.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-									this.columnHeaderFavServerName,
-									this.columnHeaderFavPing,
-									this.columnHeaderFavVersion,
-									this.columnHeaderFavSlots,
-									this.columnHeaderFavInfo,
-									this.columnHeaderFavTrack,
-									this.columnHeaderFavCars});
-			this.lvFavourites.ContextMenuStrip = this.contextMenuFav;
-			this.lvFavourites.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lvFavourites.FullRowSelect = true;
-			this.lvFavourites.GridLines = true;
-			this.lvFavourites.Location = new System.Drawing.Point(8, 6);
-			this.lvFavourites.MultiSelect = false;
-			this.lvFavourites.Name = "lvFavourites";
-			this.lvFavourites.OwnerDraw = true;
-			this.lvFavourites.Size = new System.Drawing.Size(922, 520);
-			this.lvFavourites.TabIndex = 4;
-			this.lvFavourites.UseCompatibleStateImageBehavior = false;
-			this.lvFavourites.View = System.Windows.Forms.View.Details;
-			this.lvFavourites.DoubleClick += new System.EventHandler(this.listDblClick);
-			this.lvFavourites.SelectedIndexChanged += new System.EventHandler(this.lvFavouritesSelectedIndexChanged);
-			this.lvFavourites.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.ListViewDrawSubItem);
-			this.lvFavourites.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
-			this.lvFavourites.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ListViewMouseMove);
-			this.lvFavourites.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListViewDrawColumnHeader);
-			// 
-			// columnHeaderFavServerName
-			// 
-			this.columnHeaderFavServerName.Text = "Server Name";
-			this.columnHeaderFavServerName.Width = 158;
-			// 
-			// columnHeaderFavPing
-			// 
-			this.columnHeaderFavPing.Text = "Ping";
-			this.columnHeaderFavPing.Width = 50;
-			// 
-			// columnHeaderFavVersion
-			// 
-			this.columnHeaderFavVersion.Text = "Version";
-			this.columnHeaderFavVersion.Width = 63;
-			// 
-			// columnHeaderFavSlots
-			// 
-			this.columnHeaderFavSlots.Text = "Connections";
-			this.columnHeaderFavSlots.Width = 87;
-			// 
-			// columnHeaderFavInfo
-			// 
-			this.columnHeaderFavInfo.Text = "Info";
-			// 
-			// columnHeaderFavTrack
-			// 
-			this.columnHeaderFavTrack.Text = "Track";
-			this.columnHeaderFavTrack.Width = 117;
-			// 
-			// columnHeaderFavCars
-			// 
-			this.columnHeaderFavCars.Text = "Cars";
-			this.columnHeaderFavCars.Width = 374;
-			// 
 			// contextMenuFav
 			// 
 			this.contextMenuFav.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.joinServerToolStripMenuItem1,
-									this.viewServerInformationFav,
-									this.removeFromFavouritesToolStripMenuItem,
-									this.copyServerToClipboardToolStripMenuItem1,
-									this.administrateToolStripMenuItem});
+            this.joinServerToolStripMenuItem1,
+            this.viewServerInformationFav,
+            this.removeFromFavouritesToolStripMenuItem,
+            this.copyServerToClipboardToolStripMenuItem1,
+            this.administrateToolStripMenuItem});
 			this.contextMenuFav.Name = "contextMenuFav";
 			this.contextMenuFav.Size = new System.Drawing.Size(203, 114);
 			this.contextMenuFav.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFavOpening);
@@ -903,77 +769,14 @@ namespace BrowseForSpeed.Frontend
 			this.btnJoinFriend.UseVisualStyleBackColor = true;
 			this.btnJoinFriend.Click += new System.EventHandler(this.JoinFriendClick);
 			// 
-			// lvFriends
-			// 
-			this.lvFriends.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
-			this.lvFriends.AutoArrange = false;
-			this.lvFriends.BackColor = System.Drawing.Color.CornflowerBlue;
-			this.lvFriends.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-									this.columnFriendName,
-									this.columnFriendServer,
-									this.columnFriendPrivate,
-									this.columnFriendPlayers});
-			this.lvFriends.ContextMenuStrip = this.contextMenuFriends;
-			this.lvFriends.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lvFriends.FullRowSelect = true;
-			this.lvFriends.GridLines = true;
-			this.lvFriends.HideOffline = false;
-			this.lvFriends.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-									listViewItem1,
-									listViewItem2,
-									listViewItem3,
-									listViewItem4,
-									listViewItem5,
-									listViewItem6,
-									listViewItem7,
-									listViewItem8,
-									listViewItem9,
-									listViewItem10});
-			this.lvFriends.Location = new System.Drawing.Point(8, 6);
-			this.lvFriends.MultiSelect = false;
-			this.lvFriends.Name = "lvFriends";
-			this.lvFriends.OwnerDraw = true;
-			this.lvFriends.Size = new System.Drawing.Size(922, 520);
-			this.lvFriends.TabIndex = 0;
-			this.lvFriends.UseCompatibleStateImageBehavior = false;
-			this.lvFriends.View = System.Windows.Forms.View.Details;
-			this.lvFriends.DoubleClick += new System.EventHandler(this.LvFriendsDoubleClick);
-			this.lvFriends.SelectedIndexChanged += new System.EventHandler(this.LvFriendsSelectedIndexChanged);
-			this.lvFriends.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.ListViewDrawSubItem);
-			this.lvFriends.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
-			this.lvFriends.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ListViewMouseMove);
-			this.lvFriends.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListViewDrawColumnHeader);
-			// 
-			// columnFriendName
-			// 
-			this.columnFriendName.Text = "Friend Name";
-			this.columnFriendName.Width = 138;
-			// 
-			// columnFriendServer
-			// 
-			this.columnFriendServer.Text = "Server Name";
-			this.columnFriendServer.Width = 173;
-			// 
-			// columnFriendPrivate
-			// 
-			this.columnFriendPrivate.Text = "Private";
-			this.columnFriendPrivate.Width = 66;
-			// 
-			// columnFriendPlayers
-			// 
-			this.columnFriendPlayers.Text = "Players";
-			this.columnFriendPlayers.Width = 523;
-			// 
 			// contextMenuFriends
 			// 
 			this.contextMenuFriends.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.joinServerMenuFriends,
-									this.viewServerInformationFriend,
-									this.removeFriendToolStripMenuItem});
+            this.joinServerMenuFriends,
+            this.viewServerInformationFriend,
+            this.removeFriendToolStripMenuItem});
 			this.contextMenuFriends.Name = "contextMenuFriends";
-			this.contextMenuFriends.Size = new System.Drawing.Size(203, 70);
+			this.contextMenuFriends.Size = new System.Drawing.Size(203, 92);
 			this.contextMenuFriends.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFriendsOpening);
 			// 
 			// joinServerMenuFriends
@@ -999,7 +802,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// tabConfig
 			// 
-			this.tabConfig.Controls.Add(this.groupBox1);
+			this.tabConfig.Controls.Add(this.gbConfigurationMain);
 			this.tabConfig.Location = new System.Drawing.Point(4, 22);
 			this.tabConfig.Name = "tabConfig";
 			this.tabConfig.Padding = new System.Windows.Forms.Padding(3);
@@ -1008,34 +811,34 @@ namespace BrowseForSpeed.Frontend
 			this.tabConfig.Text = "Configuration";
 			this.tabConfig.UseVisualStyleBackColor = true;
 			// 
-			// groupBox1
+			// gbConfigurationMain
 			// 
-			this.groupBox1.Controls.Add(this.groupBox7);
-			this.groupBox1.Controls.Add(this.groupBox2);
-			this.groupBox1.Controls.Add(this.gbStartBeforeLFS);
-			this.groupBox1.Controls.Add(this.gbAdvanced);
-			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.groupBox1.Location = new System.Drawing.Point(3, 3);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(932, 555);
-			this.groupBox1.TabIndex = 0;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Configuration";
+			this.gbConfigurationMain.Controls.Add(this.gbLiveForSpeed);
+			this.gbConfigurationMain.Controls.Add(this.gbLanguage);
+			this.gbConfigurationMain.Controls.Add(this.gbStartBeforeLFS);
+			this.gbConfigurationMain.Controls.Add(this.gbAdvanced);
+			this.gbConfigurationMain.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.gbConfigurationMain.Location = new System.Drawing.Point(3, 3);
+			this.gbConfigurationMain.Name = "gbConfigurationMain";
+			this.gbConfigurationMain.Size = new System.Drawing.Size(932, 555);
+			this.gbConfigurationMain.TabIndex = 0;
+			this.gbConfigurationMain.TabStop = false;
+			this.gbConfigurationMain.Text = "Configuration";
 			// 
-			// groupBox7
+			// gbLiveForSpeed
 			// 
-			this.groupBox7.Controls.Add(this.txtInsimPort);
-			this.groupBox7.Controls.Add(this.lblInsimPortConfig);
-			this.groupBox7.Controls.Add(this.pathList);
-			this.groupBox7.Controls.Add(this.lblExeDescriptionConfig);
-			this.groupBox7.Controls.Add(this.lblExePathConfig);
-			this.groupBox7.Controls.Add(this.buttonBrowse);
-			this.groupBox7.Location = new System.Drawing.Point(13, 20);
-			this.groupBox7.Name = "groupBox7";
-			this.groupBox7.Size = new System.Drawing.Size(437, 202);
-			this.groupBox7.TabIndex = 18;
-			this.groupBox7.TabStop = false;
-			this.groupBox7.Text = "Live For Speed";
+			this.gbLiveForSpeed.Controls.Add(this.txtInsimPort);
+			this.gbLiveForSpeed.Controls.Add(this.lblInsimPortConfig);
+			this.gbLiveForSpeed.Controls.Add(this.pathList);
+			this.gbLiveForSpeed.Controls.Add(this.lblExeDescriptionConfig);
+			this.gbLiveForSpeed.Controls.Add(this.lblExePathConfig);
+			this.gbLiveForSpeed.Controls.Add(this.buttonBrowse);
+			this.gbLiveForSpeed.Location = new System.Drawing.Point(13, 20);
+			this.gbLiveForSpeed.Name = "gbLiveForSpeed";
+			this.gbLiveForSpeed.Size = new System.Drawing.Size(437, 202);
+			this.gbLiveForSpeed.TabIndex = 18;
+			this.gbLiveForSpeed.TabStop = false;
+			this.gbLiveForSpeed.Text = "Live For Speed";
 			// 
 			// txtInsimPort
 			// 
@@ -1070,8 +873,8 @@ namespace BrowseForSpeed.Frontend
 			this.lblExeDescriptionConfig.Size = new System.Drawing.Size(419, 41);
 			this.lblExeDescriptionConfig.TabIndex = 23;
 			this.lblExeDescriptionConfig.Text = "If there is more than one entry in the box above, please select which one is the " +
-			"correct path for your LFS.exe. If there are no entries, please click the Browse " +
-			"button to manually locate it.";
+				"correct path for your LFS.exe. If there are no entries, please click the Browse " +
+				"button to manually locate it.";
 			// 
 			// lblExePathConfig
 			// 
@@ -1092,18 +895,18 @@ namespace BrowseForSpeed.Frontend
 			this.buttonBrowse.Text = "&Browse...";
 			this.buttonBrowse.UseVisualStyleBackColor = true;
 			// 
-			// groupBox2
+			// gbLanguage
 			// 
-			this.groupBox2.Controls.Add(this.groupBox5);
-			this.groupBox2.Controls.Add(this.label1);
-			this.groupBox2.Controls.Add(this.cbConfigLang);
-			this.groupBox2.Controls.Add(this.lblLanguageConfig);
-			this.groupBox2.Location = new System.Drawing.Point(489, 20);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(437, 171);
-			this.groupBox2.TabIndex = 17;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Language";
+			this.gbLanguage.Controls.Add(this.groupBox5);
+			this.gbLanguage.Controls.Add(this.label1);
+			this.gbLanguage.Controls.Add(this.cbConfigLang);
+			this.gbLanguage.Controls.Add(this.lblLanguageConfig);
+			this.gbLanguage.Location = new System.Drawing.Point(489, 20);
+			this.gbLanguage.Name = "gbLanguage";
+			this.gbLanguage.Size = new System.Drawing.Size(437, 171);
+			this.gbLanguage.TabIndex = 17;
+			this.gbLanguage.TabStop = false;
+			this.gbLanguage.Text = "Language";
 			// 
 			// groupBox5
 			// 
@@ -1356,8 +1159,8 @@ namespace BrowseForSpeed.Frontend
 			// gbAdvanced
 			// 
 			this.gbAdvanced.Controls.Add(this.cbDoubleClick);
-			this.gbAdvanced.Controls.Add(this.groupBox4);
-			this.gbAdvanced.Controls.Add(this.groupBox6);
+			this.gbAdvanced.Controls.Add(this.gbQueryWait);
+			this.gbAdvanced.Controls.Add(this.gbWhenBFSStarts);
 			this.gbAdvanced.Controls.Add(this.lblDoubleClick);
 			this.gbAdvanced.Controls.Add(this.cbColouredHostnames);
 			this.gbAdvanced.Location = new System.Drawing.Point(489, 197);
@@ -1372,25 +1175,25 @@ namespace BrowseForSpeed.Frontend
 			this.cbDoubleClick.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbDoubleClick.FormattingEnabled = true;
 			this.cbDoubleClick.Items.AddRange(new object[] {
-									"View Server Information",
-									"Join Server"});
+            "View Server Information",
+            "Join Server"});
 			this.cbDoubleClick.Location = new System.Drawing.Point(224, 16);
 			this.cbDoubleClick.Name = "cbDoubleClick";
 			this.cbDoubleClick.Size = new System.Drawing.Size(207, 21);
 			this.cbDoubleClick.TabIndex = 27;
 			// 
-			// groupBox4
+			// gbQueryWait
 			// 
-			this.groupBox4.Controls.Add(this.lblQueryWaitDescription);
-			this.groupBox4.Controls.Add(this.queryWait);
-			this.groupBox4.Controls.Add(this.cbQueryWait);
-			this.groupBox4.Controls.Add(this.lblQueryWaitHelp);
-			this.groupBox4.Location = new System.Drawing.Point(6, 191);
-			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(425, 155);
-			this.groupBox4.TabIndex = 24;
-			this.groupBox4.TabStop = false;
-			this.groupBox4.Text = "Query Wait";
+			this.gbQueryWait.Controls.Add(this.lblQueryWaitDescription);
+			this.gbQueryWait.Controls.Add(this.queryWait);
+			this.gbQueryWait.Controls.Add(this.cbQueryWait);
+			this.gbQueryWait.Controls.Add(this.lblQueryWaitHelp);
+			this.gbQueryWait.Location = new System.Drawing.Point(6, 191);
+			this.gbQueryWait.Name = "gbQueryWait";
+			this.gbQueryWait.Size = new System.Drawing.Size(425, 155);
+			this.gbQueryWait.TabIndex = 24;
+			this.gbQueryWait.TabStop = false;
+			this.gbQueryWait.Text = "Query Wait";
 			// 
 			// lblQueryWaitDescription
 			// 
@@ -1400,35 +1203,35 @@ namespace BrowseForSpeed.Frontend
 			this.lblQueryWaitDescription.Size = new System.Drawing.Size(329, 57);
 			this.lblQueryWaitDescription.TabIndex = 25;
 			this.lblQueryWaitDescription.Text = "Query Wait value. This is the time to wait before adding another query to the con" +
-			"current queries. Increase this value if, when querying, all servers start giving" +
-			" \"Connection Refused\"";
+				"current queries. Increase this value if, when querying, all servers start giving" +
+				" \"Connection Refused\"";
 			// 
 			// queryWait
 			// 
 			this.queryWait.Increment = new decimal(new int[] {
-									10,
-									0,
-									0,
-									0});
+            10,
+            0,
+            0,
+            0});
 			this.queryWait.Location = new System.Drawing.Point(15, 44);
 			this.queryWait.Maximum = new decimal(new int[] {
-									1000,
-									0,
-									0,
-									0});
+            1000,
+            0,
+            0,
+            0});
 			this.queryWait.Minimum = new decimal(new int[] {
-									100,
-									0,
-									0,
-									0});
+            100,
+            0,
+            0,
+            0});
 			this.queryWait.Name = "queryWait";
 			this.queryWait.Size = new System.Drawing.Size(52, 21);
 			this.queryWait.TabIndex = 24;
 			this.queryWait.Value = new decimal(new int[] {
-									150,
-									0,
-									0,
-									0});
+            150,
+            0,
+            0,
+            0});
 			// 
 			// cbQueryWait
 			// 
@@ -1449,20 +1252,20 @@ namespace BrowseForSpeed.Frontend
 			this.lblQueryWaitHelp.Size = new System.Drawing.Size(401, 50);
 			this.lblQueryWaitHelp.TabIndex = 22;
 			this.lblQueryWaitHelp.Text = "Only disable Query Wait if you are certain your Operating System does not have a " +
-			"connection limit.  Please see readme.txt for more information. ";
+				"connection limit.  Please see readme.txt for more information. ";
 			// 
-			// groupBox6
+			// gbWhenBFSStarts
 			// 
-			this.groupBox6.Controls.Add(this.cbFriendRefresh);
-			this.groupBox6.Controls.Add(this.btnCheckNewVersion);
-			this.groupBox6.Controls.Add(this.cbFavRefresh);
-			this.groupBox6.Controls.Add(this.cbNewVersion);
-			this.groupBox6.Location = new System.Drawing.Point(6, 73);
-			this.groupBox6.Name = "groupBox6";
-			this.groupBox6.Size = new System.Drawing.Size(425, 112);
-			this.groupBox6.TabIndex = 23;
-			this.groupBox6.TabStop = false;
-			this.groupBox6.Text = "When Browse For Speed Starts";
+			this.gbWhenBFSStarts.Controls.Add(this.cbFriendRefresh);
+			this.gbWhenBFSStarts.Controls.Add(this.btnCheckNewVersion);
+			this.gbWhenBFSStarts.Controls.Add(this.cbFavRefresh);
+			this.gbWhenBFSStarts.Controls.Add(this.cbNewVersion);
+			this.gbWhenBFSStarts.Location = new System.Drawing.Point(6, 73);
+			this.gbWhenBFSStarts.Name = "gbWhenBFSStarts";
+			this.gbWhenBFSStarts.Size = new System.Drawing.Size(425, 112);
+			this.gbWhenBFSStarts.TabIndex = 23;
+			this.gbWhenBFSStarts.TabStop = false;
+			this.gbWhenBFSStarts.Text = "When Browse For Speed Starts";
 			// 
 			// cbFriendRefresh
 			// 
@@ -1476,7 +1279,7 @@ namespace BrowseForSpeed.Frontend
 			// btnCheckNewVersion
 			// 
 			this.btnCheckNewVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btnCheckNewVersion.Location = new System.Drawing.Point(255, 21);
+			this.btnCheckNewVersion.Location = new System.Drawing.Point(317, 21);
 			this.btnCheckNewVersion.Name = "btnCheckNewVersion";
 			this.btnCheckNewVersion.Size = new System.Drawing.Size(91, 23);
 			this.btnCheckNewVersion.TabIndex = 13;
@@ -1535,9 +1338,9 @@ namespace BrowseForSpeed.Frontend
 			// statusStrip
 			// 
 			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.statusTotal,
-									this.statusRefused,
-									this.statusNoReply});
+            this.statusTotal,
+            this.statusRefused,
+            this.statusNoReply});
 			this.statusStrip.Location = new System.Drawing.Point(0, 611);
 			this.statusStrip.Name = "statusStrip";
 			this.statusStrip.Size = new System.Drawing.Size(946, 22);
@@ -1568,6 +1371,207 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.toolTip.AutomaticDelay = 1000;
 			this.toolTip.IsBalloon = true;
+			// 
+			// lvMain
+			// 
+			this.lvMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
+			this.lvMain.AutoArrange = false;
+			this.lvMain.BackColor = System.Drawing.Color.CornflowerBlue;
+			this.lvMain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderName,
+            this.columnHeaderPing,
+            this.columnPrivate,
+            this.columnHeaderConnections,
+            this.columnHeaderInfo,
+            this.columnHeaderTrack,
+            this.columnHeaderCars});
+			this.lvMain.ContextMenuStrip = this.contextMenuBrowser;
+			this.lvMain.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
+			this.lvMain.FullRowSelect = true;
+			this.lvMain.GridLines = true;
+			this.lvMain.ImeMode = System.Windows.Forms.ImeMode.On;
+			this.lvMain.Location = new System.Drawing.Point(8, 6);
+			this.lvMain.MultiSelect = false;
+			this.lvMain.Name = "lvMain";
+			this.lvMain.OwnerDraw = true;
+			this.lvMain.Size = new System.Drawing.Size(779, 520);
+			this.lvMain.TabIndex = 3;
+			this.lvMain.UseCompatibleStateImageBehavior = false;
+			this.lvMain.View = System.Windows.Forms.View.Details;
+			this.lvMain.DoubleClick += new System.EventHandler(this.listDblClick);
+			this.lvMain.SelectedIndexChanged += new System.EventHandler(this.lvMainSelectedIndexChanged);
+			this.lvMain.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.ListViewDrawSubItem);
+			this.lvMain.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
+			this.lvMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ListViewMouseMove);
+			this.lvMain.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListViewDrawColumnHeader);
+			// 
+			// columnHeaderName
+			// 
+			this.columnHeaderName.Text = "Server Name";
+			this.columnHeaderName.Width = 158;
+			// 
+			// columnHeaderPing
+			// 
+			this.columnHeaderPing.Text = "Ping";
+			this.columnHeaderPing.Width = 50;
+			// 
+			// columnPrivate
+			// 
+			this.columnPrivate.Text = "Private";
+			this.columnPrivate.Width = 50;
+			// 
+			// columnHeaderConnections
+			// 
+			this.columnHeaderConnections.Text = "Connections";
+			this.columnHeaderConnections.Width = 80;
+			// 
+			// columnHeaderInfo
+			// 
+			this.columnHeaderInfo.Text = "Info";
+			// 
+			// columnHeaderTrack
+			// 
+			this.columnHeaderTrack.Text = "Track";
+			this.columnHeaderTrack.Width = 134;
+			// 
+			// columnHeaderCars
+			// 
+			this.columnHeaderCars.Text = "Cars";
+			this.columnHeaderCars.Width = 180;
+			// 
+			// lvFavourites
+			// 
+			this.lvFavourites.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
+			this.lvFavourites.BackColor = System.Drawing.Color.CornflowerBlue;
+			this.lvFavourites.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderFavServerName,
+            this.columnHeaderFavPing,
+            this.columnHeaderFavVersion,
+            this.columnHeaderFavSlots,
+            this.columnHeaderFavInfo,
+            this.columnHeaderFavTrack,
+            this.columnHeaderFavCars});
+			this.lvFavourites.ContextMenuStrip = this.contextMenuFav;
+			this.lvFavourites.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lvFavourites.FullRowSelect = true;
+			this.lvFavourites.GridLines = true;
+			this.lvFavourites.Location = new System.Drawing.Point(8, 6);
+			this.lvFavourites.MultiSelect = false;
+			this.lvFavourites.Name = "lvFavourites";
+			this.lvFavourites.OwnerDraw = true;
+			this.lvFavourites.Size = new System.Drawing.Size(922, 520);
+			this.lvFavourites.TabIndex = 4;
+			this.lvFavourites.UseCompatibleStateImageBehavior = false;
+			this.lvFavourites.View = System.Windows.Forms.View.Details;
+			this.lvFavourites.DoubleClick += new System.EventHandler(this.listDblClick);
+			this.lvFavourites.SelectedIndexChanged += new System.EventHandler(this.lvFavouritesSelectedIndexChanged);
+			this.lvFavourites.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.ListViewDrawSubItem);
+			this.lvFavourites.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
+			this.lvFavourites.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ListViewMouseMove);
+			this.lvFavourites.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListViewDrawColumnHeader);
+			// 
+			// columnHeaderFavServerName
+			// 
+			this.columnHeaderFavServerName.Text = "Server Name";
+			this.columnHeaderFavServerName.Width = 158;
+			// 
+			// columnHeaderFavPing
+			// 
+			this.columnHeaderFavPing.Text = "Ping";
+			this.columnHeaderFavPing.Width = 50;
+			// 
+			// columnHeaderFavVersion
+			// 
+			this.columnHeaderFavVersion.Text = "Version";
+			this.columnHeaderFavVersion.Width = 63;
+			// 
+			// columnHeaderFavSlots
+			// 
+			this.columnHeaderFavSlots.Text = "Connections";
+			this.columnHeaderFavSlots.Width = 87;
+			// 
+			// columnHeaderFavInfo
+			// 
+			this.columnHeaderFavInfo.Text = "Info";
+			// 
+			// columnHeaderFavTrack
+			// 
+			this.columnHeaderFavTrack.Text = "Track";
+			this.columnHeaderFavTrack.Width = 117;
+			// 
+			// columnHeaderFavCars
+			// 
+			this.columnHeaderFavCars.Text = "Cars";
+			this.columnHeaderFavCars.Width = 374;
+			// 
+			// lvFriends
+			// 
+			this.lvFriends.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
+			this.lvFriends.AutoArrange = false;
+			this.lvFriends.BackColor = System.Drawing.Color.CornflowerBlue;
+			this.lvFriends.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnFriendName,
+            this.columnFriendServer,
+            this.columnFriendPrivate,
+            this.columnFriendPlayers});
+			this.lvFriends.ContextMenuStrip = this.contextMenuFriends;
+			this.lvFriends.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lvFriends.FullRowSelect = true;
+			this.lvFriends.GridLines = true;
+			this.lvFriends.HideOffline = false;
+			this.lvFriends.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10,
+            listViewItem11,
+            listViewItem12});
+			this.lvFriends.Location = new System.Drawing.Point(8, 6);
+			this.lvFriends.MultiSelect = false;
+			this.lvFriends.Name = "lvFriends";
+			this.lvFriends.OwnerDraw = true;
+			this.lvFriends.Size = new System.Drawing.Size(922, 520);
+			this.lvFriends.TabIndex = 0;
+			this.lvFriends.UseCompatibleStateImageBehavior = false;
+			this.lvFriends.View = System.Windows.Forms.View.Details;
+			this.lvFriends.DoubleClick += new System.EventHandler(this.LvFriendsDoubleClick);
+			this.lvFriends.SelectedIndexChanged += new System.EventHandler(this.LvFriendsSelectedIndexChanged);
+			this.lvFriends.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.ListViewDrawSubItem);
+			this.lvFriends.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMainColumnClick);
+			this.lvFriends.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ListViewMouseMove);
+			this.lvFriends.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.ListViewDrawColumnHeader);
+			// 
+			// columnFriendName
+			// 
+			this.columnFriendName.Text = "Friend Name";
+			this.columnFriendName.Width = 138;
+			// 
+			// columnFriendServer
+			// 
+			this.columnFriendServer.Text = "Server Name";
+			this.columnFriendServer.Width = 173;
+			// 
+			// columnFriendPrivate
+			// 
+			this.columnFriendPrivate.Text = "Private";
+			this.columnFriendPrivate.Width = 66;
+			// 
+			// columnFriendPlayers
+			// 
+			this.columnFriendPlayers.Text = "Players";
+			this.columnFriendPlayers.Width = 523;
 			// 
 			// MainForm
 			// 
@@ -1600,22 +1604,23 @@ namespace BrowseForSpeed.Frontend
 			this.tabFriends.PerformLayout();
 			this.contextMenuFriends.ResumeLayout(false);
 			this.tabConfig.ResumeLayout(false);
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox7.ResumeLayout(false);
-			this.groupBox7.PerformLayout();
-			this.groupBox2.ResumeLayout(false);
+			this.gbConfigurationMain.ResumeLayout(false);
+			this.gbLiveForSpeed.ResumeLayout(false);
+			this.gbLiveForSpeed.PerformLayout();
+			this.gbLanguage.ResumeLayout(false);
 			this.groupBox5.ResumeLayout(false);
 			this.gbStartBeforeLFS.ResumeLayout(false);
 			this.gbProgramConfig.ResumeLayout(false);
 			this.gbProgramConfig.PerformLayout();
 			this.gbAdvanced.ResumeLayout(false);
-			this.groupBox4.ResumeLayout(false);
+			this.gbQueryWait.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.queryWait)).EndInit();
-			this.groupBox6.ResumeLayout(false);
+			this.gbWhenBFSStarts.ResumeLayout(false);
 			this.statusStrip.ResumeLayout(false);
 			this.statusStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
+
 		}
 		private System.Windows.Forms.GroupBox gbAdvanced;
 		private System.Windows.Forms.ToolTip toolTip;
@@ -1623,10 +1628,10 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.GroupBox gbProgramConfig;
 		private System.Windows.Forms.Label lblDoubleClick;
 		private System.Windows.Forms.ComboBox cbDoubleClick;
-		private System.Windows.Forms.GroupBox groupBox7;
+		private System.Windows.Forms.GroupBox gbLiveForSpeed;
 		private System.Windows.Forms.CheckBox cbFavRefresh;
 		private System.Windows.Forms.CheckBox cbFriendRefresh;
-		private System.Windows.Forms.GroupBox groupBox6;
+		private System.Windows.Forms.GroupBox gbWhenBFSStarts;
 		private System.Windows.Forms.CheckBox cbColouredHostnames;
 		private System.Windows.Forms.ColumnHeader columnHeaderFavVersion;
 		private System.Windows.Forms.Label label1;
@@ -1637,7 +1642,7 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.Label lblEmailReal;
 		private System.Windows.Forms.Label lblCommentReal;
 		private System.Windows.Forms.GroupBox groupBox5;
-		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.GroupBox gbLanguage;
 		private System.Windows.Forms.GroupBox gbFilters;
 		private System.Windows.Forms.Label lblExePathConfig;
 		private System.Windows.Forms.Label lblExeDescriptionConfig;
@@ -1697,7 +1702,7 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.TabPage tabFriends;
 		private System.Windows.Forms.OpenFileDialog openFileDialogPS;
 		private System.Windows.Forms.TextBox txtInsimPort;
-		private System.Windows.Forms.GroupBox groupBox4;
+		private System.Windows.Forms.GroupBox gbQueryWait;
 		private System.Windows.Forms.CheckBox cbEmpty;
 		private System.Windows.Forms.NumericUpDown queryWait;
 		private System.Windows.Forms.Button btnCheckNewVersion;
@@ -1741,7 +1746,7 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.ColumnHeader columnHeaderConnections;
 		private System.Windows.Forms.ColumnHeader columnHeaderPing;
 		private System.Windows.Forms.ColumnHeader columnHeaderName;
-		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.GroupBox gbConfigurationMain;
 		private System.Windows.Forms.TabControl tabControl;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
