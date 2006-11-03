@@ -25,8 +25,8 @@ namespace BrowseForSpeed.Frontend
 		
 	public class Language
 	{
-		public string name;
 		public string filename;
+		public string name;
 		public string email;
 		public string comment;
 		public string author;
@@ -125,6 +125,14 @@ namespace BrowseForSpeed.Frontend
 		public string Email {
 			get {
 				return lang.email;
+			}
+		}
+
+		public string Filename
+		{
+			get
+			{
+				return lang.filename;
 			}
 		}
 
