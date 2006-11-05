@@ -125,6 +125,12 @@ namespace BrowseForSpeed.Frontend
 			this.CenterToParent();
 			this.exiting = false;
 			RefreshButtonClick(sender, e);
+			labelServerName.Text = "";
+			labelInfo.Text = "";
+			labelPrivate.Text = "";
+			labelPing.Text = "";
+			labelCars.Text = "";
+			labelTrack.Text = "";
 		}
 		
 		delegate void SetValueDelegate(Object obj, Object val, Object[] index);
