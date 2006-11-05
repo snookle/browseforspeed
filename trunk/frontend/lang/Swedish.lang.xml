@@ -132,7 +132,6 @@
 	<component name="MainForm.cbQueryWait">Deaktivera Anropsfördröjning</component>
 	<component name="MainForm.lblQueryWaitHelp">Deaktivera anropsfördröjning enbart om du är säker på att ditt operativsystem ej har en gräns för max antal nätverksanslutningar, se readme.txt</component>
 	<component name="MainForm.btnCheckNewVersion">&amp;Sök nu</component>
-	<component name="MainForm.cbNewVersion">Sök efter uppdateringar när programmet startas</component>
 	<component name="MainForm.lblExeDescriptionConfig">Välj den sökväg som pekar till den LFS-installation du använder.\nKlicka på bläddra och välj manuellt om du ej ser några sökvägar.</component>
 	<component name="MainForm.lblExePathConfig">Sökväg till LFS.EXE:</component>
 	<component name="MainForm.buttonBrowse">&amp;Bläddra...</component>

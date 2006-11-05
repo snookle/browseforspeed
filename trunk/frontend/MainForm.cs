@@ -1371,6 +1371,7 @@ namespace BrowseForSpeed.Frontend
 			} else {
 				cbDoubleClick.Items.Add(joinServer);
 			}
+			cbDoubleClick.SelectedIndex = index;
 			
 
 			if (statusTotal.Text != ""){

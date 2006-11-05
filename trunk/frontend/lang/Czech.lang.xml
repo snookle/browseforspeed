@@ -125,7 +125,6 @@ Rocks"
 <component name="MainForm.cbQueryWait">Zrušit Èekání na požadavek </component>
 <component name="MainForm.lblQueryWaitHelp">Zakažte Èekání na požadavek pouze pokud váš operaèní systém nemá toto limitováno. Pro více informací ètete readme.txt.</component>
 <component name="MainForm.btnCheckNewVersion">&amp;Zkontroluj</component>
-<component name="MainForm.cbNewVersion">Pøi spuštìní hledat nové verze BFS</component>
 <component name="MainForm.lblExeDescriptionConfig">Pokud je v poli výše více než jedna položka, vyberte, prosím, tu, která obsahuje správnou cestu k souboru LFS.exe. Není-li tam, musíte jej najít.</component>
 <component name="MainForm.lblExePathConfig">Cesta k LFS.exe</component>
 <component name="MainForm.buttonBrowse">&amp;Procházet</component>
