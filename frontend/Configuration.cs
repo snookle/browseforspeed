@@ -20,10 +20,10 @@ using System.IO;
 using System.Xml;
 using System.Collections.Generic;
 using libbrowseforspeed;
+using System.Runtime.InteropServices;
 
 namespace BrowseForSpeed.Frontend
 {
-	
 public class PreStartProgram
 {
 	public string path;
@@ -55,6 +55,12 @@ public class PreStartProgram
 }
 public class Configuration
 {
+	[DllImport("user32.dll")]
+	public static extern IntPtr FindWindow(string lpClassName,string lpWindowName);
+    
+	[DllImport("user32.dll")]
+    static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+	
 		public string userName;
 		public string password;
 		public string lfsPath;
@@ -78,18 +84,37 @@ public class Configuration
 		public ulong filter_cars_allow;
 		public ulong filter_cars_disallow;
 		public bool fancy_hostnames;
+		public bool debug_window;
 		public List<PreStartProgram> psp = new List<PreStartProgram>();
 
 		public Configuration(string filename) {
 			this.filename = filename;			
 		}
 
+		private void DebugVisible(bool visible)
+		{
+			IntPtr handle = FindWindow(null, System.Windows.Forms.Application.ExecutablePath); //put your console window caption here
+			if(handle != IntPtr.Zero) {
+				ShowWindow(handle, (visible ? 1 : 0)); // 0 = SW_HIDE, 1 = SW_SHOW or something
+			}                
+
+		}
+		
 		public bool LoadXML() {
 			try {
 				XmlDocument doc = new XmlDocument();				
 				doc.Load(filename);
 				XmlNodeList list = doc.GetElementsByTagName("bfsconfig");
 				String docVersion = ((XmlElement)list[0]).GetAttribute("version");
+				try {
+					debug_window = ((XmlElement)list[0]).GetElementsByTagName("debug_window")[0].FirstChild.Value == "True";
+					DebugVisible(debug_window);
+				} catch (Exception e) {
+					MessageBox.Show(e.ToString());
+					debug_window = false;
+					DebugVisible(debug_window);
+				}
+
 				try {
 					lfsPath = ((XmlElement)list[0]).GetElementsByTagName("exepath")[0].FirstChild.Value;
 				} catch (Exception e) { lfsPath = ""; }
@@ -262,6 +287,7 @@ public class Configuration
 				tw.WriteElementString("filter_cars_allow", filter_cars_allow.ToString());
 				tw.WriteElementString("filter_cars_disallow", filter_cars_disallow.ToString());
 				tw.WriteElementString("fancy_hostnames", fancy_hostnames.ToString());
+				tw.WriteElementString("debug_window", debug_window.ToString());
 				tw.WriteElementString("language", this.language);
 				foreach(PreStartProgram p in psp){
 					tw.WriteStartElement("psp");
