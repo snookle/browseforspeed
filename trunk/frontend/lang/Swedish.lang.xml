@@ -67,9 +67,11 @@
 	<component name="MainForm.toolStripMenuItem1">&amp;Lägg till favorit</component>
 	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Kopiera serveradress</component>
 	<component name="MainForm.administrateToolStripMenuItem1">Administrera...</component>
-	<component name="MainForm.btnRefresh">&amp;Uppdatera</component>
+	<component name="MainForm.btnRefreshMain">&amp;Uppdatera</component>
+	<component name="MainForm.btnRefreshFav">&amp;Uppdatera</component>
 	<component name="MainForm.btnStop">&amp;Stopp</component>
-	<component name="MainForm.btnJoin">&amp;Anslut</component>
+	<component name="MainForm.btnJoinFav">&amp;Anslut</component>
+	<component name="MainForm.btnJoinMain">&amp;Anslut</component>
 	<component name="MainForm.tabFavourites">Favoriter</component>
 	<component name="MainForm.lblAddressFav">Serverns IP-adress:</component>
 	<component name="MainForm.btnAddServer">&amp;Lägg till</component>
@@ -151,7 +153,7 @@
 	<component name="Admin.lblinsimPort">Port för InSim:</component>
 	<component name="Admin.chkRelay">Anslut till Relay</component>
 	<component name="Admin.kick">Kick</component>
-	<component name="Admin.ban">Ban</component>
+	<component name="Admin.btnBan">Ban</component>
 	<component name="Admin.spectate">Gör till åskådare</component>
 	<component name="Admin.ban12h">12 timmar</component>
 	<component name="Admin.ban1d">1 dag</component>
@@ -160,7 +162,7 @@
 	<component name="Admin.ban1w">1 vecka</component>
 	<component name="Admin.banCustom">Egen...</component>
 	<component name="Admin.sendPrivate">Skicka till vald spelare</component>
-	<component name="Admin.this">Administratör</component>
+	<component name="Admin.Admin">Administratör</component>
 
 	<!--Join Server Dialog Components -->
 	<component name="JoinServerDialog.btnJoin">&amp;Anslut till server</component>
@@ -168,10 +170,10 @@
 	<component name="JoinServerDialog.btnCancel">&amp;Avbryt</component>
 	<component name="JoinServerDialog.lblPassword">Lösenord:</component>
 	<component name="JoinServerDialog.lblVersion">Version:</component>
-	<component name="JoinServerDialog.this">Anslut</component>
+	<component name="JoinServerDialog.JoinServerDialog">Anslut</component>
 
 	<!--Ban Dialog Components -->
-	<component name="BanDialog.nmDays">Dagar</component>
+	<component name="BanDialog.lblDays">Dagar</component>
 	<component name="BanDialog.ok">O&amp;K</component>
 	<component name="BanDialog.cancel">&amp;Avbryt</component>
 

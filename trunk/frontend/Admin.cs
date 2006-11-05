@@ -46,7 +46,7 @@ namespace BrowseForSpeed.Frontend
 			InitializeComponent();
 			this.info = info;
 			handler = new InSimHandler(true, false);
-			this.Text = MainForm.languages.GetString("Admin.this") + " - " + info.hostname;
+			this.Text = MainForm.languages.GetString("Admin.Admin") + " - " + LFSQuery.removeColourCodes(info.hostname);
 			edtPassword.Text = info.adminPassword;
 			if (info.insimPort != 0) {
 				edtPort.Text = info.insimPort.ToString();
@@ -57,22 +57,7 @@ namespace BrowseForSpeed.Frontend
 
 		void AdminFormLoad(object sender, System.EventArgs e) {
 			this.Icon = new Icon(GetType().Assembly.GetManifestResourceStream("BrowseForSpeed.ca3r.ico"));
-			btnSend.Text = MainForm.languages.GetString("Admin.btnSend");
-			btnConnect.Text = MainForm.languages.GetString("Admin.btnConnect");
-			lblPassword.Text = MainForm.languages.GetString("Admin.lblPassword");
-			lblinsimPort.Text = MainForm.languages.GetString("Admin.lblinsimPort");
-			chkRelay.Text = MainForm.languages.GetString("Admin.chkRelay");
-			kickToolStripMenuItem.Text = MainForm.languages.GetString("Admin.kick");
-			forceSpectateToolStripMenuItem.Text = MainForm.languages.GetString("Admin.spectate");
-			banToolStripMenuItem.Text = MainForm.languages.GetString("Admin.ban");
-			hoursToolStripMenuItem.Text = MainForm.languages.GetString("Admin.ban12h");
-			dayToolStripMenuItem.Text = MainForm.languages.GetString("Admin.ban1d");
-			daysToolStripMenuItem.Text = MainForm.languages.GetString("Admin.ban2d");
-			daysToolStripMenuItem1.Text = MainForm.languages.GetString("Admin.ban3d");
-			weekToolStripMenuItem.Text = MainForm.languages.GetString("Admin.ban1w");
-			customToolStripMenuItem.Text = MainForm.languages.GetString("Admin.banCustom");
-			btnSendRacer.Text = MainForm.languages.GetString("Admin.sendPrivate");
-			this.Text = MainForm.languages.GetString("Admin.this") + " - " + info.hostname;
+			MainForm.UpdateControls(this, "Admin");
 			racers = new Dictionary<String, racer>();			
 		}
 
@@ -155,7 +140,7 @@ namespace BrowseForSpeed.Frontend
 					btnConnect.Text = MainForm.languages.GetString("Admin.btnDisconnect");
 					edtMessage.Enabled = true;
 					btnConnect.Enabled = true;
-					btnSendRacer.Enabled = true;
+					sendPrivate.Enabled = true;
 					edtMessage.Focus();
 				} catch (Exception ex) {
 					btnConnect.Enabled = true;
@@ -165,7 +150,7 @@ namespace BrowseForSpeed.Frontend
 			} else {
 				handler.LFSMessage -= new MessageEventHandler(cbMessage);
 				handler.Close();
-				btnSendRacer.Enabled = false;
+				sendPrivate.Enabled = false;
 				btnSend.Enabled = false;
 				edtMessage.Enabled = false;
 				chkRelay.Enabled = true;
@@ -186,7 +171,7 @@ namespace BrowseForSpeed.Frontend
 				if (info.insimPort <= 0 || info.insimPort >= 65536) throw new Exception();
 			} catch (Exception) {
 				string message = String.Format(MainForm.languages.GetString("InvalidPort"), edtPort.Text);
-				MessageBox.Show(message, MainForm.languages.GetString("Admin.this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show(message, MainForm.languages.GetString("Admin.Admin"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				edtPort.Text = edtPort.Text.Remove(edtPort.Text.Length - 1, 1);
 			}
 		}

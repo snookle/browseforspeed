@@ -42,12 +42,7 @@ namespace BrowseForSpeed.Frontend
 			cbVersion.SelectedIndex = 0;
 			edtServerName.Text = "";
 			edtPassword.Text = "";
-			btnJoin.Text = MainForm.languages.GetString("JoinServerDialog.btnJoin");
-			lblServerName.Text = MainForm.languages.GetString("JoinServerDialog.lblServerName");
-			btnCancel.Text = MainForm.languages.GetString("JoinServerDialog.btnCancel");
-			lblPassword.Text = MainForm.languages.GetString("JoinServerDialog.lblPassword");
-			lblVersion.Text = MainForm.languages.GetString("JoinServerDialog.lblVersion");
-			this.Text = MainForm.languages.GetString("JoinServerDialog.this");
+			MainForm.UpdateControls(this, "JoinServerDialog");
 		}
 		
 		void EdtServerNameTextChanged(object sender, System.EventArgs e)

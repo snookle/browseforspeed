@@ -39,7 +39,8 @@
 
 
 	<!-- Main Form Components -->
-	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+	<component name="MainForm.MainForm">Browse For Speed</component><!-- This is the Program Title -->
+	<component name="MainForm.gbLiveForSpeed">Live For Speed</component>
 
 
 	<component name="MainForm.fileToolStripMenuItem">&amp;Fájl</component>
@@ -73,9 +74,11 @@
 	<component name="MainForm.toolStripMenuItem1">&amp;Hozáadás a Kedvencekhez</component>
 	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Vágólapra Másolás</component>
 	<component name="MainForm.administrateToolStripMenuItem1">Adminisztrálás...</component>
-	<component name="MainForm.btnRefresh">&amp;Frissítés</component>
+	<component name="MainForm.btnRefreshMain">&amp;Frissítés</component>
+	<component name="MainForm.btnRefreshFav">&amp;Frissítés</component>
 	<component name="MainForm.btnStop">&amp;Stop</component>
-	<component name="MainForm.btnJoin">&amp;Kapcsolódás</component>
+	<component name="MainForm.btnJoinFav">&amp;Kapcsolódás</component>
+	<component name="MainForm.btnJoinMain">&amp;Kapcsolódás</component>
 	<component name="MainForm.tabFavourites">Kedvencek</component>
 	<component name="MainForm.lblAddressFav">Szerver IP Címe:</component>
 	<component name="MainForm.btnAddServer">&amp;Hozzáadás</component>
@@ -103,9 +106,6 @@
 	<component name="MainForm.viewServerInformationFriend">Szerverinformáció Megtekintése</component>
 	<component name="MainForm.removeFriendToolStripMenuItem">Barát Törlése</component>
 	<component name="MainForm.tabConfig">Beállítások</component>
-	<component name="MainForm.groupBox1">Beállítások</component>
-	<component name="MainForm.groupBox2">Nyelv</component>
-	<component name="MainForm.groupBox5">Nyelvi beállítások</component>
 	<component name="MainForm.lblCommentReal">langComments</component>
 	<component name="MainForm.lblEmailReal">AuthorEmal</component>
 	<component name="MainForm.lblAuthorReal">langAuthor</component>
@@ -113,7 +113,6 @@
 	<component name="MainForm.lblLangContact">E-Mail:</component>
 	<component name="MainForm.lblLangAuthor">Szerző:</component>
 	<component name="MainForm.lblLanguageConfig">Nyelv:</component>
-	<component name="MainForm.groupBox4">Duplakattintásra: </component>
 	<component name="MainForm.rbJoin">Csatlakozás</component>
 	<component name="MainForm.rbView">Szerverinformáció Megtekintése</component>
 	<component name="MainForm.gbStartBeforeLFS">LFS előtt induló programok:</component>
@@ -129,8 +128,6 @@
 	<component name="MainForm.lblProgramConfigName">Név:</component>
 	<component name="MainForm.btnProgramBrowse">&amp;Tallóz...</component>
 	<component name="MainForm.lblProgramConfigPath">Elérési út:</component>
-	<component name="MainForm.groupBox3">Speciális</component>
-	<component name="MainForm.txtInsimPort">29999</component>
 	<component name="MainForm.lblQueryWaitDescription">Lekérdezések közötti szünet. Azt az időt határozza meg, amelynek két lekérdezés között kell eltelnie. Növelje az értéket, ha lekérdezéskor a szerverek "Kapcsolódás Visszautasítva" üzenetet adnak.</component>
 	<component name="MainForm.lblInsimPortConfig">LFS Insim Port:</component>
 
@@ -168,7 +165,7 @@
 	<component name="JoinServerDialog.btnCancel">&amp;Mégse</component>
 	<component name="JoinServerDialog.lblPassword">Jelszó:</component>
 	<component name="JoinServerDialog.lblVersion">Verzió:</component>
-	<component name="JoinServerDialog.this">Kapcsolódás</component>
+	<component name="JoinServerDialog.JoinServerDialog">Kapcsolódás</component>
 
 	<!--Server Information Form components-->
 	<component name="ServerInformationForm.buttonInfoJoin">&amp;Kapcsolódás</component>
@@ -228,14 +225,14 @@
        <component name="MainForm.cbStartupRefresh">Kedvencek frissítése indításkor</component>
 
        <!--Ban Dialog Components first in 0.6rc3 -->
-       <component name="BanDialog.nmDays">Nep</component>
+       <component name="BanDialog.lblDays">Nep</component>
        <component name="BanDialog.ok">O&amp;K</component>
        <component name="BanDialog.cancel">&amp;Mégsem</component>
 
 
        <!-- Admin Form components first in 0.6rc3 -->
        <component name="Admin.kick">Kirúgás</component>
-       <component name="Admin.ban">Kitiltás</component>
+       <component name="Admin.btnBan">Kitiltás</component>
        <component name="Admin.spectate">Néző módba küldés</component>
        <component name="Admin.ban12h">12 óra</component>
        <component name="Admin.ban1d">1 nap</component>

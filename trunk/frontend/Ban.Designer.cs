@@ -38,8 +38,8 @@ namespace BrowseForSpeed.Frontend
 		{
 			this.nmDays = new System.Windows.Forms.NumericUpDown();
 			this.lblDays = new System.Windows.Forms.Label();
-			this.btnOkay = new System.Windows.Forms.Button();
-			this.btnCancel = new System.Windows.Forms.Button();
+			this.ok = new System.Windows.Forms.Button();
+			this.cancel = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.nmDays)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -69,35 +69,35 @@ namespace BrowseForSpeed.Frontend
 			this.lblDays.TabIndex = 1;
 			this.lblDays.Text = "Days";
 			// 
-			// btnOkay
+			// ok
 			// 
-			this.btnOkay.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.btnOkay.Location = new System.Drawing.Point(109, 46);
-			this.btnOkay.Name = "btnOkay";
-			this.btnOkay.Size = new System.Drawing.Size(75, 23);
-			this.btnOkay.TabIndex = 2;
-			this.btnOkay.Text = "OK";
-			this.btnOkay.UseVisualStyleBackColor = true;
+			this.ok.DialogResult = System.Windows.Forms.DialogResult.OK;
+			this.ok.Location = new System.Drawing.Point(109, 46);
+			this.ok.Name = "ok";
+			this.ok.Size = new System.Drawing.Size(75, 23);
+			this.ok.TabIndex = 2;
+			this.ok.Text = "OK";
+			this.ok.UseVisualStyleBackColor = true;
 			// 
-			// btnCancel
+			// cancel
 			// 
-			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.btnCancel.Location = new System.Drawing.Point(12, 46);
-			this.btnCancel.Name = "btnCancel";
-			this.btnCancel.Size = new System.Drawing.Size(75, 23);
-			this.btnCancel.TabIndex = 3;
-			this.btnCancel.Text = "Cancel";
-			this.btnCancel.UseVisualStyleBackColor = true;
+			this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			this.cancel.Location = new System.Drawing.Point(12, 46);
+			this.cancel.Name = "cancel";
+			this.cancel.Size = new System.Drawing.Size(75, 23);
+			this.cancel.TabIndex = 3;
+			this.cancel.Text = "Cancel";
+			this.cancel.UseVisualStyleBackColor = true;
 			// 
 			// frmBan
 			// 
-			this.AcceptButton = this.btnOkay;
+			this.AcceptButton = this.ok;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.CancelButton = this.btnCancel;
+			this.CancelButton = this.cancel;
 			this.ClientSize = new System.Drawing.Size(202, 81);
-			this.Controls.Add(this.btnCancel);
-			this.Controls.Add(this.btnOkay);
+			this.Controls.Add(this.cancel);
+			this.Controls.Add(this.ok);
 			this.Controls.Add(this.lblDays);
 			this.Controls.Add(this.nmDays);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -111,9 +111,9 @@ namespace BrowseForSpeed.Frontend
 			((System.ComponentModel.ISupportInitialize)(this.nmDays)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Button ok;
+		private System.Windows.Forms.Button cancel;
 		private System.Windows.Forms.NumericUpDown nmDays;
-		private System.Windows.Forms.Button btnCancel;
-		private System.Windows.Forms.Button btnOkay;
 		private System.Windows.Forms.Label lblDays;
 	}
 }

@@ -67,9 +67,11 @@
 	<component name="MainForm.toolStripMenuItem1">&amp;Favorilere Ekle</component>
 	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Kopyala</component>
 	<component name="MainForm.administrateToolStripMenuItem1">Yönet...</component>
-	<component name="MainForm.btnRefresh">&amp;Yenile</component>
+	<component name="MainForm.btnRefreshMain">&amp;Yenile</component>
+	<component name="MainForm.btnRefreshMain">&amp;Yenile</component>
 	<component name="MainForm.btnStop">&amp;Dur</component>
-	<component name="MainForm.btnJoin">&amp;Gir</component>
+	<component name="MainForm.btnJoinFav">&amp;Gir</component>
+	<component name="MainForm.btnJoinMain">&amp;Gir</component>
 	<component name="MainForm.tabFavourites">Favoriler</component>
 	<component name="MainForm.lblAddressFav">Sunucu IP adresi:</component>
 	<component name="MainForm.btnAddServer">&amp;Sunucu Ekle</component>
@@ -151,7 +153,7 @@
 	<component name="Admin.lblinsimPort">InSim Portu:</component>
 	<component name="Admin.chkRelay">Connect to Relay</component>
 	<component name="Admin.kick">Kick</component>
-	<component name="Admin.ban">Ban</component>
+	<component name="Admin.btnBan">Ban</component>
 	<component name="Admin.spectate">Force Spectate</component>
 	<component name="Admin.ban12h">12 hours</component>
 	<component name="Admin.ban1d">1 day</component>
@@ -160,10 +162,10 @@
 	<component name="Admin.ban1w">1 week</component>
 	<component name="Admin.banCustom">Custom...</component>
 	<component name="Admin.sendPrivate">Send to selected racer</component>
-	<component name="Admin.this">Admin</component>
+	<component name="Admin.Admin">Admin</component>
 
 	<!--Ban Dialog Components -->
-	<component name="BanDialog.nmDays">Days</component>
+	<component name="BanDialog.lblDays">Days</component>
 	<component name="BanDialog.ok">O&amp;K</component>
 	<component name="BanDialog.cancel">&amp;Cancel</component>
 
@@ -173,7 +175,7 @@
 	<component name="JoinServerDialog.btnCancel">&amp;Ýptal</component>
 	<component name="JoinServerDialog.lblPassword">Þifre:</component>
 	<component name="JoinServerDialog.lblVersion">Versiyon:</component>
-	<component name="JoinServerDialog.this">Sunucuya gir</component>
+	<component name="JoinServerDialog.JoinServerDialog">Sunucuya gir</component>
 
 	<!--Server Information Form components-->
 	<component name="ServerInformationForm.buttonInfoJoin">&amp;Gir</component>
