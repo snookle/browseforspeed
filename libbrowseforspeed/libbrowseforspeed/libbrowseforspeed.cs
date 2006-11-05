@@ -817,7 +817,7 @@ namespace libbrowseforspeed {
 					ignore--;
 				}
 			}
-			ret = Regex.Replace(ret, "\\^v", "|");
+			ret = Regex.Replace(ret, @"(\A|[^^])\^v", "$1|");
 			return ret;
 		}
 
