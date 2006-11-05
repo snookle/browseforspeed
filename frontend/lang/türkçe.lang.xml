@@ -68,7 +68,7 @@
 	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Kopyala</component>
 	<component name="MainForm.administrateToolStripMenuItem1">Yönet...</component>
 	<component name="MainForm.btnRefreshMain">&amp;Yenile</component>
-	<component name="MainForm.btnRefreshMain">&amp;Yenile</component>
+	<component name="MainForm.btnRefreshFav">&amp;Yenile</component>
 	<component name="MainForm.btnStop">&amp;Dur</component>
 	<component name="MainForm.btnJoinFav">&amp;Gir</component>
 	<component name="MainForm.btnJoinMain">&amp;Gir</component>
@@ -132,7 +132,6 @@
 	<component name="MainForm.cbQueryWait">Ýstek beklemeyi iptal et</component>
 	<component name="MainForm.lblQueryWaitHelp">Sadece eðer iþletim sisteminizde baðlantý sýnýrlamasý olmadýðýndan eminseniz Ýstek Beklemeyi iptal edin. Daha çok bilgi için readme.txt dosyasýný okuyun.</component>
 	<component name="MainForm.btnCheckNewVersion">&amp;Þimdi Kontrol Et</component>
-	<component name="MainForm.cbNewVersion">Baþlangýçta yeni versiyon kontrolü yap</component>
 	<component name="MainForm.lblExeDescriptionConfig">Eðer yukarýdaki kutuda birden fazla giriþ varsa hangisi doðru dizinse onu seçiniz. Eðer hiçbir giriþ yoksa, Gözat butonuna týklayarak dizini gösteriniz.</component>
 	<component name="MainForm.lblExePathConfig">LFS'nin bulunduðu dizin:</component>
 	<component name="MainForm.buttonBrowse">&amp;Gözat...</component>

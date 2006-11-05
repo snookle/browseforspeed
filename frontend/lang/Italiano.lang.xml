@@ -128,7 +128,6 @@
 	<component name="MainForm.cbQueryWait">Disabilita Attesa</component>
 	<component name="MainForm.lblQueryWaitHelp">Disabilita l'attesa solo se si è sicuri che il sistema operativo non abbia un limite di connessioni. Leggere il file readme.txt per maggiori informazioni. </component>
 	<component name="MainForm.btnCheckNewVersion">&amp;Check Now</component>
-	<component name="MainForm.cbNewVersion">Controlla se è disponibile una nuova versione di Browse For Speed all'avvio,</component>
 	<component name="MainForm.lblExeDescriptionConfig">Se è disponibile più di un'opzione nel box qui sopra, per favore scegliere il percorso corretto del vostro LFS.exe. Se il box è bianco, premete il pulsante "Cerca" per cercare manualmente LFS.exe.</component>
 	<component name="MainForm.lblExePathConfig">Percorso eseguibile LFS:</component>
 	<component name="MainForm.buttonBrowse">&amp;Cerca...</component>

@@ -136,7 +136,6 @@
 
 	<component name="MainForm.lblQueryWaitHelp">Csak akkor válassza a "Lekérd. szünet nélkül" opciót, ha az operációs rendszerében nincs korlátozás a kapcsolatok számát illetően.</component>
 	<component name="MainForm.btnCheckNewVersion">&amp;Keresés MOST</component>
-	<component name="MainForm.cbNewVersion">Indításkor frissítés keresése az interneten</component>
 	<component name="MainForm.lblExeDescriptionConfig">Ha több bejegyzést lát itt, akkor válassza ki a megfelelő elérési utat az LFS.EXE-hez. Ha nincs bejegyzés, akkor kattintson a "Tallóz..." gombra a kézi megadáshoz.</component>
 	<component name="MainForm.lblExePathConfig">LFS Elérési Útvonala:</component>
 	<component name="MainForm.buttonBrowse">&amp;Tallóz...</component>

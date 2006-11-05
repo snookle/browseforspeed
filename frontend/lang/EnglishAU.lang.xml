@@ -125,7 +125,7 @@
 	<component name="MainForm.cbQueryWait">Disable Query Wait</component>
 	<component name="MainForm.lblQueryWaitHelp">Only disable Query Wait if you are certain your Operating System does not have a connection limit.  Please see readme.txt for more information. </component>
 	<component name="MainForm.btnCheckNewVersion">&amp;Check Now</component>
-	<component name="MainForm.cbNewVersion">Check for a new version of Browse For Speed on start up</component>
+	<component name="MainForm.cbNewVersion">Check for a new version of BFS</component>
 	<component name="MainForm.lblExeDescriptionConfig">If there is more than one entry in the box above, please select which one is the correct path for your LFS.exe. If there are no entries, please click the Browse button to manually locate it.</component>
 	<component name="MainForm.lblExePathConfig">LFS Executable Path:</component>
 	<component name="MainForm.buttonBrowse">&amp;Browse...</component>

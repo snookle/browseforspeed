@@ -127,7 +127,6 @@
 	<component name="MainForm.cbQueryWait">Keela päringu oode</component>
 	<component name="MainForm.lblQueryWaitHelp">Keela päringu oode vaid siis, kui sa oled kindel, et su süsteemil pole ühenduste limiiti. Palun vaata readme.txt rohkema informatsiooni saamiseks. </component>
 	<component name="MainForm.btnCheckNewVersion">&amp;Kontrolli kohe</component>
-	<component name="MainForm.cbNewVersion">Kontrolli Browse For Speedi uut versiooni käivitamisel</component>
 	<component name="MainForm.lblExeDescriptionConfig">Kui kastis on rohkem kui üks sissekanne, palun vali õige tee enda LFS.exe'ni. Kui seal ei ole ühtegi sissekannet, palun vajuta nupule Lehite, et selle asukohta ise märata.</component>
 	<component name="MainForm.lblExePathConfig">LFSi täidetav tee:</component>
 	<component name="MainForm.buttonBrowse">&amp;Lehitse</component>

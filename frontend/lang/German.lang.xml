@@ -132,7 +132,6 @@
 	<component name="MainForm.cbQueryWait">Query Wait deaktivieren</component>
 	<component name="MainForm.lblQueryWaitHelp">Deaktiviere Query Wait nur, wenn Du dir sicher bist, dass dein Betriebssystem keine Verbindungsbegrenzung besitzt. Für weitere Informationen, schaue dir bitte die readme.txt an. </component>
 	<component name="MainForm.btnCheckNewVersion">&amp;Jetzt prüfen</component>
-	<component name="MainForm.cbNewVersion">Beim Programmstart auf neue Browse For Speed Version prüfen</component>
 	<component name="MainForm.lblExeDescriptionConfig">Wenn in der obigen Box mehr als ein Eintrag vorhanden ist, wähle bitte den mit dem korrekten Pfad zu deiner LFS.exe. Falls keine Einträge vorhanden sind, wähle bitte den Durchsuchen Button um manuell nach deiner LFS.exe zu suchen.</component>
 	<component name="MainForm.lblExePathConfig">Pfad zur LFS Programmdatei:</component>
 	<component name="MainForm.buttonBrowse">&amp;Durchsuchen...</component>

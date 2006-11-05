@@ -129,7 +129,6 @@
 	<component name="MainForm.cbQueryWait">Desactivar tiempo de espera</component>
 	<component name="MainForm.lblQueryWaitHelp">Solo desactiva el tiempo de espera si estas utilizando un SO que no posea limite de conexiones.  Por favor lee el readme.txt para mas informacion. </component>
 	<component name="MainForm.btnCheckNewVersion">&amp;Chequear ahora</component>
-	<component name="MainForm.cbNewVersion">Chequear si existe una nueva version de Browse For Speed al iniciar</component>
 	<component name="MainForm.lblExeDescriptionConfig">Si hay mas de un directorio selecciona el directorio correspondiente a tu instalacion de LFS. Si no hay entradas selecciona tu directorio manualmente haciendo click en el boton buscar.</component>
 	<component name="MainForm.lblExePathConfig">Directorio del ejecutable:</component>
 	<component name="MainForm.buttonBrowse">&amp;Buscar...</component>
