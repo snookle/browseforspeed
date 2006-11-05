@@ -38,7 +38,7 @@
 	<component name="Global.Disabled">Disabled</component>
 
 	<!-- Main Form Components -->
-	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+	<component name="MainForm.MainForm">Browse For Speed</component><!-- This is the Program Title -->
 
 	<component name="MainForm.fileToolStripMenuItem">&amp;File</component>
 	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Join Server...</component>
@@ -67,9 +67,11 @@
 	<component name="MainForm.toolStripMenuItem1">&amp;Add to Favourites</component>
 	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Copy Server to Clipboard</component>
 	<component name="MainForm.administrateToolStripMenuItem1">Administrate...</component>
-	<component name="MainForm.btnRefresh">&amp;Refresh</component>
+	<component name="MainForm.btnRefreshMain">&amp;Refresh</component>
+	<component name="MainForm.btnRefreshFav">&amp;Refresh</component>
 	<component name="MainForm.btnStop">&amp;Stop</component>
-	<component name="MainForm.btnJoin">&amp;Join</component>
+	<component name="MainForm.btnJoinFav">&amp;Join</component>
+	<component name="MainForm.btnJoinMain">&amp;Join</component>
 	<component name="MainForm.tabFavourites">Favourites</component>
 	<component name="MainForm.lblAddressFav">Server IP Address:</component>
 	<component name="MainForm.btnAddServer">&amp;Add Server</component>
@@ -97,9 +99,6 @@
 	<component name="MainForm.viewServerInformationFriend">View Server Information...</component>
 	<component name="MainForm.removeFriendToolStripMenuItem">Remove Friend</component>
 	<component name="MainForm.tabConfig">Configuration</component>
-	<component name="MainForm.groupBox1">Configuration</component>
-	<component name="MainForm.groupBox2">Language</component>
-	<component name="MainForm.groupBox5">Language Details</component>
 	<component name="MainForm.lblCommentReal">langComments</component>
 	<component name="MainForm.lblEmailReal">AuthorEmal</component>
 	<component name="MainForm.lblAuthorReal">langAuthor</component>
@@ -107,7 +106,6 @@
 	<component name="MainForm.lblLangContact">Contact Address:</component>
 	<component name="MainForm.lblLangAuthor">Author:</component>
 	<component name="MainForm.lblLanguageConfig">Language:</component>
-	<component name="MainForm.groupBox4">Server double click behaviour</component>
 	<component name="MainForm.rbJoin">Join server</component>
 	<component name="MainForm.rbView">View server information</component>
 	<component name="MainForm.gbStartBeforeLFS">Start Before LFS</component>
@@ -115,7 +113,6 @@
 	<component name="MainForm.btnProgramDisable">&amp;Disable</component>
 	<component name="MainForm.btnProgramDelete">&amp;Remove Program</component>
 	<component name="MainForm.btnProgramNew">&amp;New Program</component>
-	<component name="MainForm.bgProgramConfig">Program Configuration</component>
 	<component name="MainForm.btnProgramCancel">C&amp;ancel</component>
 	<component name="MainForm.btnProgramSave">&amp;Save</component>
 	<component name="MainForm.btnProgramUpdate">&amp;Update</component>
@@ -123,8 +120,6 @@
 	<component name="MainForm.lblProgramConfigName">Name:</component>
 	<component name="MainForm.btnProgramBrowse">B&amp;rowse...</component>
 	<component name="MainForm.lblProgramConfigPath">Path:</component>
-	<component name="MainForm.groupBox3">Advanced</component>
-	<component name="MainForm.txtInsimPort">29999</component>
 	<component name="MainForm.lblQueryWaitDescription">Query Wait value. This is the time to wait before adding another query to the concurrent queries. Increase this value if, when querying, all servers start giving "Connection Refused"</component>
 	<component name="MainForm.lblInsimPortConfig">LFS Insim Port:</component>
 	<component name="MainForm.cbQueryWait">Disable Query Wait</component>
@@ -140,10 +135,22 @@
 	<component name="MainForm.NoReply">No Reply: {0}</component>
 	<component name="MainForm.Refused">Refused Connection: {0}</component>
 	<component name="MainForm.Offline">Offline</component>
-	<!-- Begin New in 0.7 -->
 	<component name="MainForm.cbStartupRefresh">Refresh favourites</component>
-	<component name="MainForm.btnQuickRefresh">Quick Refresh</component>
-	<!-- End New in 0.7 -->
+	<component name="MainForm.btnQuickRefresh">&amp;Quick Refresh</component>
+	<component name="MainForm.gbLiveForSpeed">Live For Speed</component>
+	<component name="MainForm.gbLangDetails">Language Details</component>
+	<component name="MainForm.gbLanguage">Language</component>
+	<component name="MainForm.gbProgramConfig">Program Configuration</component>
+	<component name="MainForm.gbQueryWait">Query Wait</component>
+	<component name="MainForm.cbFriendRefresh">Refresh Friends list</component>
+	<component name="MainForm.cbFavRefresh">Refresh Favourite Servers</component>
+	<component name="MainForm.gbWhenBFSStarts">When Browse For Speed Starts</component>
+	<component name="MainForm.lblDoubleClick">When double clicking a server:</component>
+	<component name="MainForm.cbColouredHostnames">Show coloured server names</component>
+	<component name="MainForm.gbAdvanced">Advanced</component>
+	<component name="MainForm.gbConfigurationMain">Configuration</component>
+	<component name="MainForm.ViewServerInfo">View Server Information</component>
+	<component name="MainForm.JoinServer">Join Server</component>
 
 	<!-- Admin Form components -->
 	<component name="Admin.btnSend">&amp;Send</component>
@@ -154,7 +161,7 @@
 	<component name="Admin.lblinsimPort">InSim Port:</component>
 	<component name="Admin.chkRelay">Connect to Relay</component>
 	<component name="Admin.kick">Kick</component>
-	<component name="Admin.ban">Ban</component>
+	<component name="Admin.btnBan">Ban</component>
 	<component name="Admin.spectate">Force Spectate</component>
 	<component name="Admin.ban12h">12 hours</component>
 	<component name="Admin.ban1d">1 day</component>
@@ -163,7 +170,7 @@
 	<component name="Admin.ban1w">1 week</component>
 	<component name="Admin.banCustom">Custom...</component>
 	<component name="Admin.sendPrivate">Send to selected racer</component>
-	<component name="Admin.this">Admin</component>
+	<component name="Admin.Admin">Admin</component>
 
 	<!--Join Server Dialog Components -->
 	<component name="JoinServerDialog.btnJoin">&amp;Join Server</component>
@@ -171,10 +178,10 @@
 	<component name="JoinServerDialog.btnCancel">&amp;Cancel</component>
 	<component name="JoinServerDialog.lblPassword">Password:</component>
 	<component name="JoinServerDialog.lblVersion">Version:</component>
-	<component name="JoinServerDialog.this">Join Server</component>
+	<component name="JoinServerDialog.JoinServerDialog">Join Server</component>
 
 	<!--Ban Dialog Components -->
-	<component name="BanDialog.nmDays">Days</component>
+	<component name="BanDialog.lblDays">Days</component>
 	<component name="BanDialog.ok">O&amp;K</component>
 	<component name="BanDialog.cancel">&amp;Cancel</component>
 

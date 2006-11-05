@@ -146,7 +146,7 @@ namespace BrowseForSpeed.Frontend
 
 		void MakeQuery(QueryType type)
 		{
-			SetControlProperty(buttonRefreshFav, "Text", languages.GetString("MainForm.btnStop"));
+			SetControlProperty(btnRefreshFav, "Text", languages.GetString("MainForm.btnStop"));
 			refreshing = true;
 			try {
 				if (type == QueryType.Favourite) {
@@ -170,10 +170,10 @@ namespace BrowseForSpeed.Frontend
 			}
 			refreshing = false;
 			SetControlProperty(btnRefreshMain, "Enabled", true);
-			SetControlProperty(buttonRefreshFav, "Enabled", true);
+			SetControlProperty(btnRefreshFav, "Enabled", true);
 			SetControlProperty(btnQuickRefresh, "Enabled", true);
-			SetControlProperty(buttonRefreshFav, "Text", languages.GetString("MainForm.btnRefresh"));
-			SetControlProperty(btnRefreshMain, "Text", languages.GetString("MainForm.btnRefresh"));
+			SetControlProperty(btnRefreshFav, "Text", languages.GetString("MainForm.btnRefreshFav"));
+			SetControlProperty(btnRefreshMain, "Text", languages.GetString("MainForm.btnRefreshMain"));
 			SetControlProperty(btnQuickRefresh, "Text", languages.GetString("MainForm.btnQuickRefresh"));
 		}
 
@@ -223,7 +223,7 @@ namespace BrowseForSpeed.Frontend
 				LFSQuery.stopQuerying();
 				btnRefreshMain.Enabled = false;
 				btnQuickRefresh.Enabled = false;
-				buttonRefreshFav.Enabled = false;
+				btnRefreshFav.Enabled = false;
 			}
 		}
 
@@ -911,7 +911,7 @@ namespace BrowseForSpeed.Frontend
 			//if we have previous config data
 			cbConfigLang.Items.Clear();
 			cbConfigLang.Items.AddRange(languages.Languages.ToArray());
-			cbConfigLang.SelectedItem = "English";
+			//cbConfigLang.SelectedItem = "English";
 			if (loadedconf) {
 				//query wait
 				cbEmpty.Checked = config.filter_empty;
@@ -927,9 +927,7 @@ namespace BrowseForSpeed.Frontend
 				LFSQuery.xpsp2_wait = !config.disableWait;
 				LFSQuery.THREAD_WAIT = config.queryWait;
 				queryWait.Value = config.queryWait;
-				if (String.IsNullOrEmpty(config.language) && languages.Count > 0)
-					cbConfigLang.SelectedItem = "English";
-				else
+				if (!String.IsNullOrEmpty(config.language) && languages.Count > 0)
 					cbConfigLang.SelectedItem = config.language;
 
 				cbNewVersion.Checked = config.checkNewVersion;
@@ -982,7 +980,7 @@ namespace BrowseForSpeed.Frontend
 			lvFriends.DisplayAll();
 			cbAddServerVersion.SelectedIndex = 0;
 			if (config.fav_refresh) {
-				RefreshButtonClick(buttonRefreshFav, null);
+				RefreshButtonClick(btnRefreshFav, null);
 			}
 			if (config.friend_refresh) {
 				BtnRefreshFriendClick(btnRefreshFriend, null);
@@ -1211,21 +1209,26 @@ namespace BrowseForSpeed.Frontend
 			}
 		}
 
-		public List<ToolStripMenuItem> GetControls(ToolStripMenuItem menu)
+		public static List<ToolStripItem> GetControls(ToolStripItem menu)
 		{
-			List<ToolStripMenuItem> list = new List<ToolStripMenuItem>();
-			if (menu.DropDownItems.Count == 0) {
-				list.Add(menu);
-				return list;
-			} else {
-				foreach (ToolStripMenuItem item in menu.DropDownItems) {
-					list.AddRange(GetControls(item));
+			List<ToolStripItem> list = new List<ToolStripItem>();
+			if (menu is ToolStripMenuItem) {
+				if ((menu as ToolStripMenuItem).DropDownItems.Count == 0) {
+					list.Add(menu);
+					return list;
+				} else {
+					foreach (ToolStripMenuItem item in (menu as ToolStripMenuItem).DropDownItems) {
+						list.AddRange(GetControls(item));
+					}
+					return list;
 				}
+			} else {
+				list.Add(menu);
 				return list;
 			}
 		}
 
-		public List<Control> GetControls(Control c)
+		public static List<Control> GetControls(Control c)
 		{
 			List<Control> controlList = new List<Control>();
 			//tab controls inherit from control, but have a different collection for sub-controls
@@ -1250,34 +1253,45 @@ namespace BrowseForSpeed.Frontend
 				foreach (Control cont in c.Controls) {
 					controlList.AddRange(GetControls(cont));
 				}
+				controlList.Add(c);
 				return controlList;
 			}
 		}
 
-		private void UpdateUI()
-		{
-			if (languages.Count == 0)
-				return;
-			
-			string formPrefix = "MainForm.";
+		public static List<string> ignoredControls;
 
+		public static void UpdateControls(Control parent, string prefix)
+		{
+			if (ignoredControls == null) {
+				ignoredControls = new List<string>();
+				ignoredControls.Add("txtInsimPort");
+				ignoredControls.Add("queryWait");
+				ignoredControls.Add("pathList");
+				ignoredControls.Add("statusTotal");
+				ignoredControls.Add("statusRefused");
+				ignoredControls.Add("statusNoReply");
+			}
+			prefix = prefix + ".";
 			List<string> stringsToAdd = new List<string>();
-			List<Control> contList = GetControls(this);
+			List<Control> contList = GetControls(parent);
 			for(int i = 0; i < contList.Count; i++){
 				Control c = contList[i];
 				//context menus of any controls need to be added to the control list too.
 				if (c.ContextMenuStrip != null) {
 					contList.Add(c.ContextMenuStrip);
 				}
-				if (String.IsNullOrEmpty(c.Text) || String.IsNullOrEmpty(c.Name) || c is ComboBox) //controls with empty text/names are going to stuff up. we also dont want ComboBoxes
+				if (ignoredControls.Contains(c.Name) || String.IsNullOrEmpty(c.Name) || c is ComboBox) //controls with empty text/names are going to stuff up. we also dont want ComboBoxes
 					continue;
 				//we need to process menu sub-items seperately because they're not inherited from control.
-				if (c is ToolStrip) {
-					Console.WriteLine(c.Name);
-					foreach (ToolStripMenuItem menu in (c as ToolStrip).Items) {
+				if (c is ToolStrip || c is ContextMenuStrip) {
+					foreach (ToolStripItem menu in (c as ToolStrip).Items) {
+						if (ignoredControls.Contains(menu.Name))
+							continue;
 						//process each sub menu.
-						foreach (ToolStripMenuItem item in GetControls(menu)) {
-							string name = formPrefix + item.Name;
+						foreach (ToolStripItem item in GetControls(menu)) {
+							if (ignoredControls.Contains(menu.Name))
+								continue;
+							string name = prefix + item.Name;
 							string result = languages.GetString(name);
 							if (name == result) {
 								Console.WriteLine(name + " not found in lang.");
@@ -1288,7 +1302,7 @@ namespace BrowseForSpeed.Frontend
 							}
 						}
 						//process the parent menu text.
-						string menuname = formPrefix + menu.Name;
+						string menuname = prefix + menu.Name;
 						string menuresult = languages.GetString(menuname);
 						if (menuname == menuresult) {
 							Console.WriteLine(menuname + " not found in lang.");
@@ -1301,7 +1315,9 @@ namespace BrowseForSpeed.Frontend
 					}
 				//now process controls as normal
 				} else {
-					string name = formPrefix + c.Name;
+					if (String.IsNullOrEmpty(c.Text))
+						continue;
+					string name = prefix + c.Name;
 					string result = languages.GetString(name);
 					if (name == result) {
 						Console.WriteLine(name + " not found in lang.");
@@ -1320,11 +1336,42 @@ namespace BrowseForSpeed.Frontend
 					Console.WriteLine(s);
 				}
 			}
+		}
+		
+		private void UpdateUI()
+		{
+			if (languages.Count == 0)
+				return;
+			
+			UpdateControls(this, "MainForm");
 
 			lbPreStart.Items.Clear();
 			foreach (PreStartProgram p in config.psp){
 				lbPreStart.Items.Add(p);
 			}
+			
+			string viewServer = languages.GetString("MainForm.ViewServerInfo");
+			string joinServer = languages.GetString("MainForm.JoinServer");
+
+			int index = cbDoubleClick.SelectedIndex;
+			cbDoubleClick.Items.Clear();
+			
+			if (viewServer == "MainForm.ViewServerInfo") {
+				Console.WriteLine("\nPlease add the following line to " + Path.GetFileName(languages.Filename) + " (translating if needed):");
+				Console.WriteLine("<component name=\"" + viewServer + "\">View Server Information</component>");
+				cbDoubleClick.Items.Add("View Server Information");
+			} else {
+				cbDoubleClick.Items.Add(viewServer);
+			}
+			
+			if (joinServer == "MainForm.JoinServer") {
+				Console.WriteLine("\nPlease add the following line to " + Path.GetFileName(languages.Filename) + " (translating if needed):");
+				Console.WriteLine("<component name=\"" + joinServer + "\">Join Server</component>");
+				cbDoubleClick.Items.Add("Join Server");
+			} else {
+				cbDoubleClick.Items.Add(joinServer);
+			}
+			
 
 			if (statusTotal.Text != ""){
 				statusTotal.Text = String.Format(languages.GetString("MainForm.StatusTotal"), numQueried, totalServers);

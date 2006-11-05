@@ -56,16 +56,16 @@ namespace BrowseForSpeed.Frontend
 			this.chkRelay = new System.Windows.Forms.CheckBox();
 			this.lstRacers = new System.Windows.Forms.ListBox();
 			this.racerMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.kickToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.banToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.hoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.dayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.daysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.daysToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.weekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.forceSpectateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.btnSendRacer = new System.Windows.Forms.Button();
+			this.kick = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnBan = new System.Windows.Forms.ToolStripMenuItem();
+			this.ban12h = new System.Windows.Forms.ToolStripMenuItem();
+			this.ban1d = new System.Windows.Forms.ToolStripMenuItem();
+			this.ban2d = new System.Windows.Forms.ToolStripMenuItem();
+			this.ban3d = new System.Windows.Forms.ToolStripMenuItem();
+			this.ban1w = new System.Windows.Forms.ToolStripMenuItem();
+			this.banCustom = new System.Windows.Forms.ToolStripMenuItem();
+			this.spectate = new System.Windows.Forms.ToolStripMenuItem();
+			this.sendPrivate = new System.Windows.Forms.Button();
 			this.racerMenuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -178,92 +178,92 @@ namespace BrowseForSpeed.Frontend
 			// racerMenuStrip
 			// 
 			this.racerMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.kickToolStripMenuItem,
-									this.banToolStripMenuItem,
-									this.forceSpectateToolStripMenuItem});
+									this.kick,
+									this.btnBan,
+									this.spectate});
 			this.racerMenuStrip.Name = "racerMenuStrip";
-			this.racerMenuStrip.Size = new System.Drawing.Size(158, 70);
+			this.racerMenuStrip.Size = new System.Drawing.Size(158, 92);
 			// 
-			// kickToolStripMenuItem
+			// kick
 			// 
-			this.kickToolStripMenuItem.Name = "kickToolStripMenuItem";
-			this.kickToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-			this.kickToolStripMenuItem.Text = "Kick";
-			this.kickToolStripMenuItem.Click += new System.EventHandler(this.KickToolStripMenuItemClick);
+			this.kick.Name = "kick";
+			this.kick.Size = new System.Drawing.Size(157, 22);
+			this.kick.Text = "Kick";
+			this.kick.Click += new System.EventHandler(this.KickToolStripMenuItemClick);
 			// 
-			// banToolStripMenuItem
+			// btnBan
 			// 
-			this.banToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.hoursToolStripMenuItem,
-									this.dayToolStripMenuItem,
-									this.daysToolStripMenuItem,
-									this.daysToolStripMenuItem1,
-									this.weekToolStripMenuItem,
-									this.customToolStripMenuItem});
-			this.banToolStripMenuItem.Name = "banToolStripMenuItem";
-			this.banToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-			this.banToolStripMenuItem.Text = "Ban";
+			this.btnBan.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+									this.ban12h,
+									this.ban1d,
+									this.ban2d,
+									this.ban3d,
+									this.ban1w,
+									this.banCustom});
+			this.btnBan.Name = "btnBan";
+			this.btnBan.Size = new System.Drawing.Size(157, 22);
+			this.btnBan.Text = "Ban";
 			// 
-			// hoursToolStripMenuItem
+			// ban12h
 			// 
-			this.hoursToolStripMenuItem.Name = "hoursToolStripMenuItem";
-			this.hoursToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-			this.hoursToolStripMenuItem.Text = "12 hours";
-			this.hoursToolStripMenuItem.Click += new System.EventHandler(this.HoursToolStripMenuItemClick);
+			this.ban12h.Name = "ban12h";
+			this.ban12h.Size = new System.Drawing.Size(152, 22);
+			this.ban12h.Text = "12 hours";
+			this.ban12h.Click += new System.EventHandler(this.HoursToolStripMenuItemClick);
 			// 
-			// dayToolStripMenuItem
+			// ban1d
 			// 
-			this.dayToolStripMenuItem.Name = "dayToolStripMenuItem";
-			this.dayToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-			this.dayToolStripMenuItem.Text = "1 day";
-			this.dayToolStripMenuItem.Click += new System.EventHandler(this.DayToolStripMenuItemClick);
+			this.ban1d.Name = "ban1d";
+			this.ban1d.Size = new System.Drawing.Size(152, 22);
+			this.ban1d.Text = "1 day";
+			this.ban1d.Click += new System.EventHandler(this.DayToolStripMenuItemClick);
 			// 
-			// daysToolStripMenuItem
+			// ban2d
 			// 
-			this.daysToolStripMenuItem.Name = "daysToolStripMenuItem";
-			this.daysToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-			this.daysToolStripMenuItem.Text = "2 days";
-			this.daysToolStripMenuItem.Click += new System.EventHandler(this.DaysToolStripMenuItemClick);
+			this.ban2d.Name = "ban2d";
+			this.ban2d.Size = new System.Drawing.Size(152, 22);
+			this.ban2d.Text = "2 days";
+			this.ban2d.Click += new System.EventHandler(this.DaysToolStripMenuItemClick);
 			// 
-			// daysToolStripMenuItem1
+			// ban3d
 			// 
-			this.daysToolStripMenuItem1.Name = "daysToolStripMenuItem1";
-			this.daysToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
-			this.daysToolStripMenuItem1.Text = "3 days";
-			this.daysToolStripMenuItem1.Click += new System.EventHandler(this.DaysToolStripMenuItem1Click);
+			this.ban3d.Name = "ban3d";
+			this.ban3d.Size = new System.Drawing.Size(152, 22);
+			this.ban3d.Text = "3 days";
+			this.ban3d.Click += new System.EventHandler(this.DaysToolStripMenuItem1Click);
 			// 
-			// weekToolStripMenuItem
+			// ban1w
 			// 
-			this.weekToolStripMenuItem.Name = "weekToolStripMenuItem";
-			this.weekToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-			this.weekToolStripMenuItem.Text = "1 week";
-			this.weekToolStripMenuItem.Click += new System.EventHandler(this.WeekToolStripMenuItemClick);
+			this.ban1w.Name = "ban1w";
+			this.ban1w.Size = new System.Drawing.Size(152, 22);
+			this.ban1w.Text = "1 week";
+			this.ban1w.Click += new System.EventHandler(this.WeekToolStripMenuItemClick);
 			// 
-			// customToolStripMenuItem
+			// banCustom
 			// 
-			this.customToolStripMenuItem.Name = "customToolStripMenuItem";
-			this.customToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-			this.customToolStripMenuItem.Text = "Custom...";
-			this.customToolStripMenuItem.Click += new System.EventHandler(this.CustomToolStripMenuItemClick);
+			this.banCustom.Name = "banCustom";
+			this.banCustom.Size = new System.Drawing.Size(152, 22);
+			this.banCustom.Text = "Custom...";
+			this.banCustom.Click += new System.EventHandler(this.CustomToolStripMenuItemClick);
 			// 
-			// forceSpectateToolStripMenuItem
+			// spectate
 			// 
-			this.forceSpectateToolStripMenuItem.Name = "forceSpectateToolStripMenuItem";
-			this.forceSpectateToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-			this.forceSpectateToolStripMenuItem.Text = "Force spectate";
-			this.forceSpectateToolStripMenuItem.Click += new System.EventHandler(this.ForceSpectateToolStripMenuItemClick);
+			this.spectate.Name = "spectate";
+			this.spectate.Size = new System.Drawing.Size(157, 22);
+			this.spectate.Text = "Force spectate";
+			this.spectate.Click += new System.EventHandler(this.ForceSpectateToolStripMenuItemClick);
 			// 
-			// btnSendRacer
+			// sendPrivate
 			// 
-			this.btnSendRacer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnSendRacer.Enabled = false;
-			this.btnSendRacer.Location = new System.Drawing.Point(502, 428);
-			this.btnSendRacer.Name = "btnSendRacer";
-			this.btnSendRacer.Size = new System.Drawing.Size(165, 23);
-			this.btnSendRacer.TabIndex = 13;
-			this.btnSendRacer.Text = "Send to selected racer";
-			this.btnSendRacer.UseVisualStyleBackColor = true;
-			this.btnSendRacer.Click += new System.EventHandler(this.Button1Click);
+			this.sendPrivate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.sendPrivate.Enabled = false;
+			this.sendPrivate.Location = new System.Drawing.Point(502, 428);
+			this.sendPrivate.Name = "sendPrivate";
+			this.sendPrivate.Size = new System.Drawing.Size(165, 23);
+			this.sendPrivate.TabIndex = 13;
+			this.sendPrivate.Text = "Send to selected racer";
+			this.sendPrivate.UseVisualStyleBackColor = true;
+			this.sendPrivate.Click += new System.EventHandler(this.Button1Click);
 			// 
 			// AdminForm
 			// 
@@ -275,7 +275,7 @@ namespace BrowseForSpeed.Frontend
 			this.Controls.Add(this.lblinsimPort);
 			this.Controls.Add(this.chkRelay);
 			this.Controls.Add(this.lstRacers);
-			this.Controls.Add(this.btnSendRacer);
+			this.Controls.Add(this.sendPrivate);
 			this.Controls.Add(this.edtPassword);
 			this.Controls.Add(this.edtPort);
 			this.Controls.Add(this.txtInfo);
@@ -292,16 +292,16 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
-		private System.Windows.Forms.Button btnSendRacer;
-		private System.Windows.Forms.ToolStripMenuItem forceSpectateToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem weekToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem daysToolStripMenuItem1;
-		private System.Windows.Forms.ToolStripMenuItem daysToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem dayToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem hoursToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem banToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem kickToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem btnBan;
+		private System.Windows.Forms.ToolStripMenuItem kick;
+		private System.Windows.Forms.ToolStripMenuItem ban12h;
+		private System.Windows.Forms.ToolStripMenuItem ban1d;
+		private System.Windows.Forms.ToolStripMenuItem ban2d;
+		private System.Windows.Forms.ToolStripMenuItem ban3d;
+		private System.Windows.Forms.ToolStripMenuItem ban1w;
+		private System.Windows.Forms.ToolStripMenuItem spectate;
+		private System.Windows.Forms.Button sendPrivate;
+		private System.Windows.Forms.ToolStripMenuItem banCustom;
 		private System.Windows.Forms.ContextMenuStrip racerMenuStrip;
 		private System.Windows.Forms.ListBox lstRacers;
 		private System.Windows.Forms.CheckBox chkRelay;

@@ -38,8 +38,9 @@
 	<component name="Global.Disabled">Keelatud</component>
 
 	<!-- Main Form Components -->
-	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
-
+	<component name="MainForm.MainForm">Browse For Speed</component><!-- This is the Program Title -->
+	<component name="MainForm.gbLiveForSpeed">Live For Speed</component>
+	
 	<component name="MainForm.fileToolStripMenuItem">&amp;Fail</component>
 	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Liitu serveriga...</component>
 	<component name="MainForm.closeToolStripMenuItem">&amp;Välju</component>
@@ -67,9 +68,11 @@
 	<component name="MainForm.toolStripMenuItem1">&amp;Lisa lemmikutesse</component>
 	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Kopeeri server Clipboardi</component>
 	<component name="MainForm.administrateToolStripMenuItem1">Administreeri...</component>
-	<component name="MainForm.btnRefresh">&amp;Uuenda</component>
+	<component name="MainForm.btnRefreshMain">&amp;Uuenda</component>
+	<component name="MainForm.btnRefreshFav">&amp;Uuenda</component>
 	<component name="MainForm.btnStop">&amp;Peata</component>
-	<component name="MainForm.btnJoin">&amp;Liitu</component>
+	<component name="MainForm.btnJoinFav">&amp;Liitu</component>
+	<component name="MainForm.btnJoinMain">&amp;Liitu</component>
 	<component name="MainForm.tabFavourites">Lemmikud</component>
 	<component name="MainForm.lblAddressFav">Serveri IP aadress:</component>
 	<component name="MainForm.btnAddServer">&amp;Lisa server</component>
@@ -97,9 +100,6 @@
 	<component name="MainForm.viewServerInformationFriend">Vaata serveri informatsiooni...</component>
 	<component name="MainForm.removeFriendToolStripMenuItem">Eemalda sõbrad</component>
 	<component name="MainForm.tabConfig">Konfiguratsioon</component>
-	<component name="MainForm.groupBox1">Konfiguratsioon</component>
-	<component name="MainForm.groupBox2">Keel</component>
-	<component name="MainForm.groupBox5">Keele detailid</component>
 	<component name="MainForm.lblCommentReal">Komentaarid</component>
 	<component name="MainForm.lblEmailReal">AuthorEmal</component>
 	<component name="MainForm.lblAuthorReal">langAutor</component>
@@ -107,7 +107,6 @@
 	<component name="MainForm.lblLangContact">E-mail:</component>
 	<component name="MainForm.lblLangAuthor">Autor:</component>
 	<component name="MainForm.lblLanguageConfig">Keel:</component>
-	<component name="MainForm.groupBox4">Serveri topeltklõpsu käitumine</component>
 	<component name="MainForm.rbJoin">Liitu serveriga</component>
 	<component name="MainForm.rbView">Vaata serveri informatsiooni</component>
 	<component name="MainForm.gbStartBeforeLFS">Käivita enne LFSi</component>
@@ -123,8 +122,6 @@
 	<component name="MainForm.lblProgramConfigName">Nimi:</component>
 	<component name="MainForm.btnProgramBrowse">&amp;Lehitse</component>
 	<component name="MainForm.lblProgramConfigPath">Tee:</component>
-	<component name="MainForm.groupBox3">Edasijõudnutele</component>
-	<component name="MainForm.txtInsimPort">29999</component>
 	<component name="MainForm.lblQueryWaitDescription">Päringu oote värtus. See on ootamise aeg ennem samaaegse päringu lisamist. Suurenda seda värtust, kui kõik serverid annavad päringut tehes "Connection Refused"</component>
 	<component name="MainForm.lblInsimPortConfig">LFSi insim port:</component>
 	<component name="MainForm.cbQueryWait">Keela päringu oode</component>
@@ -152,7 +149,7 @@
 	<component name="Admin.chkRelay">Connect to Relay</component>
 	<component name="Admin.this">Admin</component>
 	<component name="Admin.kick">Viska välja</component>
-    <component name="Admin.ban">Keela</component>
+    <component name="Admin.btnBan">Keela</component>
     <component name="Admin.spectate">Sunni pealtvaatajaks</component>
     <component name="Admin.ban12h">12 tundi</component>
     <component name="Admin.ban1d">1 päev</component>
@@ -163,7 +160,7 @@
 	<component name="Admin.sendPrivate">Saada valitud sõitjale</component>
 
 	<!--Ban Dialog Components -->
-    <component name="BanDialog.nmDays">Päeva</component>
+    <component name="BanDialog.lblDays">Päeva</component>
     <component name="BanDialog.ok">OK</component>
     <component name="BanDialog.cancel">Katkesta</component>
 	
@@ -173,7 +170,7 @@
 	<component name="JoinServerDialog.btnCancel">&amp;Tühista</component>
 	<component name="JoinServerDialog.lblPassword">Parool:</component>
 	<component name="JoinServerDialog.lblVersion">Versioon:</component>
-	<component name="JoinServerDialog.this">Liitu serveriga</component>
+	<component name="JoinServerDialog.JoinServerDialog">Liitu serveriga</component>
 
 	<!--Server Information Form components-->
 	<component name="ServerInformationForm.buttonInfoJoin">&amp;Liitu</component>

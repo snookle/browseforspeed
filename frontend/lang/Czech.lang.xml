@@ -36,9 +36,10 @@ Rocks"
 <component name="Global.Disabled">Zakázáno</component>
 <!-- Main Form Components -->
 
-<component name="MainForm.this">Browse For Speed</component>
+<component name="MainForm.MainForm">Browse For Speed</component>
+<component name="MainForm.gbLiveForSpeed">Live For Speed</component>
 
-<!-- This is the Program Title -->
+
 <component name="MainForm.fileToolStripMenuItem">&amp;Soubor</component>
 <component name="MainForm.joinServerToolStripMenuItem2">&amp;Pøipojit...</component>
 <component name="MainForm.closeToolStripMenuItem">&amp;Konec</component>
@@ -66,9 +67,11 @@ Rocks"
 <component name="MainForm.toolStripMenuItem1">&amp;Pøidej k oblíbenım</component>
 <component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Kopíruj server do schránky</component>
 <component name="MainForm.administrateToolStripMenuItem1">Administrace...</component>
-<component name="MainForm.btnRefresh">&amp;Obnovit</component>
+<component name="MainForm.btnRefreshMain">&amp;Obnovit</component>
+<component name="MainForm.btnRefreshFav">&amp;Obnovit</component>
 <component name="MainForm.btnStop">&amp;Stop</component>
-<component name="MainForm.btnJoin">&amp;Pøipojit</component>
+<component name="MainForm.btnJoinFav">&amp;Pøipojit</component>
+<component name="MainForm.btnJoinMain">&amp;Pøipojit</component>
 <component name="MainForm.tabFavourites">Oblíbené</component>
 <component name="MainForm.lblAddressFav">IP Adresa serveru:</component>
 <component name="MainForm.btnAddServer">&amp;Pøidej server</component>
@@ -96,9 +99,6 @@ Rocks"
 <component name="MainForm.viewServerInformationFriend">Zobraz info o serveru</component>
 <component name="MainForm.removeFriendToolStripMenuItem">Odstraò prítele</component>
 <component name="MainForm.tabConfig">Konfigurace</component>
-<component name="MainForm.groupBox1">Konfigurace</component>
-<component name="MainForm.groupBox2">Jazyk</component>
-<component name="MainForm.groupBox5">Detaily o jazyku</component>
 <component name="MainForm.lblCommentReal">komentáre</component>
 <component name="MainForm.lblEmailReal">AuthorEmal</component>
 <component name="MainForm.lblAuthorReal">langAuthor</component>
@@ -106,7 +106,6 @@ Rocks"
 <component name="MainForm.lblLangContact">Kontaktní adresa:</component>
 <component name="MainForm.lblLangAuthor">Autor:</component>
 <component name="MainForm.lblLanguageConfig">Jazyk:</component>
-<component name="MainForm.groupBox4">Akce po dvojkliku na server</component>
 <component name="MainForm.rbJoin">Pøipoj k serveru</component>
 <component name="MainForm.rbView">Zobraz info o serveru</component>
 <component name="MainForm.gbStartBeforeLFS">Spus pred LFS</component>
@@ -122,8 +121,6 @@ Rocks"
 <component name="MainForm.lblProgramConfigName">Jméno:</component>
 <component name="MainForm.btnProgramBrowse">P&amp;rocházet</component>
 <component name="MainForm.lblProgramConfigPath">Cesta:</component>
-<component name="MainForm.groupBox3">Pokroèilé</component>
-<component name="MainForm.txtInsimPort">29999</component><component name="MainForm.lblQueryWaitDescription">Doba èekání na poadavek. Tato hodnota udává, jak dlouho se má èekat pred pøidáním dalšího poadavku. Zvyšte tuto hodnotu pokud servery vracejí "Pøipojení zamítnuto"</component>
 <component name="MainForm.lblInsimPortConfig">LFS Insim Port:</component>
 <component name="MainForm.cbQueryWait">Zrušit Èekání na poadavek </component>
 <component name="MainForm.lblQueryWaitHelp">Zakate Èekání na poadavek pouze pokud váš operaèní systém nemá toto limitováno. Pro více informací ètete readme.txt.</component>
@@ -141,7 +138,7 @@ Rocks"
 <component name="MainForm.cbStartupRefresh">Pøi spuštìní zkontrolovat oblíbené</component>
 
 <!--Ban Dialog Components -->
-<component name="BanDialog.nmDays">Dny</component>
+<component name="BanDialog.lblDays">Dny</component>
 <component name="BanDialog.ok">O&amp;K</component>
 <component name="BanDialog.cancel">&amp;Zrušit</component>
 
@@ -156,7 +153,7 @@ Rocks"
 <component name="Admin.this">Admin</component>
 <component name="Admin.sendPrivate">Poslat vybranému jezdci</component>
 <component name="Admin.kick">Kick</component>
-<component name="Admin.ban">Ban</component>
+<component name="Admin.btnBan">Ban</component>
 <component name="Admin.spectate">Pøinutit pozorovat</component>
 <component name="Admin.ban12h">12 hodin</component>
 <component name="Admin.ban1d">1 den</component>
@@ -171,7 +168,7 @@ Rocks"
 <component name="JoinServerDialog.btnCancel">&amp;Zrušit</component>
 <component name="JoinServerDialog.lblPassword">Heslo:</component>
 <component name="JoinServerDialog.lblVersion">Verze:</component>
-<component name="JoinServerDialog.this">Pøipojit k serveru</component>
+<component name="JoinServerDialog.JoinServerDialog">Pøipojit k serveru</component>
 
 <!--Server Information Form components-->
 <component name="ServerInformationForm.buttonInfoJoin">&amp;Pøipojit</component>

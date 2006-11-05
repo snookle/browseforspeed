@@ -38,7 +38,8 @@
 	<component name="Global.Disabled">Deaktiviert</component>
 
 	<!-- Main Form Components -->
-	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+	<component name="MainForm.MainForm">Browse For Speed</component><!-- This is the Program Title -->
+	<component name="MainForm.gbLiveForSpeed">Live For Speed</component>
 
 	<component name="MainForm.fileToolStripMenuItem">&amp;Datei</component>
 	<component name="MainForm.joinServerToolStripMenuItem2">Server &amp;beitreten...</component>
@@ -67,9 +68,11 @@
 	<component name="MainForm.toolStripMenuItem1">&amp;Zu Favoriten hinzufügen</component>
 	<component name="MainForm.copyServerToClipboardToolStripMenuItem">Server in Zwischenablage &amp;kopieren</component>
 	<component name="MainForm.administrateToolStripMenuItem1">Administrieren...</component>
-	<component name="MainForm.btnRefresh">&amp;Aktualisieren</component>
+	<component name="MainForm.btnRefreshMain">&amp;Aktualisieren</component>
+	<component name="MainForm.btnRefreshFav">&amp;Aktualisieren</component>
 	<component name="MainForm.btnStop">&amp;Stop</component>
-	<component name="MainForm.btnJoin">&amp;Beitreten</component>
+	<component name="MainForm.btnJoinFav">&amp;Beitreten</component>
+	<component name="MainForm.btnJoinMain">&amp;Beitreten</component>
 	<component name="MainForm.tabFavourites">Favoriten</component>
 	<component name="MainForm.lblAddressFav">Server IP Addresse:</component>
 	<component name="MainForm.btnAddServer">&amp;Server hinzufügen</component>
@@ -124,7 +127,6 @@
 	<component name="MainForm.btnProgramBrowse">D&amp;urchsuchen...</component>
 	<component name="MainForm.lblProgramConfigPath">Pfad:</component>
 	<component name="MainForm.groupBox3">Erweitert</component>
-	<component name="MainForm.txtInsimPort">29999</component>
 	<component name="MainForm.lblQueryWaitDescription">Query Wait Wert. Dies ist die Zeit, die gewartet wird, bevor ein weiterer Query zu den laufenden Queries hinzugefügt wird. Erhöhe diesen Wert, wenn während dem Anfragen alle Server "Verbindung abgelehnt" melden.</component>
 	<component name="MainForm.lblInsimPortConfig">LFS Insim Port:</component>
 	<component name="MainForm.cbQueryWait">Query Wait deaktivieren</component>
@@ -152,7 +154,7 @@
 	<component name="Admin.this">Admin</component>
 	<component name="Admin.chkRelay">Mit Relay verbinden</component>
 	<component name="Admin.kick">Kicken</component>
-	<component name="Admin.ban">Bannen</component>
+	<component name="Admin.btnBan">Bannen</component>
 	<component name="Admin.spectate">In Zuschauermodus setzen</component>
 	<component name="Admin.ban12h">12 Stunden</component>
 	<component name="Admin.ban1d">1 Tag</component>
@@ -168,10 +170,10 @@
 	<component name="JoinServerDialog.btnCancel">&amp;Abbrechen</component>
 	<component name="JoinServerDialog.lblPassword">Passwort:</component>
 	<component name="JoinServerDialog.lblVersion">Version:</component>
-	<component name="JoinServerDialog.this">Server beitreten</component>
+	<component name="JoinServerDialog.JoinServerDialog">Server beitreten</component>
 
 	<!--Ban Dialog Components -->
-	<component name="BanDialog.nmDays">Tage</component>
+	<component name="BanDialog.lblDays">Tage</component>
 	<component name="BanDialog.ok">O&amp;K</component>
 	<component name="BanDialog.cancel">&amp;Abbrechen</component>
 

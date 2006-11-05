@@ -38,7 +38,9 @@
 	<component name="Global.Disabled">Disabled</component>
 
 	<!-- Main Form Components -->
-	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+	<component name="MainForm.MainForm">Browse For Speed</component><!-- This is the Program Title -->
+	<component name="MainForm.gbLiveForSpeed">Live For Speed</component>
+	
 	<component name="MainForm.cbStartupRefresh">Actualizar Favoritos al iniciar</component>
 	<component name="MainForm.fileToolStripMenuItem">&amp;Archivo</component>
 	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Conectar al servidor...</component>
@@ -67,9 +69,11 @@
 	<component name="MainForm.toolStripMenuItem1">&amp;Agregar a Favoritos</component>
 	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Copiar Servidor al portapapeles</component>
 	<component name="MainForm.administrateToolStripMenuItem1">Administrar...</component>
-	<component name="MainForm.btnRefresh">&amp;Actualizar</component>
+	<component name="MainForm.btnRefreshMain">&amp;Actualizar</component>
+	<component name="MainForm.btnRefreshFav">&amp;Actualizar</component>
 	<component name="MainForm.btnStop">&amp;Detener</component>
-	<component name="MainForm.btnJoin">&amp;Conectarse</component>
+	<component name="MainForm.btnJoinFav">&amp;Conectarse</component>
+	<component name="MainForm.btnJoinMain">&amp;Conectarse</component>
 	<component name="MainForm.tabFavourites">Favoritos</component>
 	<component name="MainForm.lblAddressFav">Direccion IP del Servidor:</component>
 	<component name="MainForm.btnAddServer">&amp;Agregar Servidor</component>
@@ -97,9 +101,6 @@
 	<component name="MainForm.viewServerInformationFriend">Ver informacion...</component>
 	<component name="MainForm.removeFriendToolStripMenuItem">Remover Amigo</component>
 	<component name="MainForm.tabConfig">Configuracion</component>
-	<component name="MainForm.groupBox1">Configuracion</component>
-	<component name="MainForm.groupBox2">Lenguaje</component>
-	<component name="MainForm.groupBox5">Detalles de la traduccion</component>
 	<component name="MainForm.lblCommentReal">langComments</component>
 	<component name="MainForm.lblEmailReal">AuthorEmal</component>
 	<component name="MainForm.lblAuthorReal">langAuthor</component>
@@ -123,8 +124,6 @@
 	<component name="MainForm.lblProgramConfigName">Nombre:</component>
 	<component name="MainForm.btnProgramBrowse">B&amp;uscar...</component>
 	<component name="MainForm.lblProgramConfigPath">Ejecutar:</component>
-	<component name="MainForm.groupBox3">Advanzado</component>
-	<component name="MainForm.txtInsimPort">29999</component>
 	<component name="MainForm.lblQueryWaitDescription">Este es el tiempo de espera (en ms) antes de hacer una nueva peticion. Aumenta este valor si al actualizar la lista de servidores recives muchos mensajes de "Conexion Denegada"</component>
 	<component name="MainForm.lblInsimPortConfig">Puerto para LFS Insim:</component>
 	<component name="MainForm.cbQueryWait">Desactivar tiempo de espera</component>
@@ -151,7 +150,7 @@
 	<component name="Admin.this">Admin</component>
 	<component name="Admin.chkRelay">Conectar al relay</component>
       <component name="Admin.kick">Kickear</component>
-      <component name="Admin.ban">Banear</component>
+      <component name="Admin.btnBan">Banear</component>
       <component name="Admin.spectate">Forzar a Expectador</component>
       <component name="Admin.ban12h">12 horas</component>
       <component name="Admin.ban1d">1 dia</component>
@@ -163,7 +162,7 @@
 
 
 	<!--Ban Dialog Components -->
-      <component name="BanDialog.nmDays">Dias</component>
+      <component name="BanDialog.lblDays">Dias</component>
       <component name="BanDialog.ok">A&amp;ceptar</component>
       <component name="BanDialog.cancel">&amp;Cancelar</component>
 
@@ -173,7 +172,7 @@
 	<component name="JoinServerDialog.btnCancel">&amp;Cancelar</component>
 	<component name="JoinServerDialog.lblPassword">Contraseña:</component>
 	<component name="JoinServerDialog.lblVersion">Version:</component>
-	<component name="JoinServerDialog.this">Conectarse al Servidor</component>
+	<component name="JoinServerDialog.JoinServerDialog">Conectarse al Servidor</component>
 
 	<!--Server Information Form components-->
 	<component name="ServerInformationForm.buttonInfoJoin">&amp;Conectarse</component>

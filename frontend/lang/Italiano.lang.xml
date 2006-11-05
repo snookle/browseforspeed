@@ -38,9 +38,10 @@
 	<component name="Global.Disabled">Disabilitato</component>
 
 	<!-- Main Form Components -->
-	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+	<component name="MainForm.MainForm">Browse For Speed</component><!-- This is the Program Title -->
+	<component name="MainForm.gbLiveForSpeed">Live For Speed</component>
 
-        <component name="MainForm.cbStartupRefresh">Aggiorna i preferiti all'avvio</component>
+	<component name="MainForm.cbStartupRefresh">Aggiorna i preferiti all'avvio</component>
 	<component name="MainForm.fileToolStripMenuItem">&amp;File</component>
 	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Entra nel Server...</component>
 	<component name="MainForm.closeToolStripMenuItem">&amp;Esci</component>
@@ -68,9 +69,11 @@
 	<component name="MainForm.toolStripMenuItem1">&amp;Aggiungi a Favoriti</component>
 	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;Copia Server Negli Appunti</component>
 	<component name="MainForm.administrateToolStripMenuItem1">Amministra...</component>
-	<component name="MainForm.btnRefresh">&amp;Aggiorna</component>
+	<component name="MainForm.btnRefreshMain">&amp;Aggiorna</component>
+	<component name="MainForm.btnRefreshFav">&amp;Aggiorna</component>
 	<component name="MainForm.btnStop">&amp;Stop</component>
-	<component name="MainForm.btnJoin">&amp;Entra</component>
+	<component name="MainForm.btnJoinFav">&amp;Entra</component>
+	<component name="MainForm.btnJoinMain">&amp;Entra</component>
 	<component name="MainForm.tabFavourites">Favoriti</component>
 	<component name="MainForm.lblAddressFav">Indirizzo IP Server:</component>
 	<component name="MainForm.btnAddServer">&amp;Aggiungi Server</component>
@@ -98,9 +101,6 @@
 	<component name="MainForm.viewServerInformationFriend">Vedi Informazioni Server...</component>
 	<component name="MainForm.removeFriendToolStripMenuItem">Rimuovi Amico</component>
 	<component name="MainForm.tabConfig">Configurazione</component>
-	<component name="MainForm.groupBox1">Configurazione</component>
-	<component name="MainForm.groupBox2">Lingua</component>
-	<component name="MainForm.groupBox5">Dettagli Lingua</component>
 	<component name="MainForm.lblCommentReal">Commenti Lingua</component>
 	<component name="MainForm.lblEmailReal">Email Autore</component>
 	<component name="MainForm.lblAuthorReal">Autore Lingua</component>
@@ -108,7 +108,6 @@
 	<component name="MainForm.lblLangContact">Indirizzo:</component>
 	<component name="MainForm.lblLangAuthor">Autore:</component>
 	<component name="MainForm.lblLanguageConfig">Linguaggio:</component>
-	<component name="MainForm.groupBox4">Con doppio click</component>
 	<component name="MainForm.rbJoin">Entra nel server</component>
 	<component name="MainForm.rbView">Vedi informazioni server</component>
 	<component name="MainForm.gbStartBeforeLFS">Lancia prima LFS</component>
@@ -124,8 +123,6 @@
 	<component name="MainForm.lblProgramConfigName">Nome:</component>
 	<component name="MainForm.btnProgramBrowse">C&amp;erca...</component>
 	<component name="MainForm.lblProgramConfigPath">Percorso:</component>
-	<component name="MainForm.groupBox3">Avanzate</component>
-	<component name="MainForm.txtInsimPort">29999</component>
 	<component name="MainForm.lblQueryWaitDescription">Valore di Attesa. Questo è il tempo di attesa prima di aggiungere una richiesta a quella già effettuata. Aumenta il valore se, quando richiesto, tutti i server danno come risposta "Connessione rifiutata"</component>
 	<component name="MainForm.lblInsimPortConfig">LFS Insim Port:</component>
 	<component name="MainForm.cbQueryWait">Disabilita Attesa</component>
@@ -152,7 +149,7 @@
 	<component name="Admin.chkRelay">Connetti al Relay</component>
 	<component name="Admin.this">Amministratore</component>
 	<component name="Admin.kick">Caccia</component>
-	<component name="Admin.ban">Banna</component>
+	<component name="Admin.btnBan">Banna</component>
 	<component name="Admin.spectate">Forza Spettatore</component>
 	<component name="Admin.ban12h">12 ore</component>
 	<component name="Admin.ban1d">1 giorno</component>
@@ -163,7 +160,7 @@
 	<component name="Admin.sendPrivate">Invia al giocatore &amp;selezionato</component>
 
 	<!--Ban Dialog Components -->
-	<component name="BanDialog.nmDays">Giorni</component>
+	<component name="BanDialog.lblDays">Giorni</component>
 	<component name="BanDialog.ok">O&amp;K</component>
 	<component name="BanDialog.cancel">&amp;Cancella</component>
 
@@ -173,7 +170,7 @@
 	<component name="JoinServerDialog.btnCancel">&amp;Cancella</component>
 	<component name="JoinServerDialog.lblPassword">Password:</component>
 	<component name="JoinServerDialog.lblVersion">Versione:</component>
-	<component name="JoinServerDialog.this">Entra nel Server</component>
+	<component name="JoinServerDialog.JoinServerDialog">Entra nel Server</component>
 
 	<!--Server Information Form components-->
 	<component name="ServerInformationForm.buttonInfoJoin">&amp;Entra</component>

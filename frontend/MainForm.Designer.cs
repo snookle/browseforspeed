@@ -89,7 +89,7 @@ namespace BrowseForSpeed.Frontend
 			this.lblAddressFav = new System.Windows.Forms.Label();
 			this.edtAddServerAddress = new System.Windows.Forms.TextBox();
 			this.btnAddServer = new System.Windows.Forms.Button();
-			this.buttonRefreshFav = new System.Windows.Forms.Button();
+			this.btnRefreshFav = new System.Windows.Forms.Button();
 			this.btnJoinFav = new System.Windows.Forms.Button();
 			this.lvFavourites = new BrowseForSpeed.Frontend.FavouriteListView();
 			this.columnHeaderFavServerName = new System.Windows.Forms.ColumnHeader();
@@ -130,7 +130,7 @@ namespace BrowseForSpeed.Frontend
 			this.lblExePathConfig = new System.Windows.Forms.Label();
 			this.buttonBrowse = new System.Windows.Forms.Button();
 			this.gbLanguage = new System.Windows.Forms.GroupBox();
-			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.gbLangDetails = new System.Windows.Forms.GroupBox();
 			this.lblCommentReal = new System.Windows.Forms.Label();
 			this.lblEmailReal = new System.Windows.Forms.Label();
 			this.lblAuthorReal = new System.Windows.Forms.Label();
@@ -175,7 +175,6 @@ namespace BrowseForSpeed.Frontend
 			this.statusRefused = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusNoReply = new System.Windows.Forms.ToolStripStatusLabel();
 			this.openFileDialogPS = new System.Windows.Forms.OpenFileDialog();
-			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.menuStrip.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabMain.SuspendLayout();
@@ -189,7 +188,7 @@ namespace BrowseForSpeed.Frontend
 			this.gbConfigurationMain.SuspendLayout();
 			this.gbLiveForSpeed.SuspendLayout();
 			this.gbLanguage.SuspendLayout();
-			this.groupBox5.SuspendLayout();
+			this.gbLangDetails.SuspendLayout();
 			this.gbStartBeforeLFS.SuspendLayout();
 			this.gbProgramConfig.SuspendLayout();
 			this.gbAdvanced.SuspendLayout();
@@ -222,14 +221,14 @@ namespace BrowseForSpeed.Frontend
 			// joinServerToolStripMenuItem2
 			// 
 			this.joinServerToolStripMenuItem2.Name = "joinServerToolStripMenuItem2";
-			this.joinServerToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
+			this.joinServerToolStripMenuItem2.Size = new System.Drawing.Size(151, 22);
 			this.joinServerToolStripMenuItem2.Text = "&Join Server...";
 			this.joinServerToolStripMenuItem2.Click += new System.EventHandler(this.JoinServerToolStripMenuItem2Click);
 			// 
 			// closeToolStripMenuItem
 			// 
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-			this.closeToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+			this.closeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
 			this.closeToolStripMenuItem.Text = "&Exit";
 			this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItemClick);
 			// 
@@ -244,7 +243,7 @@ namespace BrowseForSpeed.Frontend
 			// aboutToolStripMenuItem1
 			// 
 			this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-			this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(115, 22);
+			this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
 			this.aboutToolStripMenuItem1.Text = "&About...";
 			this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.AboutToolStripMenuItem1Click);
 			// 
@@ -291,7 +290,6 @@ namespace BrowseForSpeed.Frontend
 			this.btnQuickRefresh.Size = new System.Drawing.Size(90, 23);
 			this.btnQuickRefresh.TabIndex = 10;
 			this.btnQuickRefresh.Text = "&Quick Refresh";
-			this.toolTip.SetToolTip(this.btnQuickRefresh, "Refreshes displayed servers.");
 			this.btnQuickRefresh.UseVisualStyleBackColor = true;
 			this.btnQuickRefresh.Click += new System.EventHandler(this.RefreshButtonClick);
 			// 
@@ -559,41 +557,41 @@ namespace BrowseForSpeed.Frontend
 									this.copyServerToClipboardToolStripMenuItem,
 									this.administrateToolStripMenuItem1});
 			this.contextMenuBrowser.Name = "contextMenuBrowser";
-			this.contextMenuBrowser.Size = new System.Drawing.Size(203, 114);
+			this.contextMenuBrowser.Size = new System.Drawing.Size(214, 114);
 			this.contextMenuBrowser.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuBrowserOpening);
 			// 
 			// joinServerToolStripMenuItem
 			// 
 			this.joinServerToolStripMenuItem.Name = "joinServerToolStripMenuItem";
-			this.joinServerToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.joinServerToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
 			this.joinServerToolStripMenuItem.Text = "&Join Server";
 			this.joinServerToolStripMenuItem.Click += new System.EventHandler(this.btnJoinClick);
 			// 
 			// viewServerInformationMain
 			// 
 			this.viewServerInformationMain.Name = "viewServerInformationMain";
-			this.viewServerInformationMain.Size = new System.Drawing.Size(202, 22);
+			this.viewServerInformationMain.Size = new System.Drawing.Size(213, 22);
 			this.viewServerInformationMain.Text = "&View Server Information...";
 			this.viewServerInformationMain.Click += new System.EventHandler(this.ViewServerInformationToolStripMenuItemClick);
 			// 
 			// toolStripMenuItem1
 			// 
 			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(202, 22);
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
 			this.toolStripMenuItem1.Text = "&Add to Favourites";
 			this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1Click);
 			// 
 			// copyServerToClipboardToolStripMenuItem
 			// 
 			this.copyServerToClipboardToolStripMenuItem.Name = "copyServerToClipboardToolStripMenuItem";
-			this.copyServerToClipboardToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.copyServerToClipboardToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
 			this.copyServerToClipboardToolStripMenuItem.Text = "&Copy Server to Clipboard";
 			this.copyServerToClipboardToolStripMenuItem.Click += new System.EventHandler(this.CopyServerToClipboardToolStripMenuItemClick);
 			// 
 			// administrateToolStripMenuItem1
 			// 
 			this.administrateToolStripMenuItem1.Name = "administrateToolStripMenuItem1";
-			this.administrateToolStripMenuItem1.Size = new System.Drawing.Size(202, 22);
+			this.administrateToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
 			this.administrateToolStripMenuItem1.Text = "Administrate...";
 			this.administrateToolStripMenuItem1.Click += new System.EventHandler(this.AdministrateToolStripMenuItemClick);
 			// 
@@ -606,7 +604,6 @@ namespace BrowseForSpeed.Frontend
 			this.btnRefreshMain.Size = new System.Drawing.Size(75, 23);
 			this.btnRefreshMain.TabIndex = 2;
 			this.btnRefreshMain.Text = "&Refresh";
-			this.toolTip.SetToolTip(this.btnRefreshMain, "Obtains a new server list.");
 			this.btnRefreshMain.UseVisualStyleBackColor = true;
 			this.btnRefreshMain.Click += new System.EventHandler(this.RefreshButtonClick);
 			// 
@@ -629,7 +626,7 @@ namespace BrowseForSpeed.Frontend
 			this.tabFavourites.Controls.Add(this.lblAddressFav);
 			this.tabFavourites.Controls.Add(this.edtAddServerAddress);
 			this.tabFavourites.Controls.Add(this.btnAddServer);
-			this.tabFavourites.Controls.Add(this.buttonRefreshFav);
+			this.tabFavourites.Controls.Add(this.btnRefreshFav);
 			this.tabFavourites.Controls.Add(this.btnJoinFav);
 			this.tabFavourites.Controls.Add(this.lvFavourites);
 			this.tabFavourites.Location = new System.Drawing.Point(4, 22);
@@ -683,17 +680,17 @@ namespace BrowseForSpeed.Frontend
 			this.btnAddServer.UseVisualStyleBackColor = true;
 			this.btnAddServer.Click += new System.EventHandler(this.BtnAddServerClick);
 			// 
-			// buttonRefreshFav
+			// btnRefreshFav
 			// 
-			this.buttonRefreshFav.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.buttonRefreshFav.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.buttonRefreshFav.Location = new System.Drawing.Point(89, 535);
-			this.buttonRefreshFav.Name = "buttonRefreshFav";
-			this.buttonRefreshFav.Size = new System.Drawing.Size(75, 23);
-			this.buttonRefreshFav.TabIndex = 6;
-			this.buttonRefreshFav.Text = "&Refresh";
-			this.buttonRefreshFav.UseVisualStyleBackColor = true;
-			this.buttonRefreshFav.Click += new System.EventHandler(this.RefreshButtonClick);
+			this.btnRefreshFav.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnRefreshFav.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.btnRefreshFav.Location = new System.Drawing.Point(89, 535);
+			this.btnRefreshFav.Name = "btnRefreshFav";
+			this.btnRefreshFav.Size = new System.Drawing.Size(75, 23);
+			this.btnRefreshFav.TabIndex = 6;
+			this.btnRefreshFav.Text = "&Refresh";
+			this.btnRefreshFav.UseVisualStyleBackColor = true;
+			this.btnRefreshFav.Click += new System.EventHandler(this.RefreshButtonClick);
 			// 
 			// btnJoinFav
 			// 
@@ -784,41 +781,41 @@ namespace BrowseForSpeed.Frontend
 									this.copyServerToClipboardToolStripMenuItem1,
 									this.administrateToolStripMenuItem});
 			this.contextMenuFav.Name = "contextMenuFav";
-			this.contextMenuFav.Size = new System.Drawing.Size(203, 114);
+			this.contextMenuFav.Size = new System.Drawing.Size(214, 114);
 			this.contextMenuFav.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFavOpening);
 			// 
 			// joinServerToolStripMenuItem1
 			// 
 			this.joinServerToolStripMenuItem1.Name = "joinServerToolStripMenuItem1";
-			this.joinServerToolStripMenuItem1.Size = new System.Drawing.Size(202, 22);
+			this.joinServerToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
 			this.joinServerToolStripMenuItem1.Text = "&Join Server";
 			this.joinServerToolStripMenuItem1.Click += new System.EventHandler(this.btnJoinClick);
 			// 
 			// viewServerInformationFav
 			// 
 			this.viewServerInformationFav.Name = "viewServerInformationFav";
-			this.viewServerInformationFav.Size = new System.Drawing.Size(202, 22);
+			this.viewServerInformationFav.Size = new System.Drawing.Size(213, 22);
 			this.viewServerInformationFav.Text = "&View Server Information...";
 			this.viewServerInformationFav.Click += new System.EventHandler(this.ViewServerInformationToolStripMenuItemClick);
 			// 
 			// removeFromFavouritesToolStripMenuItem
 			// 
 			this.removeFromFavouritesToolStripMenuItem.Name = "removeFromFavouritesToolStripMenuItem";
-			this.removeFromFavouritesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.removeFromFavouritesToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
 			this.removeFromFavouritesToolStripMenuItem.Text = "&Remove From Favourites";
 			this.removeFromFavouritesToolStripMenuItem.Click += new System.EventHandler(this.RemoveFromFavouritesToolStripMenuItemClick);
 			// 
 			// copyServerToClipboardToolStripMenuItem1
 			// 
 			this.copyServerToClipboardToolStripMenuItem1.Name = "copyServerToClipboardToolStripMenuItem1";
-			this.copyServerToClipboardToolStripMenuItem1.Size = new System.Drawing.Size(202, 22);
+			this.copyServerToClipboardToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
 			this.copyServerToClipboardToolStripMenuItem1.Text = "&Copy Server to Clipboard";
 			this.copyServerToClipboardToolStripMenuItem1.Click += new System.EventHandler(this.CopyServerToClipboardToolStripMenuItemClick);
 			// 
 			// administrateToolStripMenuItem
 			// 
 			this.administrateToolStripMenuItem.Name = "administrateToolStripMenuItem";
-			this.administrateToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.administrateToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
 			this.administrateToolStripMenuItem.Text = "Administrate...";
 			this.administrateToolStripMenuItem.Click += new System.EventHandler(this.AdministrateToolStripMenuItemClick);
 			// 
@@ -956,27 +953,27 @@ namespace BrowseForSpeed.Frontend
 									this.viewServerInformationFriend,
 									this.removeFriendToolStripMenuItem});
 			this.contextMenuFriends.Name = "contextMenuFriends";
-			this.contextMenuFriends.Size = new System.Drawing.Size(203, 70);
+			this.contextMenuFriends.Size = new System.Drawing.Size(214, 70);
 			this.contextMenuFriends.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFriendsOpening);
 			// 
 			// joinServerMenuFriends
 			// 
 			this.joinServerMenuFriends.Name = "joinServerMenuFriends";
-			this.joinServerMenuFriends.Size = new System.Drawing.Size(202, 22);
+			this.joinServerMenuFriends.Size = new System.Drawing.Size(213, 22);
 			this.joinServerMenuFriends.Text = "Join Server";
 			this.joinServerMenuFriends.Click += new System.EventHandler(this.JoinFriendClick);
 			// 
 			// viewServerInformationFriend
 			// 
 			this.viewServerInformationFriend.Name = "viewServerInformationFriend";
-			this.viewServerInformationFriend.Size = new System.Drawing.Size(202, 22);
+			this.viewServerInformationFriend.Size = new System.Drawing.Size(213, 22);
 			this.viewServerInformationFriend.Text = "View Server Information...";
 			this.viewServerInformationFriend.Click += new System.EventHandler(this.ViewServerInformationToolStripMenuItemClick);
 			// 
 			// removeFriendToolStripMenuItem
 			// 
 			this.removeFriendToolStripMenuItem.Name = "removeFriendToolStripMenuItem";
-			this.removeFriendToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.removeFriendToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
 			this.removeFriendToolStripMenuItem.Text = "Remove Friend";
 			this.removeFriendToolStripMenuItem.Click += new System.EventHandler(this.RemoveFriendToolStripMenuItemClick);
 			// 
@@ -1077,7 +1074,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// gbLanguage
 			// 
-			this.gbLanguage.Controls.Add(this.groupBox5);
+			this.gbLanguage.Controls.Add(this.gbLangDetails);
 			this.gbLanguage.Controls.Add(this.label1);
 			this.gbLanguage.Controls.Add(this.cbConfigLang);
 			this.gbLanguage.Controls.Add(this.lblLanguageConfig);
@@ -1088,20 +1085,20 @@ namespace BrowseForSpeed.Frontend
 			this.gbLanguage.TabStop = false;
 			this.gbLanguage.Text = "Language";
 			// 
-			// groupBox5
+			// gbLangDetails
 			// 
-			this.groupBox5.Controls.Add(this.lblCommentReal);
-			this.groupBox5.Controls.Add(this.lblEmailReal);
-			this.groupBox5.Controls.Add(this.lblAuthorReal);
-			this.groupBox5.Controls.Add(this.lblLangComment);
-			this.groupBox5.Controls.Add(this.lblLangContact);
-			this.groupBox5.Controls.Add(this.lblLangAuthor);
-			this.groupBox5.Location = new System.Drawing.Point(24, 53);
-			this.groupBox5.Name = "groupBox5";
-			this.groupBox5.Size = new System.Drawing.Size(390, 104);
-			this.groupBox5.TabIndex = 24;
-			this.groupBox5.TabStop = false;
-			this.groupBox5.Text = "Language Details";
+			this.gbLangDetails.Controls.Add(this.lblCommentReal);
+			this.gbLangDetails.Controls.Add(this.lblEmailReal);
+			this.gbLangDetails.Controls.Add(this.lblAuthorReal);
+			this.gbLangDetails.Controls.Add(this.lblLangComment);
+			this.gbLangDetails.Controls.Add(this.lblLangContact);
+			this.gbLangDetails.Controls.Add(this.lblLangAuthor);
+			this.gbLangDetails.Location = new System.Drawing.Point(24, 53);
+			this.gbLangDetails.Name = "gbLangDetails";
+			this.gbLangDetails.Size = new System.Drawing.Size(390, 104);
+			this.gbLangDetails.TabIndex = 24;
+			this.gbLangDetails.TabStop = false;
+			this.gbLangDetails.Text = "Language Details";
 			// 
 			// lblCommentReal
 			// 
@@ -1547,11 +1544,6 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.openFileDialogPS.Filter = "Executables|*.exe";
 			// 
-			// toolTip
-			// 
-			this.toolTip.AutomaticDelay = 1000;
-			this.toolTip.IsBalloon = true;
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1587,7 +1579,7 @@ namespace BrowseForSpeed.Frontend
 			this.gbLiveForSpeed.ResumeLayout(false);
 			this.gbLiveForSpeed.PerformLayout();
 			this.gbLanguage.ResumeLayout(false);
-			this.groupBox5.ResumeLayout(false);
+			this.gbLangDetails.ResumeLayout(false);
 			this.gbStartBeforeLFS.ResumeLayout(false);
 			this.gbProgramConfig.ResumeLayout(false);
 			this.gbProgramConfig.PerformLayout();
@@ -1600,8 +1592,9 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.GroupBox gbLangDetails;
+		private System.Windows.Forms.Button btnRefreshFav;
 		private System.Windows.Forms.GroupBox gbAdvanced;
-		private System.Windows.Forms.ToolTip toolTip;
 		private System.Windows.Forms.Button btnQuickRefresh;
 		private System.Windows.Forms.GroupBox gbProgramConfig;
 		private System.Windows.Forms.Label lblDoubleClick;
@@ -1619,7 +1612,6 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.Label lblAuthorReal;
 		private System.Windows.Forms.Label lblEmailReal;
 		private System.Windows.Forms.Label lblCommentReal;
-		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.GroupBox gbLanguage;
 		private System.Windows.Forms.GroupBox gbFilters;
 		private System.Windows.Forms.Label lblExePathConfig;
@@ -1719,7 +1711,6 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.ToolStripMenuItem joinServerToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
 		private System.Windows.Forms.ContextMenuStrip contextMenuBrowser;
-		private System.Windows.Forms.Button buttonRefreshFav;
 		private System.Windows.Forms.ListBox pathList;
 		private System.Windows.Forms.ColumnHeader columnHeaderConnections;
 		private System.Windows.Forms.ColumnHeader columnHeaderPing;
