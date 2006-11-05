@@ -83,24 +83,24 @@ namespace libbrowseforspeed {
 		public static bool xpsp2_wait = true;
 
 		public const ulong CAR_XFG = 1;
-		public const ulong CAR_XRG = 2;
-		public const ulong CAR_XRT = 4;
-		public const ulong CAR_RB4 = 8;
-		public const ulong CAR_FXO = 16;
-		public const ulong CAR_LX4 = 32;
-		public const ulong CAR_LX6 = 64;
-		public const ulong CAR_MRT = 128;
-		public const ulong CAR_UF1 = 256;
-		public const ulong CAR_RAC = 512;
-		public const ulong CAR_FZ5 = 1024;
-		public const ulong CAR_FOX = 2048;
-		public const ulong CAR_XFR = 4096;
-		public const ulong CAR_UFR = 8192;
-		public const ulong CAR_FO8 = 16384;
-		public const ulong CAR_FXR = 32768;
-		public const ulong CAR_XRR = 65536;
-		public const ulong CAR_FZR = 131072;
-		public const ulong CAR_BF1 = 262144;
+		public const ulong CAR_XRG = 1 << 1;
+		public const ulong CAR_XRT = 1 << 2;
+		public const ulong CAR_RB4 = 1 << 3;
+		public const ulong CAR_FXO = 1 << 4;
+		public const ulong CAR_LX4 = 1 << 5;
+		public const ulong CAR_LX6 = 1 << 6;
+		public const ulong CAR_MRT = 1 << 7;
+		public const ulong CAR_UF1 = 1 << 8;
+		public const ulong CAR_RAC = 1 << 9;
+		public const ulong CAR_FZ5 = 1 << 10;
+		public const ulong CAR_FOX = 1 << 11;
+		public const ulong CAR_XFR = 1 << 12;
+		public const ulong CAR_UFR = 1 << 13;
+		public const ulong CAR_FO8 = 1 << 14;
+		public const ulong CAR_FXR = 1 << 15;
+		public const ulong CAR_XRR = 1 << 16;
+		public const ulong CAR_FZR = 1 << 17;
+		public const ulong CAR_BF1 = 1 << 18;
 
 		//car groups
 		public const ulong CARS_ALL = 524287;
@@ -196,7 +196,7 @@ namespace libbrowseforspeed {
 				if (sock != null) {
 					try {
 					 	sock.EndConnect(ar);
-					} catch (Exception e) { return; }
+					} catch (Exception) { return; }
 				} else {
 					return;
 				}
@@ -208,7 +208,7 @@ namespace libbrowseforspeed {
 				if (str != null) {
 					try {
 						str.EndRead(ar);
-					} catch (Exception e) { return; }
+					} catch (Exception) { return; }
 				} else {
 					return;
 				}
@@ -269,7 +269,7 @@ namespace libbrowseforspeed {
 						str.Close();
 						sock.Shutdown(SocketShutdown.Both);
 						sock.Close();
-					} catch (Exception e) { }
+					} catch (Exception) { }
 					if (queried != null) {
 						queried(this, serverinfo, host.callbackObj);
 					}
@@ -283,7 +283,7 @@ namespace libbrowseforspeed {
 						try {
 							sock.Shutdown(SocketShutdown.Both);
 							sock.Close();
-						} catch (Exception e) { }
+						} catch (Exception) { }
 					}
 					queried(this, ret, host.callbackObj);
 				}
@@ -719,7 +719,7 @@ namespace libbrowseforspeed {
 					}
 					i += (53 + (24 * numRacers));
 				}
-			} catch (Exception e) {
+			} catch (Exception) {
 				return -1;
 			}
 			return ret;
@@ -738,7 +738,7 @@ namespace libbrowseforspeed {
 					pubstatLastUpdate = System.Environment.TickCount;
 				}
 				return true;
-			} catch (Exception e) {
+			} catch (Exception) {
 				return false;
 			}
 		}
@@ -817,6 +817,7 @@ namespace libbrowseforspeed {
 					ignore--;
 				}
 			}
+			ret = Regex.Replace(ret, "\\^v", "|");
 			return ret;
 		}
 
