@@ -1319,6 +1319,19 @@ namespace BrowseForSpeed.Frontend
 
 					}
 				//now process controls as normal
+				} else if (c is ListView) {
+					ListView l = c as ListView;
+					foreach (ColumnHeader ch in l.Columns) {
+						string cname = prefix + ch.Name;
+						string cresult = languages.GetString(cname);
+						if (cname == cresult) {
+							Console.WriteLine(cname + " not found in lang.");
+							stringsToAdd.Add("<component name=\"" + cresult + "\">" + ch.Text.Replace("&", "&amp;") + "</component>");
+							continue;
+						} else {
+							ch.Text = cresult;
+						}
+					}
 				} else {
 					if (String.IsNullOrEmpty(c.Text))
 						continue;

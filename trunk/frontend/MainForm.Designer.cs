@@ -518,35 +518,43 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.columnHeaderName.Text = "Server Name";
 			this.columnHeaderName.Width = 203;
+			this.columnHeaderName.Name = "columnHeaderName";
 			// 
 			// columnHeaderPing
 			// 
 			this.columnHeaderPing.Text = "Ping";
 			this.columnHeaderPing.Width = 50;
+			this.columnHeaderPing.Name = "columnHeaderPing";
 			// 
 			// columnPrivate
 			// 
 			this.columnPrivate.Text = "Private";
 			this.columnPrivate.Width = 58;
+			this.columnPrivate.Name = "columnPrivate";
 			// 
 			// columnHeaderConnections
 			// 
 			this.columnHeaderConnections.Text = "Connections";
 			this.columnHeaderConnections.Width = 85;
+			this.columnHeaderConnections.Name = "columnHeaderConnections";
 			// 
 			// columnHeaderInfo
 			// 
 			this.columnHeaderInfo.Text = "Info";
+			this.columnHeaderInfo.Name = "columnHeaderInfo";
 			// 
 			// columnHeaderTrack
 			// 
 			this.columnHeaderTrack.Text = "Track";
 			this.columnHeaderTrack.Width = 134;
+			this.columnHeaderTrack.Name = "columnHeaderTrack";
 			// 
 			// columnHeaderCars
 			// 
 			this.columnHeaderCars.Text = "Cars";
 			this.columnHeaderCars.Width = 180;
+			this.columnHeaderCars.Name = "columnHeaderCars";
+			
 			// 
 			// contextMenuBrowser
 			// 
@@ -742,35 +750,42 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.columnHeaderFavServerName.Text = "Server Name";
 			this.columnHeaderFavServerName.Width = 158;
+			this.columnHeaderFavServerName.Name = "columnHeaderFavServerName";
 			// 
 			// columnHeaderFavPing
 			// 
 			this.columnHeaderFavPing.Text = "Ping";
 			this.columnHeaderFavPing.Width = 50;
+			this.columnHeaderFavPing.Name = "columnHeaderFavPing";
 			// 
 			// columnHeaderFavVersion
 			// 
 			this.columnHeaderFavVersion.Text = "Version";
 			this.columnHeaderFavVersion.Width = 63;
+			this.columnHeaderFavVersion.Name = "columnHeaderFavVersion";
 			// 
 			// columnHeaderFavSlots
 			// 
 			this.columnHeaderFavSlots.Text = "Connections";
 			this.columnHeaderFavSlots.Width = 87;
+			this.columnHeaderFavSlots.Name = "columnHeaderFavSlots";
 			// 
 			// columnHeaderFavInfo
 			// 
 			this.columnHeaderFavInfo.Text = "Info";
+			this.columnHeaderFavInfo.Name = "columnHeaderFavInfo";
 			// 
 			// columnHeaderFavTrack
 			// 
 			this.columnHeaderFavTrack.Text = "Track";
 			this.columnHeaderFavTrack.Width = 117;
+			this.columnHeaderFavTrack.Name = "columnHeaderFavTrack";
 			// 
 			// columnHeaderFavCars
 			// 
 			this.columnHeaderFavCars.Text = "Cars";
 			this.columnHeaderFavCars.Width = 374;
+			this.columnHeaderFavCars.Name = "columnHeaderFavCars";
 			// 
 			// contextMenuFav
 			// 
@@ -930,21 +945,25 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.columnFriendName.Text = "Friend Name";
 			this.columnFriendName.Width = 138;
+			this.columnFriendName.Name = "columnFriendName";
 			// 
 			// columnFriendServer
 			// 
 			this.columnFriendServer.Text = "Server Name";
 			this.columnFriendServer.Width = 173;
+			this.columnFriendServer.Name = "columnFriendServer";
 			// 
 			// columnFriendPrivate
 			// 
 			this.columnFriendPrivate.Text = "Private";
 			this.columnFriendPrivate.Width = 66;
+			this.columnFriendPrivate.Name = "columnFriendPrivate";
 			// 
 			// columnFriendPlayers
 			// 
 			this.columnFriendPlayers.Text = "Players";
 			this.columnFriendPlayers.Width = 523;
+			this.columnFriendPlayers.Name = "columnFriendPlayers";
 			// 
 			// contextMenuFriends
 			// 
