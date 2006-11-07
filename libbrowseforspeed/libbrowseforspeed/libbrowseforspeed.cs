@@ -817,6 +817,8 @@ namespace libbrowseforspeed {
 					ignore--;
 				}
 			}
+			//FIXME: do this better
+			ret = Regex.Replace(ret, @"(\A|[^^])\^v", "$1|");
 			ret = Regex.Replace(ret, @"(\A|[^^])\^v", "$1|");
 			return ret;
 		}
