@@ -729,7 +729,7 @@ namespace libbrowseforspeed {
 			try {
 				if (pubstatBuf == null || System.Environment.TickCount > (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
 					//Console.WriteLine("DOING HTTP REQUEST!!!!\n");
-					HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1");
+					HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1&idk=MI3VNTM8hN1mv0t6i9O2j48dvC8F5uzM");
 					request.Timeout = 4000;
 					HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 					Stream s = response.GetResponseStream();
