@@ -38,7 +38,7 @@
 	<component name="Global.Disabled">Kapalý</component>
 
 	<!-- Main Form Components -->
-	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+	<component name="MainForm.MainForm">Browse For Speed</component><!-- This is the Program Title -->
 
 	<component name="MainForm.fileToolStripMenuItem">&amp;Dosya</component>
 	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Sunucuya Gir...</component>
@@ -189,7 +189,7 @@
 	<component name="ServerInformationForm.btnAddFriend">&amp;Arkadaþlara Ekle</component>
 	<component name="ServerInformationForm.lblCars">Arabalar:</component>
 	<component name="ServerInformationForm.lblPrivate">Özel:</component>
-	<component name="ServerInformationForm.this">Sunucu bilgisi</component>
+	<component name="ServerInformationForm.ServerInformationForm">Sunucu bilgisi</component>
 	<component name="ServerInformationForm.buttonInfoStop">&amp;Dur</component>
 	<component name="ServerInformationForm.QueryTimeOut">Ýstek zaman aþýmýna uðradý</component>
 	<component name="ServerInformationForm.EmptyServer">Sunucuda þu an oyuncu yok.</component>

@@ -150,7 +150,7 @@
 	<component name="Admin.edtPort">29999</component>
 	<component name="Admin.lblPassword">Passwort:</component>
 	<component name="Admin.lblinsimPort">InSim Port:</component>
-	<component name="Admin.this">Admin</component>
+	<component name="Admin.Admin">Admin</component>
 	<component name="Admin.chkRelay">Mit Relay verbinden</component>
 	<component name="Admin.kick">Kicken</component>
 	<component name="Admin.btnBan">Bannen</component>
@@ -189,7 +189,7 @@
 	<component name="ServerInformationForm.btnAddFriend">&amp;Zu den Freunden hinzufügen</component>
 	<component name="ServerInformationForm.lblCars">Fahrzeuge:</component>
 	<component name="ServerInformationForm.lblPrivate">Privat:</component>
-	<component name="ServerInformationForm.this">Server Informationen</component>
+	<component name="ServerInformationForm.ServerInformationForm">Server Informationen</component>
 	<component name="ServerInformationForm.buttonInfoStop">&amp;Stop</component>
 	<component name="ServerInformationForm.QueryTimeOut">Zeitüberschreitung bei Abfrage</component>
 	<component name="ServerInformationForm.EmptyServer">Derzeit keine Spieler auf dem Server.</component>

@@ -38,7 +38,7 @@
 	<component name="Global.Disabled">Deaktiverad</component>
 
 	<!-- Main Form Components -->
-	<component name="MainForm.this">Browse For Speed</component><!-- This is the Program Title -->
+	<component name="MainForm.MainForm">Browse For Speed</component><!-- This is the Program Title -->
 
 	<component name="MainForm.fileToolStripMenuItem">&amp;Arkiv</component>
 	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Anslut...</component>
@@ -189,7 +189,7 @@
 	<component name="ServerInformationForm.btnAddFriend">&amp;Lägg till vän</component>
 	<component name="ServerInformationForm.lblCars">Fordon:</component>
 	<component name="ServerInformationForm.lblPrivate">Privat:</component>
-	<component name="ServerInformationForm.this">Serverinformation</component>
+	<component name="ServerInformationForm.ServerInformationForm">Serverinformation</component>
 	<component name="ServerInformationForm.buttonInfoStop">&amp;Stopp</component>
 	<component name="ServerInformationForm.QueryTimeOut">Anropet avbröts</component>
 	<component name="ServerInformationForm.EmptyServer">Server är tom</component>
