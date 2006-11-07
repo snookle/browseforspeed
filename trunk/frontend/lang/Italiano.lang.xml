@@ -146,7 +146,7 @@
 	<component name="Admin.lblPassword">Password:</component>
 	<component name="Admin.lblinsimPort">Porta InSim:</component>
 	<component name="Admin.chkRelay">Connetti al Relay</component>
-	<component name="Admin.this">Amministratore</component>
+	<component name="Admin.Admin">Amministratore</component>
 	<component name="Admin.kick">Caccia</component>
 	<component name="Admin.btnBan">Banna</component>
 	<component name="Admin.spectate">Forza Spettatore</component>
@@ -184,7 +184,7 @@
 	<component name="ServerInformationForm.btnAddFriend">&amp;Aggiungi ad Amici</component>
 	<component name="ServerInformationForm.lblCars">Auto:</component>
 	<component name="ServerInformationForm.lblPrivate">Privato:</component>
-	<component name="ServerInformationForm.this">Server Informazioni</component>
+	<component name="ServerInformationForm.ServerInformationForm">Server Informazioni</component>
 	<component name="ServerInformationForm.buttonInfoStop">&amp;Stop</component>
 	<component name="ServerInformationForm.QueryTimeOut">Richiesta Scaduta</component>
 	<component name="ServerInformationForm.EmptyServer">Nessun giocatore nel server.</component>

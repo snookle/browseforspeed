@@ -153,7 +153,7 @@
 	<component name="Admin.edtPort">29999</component>
 	<component name="Admin.lblPassword">Jelszó:</component>
 	<component name="Admin.lblinsimPort">InSim Port:</component>
-	<component name="Admin.this">Adminisztáció</component>
+	<component name="Admin.Admin">Adminisztáció</component>
 	<component name="Admin.chkRelay">Connect to Relay</component>
 
 
@@ -189,7 +189,7 @@
 	<component name="ServerInformationForm.lblPrivate">Privát?</component>
 
 
-	<component name="ServerInformationForm.this">Szerver információ</component>
+	<component name="ServerInformationForm.ServerInformationForm">Szerver információ</component>
 	<component name="ServerInformationForm.buttonInfoStop">&amp;Állj</component>
 	<component name="ServerInformationForm.QueryTimeOut">Query timed out</component>
 	<component name="ServerInformationForm.EmptyServer">Jelenleg üres a szerver.</component>

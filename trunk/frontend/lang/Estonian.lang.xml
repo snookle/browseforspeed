@@ -146,7 +146,7 @@
 	<component name="Admin.lblPassword">Parool:</component>
 	<component name="Admin.lblinsimPort">InSim port:</component>
 	<component name="Admin.chkRelay">Connect to Relay</component>
-	<component name="Admin.this">Admin</component>
+	<component name="Admin.Admin">Admin</component>
 	<component name="Admin.kick">Viska välja</component>
     <component name="Admin.btnBan">Keela</component>
     <component name="Admin.spectate">Sunni pealtvaatajaks</component>
@@ -184,7 +184,7 @@
 	<component name="ServerInformationForm.btnAddFriend">&amp;Lisa sõpradesse</component>
 	<component name="ServerInformationForm.lblCars">Autod:</component>
 	<component name="ServerInformationForm.lblPrivate">Privaat:</component>
-	<component name="ServerInformationForm.this">Serveri informatsioon</component>
+	<component name="ServerInformationForm.ServerInformationForm">Serveri informatsioon</component>
 	<component name="ServerInformationForm.buttonInfoStop">&amp;Peata</component>
 	<component name="ServerInformationForm.QueryTimeOut">Päring aegus</component>
 	<component name="ServerInformationForm.EmptyServer">Mängijaid ei leitud serverist.</component>

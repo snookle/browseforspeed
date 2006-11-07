@@ -149,7 +149,7 @@ Rocks"
 <component name="Admin.lblPassword">Heslo:</component>
 <component name="Admin.lblinsimPort">InSim Port:</component>
 <component name="Admin.chkRelay">Pøipojit k Relayi</component>
-<component name="Admin.this">Admin</component>
+<component name="Admin.Admin">Admin</component>
 <component name="Admin.sendPrivate">Poslat vybranému jezdci</component>
 <component name="Admin.kick">Kick</component>
 <component name="Admin.btnBan">Ban</component>
@@ -182,7 +182,7 @@ Rocks"
 <component name="ServerInformationForm.btnAddFriend">&amp;Pøidat k pøátelùm</component>
 <component name="ServerInformationForm.lblCars">Vozy:</component>
 <component name="ServerInformationForm.lblPrivate">Soukr.:</component>
-<component name="ServerInformationForm.this">Server - Informace</component>
+<component name="ServerInformationForm.ServerInformationForm">Server - Informace</component>
 <component name="ServerInformationForm.buttonInfoStop">&amp;Stop</component>
 <component name="ServerInformationForm.QueryTimeOut">Èas požadavku vypršel</component>
 <component name="ServerInformationForm.EmptyServer">Na serveru nejsou žádní hráèi.</component>

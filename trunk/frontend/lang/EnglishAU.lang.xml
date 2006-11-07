@@ -198,7 +198,7 @@
 	<component name="ServerInformationForm.btnAddFriend">&amp;Add to Friends</component>
 	<component name="ServerInformationForm.lblCars">Cars:</component>
 	<component name="ServerInformationForm.lblPrivate">Private:</component>
-	<component name="ServerInformationForm.this">Server Information</component>
+	<component name="ServerInformationForm.ServerInformationForm">Server Information</component>
 	<component name="ServerInformationForm.buttonInfoStop">&amp;Stop</component>
 	<component name="ServerInformationForm.QueryTimeOut">Query timed out</component>
 	<component name="ServerInformationForm.EmptyServer">No players currently on the server.</component>
