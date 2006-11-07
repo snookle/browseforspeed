@@ -121,13 +121,13 @@
 	<component name="MainForm.btnProgramBrowse">B&amp;rowse...</component>
 	<component name="MainForm.lblProgramConfigPath">Path:</component>
 	<component name="MainForm.lblQueryWaitDescription">Query Wait value. This is the time to wait before adding another query to the concurrent queries. Increase this value if, when querying, all servers start giving "Connection Refused"</component>
-	<component name="MainForm.lblInsimPortConfig">LFS Insim Port:</component>
+	<component name="MainForm.lblInsimPortConfig">Insim Port:</component>
 	<component name="MainForm.cbQueryWait">Disable Query Wait</component>
 	<component name="MainForm.lblQueryWaitHelp">Only disable Query Wait if you are certain your Operating System does not have a connection limit.  Please see readme.txt for more information. </component>
 	<component name="MainForm.btnCheckNewVersion">&amp;Check Now</component>
 	<component name="MainForm.cbNewVersion">Check for a new version of BFS</component>
 	<component name="MainForm.lblExeDescriptionConfig">If there is more than one entry in the box above, please select which one is the correct path for your LFS.exe. If there are no entries, please click the Browse button to manually locate it.</component>
-	<component name="MainForm.lblExePathConfig">LFS Executable Path:</component>
+	<component name="MainForm.lblExePathConfig">Executable Path:</component>
 	<component name="MainForm.buttonBrowse">&amp;Browse...</component>
 	<component name="MainForm.NoServers">No servers returned. Check your filter settings.</component>
 	<component name="MainForm.QueryStatus">Querying...</component>

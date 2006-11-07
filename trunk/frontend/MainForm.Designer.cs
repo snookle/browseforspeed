@@ -221,14 +221,14 @@ namespace BrowseForSpeed.Frontend
 			// joinServerToolStripMenuItem2
 			// 
 			this.joinServerToolStripMenuItem2.Name = "joinServerToolStripMenuItem2";
-			this.joinServerToolStripMenuItem2.Size = new System.Drawing.Size(151, 22);
+			this.joinServerToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
 			this.joinServerToolStripMenuItem2.Text = "&Join Server...";
 			this.joinServerToolStripMenuItem2.Click += new System.EventHandler(this.JoinServerToolStripMenuItem2Click);
 			// 
 			// closeToolStripMenuItem
 			// 
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-			this.closeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+			this.closeToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
 			this.closeToolStripMenuItem.Text = "&Exit";
 			this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItemClick);
 			// 
@@ -243,7 +243,7 @@ namespace BrowseForSpeed.Frontend
 			// aboutToolStripMenuItem1
 			// 
 			this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-			this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+			this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(115, 22);
 			this.aboutToolStripMenuItem1.Text = "&About...";
 			this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.AboutToolStripMenuItem1Click);
 			// 
@@ -517,7 +517,7 @@ namespace BrowseForSpeed.Frontend
 			// columnHeaderName
 			// 
 			this.columnHeaderName.Text = "Server Name";
-			this.columnHeaderName.Width = 158;
+			this.columnHeaderName.Width = 203;
 			// 
 			// columnHeaderPing
 			// 
@@ -527,12 +527,12 @@ namespace BrowseForSpeed.Frontend
 			// columnPrivate
 			// 
 			this.columnPrivate.Text = "Private";
-			this.columnPrivate.Width = 50;
+			this.columnPrivate.Width = 58;
 			// 
 			// columnHeaderConnections
 			// 
 			this.columnHeaderConnections.Text = "Connections";
-			this.columnHeaderConnections.Width = 80;
+			this.columnHeaderConnections.Width = 85;
 			// 
 			// columnHeaderInfo
 			// 
@@ -557,41 +557,41 @@ namespace BrowseForSpeed.Frontend
 									this.copyServerToClipboardToolStripMenuItem,
 									this.administrateToolStripMenuItem1});
 			this.contextMenuBrowser.Name = "contextMenuBrowser";
-			this.contextMenuBrowser.Size = new System.Drawing.Size(214, 114);
+			this.contextMenuBrowser.Size = new System.Drawing.Size(203, 114);
 			this.contextMenuBrowser.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuBrowserOpening);
 			// 
 			// joinServerToolStripMenuItem
 			// 
 			this.joinServerToolStripMenuItem.Name = "joinServerToolStripMenuItem";
-			this.joinServerToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.joinServerToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
 			this.joinServerToolStripMenuItem.Text = "&Join Server";
 			this.joinServerToolStripMenuItem.Click += new System.EventHandler(this.btnJoinClick);
 			// 
 			// viewServerInformationMain
 			// 
 			this.viewServerInformationMain.Name = "viewServerInformationMain";
-			this.viewServerInformationMain.Size = new System.Drawing.Size(213, 22);
+			this.viewServerInformationMain.Size = new System.Drawing.Size(202, 22);
 			this.viewServerInformationMain.Text = "&View Server Information...";
 			this.viewServerInformationMain.Click += new System.EventHandler(this.ViewServerInformationToolStripMenuItemClick);
 			// 
 			// toolStripMenuItem1
 			// 
 			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(202, 22);
 			this.toolStripMenuItem1.Text = "&Add to Favourites";
 			this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1Click);
 			// 
 			// copyServerToClipboardToolStripMenuItem
 			// 
 			this.copyServerToClipboardToolStripMenuItem.Name = "copyServerToClipboardToolStripMenuItem";
-			this.copyServerToClipboardToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.copyServerToClipboardToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
 			this.copyServerToClipboardToolStripMenuItem.Text = "&Copy Server to Clipboard";
 			this.copyServerToClipboardToolStripMenuItem.Click += new System.EventHandler(this.CopyServerToClipboardToolStripMenuItemClick);
 			// 
 			// administrateToolStripMenuItem1
 			// 
 			this.administrateToolStripMenuItem1.Name = "administrateToolStripMenuItem1";
-			this.administrateToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
+			this.administrateToolStripMenuItem1.Size = new System.Drawing.Size(202, 22);
 			this.administrateToolStripMenuItem1.Text = "Administrate...";
 			this.administrateToolStripMenuItem1.Click += new System.EventHandler(this.AdministrateToolStripMenuItemClick);
 			// 
@@ -781,41 +781,41 @@ namespace BrowseForSpeed.Frontend
 									this.copyServerToClipboardToolStripMenuItem1,
 									this.administrateToolStripMenuItem});
 			this.contextMenuFav.Name = "contextMenuFav";
-			this.contextMenuFav.Size = new System.Drawing.Size(214, 114);
+			this.contextMenuFav.Size = new System.Drawing.Size(203, 114);
 			this.contextMenuFav.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFavOpening);
 			// 
 			// joinServerToolStripMenuItem1
 			// 
 			this.joinServerToolStripMenuItem1.Name = "joinServerToolStripMenuItem1";
-			this.joinServerToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
+			this.joinServerToolStripMenuItem1.Size = new System.Drawing.Size(202, 22);
 			this.joinServerToolStripMenuItem1.Text = "&Join Server";
 			this.joinServerToolStripMenuItem1.Click += new System.EventHandler(this.btnJoinClick);
 			// 
 			// viewServerInformationFav
 			// 
 			this.viewServerInformationFav.Name = "viewServerInformationFav";
-			this.viewServerInformationFav.Size = new System.Drawing.Size(213, 22);
+			this.viewServerInformationFav.Size = new System.Drawing.Size(202, 22);
 			this.viewServerInformationFav.Text = "&View Server Information...";
 			this.viewServerInformationFav.Click += new System.EventHandler(this.ViewServerInformationToolStripMenuItemClick);
 			// 
 			// removeFromFavouritesToolStripMenuItem
 			// 
 			this.removeFromFavouritesToolStripMenuItem.Name = "removeFromFavouritesToolStripMenuItem";
-			this.removeFromFavouritesToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.removeFromFavouritesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
 			this.removeFromFavouritesToolStripMenuItem.Text = "&Remove From Favourites";
 			this.removeFromFavouritesToolStripMenuItem.Click += new System.EventHandler(this.RemoveFromFavouritesToolStripMenuItemClick);
 			// 
 			// copyServerToClipboardToolStripMenuItem1
 			// 
 			this.copyServerToClipboardToolStripMenuItem1.Name = "copyServerToClipboardToolStripMenuItem1";
-			this.copyServerToClipboardToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
+			this.copyServerToClipboardToolStripMenuItem1.Size = new System.Drawing.Size(202, 22);
 			this.copyServerToClipboardToolStripMenuItem1.Text = "&Copy Server to Clipboard";
 			this.copyServerToClipboardToolStripMenuItem1.Click += new System.EventHandler(this.CopyServerToClipboardToolStripMenuItemClick);
 			// 
 			// administrateToolStripMenuItem
 			// 
 			this.administrateToolStripMenuItem.Name = "administrateToolStripMenuItem";
-			this.administrateToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.administrateToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
 			this.administrateToolStripMenuItem.Text = "Administrate...";
 			this.administrateToolStripMenuItem.Click += new System.EventHandler(this.AdministrateToolStripMenuItemClick);
 			// 
@@ -909,7 +909,8 @@ namespace BrowseForSpeed.Frontend
 			this.lvFriends.FullRowSelect = true;
 			this.lvFriends.GridLines = true;
 			this.lvFriends.HideOffline = false;
-			this.lvFriends.Items.AddRange(new System.Windows.Forms.ListViewItem[] {listViewItem1});
+			this.lvFriends.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+									listViewItem1});
 			this.lvFriends.Location = new System.Drawing.Point(8, 6);
 			this.lvFriends.MultiSelect = false;
 			this.lvFriends.Name = "lvFriends";
@@ -952,27 +953,27 @@ namespace BrowseForSpeed.Frontend
 									this.viewServerInformationFriend,
 									this.removeFriendToolStripMenuItem});
 			this.contextMenuFriends.Name = "contextMenuFriends";
-			this.contextMenuFriends.Size = new System.Drawing.Size(214, 70);
+			this.contextMenuFriends.Size = new System.Drawing.Size(203, 70);
 			this.contextMenuFriends.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuFriendsOpening);
 			// 
 			// joinServerMenuFriends
 			// 
 			this.joinServerMenuFriends.Name = "joinServerMenuFriends";
-			this.joinServerMenuFriends.Size = new System.Drawing.Size(213, 22);
+			this.joinServerMenuFriends.Size = new System.Drawing.Size(202, 22);
 			this.joinServerMenuFriends.Text = "Join Server";
 			this.joinServerMenuFriends.Click += new System.EventHandler(this.JoinFriendClick);
 			// 
 			// viewServerInformationFriend
 			// 
 			this.viewServerInformationFriend.Name = "viewServerInformationFriend";
-			this.viewServerInformationFriend.Size = new System.Drawing.Size(213, 22);
+			this.viewServerInformationFriend.Size = new System.Drawing.Size(202, 22);
 			this.viewServerInformationFriend.Text = "View Server Information...";
 			this.viewServerInformationFriend.Click += new System.EventHandler(this.ViewServerInformationToolStripMenuItemClick);
 			// 
 			// removeFriendToolStripMenuItem
 			// 
 			this.removeFriendToolStripMenuItem.Name = "removeFriendToolStripMenuItem";
-			this.removeFriendToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+			this.removeFriendToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
 			this.removeFriendToolStripMenuItem.Text = "Remove Friend";
 			this.removeFriendToolStripMenuItem.Click += new System.EventHandler(this.RemoveFriendToolStripMenuItemClick);
 			// 
