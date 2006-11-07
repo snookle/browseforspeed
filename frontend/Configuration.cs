@@ -110,7 +110,6 @@ public class Configuration
 					debug_window = ((XmlElement)list[0]).GetElementsByTagName("debug_window")[0].FirstChild.Value == "True";
 					DebugVisible(debug_window);
 				} catch (Exception e) {
-					MessageBox.Show(e.ToString());
 					debug_window = false;
 					DebugVisible(debug_window);
 				}
