@@ -1463,6 +1463,7 @@ namespace BrowseForSpeed.Frontend
 			this.btnCheckNewVersion.TabIndex = 13;
 			this.btnCheckNewVersion.Text = "&Check Now";
 			this.btnCheckNewVersion.UseVisualStyleBackColor = true;
+			this.btnCheckNewVersion.Click += new System.EventHandler(this.btnCheckNewVersionClick);
 			// 
 			// cbFavRefresh
 			// 

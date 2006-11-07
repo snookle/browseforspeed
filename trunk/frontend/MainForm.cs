@@ -894,6 +894,8 @@ namespace BrowseForSpeed.Frontend
 					tabControl.SelectedTab = tabConfig;
 					config.disableWait =  false;
 					config.checkNewVersion = true;
+					config.joinOnClick = false;
+					config.language = "English";
 					this.lastTabSelected = 2;
 					if (pathList.Items.Count > 0) {
 						pathList.SelectedIndex = 0;
@@ -975,6 +977,9 @@ namespace BrowseForSpeed.Frontend
 				cbPing.SelectedIndex = 7;
 				cbTracks.SelectedIndex = 0;
 				cbVersion.SelectedIndex = 2;
+				if (!String.IsNullOrEmpty(config.language) && languages.Count > 0)
+					cbConfigLang.SelectedItem = config.language;
+				cbDoubleClick.SelectedIndex = config.joinOnClick ? 1 : 0;
 			}
 			lvFriends.Load();
 			lvFriends.DisplayAll();
