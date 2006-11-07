@@ -206,7 +206,7 @@ namespace BrowseForSpeed.Frontend
 				tw.Close();
 			} catch (Exception ex) {
 				string message = String.Format(MainForm.languages.GetString("SaveFriendsError"), ex.Message);
-				MessageBox.Show(message, MainForm.languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(message, MainForm.languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 
 		}
@@ -229,7 +229,7 @@ namespace BrowseForSpeed.Frontend
 			} catch (Exception e) {
 				File.Copy(filename, filename +".backup", true);
 				string message = String.Format(MainForm.languages.GetString("LoadFriendsError"), e.Message, filename);
-				MessageBox.Show(message, MainForm.languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show(message, MainForm.languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
 			Sort();
 		}

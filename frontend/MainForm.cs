@@ -161,7 +161,7 @@ namespace BrowseForSpeed.Frontend
 					q.query(compulsory, illegal, "browseforspeed", 0, CodeFilters(), version);
 				}
 			} catch(Exception e) {
-				MessageBox.Show(languages.GetString("MasterServerError") , languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(languages.GetString("MasterServerError") , languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 
 			if (exiting) return;
@@ -263,7 +263,7 @@ namespace BrowseForSpeed.Frontend
 			    	AddServerDelegate addServer = new AddServerDelegate(AddServerToList);
 			    	this.BeginInvoke(addServer, new object[] {info, list});
 				}
-			} catch(Exception e){ MessageBox.Show(e.Message + e.StackTrace, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
+			} catch(Exception e){ MessageBox.Show(e.Message + e.StackTrace, languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
   		}
 
 		delegate void AddServerDelegate(ServerInformation info, ServerListView list);
@@ -332,7 +332,7 @@ namespace BrowseForSpeed.Frontend
 					prestart[i].Start();
 				} catch (Exception ex) {
 					string message = String.Format(languages.GetString("StartPSPError"), config.psp[i].name, config.psp[i].path, ex.Message);
-					MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show(message, languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
 				}
 			}
@@ -349,7 +349,7 @@ namespace BrowseForSpeed.Frontend
 				this.WindowState = ws;
 				KillPreStartPrograms();
 				string message = string.Format(languages.GetString("StartLFSError"), ex.Message);
-				MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(message, languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 
@@ -546,11 +546,11 @@ namespace BrowseForSpeed.Frontend
 			if (hostname != null){
 				hostname = LFSQuery.removeColourCodes(hostname);
 				string message = String.Format(languages.GetString("JoinPlayerQuery"), player, hostname);
-				if (MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes){
+				if (MessageBox.Show(message, languages.GetString("MainForm.MainForm"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes){
 					LoadLFS(hostname, "S2", "");
 				}
 			} else {
-				MessageBox.Show(languages.GetString("UserNotFound"), languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+				MessageBox.Show(languages.GetString("UserNotFound"), languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
 
@@ -615,7 +615,7 @@ namespace BrowseForSpeed.Frontend
 				return;
 			if (sender is MainForm) { //delete key pressed.
 				string message = String.Format(languages.GetString("RemoveFavQuery"), item.hostname);
-				if (MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No){
+				if (MessageBox.Show(message, languages.GetString("MainForm.MainForm"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No){
 					return;
 				}
 			}
@@ -635,17 +635,17 @@ namespace BrowseForSpeed.Frontend
 					stream.Read(buf, 0, buf.Length);
 					if (buf[0] == version_check[0]) {
 						if (botherUser) {
-							MessageBox.Show(languages.GetString("UpToDate"), languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+							MessageBox.Show(languages.GetString("UpToDate"), languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Information);
 						}
 					} else {
-						if (MessageBox.Show(languages.GetString("NewVersion"), languages.GetString("MainForm.this"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes){
+						if (MessageBox.Show(languages.GetString("NewVersion"), languages.GetString("MainForm.MainForm"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes){
 							System.Diagnostics.Process.Start(download_url);
 						}
 					}
 				}
 			} catch (Exception e) {
 				if (botherUser) {
-					MessageBox.Show(languages.GetString("UpdateError"), languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show(languages.GetString("UpdateError"), languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 		}
@@ -676,7 +676,7 @@ namespace BrowseForSpeed.Frontend
 				if (value > 65535) throw new Exception();
 			} catch (Exception ex) {
 				string message = String.Format(languages.GetString("InvalidPort"), txtInsimPort.Text);
-				MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show(message, languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				txtInsimPort.Focus();
 			}
 
@@ -777,7 +777,7 @@ namespace BrowseForSpeed.Frontend
 			}
 			if (sender is MainForm) { //delete key!
 				string message = String.Format(languages.GetString("RemoveFriendQuery"), friend.name);
-				if (MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No){
+				if (MessageBox.Show(message, languages.GetString("MainForm.MainForm"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No){
 					return;
 				}
 			}
@@ -807,7 +807,7 @@ namespace BrowseForSpeed.Frontend
 				if (info != null) {
 					password = info.password;
 				}
-				if (MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+				if (MessageBox.Show(message, languages.GetString("MainForm.MainForm"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
 					LoadLFS(friend.server.rawHostname, "S2", password);
 				}
 			} else {
@@ -1063,7 +1063,7 @@ namespace BrowseForSpeed.Frontend
 			try {
 				string[] hostname = host.Split(':');
 				if (hostname.Length != 2) {
-					MessageBox.Show(languages.GetString("InvalidIPAddress"), languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show(languages.GetString("InvalidIPAddress"), languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
 				}
 				ServerInformation info = new ServerInformation();
@@ -1075,7 +1075,7 @@ namespace BrowseForSpeed.Frontend
 					}
 				} catch (Exception ex) {
 					string message = String.Format(languages.GetString("InvalidPort"), hostname[1]);
-					MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show(message, languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
 				}
 				info.host = new IPEndPoint(IPAddress.Parse(hostname[0]), port);
@@ -1086,7 +1086,7 @@ namespace BrowseForSpeed.Frontend
 				edtAddServerAddress.Text = "";
 			} catch (Exception ex) {
 				string message = String.Format(languages.GetString("AddFavError"), ex.Message + ex.StackTrace);
-				MessageBox.Show(message, languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(message, languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 

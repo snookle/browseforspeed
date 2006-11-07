@@ -227,7 +227,7 @@ namespace BrowseForSpeed.Frontend
 			}
     		catch (Exception ex) {
 				string message = String.Format(MainForm.languages.GetString("SaveFavError"), ex.Message);
-				MessageBox.Show(message, MainForm.languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(message, MainForm.languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 		
@@ -270,7 +270,7 @@ namespace BrowseForSpeed.Frontend
 			} catch (Exception e) {
 				File.Copy(XMLFilename, XMLFilename +".backup", true);
 				string message = String.Format(MainForm.languages.GetString("LoadFavError"), e.Message, XMLFilename);
-				MessageBox.Show(message, MainForm.languages.GetString("MainForm.this"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show(message, MainForm.languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				return false;
 			}
 		}
