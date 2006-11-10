@@ -131,6 +131,7 @@ namespace BrowseForSpeed.Frontend
 			labelPing.Text = "";
 			labelCars.Text = "";
 			labelTrack.Text = "";
+			listPlayers.Items.Clear();
 		}
 		
 		delegate void SetValueDelegate(Object obj, Object val, Object[] index);
