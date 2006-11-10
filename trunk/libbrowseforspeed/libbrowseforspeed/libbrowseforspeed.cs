@@ -631,7 +631,9 @@ namespace libbrowseforspeed {
 			if (racer != null && playerServers.Count > 0 && System.Environment.TickCount <= (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
 				ServerInformation s = (ServerInformation)(playerServers[racer]);
 				if (s != null) {
+					s.version = serverInfo.version;
 					serverInfo = new ServerInformation();
+					serverInfo.version = s.version;
 					serverInfo.hostname = s.hostname;
 					serverInfo.rawHostname = s.rawHostname;
 					serverInfo.players = s.players;
@@ -661,6 +663,7 @@ namespace libbrowseforspeed {
 					if ((racer == null && removeColourCodes(hostname) == removeColourCodes(serverInfo.hostname)) || racer != null) {
 						racers = new string[numRacers];
 						ServerInformation si = new ServerInformation();
+						si.version = serverInfo.version;
 						si.rawHostname = rawHostname;
 						si.hostname = hostname;
 						si.players = numRacers;
