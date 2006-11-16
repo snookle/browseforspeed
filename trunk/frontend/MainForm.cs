@@ -1515,6 +1515,19 @@ namespace BrowseForSpeed.Frontend
 			lvFriends.OwnerDraw = config.fancy_hostnames;
 			lvMain.OwnerDraw = config.fancy_hostnames;
 			lvFavourites.OwnerDraw = config.fancy_hostnames;
+			Font f = new Font(lvMain.Font, (config.fancy_hostnames ? FontStyle.Bold : FontStyle.Regular));
+			lvMain.Font = f;
+			lvFavourites.Font = f;
+			lvFriends.Font = f;
+			if (config.fancy_hostnames){
+				lvMain.BackColor = Color.CornflowerBlue;
+				lvFavourites.BackColor = Color.CornflowerBlue;
+				lvFriends.BackColor = Color.CornflowerBlue;
+			} else {
+				lvMain.BackColor = SystemColors.Window;
+				lvFavourites.BackColor = SystemColors.Window;
+				lvFriends.BackColor = SystemColors.Window;
+			}
 		}
 		
 		void ListViewDrawColumnHeader(object sender, System.Windows.Forms.DrawListViewColumnHeaderEventArgs e)
