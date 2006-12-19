@@ -1,0 +1,231 @@
+<!-- How to make a new language:
+1. copy this file and rename it to <yourlanguage>.lang.xml
+2. Ensure name accurately represents the language (and is unique to other language names)
+3. Translate the strings!
+4. Contact BFS at bfs@browseforspeed.net for possible inclusion in the main release.
+-->
+
+<!-- Notes:
+	* Some controls in BFS may not be big enough to fit your translated text on. This is because the controls were sized for english words.
+		Once we obtain some translations, we will do our best to make them fit correctly - but for the moment you'll have to make do, sorry!
+
+	* {0}, {1} etc are variable placeholders that are replaced by BFS, please ensure they are kept - BFS will probably crash if they're not!
+
+	* &amp; means that the character directly after this will be the keyboard shortcut
+		eg: "Ser&amp;ver" will look like "Server" in BFS, but the shortcut will be alt+v
+
+	* New lines are denoted with \n
+		eg: "BFS\nRocks" will display as:
+				"BFS
+				Rocks"
+ -->
+
+
+<language>
+	<name>日本語</name>
+	<author>Yama-T</author>
+	<email>lfst2zys@excite.co.jp</email>
+	<!-- put whatever you like here, but keep it brief-->
+	<comment>Japanese language for BFS</comment>
+
+	<!-- Global stuff -->
+	<component name="Global.Yes">はい</component>
+	<component name="Global.No">いいえ</component>
+	<component name="Global.真">True</component>
+	<component name="Global.偽">False</component>
+	<component name="Global.Error">エラーr</component>
+	<component name="Global.Enabled">有効</component>
+	<component name="Global.Disabled">無効</component>
+
+	<!-- Main Form Components -->
+	<component name="MainForm.MainForm">Browse For Speed</component><!-- This is the Program Title -->
+
+	<component name="MainForm.fileToolStripMenuItem">&amp;ファイル</component>
+	<component name="MainForm.joinServerToolStripMenuItem2">&amp;サーバーに接続...</component>
+	<component name="MainForm.closeToolStripMenuItem">&amp;Exit</component>
+	<component name="MainForm.aboutToolStripMenuItem">&amp;ヘルプ</component>
+	<component name="MainForm.aboutToolStripMenuItem1">&amp;About...</component>
+	<component name="MainForm.tabMain">サーバー閲覧</component>
+	<component name="MainForm.lblFindUserMain">ユーザー検索:</component>
+	<component name="MainForm.lblPasswordMain">サーバー パスワード:</component>
+	<component name="MainForm.btnFindUserMain">ユ&amp;ーザー名でオンライン検索</component>
+	<component name="MainForm.gbFilters">フィルター</component>
+	<component name="MainForm.cbPublic">Public</component>
+	<component name="MainForm.cbPrivate">Private</component>
+	<component name="MainForm.cbFull">Full</component>
+	<component name="MainForm.lblPingThreshold">Ping しきい値:</component>
+	<component name="MainForm.cbEmpty">空き</component>
+	<component name="MainForm.columnHeaderName">サーバー名</component>
+	<component name="MainForm.columnHeaderPing">Ping</component>
+	<component name="MainForm.columnPrivate">Private</component>
+	<component name="MainForm.columnHeaderConnections">接続数</component>
+	<component name="MainForm.columnHeaderInfo">Info</component>
+	<component name="MainForm.columnHeaderTrack">トラック</component>
+	<component name="MainForm.columnHeaderCars">車種</component>
+	<component name="MainForm.joinServerToolStripMenuItem">&amp;サーバーに接続</component>
+	<component name="MainForm.viewServerInformationMain">&amp;サーバー情報...</component>
+	<component name="MainForm.toolStripMenuItem1">&amp;お気に入りに追加</component>
+	<component name="MainForm.copyServerToClipboardToolStripMenuItem">&amp;サーバーをクリップボードにコピー</component>
+	<component name="MainForm.administrateToolStripMenuItem1">Administrate...</component>
+	<component name="MainForm.btnRefreshMain">&amp;再表示</component>
+	<component name="MainForm.btnRefreshFav">&amp;再表示</component>
+	<component name="MainForm.btnStop">&amp;ストップ</component>
+	<component name="MainForm.btnJoinFav">&amp;接続</component>
+	<component name="MainForm.btnJoinMain">&amp;接続</component>
+	<component name="MainForm.tabFavourites">お気に入り</component>
+	<component name="MainForm.lblAddressFav">サーバーの IPアドレス:</component>
+	<component name="MainForm.btnAddServer">&amp;サーバー追加</component>
+	<component name="MainForm.columnHeaderFavServerName">サーバー名</component>
+	<component name="MainForm.columnHeaderFavPing">Ping</component>
+	<component name="MainForm.columnHeaderFavSlots">接続数</component>
+	<component name="MainForm.columnHeaderFavInfo">Info</component>
+	<component name="MainForm.columnHeaderFavTrack">トラック</component>
+	<component name="MainForm.columnHeaderFavCars">車種</component>
+	<component name="MainForm.joinServerToolStripMenuItem1">&amp;サーバーに接続</component>
+	<component name="MainForm.viewServerInformationFav">&amp;サーバー情報...</component>
+	<component name="MainForm.removeFromFavouritesToolStripMenuItem">&amp;お気に入りから削除</component>
+	<component name="MainForm.copyServerToClipboardToolStripMenuItem1">&amp;サーバーをクリップボードにコピー</component>
+	<component name="MainForm.administrateToolStripMenuItem">Administrate...</component>
+	<component name="MainForm.tabFriends">お友達</component>
+	<component name="MainForm.btnAddFriend">&amp;お友達に追加</component>
+	<component name="MainForm.cbHideOffline">オフラインのお友達を非表示</component>
+	<component name="MainForm.btnRefreshFriend">&amp;リストを再表示</component>
+	<component name="MainForm.btnJoinFriend">&amp;お友達に接続</component>
+	<component name="MainForm.columnFriendName">お友達の名前</component>
+	<component name="MainForm.columnFriendServer">サーバー名</component>
+	<component name="MainForm.columnFriendPrivate">Private</component>
+	<component name="MainForm.columnFriendPlayers">プレーヤー</component>
+	<component name="MainForm.joinServerMenuFriends">サーバーに接続</component>
+	<component name="MainForm.viewServerInformationFriend">サーバー情報...</component>
+	<component name="MainForm.removeFriendToolStripMenuItem">お友達から削除</component>
+	<component name="MainForm.tabConfig">設定</component>
+	<component name="MainForm.lblCommentReal">言語コメント</component>
+	<component name="MainForm.lblEmailReal">制作者Emal</component>
+	<component name="MainForm.lblAuthorReal">制作者</component>
+	<component name="MainForm.lblLangComment">コメント:</component>
+	<component name="MainForm.lblLangContact">コンタクト アドレス:</component>
+	<component name="MainForm.lblLangAuthor">制作者:</component>
+	<component name="MainForm.lblLanguageConfig">言語選択:</component>
+	<component name="MainForm.rbJoin">サーバーに接続</component>
+	<component name="MainForm.rbView">サーバー情報</component>
+	<component name="MainForm.gbStartBeforeLFS">LFSの前に起動させるプログラム</component>
+	<component name="MainForm.btnProgramEnable">&amp;有効</component>
+	<component name="MainForm.btnProgramDisable">&amp;無効</component>
+	<component name="MainForm.btnProgramDelete">&amp;プログラムを削除</component>
+	<component name="MainForm.btnProgramNew">&amp;新規プログラム</component>
+	<component name="MainForm.btnProgramCancel">キ&amp;ャンセル</component>
+	<component name="MainForm.btnProgramSave">&amp;セ－ブ</component>
+	<component name="MainForm.btnProgramUpdate">&amp;アップデート</component>
+	<component name="MainForm.lblProgramConfigArg">引数:</component>
+	<component name="MainForm.lblProgramConfigName">名前:</component>
+	<component name="MainForm.btnProgramBrowse">ブ&amp;ラウズ...</component>
+	<component name="MainForm.lblProgramConfigPath">パス:</component>
+	<component name="MainForm.lblQueryWaitDescription">問い合わせ待ち時間の値。これはその他の問い合わせを同時に加える前に待つ時間です。 問い合わせ中、多くのサーバーが「接続拒否」になる場合この価値を増やしてください。</component>
+	<component name="MainForm.lblInsimPortConfig">Insim ポート:</component>
+	<component name="MainForm.cbQueryWait">問い合わせ待ち時間を無効</component>
+	<component name="MainForm.lblQueryWaitHelp">あなたのオペレーティングシステムには接続制限がないことを確信しているならば、「問い合わせ待ち時間」を無効にしてください。詳細はreadme.txtを見てください。 </component>
+	<component name="MainForm.btnCheckNewVersion">&amp;今すぐチェック</component>
+	<component name="MainForm.cbNewVersion">BFSの新しいバージョンをチェック</component>
+	<component name="MainForm.lblExeDescriptionConfig">上記のボックスに複数ある場合、LFS.exeへの正しいパスを選択してください。ない場合はブラウズをクリックして押して手動で指定してください。</component>
+	<component name="MainForm.lblExePathConfig">実行可能なパス:</component>
+	<component name="MainForm.buttonBrowse">&amp;ブラウズ...</component>
+	<component name="MainForm.NoServers">サーバーからの応答はありませんでした。フィルタのセッティングをチェックしてください。</component>
+	<component name="MainForm.QueryStatus">問い合わせ中...</component>
+	<component name="MainForm.StatusTotal">ホストをチェック中… {1} のうち {0}　</component>
+	<component name="MainForm.NoReply">返答なし: {0}</component>
+	<component name="MainForm.Refused">接続拒否: {0}</component>
+	<component name="MainForm.Offline">オフライン</component>
+	<component name="MainForm.cbStartupRefresh">お気に入りを再表示</component>
+	<component name="MainForm.btnQuickRefresh">&amp;クイック再表示</component>
+	<component name="MainForm.gbLiveForSpeed">Live For Speed</component>
+	<component name="MainForm.gbLangDetails">詳細</component>
+	<component name="MainForm.gbLanguage">言語</component>
+	<component name="MainForm.gbProgramConfig">プログラムの設定</component>
+	<component name="MainForm.gbQueryWait">問い合わせ待ち時間</component>
+	<component name="MainForm.cbFriendRefresh">お友達リストを再表示</component>
+	<component name="MainForm.cbFavRefresh">お気に入りサーバーを再表示</component>
+	<component name="MainForm.gbWhenBFSStarts">起動時</component>
+	<component name="MainForm.lblDoubleClick">サーバー名をダブルクリックしたとき:</component>
+	<component name="MainForm.cbColouredHostnames">サーバー名を色つきで表示</component>
+	<component name="MainForm.gbAdvanced">拡張設定</component>
+	<component name="MainForm.gbConfigurationMain">設定</component>
+	<component name="MainForm.ViewServerInfo">サーバー情報</component>
+	<component name="MainForm.JoinServer">サーバーに接続</component>
+
+	<!-- Admin Form components -->
+	<component name="Admin.btnSend">&amp;送信</component>
+	<component name="Admin.btnConnect">&amp;接続</component>
+	<component name="Admin.btnDisconnect">&amp;切断</component>
+	<component name="Admin.edtPort">29999</component>
+	<component name="Admin.lblPassword">パスワード:</component>
+	<component name="Admin.lblinsimPort">InSim ポート:</component>
+	<component name="Admin.chkRelay">Connect to Relay</component>
+	<component name="Admin.kick">キック</component>
+	<component name="Admin.btnBan">バン</component>
+	<component name="Admin.spectate">Spectateに強制</component>
+	<component name="Admin.ban12h">12 時間</component>
+	<component name="Admin.ban1d">1日間</component>
+	<component name="Admin.ban2d">2 日間</component>
+	<component name="Admin.ban3d">3 日間</component>
+	<component name="Admin.ban1w">1 週間</component>
+	<component name="Admin.banCustom">カスタム...</component>
+	<component name="Admin.sendPrivate">選択したレーサーに送信</component>
+	<component name="Admin.Admin">Admin</component>
+
+	<!--Join Server Dialog Components -->
+	<component name="JoinServerDialog.btnJoin">&amp;サーバーに接続</component>
+	<component name="JoinServerDialog.lblServerName">サーバー名:</component>
+	<component name="JoinServerDialog.btnCancel">&amp;キャンセル</component>
+	<component name="JoinServerDialog.lblPassword">パスワード:</component>
+	<component name="JoinServerDialog.lblVersion">バージョン:</component>
+	<component name="JoinServerDialog.JoinServerDialog">サーバーに接続</component>
+
+	<!--Ban Dialog Components -->
+	<component name="BanDialog.lblDays">Days</component>
+	<component name="BanDialog.ok">O&amp;K</component>
+	<component name="BanDialog.cancel">&amp;キャンセル</component>
+
+	<!--Server Information Form components-->
+	<component name="ServerInformationForm.buttonInfoJoin">&amp;接続</component>
+	<component name="ServerInformationForm.buttonInfoClose">&amp;閉じる</component>
+	<component name="ServerInformationForm.buttonInfoRefresh">&amp;再表示</component>
+	<component name="ServerInformationForm.lblServerName">サーバー名:</component>
+	<component name="ServerInformationForm.labe3">Ping:</component>
+	<component name="ServerInformationForm.label1">現在のトラック:</component>
+	<component name="ServerInformationForm.lblInformation">Info:</component>
+	<component name="ServerInformationForm.label5">パスワード:</component>
+	<component name="ServerInformationForm.groupBox1">プレーヤー</component>
+	<component name="ServerInformationForm.btnAddFriend">&amp;お友達に追加</component>
+	<component name="ServerInformationForm.lblCars">車種:</component>
+	<component name="ServerInformationForm.lblPrivate">プライベート:</component>
+	<component name="ServerInformationForm.ServerInformationForm">サーバー情報</component>
+	<component name="ServerInformationForm.buttonInfoStop">&amp;ストップ</component>
+	<component name="ServerInformationForm.QueryTimeOut">問い合わせタイムアウト</component>
+	<component name="ServerInformationForm.EmptyServer">このサーバーには誰もいません。</component>
+	<component name="ServerInformationForm.NoServer">サーバーをpubstatで発見することができませんでした！</component>
+	<component name="ServerInformationForm.PubstatError">Pubstat 問い合わせ中にエラー！</component>
+
+	<!--Message Box Components -->
+	<component name="MasterServerError">LFS マスターサーバーに接続することが出来ません。サーバーがダウンしているか、あるいはファイアウォールはきちんと設定されません。</component>
+	<component name="StartPSPError">Error executing {0} ({1})\n{2}\n設定をチェックし直してください。</component>
+	<component name="StartLFSError">Error executing LFS.exe\n{0}\n設定をチェックし直してください。</component>
+	<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\nCopyright 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nあなたがプログラムを修正・再配布する場合はGPL(version 2かそれ以降)の条件に従って行わなければなりません。\nGPLのコピーは、Browse For Speedで配信される『COPYING』ファイルに含まれます。\n我々は、保証をこのプログラムに提供しません。</component>
+	<component name="AboutBoxTitle">About Browse For Speed</component>
+	<component name="LoadFavError">お気に入りのロード中にエラーが起きました: {0}\nA copy was saved as {1}.backup</component>
+	<component name="SaveFavError">お気に入りのセーブ中にエラーが起きました: {0}</component>
+	<component name="SaveFriendsError">お友達をセーブ中にエラーが起きました: {0}</component>
+	<component name="LoadFriendsError">お友達をロード中にエラーが起きました: {0}\nA copy was saved as {1}.backup</component>
+	<component name="PlayerNameTooLongError">プレーヤーネームは32文字以内です</component>
+	<component name="JoinPlayerQuery">{0} のホストに接続しますか?\n{1}</component>
+	<component name="UserNotFound">オンラインでは見つかりませんでした。</component>
+	<component name="RemoveFavQuery">{0} をお気に入りから削除しますか?</component>
+	<component name="UpToDate">最新版を使用しています。</component>
+	<component name="NewVersion">新しいバージョンをダウンロードしますか？</component>
+	<component name="UpdateError">チェック中にエラーがありました。（サイトがダウンしている可能性があります。時間をおいてもう一度試してください！）</component>
+	<component name="InvalidPort">{0} は有効なポート番号ではありません。1 ～ 65535の間で指定してください。</component>
+	<component name="RemoveFriendQuery">お友達リストから {0} を消去してもいいですか？</component>
+	<component name="JoinFriendQuery"> {0} の {1} に接続しますか?</component>
+	<component name="InvalidIPAddress">IPアドレスは: ipaddress:port でなければなりません。</component>
+	<component name="AddFavError">サーバーをお気に入りに追加中、エラーが起きました。: {0}</component>
+	<component name="InSimError">InSimに接続できません！</component>
+</language>
