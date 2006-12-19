@@ -31,8 +31,8 @@
 	<!-- Global stuff -->
 	<component name="Global.Yes">はい</component>
 	<component name="Global.No">いいえ</component>
-	<component name="Global.真">True</component>
-	<component name="Global.偽">False</component>
+	<component name="Global.True">真</component>
+	<component name="Global.False">偽</component>
 	<component name="Global.Error">エラーr</component>
 	<component name="Global.Enabled">有効</component>
 	<component name="Global.Disabled">無効</component>
