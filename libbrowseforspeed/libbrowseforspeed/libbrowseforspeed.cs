@@ -440,7 +440,7 @@ namespace libbrowseforspeed {
 			LFSQuery.keepQuerying = true;
 			ArrayList allHosts = new ArrayList();
 			Query query = new Query(cars_compulsory, cars_illegal, username, filters, version);
-			TcpClient client = new TcpClient("82.44.126.169", 29339);
+			TcpClient client = new TcpClient("master.liveforspeed.net", 29339);
 			Stream str = client.GetStream();
 			ulong hosts = 1;
 			byte[] b = query.getBytes();
@@ -520,7 +520,7 @@ namespace libbrowseforspeed {
 			ascii.GetBytes(userToFind.ToCharArray(), 0, userToFind.Length, finduser, 0);
 			Array.Copy(user, 0, query, 41, user.Length); //41 = username offset
 			Array.Copy(finduser, 0, query, 9, finduser.Length); //9 = user to find offset
-			TcpClient client = new TcpClient("82.44.126.169", 29339);
+			TcpClient client = new TcpClient("master.liveforspeed.net", 29339);
 			//TcpClient client = new TcpClient("127.0.0.1", 29339);
 			Stream str = client.GetStream();
 			str.Write(query, 0, query.Length);
