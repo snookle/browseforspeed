@@ -39,8 +39,8 @@ namespace BrowseForSpeed.Frontend
 
 	public partial class MainForm
 	{
-		static string bfs_version = "0.7";
-		static string version_check = "9";
+		static string bfs_version = "0.7c";
+		static string version_check = "10";
 		static string download_url = "http://www.browseforspeed.net";
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
 
@@ -631,9 +631,10 @@ namespace BrowseForSpeed.Frontend
 				HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 				if (response.StatusCode == HttpStatusCode.OK) {
 					Stream stream = response.GetResponseStream();
-					byte[] buf = new byte[1];
-					stream.Read(buf, 0, buf.Length);
-					if (buf[0] == version_check[0]) {
+					byte[] buf = new byte[10];
+					int c = stream.Read(buf, 0, buf.Length);
+					string vcheck = Encoding.ASCII.GetString(buf, 0, c);
+					if (vcheck.Equals(version_check)) {
 						if (botherUser) {
 							MessageBox.Show(languages.GetString("UpToDate"), languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Information);
 						}
