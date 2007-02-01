@@ -879,10 +879,12 @@ namespace BrowseForSpeed.Frontend
 			q = new LFSQuery();
 			//search for LFS.exe
 			RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\ShellNoRoam\\MUICache\\" );
-			foreach(string valuename in key.GetValueNames()){
-				//insert all the found values into the list
-				if (valuename.EndsWith("LFS.exe")) {
-					pathList.Items.Add(valuename);
+			if (key != null) {
+				foreach(string valuename in key.GetValueNames()){
+					//insert all the found values into the list
+					if (valuename.EndsWith("LFS.exe")) {
+						pathList.Items.Add(valuename);
+					}
 				}
 			}
 			//setup the config
