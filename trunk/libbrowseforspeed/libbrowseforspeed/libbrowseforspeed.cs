@@ -256,7 +256,7 @@ namespace libbrowseforspeed {
 				if (timeoutEvent.WaitOne(1000, false)) {
 					//connected aok!
 					NetworkStream str = new NetworkStream(sock);
-					//str.ReadTimeout = 500; //.NET 2.0 :(
+					//str.ReadTimeout = 500; //.NET 2.0 :(... mono probably supports this now?
 					str.Write(send_query1, 0, send_query1.Length);
 					ServerInformation serverinfo = query1(ref str);
 					if (serverinfo.success) {
@@ -292,8 +292,6 @@ namespace libbrowseforspeed {
 			private ServerInformation query1(ref NetworkStream str) {
 				readTimeoutEvent = new System.Threading.ManualResetEvent(false);
 				byte[] recbuf = new byte[37];
-				//int rcn = 0;
-				//int pingStart = System.Environment.TickCount;
 				DateTime time = System.DateTime.Now;
 				long pingStart = time.Ticks;
 				str.BeginRead(recbuf, 0, recbuf.Length, new AsyncCallback(readCallback), str);
@@ -305,25 +303,8 @@ namespace libbrowseforspeed {
 					ret.readFailed = true;
 					return ret;
 				}
-				/*try {
-					rcn = str.Read(recbuf, 0, recbuf.Length);
-				} catch (Exception e) {
-					serverInformation ret = new serverInformation();
-					ret.success = false;
-					ret.readFailed = true;
-					//queried(this, ret);
-					return ret;
-				}*/
 				time = System.DateTime.Now;
 				long pingEnd = time.Ticks;
-				//int pingEnd = System.Environment.TickCount;
-				/*if (rcn != recbuf.Length) {
-					serverInformation ret = new serverInformation();
-					ret.success = false;
-					ret.readFailed = true;
-					//queried(this, ret);
-					return ret;
-				}*/
 				readTimeoutEvent.Close();
 				ServerInformation serverinfo = host.info;
 				serverinfo.success = true;
@@ -351,18 +332,6 @@ namespace libbrowseforspeed {
 					return;
 				}
 				readTimeoutEvent.Close();
-				/*try {
-					rcn = str.Read(recbuf, 0, recbuf.Length);
-				} catch (Exception e) {
-					serverinfo.success = false;
-					serverinfo.readFailed = true;
-					return;
-				}
-				if (rcn != recbuf.Length) {
-					serverinfo.success = false;
-					serverinfo.readFailed = true;
-					return;
-				}*/
 				if (recbuf[0] == 0x00) {
 					serverinfo.success = false;
 					return;
@@ -694,31 +663,7 @@ namespace libbrowseforspeed {
 						if (found || (racer == null)) {
 							ret = 1;
 							serverInfo = si;
-							//return 1; i think it has to keep going the first time, in order to fill all of playerServers
 						}
-						/*
-						if (found || racer == null) { //either we've found a player, or the hostname matched
-							if (found) serverInfo = new ServerInformation();
-							serverInfo.hostname = hostname;
-							serverInfo.players = numRacers;
-							serverInfo.racerNames = racers;
-							serverInfo.passworded = ((ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]) & 8) != 0;
-							serverInfo.cars = (ulong)(buf[i + 43] * 16777216 + buf[i + 42] * 65536 + buf[i + 41] * 256 + buf[i + 40]);
-							serverInfo.rules = (ulong)(buf[i + 47] * 16777216 + buf[i + 46] * 65536 + buf[i + 45] * 256 + buf[i + 44]);
-							string track = "";
-							track += pubstatTracks[(int)(buf[i + 36])]; //BL
-							track += (((int)(buf[i + 37])) + 1); //1
-							if (((int)(buf[i + 38])) == 1) {
-								track += "R";
-							}
-							//Console.WriteLine("\""+track+"\"");
-							serverInfo.track = (string)trackCodes[track];
-							if (serverInfo.host == null) {
-								serverInfo.ping = -1;
-							}
-							return 1;
-						}
-						*/
 					}
 					i += (53 + (24 * numRacers));
 				}
@@ -727,12 +672,15 @@ namespace libbrowseforspeed {
 			}
 			return ret;
 		}
-
+		
 		private static bool getPubStatBuf() {
+			getPubStatBuf("MI3VNTM8hN1mv0t6i9O2j48dvC8F5uzM"); //wabz's idkey
+		}
+
+		private static bool getPubStatBuf(string idkey) {
 			try {
 				if (pubstatBuf == null || System.Environment.TickCount > (pubstatLastUpdate + PUBSTAT_CACHE_TIME)) {
-					//Console.WriteLine("DOING HTTP REQUEST!!!!\n");
-					HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1&idk=MI3VNTM8hN1mv0t6i9O2j48dvC8F5uzM");
+					HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://www.lfsworld.net/pubstat/get_stat2.php?action=hosts&c=1&idk=" + idkey);
 					request.Timeout = 4000;
 					HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 					Stream s = response.GetResponseStream();
