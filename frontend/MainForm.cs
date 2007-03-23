@@ -39,8 +39,8 @@ namespace BrowseForSpeed.Frontend
 
 	public partial class MainForm
 	{
-		static string bfs_version = "0.7c";
-		static string version_check = "10";
+		static string bfs_version = "0.7d";
+		static string version_check = "11";
 		static string download_url = "http://www.browseforspeed.net";
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
 
@@ -878,15 +878,17 @@ namespace BrowseForSpeed.Frontend
 			s = new ServerInformationForm(this);
 			q = new LFSQuery();
 			//search for LFS.exe
-			RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\ShellNoRoam\\MUICache\\" );
-			if (key != null) {
-				foreach(string valuename in key.GetValueNames()){
-					//insert all the found values into the list
-					if (valuename.EndsWith("LFS.exe")) {
-						pathList.Items.Add(valuename);
+			try {
+				RegistryKey key = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\ShellNoRoam\\MUICache\\" );
+				if (key != null) {
+					foreach(string valuename in key.GetValueNames()){
+						//insert all the found values into the list
+						if (valuename.EndsWith("LFS.exe")) {
+							pathList.Items.Add(valuename);
+						}
 					}
 				}
-			}
+			} catch (Exception) { }
 			//setup the config
 			config = new Configuration(configXMLFilename);
 			bool loadedconf = false;
