@@ -131,7 +131,7 @@ namespace BrowseForSpeed.Frontend
 		{
 			PropertyInfo propInfo = ctrl.GetType().GetProperty(propName);
 			Delegate dgtSetValue = new SetValueDelegate(propInfo.SetValue);
-      		ctrl.Invoke(dgtSetValue, new Object[3] { ctrl, val, null });
+			ctrl.Invoke(dgtSetValue, new Object[3] { ctrl, val, null });
 		}
 
 		byte CodeFilters()
@@ -624,11 +624,21 @@ namespace BrowseForSpeed.Frontend
 		}
 
 
-		public static void versionCheck(bool botherUser) {
+		public void versionCheckBother() {
+			versionCheck(true);
+		}
+		
+		public void versionCheckSilent() {
+			versionCheck(false);
+		}
+		
+		private void versionCheck(bool botherUser) {
+			SetControlProperty(btnCheckNewVersion, "Enabled", false);
 			HttpWebRequest request = (HttpWebRequest)WebRequest.Create(version_check_url);
 			request.Timeout = 3000;
 			try {
 				HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+				if (exiting) return;
 				if (response.StatusCode == HttpStatusCode.OK) {
 					Stream stream = response.GetResponseStream();
 					byte[] buf = new byte[10];
@@ -649,11 +659,12 @@ namespace BrowseForSpeed.Frontend
 					MessageBox.Show(languages.GetString("UpdateError"), languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
+			SetControlProperty(btnCheckNewVersion, "Enabled", true);
 		}
 
 		void btnCheckNewVersionClick(object sender, System.EventArgs e)
 		{
-			MainForm.versionCheck(true);
+			new Thread(new ThreadStart(versionCheckBother)).Start();
 		}
 
 		void CbQueryWaitCheckedChanged(object sender, System.EventArgs e) {
@@ -950,7 +961,7 @@ namespace BrowseForSpeed.Frontend
 				cbDoubleClick.SelectedIndex = config.joinOnClick ? 1 : 0;
 
 				if (config.checkNewVersion) {
-					versionCheck(false);
+					new Thread(new ThreadStart(versionCheckSilent)).Start();
 				}
 				int pathIndex = pathList.Items.IndexOf(config.lfsPath);
 				//if we actually found some lfs.exe's and our config exists in the list
@@ -1485,6 +1496,7 @@ namespace BrowseForSpeed.Frontend
 			RectangleF layoutRect = new RectangleF(0, 0, size.Width, size.Height);
 			format.SetMeasurableCharacterRanges(ranges);
 			stringRegions = g.MeasureCharacterRanges(cleanHostname, f, layoutRect, format);			
+			float rectX = stringRegions[0].GetBounds(g).X;
 			Brush b = SystemBrushes.ControlText;
 			for (int i = 0, j = 0; i < hostname.Length; ++i, ++j) {
 				if (i < hostname.Length - 1 && hostname[i] == '^') {
@@ -1505,7 +1517,7 @@ namespace BrowseForSpeed.Frontend
 					g.DrawString("...", f, SystemBrushes.ControlText, stringRegions[0].GetBounds(g).X + bounds.X + rect.X, bounds.Y, format);
 					return;
 				}*/
-        		g.DrawString(cleanHostname[j].ToString(), f, b, stringRegions[0].GetBounds(g).X + bounds.X + rect.X, bounds.Y, format);
+        		g.DrawString(cleanHostname[j].ToString(), f, b, rectX + bounds.X + rect.X, bounds.Y, format);
 			}
 			} catch (Exception ex) {
 				//g.DrawString(ex.Message + ex.StackTrace, f, Brushes.Black, g.VisibleClipBounds);
