@@ -39,8 +39,8 @@ namespace BrowseForSpeed.Frontend
 
 	public partial class MainForm
 	{
-		static string bfs_version = "0.7d";
-		static string version_check = "11";
+		static string bfs_version = "0.8";
+		static string version_check = "12";
 		static string download_url = "http://www.browseforspeed.net";
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
 
@@ -336,7 +336,7 @@ namespace BrowseForSpeed.Frontend
 					return;
 				}
 			}
-			try{
+			try {
 				Process lfs = new Process();
 				lfs.Exited += new EventHandler(LFSExit);
 				lfs.EnableRaisingEvents = true;
@@ -830,6 +830,7 @@ namespace BrowseForSpeed.Frontend
 		void EdtFriendNameKeyDown(object sender, System.Windows.Forms.KeyEventArgs e) {
 			if (e.KeyCode == Keys.Enter && edtFriendName.Text.Length > 0) {
 				lvFriends.AddFriend(edtFriendName.Text);
+				lvFriends.DisplayAll();
 				lvFriends.Sort();
 				edtFriendName.Clear();
 			}
