@@ -220,11 +220,11 @@ namespace libbrowseforspeed {
 			}
 
 			byte[] send_query1 = {
-				0x0c, 0x02, 0x05, 0x56, 0x00, 0x1d, 0x01, 0x2f,
+				0x0c, 0x02, 0x05, 0x58, 0x00, 0x1d, 0x01, 0x35,
 				0x4e, 0x00, 0x00, 0x00, 0x00
 			};
 			byte[] send_query2 = {
-				0x0c, 0x02, 0x05, 0x56, 0x00, 0x1d, 0x02, 0x2f,
+				0x0c, 0x02, 0x05, 0x58, 0x00, 0x1d, 0x02, 0x35,
 				0x4e, 0x00, 0x00, 0x00, 0x00
 			};
 			/*byte[] send_query3 = {
@@ -241,15 +241,15 @@ namespace libbrowseforspeed {
 				sock.BeginConnect(endpoint, new AsyncCallback(connectCallback), sock);
 				if (this.host.version == VERSION_DEMO) {
 					send_query1[1] = send_query2[1] = 0x00;
-					send_query1[7] = send_query2[7] = 0x0f;
+					send_query1[7] = send_query2[7] = 0x15;
 					send_query1[8] = send_query2[8] = 0x00;
 				} else if (this.host.version == VERSION_S1) {
 					send_query1[1] = send_query2[1] = 0x01;
-					send_query1[7] = send_query2[7] = 0x1f;
+					send_query1[7] = send_query2[7] = 0x25;
 					send_query1[8] = send_query2[8] = 0x27;
 				} else {
 					send_query1[1] = send_query2[1] = 0x02;
-					send_query1[7] = send_query2[7] = 0x2f;
+					send_query1[7] = send_query2[7] = 0x35;
 					send_query1[8] = send_query2[8] = 0x4e;
 				}
 
@@ -344,32 +344,33 @@ namespace libbrowseforspeed {
 
 		private class Query {
 			static byte[] header = { 0x4c, 0x4c, 0x46, 0x53, 0x00}; //LLFS\0
-			static byte[] client_version_info = {0x04, 0x1d, 0x00, 0x02, 0x02, 0x05, 0x56, 0x00};
+			static byte[] client_version_info = {0x04, 0x1d, 0x00, 0x56, 0x02, 0x05, 0x58, 0x00};
 			public static ulong cars_compulsory;
 			public static ulong cars_illegal;
 			public byte[] un = new byte[20];
 			public byte[] username = new byte[24];
 			public static byte[] unknown = {0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-			public static byte[] footer = { 0x2f, 0x4e }; // /N;
+			public static byte[] footer = { 0x35, 0x4e }; // /N;
 
 			public Query(ulong cars_compulsory, ulong cars_illegal, string user, byte filters, byte version) {
 				filters ^= 0x02; //not sure what 0x01 and 0x02 are. 0x02 seems to be set always?
 				client_version_info[3] = filters;
 				client_version_info[4] = version;
 				if (version == VERSION_DEMO) {
-					footer[0] = 0x0f;
+					footer[0] = 0x15;
 					footer[1] = 0x00;
 				} else if (version == VERSION_S1) {
-					footer[0] = 0x1f;
+					footer[0] = 0x25;
 					footer[1] = 0x27;
 				} else {
-					footer[0] = 0x2f;
+					footer[0] = 0x35;
 					footer[1] = 0x4e;
 				}
 				Query.cars_compulsory = cars_compulsory;
 				Query.cars_illegal = cars_illegal;
 				Encoding ascii = Encoding.ASCII;
 				ascii.GetBytes(user.ToCharArray(), 0, user.Length, this.username, 0);
+				
 			}
 
 			public void setFilters(ulong cars_compulsory, ulong cars_illegal) {
@@ -633,6 +634,7 @@ namespace libbrowseforspeed {
 						racers = new string[numRacers];
 						ServerInformation si = new ServerInformation();
 						si.version = serverInfo.version;
+						si.password = serverInfo.password;
 						si.rawHostname = rawHostname;
 						si.hostname = hostname;
 						si.players = numRacers;
@@ -663,6 +665,7 @@ namespace libbrowseforspeed {
 						if (found || (racer == null)) {
 							ret = 1;
 							serverInfo = si;
+							found = false; //stop it doing this again
 						}
 					}
 					i += (53 + (24 * numRacers));
