@@ -39,8 +39,8 @@ namespace BrowseForSpeed.Frontend
 
 	public partial class MainForm
 	{
-		static string bfs_version = "0.8";
-		static string version_check = "12";
+		static string bfs_version = "0.8a";
+		static string version_check = "13";
 		static string download_url = "http://www.browseforspeed.net";
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
 
