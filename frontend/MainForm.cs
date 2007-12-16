@@ -39,8 +39,8 @@ namespace BrowseForSpeed.Frontend
 
 	public partial class MainForm
 	{
-		static string bfs_version = "0.8a";
-		static string version_check = "13";
+		static string bfs_version = "1.0";
+		static string version_check = "14";
 		static string download_url = "http://www.browseforspeed.net";
 		static string version_check_url = "http://www.browseforspeed.net/versioncheck.pl";
 
@@ -141,6 +141,8 @@ namespace BrowseForSpeed.Frontend
 			filters ^= (byte)(!cbPublic.Checked ? (byte)(LFSQuery.msFilters["Public"]) : (byte)0x00);
 			filters ^= (byte)(!cbEmpty.Checked ? (byte)(LFSQuery.msFilters["Empty"]) : (byte)0x00);
             filters ^= (byte)(!cbFull.Checked ? (byte)(LFSQuery.msFilters["Full"]) : (byte)0x00);
+            filters ^= (byte)(!cbReset.Checked ? (byte)(LFSQuery.msFilters["Can Reset"]) : (byte)0x00);
+            filters ^= (byte)(!cbCruise.Checked ? (byte)(LFSQuery.msFilters["Cruise"]) : (byte)0x00);
 			return filters;
 		}
 
@@ -576,6 +578,8 @@ namespace BrowseForSpeed.Frontend
 			config.filter_full = cbFull.Checked;
 			config.filter_private = cbPrivate.Checked;
 			config.filter_public = cbPublic.Checked;
+			config.filter_reset = cbReset.Checked;
+			config.filter_cruise = cbCruise.Checked;
 			config.filter_version = cbVersion.Text;
 			config.queryWait = (int)queryWait.Value;
 			config.joinOnClick = (cbDoubleClick.SelectedIndex == 1);//rbJoin.Checked;
@@ -937,6 +941,8 @@ namespace BrowseForSpeed.Frontend
 				cbFull.Checked = config.filter_full;
 				cbPrivate.Checked = config.filter_private;
 				cbPublic.Checked = config.filter_public;
+				cbCruise.Checked = config.filter_cruise;
+				cbReset.Checked = config.filter_reset;
 				cbQueryWait.Checked = config.disableWait;
 				cbFavRefresh.Checked = config.fav_refresh;
 				cbFriendRefresh.Checked = config.friend_refresh;
@@ -1037,6 +1043,18 @@ namespace BrowseForSpeed.Frontend
 		void CbPublicCheckedChanged(object sender, System.EventArgs e)
 		{
 			lvMain.Filter(FilterType.Public, cbPublic.Checked);
+			lvMain.DisplayAll();
+		}
+		
+		void CbResetCheckedChanged(object sender, System.EventArgs e)
+		{
+			lvMain.Filter(FilterType.Reset, cbReset.Checked);
+			lvMain.DisplayAll();
+		}
+		
+		void CbCruiseCheckedChanged(object sender, System.EventArgs e)
+		{
+			lvMain.Filter(FilterType.Cruise, cbCruise.Checked);
 			lvMain.DisplayAll();
 		}
 
