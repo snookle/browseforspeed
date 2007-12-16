@@ -62,12 +62,12 @@ namespace libbrowseforspeed {
 
 	public class LFSQuery {
 
-		public static ulong[] CAR_BITS = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144};
-		public static string[] CAR_NAMES = {"XFG", "XRG", "XRT", "RB4", "FXO", "LX4", "LX6", "MRT", "UF1", "RAC", "FZ5", "FOX", "XFR", "UFR", "FO8", "FXR", "XRR", "FZR", "BF1"};
+		public static ulong[] CAR_BITS = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 1 << 19};
+		public static string[] CAR_NAMES = {"XFG", "XRG", "XRT", "RB4", "FXO", "LX4", "LX6", "MRT", "UF1", "RAC", "FZ5", "FOX", "XFR", "UFR", "FO8", "FXR", "XRR", "FZR", "BF1", "FBM"};
 		public static ulong[] CAR_GROUP_BITS = {524287, 280704, 229376, 12561, 1600, 259, 28};
 		public static string[] CAR_GROUP_NAMES = {"ALL", "SS", "GTR", "FWD", "LRF", "STD", "TBO"};
-		public static ulong[] CAR_GROUP_DISALLOW = {0, 243583, 280704, 511726, 522368, 524028, 392896};
-		public static ulong[] CAR_GROUP_DONTCARE = {524287, 280704, 14207, 12561, 319, 259, 291};
+		public static ulong[] CAR_GROUP_DISALLOW = {0, 243583, 804992, 511726, 522368, 524028, 392896};
+		public static ulong[] CAR_GROUP_DONTCARE = {524287, 804992, 14207, 12561, 319, 259, 291};
 		public static byte VERSION_DEMO = (byte)0x00;
 		public static byte VERSION_S1 = (byte)0x01;
 		public static byte VERSION_S2 = (byte)0x02;
@@ -101,15 +101,16 @@ namespace libbrowseforspeed {
 		public const ulong CAR_XRR = 1 << 16;
 		public const ulong CAR_FZR = 1 << 17;
 		public const ulong CAR_BF1 = 1 << 18;
+		public const ulong CAR_FBM = 1 << 19;
 
 		//car groups
-		public const ulong CARS_ALL = 524287;
+		public const ulong CARS_ALL = (1 << 20) - 1;
 		public const ulong CARS_STD = 259;
 		public const ulong CARS_TBO = 28;
 		public const ulong CARS_LRF = 1600;
 		public const ulong CARS_FWD = 12561;
 		public const ulong CARS_GTR = 229376;
-		public const ulong CARS_SS = 280704;
+		public const ulong CARS_SS = 804992;
 
 		private static bool keepQuerying;
 		private static int totalServers;
@@ -141,6 +142,8 @@ namespace libbrowseforspeed {
 			trackCodes.Add("SO4R", "South City Long Rev");
 			trackCodes.Add("SO5", "South City Town");
 			trackCodes.Add("SO5R", "South City Town Rev");
+			trackCodes.Add("SO6", "South City Chicane Route");
+			trackCodes.Add("SO6R", "South City Chicane Route Rev");
 			trackCodes.Add("FE1", "Fern Bay Club");
 			trackCodes.Add("FE1R", "Fern Bay Club Rev");
 			trackCodes.Add("FE2", "Fern Bay Green");
@@ -184,6 +187,8 @@ namespace libbrowseforspeed {
 			msFilters.Add("Public", (byte)0x08);
 			msFilters.Add("Empty", (byte)0x10);
 			msFilters.Add("Full", (byte)0x20);
+			msFilters.Add("Can Reset", (byte)0x40);
+			msFilters.Add("Cruise", (byte)0x80);
 		}
 
 		public class ServerQuery {
@@ -220,11 +225,11 @@ namespace libbrowseforspeed {
 			}
 
 			byte[] send_query1 = {
-				0x0c, 0x02, 0x05, 0x58, 0x0a, 0x1d, 0x01, 0x35,
+				0x0c, 0x02, 0x05, 0x58, 0x1f, 0x1d, 0x01, 0x36,
 				0x4e, 0x00, 0x00, 0x00, 0x00
 			};
 			byte[] send_query2 = {
-				0x0c, 0x02, 0x05, 0x58, 0x0a, 0x1d, 0x02, 0x35,
+				0x0c, 0x02, 0x05, 0x58, 0x1f, 0x1d, 0x02, 0x36,
 				0x4e, 0x00, 0x00, 0x00, 0x00
 			};
 			/*byte[] send_query3 = {
@@ -241,15 +246,15 @@ namespace libbrowseforspeed {
 				sock.BeginConnect(endpoint, new AsyncCallback(connectCallback), sock);
 				if (this.host.version == VERSION_DEMO) {
 					send_query1[1] = send_query2[1] = 0x00;
-					send_query1[7] = send_query2[7] = 0x15;
+					send_query1[7] = send_query2[7] = 0x16;
 					send_query1[8] = send_query2[8] = 0x00;
 				} else if (this.host.version == VERSION_S1) {
 					send_query1[1] = send_query2[1] = 0x01;
-					send_query1[7] = send_query2[7] = 0x25;
+					send_query1[7] = send_query2[7] = 0x26;
 					send_query1[8] = send_query2[8] = 0x27;
 				} else {
 					send_query1[1] = send_query2[1] = 0x02;
-					send_query1[7] = send_query2[7] = 0x35;
+					send_query1[7] = send_query2[7] = 0x36;
 					send_query1[8] = send_query2[8] = 0x4e;
 				}
 
@@ -344,27 +349,27 @@ namespace libbrowseforspeed {
 
 		private class Query {
 			static byte[] header = { 0x4c, 0x4c, 0x46, 0x53, 0x00}; //LLFS\0
-			static byte[] client_version_info = {0x04, 0x1d, 0x00, 0x56, 0x02, 0x05, 0x58, 0x0a};
+			static byte[] client_version_info = {0x04, 0x1d, 0x00, 0xd6, 0x02, 0x05, 0x58, 0x1f};
 			public static ulong cars_compulsory;
 			public static ulong cars_illegal;
 			public byte[] un = new byte[20];
 			public byte[] username = new byte[24];
-			public static byte[] unknown = {0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-			public static byte[] footer = { 0x35, 0x4e }; // /N;
+			public static byte[] unknown = {0x10, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+			public static byte[] footer = { 0x36, 0x4e, 0x36, 0x4e }; // /N;
 
 			public Query(ulong cars_compulsory, ulong cars_illegal, string user, byte filters, byte version) {
 				filters ^= 0x02; //not sure what 0x01 and 0x02 are. 0x02 seems to be set always?
 				client_version_info[3] = filters;
 				client_version_info[4] = version;
 				if (version == VERSION_DEMO) {
-					footer[0] = 0x15;
-					footer[1] = 0x00;
+					footer[0] = footer[2] = 0x16; //I'm pretty sure that 0,1 are the lower version to ask for
+					footer[1] = footer[3] = 0x00; // and 2,3 are the higher version
 				} else if (version == VERSION_S1) {
-					footer[0] = 0x25;
-					footer[1] = 0x27;
+					footer[0] = footer[2] = 0x26; // i.e if you put 26,27,36,4e then you're requesting
+					footer[1] = footer[3] = 0x27; // S1 and S2 servers.
 				} else {
-					footer[0] = 0x35;
-					footer[1] = 0x4e;
+					footer[0] = footer[2] = 0x36;
+					footer[1] = footer[3] = 0x4e;
 				}
 				Query.cars_compulsory = cars_compulsory;
 				Query.cars_illegal = cars_illegal;
