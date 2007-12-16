@@ -45,6 +45,8 @@ namespace BrowseForSpeed.Frontend
 		{
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("No Friends Online");
+			System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("No Friends Online");
+			System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("No Friends Online");
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.joinServerToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,6 +62,8 @@ namespace BrowseForSpeed.Frontend
 			this.lblPasswordMain = new System.Windows.Forms.Label();
 			this.btnFindUserMain = new System.Windows.Forms.Button();
 			this.gbFilters = new System.Windows.Forms.GroupBox();
+			this.cbCruise = new System.Windows.Forms.CheckBox();
+			this.cbReset = new System.Windows.Forms.CheckBox();
 			this.cbVersion = new System.Windows.Forms.ComboBox();
 			this.cbPublic = new System.Windows.Forms.CheckBox();
 			this.cbPrivate = new System.Windows.Forms.CheckBox();
@@ -349,6 +353,8 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.gbFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Right)));
+			this.gbFilters.Controls.Add(this.cbCruise);
+			this.gbFilters.Controls.Add(this.cbReset);
 			this.gbFilters.Controls.Add(this.cbVersion);
 			this.gbFilters.Controls.Add(this.cbPublic);
 			this.gbFilters.Controls.Add(this.cbPrivate);
@@ -364,6 +370,34 @@ namespace BrowseForSpeed.Frontend
 			this.gbFilters.TabStop = false;
 			this.gbFilters.Text = "Filters";
 			// 
+			// cbCruise
+			// 
+			this.cbCruise.Checked = true;
+			this.cbCruise.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.cbCruise.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+			this.cbCruise.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.cbCruise.Location = new System.Drawing.Point(75, 428);
+			this.cbCruise.Name = "cbCruise";
+			this.cbCruise.Size = new System.Drawing.Size(60, 16);
+			this.cbCruise.TabIndex = 19;
+			this.cbCruise.Text = "Cruise";
+			this.cbCruise.UseVisualStyleBackColor = true;
+			this.cbCruise.CheckedChanged += new System.EventHandler(this.CbCruiseCheckedChanged);
+			// 
+			// cbReset
+			// 
+			this.cbReset.Checked = true;
+			this.cbReset.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.cbReset.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
+			this.cbReset.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.cbReset.Location = new System.Drawing.Point(7, 428);
+			this.cbReset.Name = "cbReset";
+			this.cbReset.Size = new System.Drawing.Size(84, 16);
+			this.cbReset.TabIndex = 18;
+			this.cbReset.Text = "Can Reset";
+			this.cbReset.UseVisualStyleBackColor = true;
+			this.cbReset.CheckedChanged += new System.EventHandler(this.CbCruiseCheckedChanged);
+			// 
 			// cbVersion
 			// 
 			this.cbVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -372,7 +406,7 @@ namespace BrowseForSpeed.Frontend
 									"Demo",
 									"S1",
 									"S2"});
-			this.cbVersion.Location = new System.Drawing.Point(6, 372);
+			this.cbVersion.Location = new System.Drawing.Point(6, 354);
 			this.cbVersion.Name = "cbVersion";
 			this.cbVersion.Size = new System.Drawing.Size(124, 21);
 			this.cbVersion.TabIndex = 17;
@@ -382,8 +416,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.cbPublic.Checked = true;
 			this.cbPublic.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.cbPublic.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
 			this.cbPublic.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.cbPublic.Location = new System.Drawing.Point(75, 420);
+			this.cbPublic.Location = new System.Drawing.Point(75, 402);
 			this.cbPublic.Name = "cbPublic";
 			this.cbPublic.Size = new System.Drawing.Size(55, 24);
 			this.cbPublic.TabIndex = 16;
@@ -395,8 +430,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.cbPrivate.Checked = true;
 			this.cbPrivate.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.cbPrivate.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
 			this.cbPrivate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.cbPrivate.Location = new System.Drawing.Point(6, 424);
+			this.cbPrivate.Location = new System.Drawing.Point(6, 406);
 			this.cbPrivate.Name = "cbPrivate";
 			this.cbPrivate.Size = new System.Drawing.Size(63, 16);
 			this.cbPrivate.TabIndex = 15;
@@ -408,8 +444,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.cbFull.Checked = true;
 			this.cbFull.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.cbFull.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
 			this.cbFull.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.cbFull.Location = new System.Drawing.Point(75, 400);
+			this.cbFull.Location = new System.Drawing.Point(75, 382);
 			this.cbFull.Name = "cbFull";
 			this.cbFull.Size = new System.Drawing.Size(44, 16);
 			this.cbFull.TabIndex = 14;
@@ -449,8 +486,9 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.cbEmpty.Checked = true;
 			this.cbEmpty.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.cbEmpty.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World);
 			this.cbEmpty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.cbEmpty.Location = new System.Drawing.Point(6, 399);
+			this.cbEmpty.Location = new System.Drawing.Point(6, 381);
 			this.cbEmpty.Name = "cbEmpty";
 			this.cbEmpty.Size = new System.Drawing.Size(104, 19);
 			this.cbEmpty.TabIndex = 11;
@@ -516,45 +554,44 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// columnHeaderName
 			// 
+			this.columnHeaderName.Name = "columnHeaderName";
 			this.columnHeaderName.Text = "Server Name";
 			this.columnHeaderName.Width = 203;
-			this.columnHeaderName.Name = "columnHeaderName";
 			// 
 			// columnHeaderPing
 			// 
+			this.columnHeaderPing.Name = "columnHeaderPing";
 			this.columnHeaderPing.Text = "Ping";
 			this.columnHeaderPing.Width = 50;
-			this.columnHeaderPing.Name = "columnHeaderPing";
 			// 
 			// columnPrivate
 			// 
+			this.columnPrivate.Name = "columnPrivate";
 			this.columnPrivate.Text = "Private";
 			this.columnPrivate.Width = 58;
-			this.columnPrivate.Name = "columnPrivate";
 			// 
 			// columnHeaderConnections
 			// 
+			this.columnHeaderConnections.Name = "columnHeaderConnections";
 			this.columnHeaderConnections.Text = "Connections";
 			this.columnHeaderConnections.Width = 85;
-			this.columnHeaderConnections.Name = "columnHeaderConnections";
 			// 
 			// columnHeaderInfo
 			// 
-			this.columnHeaderInfo.Text = "Info";
 			this.columnHeaderInfo.Name = "columnHeaderInfo";
+			this.columnHeaderInfo.Text = "Info";
 			// 
 			// columnHeaderTrack
 			// 
+			this.columnHeaderTrack.Name = "columnHeaderTrack";
 			this.columnHeaderTrack.Text = "Track";
 			this.columnHeaderTrack.Width = 134;
-			this.columnHeaderTrack.Name = "columnHeaderTrack";
 			// 
 			// columnHeaderCars
 			// 
+			this.columnHeaderCars.Name = "columnHeaderCars";
 			this.columnHeaderCars.Text = "Cars";
 			this.columnHeaderCars.Width = 180;
-			this.columnHeaderCars.Name = "columnHeaderCars";
-			
 			// 
 			// contextMenuBrowser
 			// 
@@ -748,44 +785,44 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// columnHeaderFavServerName
 			// 
+			this.columnHeaderFavServerName.Name = "columnHeaderFavServerName";
 			this.columnHeaderFavServerName.Text = "Server Name";
 			this.columnHeaderFavServerName.Width = 158;
-			this.columnHeaderFavServerName.Name = "columnHeaderFavServerName";
 			// 
 			// columnHeaderFavPing
 			// 
+			this.columnHeaderFavPing.Name = "columnHeaderFavPing";
 			this.columnHeaderFavPing.Text = "Ping";
 			this.columnHeaderFavPing.Width = 50;
-			this.columnHeaderFavPing.Name = "columnHeaderFavPing";
 			// 
 			// columnHeaderFavVersion
 			// 
+			this.columnHeaderFavVersion.Name = "columnHeaderFavVersion";
 			this.columnHeaderFavVersion.Text = "Version";
 			this.columnHeaderFavVersion.Width = 63;
-			this.columnHeaderFavVersion.Name = "columnHeaderFavVersion";
 			// 
 			// columnHeaderFavSlots
 			// 
+			this.columnHeaderFavSlots.Name = "columnHeaderFavSlots";
 			this.columnHeaderFavSlots.Text = "Connections";
 			this.columnHeaderFavSlots.Width = 87;
-			this.columnHeaderFavSlots.Name = "columnHeaderFavSlots";
 			// 
 			// columnHeaderFavInfo
 			// 
-			this.columnHeaderFavInfo.Text = "Info";
 			this.columnHeaderFavInfo.Name = "columnHeaderFavInfo";
+			this.columnHeaderFavInfo.Text = "Info";
 			// 
 			// columnHeaderFavTrack
 			// 
+			this.columnHeaderFavTrack.Name = "columnHeaderFavTrack";
 			this.columnHeaderFavTrack.Text = "Track";
 			this.columnHeaderFavTrack.Width = 117;
-			this.columnHeaderFavTrack.Name = "columnHeaderFavTrack";
 			// 
 			// columnHeaderFavCars
 			// 
+			this.columnHeaderFavCars.Name = "columnHeaderFavCars";
 			this.columnHeaderFavCars.Text = "Cars";
 			this.columnHeaderFavCars.Width = 374;
-			this.columnHeaderFavCars.Name = "columnHeaderFavCars";
 			// 
 			// contextMenuFav
 			// 
@@ -925,7 +962,9 @@ namespace BrowseForSpeed.Frontend
 			this.lvFriends.GridLines = true;
 			this.lvFriends.HideOffline = false;
 			this.lvFriends.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-									listViewItem1});
+									listViewItem1,
+									listViewItem2,
+									listViewItem3});
 			this.lvFriends.Location = new System.Drawing.Point(8, 6);
 			this.lvFriends.MultiSelect = false;
 			this.lvFriends.Name = "lvFriends";
@@ -943,27 +982,27 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// columnFriendName
 			// 
+			this.columnFriendName.Name = "columnFriendName";
 			this.columnFriendName.Text = "Friend Name";
 			this.columnFriendName.Width = 138;
-			this.columnFriendName.Name = "columnFriendName";
 			// 
 			// columnFriendServer
 			// 
+			this.columnFriendServer.Name = "columnFriendServer";
 			this.columnFriendServer.Text = "Server Name";
 			this.columnFriendServer.Width = 173;
-			this.columnFriendServer.Name = "columnFriendServer";
 			// 
 			// columnFriendPrivate
 			// 
+			this.columnFriendPrivate.Name = "columnFriendPrivate";
 			this.columnFriendPrivate.Text = "Private";
 			this.columnFriendPrivate.Width = 66;
-			this.columnFriendPrivate.Name = "columnFriendPrivate";
 			// 
 			// columnFriendPlayers
 			// 
+			this.columnFriendPlayers.Name = "columnFriendPlayers";
 			this.columnFriendPlayers.Text = "Players";
 			this.columnFriendPlayers.Width = 523;
-			this.columnFriendPlayers.Name = "columnFriendPlayers";
 			// 
 			// contextMenuFriends
 			// 
@@ -1613,6 +1652,8 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.CheckBox cbReset;
+		private System.Windows.Forms.CheckBox cbCruise;
 		private System.Windows.Forms.GroupBox gbLangDetails;
 		private System.Windows.Forms.Button btnRefreshFav;
 		private System.Windows.Forms.GroupBox gbAdvanced;

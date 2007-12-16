@@ -53,7 +53,6 @@ namespace BrowseForSpeed.Frontend
 			this.edtPort = new System.Windows.Forms.TextBox();
 			this.lblPassword = new System.Windows.Forms.Label();
 			this.lblinsimPort = new System.Windows.Forms.Label();
-			this.chkRelay = new System.Windows.Forms.CheckBox();
 			this.lstRacers = new System.Windows.Forms.ListBox();
 			this.racerMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.kick = new System.Windows.Forms.ToolStripMenuItem();
@@ -154,16 +153,6 @@ namespace BrowseForSpeed.Frontend
 			this.lblinsimPort.Text = "InSim Port:";
 			this.lblinsimPort.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
-			// chkRelay
-			// 
-			this.chkRelay.Location = new System.Drawing.Point(276, 41);
-			this.chkRelay.Name = "chkRelay";
-			this.chkRelay.Size = new System.Drawing.Size(195, 24);
-			this.chkRelay.TabIndex = 11;
-			this.chkRelay.Text = "Connect to Relay";
-			this.chkRelay.UseVisualStyleBackColor = true;
-			this.chkRelay.CheckedChanged += new System.EventHandler(this.ChkRelayCheckedChanged);
-			// 
 			// lstRacers
 			// 
 			this.lstRacers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -182,12 +171,12 @@ namespace BrowseForSpeed.Frontend
 									this.btnBan,
 									this.spectate});
 			this.racerMenuStrip.Name = "racerMenuStrip";
-			this.racerMenuStrip.Size = new System.Drawing.Size(158, 92);
+			this.racerMenuStrip.Size = new System.Drawing.Size(147, 70);
 			// 
 			// kick
 			// 
 			this.kick.Name = "kick";
-			this.kick.Size = new System.Drawing.Size(157, 22);
+			this.kick.Size = new System.Drawing.Size(146, 22);
 			this.kick.Text = "Kick";
 			this.kick.Click += new System.EventHandler(this.KickToolStripMenuItemClick);
 			// 
@@ -201,55 +190,55 @@ namespace BrowseForSpeed.Frontend
 									this.ban1w,
 									this.banCustom});
 			this.btnBan.Name = "btnBan";
-			this.btnBan.Size = new System.Drawing.Size(157, 22);
+			this.btnBan.Size = new System.Drawing.Size(146, 22);
 			this.btnBan.Text = "Ban";
 			// 
 			// ban12h
 			// 
 			this.ban12h.Name = "ban12h";
-			this.ban12h.Size = new System.Drawing.Size(152, 22);
+			this.ban12h.Size = new System.Drawing.Size(122, 22);
 			this.ban12h.Text = "12 hours";
 			this.ban12h.Click += new System.EventHandler(this.HoursToolStripMenuItemClick);
 			// 
 			// ban1d
 			// 
 			this.ban1d.Name = "ban1d";
-			this.ban1d.Size = new System.Drawing.Size(152, 22);
+			this.ban1d.Size = new System.Drawing.Size(122, 22);
 			this.ban1d.Text = "1 day";
 			this.ban1d.Click += new System.EventHandler(this.DayToolStripMenuItemClick);
 			// 
 			// ban2d
 			// 
 			this.ban2d.Name = "ban2d";
-			this.ban2d.Size = new System.Drawing.Size(152, 22);
+			this.ban2d.Size = new System.Drawing.Size(122, 22);
 			this.ban2d.Text = "2 days";
 			this.ban2d.Click += new System.EventHandler(this.DaysToolStripMenuItemClick);
 			// 
 			// ban3d
 			// 
 			this.ban3d.Name = "ban3d";
-			this.ban3d.Size = new System.Drawing.Size(152, 22);
+			this.ban3d.Size = new System.Drawing.Size(122, 22);
 			this.ban3d.Text = "3 days";
 			this.ban3d.Click += new System.EventHandler(this.DaysToolStripMenuItem1Click);
 			// 
 			// ban1w
 			// 
 			this.ban1w.Name = "ban1w";
-			this.ban1w.Size = new System.Drawing.Size(152, 22);
+			this.ban1w.Size = new System.Drawing.Size(122, 22);
 			this.ban1w.Text = "1 week";
 			this.ban1w.Click += new System.EventHandler(this.WeekToolStripMenuItemClick);
 			// 
 			// banCustom
 			// 
 			this.banCustom.Name = "banCustom";
-			this.banCustom.Size = new System.Drawing.Size(152, 22);
+			this.banCustom.Size = new System.Drawing.Size(122, 22);
 			this.banCustom.Text = "Custom...";
 			this.banCustom.Click += new System.EventHandler(this.CustomToolStripMenuItemClick);
 			// 
 			// spectate
 			// 
 			this.spectate.Name = "spectate";
-			this.spectate.Size = new System.Drawing.Size(157, 22);
+			this.spectate.Size = new System.Drawing.Size(146, 22);
 			this.spectate.Text = "Force spectate";
 			this.spectate.Click += new System.EventHandler(this.ForceSpectateToolStripMenuItemClick);
 			// 
@@ -273,7 +262,6 @@ namespace BrowseForSpeed.Frontend
 			this.ClientSize = new System.Drawing.Size(677, 463);
 			this.Controls.Add(this.lblPassword);
 			this.Controls.Add(this.lblinsimPort);
-			this.Controls.Add(this.chkRelay);
 			this.Controls.Add(this.lstRacers);
 			this.Controls.Add(this.sendPrivate);
 			this.Controls.Add(this.edtPassword);
@@ -304,7 +292,6 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.ToolStripMenuItem banCustom;
 		private System.Windows.Forms.ContextMenuStrip racerMenuStrip;
 		private System.Windows.Forms.ListBox lstRacers;
-		private System.Windows.Forms.CheckBox chkRelay;
 		private System.Windows.Forms.Label lblPassword;
 		private System.Windows.Forms.Label lblinsimPort;
 		private System.Windows.Forms.TextBox edtPort;

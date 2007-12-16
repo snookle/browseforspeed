@@ -27,25 +27,34 @@ using System.Text.RegularExpressions;
 namespace BrowseForSpeed.Frontend
 {
 	public class racer {
-		public racer(string playername, int connection) {
+		public racer(string playername, byte connection) {
 			this.playername = playername;
 			this.connection = connection;
 		}
 		public string playername;
 		public int connection;
 	}
+
 	public partial class AdminForm
 	{
 		InSimHandler handler;
 		ServerInformation info;
 		FullMotion.LiveForSpeed.InSim.Configuration config;
-		Dictionary<String, racer> racers;
+		Dictionary<byte, racer> racers;
 		frmBan ban;
 
+		private byte getRacerConnectionId(String playername) {
+			foreach (byte k in racers.Keys) {
+				if (racers[k].playername == playername)
+					return k;
+			}
+			return 0x00;
+		}
+		
 		public AdminForm(ServerInformation info) {
 			InitializeComponent();
 			this.info = info;
-			handler = new InSimHandler(true, false);
+			handler = new InSimHandler();
 			this.Text = MainForm.languages.GetString("Admin.Admin") + " - " + LFSQuery.removeColourCodes(info.hostname);
 			edtPassword.Text = info.adminPassword;
 			if (info.insimPort != 0) {
@@ -58,7 +67,7 @@ namespace BrowseForSpeed.Frontend
 		void AdminFormLoad(object sender, System.EventArgs e) {
 			this.Icon = new Icon(GetType().Assembly.GetManifestResourceStream("BrowseForSpeed.ca3r.ico"));
 			MainForm.UpdateControls(this, "Admin");
-			racers = new Dictionary<String, racer>();			
+			racers = new Dictionary<byte, racer>();			
 		}
 
 		void BtnSendClick(object sender, System.EventArgs e) {
@@ -74,29 +83,24 @@ namespace BrowseForSpeed.Frontend
 			btnConnect.Text = MainForm.languages.GetString("Admin.btnConnect");
 		}*/
 
-		private void cbMessage(FullMotion.LiveForSpeed.InSim.Events.Message m) {
-			string msg = "";
-			if (m.IsSplitMessage) {
-				msg = "<" + m.UserName + "> " + m.MessageText;
-			} else {
-				msg = m.MessageText;
-			}
+		private void cbMessage(InSimHandler s, FullMotion.LiveForSpeed.InSim.Events.Message m) {
+			string msg = m.Playername + m.MessageText;
 			msg = Regex.Replace(msg, "\\^L", "");
 			txtInfo.Text += "\r\n" + msg;
 			txtInfo.SelectionStart = txtInfo.Text.Length;
 			txtInfo.ScrollToCaret();
 		}
 		
-		private void cbConnection(FullMotion.LiveForSpeed.InSim.Events.RaceTrackConnection c) {
+		private void cbConnection(InSimHandler s, FullMotion.LiveForSpeed.InSim.Events.RaceTrackConnection c) {
 			//MessageBox.Show("Got a connection!");
-			if (!racers.ContainsKey(c.Username)) {
-				racers.Add(c.Username, new racer(c.Playername, c.ConnectionNumber));
+			if (!racers.ContainsKey(c.ConnectionId)) {
+				racers.Add(c.ConnectionId, new racer(c.Playername, c.ConnectionId));
 				lstRacers.Items.Add(c.Username);
 			}
 		}
-		private void cbConnectionLeave(FullMotion.LiveForSpeed.InSim.Events.RaceTrackConnectionLeave c) {
-			racers.Remove(c.Username);
-			lstRacers.Items.Remove(c.Username);
+		private void cbConnectionLeave(InSimHandler s, FullMotion.LiveForSpeed.InSim.Events.RaceTrackConnectionLeave c) {
+			racers.Remove(c.ConnectionId);
+			lstRacers.Items.Remove(racers[c.ConnectionId]);
 		}
 
 		void AdminFormFormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e) {
@@ -116,25 +120,28 @@ namespace BrowseForSpeed.Frontend
 				try {
 					config = handler.Configuration;
 					btnConnect.Enabled = false;
-					chkRelay.Enabled = false;
+					//chkRelay.Enabled = false;
 					config.LFSHost = info.host.Address.ToString();
 					config.LFSHostPort = Int32.Parse(edtPort.Text);
 					config.AdminPass = edtPassword.Text;
 					config.ReplyPort = 80085;
 					config.UseSplitMessages = true;
-					config.UseKeepAlives = true;
-					config.RaceTracking = RaceTrackType.MultiCarTracking;
-					config.GuaranteedDelivery = true;
-					config.UseRelay = chkRelay.Checked;
-					config.Hostname = info.hostname;
+					config.UseTCP = true;
+					config.MultiCarTracking = true;
+					config.KeepMessageColors = false;
+					config.ProgramName = "BFS";
+					//config.UseRelay = chkRelay.Checked;
+					//config.Hostname = info.hostname;
 					handler.Initialize(3);
 					handler.LFSMessage += new MessageEventHandler(cbMessage);
 					handler.RaceTrackConnection += new RaceTrackNewConnectionHandler(cbConnection);
 					handler.RaceTrackConnectionLeave += new RaceTrackConnectionLeaveHandler(cbConnectionLeave);
-					//handler.RequestRaceTrackingMultiCarInfo();
-					for (int i = 0; i < 24; i++) {
+					handler.RequestRaceTrackingMultiCarInfo();
+					handler.RequestConnectionInfo();
+					/*for (int i = 0; i < 24; i++) {
+						
 						handler.RequestRaceTrackingConnectionInfo(i);
-					}
+					}*/
 					//handler.LFSState += new StateEventHandler(cbState);
 					btnSend.Enabled = true;
 					btnConnect.Text = MainForm.languages.GetString("Admin.btnDisconnect");
@@ -144,7 +151,7 @@ namespace BrowseForSpeed.Frontend
 					edtMessage.Focus();
 				} catch (Exception ex) {
 					btnConnect.Enabled = true;
-					chkRelay.Enabled = true;					
+					//chkRelay.Enabled = true;					
 					MessageBox.Show(MainForm.languages.GetString("InSimError"), MainForm.languages.GetString("Admin.this"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			} else {
@@ -153,7 +160,7 @@ namespace BrowseForSpeed.Frontend
 				sendPrivate.Enabled = false;
 				btnSend.Enabled = false;
 				edtMessage.Enabled = false;
-				chkRelay.Enabled = true;
+				//chkRelay.Enabled = true;
 				lstRacers.Items.Clear();
 				racers.Clear();
 				btnConnect.Text = MainForm.languages.GetString("Admin.btnConnect");
@@ -176,9 +183,9 @@ namespace BrowseForSpeed.Frontend
 			}
 		}
 		
-		void ChkRelayCheckedChanged(object sender, System.EventArgs e) {			
+		/*void ChkRelayCheckedChanged(object sender, System.EventArgs e) {			
 			edtPort.Enabled = !chkRelay.Checked;
-		}
+		}*/
 		
 		void KickToolStripMenuItemClick(object sender, System.EventArgs e) {
 			if (lstRacers.SelectedIndex == -1) return;
@@ -212,12 +219,12 @@ namespace BrowseForSpeed.Frontend
 		
 		void ForceSpectateToolStripMenuItemClick(object sender, System.EventArgs e) {
 			if (lstRacers.SelectedIndex == -1) return;
-			handler.SendMessage("/spectate " + lstRacers.Text);			
+			handler.SendMessage("/spec " + lstRacers.Text);			
 		}		
 		
 		void Button1Click(object sender, System.EventArgs e) {
 			if (lstRacers.Text != null && lstRacers.Text != "") {
-				handler.SendMessageToConnection(edtMessage.Text, racers[lstRacers.Text].connection);
+				handler.SendMessageToConnection(edtMessage.Text, getRacerConnectionId(lstRacers.Text));
 				edtMessage.Clear();
 			}
 		}

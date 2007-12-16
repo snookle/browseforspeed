@@ -75,6 +75,8 @@ public class Configuration
 		public bool filter_full;
 		public bool filter_private;
 		public bool filter_public;
+		public bool filter_cruise;
+		public bool filter_reset;
 		public bool hide_offline;
 		public int ping_threshold;
 		public string filter_track;
@@ -138,6 +140,12 @@ public class Configuration
 				try {
 					filter_public = ((XmlElement)list[0]).GetElementsByTagName("filter_public")[0].FirstChild.Value == "True";
 				} catch (Exception e) { filter_public = true; }
+				try {
+					filter_reset = ((XmlElement)list[0]).GetElementsByTagName("filter_cruise")[0].FirstChild.Value == "True";
+				} catch (Exception e) { filter_reset = false; }
+				try {
+					filter_cruise = ((XmlElement)list[0]).GetElementsByTagName("filter_reset")[0].FirstChild.Value == "True";
+				} catch (Exception e) { filter_cruise = false; }
 				try {
 					hide_offline = ((XmlElement)list[0]).GetElementsByTagName("hide_offline")[0].FirstChild.Value == "True";
 				} catch (Exception e) { hide_offline = false; }
@@ -276,6 +284,8 @@ public class Configuration
 				tw.WriteElementString("filter_private", filter_private.ToString());
 				tw.WriteElementString("filter_empty", filter_empty.ToString());
 				tw.WriteElementString("filter_full", filter_full.ToString());
+				tw.WriteElementString("filter_reset", filter_reset.ToString());
+				tw.WriteElementString("filter_cruise", filter_cruise.ToString());
 				tw.WriteElementString("filter_version", filter_version.ToString());
 				tw.WriteElementString("hide_offline", hide_offline.ToString());
 				tw.WriteElementString("ping_threshold", ping_threshold.ToString());
