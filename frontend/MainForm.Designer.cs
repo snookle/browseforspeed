@@ -45,8 +45,6 @@ namespace BrowseForSpeed.Frontend
 		{
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("No Friends Online");
-			System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("No Friends Online");
-			System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("No Friends Online");
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.joinServerToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -962,9 +960,7 @@ namespace BrowseForSpeed.Frontend
 			this.lvFriends.GridLines = true;
 			this.lvFriends.HideOffline = false;
 			this.lvFriends.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-									listViewItem1,
-									listViewItem2,
-									listViewItem3});
+									listViewItem1});
 			this.lvFriends.Location = new System.Drawing.Point(8, 6);
 			this.lvFriends.MultiSelect = false;
 			this.lvFriends.Name = "lvFriends";
