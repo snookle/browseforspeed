@@ -53,6 +53,8 @@
 	<component name="MainForm.cbPublic">Public</component>
 	<component name="MainForm.cbPrivate">Private</component>
 	<component name="MainForm.cbFull">Full</component>
+	<component name="MainForm.cbCruise">Cruise</component>
+	<component name="MainForm.cbReset">Can Reset</component>
 	<component name="MainForm.lblPingThreshold">Ping Threshold:</component>
 	<component name="MainForm.cbEmpty">Empty</component>
 	<component name="MainForm.columnHeaderName">Server Name</component>
@@ -159,7 +161,6 @@
 	<component name="Admin.edtPort">29999</component>
 	<component name="Admin.lblPassword">Password:</component>
 	<component name="Admin.lblinsimPort">InSim Port:</component>
-	<component name="Admin.chkRelay">Connect to Relay</component>
 	<component name="Admin.kick">Kick</component>
 	<component name="Admin.btnBan">Ban</component>
 	<component name="Admin.spectate">Force Spectate</component>
