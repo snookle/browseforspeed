@@ -36,6 +36,7 @@ namespace libbrowseforspeed {
 		public int totalServers;
 		public IPEndPoint host;
 		public int slots;
+		public int adminslots;
 		public int players;
 		public ulong rules;
 		public ulong cars;
@@ -344,6 +345,8 @@ namespace libbrowseforspeed {
 				serverinfo.success = true;
 				serverinfo.cars = (ulong)(recbuf[12] * 16777216 + recbuf[11] * 65536 + recbuf[10] * 256 + recbuf[9]);
 				serverinfo.track = (string)trackCodes[getLFSString(recbuf, 1, 4)];
+				serverinfo.adminslots = (int)recbuf[7];
+				serverinfo.slots -= serverinfo.adminslots;
 			}
 		}
 
