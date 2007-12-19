@@ -53,6 +53,8 @@ Rocks"
 <component name="MainForm.cbPublic">Veøej.</component>
 <component name="MainForm.cbPrivate">Soukr.</component>
 <component name="MainForm.cbFull">Plný</component>
+<component name="MainForm.cbReset">Reset možný</component>
+<component name="MainForm.cbCruise">Projížïka</component>
 <component name="MainForm.lblPingThreshold">Max. Ping:</component>
 <component name="MainForm.cbEmpty">Prázdný</component>
 <component name="MainForm.columnHeaderName">Jméno serveru</component>

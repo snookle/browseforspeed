@@ -1,4 +1,4 @@
-Ôªø<!-- How to make a new language:
+<!-- How to make a new language:
 1. copy this file and rename it to <yourlanguage>.lang.xml
 2. Ensure name accurately represents the language (and is unique to other language names)
 3. Translate the strings!
@@ -31,7 +31,7 @@
 	<!-- Global stuff -->
 	<component name="Global.Yes">Jah</component>
 	<component name="Global.No">Ei</component>
-	<component name="Global.True">√ïige</component>
+	<component name="Global.True">’ige</component>
 	<component name="Global.False">Vale</component>
 	<component name="Global.Error">Viga</component>
 	<component name="Global.Enabled">Lubatud</component>
@@ -43,7 +43,7 @@
 	
 	<component name="MainForm.fileToolStripMenuItem">&amp;Fail</component>
 	<component name="MainForm.joinServerToolStripMenuItem2">&amp;Liitu serveriga...</component>
-	<component name="MainForm.closeToolStripMenuItem">&amp;V√§lju</component>
+	<component name="MainForm.closeToolStripMenuItem">&amp;V‰lju</component>
 	<component name="MainForm.aboutToolStripMenuItem">&amp;Abi</component>
 	<component name="MainForm.aboutToolStripMenuItem1">&amp;Teave...</component>
 	<component name="MainForm.tabMain">Serveri</component>
@@ -53,13 +53,15 @@
 	<component name="MainForm.gbFilters">Filtrid</component>
 	<component name="MainForm.cbPublic">Avalikud</component>
 	<component name="MainForm.cbPrivate">Privaatsed</component>
-	<component name="MainForm.cbFull">T√§is</component>
-	<component name="MainForm.lblPingThreshold">Pingi l√§vi:</component>
-	<component name="MainForm.cbEmpty">T√ºhjad</component>
+	<component name="MainForm.cbFull">T‰is</component>
+	<component name="MainForm.cbCruise">Cruise</component>
+	<component name="MainForm.cbReset">Reset lubat</component>
+	<component name="MainForm.lblPingThreshold">Pingi l‰vi:</component>
+	<component name="MainForm.cbEmpty">T¸hjad</component>
 	<component name="MainForm.columnHeaderName">Serveri nimi</component>
 	<component name="MainForm.columnHeaderPing">Ping</component>
 	<component name="MainForm.columnPrivate">Privaat</component>
-	<component name="MainForm.columnHeaderConnections">√úhendusi</component>
+	<component name="MainForm.columnHeaderConnections">‹hendusi</component>
 	<component name="MainForm.columnHeaderInfo">Info</component>
 	<component name="MainForm.columnHeaderTrack">Rada</component>
 	<component name="MainForm.columnHeaderCars">Autod</component>
@@ -78,7 +80,7 @@
 	<component name="MainForm.btnAddServer">&amp;Lisa server</component>
 	<component name="MainForm.columnHeaderFavServerName">Serveri nimi</component>
 	<component name="MainForm.columnHeaderFavPing">Ping</component>
-	<component name="MainForm.columnHeaderFavSlots">√úhendused</component>
+	<component name="MainForm.columnHeaderFavSlots">‹hendused</component>
 	<component name="MainForm.columnHeaderFavInfo">Info</component>
 	<component name="MainForm.columnHeaderFavTrack">Rada</component>
 	<component name="MainForm.columnHeaderFavCars">Autod</component>
@@ -87,18 +89,18 @@
 	<component name="MainForm.removeFromFavouritesToolStripMenuItem">&amp;Eemalda lemmikutest</component>
 	<component name="MainForm.copyServerToClipboardToolStripMenuItem1">&amp;Kopeeri server Clipboardi</component>
 	<component name="MainForm.administrateToolStripMenuItem">Administreeri...</component>
-	<component name="MainForm.tabFriends">S√µbrad</component>
-	<component name="MainForm.btnAddFriend">&amp;Lisa s√µber</component>
-	<component name="MainForm.cbHideOffline">Peida offline s√µbrad</component>
+	<component name="MainForm.tabFriends">Sıbrad</component>
+	<component name="MainForm.btnAddFriend">&amp;Lisa sıber</component>
+	<component name="MainForm.cbHideOffline">Peida offline sıbrad</component>
 	<component name="MainForm.btnRefreshFriend">&amp;Uuenda nimekirja</component>
-	<component name="MainForm.btnJoinFriend">&amp;Liitu s√µbraga</component>
-	<component name="MainForm.columnFriendName">S√µbra nimi</component>
+	<component name="MainForm.btnJoinFriend">&amp;Liitu sıbraga</component>
+	<component name="MainForm.columnFriendName">Sıbra nimi</component>
 	<component name="MainForm.columnFriendServer">Serveri nimi</component>
 	<component name="MainForm.columnFriendPrivate">Privaat</component>
-	<component name="MainForm.columnFriendPlayers">M√§ngijad</component>
+	<component name="MainForm.columnFriendPlayers">M‰ngijad</component>
 	<component name="MainForm.joinServerMenuFriends">Liitu serveriga</component>
 	<component name="MainForm.viewServerInformationFriend">Vaata serveri informatsiooni...</component>
-	<component name="MainForm.removeFriendToolStripMenuItem">Eemalda s√µbrad</component>
+	<component name="MainForm.removeFriendToolStripMenuItem">Eemalda sıbrad</component>
 	<component name="MainForm.tabConfig">Konfiguratsioon</component>
 	<component name="MainForm.lblCommentReal">Komentaarid</component>
 	<component name="MainForm.lblEmailReal">AuthorEmal</component>
@@ -109,64 +111,64 @@
 	<component name="MainForm.lblLanguageConfig">Keel:</component>
 	<component name="MainForm.rbJoin">Liitu serveriga</component>
 	<component name="MainForm.rbView">Vaata serveri informatsiooni</component>
-	<component name="MainForm.gbStartBeforeLFS">K√§ivita enne LFSi</component>
+	<component name="MainForm.gbStartBeforeLFS">K‰ivita enne LFSi</component>
 	<component name="MainForm.btnProgramEnable">&amp;Luba</component>
 	<component name="MainForm.btnProgramDisable">&amp;Keela</component>
 	<component name="MainForm.btnProgramDelete">&amp;Eemalda programm</component>
 	<component name="MainForm.btnProgramNew">&amp;Uus programm</component>
 	<component name="MainForm.bgProgramConfig">Programmi konfiguratsioon</component>
-	<component name="MainForm.btnProgramCancel">&amp;T√ºhista</component>
+	<component name="MainForm.btnProgramCancel">&amp;T¸hista</component>
 	<component name="MainForm.btnProgramSave">&amp;Salvesta</component>
 	<component name="MainForm.btnProgramUpdate">&amp;Uuenda</component>
 	<component name="MainForm.lblProgramConfigArg">Argument:</component>
 	<component name="MainForm.lblProgramConfigName">Nimi:</component>
 	<component name="MainForm.btnProgramBrowse">&amp;Lehitse</component>
 	<component name="MainForm.lblProgramConfigPath">Tee:</component>
-	<component name="MainForm.lblQueryWaitDescription">P√§ringu oote v√§rtus. See on ootamise aeg ennem samaaegse p√§ringu lisamist. Suurenda seda v√§rtust, kui k√µik serverid annavad p√§ringut tehes "Connection Refused"</component>
+	<component name="MainForm.lblQueryWaitDescription">P‰ringu oote v‰rtus. See on ootamise aeg ennem samaaegse p‰ringu lisamist. Suurenda seda v‰rtust, kui kıik serverid annavad p‰ringut tehes "Connection Refused"</component>
 	<component name="MainForm.lblInsimPortConfig">LFSi insim port:</component>
-	<component name="MainForm.cbQueryWait">Keela p√§ringu oode</component>
-	<component name="MainForm.lblQueryWaitHelp">Keela p√§ringu oode vaid siis, kui sa oled kindel, et su s√ºsteemil pole √ºhenduste limiiti. Palun vaata readme.txt rohkema informatsiooni saamiseks. </component>
+	<component name="MainForm.cbQueryWait">Keela p‰ringu oode</component>
+	<component name="MainForm.lblQueryWaitHelp">Keela p‰ringu oode vaid siis, kui sa oled kindel, et su s¸steemil pole ¸henduste limiiti. Palun vaata readme.txt rohkema informatsiooni saamiseks. </component>
 	<component name="MainForm.btnCheckNewVersion">&amp;Kontrolli kohe</component>
-	<component name="MainForm.lblExeDescriptionConfig">Kui kastis on rohkem kui √ºks sissekanne, palun vali √µige tee enda LFS.exe'ni. Kui seal ei ole √ºhtegi sissekannet, palun vajuta nupule Lehite, et selle asukohta ise m√§rata.</component>
-	<component name="MainForm.lblExePathConfig">LFSi t√§idetav tee:</component>
+	<component name="MainForm.lblExeDescriptionConfig">Kui kastis on rohkem kui ¸ks sissekanne, palun vali ıige tee enda LFS.exe'ni. Kui seal ei ole ¸htegi sissekannet, palun vajuta nupule Lehite, et selle asukohta ise m‰rata.</component>
+	<component name="MainForm.lblExePathConfig">LFSi t‰idetav tee:</component>
 	<component name="MainForm.buttonBrowse">&amp;Lehitse</component>
-	<component name="MainForm.NoServers">√úhtegi serverit ei leitud. KOntrolli enda filtriseadeid.</component>
-	<component name="MainForm.QueryStatus">P√§ring...</component>
+	<component name="MainForm.NoServers">‹htegi serverit ei leitud. KOntrolli enda filtriseadeid.</component>
+	<component name="MainForm.QueryStatus">P‰ring...</component>
 	<component name="MainForm.StatusTotal">Kontrollib serverit {0}/{1}</component>
 	<component name="MainForm.NoReply">Mitte mingit vastust: {0}</component>
-	<component name="MainForm.Refused">Keeldus √ºhendusest: {0}</component>
+	<component name="MainForm.Refused">Keeldus ¸hendusest: {0}</component>
 	<component name="MainForm.Offline">Offline</component>
-	<component name="MainForm.cbStartupRefresh">Uuenda lemmikuid k√§imapanemisel</component>
+	<component name="MainForm.cbStartupRefresh">Uuenda lemmikuid k‰imapanemisel</component>
 
 	<!-- Admin Form components -->
 	<component name="Admin.btnSend">&amp;Saada</component>
-	<component name="Admin.btnConnect">&amp;√úhenda</component>
-	<component name="Admin.btnDisconnect">&amp;√úhenda lahti</component>
+	<component name="Admin.btnConnect">&amp;‹henda</component>
+	<component name="Admin.btnDisconnect">&amp;‹henda lahti</component>
 	<component name="Admin.edtPort">29999</component>
 	<component name="Admin.lblPassword">Parool:</component>
 	<component name="Admin.lblinsimPort">InSim port:</component>
 	<component name="Admin.chkRelay">Connect to Relay</component>
 	<component name="Admin.Admin">Admin</component>
-	<component name="Admin.kick">Viska v√§lja</component>
+	<component name="Admin.kick">Viska v‰lja</component>
     <component name="Admin.btnBan">Keela</component>
     <component name="Admin.spectate">Sunni pealtvaatajaks</component>
     <component name="Admin.ban12h">12 tundi</component>
-    <component name="Admin.ban1d">1 p√§ev</component>
-    <component name="Admin.ban2d">2 p√§eva</component>
-    <component name="Admin.ban3d">3 p√§eva</component>
-    <component name="Admin.ban1w">1 n√§dal</component>
+    <component name="Admin.ban1d">1 p‰ev</component>
+    <component name="Admin.ban2d">2 p‰eva</component>
+    <component name="Admin.ban3d">3 p‰eva</component>
+    <component name="Admin.ban1w">1 n‰dal</component>
     <component name="Admin.banCustom">Muu...</component>
-	<component name="Admin.sendPrivate">Saada valitud s√µitjale</component>
+	<component name="Admin.sendPrivate">Saada valitud sıitjale</component>
 
 	<!--Ban Dialog Components -->
-    <component name="BanDialog.lblDays">P√§eva</component>
+    <component name="BanDialog.lblDays">P‰eva</component>
     <component name="BanDialog.ok">OK</component>
     <component name="BanDialog.cancel">Katkesta</component>
 	
 	<!--Join Server Dialog Components -->
 	<component name="JoinServerDialog.btnJoin">&amp;Liitu serveriga</component>
 	<component name="JoinServerDialog.lblServerName">Serveri nimi:</component>
-	<component name="JoinServerDialog.btnCancel">&amp;T√ºhista</component>
+	<component name="JoinServerDialog.btnCancel">&amp;T¸hista</component>
 	<component name="JoinServerDialog.lblPassword">Parool:</component>
 	<component name="JoinServerDialog.lblVersion">Versioon:</component>
 	<component name="JoinServerDialog.JoinServerDialog">Liitu serveriga</component>
@@ -180,38 +182,38 @@
 	<component name="ServerInformationForm.label1">Rada:</component>
 	<component name="ServerInformationForm.lblInformation">Informatsioon:</component>
 	<component name="ServerInformationForm.label5">Parool:</component>
-	<component name="ServerInformationForm.groupBox1">M√§ngijad</component>
-	<component name="ServerInformationForm.btnAddFriend">&amp;Lisa s√µpradesse</component>
+	<component name="ServerInformationForm.groupBox1">M‰ngijad</component>
+	<component name="ServerInformationForm.btnAddFriend">&amp;Lisa sıpradesse</component>
 	<component name="ServerInformationForm.lblCars">Autod:</component>
 	<component name="ServerInformationForm.lblPrivate">Privaat:</component>
 	<component name="ServerInformationForm.ServerInformationForm">Serveri informatsioon</component>
 	<component name="ServerInformationForm.buttonInfoStop">&amp;Peata</component>
-	<component name="ServerInformationForm.QueryTimeOut">P√§ring aegus</component>
-	<component name="ServerInformationForm.EmptyServer">M√§ngijaid ei leitud serverist.</component>
+	<component name="ServerInformationForm.QueryTimeOut">P‰ring aegus</component>
+	<component name="ServerInformationForm.EmptyServer">M‰ngijaid ei leitud serverist.</component>
 	<component name="ServerInformationForm.NoServer">Ei leia pubstat'i!</component>
-	<component name="ServerInformationForm.PubstatError">Viga pubstat'i p√§ringul!</component>
+	<component name="ServerInformationForm.PubstatError">Viga pubstat'i p‰ringul!</component>
 
 	<!--Message Box Components -->
-	<component name="MasterServerError">V√µimetu LFSi peaserveriga √ºhenduma. V√µib olla on see maas, v√µi on sinu tulem√ºr korralikult seadistamata.</component>
+	<component name="MasterServerError">Vıimetu LFSi peaserveriga ¸henduma. Vıib olla on see maas, vıi on sinu tulem¸r korralikult seadistamata.</component>
 	<component name="StartPSPError">Error executing {0} ({1})\n{2}\nRecheck your configuration.</component>
 	<component name="StartLFSError">Error executing LFS.exe\n{0}\nRecheck your configuration.</component>
-	<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\nAutori√µigused 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nSav√µids eda programmi modifitseerida ja √ºmber paigutada GPLi tingimuste all (versioon 2 v√µi hilisem) \nA koopia GPList on sisaldatud 'COPYING' failis, mis on sisaldatud Browse For Speedis.\nWeme ei anna selle programmida mitte mingit garantiid.</component>
+	<component name="AboutBoxText">Browse For Speed {0} - http://www.browseforspeed.net\nAutoriıigused 2006 Richard Nelson, Philip Nelson, Ben Kenny\n\nSavıids eda programmi modifitseerida ja ¸mber paigutada GPLi tingimuste all (versioon 2 vıi hilisem) \nA koopia GPList on sisaldatud 'COPYING' failis, mis on sisaldatud Browse For Speedis.\nWeme ei anna selle programmida mitte mingit garantiid.</component>
 	<component name="AboutBoxTitle">Browse For Speedi kohta</component>
 	<component name="LoadFavError">Viga lemmikute laadimisel: {0}\nA koopia salvestatud kui {1}.tagavara</component>
 	<component name="SaveFavError">Viga lemmikserverite faili kirjutamisel ilmnes: {0}</component>
-	<component name="SaveFriendsError">Viga s√µprade faili kirjutamisel ilmnes: {0}</component>
-	<component name="LoadFriendsError">Viga s√µprade laadimisel: {0}\nA koopia salvestatud kui {1}.tagavara</component>
-	<component name="PlayerNameTooLongError">M√§ngija nimi liiga pikk, peab olema v√§hem kui 32 m√§rki</component>
+	<component name="SaveFriendsError">Viga sıprade faili kirjutamisel ilmnes: {0}</component>
+	<component name="LoadFriendsError">Viga sıprade laadimisel: {0}\nA koopia salvestatud kui {1}.tagavara</component>
+	<component name="PlayerNameTooLongError">M‰ngija nimi liiga pikk, peab olema v‰hem kui 32 m‰rki</component>
 	<component name="JoinPlayerQuery">Liitu {0} selle serveriga?\n{1}</component>
 	<component name="UserNotFound">Kasutajat ei leitud online</component>
 	<component name="RemoveFavQuery">Eemaldada {0} sinu lemmikutest?</component>
 	<component name="UpToDate">Su versioon on uusim.</component>
 	<component name="NewVersion">Uus versioon on olemas, kas sa tahad minna Allalaadimislehele?</component>
-	<component name="UpdateError">Viga versiooni kontrollil - v√µibolla on meie leht maas. Proovi uuesti hiljem!</component>
+	<component name="UpdateError">Viga versiooni kontrollil - vıibolla on meie leht maas. Proovi uuesti hiljem!</component>
 	<component name="InvalidPort">{0} ei ole kehtiv port - peab olema 1 ja 65535 vahel</component>
-	<component name="RemoveFriendQuery">Eemaldada {0} s√µpradenimekirjast?</component>
+	<component name="RemoveFriendQuery">Eemaldada {0} sıpradenimekirjast?</component>
 	<component name="JoinFriendQuery">Kas sa tahad liitud {0} kell {1?</component>
 	<component name="InvalidIPAddress">IP aadress peabolema vormis ipaadress:port</component>
 	<component name="AddFavError">Viga ilmnes lisades serverit lemmikutesse: {0}</component>
-	<component name="InSimError">Ei suutnud insimiga √ºhenduda!</component>
+	<component name="InSimError">Ei suutnud insimiga ¸henduda!</component>
 </language>

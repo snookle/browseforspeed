@@ -54,6 +54,8 @@
 	<component name="MainForm.cbPublic">Öffentlich</component>
 	<component name="MainForm.cbPrivate">Privat</component>
 	<component name="MainForm.cbFull">Voll</component>
+	<component name="MainForm.cbCruise">Cruise</component>
+	<component name="MainForm.cbReset">Can Reset</component>
 	<component name="MainForm.lblPingThreshold">Ping Grenzwert:</component>
 	<component name="MainForm.cbEmpty">Leer</component>
 	<component name="MainForm.columnHeaderName">Server Name</component>
