@@ -137,16 +137,18 @@ namespace BrowseForSpeed.Frontend
 				lvi = this.Items.Add(item.host.ToString());
 				lvi.Name = item.host.ToString();
 				lvi.Tag = item.host;
+				//Columns.
+				//MessageBox.Show(Columns.ContainsKey("Ping").ToString());
 				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, LFSQuery.removeColourCodes(item.hostname)));
 				string cars = MainForm.CarsToString(LFSQuery.getCarNames(item.cars));
 				string rules = MainForm.RulesToString(item.rules);
 				lvi.SubItems.Insert(1, new ListViewItem.ListViewSubItem(lvi, item.ping.ToString()));
-				if (this is FavouriteListView){
-					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, MainForm.VersionToString(item.version)));
-				} else {
+				//if (this is FavouriteListView){
+				//	lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, MainForm.VersionToString(item.version)));
+				//} else {
 					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, item.passworded == true ? MainForm.languages.GetString("Global.Yes") : MainForm.languages.GetString("Global.No")));
-				}
-				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, item.players.ToString() +"/" + item.slots.ToString()));
+				//}
+				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, item.players.ToString() +"/" + item.slots.ToString() + " (" + item.adminslots + ")"));
 				lvi.SubItems.Insert(4, new ListViewItem.ListViewSubItem(lvi, rules));
 				lvi.SubItems.Insert(5, new ListViewItem.ListViewSubItem(lvi, item.track));
 				lvi.SubItems.Insert(6, new ListViewItem.ListViewSubItem(lvi, cars));
