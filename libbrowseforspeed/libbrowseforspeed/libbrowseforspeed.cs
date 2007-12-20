@@ -65,7 +65,7 @@ namespace libbrowseforspeed {
 
 		public static ulong[] CAR_BITS = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 1 << 19};
 		public static string[] CAR_NAMES = {"XFG", "XRG", "XRT", "RB4", "FXO", "LX4", "LX6", "MRT", "UF1", "RAC", "FZ5", "FOX", "XFR", "UFR", "FO8", "FXR", "XRR", "FZR", "BF1", "FBM"};
-		public static ulong[] CAR_GROUP_BITS = {524287, 280704, 229376, 12561, 1600, 259, 28};
+		public static ulong[] CAR_GROUP_BITS = {((1 << 20) - 1), 804992, 229376, 12561, 1600, 259, 28};
 		public static string[] CAR_GROUP_NAMES = {"ALL", "SS", "GTR", "FWD", "LRF", "STD", "TBO"};
 		public static ulong[] CAR_GROUP_DISALLOW = {0, 243583, 804992, 511726, 522368, 524028, 392896};
 		public static ulong[] CAR_GROUP_DONTCARE = {524287, 804992, 14207, 12561, 319, 259, 291};
@@ -82,36 +82,6 @@ namespace libbrowseforspeed {
 		public static int QTHREADS = 16;
 		public static int THREAD_WAIT = 150;
 		public static bool xpsp2_wait = true;
-
-		public const ulong CAR_XFG = 1;
-		public const ulong CAR_XRG = 1 << 1;
-		public const ulong CAR_XRT = 1 << 2;
-		public const ulong CAR_RB4 = 1 << 3;
-		public const ulong CAR_FXO = 1 << 4;
-		public const ulong CAR_LX4 = 1 << 5;
-		public const ulong CAR_LX6 = 1 << 6;
-		public const ulong CAR_MRT = 1 << 7;
-		public const ulong CAR_UF1 = 1 << 8;
-		public const ulong CAR_RAC = 1 << 9;
-		public const ulong CAR_FZ5 = 1 << 10;
-		public const ulong CAR_FOX = 1 << 11;
-		public const ulong CAR_XFR = 1 << 12;
-		public const ulong CAR_UFR = 1 << 13;
-		public const ulong CAR_FO8 = 1 << 14;
-		public const ulong CAR_FXR = 1 << 15;
-		public const ulong CAR_XRR = 1 << 16;
-		public const ulong CAR_FZR = 1 << 17;
-		public const ulong CAR_BF1 = 1 << 18;
-		public const ulong CAR_FBM = 1 << 19;
-
-		//car groups
-		public const ulong CARS_ALL = (1 << 20) - 1;
-		public const ulong CARS_STD = 259;
-		public const ulong CARS_TBO = 28;
-		public const ulong CARS_LRF = 1600;
-		public const ulong CARS_FWD = 12561;
-		public const ulong CARS_GTR = 229376;
-		public const ulong CARS_SS = 804992;
 
 		private static bool keepQuerying;
 		private static int totalServers;
