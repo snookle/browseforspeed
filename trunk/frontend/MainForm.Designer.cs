@@ -45,7 +45,6 @@ namespace BrowseForSpeed.Frontend
 		{
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("No Friends Online");
-			System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("No Friends Online");
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.joinServerToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,8 +56,6 @@ namespace BrowseForSpeed.Frontend
 			this.btnQuickRefresh = new System.Windows.Forms.Button();
 			this.edtFindUserMain = new System.Windows.Forms.TextBox();
 			this.lblFindUserMain = new System.Windows.Forms.Label();
-			this.edtPasswordMain = new System.Windows.Forms.TextBox();
-			this.lblPasswordMain = new System.Windows.Forms.Label();
 			this.btnFindUserMain = new System.Windows.Forms.Button();
 			this.gbFilters = new System.Windows.Forms.GroupBox();
 			this.cbCruise = new System.Windows.Forms.CheckBox();
@@ -270,8 +267,6 @@ namespace BrowseForSpeed.Frontend
 			this.tabMain.Controls.Add(this.btnQuickRefresh);
 			this.tabMain.Controls.Add(this.edtFindUserMain);
 			this.tabMain.Controls.Add(this.lblFindUserMain);
-			this.tabMain.Controls.Add(this.edtPasswordMain);
-			this.tabMain.Controls.Add(this.lblPasswordMain);
 			this.tabMain.Controls.Add(this.btnFindUserMain);
 			this.tabMain.Controls.Add(this.gbFilters);
 			this.tabMain.Controls.Add(this.lvMain);
@@ -316,25 +311,6 @@ namespace BrowseForSpeed.Frontend
 			this.lblFindUserMain.TabIndex = 8;
 			this.lblFindUserMain.Text = "Find User:";
 			this.lblFindUserMain.TextAlign = System.Drawing.ContentAlignment.TopRight;
-			// 
-			// edtPasswordMain
-			// 
-			this.edtPasswordMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.edtPasswordMain.Location = new System.Drawing.Point(380, 535);
-			this.edtPasswordMain.Name = "edtPasswordMain";
-			this.edtPasswordMain.Size = new System.Drawing.Size(139, 21);
-			this.edtPasswordMain.TabIndex = 7;
-			// 
-			// lblPasswordMain
-			// 
-			this.lblPasswordMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.lblPasswordMain.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.lblPasswordMain.Location = new System.Drawing.Point(226, 538);
-			this.lblPasswordMain.Name = "lblPasswordMain";
-			this.lblPasswordMain.Size = new System.Drawing.Size(148, 16);
-			this.lblPasswordMain.TabIndex = 6;
-			this.lblPasswordMain.Text = "Server Password:";
-			this.lblPasswordMain.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// btnFindUserMain
 			// 
@@ -959,8 +935,7 @@ namespace BrowseForSpeed.Frontend
 			this.lvFriends.GridLines = true;
 			this.lvFriends.HideOffline = false;
 			this.lvFriends.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-									listViewItem1,
-									listViewItem2});
+									listViewItem1});
 			this.lvFriends.Location = new System.Drawing.Point(8, 6);
 			this.lvFriends.MultiSelect = false;
 			this.lvFriends.Name = "lvFriends";
@@ -1674,7 +1649,6 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.GroupBox gbFilters;
 		private System.Windows.Forms.Label lblExePathConfig;
 		private System.Windows.Forms.Label lblExeDescriptionConfig;
-		private System.Windows.Forms.Label lblPasswordMain;
 		private System.Windows.Forms.Label lblFindUserMain;
 		private System.Windows.Forms.Label lblQueryWaitHelp;
 		private System.Windows.Forms.Label lblQueryWaitDescription;
@@ -1742,7 +1716,6 @@ namespace BrowseForSpeed.Frontend
 		private MainListView lvMain;
 		private System.Windows.Forms.Button btnRefreshMain;
 		private System.Windows.Forms.Button btnFindUserMain;
-		private System.Windows.Forms.TextBox edtPasswordMain;
 		private System.Windows.Forms.TextBox edtFindUserMain;
 		private System.Windows.Forms.Button btnJoinMain;
 		private System.Windows.Forms.ColumnHeader columnPrivate;

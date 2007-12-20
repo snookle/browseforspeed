@@ -52,8 +52,6 @@ namespace BrowseForSpeed.Frontend
 			this.labe3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblInformation = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.textInfoPassword = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.listPlayers = new System.Windows.Forms.ListBox();
 			this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -140,24 +138,6 @@ namespace BrowseForSpeed.Frontend
 			this.lblInformation.TabIndex = 7;
 			this.lblInformation.Text = "Information:";
 			this.lblInformation.TextAlign = System.Drawing.ContentAlignment.TopRight;
-			// 
-			// label5
-			// 
-			this.label5.Location = new System.Drawing.Point(93, 348);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(106, 23);
-			this.label5.TabIndex = 8;
-			this.label5.Text = "Password:";
-			this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
-			// 
-			// textInfoPassword
-			// 
-			this.textInfoPassword.Location = new System.Drawing.Point(205, 345);
-			this.textInfoPassword.Name = "textInfoPassword";
-			this.textInfoPassword.Size = new System.Drawing.Size(90, 21);
-			this.textInfoPassword.TabIndex = 9;
-			this.textInfoPassword.Leave += new System.EventHandler(this.TextInfoPasswordLeave);
-			this.textInfoPassword.TextChanged += new System.EventHandler(this.TextInfoPasswordTextChanged);
 			// 
 			// groupBox1
 			// 
@@ -279,12 +259,10 @@ namespace BrowseForSpeed.Frontend
 			this.Controls.Add(this.lblCars);
 			this.Controls.Add(this.labelServerName);
 			this.Controls.Add(this.groupBox1);
-			this.Controls.Add(this.textInfoPassword);
 			this.Controls.Add(this.lblInformation);
 			this.Controls.Add(this.lblServerName);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.labe3);
-			this.Controls.Add(this.label5);
 			this.Controls.Add(this.buttonInfoRefresh);
 			this.Controls.Add(this.buttonInfoClose);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -298,7 +276,6 @@ namespace BrowseForSpeed.Frontend
 			this.groupBox1.ResumeLayout(false);
 			this.contextMenu.ResumeLayout(false);
 			this.ResumeLayout(false);
-			this.PerformLayout();
 		}
 		private System.Windows.Forms.Label lblServerName;
 		private System.Windows.Forms.Label lblInformation;
@@ -317,9 +294,7 @@ namespace BrowseForSpeed.Frontend
 		private System.Windows.Forms.Label labelServerName;
 		private System.Windows.Forms.Button buttonInfoClose;
 		private System.Windows.Forms.Button buttonInfoRefresh;
-		private System.Windows.Forms.TextBox textInfoPassword;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label1;
 	}
 }

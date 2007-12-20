@@ -51,8 +51,6 @@ namespace BrowseForSpeed.Frontend
 			this.edtServerName = new System.Windows.Forms.TextBox();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.cbVersion = new System.Windows.Forms.ComboBox();
-			this.lblPassword = new System.Windows.Forms.Label();
-			this.edtPassword = new System.Windows.Forms.TextBox();
 			this.lblVersion = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
@@ -60,7 +58,7 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.btnJoin.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.btnJoin.Enabled = false;
-			this.btnJoin.Location = new System.Drawing.Point(61, 97);
+			this.btnJoin.Location = new System.Drawing.Point(61, 69);
 			this.btnJoin.Name = "btnJoin";
 			this.btnJoin.Size = new System.Drawing.Size(108, 23);
 			this.btnJoin.TabIndex = 4;
@@ -79,14 +77,14 @@ namespace BrowseForSpeed.Frontend
 			// 
 			this.edtServerName.Location = new System.Drawing.Point(92, 14);
 			this.edtServerName.Name = "edtServerName";
-			this.edtServerName.Size = new System.Drawing.Size(192, 21);
+			this.edtServerName.Size = new System.Drawing.Size(192, 20);
 			this.edtServerName.TabIndex = 1;
 			this.edtServerName.TextChanged += new System.EventHandler(this.EdtServerNameTextChanged);
 			// 
 			// btnCancel
 			// 
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.btnCancel.Location = new System.Drawing.Point(175, 97);
+			this.btnCancel.Location = new System.Drawing.Point(175, 69);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(109, 23);
 			this.btnCancel.TabIndex = 5;
@@ -101,29 +99,14 @@ namespace BrowseForSpeed.Frontend
 									"S2",
 									"S1",
 									"Demo"});
-			this.cbVersion.Location = new System.Drawing.Point(92, 68);
+			this.cbVersion.Location = new System.Drawing.Point(92, 40);
 			this.cbVersion.Name = "cbVersion";
 			this.cbVersion.Size = new System.Drawing.Size(88, 21);
 			this.cbVersion.TabIndex = 3;
 			// 
-			// lblPassword
-			// 
-			this.lblPassword.Location = new System.Drawing.Point(12, 45);
-			this.lblPassword.Name = "lblPassword";
-			this.lblPassword.Size = new System.Drawing.Size(74, 23);
-			this.lblPassword.TabIndex = 5;
-			this.lblPassword.Text = "Password:";
-			// 
-			// edtPassword
-			// 
-			this.edtPassword.Location = new System.Drawing.Point(92, 41);
-			this.edtPassword.Name = "edtPassword";
-			this.edtPassword.Size = new System.Drawing.Size(192, 21);
-			this.edtPassword.TabIndex = 2;
-			// 
 			// lblVersion
 			// 
-			this.lblVersion.Location = new System.Drawing.Point(12, 71);
+			this.lblVersion.Location = new System.Drawing.Point(12, 43);
 			this.lblVersion.Name = "lblVersion";
 			this.lblVersion.Size = new System.Drawing.Size(74, 23);
 			this.lblVersion.TabIndex = 7;
@@ -135,10 +118,8 @@ namespace BrowseForSpeed.Frontend
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnCancel;
-			this.ClientSize = new System.Drawing.Size(298, 128);
+			this.ClientSize = new System.Drawing.Size(298, 101);
 			this.Controls.Add(this.lblVersion);
-			this.Controls.Add(this.edtPassword);
-			this.Controls.Add(this.lblPassword);
 			this.Controls.Add(this.cbVersion);
 			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.edtServerName);
@@ -156,9 +137,7 @@ namespace BrowseForSpeed.Frontend
 			this.PerformLayout();
 		}
 		private System.Windows.Forms.Label lblServerName;
-		private System.Windows.Forms.Label lblPassword;
 		private System.Windows.Forms.Label lblVersion;
-		private System.Windows.Forms.TextBox edtPassword;
 		private System.Windows.Forms.ComboBox cbVersion;
 		private System.Windows.Forms.Button btnCancel;
 		private System.Windows.Forms.TextBox edtServerName;
