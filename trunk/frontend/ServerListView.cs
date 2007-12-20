@@ -329,6 +329,7 @@ namespace BrowseForSpeed.Frontend
 			this.readFailed = info.readFailed;
 			this.rules = info.rules;
 			this.slots = info.slots;
+			this.adminslots = info.adminslots;
 			this.success = info.success;
 			this.totalServers = info.totalServers;
 			this.track = info.track;
