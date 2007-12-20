@@ -34,9 +34,6 @@ using System.Reflection;
 
 namespace BrowseForSpeed.Frontend
 {
-	public enum QueryType{Main, Favourite, Friend, Quick}
-
-
 	public partial class MainForm
 	{
 		static string bfs_version = "0.9";
@@ -75,6 +72,7 @@ namespace BrowseForSpeed.Frontend
 		[STAThread]
 		public static void Main(string[] args)
 		{
+			Console.SetOut(new StreamWriter("log.txt", true));
             Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MainForm());
@@ -317,10 +315,20 @@ namespace BrowseForSpeed.Frontend
 		}
 
 
-		void LoadLFS(String hostName, String mode, String password)
+		//void LoadLFS(String hostName, String mode, bool needPassword)
+		void LoadLFS(ServerInformation item)
 		{
+			if (item.passworded) {
+					PasswordDialog p = new PasswordDialog(item.password);
+					if (p.ShowDialog() == DialogResult.OK){
+						item.password = p.Password;
+					} else {
+						MessageBox.Show("Invalid Password");
+						return;
+					}
+				}
 			String lfsPath = config.lfsPath;
-			ws= this.WindowState;
+			ws = this.WindowState;
 			LFSQuery.stopQuerying();
 			prestart = new Process[config.psp.Count];
 			for(int i = 0; i < config.psp.Count; i++){
@@ -344,7 +352,7 @@ namespace BrowseForSpeed.Frontend
 				lfs.EnableRaisingEvents = true;
 				lfs.StartInfo.FileName = lfsPath;
 				lfs.StartInfo.WorkingDirectory = Path.GetDirectoryName(lfsPath);
-				lfs.StartInfo.Arguments = "/join=" + hostName + " /mode=" + mode + " /pass=" + password + "/insim=" + config.insimPort.ToString();
+				lfs.StartInfo.Arguments = "/join=" + item.rawHostname + " /mode=" + VersionToString(item.version) + " /pass=" + item.password + "/insim=" + config.insimPort.ToString();
 				lfs.Start();
 				this.WindowState = FormWindowState.Minimized;
 			} catch (Exception ex) {
@@ -373,40 +381,26 @@ namespace BrowseForSpeed.Frontend
 
 		void btnJoinClick(object sender, System.EventArgs e) {
 			ServerListItem item;
-			string pass = "";
-			bool writefav = false;
 			if (sender is Button) {
 				if (((Button)sender).Name == "btnJoinMain") {
 					item = lvMain.GetSelectedServer();
 				} else { //is this even possible?
+						// yes, there's a btnJoinFav
 					item = lvFavourites.GetSelectedServer();
-					pass = item.password;
-					//writefav = true; WHY?!?
 				}
 			} else if (sender is ToolStripMenuItem) {
 				if (((ToolStripMenuItem)sender).Name == "joinServerToolStripMenuItem") {
 					item = lvMain.GetSelectedServer();
-					pass = edtPasswordMain.Text;
 				} else {
 					item = lvFavourites.GetSelectedServer();
-					pass = item.password;
-					//writefav = true;
 				}
 			} else {
 				item = ((ServerListView)sender).GetSelectedServer();
-				if (item.password != null && item.password != "") {
-					pass = item.password;
-				} else {
-					pass = edtPasswordMain.Text;
-				}
 			}
 			if (item == null)
 				return;
-			if (writefav) { //why would anyone put the password in there?
-				lvFavourites.GetSelectedServer().password = edtPasswordMain.Text;
-				lvFavourites.Save();
-			}
-			LoadLFS(item.rawHostname, VersionToString(item.version), pass);
+
+			LoadLFS(item);
 		}
 
 		void lvMainSelectedIndexChanged(object sender, System.EventArgs e)
@@ -506,7 +500,7 @@ namespace BrowseForSpeed.Frontend
 			if (s.ShowDialog(this) == DialogResult.OK) {
 				info.password = s.GetInfo().password;
 				lvFavourites.Save();
-				LoadLFS(s.GetInfo().rawHostname, VersionToString(s.GetInfo().version), s.GetInfo().password);
+				LoadLFS(s.GetInfo());
 			}
 		}
 
@@ -549,7 +543,12 @@ namespace BrowseForSpeed.Frontend
 				hostname = LFSQuery.removeColourCodes(hostname);
 				string message = String.Format(languages.GetString("JoinPlayerQuery"), player, hostname);
 				if (MessageBox.Show(message, languages.GetString("MainForm.MainForm"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes){
-					LoadLFS(hostname, "S2", "");
+					ServerInformation si = new ServerInformation();
+					si.hostname = hostname;
+					si.version = StringToVersion("S2");
+					si.password = "";
+					si.passworded = false;
+					LoadLFS(si);
 				}
 			} else {
 				MessageBox.Show(languages.GetString("UserNotFound"), languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -663,6 +662,7 @@ namespace BrowseForSpeed.Frontend
 					MessageBox.Show(languages.GetString("UpdateError"), languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
+			if (exiting) return;
 			SetControlProperty(btnCheckNewVersion, "Enabled", true);
 		}
 
@@ -762,13 +762,7 @@ namespace BrowseForSpeed.Frontend
 			FriendListItem friend = lvFriends.GetSelectedFriend();
 			if ((friend == null) || (friend.status != FriendStatus.Online))
 			    return;
-
-			ServerInformation info = lvFavourites.GetServer(friend.server.hostname);
-			string password = edtPasswordMain.Text;
-			if (info != null) {
-				password = info.password;
-			}
-			LoadLFS(friend.server.hostname, "S2", password);
+			LoadLFS(friend.server);
 		}
 
 		void BtnAddFriendClick(object sender, System.EventArgs e)
@@ -818,13 +812,8 @@ namespace BrowseForSpeed.Frontend
 					return;
 
 				string message = String.Format(languages.GetString("JoinFriendQuery"), friend.name, friend.server.hostname);
-				ServerInformation info = lvFavourites.GetServer(friend.server.hostname);
-				string password = edtPasswordMain.Text;
-				if (info != null) {
-					password = info.password;
-				}
 				if (MessageBox.Show(message, languages.GetString("MainForm.MainForm"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
-					LoadLFS(friend.server.rawHostname, "S2", password);
+					LoadLFS(friend.server);
 				}
 			} else {
 				ViewServerInformationToolStripMenuItemClick(viewServerInformationFriend, e);
@@ -1245,7 +1234,10 @@ namespace BrowseForSpeed.Frontend
 		{
 			JoinServerDialog j = new JoinServerDialog();
 			if (j.ShowDialog() == DialogResult.OK){
-				LoadLFS(j.serverName, j.version, j.password);
+				ServerInformation si = new ServerInformation();
+				si.hostname = j.serverName;
+				si.version = StringToVersion(j.version);
+				LoadLFS(si);
 			}
 		}
 
@@ -1581,5 +1573,7 @@ namespace BrowseForSpeed.Frontend
 			}
 		}
 	}
+	
+	public enum QueryType{Main, Favourite, Friend, Quick}
 }
 

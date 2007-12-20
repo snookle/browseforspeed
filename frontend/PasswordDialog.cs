@@ -21,50 +21,27 @@ using System.Windows.Forms;
 namespace BrowseForSpeed.Frontend
 {
 	/// <summary>
-	/// Description of Form1.
+	/// Description of PasswordDialog.
 	/// </summary>
-	public partial class JoinServerDialog
+	public partial class PasswordDialog : Form
 	{
-		public JoinServerDialog()
+		public PasswordDialog(string password)
 		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
 			InitializeComponent();
-			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
+			if (!String.IsNullOrEmpty(password))
+				edtPassword.Text = password;
 		}
 		
-		void JoinServerDialogLoad(object sender, System.EventArgs e)
-		{
-			cbVersion.SelectedIndex = 0;
-			edtServerName.Text = "";
-			MainForm.UpdateControls(this, "JoinServerDialog");
-		}
-		
-		void EdtServerNameTextChanged(object sender, System.EventArgs e)
-		{
-			btnJoin.Enabled = (edtServerName.Text != "");
-			
-		}
-		
-		public string serverName {
-			get	{
-				return edtServerName.Text;
-			}
-		}
-		
-		public string version {
+		public string Password {
 			get {
-				return cbVersion.SelectedItem.ToString();
+				return edtPassword.Text;
 			}
 		}
 		
-		void BtnJoinClick(object sender, EventArgs e)
+		void PasswordDialogLoad(object sender, EventArgs e)
 		{
-			
+			edtPassword.Text = "";
+			MainForm.UpdateControls(this, "PasswordDialog");
 		}
 	}
 }
