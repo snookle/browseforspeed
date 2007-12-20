@@ -289,7 +289,7 @@ namespace libbrowseforspeed {
 				serverinfo.players = (int)recbuf[1];
 				serverinfo.slots = (int)recbuf[2];
 				serverinfo.host = host.info.host;
-				serverinfo.passworded = host.passworded;
+				serverinfo.passworded = (serverinfo.rules & 8) != 0;
 				serverinfo.totalServers = LFSQuery.totalServers;
 				serverinfo.hostname = getConvertedLFSString(recbuf, 5, 32);
                 serverinfo.rawHostname = getLFSString(recbuf, 5, 32);
@@ -414,7 +414,7 @@ namespace libbrowseforspeed {
 					hostInfo h;
 					h.info = new ServerInformation();
 					h.info.host = ips[j];
-					h.passworded = (recbuf[5+j] == 0x09);
+					h.passworded = (recbuf[5+j] & 8 == 0);
 					h.callbackObj = callbackObj;
 					h.version = version;
 					allHosts.Add(h);
