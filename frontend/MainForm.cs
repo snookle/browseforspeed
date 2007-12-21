@@ -263,7 +263,7 @@ namespace BrowseForSpeed.Frontend
 			    	AddServerDelegate addServer = new AddServerDelegate(AddServerToList);
 			    	this.BeginInvoke(addServer, new object[] {info, list});
 				}
-			} catch(Exception e){ MessageBox.Show(e.Message + e.StackTrace, languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
+			} catch(Exception e){ /*MessageBox.Show(e.Message + e.StackTrace, languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation); */}
   		}
 
 		delegate void AddServerDelegate(ServerInformation info, ServerListView list);
