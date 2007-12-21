@@ -176,7 +176,7 @@ namespace BrowseForSpeed.Frontend
 				switch (f.type){
 						case FilterType.Cruise: item.filtered = (item.filtered || ((item.rules & (byte)(LFSQuery.msFilters["Cruise"])) != 0) && !(bool)f.value); break;
 						case FilterType.Reset: item.filtered = (item.filtered || ((item.rules & (byte)(LFSQuery.msFilters["Can Reset"])) != 0) && !(bool)f.value); break;
-						case FilterType.Track: item.filtered = item.filtered || !(item.track.Contains((string)f.value)); break;
+						case FilterType.Track: item.filtered = item.filtered || ((item.track != null) && !(item.track.Contains((string)f.value))); break;
 						case FilterType.Empty: item.filtered = (item.filtered || ((item.players == 0) && !(bool)f.value)); break;
 						case FilterType.Full : item.filtered = (item.filtered || ((item.players == item.slots) && !(bool)f.value)); break;
 						case FilterType.Private : item.filtered = (item.filtered || ((item.passworded == true) && !(bool)f.value)); break;
