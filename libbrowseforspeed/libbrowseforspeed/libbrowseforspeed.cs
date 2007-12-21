@@ -1,4 +1,4 @@
-// Copyright (C) 2006 Richard Nelson, Ben Kenny, Philip Nelson
+﻿// Copyright (C) 2006 Richard Nelson, Ben Kenny, Philip Nelson
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -414,7 +414,7 @@ namespace libbrowseforspeed {
 					hostInfo h;
 					h.info = new ServerInformation();
 					h.info.host = ips[j];
-					h.passworded = (recbuf[5+j] & 8 == 0);
+					h.passworded = ((recbuf[5+j] & 8) == 0);
 					h.callbackObj = callbackObj;
 					h.version = version;
 					allHosts.Add(h);
