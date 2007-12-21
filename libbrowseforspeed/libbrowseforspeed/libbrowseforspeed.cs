@@ -67,8 +67,8 @@ namespace libbrowseforspeed {
 		public static string[] CAR_NAMES = {"XFG", "XRG", "XRT", "RB4", "FXO", "LX4", "LX6", "MRT", "UF1", "RAC", "FZ5", "FOX", "XFR", "UFR", "FO8", "FXR", "XRR", "FZR", "BF1", "FBM"};
 		public static ulong[] CAR_GROUP_BITS = {((1 << 20) - 1), 804992, 229376, 12561, 1600, 259, 28};
 		public static string[] CAR_GROUP_NAMES = {"ALL", "SS", "GTR", "FWD", "LRF", "STD", "TBO"};
-		public static ulong[] CAR_GROUP_DISALLOW = {0, 243583, 804992, 511726, 522368, 524028, 392896};
-		public static ulong[] CAR_GROUP_DONTCARE = {524287, 804992, 14207, 12561, 319, 259, 291};
+		public static ulong[] CAR_GROUP_DISALLOW = {0, 243583, 1329280, 1036014, 1046656, 1048316, 1048256};
+		public static ulong[] CAR_GROUP_DONTCARE = {((1 << 20) - 1), 1853568, 14207, 12561, 319, 259, 291};
 		public static byte VERSION_DEMO = (byte)0x00;
 		public static byte VERSION_S1 = (byte)0x01;
 		public static byte VERSION_S2 = (byte)0x02;
@@ -196,11 +196,11 @@ namespace libbrowseforspeed {
 			}
 
 			byte[] send_query1 = {
-				0x0c, 0x02, 0x05, 0x58, 0x1f, 0x1d, 0x01, 0x36,
+				0x0c, 0x02, 0x05, 0x59, 0x00, 0x1d, 0x01, 0x36,
 				0x4e, 0x00, 0x00, 0x00, 0x00
 			};
 			byte[] send_query2 = {
-				0x0c, 0x02, 0x05, 0x58, 0x1f, 0x1d, 0x02, 0x36,
+				0x0c, 0x02, 0x05, 0x59, 0x00, 0x1d, 0x02, 0x36,
 				0x4e, 0x00, 0x00, 0x00, 0x00
 			};
 			/*byte[] send_query3 = {
@@ -546,8 +546,10 @@ namespace libbrowseforspeed {
 			ArrayList carNames = new ArrayList();
 			for (int i = 0; i < CAR_GROUP_BITS.Length; ++i) {
 				if (((c & CAR_GROUP_BITS[i]) != 0) && c >= CAR_GROUP_BITS[i]) {
-					carNames.Add(CAR_GROUP_NAMES[i]);
-					c -= CAR_GROUP_BITS[i];
+					if ((c & CAR_GROUP_DISALLOW[i]) == 0) {
+						carNames.Add(CAR_GROUP_NAMES[i]);
+						c -= CAR_GROUP_BITS[i];
+					}
 				}
 			}
 			for (int i = 0; i < LFSQuery.CAR_BITS.Length; ++i) {
