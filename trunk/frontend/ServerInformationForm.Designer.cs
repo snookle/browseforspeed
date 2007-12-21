@@ -64,6 +64,7 @@ namespace BrowseForSpeed.Frontend
 			this.labelTrack = new System.Windows.Forms.Label();
 			this.lblPrivate = new System.Windows.Forms.Label();
 			this.labelPrivate = new System.Windows.Forms.Label();
+			this.cbWait = new System.Windows.Forms.CheckBox();
 			this.groupBox1.SuspendLayout();
 			this.contextMenu.SuspendLayout();
 			this.SuspendLayout();
@@ -244,11 +245,22 @@ namespace BrowseForSpeed.Frontend
 			this.labelPrivate.TabIndex = 18;
 			this.labelPrivate.Text = "N/A";
 			// 
+			// cbWait
+			// 
+			this.cbWait.Location = new System.Drawing.Point(120, 345);
+			this.cbWait.Name = "cbWait";
+			this.cbWait.Size = new System.Drawing.Size(175, 24);
+			this.cbWait.TabIndex = 19;
+			this.cbWait.Text = "Wait for free spot";
+			this.cbWait.UseVisualStyleBackColor = true;
+			this.cbWait.CheckedChanged += new System.EventHandler(this.CbWaitCheckedChanged);
+			// 
 			// ServerInformationForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(523, 373);
+			this.Controls.Add(this.cbWait);
 			this.Controls.Add(this.buttonInfoJoin);
 			this.Controls.Add(this.lblPrivate);
 			this.Controls.Add(this.labelPrivate);
@@ -277,6 +289,7 @@ namespace BrowseForSpeed.Frontend
 			this.contextMenu.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.CheckBox cbWait;
 		private System.Windows.Forms.Label lblServerName;
 		private System.Windows.Forms.Label lblInformation;
 		private System.Windows.Forms.Label lblCars;

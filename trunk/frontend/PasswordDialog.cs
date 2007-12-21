@@ -40,7 +40,7 @@ namespace BrowseForSpeed.Frontend
 		
 		void PasswordDialogLoad(object sender, EventArgs e)
 		{
-			edtPassword.Text = "";
+			//edtPassword.Text = "";
 			MainForm.UpdateControls(this, "PasswordDialog");
 		}
 	}

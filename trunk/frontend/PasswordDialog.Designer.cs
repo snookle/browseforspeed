@@ -47,6 +47,7 @@ namespace BrowseForSpeed.Frontend
 			this.label1 = new System.Windows.Forms.Label();
 			this.edtPassword = new System.Windows.Forms.TextBox();
 			this.btnPasswordJoin = new System.Windows.Forms.Button();
+			this.btnCancel = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -67,19 +68,31 @@ namespace BrowseForSpeed.Frontend
 			// 
 			// btnPasswordJoin
 			// 
-			this.btnPasswordJoin.Location = new System.Drawing.Point(12, 38);
+			this.btnPasswordJoin.DialogResult = System.Windows.Forms.DialogResult.OK;
+			this.btnPasswordJoin.Location = new System.Drawing.Point(266, 12);
 			this.btnPasswordJoin.Name = "btnPasswordJoin";
-			this.btnPasswordJoin.Size = new System.Drawing.Size(84, 23);
+			this.btnPasswordJoin.Size = new System.Drawing.Size(88, 23);
 			this.btnPasswordJoin.TabIndex = 2;
 			this.btnPasswordJoin.Text = "&Join Server";
 			this.btnPasswordJoin.UseVisualStyleBackColor = true;
+			// 
+			// btnCancel
+			// 
+			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			this.btnCancel.Location = new System.Drawing.Point(360, 12);
+			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(75, 23);
+			this.btnCancel.TabIndex = 3;
+			this.btnCancel.Text = "&Cancel";
+			this.btnCancel.UseVisualStyleBackColor = true;
 			// 
 			// PasswordDialog
 			// 
 			this.AcceptButton = this.btnPasswordJoin;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(272, 68);
+			this.ClientSize = new System.Drawing.Size(448, 44);
+			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.btnPasswordJoin);
 			this.Controls.Add(this.edtPassword);
 			this.Controls.Add(this.label1);
@@ -94,6 +107,7 @@ namespace BrowseForSpeed.Frontend
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button btnCancel;
 		private System.Windows.Forms.Button btnPasswordJoin;
 		private System.Windows.Forms.TextBox edtPassword;
 		private System.Windows.Forms.Label label1;

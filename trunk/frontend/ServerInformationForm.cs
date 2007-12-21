@@ -82,7 +82,6 @@ namespace BrowseForSpeed.Frontend
 		public void SetInfo(ServerInformation info) {
 			if (info == null) return;
 			this.info = info;
-			textInfoPassword.Text = info.password;
 		}
 		
 		public ServerInformation GetInfo() {
@@ -116,7 +115,6 @@ namespace BrowseForSpeed.Frontend
 			labe3.Text = MainForm.languages.GetString("ServerInformationForm.labe3");
 			label1.Text = MainForm.languages.GetString("ServerInformationForm.label1");
 			lblInformation.Text = MainForm.languages.GetString("ServerInformationForm.lblInformation");
-			label5.Text = MainForm.languages.GetString("ServerInformationForm.label5");
 			groupBox1.Text = MainForm.languages.GetString("ServerInformationForm.groupBox1");
 			btnAddFriend.Text = MainForm.languages.GetString("ServerInformationForm.btnAddFriend");
 			lblCars.Text = MainForm.languages.GetString("ServerInformationForm.lblCars");
@@ -203,11 +201,6 @@ namespace BrowseForSpeed.Frontend
 			} catch(Exception e){}
   		}
 		
-		void TextInfoPasswordLeave(object sender, System.EventArgs e)
-		{
-			this.info.password = textInfoPassword.Text;
-		}
-		
 		void ContextMenuOpening(object sender, System.ComponentModel.CancelEventArgs e)
 		{
 			btnAddFriend.Enabled = ((listPlayers.SelectedIndex != -1) && (listPlayers.Items[listPlayers.SelectedIndex].ToString() != MainForm.languages.GetString("ServerInformationForm.EmptyServer")));
@@ -221,12 +214,21 @@ namespace BrowseForSpeed.Frontend
 		}
 		
 		void TextInfoPasswordTextChanged(object sender, System.EventArgs e) {
-			info.password = textInfoPassword.Text;
+			//info.password = textInfoPassword.Text;
 		}
 		
 		void LabelInvalidated(object o, InvalidateEventArgs e)
 		{
 		//	MainForm.DrawColouredHostname(labelServerName.CreateGraphics(), info.rawHostname, labelServerName.Font, labelServerName.ClientRectangle);
 		}
-	}
+		
+		
+		void CbWaitCheckedChanged(object sender, EventArgs e)
+		{
+			CheckBox cb = sender as CheckBox;
+			if (cb.Checked) {
+				
+			}
+		}
+}
 }
