@@ -137,7 +137,6 @@ namespace BrowseForSpeed.Frontend
 				lvi = this.Items.Add(item.host.ToString());
 				lvi.Name = item.host.ToString();
 				lvi.Tag = item.host;
-				//Columns.
 				//MessageBox.Show(Columns.ContainsKey("Ping").ToString());
 				lvi.SubItems.Insert(0, new ListViewItem.ListViewSubItem(lvi, LFSQuery.removeColourCodes(item.hostname)));
 				string cars = MainForm.CarsToString(LFSQuery.getCarNames(item.cars));

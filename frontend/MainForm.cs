@@ -316,13 +316,16 @@ namespace BrowseForSpeed.Frontend
 
 
 		//void LoadLFS(String hostName, String mode, bool needPassword)
-		void LoadLFS(ServerInformation item)
+		void LoadLFS(ref ServerListItem item)
 		{
 			if (item.passworded) {
 					PasswordDialog p = new PasswordDialog(item.password);
-					if (p.ShowDialog() == DialogResult.OK){
+					DialogResult result = p.ShowDialog();
+					if (result == DialogResult.OK){
 						item.password = p.Password;
-					} else {
+					} else if (result == DialogResult.Cancel) {
+						return;
+					} else {//put in cancel case.
 						MessageBox.Show("Invalid Password");
 						return;
 					}
@@ -400,7 +403,8 @@ namespace BrowseForSpeed.Frontend
 			if (item == null)
 				return;
 
-			LoadLFS(item);
+			LoadLFS(ref item);
+			lvFavourites.Save();
 		}
 
 		void lvMainSelectedIndexChanged(object sender, System.EventArgs e)
@@ -498,9 +502,8 @@ namespace BrowseForSpeed.Frontend
 				return;
 			s.SetInfo(info);
 			if (s.ShowDialog(this) == DialogResult.OK) {
-				info.password = s.GetInfo().password;
-				lvFavourites.Save();
-				LoadLFS(s.GetInfo());
+				LoadLFS(ref info);
+				lvFavourites.Save(); //hope this works!
 			}
 		}
 
@@ -543,12 +546,12 @@ namespace BrowseForSpeed.Frontend
 				hostname = LFSQuery.removeColourCodes(hostname);
 				string message = String.Format(languages.GetString("JoinPlayerQuery"), player, hostname);
 				if (MessageBox.Show(message, languages.GetString("MainForm.MainForm"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes){
-					ServerInformation si = new ServerInformation();
+					ServerListItem si = new ServerListItem(new ServerInformation());
 					si.hostname = hostname;
 					si.version = StringToVersion("S2");
 					si.password = "";
 					si.passworded = false;
-					LoadLFS(si);
+					LoadLFS(ref si);
 				}
 			} else {
 				MessageBox.Show(languages.GetString("UserNotFound"), languages.GetString("MainForm.MainForm"), MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -762,7 +765,8 @@ namespace BrowseForSpeed.Frontend
 			FriendListItem friend = lvFriends.GetSelectedFriend();
 			if ((friend == null) || (friend.status != FriendStatus.Online))
 			    return;
-			LoadLFS(friend.server);
+			ServerListItem si = new ServerListItem(friend.server);
+			LoadLFS(ref si);
 		}
 
 		void BtnAddFriendClick(object sender, System.EventArgs e)
@@ -813,7 +817,8 @@ namespace BrowseForSpeed.Frontend
 
 				string message = String.Format(languages.GetString("JoinFriendQuery"), friend.name, friend.server.hostname);
 				if (MessageBox.Show(message, languages.GetString("MainForm.MainForm"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
-					LoadLFS(friend.server);
+					ServerListItem si = new ServerListItem(friend.server);
+					LoadLFS(ref si);
 				}
 			} else {
 				ViewServerInformationToolStripMenuItemClick(viewServerInformationFriend, e);
@@ -1234,10 +1239,10 @@ namespace BrowseForSpeed.Frontend
 		{
 			JoinServerDialog j = new JoinServerDialog();
 			if (j.ShowDialog() == DialogResult.OK){
-				ServerInformation si = new ServerInformation();
+				ServerListItem si = new ServerListItem(new ServerInformation());
 				si.hostname = j.serverName;
 				si.version = StringToVersion(j.version);
-				LoadLFS(si);
+				LoadLFS(ref si);
 			}
 		}
 
