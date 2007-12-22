@@ -147,7 +147,7 @@ namespace BrowseForSpeed.Frontend
 				//} else {
 					lvi.SubItems.Insert(2, new ListViewItem.ListViewSubItem(lvi, item.passworded == true ? MainForm.languages.GetString("Global.Yes") : MainForm.languages.GetString("Global.No")));
 				//}
-				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, item.players.ToString() +"/" + item.slots.ToString() + " (" + item.adminslots + ")"));
+				lvi.SubItems.Insert(3, new ListViewItem.ListViewSubItem(lvi, item.players.ToString() +"/" + item.slots.ToString()));
 				lvi.SubItems.Insert(4, new ListViewItem.ListViewSubItem(lvi, rules));
 				lvi.SubItems.Insert(5, new ListViewItem.ListViewSubItem(lvi, item.track));
 				lvi.SubItems.Insert(6, new ListViewItem.ListViewSubItem(lvi, cars));
