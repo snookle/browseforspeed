@@ -166,13 +166,13 @@ namespace BrowseForSpeed.Frontend
 			this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.btnAddFriend});
 			this.contextMenu.Name = "contextMenu";
-			this.contextMenu.Size = new System.Drawing.Size(156, 26);
+			this.contextMenu.Size = new System.Drawing.Size(145, 26);
 			this.contextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuOpening);
 			// 
 			// btnAddFriend
 			// 
 			this.btnAddFriend.Name = "btnAddFriend";
-			this.btnAddFriend.Size = new System.Drawing.Size(155, 22);
+			this.btnAddFriend.Size = new System.Drawing.Size(144, 22);
 			this.btnAddFriend.Text = "&Add to Friends";
 			this.btnAddFriend.Click += new System.EventHandler(this.BtnAddFriendClick);
 			// 
@@ -253,6 +253,7 @@ namespace BrowseForSpeed.Frontend
 			this.cbWait.TabIndex = 19;
 			this.cbWait.Text = "Wait for free spot";
 			this.cbWait.UseVisualStyleBackColor = true;
+			this.cbWait.Visible = false;
 			this.cbWait.CheckedChanged += new System.EventHandler(this.CbWaitCheckedChanged);
 			// 
 			// ServerInformationForm
