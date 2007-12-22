@@ -1,10 +1,13 @@
-??/?/2007 - 0.9
+22/12/2007 - 0.9
 	* Updated for Patch Y
 	* Added "Can reset" and "Cruise" filters
 	* Added FBM to car list
 	* Now uses LFSLib.Net 0.16b.
 	* Admin interface fixed. Removed relay option (BFS uses TCP for insim, so
 	  using the relay shouldn't be necessary)
+	* Favourite servers now show if they're Private from the normal list
+	* Added password dialog before joining. Uses saved password.
+	* Server list background is white if you turn off coloured hostnames
 
 12/7/2007 - 0.8a
 	* Update for patch X10
