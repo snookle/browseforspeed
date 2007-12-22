@@ -9,27 +9,30 @@
 	<li><a href="index.html">News</a></li>
 	<li><a href="faq.html">FAQ</a></li>
 	<li><a href="screenshots.html">Screenshots</a></li>
+	<li><a href="/trac/">Developer area</a></li>
 	<li><a href="lang.html">Translations</a></li>
 	<li><a href="contact.html">Contact</a></li>
 </ul></div>
 <p>Browse For Speed is a server browser for the popular online racing sim Live For Speed. It is able to query demo/s1/s2 servers, lets you maintain a favourites list and keeps track of your friends. It also has an admin interface to allow you to control your server via Insim. See the screenshots/FAQ for more features.</p>
 <p>
-<H2>Browse For Speed 0.8a!</H2>
+<H2>Browse For Speed 0.9!</H2>
 </p>
-<p><a href='/files/browseforspeed-0.8a.zip'>Download Browse for Speed 0.8a</a> - The main program files. If you just want to run BFS, this is all you need. It requires .NET 2.0 - see the Links section for a direct download link.</p>
-<p>Version 0.8a is out! Changelog from 0.7d:
+<p><a href='/files/browseforspeed-0.9.zip'>Download Browse for Speed 0.9</a> - The main program files. If you just want to run BFS, this is all you need. It requires .NET 2.0 - see the Links section for a direct download link.</p>
+<p>Version 0.9 is out! Changelog from 0.8a:
 <ul>
-    <li>0.8a - Fix for patch X10</li>
-    <li>Update for incompatible patch X</li>
-    <li>Fixed first friend information on non-cached pubstat queries</li>
-    <li>Hitting enter in the add friend box properly updates the friends list</li>
+    <li>Updated for Patch Y</li>
+    <li>Added "Can reset" and "Cruise" filters</li>
+    <li>Added FBM</li>
+    <li>Now uses LFSLib.Net 0.16b.</li>
+    <li>Admin interface fixed. Removed relay option (BFS uses TCP for insim, so using the relay shouldn't be necessary)</li>
+    <li>Favourite servers now show if they're Private from the normal list</li>
+    <li>Added password dialog before joining. Uses saved password.</li>
+    <li>Server list background is white if you turn off coloured hostnames</li>
 </ul>
 <p>
 <p><strong>Upgrade instructions: (from any version)</strong> Simply unzip into your existing folder, overwriting any files.</p>
 <h4>Additional links:</h4>
-<p><a href='/files/browseforspeed-0.8-src.zip'>Browse for Speed 0.8 Source Code</a> - Only download this if you want to peruse the source, make changes and submit patches :) If you want to send us patches, contact us for SVN access.</p>
 <p><a href='http://msdn.microsoft.com/netframework/downloads/updates/default.aspx'>.NET 2.0</a> - If you don't have this already, you will need it. Go there and download the 'Redistributable Package'.</p>
-<p> Arne Claassen's <a href='http://www.claassen.net/geek/lfs/'>Insim Library</a>. This library is used by the admin interface. The LFSLib.dll distributed with Browse For Speed is modified. To build it, download 0.11b from his site and our <a href="/files/relaypatch.diff.txt">patch</a>.
 <p> The library was developed with <a href='http://www.monodevelop.com/Main_Page'>MonoDevelop</a>, and requires .NET 1.1. The front-end code requires .NET 2.0. This is the first project we have ever written in c#.
 <font color="#FF0000"><p>!!!! NOTE: This is developed against an undocumented protocol. It might break tomorrow, or even right now. !!!!</p></font></div>
 </body>
