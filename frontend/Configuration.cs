@@ -55,11 +55,11 @@ public class PreStartProgram
 }
 public class Configuration
 {
-	[DllImport("user32.dll")]
+	/*[DllImport("user32.dll")]
 	public static extern IntPtr FindWindow(string lpClassName,string lpWindowName);
     
 	[DllImport("user32.dll")]
-    static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+    static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);*/
 	
 		public string userName;
 		public string password;
@@ -95,10 +95,10 @@ public class Configuration
 
 		private void DebugVisible(bool visible)
 		{
-			IntPtr handle = FindWindow(null, System.Windows.Forms.Application.ExecutablePath); //put your console window caption here
+			/*IntPtr handle = FindWindow(null, System.Windows.Forms.Application.ExecutablePath); //put your console window caption here
 			if(handle != IntPtr.Zero) {
 				ShowWindow(handle, (visible ? 1 : 0)); // 0 = SW_HIDE, 1 = SW_SHOW or something
-			}                
+			}*/                
 
 		}
 		
