@@ -199,8 +199,8 @@ namespace BrowseForSpeed.Frontend
 	
 	public class FavouriteListView : ServerListView
 	{
-		private String Filename = Application.StartupPath + "\\favourite.servers";
-		private String XMLFilename = Application.StartupPath + "\\favourites.xml";
+		private String Filename = Application.StartupPath + Path.DirectorySeparatorChar + "favourite.servers";
+		private String XMLFilename = Application.StartupPath + Path.DirectorySeparatorChar + "favourites.xml";
 
 		public ServerInformation[] GetAllHosts()
 		{

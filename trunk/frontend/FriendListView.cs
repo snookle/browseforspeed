@@ -41,7 +41,7 @@ namespace BrowseForSpeed.Frontend
 	public class FriendListView : ListView
 	{
 		private Dictionary<string, FriendListItem> friends = new Dictionary<string, FriendListItem>();
-		private string filename = Application.StartupPath + "\\friends.xml";
+		private string filename = Application.StartupPath + Path.DirectorySeparatorChar + "friends.xml";
 		
 		protected override bool DoubleBuffered {
 			get {
