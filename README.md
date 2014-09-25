@@ -1,7 +1,10 @@
-browseforspeed
-==============
-
 Browse For Speed 0.9
+====================
+
+http://www.browseforspeed.net
+
+External server browser for Live For Speed (http://www.liveforspeed.net)
+
 
 Configuration:
  - LFS Executable Path:
@@ -63,8 +66,6 @@ Notes:
  - ctrl +/- increases/decreases font size in the lists.
 
 
-
-http://www.browseforspeed.net
 
 Comments/Abuse to: bfs@browseforspeed.net
 
